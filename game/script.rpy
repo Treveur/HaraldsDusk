@@ -1,0 +1,272 @@
+﻿# Vous pouvez placer le script de votre jeu dans ce fichier.
+
+# Déclarez sous cette ligne les images, avec l'instruction 'image'
+# ex: image eileen heureuse = "eileen_heureuse.png"
+#Image représentant les personnages
+#Einar
+image einar serious = "einar_1.png"
+
+#Logan
+image logan fache = "logan.png"
+
+#Harald
+image harald normal = "harald_min.png"
+
+#Scene
+image bg forest = "foret_cabane.jpg"
+image bg village = "village.jpg"
+image bg mer = "chateau_mer.jpg"
+
+# Déclarez les personnages utilisés dans le jeu.
+define e = Character('Einar', color="#e74c3c")
+define l = Character('Logan', color="#f1c40f")
+define h = Character('Harald', color="#3498db")
+define gv = Character('Guerriers Vikings', color="#e67e22")
+define vm = Character('Villageois', color="#3498db")
+
+
+
+
+
+
+# Le jeu commence ici
+label start:
+
+    #Stop music s'il y en a une en cours
+    stop music
+
+    $ dial_intro = False
+
+    scene bg forest
+
+    "Dans la forêt de la Westruther, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer répréssion des rebelles"
+
+    "En effet, les écossais ont tué l'intendant d'Ecosse"
+
+    "Parmis ces vikings Einar, général d'Harald qui se trouve justement à coté de lui mais aussi à Logan son ami"
+
+    menu:
+        "Parler à Harald":
+            jump harald_choice
+        "Parler à Logan":
+            jump logan_choice
+        "Ne rien dire":
+            jump plaine
+
+    show einar serious
+
+label harald_choice:
+
+    show einar serious
+
+    if dial_intro == False:
+
+        e "Mon Roi, celà un moment que nous sommes venu ici"
+
+        show einar serious at left
+        show harald normal at right with dissolve
+
+        h "En effet, Einar, celà me rapelle les batailles contre les païens"
+
+        h "Nous les avons réduit en poussière en un rien de temps"
+
+        e "Et les voilà qui se rebellent en tuant Clyde"
+
+        $ dial_intro = True
+
+    menu:
+        "se remémorer la bataille":
+            jump h_souvenir_bataille
+
+        "Parler de la région":
+            jump h_info_region
+
+        "Se montrer enthousiaste sur la mission":
+            jump h_enthousiaste
+
+        "Pourquoi tant de confiance ?":
+            jump h_confiance
+
+        "Est-il vraiment nécessaire de tuer des innocents?":
+            jump h_innocents
+
+        "Continuer silencieusement":
+            jump plaine
+
+
+
+label logan_choice :
+
+    show einar serious
+
+    if dial_intro == False:
+
+        e "Logan, cela ne te rappele donc pas des souvenir ?"
+
+        show einar serious at left
+        show logan fache at right with dissolve
+
+        l "En effet, Einar, celà me rapelle les batailles contre les païens"
+
+        l "Nous les avons réduit en poussière en un rien de temps"
+
+        e "Et les voilà qui se rebellent en tuant Clyde"
+
+        $ dial_intro = True
+
+    menu:
+        "se remémorer la bataille":
+            jump l_souvenir_bataille
+
+        "Parler de la région":
+            jump l_info_region
+
+        "Se montrer enthousiaste sur la mission":
+            jump l_enthousiaste
+
+        "Pourquoi Harald est si confiant ?":
+            jump l_confiance
+
+        "Est-il vraiment nécessaire de tuer des innocents?":
+            jump l_innocents
+
+        "Continuer silencieusement":
+            jump plaine
+
+
+#Harald
+label h_souvenir_bataille :
+    e "Quelles batailles incroyable que nous avons vécu ici"
+
+    h "En effet, de nombreux ennemis se sont mis en travers de notre route"
+
+    h "Ils étaient braves et courageux mais fasse à ma hache, ils n'ont pas fait le poids"
+
+    e "Nous en avons fait une bouché"
+
+    jump harald_choice
+
+label h_info_region :
+    e "Mon Roi, Celà fait un moment que nous somme ici, est-ce que tu me rappeler les caratactérique de la régions ?"
+
+    h "Eh bien, les Highlands sont pincipalement composés de plaines"
+
+    h "Il y a aussi des reliefs abrupts mais aussi de côtes maritimes"
+
+    h "C'est d'ailleurs là où nous nous rendons, au chateau de Dunbar"
+
+    e "Hatons nous mon Roi, la fatigue me guète"
+
+    h "Patience mon ami, notre périple est loin d'être terminé"
+
+    jump harald_choice
+
+label h_enthousiaste :
+    e "Ils y trop longtemps que nous avons eu droit à une bataille"
+
+    e "A cause de notre puissance, les ennemis n'osent même plus ce battre"
+
+    e "Grâce à vaine \"résistance\", je vais enfin pouvoir me défouler."
+
+    h "Haha!!! Ils n'ont aucunes chance."
+
+    jump harald_choice
+
+label h_confiance :
+    e "Vous paraissez confiant à propos de expédition punitive"
+
+    h "Il n'y a pas de quoi s'inquiéter Einar"
+
+    h "Tant que j'aurais ma hache, nous serons invincible"
+
+    e "C'est que grâce aux cloux de sainte croix incrustées dans ta hache "
+
+    jump harald_choice
+
+label h_innocents :
+    e "Mon Roi, est-il vraiment nécessaire de tuer des villageois ?"
+
+    #h "En tuant, l'intendant que j'avais nommé, ils se sont attaqués à moi"
+
+    h "Ils se cachent quelque part dans MES terres!"
+
+    h "Quoi de mieux pour les faire sortir que s'attaquer à leurs familles ?"
+
+    e "Vous avez raison mon Roi"
+
+    e "Ils finiront bien par sortir pour éviter les pertes inutiles"
+    jump harald_choice
+
+#Logan
+label l_souvenir_bataille :
+    e "Quelles batailles incroyable que nous avons vécu ici"
+
+    l "En effet, de nombreux ennemis se sont mis en travers de notre route"
+
+    l "Ils étaient braves et courageux mais à Harald et sa hache, ils n'ont pas fait le poids"
+
+    e "Nous en avons fait une bouché"
+    jump logan_choice
+
+label l_info_region :
+    e "Peux-tu me rafraîchir un peu la mémoire sujet cette région ?"
+
+    e "Cà fait bien longtemps que nous sommes partis de ces terres?"
+
+    l "Eh bien, les Highlands sont pincipalement composés de plaines"
+
+    l "Il y a aussi des reliefs abrupts mais aussi de côtes maritimes"
+
+    l "C'est d'ailleurs là où nous nous rendons, au chateau de Dunbar"
+
+    e "Hatons nous mon Roi, la fatigue me guète"
+
+    l "Patience mon ami, notre périple est loin d'être terminé"
+
+    jump logan_choice
+
+label l_enthousiaste :
+    e "Ils y trop longtemps que nous avons eu droit à une bataille"
+
+    e "A cause de notre puissance, les ennemis n'osent même plus ce battre"
+
+    e "Grâce à vaine \"résistance\", je vais enfin pouvoir me défouler."
+
+    l "Haha!!! Ils n'ont aucunes chance."
+    jump logan_choice
+
+label l_confiance :
+    e "Ne trouve tu pas notre Roi un peu trop confiant ?"
+
+    l "Il n'y a pas de quoi s'inquiéter Einar"
+
+    l "Avec sa hache, il n'y aucune chance que l'on perde"
+
+    l "Grâce aux cloux de sainte croix incrustées dans sa hache, nous sommes invincibles "
+    jump logan_choice
+
+label l_innocents :
+    e "est-ce que tu penses qu'il est vraiment nécessaire de tuer des villageois ?"
+
+    #h "En tuant, l'intendant que j'avais nommé, ils se sont attaqués à moi"
+
+    l "Si Harald nous l'ordonne, je le ferai sans problème"
+
+    l "Ils nous l'a démontré maintes et maintes fois, on ne peut lui résister"
+
+    e "Tu as raison"
+
+    e "Et puis, les résistants finiront par sortir pout éviter des pertes inutiles"
+    jump logan_choice
+
+
+#Scene 2
+label plaine :
+
+    scene bg mer
+    "Après un long voyage, Einar et ses amis arrive près du chateau"
+    "Que va-t-il leur arriver ?"
+    "Seul l'avenir nous le dira"
+    "Petit test pour le git"
+    ".:. A suivre"
+    return

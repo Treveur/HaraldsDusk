@@ -1,0 +1,13 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 71: expected statement.
+    dial_intro = True
+               ^
+
+File "game/script.rpy", line 108: expected statement.
+    dial_intro = True
+               ^
+
+Ren'Py Version: Ren'Py 6.99.10.1227
