@@ -30,12 +30,18 @@ define vm = Character('Villageois', color="#3498db")
 
 
 # Le jeu commence ici
+
+#ACTE 1
+
+#Scene 1
 label start:
 
     #Stop music s'il y en a une en cours
     stop music
 
-    $ dial_intro = False
+    #Variables
+    $ intro_dial = False
+    $ eclaireur_dial = False
 
     scene bg forest
 
@@ -59,7 +65,7 @@ label harald_choice:
 
     show einar serious
 
-    if dial_intro == False:
+    if intro_dial == False:
 
         e "Mon Roi, celà un moment que nous sommes venu ici"
 
@@ -72,7 +78,7 @@ label harald_choice:
 
         e "Et les voilà qui se rebellent en tuant Clyde"
 
-        $ dial_intro = True
+        $ intro_dial = True
 
     menu:
         "se remémorer la bataille":
@@ -99,7 +105,7 @@ label logan_choice :
 
     show einar serious
 
-    if dial_intro == False:
+    if intro_dial == False:
 
         e "Logan, cela ne te rappele donc pas des souvenir ?"
 
@@ -112,7 +118,7 @@ label logan_choice :
 
         e "Et les voilà qui se rebellent en tuant Clyde"
 
-        $ dial_intro = True
+        $ intro_dial = True
 
     menu:
         "se remémorer la bataille":
@@ -264,9 +270,171 @@ label l_innocents :
 label plaine :
 
     scene bg mer
-    "Après un long voyage, Einar et ses amis arrive près du chateau"
-    "Que va-t-il leur arriver ?"
-    "Seul l'avenir nous le dira"
-    "Petit test pour le git"
-    ".:. A suivre"
+
+    if eclaireur_dial == False :
+        h "Continue vers le nord pour découvrir ou se cache le village rebelle"
+
+        e "phrase d'intro ?"
+
+    $ eclaireur_dial = True
+
+    menu :
+        "Refuser":
+            jump h_refus_village
+        "Pourquoi ?":
+            jump h_demande_information
+        "Danger ?":
+            jump h_demande_nb_detachement
+        "Accepter":
+            jump h_accepter
+        "Accepter fayot":
+            jump h_accepter_fayot
+
+label h_refus_village :
+    e "Je refuse"
+
+    h "je suis ton ROI tg"
+
+    e "infomation"
+
+    jump plaine
+
+label h_demande_information :
+
+    e "Pourquoi moi ?"
+
+    h "je suis ton ROI tg"
+
+    e "infomation"
+
+    jump plaine
+
+label h_demande_nb_detachement :
+
+    e "Pourquoi si peu ? Danger ?"
+
+    h "je suis ton ROI tg"
+
+    e "infomation"
+
+    jump plaine
+
+label h_accepter :
+
+    e "À vos odres"
+
+    h "je suis ton ROI tg"
+
+    jump logan_aide
+
+label h_accepter_fayot :
+
+    e "À vos odres, Ohhhn mon Roi Empereur Adoré"
+
+    h "je suis ton ROI tg"
+
+    jump logan_aide
+
+label logan_aide :
+
+    l "Hey BFF, je viens t'aider"
+
+    menu:
+        "Cool merci beaucoup":
+            jump e_reconnaissant
+        "Pas moyen mec":
+            jump e_refus
+        "Ooooook mais fait gaffe ok...":
+            jump e_contrecoeur
+
+
+label e_reconnaissant :
+
+    e "Thx bro"
+
+    l "..."
+
+    jump plaine_2
+
+label e_refus :
+    e "Nope, t'es vraiment trop con"
+
+    l "..."
+    jump plaine_2
+
+label e_contrecoeur :
+
+    e "Fais pas ta tarlouse"
+
+    l "..."
+
+    jump plaine_2
+
+#Scene 3
+label plaine_2:
+
+    e "Bon les gars, j'ai quelque chose à vous dire"
+
+    menu:
+        "Mettre en garde" :
+            jump e_mettre_en_garde
+        "On s'en branle" :
+            jump e_ininteret_mission
+        "Motiver les troupes" :
+            jump e_motiver_troupe
+        "Logan, t'es qu'un PD" :
+            jump e_chambrer_logan
+        "Bon, les gars, c'est moi qui vous l'dit, descendez d'un étage dans votre tête" :
+            jump e_jouer_chef
+
+label e_mettre_en_garde:
+
+    e "Bon faite gaffe"
+
+    gv "ok"
+
+    jump foret_1
+
+label e_ininteret_mission:
+
+    e "A vrai dire, j'en ai rien à faire de cette mission"
+
+    l "Comment oses-tu ?"
+
+    gv "Ouai, c'est pas cool"
+
+    jump foret_1
+
+label e_motiver_troupe:
+
+    e "On va tous les défoncer!"
+
+    gv "Ahou ahou"
+
+    jump foret_1
+
+label e_chambrer_logan:
+
+    e "Logan, t'es vraiment qu'un PD"
+
+    l "Mais euh"
+
+    gv "hahahahah"
+
+    jump foret_1
+
+label e_jouer_chef:
+
+    e "Bon pour cette mission, c'est moi qui commande alors pas de connerie"
+
+    e "Sinon, c'est moi qui encule"
+
+    gv "Ohhhh. :("
+
+    jump foret_1
+
+#Scene 4
+label foret_1:
+
+    "A continuer"
     return
