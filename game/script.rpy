@@ -381,9 +381,9 @@ label plaine_2:
         "On s'en branle" :
             jump e_ininteret_mission
         "Motiver les troupes" :
-            jump e_motiver_troupe
+            jump e_motiver_troupe_plaine_2
         "Logan, t'es qu'un PD" :
-            jump e_chambrer_logan
+            jump e_chambrer_logan_plaine_2
         "Bon, les gars, c'est moi qui vous l'dit, descendez d'un étage dans votre tête" :
             jump e_jouer_chef
 
@@ -405,7 +405,7 @@ label e_ininteret_mission:
 
     jump foret_1
 
-label e_motiver_troupe:
+label e_motiver_troupe_plaine_2:
 
     e "On va tous les défoncer!"
 
@@ -413,7 +413,7 @@ label e_motiver_troupe:
 
     jump foret_1
 
-label e_chambrer_logan:
+label e_chambrer_logan_plaine_2:
 
     e "Logan, t'es vraiment qu'un PD"
 
@@ -436,5 +436,130 @@ label e_jouer_chef:
 #Scene 4
 label foret_1:
 
-    "A continuer"
+    e "Bon les gars"
+
+    menu:
+        "Se montrer impatient de rentrer en Norvège":
+            jump e_impatient_norvege
+        "Se moquer de  gens de la région" :
+            jump e_se_moquer_foret_1
+        "Impatient de terminer la misison" :
+            jump e_impatient_mision_foret_1
+        "Allez les gars, on se bouge le cul" :
+            jump e_motiver_troupe_foret_1
+        "Chambrer Logan" :
+            jump e_chambrer_logan_foret_1
+        "Demander à Logan ce qu'il pense de la mission" :
+            jump e_avis_logan_mission_foret_1
+
+label e_impatient_norvege:
+
+    e "Plus le temps passe, plus la Norvège me manque"
+
+    gv "Ouai, moi aussi maggle"
+
+    menu:
+        "Je suis préssé de recevoir mes terres promises rapidement":
+            jump e_espoir_terre_norvege_foret_1
+        "Fermez-là bande de bolosse":
+            jump e_ordre_taire_guerrier_foret_1
+
+label e_se_moquer_foret_1:
+
+    e "quel bande de pequenot!"
+
+    jump village_1
+
+label e_impatient_mision_foret_1:
+
+    e "je suis impatient de terminer cette mission"
+
+    jump village_1
+
+label e_motiver_troupe_foret_1:
+
+    e "Allez les gars, on se motive"
+
+    jump village_1
+
+label e_chambrer_logan_foret_1:
+
+    e "Logan, t'es qu'un pd"
+
+    jump village_1
+
+label e_avis_logan_mission_foret_1:
+
+    e "Hey Loggy, que penses-ty de cette mission"
+
+    l "Bah tu sais moi je suis un pe con con"
+
+    menu:
+        "Pourquoi as-tu décidé de m'accompagné ?":
+            jump e_pourquoi_logan_accompagne_foret_1
+        "Thx bro, d'être venu":
+            jump e_reconnaissant_logan_foret_1
+        "Tu aurais du rester avec Harald":
+            jump e_rester_haral_foret_1
+
+label e_espoir_terre_norvege_foret_1:
+
+    e "Snif, je veux rentrer"
+    jump village_1
+
+label e_ordre_taire_guerrier_foret_1:
+
+    e "OHhhhhhhhhhhh fermez-vos gueule de gogole"
+
+    gv "Oui maître"
+
+    jump village_1
+
+label e_pourquoi_logan_accompagne_foret_1:
+
+    e "Pour m'a tu accompagné"
+
+    l "Parce que tu es mon bro"
+
+    jump village_1
+
+label e_reconnaissant_logan_foret_1:
+
+    e "Je remercie de m'avoir accompagné"
+
+    l "C'est normal, il faut bien se serrer les coudes et bien plus ;)"
+
+    jump village_1
+
+label e_rester_haral_foret_1:
+
+    e "Tu aurais du rester avec Harald! Abruti!"
+
+    l "Et pourquoi donc ?"
+
+    menu:
+        "Je n'ai pas envie de mettre ta vie en danger":
+            jump e_attention_logan_foret_1
+        "Pas besoin d'un boulet":
+            jump e_poids_logan_foret_1
+
+label e_attention_logan_foret_1:
+
+    e "C'est parce que je n'ai pas envie de mettre ta vie en jeu"
+
+    l "Nous sommes des guerriers, bon sans de bois"
+
+    jump village_1
+
+label e_poids_logan_foret_1:
+
+    e "Tu vas me gêner tout le long de la mission"
+
+    l "Sympa l'ami..."
+
+    jump village_1
+
+#Scene 5
+
+
     return
