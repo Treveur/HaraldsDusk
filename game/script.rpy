@@ -33,7 +33,7 @@ define vm = Character('Villageois', color="#3498db")
 
 #ACTE 1
 
-#Scene 1
+#Sequence 1
 label start:
 
     #Stop music s'il y en a une en cours
@@ -266,7 +266,7 @@ label l_innocents :
     jump logan_choice
 
 
-#Scene 2
+#Sequence 2
 label plaine :
 
     scene bg mer
@@ -370,7 +370,7 @@ label e_contrecoeur :
 
     jump plaine_2
 
-#Scene 3
+#Sequence 3
 label plaine_2:
 
     e "Bon les gars, j'ai quelque chose à vous dire"
@@ -433,7 +433,7 @@ label e_jouer_chef:
 
     jump foret_1
 
-#Scene 4
+#Scequence 4
 label foret_1:
 
     e "Bon les gars"
@@ -559,7 +559,40 @@ label e_poids_logan_foret_1:
 
     jump village_1
 
-#Scene 5
+#Scequence 5
+#Scene 1
+label village_1:
 
+    $ village_slaughter = False
+
+    e "bon les gars, nous sommes arrivé au village"
+
+    menu:
+        "Massacrez-les tous!!!!"
+            jump e_massacre_village_1
+        "Demander des infomation sur les rebelles"
+            jump e_demander_information_village_1
+        "Foullier le village!"
+            jump e_foullier_village_1
+        "Chercher soi-même dans le village"
+            jump e_chercher_himself_village_1
+
+label e_massacre_village_1:
+
+    $ village_slaughter = True
+    gv "yeah, buttons tlm"
+
+
+    jump choix_retour_village_1(village_slaughter)
+
+label e_demander_information_village_1:
+
+    e "Avez vous des information sur les rebelles ?"
+
+    vm "On ne sait rien, promis juré craché!"
+
+    menu:
+        "Tuer un Villageois afin de les forcer à parler"
+        jump
 
     return

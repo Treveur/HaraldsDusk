@@ -1,13 +1,33 @@
 ﻿
-Ren'Py 6.99.10.1227 lint report, generated at: Sun Apr 24 23:27:35 2016
+Ren'Py 6.99.10.1227 lint report, generated at: Tue May 03 14:01:58 2016
+
+game/script.rpy:471 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:477 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:483 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:489 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:508 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:516 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:524 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:532 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:552 The jump is to nonexistent label 'village_1'.
+
+game/script.rpy:560 The jump is to nonexistent label 'village_1'.
 
 
 Statistics:
 
-The game contains 10 dialogue blocks, containing 53 words and 284 characters,
-for an average of 5.3 words and 28 characters per block.
+The game contains 116 dialogue blocks, containing 901 words and 4,810
+characters, for an average of 7.8 words and 41 characters per block.
 
-The game contains 1 menus, 3 images, and 12 screens.
+The game contains 10 menus, 6 images, and 12 screens.
 
 
 Remember to set config.developer to False before releasing.
