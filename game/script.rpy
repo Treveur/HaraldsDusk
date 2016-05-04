@@ -563,19 +563,22 @@ label e_poids_logan_foret_1:
 #Scene 1
 label village_1:
 
+    show bg village
+
     $ village_slaughter = False
+    $ einar_fouille = False
 
     e "bon les gars, nous sommes arrivé au village"
 
     menu:
-        "Massacrez-les tous!!!!"
+        "Massacrez-les tous!!!!":
             jump e_massacre_village_1
-        "Demander des infomation sur les rebelles"
+        "Demander des infomation sur les rebelles":
             jump e_demander_information_village_1
-        "Foullier le village!"
-            jump e_foullier_village_1
-        "Chercher soi-même dans le village"
-            jump e_chercher_himself_village_1
+        "Fouiller le village!":
+            jump e_fouiller_village_1()
+        "Chercher soi-même dans le village":
+            jump e_fouiller_village_1()
 
 label e_massacre_village_1:
 
@@ -593,6 +596,13 @@ label e_demander_information_village_1:
 
     menu:
         "Tuer un Villageois afin de les forcer à parler"
-        jump
+        jump e_tuer_villageois_village_1
+
+        "Hausser le ton"
+        jump e_intimider_villageois_village_1
+
+label e_fouiller_village_1()
+
+
 
     return

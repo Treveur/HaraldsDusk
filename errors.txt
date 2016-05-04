@@ -2,8 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 500: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Thx bro, d'être venu"
-                          ^
+File "game/script.rpy", line 571: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Massacrez-les tous!!!!"
+                            ^
+
+File "game/script.rpy", line 586: end of line expected.
+    jump choix_retour_village_1(village_slaughter)
+                               ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227
