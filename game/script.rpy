@@ -17,6 +17,9 @@ image bg forest = "foret_cabane.jpg"
 image bg village = "village.jpg"
 image bg mer = "chateau_mer.jpg"
 
+#Fond uni
+image bg black = "#000"
+
 # Déclarez les personnages utilisés dans le jeu.
 define e = Character('Einar', color="#e74c3c")
 define l = Character('Logan', color="#f1c40f")
@@ -31,10 +34,16 @@ define vm = Character('Villageois', color="#3498db")
 
 # Le jeu commence ici
 
+label start:
+
+    scene bg black
+    "petit texte introduction"
+    jump intro
+
 #ACTE 1
 
 #Sequence 1
-label start:
+label intro:
 
     #Stop music s'il y en a une en cours
     stop music
@@ -576,9 +585,9 @@ label village_1:
         "Demander des infomation sur les rebelles":
             jump e_demander_information_village_1
         "Fouiller le village!":
-            jump e_fouiller_village_1()
+            jump e_fouiller_village_1   #()
         "Chercher soi-même dans le village":
-            jump e_fouiller_village_1()
+            jump e_fouiller_village_1   #()
 
 label e_massacre_village_1:
 
@@ -586,7 +595,7 @@ label e_massacre_village_1:
     gv "yeah, buttons tlm"
 
 
-    jump choix_retour_village_1(village_slaughter)
+    jump choix_retour_village_1 #(village_slaughter)
 
 label e_demander_information_village_1:
 
@@ -595,13 +604,13 @@ label e_demander_information_village_1:
     vm "On ne sait rien, promis juré craché!"
 
     menu:
-        "Tuer un Villageois afin de les forcer à parler"
-        jump e_tuer_villageois_village_1
+        "Tuer un Villageois afin de les forcer à parler":
+            jump e_tuer_villageois_village_1
 
-        "Hausser le ton"
-        jump e_intimider_villageois_village_1
+        "Hausser le ton":
+            jump e_intimider_villageois_village_1
 
-label e_fouiller_village_1()
+label e_fouiller_village_1():
 
 
 

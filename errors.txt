@@ -2,12 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 571: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Massacrez-les tous!!!!"
-                            ^
-
-File "game/script.rpy", line 586: end of line expected.
+File "game/script.rpy", line 598: end of line expected.
     jump choix_retour_village_1(village_slaughter)
                                ^
+
+File "game/script.rpy", line 607: choice menuitem expects a non-empty block.
+    "Tuer un Villageois afin de les forcer à parler":
+                                                     ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227
