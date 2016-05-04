@@ -45,7 +45,7 @@ label start:
 
     scene bg forest
 
-    "Dans la forêt de la Westruther, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer répréssion des rebelles"
+    "Dans la forêt de la Westruther du caca, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer répréssion des rebelles"
 
     "En effet, les écossais ont tué l'intendant d'Ecosse"
 
