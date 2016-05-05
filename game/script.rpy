@@ -26,6 +26,8 @@ define l = Character('Logan', color="#f1c40f")
 define h = Character('Harald', color="#3498db")
 define gv = Character('Guerriers Vikings', color="#e67e22")
 define vm = Character('Villageois', color="#3498db")
+define o = Character('Ogma', color="#d35400")
+define ge = Character('Guerriers écossais', color="#f39c12")
 
 
 
@@ -574,9 +576,6 @@ label village_1:
 
     show bg village
 
-    $ village_slaughter = False
-    $ einar_fouille = False
-
     e "bon les gars, nous sommes arrivé au village"
 
     menu:
@@ -585,17 +584,16 @@ label village_1:
         "Demander des infomation sur les rebelles":
             jump e_demander_information_village_1
         "Fouiller le village!":
-            jump e_fouiller_village_1   #()
+            jump e_fouiller_village_1
         "Chercher soi-même dans le village":
-            jump e_fouiller_village_1   #()
+            call e_fouiller_village_1 pass (einarFouille = True)
 
 label e_massacre_village_1:
 
-    $ village_slaughter = True
     gv "yeah, buttons tlm"
 
 
-    jump choix_retour_village_1 #(village_slaughter)
+    call choix_retour_village_1 pass (massacre = True)
 
 label e_demander_information_village_1:
 
@@ -610,8 +608,211 @@ label e_demander_information_village_1:
         "Hausser le ton":
             jump e_intimider_villageois_village_1
 
-label e_fouiller_village_1():
+label e_fouiller_village_1(einarFouille = False):
+
+    if einarFouille:
+        e "Bande d'andouille, c'est moi qui fouille"
+
+        "Entre dans une maison"
+
+        e "Eh madmoiselle, vous'tes bien bonne"
+
+    else:
+        e "Fouillez bande de chien galleux"
+
+        gv "Yeahhhhhhh"
+
+        gv "Hey, Einar vient voir ça"
+
+        e "Mais que ce passe-t-il ?"
+
+        gv "Regarde c'est Natalie et nous, nous sommes les méchants"
+
+        e "Mais qui voilà"
 
 
+    menu menu_maison_1:
+        "Hey la meuf, c'est quoi ton nom? File moi ton 06":
+            jump e_nom_villageoise_maison_1
+        "Pourquoi t'fais la tepu à rester caché?":
+            jump e_cache_villageoise_maison_1
+        "Aurais-tu des info ou un mail pour joindre les rebelles? ":
+            jump e_info_rebelle_maison_1
+
+    #Si Einar à déjà parlé une fois à Moira
+    menu menu_maison_2:
+        "Hey la meuf, c'est quoi ton nom? File moi ton 06":
+            jump e_nom_villageoise_maison_1
+        "Pourquoi t'fais la tepu à rester caché?":
+            jump e_cache_villageoise_maison_1
+        "Aurais-tu des info ou un mail pour joindre les rebelles? ":
+            jump e_info_rebelle_maison_1
+        "Tuer la villageoise":
+            jump e_tuer_moira_maison_1
+        "La laisser partir":
+            jump e_villagoise_partir_maison_1
+
+label e_tuer_villageois_village_1:
+
+    e "Toi approche"
+
+    vm "Mais euh"
+
+    e "Plus près"
+
+    vm "C'est que vous savez..."
+
+    e "Chabite, non je déconne, tu vas crever"
+
+    call choix_retour_village_1 pass (massacre = True)
+
+label e_intimider_villageois_village_1:
+    e "Si vous ne dites rien, je vais finir par me facher et bouder !"
+
+    vm "Mais je vous jure, je n'en sais rien"
+
+    e "Ouin"
+
+    jump choix_retour_village_1
+
+#Scequence 6 (alternative)
+label e_nom_villageoise_maison_1:
+    e "Hey siva, dis-moi ton nom la bonnase"
+
+    vm "Tu me parle pas comme ça ! Et je m'appelle Moira"
+
+    e "Une belle histoire"
+
+    jump menu_maison_2
+
+label e_cache_villageoise_maison_1:
+    e "Pourquoi n'es-tu pas avec les autres?"
+
+    vm "Parce que je suis trop une bonnasse pour vous"
+
+    e "Hannnnnn"
+
+    jump menu_maison_2
+
+label e_info_rebelle_maison_1:
+    e "Aurais-tu des infos sur les rebelles ?"
+
+    vm "Non"
+
+    jump menu_maison_2
+
+label e_tuer_moira_maison_1:
+
+    e "Dommage pour toi, je vais te tuer"
+
+    vm "oh je me meure"
+
+    e "Alors vous allez parler bande de bolosse"
+
+    l "Oh je suis outré"
+
+    jump e_massacre_village_1
+
+label e_villagoise_partir_maison_1:
+    e "Va et que je ne te revois plus"
+
+    vm "Oh merci mon seigneur"
+
+    jump choix_retour_village_1
+#fin Scequence 6
+
+label choix_retour_village_1(massacre = False):
+
+    if massacre:
+        e "J'espère que ça leur servira de leçon"
+    else:
+        e "Ils vont rien nous apprendre de plus, tirons-nous"
+
+    e "Bon ou allons nous continuer ?"
+
+    if massacre:
+        menu:
+            "Rentrer au Chateau de Dunbar":
+                jump massacre_foret_2
+            "Poursuivre vers le nord":
+                jump massacre_foret_2
+    else:
+        menu:
+            "Rentrer au Chateau de Dunbar":
+                jump foret_2
+            "Poursuivre vers le nord":
+                jump foret_2
+
+#Scequence 7
+label foret_2:
+
+
+#Fin alternative n°1
+label massacre_foret_2:
+    "Sur le chemin du retour"
+
+    e "Bon les gars"
+
+    menu:
+        "Mettre en garde":
+            call attaque_massacre_foret_2 pass (message = 1)
+        "Déçu par la mission":
+            call attaque_massacre_foret_2 pass (message = 2)
+        "Se moquer des villageois":
+            call attaque_massacre_foret_2 pass (message = 3)
+        "Chambrer Logan":
+            call attaque_massacre_foret_2 pass (message = 4)
+
+label attaque_massacre_foret_2(message = 0):
+
+    if message = 1:
+        e "Faites-attention, j'ai la nette impression que nous sommes oberservé!"
+
+        gv "Bof rien ne peut nous atteindre"
+
+    elif message = 2:
+
+        e "Ce n'était que du menu fretin, je vais me plaindre auprès d'Harald une fois rentré"
+
+    elif message = 3:
+        e "Les bolosses, ça craquait sous ma hache"
+
+    else:
+        e "logan, t'es qu'un PD"
+
+################A separer
+    o "Vous allez payer pour ce que vous avez fait au villageois"
+
+    o "Venez que je vous bute sales enculés"
+
+    e "Salaud! Viens ici que je te bute enculé"
+
+    "Einar tombe à terre un flèche dans l'épaule"
+
+    e "Aieuhhhh"
+
+    "Logan tombe et est égorgé au sol"
+
+    "Einar recoit du sang de la tafiolle sur le visage"
+
+    e "Comment as-tu osé ? Espèce de **** **** de ***"
+
+    "Une grosse masse de muscle s'approche de Einar"
+
+    menu:
+        "Qui est tu ?":
+            call e_demande_nom_foret_2 pass (bad_ending = true)
+        "Non ne me tue pas, je te donnerai un sandwitch à la fraise":
+            call e_implore_pitie_foret_2 pass (bad_ending = true)
+        "Menacer le lourdeau":
+            call e_menace_foret_2 pass (bad_ending = true)
+
+
+
+label bad_ending_1:
+
+    "Einar se fait tuer comme une merde parce qu'il n'a pas eu l'intelligence de réfléchir"
+
+    "Et oui, il faut réfléchir"
 
     return

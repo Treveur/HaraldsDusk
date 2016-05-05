@@ -1,20 +1,20 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 576, in script
-    jump e_fouiller_village_1
-ScriptError: could not find label 'e_fouiller_village_1'.
+  File "game/script.rpy", line 626, in script
+    gh "Hey, Einar vient voir ça"
+Exception: Sayer 'gh' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 576, in script
-    jump e_fouiller_village_1
-  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 1520, in execute
-    rv = renpy.game.script.lookup(target)
-  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\script.py", line 843, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'e_fouiller_village_1'.
+  File "game/script.rpy", line 626, in script
+    gh "Hey, Einar vient voir ça"
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 584, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 501, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'gh' is not defined.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.10.1227

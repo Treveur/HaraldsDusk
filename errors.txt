@@ -2,12 +2,24 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 598: end of line expected.
-    jump choix_retour_village_1(village_slaughter)
-                               ^
+File "game/script.rpy", line 758: end of line expected.
+    call attaque_massacre_foret_2 call (message = 1)
+                                  ^
 
-File "game/script.rpy", line 607: choice menuitem expects a non-empty block.
-    "Tuer un Villageois afin de les forcer à parler":
-                                                     ^
+File "game/script.rpy", line 760: end of line expected.
+    call attaque_massacre_foret_2 call (message = 2)
+                                  ^
+
+File "game/script.rpy", line 762: end of line expected.
+    call attaque_massacre_foret_2 call (message = 3)
+                                  ^
+
+File "game/script.rpy", line 764: end of line expected.
+    call attaque_massacre_foret_2 call (message = 4)
+                                  ^
+
+File "game/script.rpy", line 766: expected ':' not found.
+    label attaque_massacre_foret_2(message = 0)
+                                               ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227
