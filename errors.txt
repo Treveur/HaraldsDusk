@@ -2,24 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 758: end of line expected.
-    call attaque_massacre_foret_2 call (message = 1)
-                                  ^
+File "game/script.rpy", line 817: choice menuitem expects a non-empty block.
+    "Ils ont surrement eu peur de notre prestence":
+                                                   ^
 
-File "game/script.rpy", line 760: end of line expected.
-    call attaque_massacre_foret_2 call (message = 2)
-                                  ^
-
-File "game/script.rpy", line 762: end of line expected.
-    call attaque_massacre_foret_2 call (message = 3)
-                                  ^
-
-File "game/script.rpy", line 764: end of line expected.
-    call attaque_massacre_foret_2 call (message = 4)
-                                  ^
-
-File "game/script.rpy", line 766: expected ':' not found.
-    label attaque_massacre_foret_2(message = 0)
-                                               ^
+File "game/script.rpy", line 824: choice menuitem expects a non-empty block.
+    "Choice 2":
+               ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227

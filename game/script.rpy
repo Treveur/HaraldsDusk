@@ -4,13 +4,22 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
 #Einar
+define e = Character('Einar', color="#e74c3c")
 image einar serious = "einar_1.png"
 
 #Logan
+define l = Character('Logan', color="#f1c40f")
 image logan fache = "logan.png"
 
 #Harald
+define h = Character('Harald', color="#3498db")
 image harald normal = "harald_min.png"
+
+#Ogma
+define o = Character('Ogma', color="#d35400")
+
+#Moira
+define m = Character("Moira", color = "#f00")
 
 #Scene
 image bg forest = "foret_cabane.jpg"
@@ -21,12 +30,12 @@ image bg mer = "chateau_mer.jpg"
 image bg black = "#000"
 
 # Déclarez les personnages utilisés dans le jeu.
-define e = Character('Einar', color="#e74c3c")
-define l = Character('Logan', color="#f1c40f")
-define h = Character('Harald', color="#3498db")
+
+
+
 define gv = Character('Guerriers Vikings', color="#e67e22")
 define vm = Character('Villageois', color="#3498db")
-define o = Character('Ogma', color="#d35400")
+
 define ge = Character('Guerriers écossais', color="#f39c12")
 
 
@@ -634,6 +643,8 @@ label e_demander_information_village_1:
 
 label e_fouiller_village_1(einarFouille = False):
 
+    $ already_talk = False
+
     if einarFouille:
         e "Bande d'andouille, c'est moi qui fouille"
 
@@ -662,18 +673,10 @@ label e_fouiller_village_1(einarFouille = False):
             jump e_cache_villageoise_maison_1
         "Aurais-tu des info ou un mail pour joindre les rebelles? ":
             jump e_info_rebelle_maison_1
-
-    #Si Einar à déjà parlé une fois à Moira
-    menu menu_maison_2:
-        "Hey la meuf, c'est quoi ton nom? File moi ton 06":
-            jump e_nom_villageoise_maison_1
-        "Pourquoi t'fais la tepu à rester caché?":
-            jump e_cache_villageoise_maison_1
-        "Aurais-tu des info ou un mail pour joindre les rebelles? ":
-            jump e_info_rebelle_maison_1
-        "Tuer la villageoise":
+        #Si Einar à déjà parlé une fois à Moira
+        "Tuer la villageoise" if already_talk:
             jump e_tuer_moira_maison_1
-        "La laisser partir":
+        "La laisser partir" if already_talk:
             jump e_villagoise_partir_maison_1
 
 label e_tuer_villageois_village_1:
@@ -707,7 +710,9 @@ label e_nom_villageoise_maison_1:
 
     e "Une belle histoire"
 
-    jump menu_maison_2
+    $ already_talk = True
+
+    jump menu_maison_1
 
 label e_cache_villageoise_maison_1:
     e "Pourquoi n'es-tu pas avec les autres?"
@@ -716,12 +721,16 @@ label e_cache_villageoise_maison_1:
 
     e "Hannnnnn"
 
-    jump menu_maison_2
+    $ already_talk = True
+
+    jump menu_maison_1
 
 label e_info_rebelle_maison_1:
     e "Aurais-tu des infos sur les rebelles ?"
 
     vm "Non"
+
+    $ already_talk = True
 
     jump menu_maison_2
 
@@ -757,54 +766,135 @@ label choix_retour_village_1(massacre = False):
     if massacre:
         menu:
             "Rentrer au Chateau de Dunbar":
-                jump massacre_foret_2
+                call massacre_foret_2 pass (lieu = "chateau")
             "Poursuivre vers le nord":
-                jump massacre_foret_2
+                call massacre_foret_2 pass (lieu = "nord")
     else:
         menu:
             "Rentrer au Chateau de Dunbar":
-                jump foret_2
+                call foret_2 pass (lieu = "chateau")
             "Poursuivre vers le nord":
-                jump foret_2
+                call foret_2 pass (lieu = "nord")
 
 #Scequence 7
-label foret_2:
+label foret_2(lieu):
 
+    if lieu == "chateau":
 
-#Fin alternative n°1
-label massacre_foret_2:
-    "Sur le chemin du retour"
+        "Sur le chemin du retour"
+    else:
+        "En poursuivant vers le nord"
 
     e "Bon les gars"
 
     menu:
         "Mettre en garde":
-            call attaque_massacre_foret_2 pass (message = 1)
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif")
         "Déçu par la mission":
-            call attaque_massacre_foret_2 pass (message = 2)
-        "Se moquer des villageois":
-            call attaque_massacre_foret_2 pass (message = 3)
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "deception")
+        "attitude villageois":
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude")
         "Chambrer Logan":
-            call attaque_massacre_foret_2 pass (message = 4)
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan")
 
-label attaque_massacre_foret_2(message = 0):
+label attaque_massacre_einar_sauf_foret_2(message):
 
-    if message = 1:
+    if message == "attentif":
         e "Faites-attention, j'ai la nette impression que nous sommes oberservé!"
 
         gv "Bof rien ne peut nous atteindre"
 
-    elif message = 2:
+    elif message == "deception":
 
         e "Ce n'était que du menu fretin, je vais me plaindre auprès d'Harald une fois rentré"
 
-    elif message = 3:
+    elif message == "attitude":
+        e "Ils avaient l'air de cacher quelque chose"
+
+        menu :
+            "Craindre un piège":
+                jump menu_avertissement_villageois
+            "Ils ont surrement eu peur de notre prestence":
+                e "Ils ont fait dans leur pantalon"
+            "Ce n'était qu'une bande de congénitaux":
+                e "Ce n'était que des ch'ti"
+
+        menu menu_avertissement_villageois:
+            "Mettre en garde":
+                call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif")
+            "Garder ses craintes pour soi":
+                e "(Ne pas faire par de ses craintes)"
+
+    else:
+        e "logan, t'es qu'un PD"
+
+
+    o "Vous allez payer pour ce que vous avez fait au villageois"
+
+    o "Venez que je vous bute sales enculés"
+
+    e "Salaud! Viens ici que je te bute enculé"
+
+    "Einar tombe à terre un flèche dans l'épaule"
+
+    "Il recoit un épieux dans la jambe"
+
+    e "Aieuhhhh"
+
+    "Logan tombe et est égorgé au sol"
+
+    "Einar recoit du sang de la tafiolle sur le visage"
+
+    e "Comment as-tu osé ? Espèce de **** **** de ***"
+
+    "Une grosse masse de muscle s'approche de Einar"
+
+    menu:
+        "Qui est tu ?":
+            jump e_demande_nom_foret_2
+        "Non ne me tue pas, je te donnerai un sandwitch à la fraise":
+            jump e_implore_pitie_foret_2
+        "Menacer le lourdeau":
+            jump e_menace_foret_2
+
+#Fin alternative n°1
+label massacre_foret_2(lieu):
+
+    if lieu == "chateau":
+
+        "Sur le chemin du retour"
+    else:
+        "En poursuivant vers le nord"
+
+    e "Bon les gars"
+
+    menu:
+        "Mettre en garde":
+            call attaque_massacre_foret_2 pass (message = "attentif")
+        "Déçu par la mission":
+            call attaque_massacre_foret_2 pass (message = "deception")
+        "Se moquer des villageois":
+            call attaque_massacre_foret_2 pass (message = "moquerie")
+        "Chambrer Logan":
+            call attaque_massacre_foret_2 pass (message = "chambre_logan")
+
+label attaque_massacre_foret_2(message):
+
+    if message == "attentif":
+        e "Faites-attention, j'ai la nette impression que nous sommes oberservé!"
+
+        gv "Bof rien ne peut nous atteindre"
+
+    elif message == "deception":
+
+        e "Ce n'était que du menu fretin, je vais me plaindre auprès d'Harald une fois rentré"
+
+    elif message == "moquerie":
         e "Les bolosses, ça craquait sous ma hache"
 
     else:
         e "logan, t'es qu'un PD"
 
-################A separer
     o "Vous allez payer pour ce que vous avez fait au villageois"
 
     o "Venez que je vous bute sales enculés"
@@ -832,7 +922,39 @@ label attaque_massacre_foret_2(message = 0):
             call e_menace_foret_2 pass (bad_ending = true)
 
 
+label e_demande_nom_foret_2(bad_ending = False):
 
+    e "Mais qui es-tu donc ?"
+
+    if bad_ending:
+        o "Tu ne le saura jamais"
+        jump bad_ending_1
+    else:
+        o "Tu le saura bien assez tôt"
+
+label e_implore_pitie_foret_2(bad_ending = False):
+
+    e "Par pitié, ne me tue pas"
+
+    if bad_ending:
+        o "Comtpe là dessus et bois de l'eau"
+        jump bad_ending_1
+    else:
+        o "Suprise Motherfucker. Tu y as cru ?"
+
+label e_menace_foret_2(bad_ending = False):
+
+    e "Si tu me tues Harald, arriva pour tous vous buter"
+
+    if bad_ending:
+        o "Hasta la vista bady!"
+        jump bad_ending_1
+    else:
+        "nope"
+
+
+
+#Ending
 label bad_ending_1:
 
     "Einar se fait tuer comme une merde parce qu'il n'a pas eu l'intelligence de réfléchir"
