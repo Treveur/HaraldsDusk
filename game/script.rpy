@@ -732,7 +732,7 @@ label e_info_rebelle_maison_1:
 
     $ already_talk = True
 
-    jump menu_maison_2
+    jump menu_maison_1
 
 label e_tuer_moira_maison_1:
 
@@ -777,7 +777,7 @@ label choix_retour_village_1(massacre = False):
                 call foret_2 pass (lieu = "nord")
 
 #Scequence 7
-label foret_2(lieu):
+label foret_2(lieu = ""):
 
     if lieu == "chateau":
 
@@ -797,7 +797,7 @@ label foret_2(lieu):
         "Chambrer Logan":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan")
 
-label attaque_massacre_einar_sauf_foret_2(message):
+label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     if message == "attentif":
         e "Faites-attention, j'ai la nette impression que nous sommes oberservé!"
@@ -858,7 +858,7 @@ label attaque_massacre_einar_sauf_foret_2(message):
             jump e_menace_foret_2
 
 #Fin alternative n°1
-label massacre_foret_2(lieu):
+label massacre_foret_2(lieu = ""):
 
     if lieu == "chateau":
 
@@ -878,7 +878,7 @@ label massacre_foret_2(lieu):
         "Chambrer Logan":
             call attaque_massacre_foret_2 pass (message = "chambre_logan")
 
-label attaque_massacre_foret_2(message):
+label attaque_massacre_foret_2(message = ""):
 
     if message == "attentif":
         e "Faites-attention, j'ai la nette impression que nous sommes oberservé!"
@@ -931,6 +931,7 @@ label e_demande_nom_foret_2(bad_ending = False):
         jump bad_ending_1
     else:
         o "Tu le saura bien assez tôt"
+        jump e_reveil_village_2
 
 label e_implore_pitie_foret_2(bad_ending = False):
 
@@ -941,6 +942,7 @@ label e_implore_pitie_foret_2(bad_ending = False):
         jump bad_ending_1
     else:
         o "Suprise Motherfucker. Tu y as cru ?"
+        jump e_reveil_village_2
 
 label e_menace_foret_2(bad_ending = False):
 
@@ -951,6 +953,144 @@ label e_menace_foret_2(bad_ending = False):
         jump bad_ending_1
     else:
         "nope"
+        jump e_reveil_village_2
+
+#Scequence 8
+label e_reveil_village_2:
+
+    $ already_talk = False
+
+    o "Tu te reveiles enfin"
+
+    e "Ahhhh je souffre, pardonne moi logan de t'avoir sous estimé"
+
+    e "(Où suis-je ?)"
+
+    e "Hey mais je te reconnais, c'est toi qui à tué mon bff"
+
+    menu reveil_einar_village_2:
+        "pouquoi je suis le seul encore en vie ?":
+            jump e_demande_vie_village_2
+        "Est-ce qu'il y a un rapport avec le village plus tôt ?":
+            jump e_rapport_village_village_2
+        "Pauvre con!" if already_talk == False:
+            jump e_insulte_village_2
+
+label e_demande_vie_village_2:
+    e "Pourquoi m'avoir épargné ?"
+
+    o "Tu es un brave gars!"
+
+    jump o_explication_vie_village_2
+
+label e_rapport_village_village_2:
+
+    e "Est-ce qu'il y a un rapport avec le village d'hier"
+
+    o "Yep biatch"
+
+    jump o_explication_vie_village_2
+
+label e_insulte_village_2:
+
+    e "Espèce de salaud"
+
+    o "Le train de tes insultes roule sur le rail de mon indiférence"
+
+    o "Je préfère partir que de devenir sourd"
+
+    o "et puis tu vas te calmer merdeux"
+
+    $ already_talk = True
+
+    jump reveil_einar_village_2
+
+label o_explication_vie_village_2:
+
+    $ already_talk = False
+    $ choix_ogma_1 = ""
+
+    o "Tu as été cool avec les villageaois"
+    o "Tu es proche d'Harald et tu sais tout sur lui alors"
+
+    menu :
+        "Je ne comprends pas trop"
+        "Quel est ton but ?":
+            $ choix_ogma_1 = "incomprehension"
+        "Insulter":
+            $ choix_ogma_1 = "insulter"
+        "Ne rien dire":
+            $ choix_ogma_1 = "silcence"
+
+    if choix_ogma_1 == "incomprehension":
+
+        e "J'avoue ne pas tout commprend"
+
+        o "Mais pourtant c'est simple"
+    elif choix_ogma_1 == "insulter":
+        e "T'es qu'un gros batard"
+
+        o "Calme toi, mon petit"
+    else:
+        "..."
+
+    o "Laisse moi t'expliquer ce que je veux concrètement"
+    o "Trahis Harald, ouvre le pont-levis et tu sera riche"
+
+    menu menu_choix_trahison_village_2:
+        "Refuser":
+            jump refuser_trahir_village_2
+        "Quelles garanties ?" if already_talk == False:
+
+            e "Qui me dit que tu vas tenir ta parole ."
+
+            o "Pour faire simple, tu n'as pas le choix"
+            o "J'ai des agents partout en Angleterre, je te rerouverai et te buterai"
+
+            $ already_talk = True
+
+            jump menu_choix_trahison_village_2
+        "Accepter":
+            jump accepter_trahir_village_2
+
+label refuser_trahir_village_2:
+
+    e "Jamais de la vie, plutôt mourir"
+
+    o "Et si je te mettais un doigt içi"
+
+    e "Arggg! Non, jamais!"
+
+    o "Je vais continue de te torturer jusqu'à que tu acceptes"
+
+    o "Le cas contraire, je te tuerais de mes propres mains"
+
+    menu:
+        "Finir par céder":
+            o "Ahhh ba tu vois quand tu veux"
+            jump accepter_trahir_village_2
+        "S'obsiner à refuser":
+            jump bad_ending_2
+
+
+label accepter_trahir_village_2:
+
+    o "Je suis content que tu ais finalement accepté"
+
+    o "Tu as fait le bon choix"
+
+    jump village_3
+
+#Acte 2
+#Scequence 1
+label village_3:
+
+
+#Acte 3
+
+
+
+
 
 
 
@@ -960,5 +1100,13 @@ label bad_ending_1:
     "Einar se fait tuer comme une merde parce qu'il n'a pas eu l'intelligence de réfléchir"
 
     "Et oui, il faut réfléchir"
+
+    return
+
+label bad_ending_2:
+
+    o "Tu aurais pu vivre dommage"
+
+    "Après avoir été torturé pendant plusieurs jours, Ogma fini par décapiter Einar"
 
     return

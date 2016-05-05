@@ -1,13 +1,15 @@
 ﻿
-Ren'Py 6.99.10.1227 lint report, generated at: Thu May 05 01:32:28 2016
+Ren'Py 6.99.10.1227 lint report, generated at: Thu May 05 13:06:15 2016
+
+game/script.rpy:735 The jump is to nonexistent label 'menu_maison_2'.
 
 
 Statistics:
 
-The game contains 155 dialogue blocks, containing 1,115 words and 5,929
-characters, for an average of 7.2 words and 38 characters per block.
+The game contains 220 dialogue blocks, containing 2,463 words and 13,587
+characters, for an average of 11.2 words and 62 characters per block.
 
-The game contains 16 menus, 7 images, and 12 screens.
+The game contains 21 menus, 7 images, and 12 screens.
 
 
 Remember to set config.developer to False before releasing.

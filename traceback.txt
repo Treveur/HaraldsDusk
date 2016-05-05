@@ -1,34 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 629, in script call
-    call choix_retour_village_1 pass (massacre = True)
-  File "game/script.rpy", line 771, in script call
-    call massacre_foret_2 pass (lieu = "nord")
-  File "game/script.rpy", line 796, in script call
-    call attaque_massacre_foret_2 pass (message = 1)
-  File "game/script.rpy", line 806, in script
-    if message = 1:
-SyntaxError: invalid syntax (game/script.rpy, line 806)
+  File "game/script.rpy", line 777, in script call
+    call foret_2 pass (lieu = "nord")
+  File "game/script.rpy", line 800, in script
+    label attaque_massacre_einar_sauf_foret_2(message):
+Exception: Required parameter message has no value.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 629, in script call
-    call choix_retour_village_1 pass (massacre = True)
-  File "game/script.rpy", line 771, in script call
-    call massacre_foret_2 pass (lieu = "nord")
-  File "game/script.rpy", line 796, in script call
-    call attaque_massacre_foret_2 pass (message = 1)
-  File "game/script.rpy", line 806, in script
-    if message = 1:
-  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 1648, in execute
-    if renpy.python.py_eval(condition):
-  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\python.py", line 1605, in py_eval
-    code = py_compile(code, 'eval')
-  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\python.py", line 512, in py_compile
-    raise e
-SyntaxError: invalid syntax (game/script.rpy, line 806)
+  File "game/script.rpy", line 777, in script call
+    call foret_2 pass (lieu = "nord")
+  File "game/script.rpy", line 800, in script
+    label attaque_massacre_einar_sauf_foret_2(message):
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 752, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 149, in apply_arguments
+    return parameters.apply(args, kwargs, ignore_errors)
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 118, in apply
+    raise Exception("Required parameter %s has no value." % name)
+Exception: Required parameter message has no value.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.10.1227
