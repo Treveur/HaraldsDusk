@@ -1188,21 +1188,21 @@ label cours_chateau:
             o "C'est pour celà que j'ai envoyé quelques expéditions punitive afin de te venger"
 
             e "Il ne fallait pas, ce n'est que trop d'honneur"
+
         "Ne rien dire":
             e "..."
-
             o "Je suppose que tu dois être fatigué depuis tout ce temps"
 
-        o "Mais dis-moi, qu'est-ce qui t'est arrivé?"
-        o "Et l'escorte qui t'accompagnais ?"
-        o "Logan n'est pas là non plus"
-        o "Mais bon sang, raconte-moi tout !"
+    o "Mais dis-moi, qu'est-ce qui t'est arrivé?"
+    o "Et l'escorte qui t'accompagnais ?"
+    o "Logan n'est pas là non plus"
+    o "Mais bon sang, raconte-moi tout !"
 
-        menu:
-            "Que devrais-je dire ?"
+    menu:
+        "Que devrais-je dire ?"
 
-            "Dire ne rien savoir":
-                e "Je ne sais pas. J'ai été assommé. A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
+        "Dire ne rien savoir":
+            e "Je ne sais pas. J'ai été assommé. A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
 
 
 
