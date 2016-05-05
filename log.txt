@@ -1,44 +1,67 @@
+<<<<<<< HEAD
 Thu May 05 15:07:34 2016
+=======
+Thu May 05 12:03:47 2016
+>>>>>>> 6e46a6bf805eda7db6e5cec54ce17a3f2787fd84
 Windows-8-6.2.9200
 Ren'Py 6.99.10.1227
  
 
-Bootstrap to the start of init.init took 0.06s
+Bootstrap to the start of init.init took 0.05s
 Early init took 0.01s
 Loader init took 0.01s
 Loading error handling took 0.01s
+<<<<<<< HEAD
 Loading script took 0.19s
+=======
+Loading script took 0.04s
+>>>>>>> 6e46a6bf805eda7db6e5cec54ce17a3f2787fd84
 Loading persistent took 0.01s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.05s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
+<<<<<<< HEAD
 Backing up script files to 'C:\\Users\\Benjamin\\AppData\\Roaming/RenPy/backups\\HaraldsDusk':
 Dump and make backups. took 0.04s
+=======
+Dump and make backups. took 0.03s
+>>>>>>> 6e46a6bf805eda7db6e5cec54ce17a3f2787fd84
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 DPI scale factor: 1.000000
-Creating interface object took 0.03s
+Creating interface object took 0.04s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
+<<<<<<< HEAD
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.03s
 Prepare screens took 0.03s
+=======
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.04s
+>>>>>>> 6e46a6bf805eda7db6e5cec54ce17a3f2787fd84
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.00s
 
 primary display bounds: (0, 0, 1920, 1080)
 Windowed mode.
+<<<<<<< HEAD
 Screen sizes: virtual=(1920, 1080) physical=(1720, 967) drawable=(1720, 967)
+=======
+Screen sizes: virtual=(1920, 1080) physical=(1736, 976) drawable=(1736, 976)
+>>>>>>> 6e46a6bf805eda7db6e5cec54ce17a3f2787fd84
 Vendor: 'NVIDIA Corporation'
-Renderer: 'GeForce GTX 770/PCIe/SSE2'
-Version: '4.5.0 NVIDIA 364.72'
+Renderer: 'GeForce GTX 680/PCIe/SSE2'
+Version: '4.5.0 NVIDIA 364.51'
 Display Info: <Info({'blit_sw_CC': False, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 1080, 'current_w': 1920, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
 Fixed-function is blacklisted.
 Extensions:
@@ -379,6 +402,7 @@ Texture testing:
 - 1024px textures work.
 - 2048px textures work.
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
+<<<<<<< HEAD
 Total time until interface ready: 0.892000198364s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
@@ -387,3 +411,13 @@ Total time until interface ready: 0.892000198364s
 - Frame drawn at 0.061000 seconds.
 - Frame drawn at 0.077000 seconds.
 - 0.077000 seconds to render 5 frames.
+=======
+Total time until interface ready: 0.557000160217s
+- Target is 5 frames in 0.333333333333 seconds.
+- Frame drawn at 0.000000 seconds.
+- Frame drawn at 0.047000 seconds.
+- Frame drawn at 0.049000 seconds.
+- Frame drawn at 0.059000 seconds.
+- Frame drawn at 0.075000 seconds.
+- 0.075000 seconds to render 5 frames.
+>>>>>>> 6e46a6bf805eda7db6e5cec54ce17a3f2787fd84
