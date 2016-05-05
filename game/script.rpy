@@ -21,6 +21,14 @@ define o = Character('Ogma', color="#d35400")
 #Moira
 define m = Character("Moira", color = "#f00")
 
+#Patrick
+define p = Character("Patrick")
+
+#Villageois
+define pe1 = Character("Prissonier écossais 1")
+define pe2 = Character("Prissonier écossais 2")
+define pe3 = Character("Prissonière écossais 1")
+
 #Scene
 image bg forest = "foret_cabane.jpg"
 image bg village = "village.jpg"
@@ -1167,6 +1175,8 @@ label exterieur_chateau_1:
 #Sequence 3
 label cours_chateau:
 
+    $ retour_silence_1 = False
+    $ soupcon_harald_1 = False
     $ mentir_harald_1 = False
 
     e "Me voilà enfin entré dans le chateau"
@@ -1203,7 +1213,87 @@ label cours_chateau:
 
         "Dire ne rien savoir":
             e "Je ne sais pas. J'ai été assommé. A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
+            o "Admettons mais qui t'a soigné ?"
+            jump menu_assome_cours_chateau
 
+        "Raconter l'embuscade":
+        #modifaction pour indiquer le lieu par la suite
+            e "Il nous prit au dépourvu, le soir dans la forêt en continuant vers le nord"
+            o "Admettons mais qui t'a soigné ?"
+
+            jump menu_embusscade_ou_silence_cours_chateau
+
+        "Ne rien dire":
+            o "Eh bien, je t'ai connu plus bavard"
+            o "Parles et nous pourrons venger les morts"
+
+            $ retour_silence_1 = True
+
+            jump menu_embusscade_ou_silence_cours_chateau
+
+
+    menu menu_assome_cours_chateau:
+
+        "Je me suis débrouillé":
+            e "Je me suis remis, lentement mais surement, dans la nature."
+            $ soupcon_harald_1 = True
+
+        "Aide":
+            e "J'ai été soigné par un vieux paysan."
+
+    menu menu_embusscade_ou_silence_cours_chateau:
+
+        "Village et Moira":
+            e "J'ai été aidé par un village écossais"
+            e "Un femme du non de Moira m'a soigné"
+            e "J'ai fini par m'enfuir"
+
+        "Aide":
+            e "J'ai été soigné par un vieux paysan."
+
+        "Perte de mémoire" if retour_silence_1:
+            e "Tout ce dont je me souviens, c'est l'attaque et que j'ai été bléssé"
+            e "Après, tout es flou"
+            e "Je me suis réveillé il y a peu et mes blessures étaient soignés"
+            $ soupcon_harald_1 = True
+
+    "Harald se mon soupconeux"
+
+    h "J'espère que tout ce que tu me dis est vrai"
+    h "Parce que tu sais très bien ce qu'il en coute de me trahir"
+    h "Mais j'espère pouvoir te faire confiance mon ami"
+
+    menu :
+        "C'est le moment ou jamais de dire la vérité"
+        "Dire vérité":
+            e "Mon Roi, j'ai été recceuilli par les sauvages uniquement pour me convaincre de vous trahir"
+            e "Il m'ont forcé à accepter ce pacte"
+            e "Mais au fond de moi, je vous ai toujours été fidèle et j'attendais patiemment le jour où je pouvais rentrer pour tout vous dévoiler"
+            e "Ogma, chef de l'armée rebelle, veut que je baisse le pont-levis et que je prenne votre hache pour vous affaiblir "
+        "Fidèle (mentir)":
+            e "Nul ne vous est plus fidèle que moi !"
+            $ mentir_harald_1 = True
+        "Menti aux rebelles (mentir)":
+            e "J'ai rusé en pactisant avec les rebelles uniquement dans le but de revenir à votre service"
+            $ mentir_harald_1 = True
+
+    if mentir_harald_1:
+        o "Je te remercie Einar pour m'avoir dévoilé leur perfide plan"
+        o "Grâce à toi, nous allons pouvoir nous pouvoir nous préparer et réduire la rebellion à néant une bonne fois pour toute"
+        o "Tu devrais rejoindre les autres soldats pour te préparé à les acceuillir"
+
+        e "Bien mon Roi"
+    else:
+        e "Bon j'avoue, je sèche un peu là pour le coup"
+
+        o "J'ai eu des doutes sur toi"
+        o "Ne me fait plus jamais peur comme ça"
+        o "Les autres vont être content de ton retour"
+        o "Vas les rejoindre dans la salle de banquet"
+
+        e "Bien mon Roi"
+
+    "Einar se dirige vers la salle de banquet et vois L'evêque Patrick juger 3 écossais qui sont déjà sur le buchet"
 
 
 
