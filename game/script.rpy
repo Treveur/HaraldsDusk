@@ -399,7 +399,7 @@ label e_contrecoeur :
 
     e "Très bien... Viens, mais tais-toi. J'en ai assez de voyager à travers tout le continent. Nous accomplissons notre devoir et nous rentrons au château. Arrange-toi pour ne pas me déranger."
 
-    l "Moi aussi, j'aime voyager dans une ambiance chaleureuse !"
+    l "Moi aussi, j'aime voyager dans une ambiance chaleureuse."
 
     h "Parfait. Je suis certain que Logan saura se montrer utile. Partez, et ne revenez qu'après avoir trouvé les rebelles !"
 
@@ -408,79 +408,87 @@ label e_contrecoeur :
 #Sequence 3
 label plaine_2:
 
-    e "Bon les gars, j'ai quelque chose à vous dire"
+    gv "Cette mission n'a rien de terrible... Je suis déçu."
 
     menu:
         "Mettre en garde" :
             jump e_mettre_en_garde
-        "On s'en branle" :
+        "C'est une mission sans intérêt" :
             jump e_ininteret_mission
         "Motiver les troupes" :
             jump e_motiver_troupe_plaine_2
-        "Logan, t'es qu'un PD" :
+        "Chambrer Logan" :
             jump e_chambrer_logan_plaine_2
-        "Bon, les gars, c'est moi qui vous l'dit, descendez d'un étage dans votre tête" :
+        "Silence ! Je veux deux groupes à l'avant..." :
             jump e_jouer_chef
 
 label e_mettre_en_garde:
 
-    e "Bon faite gaffe"
+    e "Méfiez vous. Le roi n'est pas avec nous. Sans la Hache, nous sommes à la merci de n'importe quel piège."
 
-    gv "ok"
+    gv "Vous avez entendu, les gars ? Ouvrez l'oeil."
 
     jump foret_1
 
 label e_ininteret_mission:
 
-    e "A vrai dire, j'en ai rien à faire de cette mission"
+    e "Je suis bien d'accord. Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
 
-    l "Comment oses-tu ?"
+    l "Tu le prends comme une punition ?"
 
-    gv "Ouai, c'est pas cool"
+    e "Oui. J'estime qu'après tout le temps passé en campagne aux côtés du roi, il aurait pu choisir quelqu'un d'autre pour accomplir ses basses besognes."
 
     jump foret_1
 
 label e_motiver_troupe_plaine_2:
 
-    e "On va tous les défoncer!"
+    e "Et je suis convaincu que nous ne rencontrerons rien de pire que cette foutue caillasse ! Ha, se défouler sur des villageois, ce sera notre récompense !"
+    
+    e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
 
-    gv "Ahou ahou"
+    gv "Ha ha ! Bien parlé !"
 
     jump foret_1
 
 label e_chambrer_logan_plaine_2:
 
-    e "Logan, t'es vraiment qu'un PD"
+    e "Tu ne parles pas beaucoup, Logan. Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
 
-    l "Mais euh"
+    l "..."
 
-    gv "hahahahah"
+    e "Ha, il est obéissant en plus ! Tu attends aussi des autorisations royales pour baiser ? Notre bon Harald doit te la tenir ?"
+    
+    l "..."
+    
+    gv "Ha ha ha !"
 
     jump foret_1
 
 label e_jouer_chef:
 
-    e "Bon pour cette mission, c'est moi qui commande alors pas de connerie"
+    e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et pressons le pas."
 
-    e "Sinon, c'est moi qui encule"
+    l "Einar, les hommes sont aussi fatigués que nous. Tu devrais..."
 
-    gv "Ohhhh. :("
+    e "Toi aussi, tais-toi. Je veux que nous menions cette mission de la façon la plus exemplaire possible."
+    
+    l "Bien."
 
     jump foret_1
 
 #Scequence 4
 label foret_1:
 
-    e "Bon les gars"
+    e "Une forêt. Encore..."
 
     menu:
-        "Se montrer impatient de rentrer en Norvège":
+        "Impatient de rentrer en Norvège":
             jump e_impatient_norvege
-        "Se moquer de  gens de la région" :
+        "Se moquer des autochtones" :
             jump e_se_moquer_foret_1
-        "Impatient de terminer la misison" :
+        "Impatient de terminer la mission" :
             jump e_impatient_mision_foret_1
-        "Allez les gars, on se bouge le cul" :
+        "Motiver les troupes" :
             jump e_motiver_troupe_foret_1
         "Chambrer Logan" :
             jump e_chambrer_logan_foret_1
@@ -489,64 +497,93 @@ label foret_1:
 
 label e_impatient_norvege:
 
-    e "Plus le temps passe, plus la Norvège me manque"
+    e "Plus le temps passe, plus la Norvège me manque. Depuis combien de temps n'y suis-je pas retourné ?"
 
-    gv "Ouai, moi aussi maggle"
+    gv "J'aimerais retrouver la Suède. Je n'ai aucune nouvelles de ma famille depuis notre campagne d'Egypte."
+    
+    gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
+    
+    l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
+    
+    gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
+    
+    l "..."
 
     menu:
-        "Je suis préssé de recevoir mes terres promises rapidement":
+        "Il me tarde de recevoir mes terres":
             jump e_espoir_terre_norvege_foret_1
-        "Fermez-là bande de bolosse":
+        "Assez de niaiserie pour aujourd'hui":
             jump e_ordre_taire_guerrier_foret_1
 
 label e_se_moquer_foret_1:
 
-    e "quel bande de pequenot!"
-
+    e "J'imagine la tête des sauvages qui vivent dans la région. C'est une bonne chose que les écossais aient intégré l'empire : ça les civilisera un peu !"
+    
+    e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
+       
+    gv "Ha ha !"
+    
+    l "Non. Nous vivons dans des maisons de pierre. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
+    
     jump village_1
 
 label e_impatient_mision_foret_1:
 
-    e "je suis impatient de terminer cette mission"
+    e "Je commence à être lassé de notre petite randonnée. Une journée à crapahuter sur cette saloperie d'île sans voir âme qui vive. On trouve le village et on rentre au château. Et à bride abattue !"
 
     jump village_1
 
 label e_motiver_troupe_foret_1:
 
-    e "Allez les gars, on se motive"
+    e "Ne relâchez pas l'effort. D'ici une journée, nous nous serons suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
 
     jump village_1
 
 label e_chambrer_logan_foret_1:
 
-    e "Logan, t'es qu'un pd"
+    e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps sculptural d'une de ces magnifiques brebis écossaises ?"
+    
+    l "..."
+    
+    gv "Ha ha !"
 
     jump village_1
 
 label e_avis_logan_mission_foret_1:
 
-    e "Hey Loggy, que penses-ty de cette mission"
+    e "Tu es le seul à ne pas encore t'être plaint de la mission que nous a confié le roi."
 
-    l "Bah tu sais moi je suis un pe con con"
+    l "Je ne vois pas de raisons de me plaindre. J'accomplis mon devoir. Le roi nous récompensera à notre retour."
+    
+    e "Tu es bien optimiste ! Depuis le temps qu'il me promet des terres..."
 
     menu:
-        "Pourquoi as-tu décidé de m'accompagné ?":
+        "Pourquoi as-tu décidé de m'accompagner ?":
             jump e_pourquoi_logan_accompagne_foret_1
-        "Thx bro, d'être venu":
+        "Je suis content que tu sois là":
             jump e_reconnaissant_logan_foret_1
-        "Tu aurais du rester avec Harald":
+        "Tu aurais du rester au château":
             jump e_rester_haral_foret_1
 
 label e_espoir_terre_norvege_foret_1:
 
-    e "Snif, je veux rentrer"
+    e "Le roi m'a promit des terres. Ça fait des années qu'il me fait miroiter des récompenses sans jamais me les offrir."
+    
+    e "Une fois sur mes terres, je ferai bâtir un manoir."
+    
+    l "Et si ces terres ne sont pas en Norvège ?"
+    
+    e "Peu importe. Tout ce que je veux, c'est enfin pouvoir me sentir chez moi. Norvège ou pas."
+    
     jump village_1
 
 label e_ordre_taire_guerrier_foret_1:
 
-    e "OHhhhhhhhhhhh fermez-vos gueule de gogole"
-
-    gv "Oui maître"
+    e "Taisez-vous. Nous ne sommes qu'à mi-chemin, la route est encore longue. Demain, nous atteindrons Perth."
+    
+    l "Perth ?"
+    
+    e "Oui. D'après les rapports, les rebelles sont venus cette région. C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
 
     jump village_1
 
