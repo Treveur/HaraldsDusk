@@ -35,6 +35,7 @@ image bg black = "#000"
 
 define gv = Character('Guerriers Vikings', color="#e67e22")
 define vm = Character('Villageois', color="#3498db")
+define gc = Character("Garde du Chateau")
 
 define ge = Character('Guerriers écossais', color="#f39c12")
 
@@ -452,7 +453,7 @@ label e_ininteret_mission:
 label e_motiver_troupe_plaine_2:
 
     e "Et je suis convaincu que nous ne rencontrerons rien de pire que cette foutue caillasse ! Ha, se défouler sur des villageois, ce sera notre récompense !"
-    
+
     e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
 
     gv "Ha ha ! Bien parlé !"
@@ -466,9 +467,9 @@ label e_chambrer_logan_plaine_2:
     l "..."
 
     e "Ha, il est obéissant en plus ! Tu attends aussi des autorisations royales pour baiser ? Notre bon Harald doit te la tenir ?"
-    
+
     l "..."
-    
+
     gv "Ha ha ha !"
 
     jump foret_1
@@ -480,7 +481,7 @@ label e_jouer_chef:
     l "Einar, les hommes sont aussi fatigués que nous. Tu devrais..."
 
     e "Toi aussi, tais-toi. Je veux que nous menions cette mission de la façon la plus exemplaire possible."
-    
+
     l "Bien."
 
     jump foret_1
@@ -509,13 +510,13 @@ label e_impatient_norvege:
     e "Plus le temps passe, plus la Norvège me manque. Depuis combien de temps n'y suis-je pas retourné ?"
 
     gv "J'aimerais retrouver la Suède. Je n'ai aucune nouvelles de ma famille depuis notre campagne d'Egypte."
-    
+
     gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-    
+
     l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
-    
+
     gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
-    
+
     l "..."
 
     menu:
@@ -527,13 +528,13 @@ label e_impatient_norvege:
 label e_se_moquer_foret_1:
 
     e "J'imagine la tête des sauvages qui vivent dans la région. C'est une bonne chose que les écossais aient intégré l'empire : ça les civilisera un peu !"
-    
+
     e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
-       
+
     gv "Ha ha !"
-    
+
     l "Non. Nous vivons dans des maisons de pierre. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
-    
+
     jump village_1
 
 label e_impatient_mision_foret_1:
@@ -551,9 +552,9 @@ label e_motiver_troupe_foret_1:
 label e_chambrer_logan_foret_1:
 
     e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps sculptural d'une de ces magnifiques brebis écossaises ?"
-    
+
     l "..."
-    
+
     gv "Ha ha !"
 
     jump village_1
@@ -563,7 +564,7 @@ label e_avis_logan_mission_foret_1:
     e "Tu es le seul à ne pas encore t'être plaint de la mission que nous a confié le roi."
 
     l "Je ne vois pas de raisons de me plaindre. J'accomplis mon devoir. Le roi nous récompensera à notre retour."
-    
+
     e "Tu es bien optimiste ! Depuis le temps qu'il me promet des terres..."
 
     menu:
@@ -577,21 +578,21 @@ label e_avis_logan_mission_foret_1:
 label e_espoir_terre_norvege_foret_1:
 
     e "Le roi m'a promit des terres. Ça fait des années qu'il me fait miroiter des récompenses sans jamais me les offrir."
-    
+
     e "Une fois sur mes terres, je ferai bâtir un manoir."
-    
+
     l "Et si ces terres ne sont pas en Norvège ?"
-    
+
     e "Peu importe. Tout ce que je veux, c'est enfin pouvoir me sentir chez moi. Norvège ou pas."
-    
+
     jump village_1
 
 label e_ordre_taire_guerrier_foret_1:
 
     e "Taisez-vous. Nous ne sommes qu'à mi-chemin, la route est encore longue. Demain, nous atteindrons Perth."
-    
+
     l "Perth ?"
-    
+
     e "Oui. D'après les rapports, les rebelles sont venus cette région. C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
 
     jump village_1
@@ -644,6 +645,8 @@ label e_poids_logan_foret_1:
 #Scene 1
 label village_1:
 
+    $ moira_met = False
+
     show bg village
 
     e "bon les gars, nous sommes arrivé au village"
@@ -680,6 +683,8 @@ label e_demander_information_village_1:
 
 label e_fouiller_village_1(einarFouille = False):
 
+
+    $ moira_met = True
     $ already_talk = False
 
     if einarFouille:
@@ -1121,9 +1126,84 @@ label accepter_trahir_village_2:
 #Acte 2
 #Scequence 1
 label village_3:
-
+    jump cote_1
 
 #Acte 3
+
+#Sequence 1
+label cote_1:
+    e "Hummmm me voilà tout près du chateau"
+    e "Que vais-je faire?"
+    e "Trahir mon roi ? Non impossible, je suis à ses côtés depuis bien longtemps"
+    e "Mais d'un autre côté, celà fait un moment qu'il m'a promit des terre"
+    e "Et jusquà aujourd'hui, je les attends toujours."
+    e "hummm, j'attends d'être là-bas avant de prendre une décision"
+    jump exterieur_chateau_1
+
+#Sequence 2
+label exterieur_chateau_1:
+
+    e "Me voici enfin arrivé au chateau"
+    e "(Devant le pont-levis, deux gardes me font obstruciton)"
+
+    gc "Je te reconnais, Einar, çà Harald ne croyait plus en ton retour"
+    gc "Qui plus est, tu es tout seul"
+    gc "Comment ça se fait ?"
+
+    menu :
+        "Que dois-je dire"
+
+        "Pousse-toi":
+            e"Écarte-toi, Geir! Je dois parler au roi immédiatement"
+        "Explications vagues":
+            e "Il m'est arrivé toutes sorte de chose que toi même tu ne comprendrais pas"
+        "Menacer":
+            e "Laisse-moi passer, andouille. Je fais partie de cette armée depuis plus longtemps que toi. Et je suis huscarl !"
+
+    gc "D'accord, entre"
+
+    jump cours_chateau
+
+#Sequence 3
+label cours_chateau:
+
+    $ mentir_harald_1 = False
+
+    e "Me voilà enfin entré dans le chateau"
+    e "Harald est en train de discuter avec un aute huscarl"
+    e "Il m'a vu, se dirige vers moi"
+    e "J'espère qu'il va être doux"
+    e "Que devrais-je lui dire"
+
+    menu:
+        "Content d'être rentré":
+            e "Quel plaisir de vous retrouver, mon roi !"
+
+            h "Tout le plaisir est pour moi, je croyais ne plus revoir un des mes meilleurs huscarls"
+
+        "Peur de ne pas revenir":
+            e "J'ai bien cru ne jamais revenir"
+
+            o "Eh bien après tous ce temps, on te croyais mort"
+            o "C'est pour celà que j'ai envoyé quelques expéditions punitive afin de te venger"
+
+            e "Il ne fallait pas, ce n'est que trop d'honneur"
+        "Ne rien dire":
+            e "..."
+
+            o "Je suppose que tu dois être fatigué depuis tout ce temps"
+
+        o "Mais dis-moi, qu'est-ce qui t'est arrivé?"
+        o "Et l'escorte qui t'accompagnais ?"
+        o "Logan n'est pas là non plus"
+        o "Mais bon sang, raconte-moi tout !"
+
+        menu:
+            "Que devrais-je dire ?"
+
+            "Dire ne rien savoir":
+                e "Je ne sais pas. J'ai été assommé. A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
+
 
 
 
