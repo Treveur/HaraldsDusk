@@ -1,4 +1,3 @@
 #Dossiers
-game/saves/*.save
-game/saves/persitant
-tmp/*.json
+game/saves/*
+tmp/*
