@@ -40,21 +40,21 @@ label start:
 
     scene bg black
     "En l'an 1038, Harald Sigurdsson de Norvège, frère d'Olaf le Saint, découvre les Clous de la Sainte Croix à Jérusalem alors qu'il est garde varègue au service de l'Impératrice Zoé de Constantinople."
-    
+
     "Les Clous donnent à Harald la force et l'immortalité. Le viking, convaincu d'être un élu divin, décide d'orner sa hache des Clous. Il créé ainsi une nouvelle relique : la Hache Sainte."
-    
+
     "Revenu triomphalement en Norvège, il est couronné roi et entame de grandes campagnes militaires visant à christianiser tout le monde connu ainsi qu'à asseoir sa suprématie."
-    
+
     "En 1066, la bataille de Stamford Bridge est remportée par l'armée viking face aux anglais qui avaient pourtant planifié un attentat contre Harald. Le roi viking domine alors une vaste portion de l'Europe : sa volonté est désormais de partir à la conquête du reste du monde."
-    
+
     "Armé de la Hache Sainte, Harald prend le contrôle du Moyen-Orient et d'une partie de l'Asie et de l'Afrique. En 1080, Harald est devenu l'équivalent d'Alexandre le Grand : un roi-empereur, une légende vivante, un demi-dieu."
-    
-    "L'hégémonie des vikings et du christianisme est presque totale." 
-    
+
+    "L'hégémonie des vikings et du christianisme est presque totale."
+
     "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
-    
+
     "Nul ne peut remettre en question la toute-puissance de l'élu divin, du roi-empereur, du porteur de la Hache Sainte."
-    
+
     jump intro
 
 #ACTE 1
@@ -76,7 +76,7 @@ label intro:
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
 
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
-    
+
     "Einar est l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
 
     menu:
@@ -85,7 +85,7 @@ label intro:
         "Parler à Logan":
             jump logan_choice
         "Ne rien dire":
-            jump plaine
+            jump plaine_1
 
     show einar serious
 
@@ -93,18 +93,14 @@ label harald_choice:
 
     show einar serious
 
-    if intro_dial == False:
+    e "Mon Roi, sommes-nous proches ?"
 
-        e "Mon Roi, sommes-nous proches ?"
+    show einar serious at left
+    show harald normal at right with dissolve
 
-        show einar serious at left
-        show harald normal at right with dissolve
+    h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
 
-        h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
-
-        $ intro_dial = True
-
-    menu:
+    menu menu_harald_choice_foret:
         "Quel est le plan ?":
             jump h_souvenir_bataille
 
@@ -121,7 +117,7 @@ label harald_choice:
             jump h_innocents
 
         "Continuer silencieusement":
-            jump plaine
+            jump plaine_1
 
 
 
@@ -129,26 +125,22 @@ label logan_choice :
 
     show einar serious
 
-    if intro_dial == False:
+    e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
-        e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
+    show einar serious at left
+    show logan fache at right with dissolve
 
-        show einar serious at left
-        show logan fache at right with dissolve
+    l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
-        l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
-        
-        e "Depuis tout ce temps passé en campagne, j'en avais oublié tes racines."
-        
-        l "Je me demande si Aberdeen a beaucoup changé."
+    e "Depuis tout ce temps passé en campagne, j'en avais oublié tes racines."
 
-        e "La nostalgie de la maison, hein ? Si tu veux, je peux peut-être glisser un mot au roi pour..."
-        
-        l "Non, merci. Je ne tiens pas à y retourner."
+    l "Je me demande si Aberdeen a beaucoup changé."
 
-        $ intro_dial = True
+    e "La nostalgie de la maison, hein ? Si tu veux, je peux peut-être glisser un mot au roi pour..."
 
-    menu:
+    l "Non, merci. Je ne tiens pas à y retourner."
+
+    menu menu_logan_choice_foret:
         "Se remémorer un bon souvenir":
             jump l_souvenir_bataille
 
@@ -165,7 +157,7 @@ label logan_choice :
             jump l_innocents
 
         "Continuer silencieusement":
-            jump plaine
+            jump plaine_1
 
 
 #Harald
@@ -177,9 +169,9 @@ label h_souvenir_bataille :
     h "Ensuite je détacherai un groupe d'éclaireurs. Je veux retrouver le village des rebelles le plus vite possible."
 
     h "Une fois le village retrouvé, j'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire."
-    
 
-    jump harald_choice
+
+    jump menu_harald_choice_foret
 
 label h_info_region :
     e "Qu'indiquent les cartes à propos de la région, sire ? Je n'ai pas eu le loisir de les consulter."
@@ -194,7 +186,7 @@ label h_info_region :
 
     h "Sauf pour les moutons. Il y a plus de moutons que d'hommes, par ici. Et quand je parle d'hommes, je suis encore trop élogieux. N'en déplaise à Logan."
 
-    jump harald_choice
+    jump menu_harald_choice_foret
 
 label h_enthousiaste :
     e "Sire, il me tarde de massacrer quelques paysans !"
@@ -205,7 +197,7 @@ label h_enthousiaste :
 
     h "Ton enthousiasme fait plaisir à voir !"
 
-    jump harald_choice
+    jump menu_harald_choice_foret
 
 label h_confiance :
     e "Mon roi, votre présence ici m'intrigue : pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
@@ -216,7 +208,7 @@ label h_confiance :
 
     e "Ha ! Les dirigeants du monde entier craindraient les paysans écossais !"
 
-    jump harald_choice
+    jump menu_harald_choice_foret
 
 label h_innocents :
     e "Mon Roi, est-il vraiment nécessaire de tuer des paysans ? Ne pensez-vous pas que de nombreux innocents risquent de perde la vie ?"
@@ -230,7 +222,7 @@ label h_innocents :
     e "La mort."
 
     h "Exactement !"
-    jump harald_choice
+    jump menu_harald_choice_foret
 
 #Logan
 label l_souvenir_bataille :
@@ -241,14 +233,14 @@ label l_souvenir_bataille :
     l "Je ne me rappelle même pas de son nom. Dorthe, Dorothe, quelque chose comme ça. Le lendemain, sur le départ, elle a insisté pour que je l'emmène ! La garce ! Ha ha ! "
 
     e "Tu as toujours de la chance quand il s'agit de dégoter de belles filles. Même au milieu de nul part !"
-    
+
     l "Remarque, ça fait un moment que je ne t'ai pas vu avec une fille. Pas une captive, rien ! Monsieur cherche le grand amour ? A moins qu'il ne soit plus du genre à embrasser les garçons ?"
 
     e "Ferme la, sale porc. Quand je passe du bon temps, j'aime que la fille ne sois pas entrain de se débattre."
-    
+
     l "Chacun son truc !"
-    
-    jump logan_choice
+
+    jump menu_logan_choice_foret
 
 label l_info_region :
     e "Tu reconnais la région ?"
@@ -261,7 +253,7 @@ label l_info_region :
 
     l "Quant aux gens qui vivent ici, j'imagine qu'ils sont identiques à ceux d'Aberdeen."
 
-    jump logan_choice
+    jump menu_logan_choice_foret
 
 label l_enthousiaste :
     e "Ma hache me démange. Je fracasserais bien quelques crânes."
@@ -271,8 +263,8 @@ label l_enthousiaste :
     e "Tuer des écossais ne te posera pas de problème ?"
 
     l "Je n'aurai pas plus de problèmes que toi. Ces gens sont des inconnus, et ils ont tué l'un des vassaux de notre roi. C'est une motivation amplement suffisante pour trancher la tête de quelques compatriotes."
-    
-    jump logan_choice
+
+    jump menu_logan_choice_foret
 
 label l_confiance :
     e "Le roi me paraît bien confiant."
@@ -281,7 +273,7 @@ label l_confiance :
 
     l "Il est immortel et invincible. Une armée de vétérans marche avec lui. S'il y a bien une personne sur cette terre qui puisse avoir confiance en lui-même, c'est notre roi."
 
-    jump logan_choice
+    jump menu_logan_choice_foret
 
 label l_innocents :
     e "Je me demande si le massacre de paysans innocents est justifié."
@@ -290,29 +282,27 @@ label l_innocents :
 
     l "Et à titre personnel, tuer des paysans ne me pose aucun problème. C'est un message que nous envoyons à tous les rebelles potentiels : trahissez Harald, et vous verrez vos familles mourir."
 
-    jump logan_choice
+    jump menu_logan_choice_foret
 
 
 #Sequence 2
-label plaine :
+label plaine_1 :
 
     scene bg mer
 
-    if eclaireur_dial == False :
-        h "Ha ! Dunbar, enfin. Un bon repas nous attend."
+    h "Ha ! Dunbar, enfin. Un bon repas nous attend."
 
-        e "Dois-je envoyer un émissaire annoncer notre arrivée ?"
-        
-        h "Non. Je compte sur toi pour autre chose."
-        
-        e "Autre chose ?"
-        
-        h "Pas de repas pour toi, hélas. J'ai besoin d'envoyer un groupe de reconnaissance à l'avant de l'armée, afin de débusquer le village rebelle."
-        
-        h "Je compte sur toi pour diriger la troupe. Tu es un bon meneur d'hommes, et ton expérience du pistage te permettra de trouver les rebelles. Ça ne fait aucun doute !"
-    $ eclaireur_dial = True
+    e "Dois-je envoyer un émissaire annoncer notre arrivée ?"
 
-    menu :
+    h "Non. Je compte sur toi pour autre chose."
+
+    e "Autre chose ?"
+
+    h "Pas de repas pour toi, hélas. J'ai besoin d'envoyer un groupe de reconnaissance à l'avant de l'armée, afin de débusquer le village rebelle."
+
+    h "Je compte sur toi pour diriger la troupe. Tu es un bon meneur d'hommes, et ton expérience du pistage te permettra de trouver les rebelles. Ça ne fait aucun doute !"
+
+    menu menu_harald_eclaireur_foret_1:
         "Je refuse cette responsabilité":
             jump h_refus_village
         "Pourquoi ?":
@@ -331,17 +321,17 @@ label h_refus_village :
 
     e "Pardonnez-moi, sire. "
 
-    jump plaine
+    jump menu_harald_eclaireur_foret_1
 
 label h_demande_information :
 
     e "Pourquoi dois-je mener ce groupe de reconnaissance ?"
 
     h "Parce que je te le demande. Comme je te l'ai dit, je suis convaincu que tes qualités te permettront de mener à bien cette mission mieux que quiconque."
-    
+
     h "Cette reconnaissance est très importante : elle me permettra de cibler précisément le village à châtier. Nous gagnerons un temps précieux et nous épargnerons les villages n'ayant aucun rapport avec cette rébellion."
 
-    jump plaine
+    jump menu_harald_eclaireur_foret_1
 
 label h_demande_nb_detachement :
 
@@ -349,14 +339,14 @@ label h_demande_nb_detachement :
 
     h "Il n'y a aucun danger. Dans le pire des cas, tu pourrais te faire insulter par une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings. Tu es un huscarl. Rien ne va te résister."
 
-    jump plaine
+    jump menu_harald_eclaireur_foret_1
 
 label h_accepter :
 
     e "J'accepte cette mission."
 
     h "Et j'en suis satisfait. Part dès maintenant : il n'y a pas de temps à perdre. Tu atteindras les premiers villages des Highlands avant la nuit."
-    
+
     e "Fort bien. "
 
     jump logan_aide
@@ -387,7 +377,7 @@ label e_reconnaissant :
     e "Merci beaucoup Logan. Je suis heureux de pouvoir compter sur toi !"
 
     l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
-    
+
     h "Ne vous inquiétez pas. Vous aurez tout les deux de quoi boire et manger une fois revenus ! Maintenant, partez !"
 
     jump plaine_2
@@ -396,13 +386,13 @@ label e_refus :
     e "Non, je refuse. Je n'ai pas besoin de toi, Logan. C'est une mission de reconnaissance : moins nous sommes, mieux c'est."
 
     l "..."
-    
+
     h "Ton ingratitude est exaspérante, Einar. Logan t'accompagnera, que tu le veuilles ou non. C'est un ordre !"
-    
+
     l "Sire, vous..."
-    
+
     h "Silence. Partez maintenant, ne perdez pas de temps."
-    
+
     jump plaine_2
 
 label e_contrecoeur :
@@ -410,7 +400,7 @@ label e_contrecoeur :
     e "Très bien... Viens, mais tais-toi. J'en ai assez de voyager à travers tout le continent. Nous accomplissons notre devoir et nous rentrons au château. Arrange-toi pour ne pas me déranger."
 
     l "Moi aussi, j'aime voyager dans une ambiance chaleureuse !"
-    
+
     h "Parfait. Je suis certain que Logan saura se montrer utile. Partez, et ne revenez qu'après avoir trouvé les rebelles !"
 
     jump plaine_2
