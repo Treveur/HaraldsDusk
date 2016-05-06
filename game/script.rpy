@@ -1411,12 +1411,59 @@ label interieur_grande_porte_chateau_1:
         "Le baisser":
             if soupcon_harald_1:
                 jump bad_ending_3
+            else:
+                jump pont_levis_baisse
+
         "Laisser fermer":
             #block of code to run
 
+label pont_levis_baisse:
 
+    #A mettre plus tard au bon endroit
+    $ moira_dead = False
 
+    "Le pont s'abaisse brutalement, laissant le champ libre aux rebelles pour entrer."
+    "Une volée de flèches abat une partie des rebelles qui foncent vers le pont abaissé."
+    "Les soldats proches se tournent vers Einar en l'insultant de traître, et s'apprêtent à le massacrer"
 
+    menu:
+        "Que dois-je leurs dire ?"
+
+        "Reculez !":
+            e "Arrière ! Je vous ferai rendre gorge !"
+        "Tactique du roi":
+            e "C'était une tactique imaginée par notre roi !"
+        "Venez, je vous attends !":
+            e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur."
+        "Ne rien dire":
+            e "..."
+
+    "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
+
+    "La bataille commence. La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings. Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte, ravageant tout sur son passage."
+
+    if moira_dead:
+
+        "Ogma surgit au milieu de la mêlée, franchissant la Grande Porte. Il se rue sur Einar, un regard fou dans les yeux et la bave aux lèvres. Il hurle le nom de sa fille."
+
+        o "MOIRAAAAAAAAAAAAAAA"
+
+        menu:
+
+            "Je dois essayer de le raisonner"
+
+            "Tuer le père":
+                e "L'envie de voir de près un salopard d'écossais déborder de rage !"
+            "Votre fille m'insuportait":
+                e "J'aimais votre cause, pas votre fille !"
+            "C'est parti tout seul":
+                e "Je n'ai pas réfléchi !"
+            "Viens te battre":
+                e "Ferme la et bats-toi, raclure !"
+
+        "Phase de combat, impossible à gagner WIP"
+
+        jump bad_ending_4
 
 
 
@@ -1437,4 +1484,8 @@ label bad_ending_2:
 label bad_ending_3:
     "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
     " Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers. Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
+    return
+
+label bad_ending_4:
+    "A l'instant où Ogma franchit la porte, il se rue sur Einar. La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place."
     return
