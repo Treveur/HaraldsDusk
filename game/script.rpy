@@ -1170,14 +1170,15 @@ label exterieur_chateau_1:
 
     gc "D'accord, entre"
 
-    jump cours_chateau
+    jump cours_chateau_1
 
 #Sequence 3
-label cours_chateau:
+label cours_chateau_1:
 
     $ retour_silence_1 = False
     $ soupcon_harald_1 = False
     $ mentir_harald_1 = False
+    $ interpose_bucher = False
 
     e "Me voilà enfin entré dans le chateau"
     e "Harald est en train de discuter avec un aute huscarl"
@@ -1293,7 +1294,128 @@ label cours_chateau:
 
         e "Bien mon Roi"
 
-    "Einar se dirige vers la salle de banquet et vois L'evêque Patrick juger 3 écossais qui sont déjà sur le buchet"
+    "Einar se dirige vers la salle de banquet et vois L'evêque Patrick juger 3 écossais qui sont déjà sur le bûcher"
+
+    p "Que Dieu, est-pitié de vous! Les flammes purificatrices vont laver tous vos pêchés"
+    p "Deus propitius tibi!"
+
+    pe3 "Non arretez! Je suis enceinte!"
+    pe3 "Même si vous me concidérez comme coupable, vous allez tuer un innocent"
+
+    p "Je n'ai que faire de tes mensonges femme!"
+    p "Tout ce que tu veux, c'est m'amener vers le diable"
+
+    e "(Que devrais-je faire ?)"
+
+    menu:
+
+        "Arrêter le massacre":
+            e "Stop! arretez-tout, ce ne sont que de simples paysans"
+
+            p "Mais dis-moi, Einar, tu es porté disparu pendant presque un mois"
+            p "Et te voilà en pleine forme, à défendre ces hérétiques."
+            p "Qu'est-ce qui te fait dire qu'ils sont innocents ?"
+
+            $ interpose_bucher = True
+
+            jump menu_sauver_rebelle_cours_chateau
+
+        "Ne rien dire":
+            e "..."
+        "Brûlez-les":
+            e "Vous avez raisons Monseigneur, brûlez-les!"
+            e "Brûlez cette racaille"
+
+    if interpose_bucher:
+
+
+        menu menu_sauver_rebelle_cours_chateau:
+            "Parler du village":
+                e "Je ne les ai pas vu, lorsque j'étais dans le village"
+                e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons"
+
+                if mentir_harald_1 == False && soupcon_harald_1 == False:
+                    $ soupcon_harald_1 = True
+
+            "Ils ont l'air innoffencifs":
+                e "Je ne sais rien d'eux mais ils n'ont pas l'air méchant"
+                e "De plus, je pense qu'une future mère ne mettrait pas la vie de son enfant en danger"
+
+        p "Ne t'interpose pas avec la volonté de Dieu"
+        p "Sinon je vais finir par croire que tu es avec eux"
+        p "Et tu as sous les yeux le châtiment que nous réservons au traitres!"
+
+        e "Pardonnez-moi pas Monseigneur, je ne v...."
+
+        p "Tu ne voulais pas quoi ?"
+        p "Intérompre ma divine mission ?"
+        p "Déguerpis avant que je pense que tu sois avec ses hérétiques"
+
+    p "Amenez les torches et faite les bruler"
+
+    pe3 "Non pas ça"
+    pe1 "Nonnnnnn"
+    pe2 "Arggggg"
+
+    "Pendant que les condamnés sont en train de brûler, Einar regarde autour de lui et peut remarque que certain soldats se réjouissent de voir souffrir des hérétiques"
+    "Mais d'autres sont mal à l'aise dont un particulèrement qui semble être sur le point de pleurer"
+    "Einar se dirige vers lui"
+
+    #Variable
+    $ reponse_reconfort = ""
+
+    menu :
+        "Est-ce que j'essaye de lui remonter le moral ou pas"
+
+        "Une bande de porc":
+            e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
+            $ reponse_reconfort = "pleurer"
+        "Pas besoin de les pleurer":
+            e "Ne pleure pas ces parasites, ils ne le méritent pas."
+            $ reponse_reconfort = "pleurer"
+        "Tu es impuissant":
+            e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
+            $ reponse_reconfort = "larme_aux_yeux"
+        "Ne rien dire":
+            e "..."
+            $ reponse_reconfort = "larme_aux_yeux"
+        "L'évêque peut se tromper":
+            e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient Justes, les condamnés iront au paradis."
+            $ reponse_reconfort = "rassure"
+
+    if reponse_reconfort == "pleurer":
+        "Le jeune soldat pleure sans se cacher"
+    elif reponse_reconfort == "larme_aux_yeux":
+        "Le jeune soldat ne change pas d'état"
+    else:
+        "Le jeune soldat semble rassuré"
+
+    jump cours_chateau_2
+
+#Sequence 4
+label cours_chateau_2:
+
+    "Un garde avertit depuis les remparts qu'une horde rebelle vient d'émerger des bois, de l'autre côté de la plaine. Un homme est à leur tête, et porte des peintures bleues. Les rebelles sont plusieurs centaines."
+    "Harald demande à ses hommes de se tenir à la grande porte, prêts à la défendre et à empêcher quiconque de pénétrer l'enceinte. Le roi disparaît dans le donjon et va s'équiper pour la bataille."
+
+    jump interieur_grande_porte_chateau_1
+
+#Sequence 5
+label interieur_grande_porte_chateau_1:
+
+    "Einar est posté à proximité du système d'ouverture des portes."
+    "La horde progresse en courant à travers la plaine. Lorsque les rebelles ne sont plus qu'à une centaine de mètres, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir la porte."
+
+    menu:
+        "Dois-je baisser le pond-levis ?"
+        "Le baisser":
+            if soupcon_harald_1:
+                jump bad_ending_3
+        "Laisser fermer":
+            #block of code to run
+
+
+
 
 
 
@@ -1303,17 +1425,16 @@ label cours_chateau:
 
 #Ending
 label bad_ending_1:
-
     "Einar se fait tuer comme une merde parce qu'il n'a pas eu l'intelligence de réfléchir"
-
     "Et oui, il faut réfléchir"
-
     return
 
 label bad_ending_2:
-
     o "Tu aurais pu vivre dommage"
-
     "Après avoir été torturé pendant plusieurs jours, Ogma fini par décapiter Einar"
+    return
 
+label bad_ending_3:
+    "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
+    " Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers. Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
     return
