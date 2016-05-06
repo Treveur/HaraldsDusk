@@ -1465,6 +1465,75 @@ label pont_levis_baisse:
 
         jump bad_ending_4
 
+    else:
+
+        $ loose_battle = False
+
+        "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls. Ils le défient et l'insultent."
+
+        "Einar se retrouve pris entre les deux forces et est contraint d'affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
+
+        if loose_battle:
+
+            jump bad_ending_5
+
+        else:
+            "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
+            "Il lui demande de brûler le donjon en urgence : si Harald n'est pas encore entrain de se battre, c'est qu'il n'a surement pas fini de s'équiper : il est possible de le piéger !"
+
+            "Ogma réclame que l'on brûle le donjon en urgence."
+
+            menu :
+                "Que faire ?"
+
+                "Tu ne me donnes pas d'ordres":
+                    e "Je n'ai pas d'ordres à recevoir !"
+                    jump e_bruler_donjon_desobeir_pont_levis_baisse
+
+                "Choice 2":
+                    e "J'y vais!"
+                    jump e_bruler_donjon_obeir_pont_levis_baisse
+
+label e_bruler_donjon_desobeir_pont_levis_baisse:
+
+    "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
+
+    menu :
+        "Que faire ?"
+
+        "Le tuer":
+            e "Désolé petit"
+            "Tuer le jeune soldat"
+
+        "L'assommer":
+            e "Tu auras peut être la chance de survivre"
+            "L'assommer d'un bon coup de poing"
+
+        "L'ignorer":
+            e "(Je n'ai pas le temps de m'occuper de lui)"
+
+    "Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte."
+    "Il se jette dans les combats et taille un chemin sanglant jusqu'à la porte. La présence de Harald semble redonner courage aux vikings, qui balaient les rebelles."
+
+    "Harald arrive devant Einar, couvert du sang de ses victimes. Il lui explique qu'il le libère de son allégeance, car il n'a plus besoin de ses services."
+
+    menu:
+        "Que répondre ?"
+
+        "Ne rien regretter":
+            e "Je ne regrette rien."
+            h "Crève"
+
+        "Demander pardon":
+            e "Je regrette tout et vous demande pardon."
+            h "Non"
+        "Aucun roi présent":
+            e "Je ne vois aucun souverain ici : il n'y a personne pour me libérer d'une allégeance quelconque !"
+            h "C'est comme ça que tu me remercie ?"
+
+    "Garde ta langue de traître derrière tes dents ! Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de parler."
+
+    jump bad_ending_6
 
 
 
@@ -1488,4 +1557,12 @@ label bad_ending_3:
 
 label bad_ending_4:
     "A l'instant où Ogma franchit la porte, il se rue sur Einar. La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place."
+    return
+
+label bad_ending_5:
+    "Einar est massacré alors que les huscarls le transforment en une pulpe sanglante sous une pluie de coups."
+    return
+
+label bad_ending_6:
+    "Harald surgit au coeur de la mêlée, armé de sa hache. Il rassemble les vikings autour de lui et lance une contre-attaque imparable. Les rebelles sont balayés avec violence et Einar est décapité par le roi en personne"
     return
