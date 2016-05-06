@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1323: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Brûlez-les"
-                ^
+File "game/script.rpy", line 1417: choice menuitem expects a non-empty block.
+    "Laisser fermer":
+                     ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227

@@ -1415,7 +1415,7 @@ label interieur_grande_porte_chateau_1:
                 jump pont_levis_baisse
 
         "Laisser fermer":
-            #block of code to run
+            "A faire"
 
 label pont_levis_baisse:
 
@@ -1488,13 +1488,13 @@ label pont_levis_baisse:
 
                 "Tu ne me donnes pas d'ordres":
                     e "Je n'ai pas d'ordres à recevoir !"
-                    jump e_bruler_donjon_desobeir_pont_levis_baisse
+                    jump e_bruler_donjon_desobeir_donjon
 
                 "Choice 2":
                     e "J'y vais!"
-                    jump e_bruler_donjon_obeir_pont_levis_baisse
+                    jump e_bruler_donjon_obeir_donjon
 
-label e_bruler_donjon_desobeir_pont_levis_baisse:
+label e_bruler_donjon_desobeir_donjon:
 
     "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
 
@@ -1534,6 +1534,83 @@ label e_bruler_donjon_desobeir_pont_levis_baisse:
     "Garde ta langue de traître derrière tes dents ! Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de parler."
 
     jump bad_ending_6
+
+label e_bruler_donjon_obeir__donjon:
+
+    $ prendre_hache = False
+
+    "Einar s'élance en direction du donjon, passant à l'arrière des affrontements."
+    "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
+
+    "\"Incendier le donjon\""
+
+    "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte, entrain de terminer de s'équiper de son armure. Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
+
+    "Alors qu'il commence à mettre le feu au donjon, Einar découvre la Hache Sainte, accrochée à un râtelier dans la chambre du roi."
+
+    menu:
+        "Que faire de la hache ?"
+
+        "La prendre":
+            e "je ressents la puissance!"
+            "Harald arrive dans le dos d'Einar et lui demande ce qu'il fait avec la Hache."
+            $ prendre_hache = True
+            jump e_confrontation_harald_pont_baisse_donjon
+
+        "S'en débarasser":
+            "Einar jette la Hache à la mer à travers une meurtrière de la pièce."
+            call e_confrontation_harald_pont_baisse_donjon pass (jetee = True)
+
+        "L'ignorer":
+            e "Le donjon est en feu, que cette maudite hache brûle avec"
+
+label e_confrontation_harald_pont_baisse_donjon(jetee = False):
+
+
+
+    if jetee:
+        menu :
+
+            "Harald arrive dans le dos d'Einar et lui demande ce qu'il a fait de la Hache."
+
+            "Je l'ai jeté":
+                e "La Hache est perdue. Tout est terminé."
+            "Je ne sais pas":
+                e "Je ne sais pas."
+            "Mentir":
+                e "J'ai vu Geir la voler !"
+
+    else:
+
+        menu:
+            "Harald arrive dans le dos d'Einar et lui demande ce qu'il fait avec la Hache."
+
+            "Harald n'est plus rien":
+                e "Je l'ai prise, en même temps que le pouvoir. Vous n'êtes plus rien. Dieu vous a abandonné."
+            "Je suis un Dieu":
+                e "L'opportunité de posséder une relique sainte était trop grande : me voilà élu divin !"
+            "Rétablir l'équilibre":
+                e "Je l'ai prise pour vous en priver. Il est temps de rétablir l'ordre naturel des choses."
+
+    h "Comment oses-tu ?"
+
+    "Harald devient comme fou et se jette sur Einar."
+
+    if prendre_hache:
+        "Harald place un coup de dague très rapide au flanc d'Einar. Mais il n'est pas blessé. La Hache lui a donné ses pouvoirs."
+
+        menu:
+            "Que dire à Harald ?"
+
+            "Fin du règne":
+                e "Votre règne s'achève ici et maintenant. Vous allez mourir."
+            "Pas de répix":
+                e "Pas de paix. Pas de répit.  Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+            "Épargner":
+                e "Vous avez déjà perdu. Je vais vous épargner."
+            "Je te suis supérieur":
+                e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+
 
 
 
