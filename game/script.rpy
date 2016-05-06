@@ -89,7 +89,7 @@ label intro:
 
     scene bg forest
 
-    "Dans la forêt Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
+    "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
 
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
 
@@ -325,7 +325,7 @@ label plaine_1 :
             jump h_refus_village
         "Pourquoi ?":
             jump h_demande_information
-        "A quel dangers dois-je m'attendre ??":
+        "A quel dangers dois-je m'attendre ?":
             jump h_demande_nb_detachement
         "J'accepte":
             jump h_accepter
@@ -601,51 +601,63 @@ label e_ordre_taire_guerrier_foret_1:
 
     l "Perth ?"
 
-    e "Oui. D'après les rapports, les rebelles sont venus cette région. C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
+    e "Oui. D'après les rapports, les rebelles sont venus de cette région. C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
 
     jump village_1
 
 label e_pourquoi_logan_accompagne_foret_1:
 
-    e "Pour m'a tu accompagné"
+    e "Pourquoi avoir choisi de m'accompagner ? "
 
-    l "Parce que tu es mon bro"
+    l "Je l'ai déjà dit. Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous. Et ma présence facilitera les relations avec les autres écossais."
+    
+    e "J'imagine."
 
     jump village_1
 
 label e_reconnaissant_logan_foret_1:
 
-    e "Je remercie de m'avoir accompagné"
+    e "Quoi qu'il en soit, merci d'avoir choisi de m'accompagner."
 
-    l "C'est normal, il faut bien se serrer les coudes et bien plus ;)"
+    l "Ce n'est rien. Si un jour une campagne m'amène en Norvège, je serai heureux de compter sur toi."
 
     jump village_1
 
 label e_rester_haral_foret_1:
 
-    e "Tu aurais du rester avec Harald! Abruti!"
+    e "Tu aurais du rester avec Harald!"
 
-    l "Et pourquoi donc ?"
+    l "Pourquoi ?"
 
     menu:
-        "Je n'ai pas envie de mettre ta vie en danger":
+        "Une vie de plus en danger":
             jump e_attention_logan_foret_1
-        "Pas besoin d'un boulet":
+        "Tu es inutile":
             jump e_poids_logan_foret_1
 
 label e_attention_logan_foret_1:
 
-    e "C'est parce que je n'ai pas envie de mettre ta vie en jeu"
+    e "C'est une mission de reconnaissance. Nous pourrions tomber dans une embuscade à tout moment !"
 
-    l "Nous sommes des guerriers, bon sans de bois"
+    l "Ces gens ne sont que des paysans. Ils fuiraient rien qu'en nous entendant arriver."
+    
+    e "Peut-être pas. Tu as mis ta vie en jeu sans raison. Et tu nous rends plus repérables. "
+    
+    l "Plus repérables ? Vraiment ? Quelle différence entre onze et douze hommes ?"
+    
+    e "..."
 
     jump village_1
 
 label e_poids_logan_foret_1:
 
-    e "Tu vas me gêner tout le long de la mission"
+    e "Nous étions déjà bien assez nombreux. Onze guerriers vikings dont un huscarl !"
 
-    l "Sympa l'ami..."
+    l "Aucun d'entre vous ne connaît la région."
+    
+    e "Je me fout de tes compétences ! Nous ne sommes pas là pour observer un panorama ou cueillir des champignons !"
+    
+    e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
     jump village_1
 
@@ -656,34 +668,58 @@ label village_1:
     $ moira_met = False
 
     show bg village
+    
+    l "Nous y sommes. Perth."
+    
+    e "Ça me semble bien calme."
+    
+    gv "On dirait qu'il n'y a pas grand monde..."
+    
+    e "Si. Uniquement des vieillards, des femmes et des enfants."
 
-    e "bon les gars, nous sommes arrivé au village"
+    gv "Ça sent le traquenard... Einar ?"
 
     menu:
-        "Massacrez-les tous!!!!":
+        "Massacrez-les !":
             jump e_massacre_village_1
         "Demander des infomation sur les rebelles":
             jump e_demander_information_village_1
-        "Fouiller le village!":
+        "Fouillez le village!":
             jump e_fouiller_village_1
         "Chercher soi-même dans le village":
             call e_fouiller_village_1 pass (einarFouille = True)
 
 label e_massacre_village_1:
 
-    gv "yeah, buttons tlm"
+    e "Massacrez moi tout ça ! Je veux un beau charnier sur la place d'ici une heure !"
+    
+    gv "HAAAAA !"
+    
+    vm "Sauvez les enfants ! Les enfants !"
 
 
     call choix_retour_village_1 pass (massacre = True)
 
 label e_demander_information_village_1:
 
-    e "Avez vous des information sur les rebelles ?"
+    e "Que savez-vous des rebelles ? Où sont-ils ?"
+    
+    l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
-    vm "On ne sait rien, promis juré craché!"
+    vm "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens ! *crache*"
+    
+    e "Quel succès, Logan."
+    
+    e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
+    
+    e "Votre attitude ressemble à un aveu de trahison !"
+    
+    l "Calme-toi Einar. Comment réagirais-tu si tu voyais une armée byzantine débarquer en Norvège ?"
+       
+    e "..."
 
     menu:
-        "Tuer un Villageois afin de les forcer à parler":
+        "Tuer un villageois pour les faire parler":
             jump e_tuer_villageois_village_1
 
         "Hausser le ton":
@@ -696,32 +732,30 @@ label e_fouiller_village_1(einarFouille = False):
     $ already_talk = False
 
     if einarFouille:
-        e "Bande d'andouille, c'est moi qui fouille"
+        e "Bien. Je vais moi-même jeter un oeil. Mieux vaudrait pour vous que vous ne cachiez rien."
+        
+        e "Si qui que ce soit tente de s'enfuir ou se montre agressif, tuez-le."
 
-        "Entre dans une maison"
+        "*Einar entre dans une maison*"
 
-        e "Eh madmoiselle, vous'tes bien bonne"
 
     else:
-        e "Fouillez bande de chien galleux"
+        e "Fouillez moi ces taudis ! Si vous trouvez quoi que ce soit, ramenez le moi !"
 
-        gv "Yeahhhhhhh"
+        gv "HAAAAA !"
+        
+        "..."
 
-        gv "Hey, Einar vient voir ça"
+        gv "Einar ! Une fille, dans une maison !"
 
-        e "Mais que ce passe-t-il ?"
-
-        gv "Regarde c'est Natalie et nous, nous sommes les méchants"
-
-        e "Mais qui voilà"
-
+        e "Je suis à peine surpris."
 
     menu menu_maison_1:
-        "Hey la meuf, c'est quoi ton nom? File moi ton 06":
+        "Qui es-tu ?":
             jump e_nom_villageoise_maison_1
-        "Pourquoi t'fais la tepu à rester caché?":
+        "Pourquoi être cachée ?":
             jump e_cache_villageoise_maison_1
-        "Aurais-tu des info ou un mail pour joindre les rebelles? ":
+        "Où sont les rebelles ?":
             jump e_info_rebelle_maison_1
         #Si Einar à déjà parlé une fois à Moira
         "Tuer la villageoise" if already_talk:
@@ -731,54 +765,85 @@ label e_fouiller_village_1(einarFouille = False):
 
 label e_tuer_villageois_village_1:
 
-    e "Toi approche"
+    e "Toi. Approche."
 
-    vm "Mais euh"
+    vm "Moi ?"
 
-    e "Plus près"
+    e "Oui ! Dépêche toi !"
 
-    vm "C'est que vous savez..."
+    vm "Monseigneur, je ..."
+    
+    "*Einar tranche la gorge du villageois d'un seul coup.*"
+    
+    vm "Pourritures ! Salauds !"
 
-    e "Chabite, non je déconne, tu vas crever"
+    e "Parfait. Maintenant, parlez."
+    
+    vm "Nous ne savons rien ! Absolument rien !"
+
+    e "Et vos hommes, où sont-ils ?"
+    
+    vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+    
+    e "Foutus mensonges !"
+    
+    l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
+    
+    e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
     call choix_retour_village_1 pass (massacre = True)
 
 label e_intimider_villageois_village_1:
-    e "Si vous ne dites rien, je vais finir par me facher et bouder !"
+    
+    e "Vous devriez parler. Maintenant. Les soldats que vous avez devant vous ont tué plus d'hommes que vous n'en avez jamais rencontré dans votre vie."
+    
+    e "Vous ne tiendriez pas trois minutes face à nous. Parlez avant que je ne donne l'ordre de tout raser."
 
-    vm "Mais je vous jure, je n'en sais rien"
+    vm "Nous ne savons rien ! Absolument rien !"
 
-    e "Ouin"
+    e "Et vos hommes, où sont-ils ?"
+    
+    vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+    
+    e "Foutus mensonges !"
+    
+    l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
+    
+    e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
     jump choix_retour_village_1
 
 #Scequence 6 (alternative)
 label e_nom_villageoise_maison_1:
-    e "Hey siva, dis-moi ton nom la bonnase"
+    e "Qui es-tu ?"
 
-    vm "Tu me parle pas comme ça ! Et je m'appelle Moira"
+    vm "Ne m'adressez pas la parole !"
 
-    e "Une belle histoire"
+    e "Je me suis montré courtois, mais ça pourrait vite changer. Répond : qui es-tu ?"
+    
+    m "Moira."
 
     $ already_talk = True
 
     jump menu_maison_1
 
 label e_cache_villageoise_maison_1:
-    e "Pourquoi n'es-tu pas avec les autres?"
+    e "Pourquoi te cacher ?"
 
-    vm "Parce que je suis trop une bonnasse pour vous"
+    vm "Parce que je connais les porcs dans votre genre."
 
-    e "Hannnnnn"
+    e "Mmmh."
 
     $ already_talk = True
 
     jump menu_maison_1
 
 label e_info_rebelle_maison_1:
-    e "Aurais-tu des infos sur les rebelles ?"
+    e "Que sais-tu des rebelles ?"
 
-    vm "Non"
+    vm "Rien."
+    
+    e "Tu es aussi belle que décevante."
 
     $ already_talk = True
 
@@ -786,20 +851,38 @@ label e_info_rebelle_maison_1:
 
 label e_tuer_moira_maison_1:
 
-    e "Dommage pour toi, je vais te tuer"
+    e "Cette rencontre s'achève ici."
+    
+    "*Einar tire son épée et tue la villageoise*"
 
-    vm "oh je me meure"
+    vm "Vengeanghghh..."
 
-    e "Alors vous allez parler bande de bolosse"
+    l "Cette fille était sans défenses !"
 
-    l "Oh je suis outré"
+    e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler."
+    
+    vm "Monstres ! Ils ont tué Moira !"
+
+    e "Parfait. Maintenant, parlez."
+    
+    vm "Nous ne savons rien ! Absolument rien !"
+
+    e "Et vos hommes, où sont-ils ?"
+    
+    vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+    
+    e "Foutus mensonges !"
+    
+    l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
+    
+    e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
     jump e_massacre_village_1
 
 label e_villagoise_partir_maison_1:
-    e "Va et que je ne te revois plus"
+    e "Sors d'ici et rejoint les autres."
 
-    vm "Oh merci mon seigneur"
+    vm "..."
 
     jump choix_retour_village_1
 #fin Scequence 6
@@ -807,11 +890,13 @@ label e_villagoise_partir_maison_1:
 label choix_retour_village_1(massacre = False):
 
     if massacre:
-        e "J'espère que ça leur servira de leçon"
+        e "Empilez les cadavres avant le départ."
     else:
-        e "Ils vont rien nous apprendre de plus, tirons-nous"
+        l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
+        
+        e "J'espère pour toi que tu as raison, Logan."
 
-    e "Bon ou allons nous continuer ?"
+    gv "Où allons-nous ?"
 
     if massacre:
         menu:
