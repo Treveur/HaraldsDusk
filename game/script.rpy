@@ -748,7 +748,7 @@ label e_fouiller_village_1(einarFouille = False):
 
         gv "Einar ! Une fille, dans une maison !"
 
-        e "Je suis à peine surpris."
+        e "Je suis à peine surpris... J'arrive !"
 
     menu menu_maison_1:
         "Qui es-tu ?":
@@ -891,6 +891,17 @@ label choix_retour_village_1(massacre = False):
 
     if massacre:
         e "Empilez les cadavres avant le départ."
+        
+        l "Nous étions censés trouver le village rebelle, pas massacrer des paysans !"
+        
+        e "Ta détermination flanche ? Harald sera sûrement satisfait de voir le travail accompli."
+        
+        e "Si c'était les rebelles, nous avons éliminé le problème. Si les gens de Perth étaient innocents, les villages alentours nous craindront."
+        
+        e "Nous gagnons sur tous les tableaux."
+        
+        l "Mieux vaudrait que tu ais raison..."
+        
     else:
         l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
         
@@ -916,18 +927,48 @@ label foret_2(lieu = ""):
 
     if lieu == "chateau":
 
-        "Sur le chemin du retour"
+        "Sur le chemin du retour..."
+        
+        gv "Pourquoi sommes-nous déjà sur le retour ?"
+        
+        e "Parce que j'ai de sérieux doutes sur ce village. Les gens de Perth étaient bien trop louches, quoi qu'en dise Logan."
+        
+        l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
+        
+        e "Je ne suis sûr de rien."
+        
     else:
-        "En poursuivant vers le nord"
+        "En poursuivant vers le nord..."
+        
+        gv "Pourquoi devons-nous poursuivre vers le nord ? Je croyais que nous avions trouvé les rebelles !"
+        
+        e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique." 
 
-    e "Bon les gars"
+
+    "..."
+    
+    gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
+    
+    gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
+    
+    gv "Ha Ha Ha !"
+    
+    e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
+    
+    l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
+    
+    e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
+    
+    l "Des écossais rebelles, oui. Pas des innocents."
+    
+    e "Tu te ramollis, mon vieux Logan..."
 
     menu:
-        "Mettre en garde":
+        "Mettre en garde le groupe":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif")
-        "Déçu par la mission":
+        "La mission est décevante...":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "deception")
-        "attitude villageois":
+        "Attitude suspecte des villageois":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude")
         "Chambrer Logan":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan")
@@ -935,61 +976,105 @@ label foret_2(lieu = ""):
 label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     if message == "attentif":
-        e "Faites-attention, j'ai la nette impression que nous sommes oberservé!"
+        e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
 
-        gv "Bof rien ne peut nous atteindre"
+        gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
+        
+        e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
 
     elif message == "deception":
 
-        e "Ce n'était que du menu fretin, je vais me plaindre auprès d'Harald une fois rentré"
+        e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
+        
+        l "Les autres ne semblent pas apprécier le voyage non plus..."
+        
+        gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
+        
+        e "..."
 
     elif message == "attitude":
-        e "Ils avaient l'air de cacher quelque chose"
+        e "Ces villageois avaient l'air étranges..."
+        
+        l "Etranges ?"
+        
+        e "Oui, louches."
 
         menu :
             "Craindre un piège":
                 jump menu_avertissement_villageois
-            "Ils ont surrement eu peur de notre prestence":
-                e "Ils ont fait dans leur pantalon"
-            "Ce n'était qu'une bande de congénitaux":
-                e "Ce n'était que des ch'ti"
+            "Ils ont dû être effrayés":
+                e "La vue de douze guerriers à dû les effrayer. Ils n'avaient probablement jamais vu autant d'armes à la fois !"
+                l "Ils ont dû croire que nous étions là pour raser leur village. Ils sont forcément au courant du meurtre de Montgomery, ils auront fait le rapprochement en nous voyant arriver."
+                e "A juste titre ! Je regrette presque de ne pas les avoir massa..."
+                
+            "Se moquer des villageois":
+                l "Ils étaient effrayés, c'est évident."
+                e "Ils ont dû être impressionnés par notre présence. C'était une bande d'abrutis congénitaux, ils n'avaient jamais vu d'hommes armés !"
+                e "Isolés qu'ils sont dans leur village d'arriérés, à élever leurs chiards et leurs mout..."
+                
 
         menu menu_avertissement_villageois:
-            "Mettre en garde":
+            "Mettre en garde le groupe":
                 call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif")
-            "Garder ses craintes pour soi":
-                e "(Ne pas faire par de ses craintes)"
+            "Ne pas craindre des paysans":
+                e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
+                gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
+                gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher sa tro..."
 
     else:
-        e "logan, t'es qu'un PD"
+        e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
+        gv "Ha ha !"
+        l "..."
+        e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
+        gv "Ha ha ha !"
+        l "Ferme la Ein..."
+    
+    "*Un cor retentit dans les bois, très proche.*"
+    
+    e "En position de combat, tous !"
+    gv "Ça venait d'où ?"
+    l "Sur la gauche ! Des torches !"
+    
+    "*Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings.*"
+    "*Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout.*"
+    
+    e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
+    
+    "*Un meneur semble émerger du groupe des assaillants.*"
+    "*Les vikings se font massacrer et ne répondent plus aux ordres d'Einar.*"
 
+    ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
-    o "Vous allez payer pour ce que vous avez fait au villageois"
+    e "Approchez, charognes ! Je..."
 
-    o "Venez que je vous bute sales enculés"
+    "*Une flèche frappe Einar de plein fouet à l'épaule, le désarmant.*"
+    
+    l "Einar ! Derrière toi !"
+    
+    e "Que..."
+    
+    "*L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol.*"
 
-    e "Salaud! Viens ici que je te bute enculé"
+    e "Aaarrggh ! Logan, aide-moi !"
+    
+    l "Je suis là !"
+    
+    "*Logan est frappé derrière la tête et tombe au sol, face à Einar.*"
+    
+    "*Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
-    "Einar tombe à terre un flèche dans l'épaule"
+    e "Crevure... Tu..."
 
-    "Il recoit un épieux dans la jambe"
-
-    e "Aieuhhhh"
-
-    "Logan tombe et est égorgé au sol"
-
-    "Einar recoit du sang de la tafiolle sur le visage"
-
-    e "Comment as-tu osé ? Espèce de **** **** de ***"
-
-    "Une grosse masse de muscle s'approche de Einar"
+    "*Le meneur fixe Einar.*"
+    
+    ge "Les chiens du roi-empereur ont échoué."
 
     menu:
-        "Qui est tu ?":
+        "Qui es-tu ?":
             jump e_demande_nom_foret_2
-        "Non ne me tue pas, je te donnerai un sandwitch à la fraise":
+        "Non ! Ne me tue pas, pitié !":
             jump e_implore_pitie_foret_2
-        "Menacer le lourdeau":
+        "Menacer le meneur":
             jump e_menace_foret_2
 
 #Fin alternative n°1
@@ -997,16 +1082,52 @@ label massacre_foret_2(lieu = ""):
 
     if lieu == "chateau":
 
-        "Sur le chemin du retour"
+        "Sur le chemin du retour..."
+        
+        gv "Pourquoi sommes-nous déjà sur le retour ?"
+        
+        e "Parce que nous avons massacré les rebelles. Mission accomplie, nous rentrons chez nous."
+        
+        l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
+        
+        e "Bien sûr ! Leur manque de coopération était plus qu'évident. Ils étaient les rebelles. Harald sera satisfait !"
+        
     else:
-        "En poursuivant vers le nord"
+        "En poursuivant vers le nord..."
+        
+        gv "Pourquoi devons-nous poursuivre vers le nord ? Nous ne venons pas de massacrer les rebelles ?"
+        
+        e "Si, probablement. Mais j'ai tout de même un doute. Autant s'assurer d'avoir fait ce qu'il fallait !"
+        
+        e "Une visite des villages plus au nord s'impose. Et nous reproduirons les mêmes actions si nous rencontrons la moindre résistance !"
+        
+        gv "Voilà qui fait plaisir à entendre !"
 
-    e "Bon les gars"
+
+    "..."
+    
+    gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
+    
+    gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
+    
+    gv "Ha Ha Ha !"
+    
+    e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
+    
+    e "J'ai bien remarqué ton comportement à Perth. Tu n'as tué personne. Tu as à peine incendié une grange."
+    
+    l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
+    
+    e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
+    
+    l "Des écossais rebelles, oui. Pas des innocents."
+    
+    e "Ne remet pas mes ordres en question. Tu te ramollis, mon vieux Logan."
 
     menu:
-        "Mettre en garde":
+        "Mettre en garde le groupe":
             call attaque_massacre_foret_2 pass (message = "attentif")
-        "Déçu par la mission":
+        "La mission est décevante...":
             call attaque_massacre_foret_2 pass (message = "deception")
         "Se moquer des villageois":
             call attaque_massacre_foret_2 pass (message = "moquerie")
@@ -1016,44 +1137,93 @@ label massacre_foret_2(lieu = ""):
 label attaque_massacre_foret_2(message = ""):
 
     if message == "attentif":
-        e "Faites-attention, j'ai la nette impression que nous sommes oberservé!"
+        
+        e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
 
-        gv "Bof rien ne peut nous atteindre"
-
+        gv "Nous avons massacré le village ! Qui pourrait nous attaquer ?"
+        
+        e "Et les hommes, abruti ? Il n'y en avait presque aucun à Perth."
+        
+        gv "Les hommes ? Il n'y a que des fermiers, dans le coin !"
+        
+        e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
+        
     elif message == "deception":
 
-        e "Ce n'était que du menu fretin, je vais me plaindre auprès d'Harald une fois rentré"
+        e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
+        
+        l "Les autres ne semblent pas apprécier le voyage non plus..."
+        
+        gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
+        
+        e "Au moins, Perth nous aura fournit une petite distraction !"
+        
+        gv "J'aurais préféré des cibles qui se défendent..."
 
     elif message == "moquerie":
-        e "Les bolosses, ça craquait sous ma hache"
+        gv "Hé, regardez ! J'ai une dent incrustée dans mon bouclier !"
+        
+        e "Ne la retire pas, ça porte bonheur, ha ha !"
+        
+        gv "Ils étaient tellement faibles ! Je me souviendrai de Perth comme..."
+        
+        e "On ne se souviendra de rien, Garm ! Ce serait faire trop d'honneur à un village d'abrutis consanguins perdu au bout du mon..."
+        
 
     else:
-        e "logan, t'es qu'un PD"
+        e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
+        gv "Ha ha !"
+        l "..."
+        e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
+        gv "Ha ha ha !"
+        l "Ferme-la Ein..."
 
-    o "Vous allez payer pour ce que vous avez fait au villageois"
+    "*Un cor retentit dans les bois, très proche.*"
+    
+    e "En position de combat, tous !"
+    gv "Ça venait d'où ?"
+    l "Sur la gauche ! Des torches !"
+    
+    "*Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings.*"
+    "*Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout.*"
+    
+    e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
+    
+    "*Un meneur semble émerger du groupe des assaillants.*"
+    "*Les vikings se font massacrer et ne répondent plus aux ordres d'Einar.*"
 
-    o "Venez que je vous bute sales enculés"
+    ge "Mourrez, chiens ! Vous allez regretter ce que vous avez fait à Perth !"
 
-    e "Salaud! Viens ici que je te bute enculé"
+    e "Approchez, charognes ! Je..."
 
-    "Einar tombe à terre un flèche dans l'épaule"
+    "*Une flèche frappe Einar de plein fouet à l'épaule, le désarmant.*"
+    
+    l "Einar ! Derrière toi !"
+    
+    e "Que..."
+    
+    "*L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol.*"
 
-    e "Aieuhhhh"
+    e "Aaarrggh ! Logan, aide-moi !"
+    
+    l "Je suis là !"
+    
+    "*Logan est frappé derrière la tête et tombe au sol, face à Einar.*"
+    
+    "*Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
-    "Logan tombe et est égorgé au sol"
+    e "Crevure... Tu..."
 
-    "Einar recoit du sang de la tafiolle sur le visage"
-
-    e "Comment as-tu osé ? Espèce de **** **** de ***"
-
-    "Une grosse masse de muscle s'approche de Einar"
+    "*Le meneur fixe Einar.*"
+    
+    ge "Les chiens du roi-empereur ont échoué."
 
     menu:
-        "Qui est tu ?":
+        "Qui es-tu ?":
             call e_demande_nom_foret_2 pass (bad_ending = true)
-        "Non ne me tue pas, je te donnerai un sandwitch à la fraise":
+        "Non ne me tue pas, pitié!":
             call e_implore_pitie_foret_2 pass (bad_ending = true)
-        "Menacer le lourdeau":
+        "Menacer le meneur":
             call e_menace_foret_2 pass (bad_ending = true)
 
 
