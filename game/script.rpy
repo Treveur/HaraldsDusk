@@ -1724,8 +1724,32 @@ label interieur_maison_village_3:
     "Moira entraîne Einar a l'extérieur en lui tenant la main"
     jump village_2
 
+#Sequence 5
 label village_2:
-    "To do"
+    "Les villageois le regardent à peine"
+
+    menu :
+        "Que dire ?"
+        "Sarcasme":
+            e "Pas d'applaudissements ? Pas d'ovation populaire ?"
+            "Moira rit ouvertement. Les gens lui feront un accueil princier une fois qu'il les aura aidé à faire partir Harald."
+
+        "Ne rien dire":
+            e "..."
+
+        "Etre agressif":
+            e "Les paysans n'ont pas changé depuis la dernière fois. Même odeur, mêmes têtes d'abrutis"
+            "Moira fronce les sourcils. Ces paysans sont ma famille et mes amis. Tu devrais être un peu plus reconnaissant envers les personnes qui t'ont soigné, nourri et abrité pendant tout ce temps. "
+
+        "Ogma ?":
+            e "Ogma n'est pas ici ?"
+            "Moira explique qu'Ogma est parti à la rencontre d'autres villages. Elle reste évasive et n'en dit pas plus."
+
+    jump village_3
+
+#Sequence 6
+label village_3:
+
 
 
 
