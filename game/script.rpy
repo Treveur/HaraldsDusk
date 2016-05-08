@@ -610,7 +610,7 @@ label e_pourquoi_logan_accompagne_foret_1:
     e "Pourquoi avoir choisi de m'accompagner ? "
 
     l "Je l'ai déjà dit. Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous. Et ma présence facilitera les relations avec les autres écossais."
-    
+
     e "J'imagine."
 
     jump village_1
@@ -640,11 +640,11 @@ label e_attention_logan_foret_1:
     e "C'est une mission de reconnaissance. Nous pourrions tomber dans une embuscade à tout moment !"
 
     l "Ces gens ne sont que des paysans. Ils fuiraient rien qu'en nous entendant arriver."
-    
+
     e "Peut-être pas. Tu as mis ta vie en jeu sans raison. Et tu nous rends plus repérables. "
-    
+
     l "Plus repérables ? Vraiment ? Quelle différence entre onze et douze hommes ?"
-    
+
     e "..."
 
     jump village_1
@@ -654,9 +654,9 @@ label e_poids_logan_foret_1:
     e "Nous étions déjà bien assez nombreux. Onze guerriers vikings dont un huscarl !"
 
     l "Aucun d'entre vous ne connaît la région."
-    
+
     e "Je me fout de tes compétences ! Nous ne sommes pas là pour observer un panorama ou cueillir des champignons !"
-    
+
     e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
     jump village_1
@@ -668,13 +668,13 @@ label village_1:
     $ moira_met = False
 
     show bg village
-    
+
     l "Nous y sommes. Perth."
-    
+
     e "Ça me semble bien calme."
-    
+
     gv "On dirait qu'il n'y a pas grand monde..."
-    
+
     e "Si. Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard... Einar ?"
@@ -692,9 +692,9 @@ label village_1:
 label e_massacre_village_1:
 
     e "Massacrez moi tout ça ! Je veux un beau charnier sur la place d'ici une heure !"
-    
+
     gv "HAAAAA !"
-    
+
     vm "Sauvez les enfants ! Les enfants !"
 
 
@@ -703,19 +703,19 @@ label e_massacre_village_1:
 label e_demander_information_village_1:
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
-    
+
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
     vm "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens ! *crache*"
-    
+
     e "Quel succès, Logan."
-    
+
     e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
-    
+
     e "Votre attitude ressemble à un aveu de trahison !"
-    
+
     l "Calme-toi Einar. Comment réagirais-tu si tu voyais une armée byzantine débarquer en Norvège ?"
-       
+
     e "..."
 
     menu:
@@ -733,7 +733,7 @@ label e_fouiller_village_1(einarFouille = False):
 
     if einarFouille:
         e "Bien. Je vais moi-même jeter un oeil. Mieux vaudrait pour vous que vous ne cachiez rien."
-        
+
         e "Si qui que ce soit tente de s'enfuir ou se montre agressif, tuez-le."
 
         "*Einar entre dans une maison*"
@@ -743,7 +743,7 @@ label e_fouiller_village_1(einarFouille = False):
         e "Fouillez moi ces taudis ! Si vous trouvez quoi que ce soit, ramenez le moi !"
 
         gv "HAAAAA !"
-        
+
         "..."
 
         gv "Einar ! Une fille, dans une maison !"
@@ -772,43 +772,43 @@ label e_tuer_villageois_village_1:
     e "Oui ! Dépêche toi !"
 
     vm "Monseigneur, je ..."
-    
+
     "*Einar tranche la gorge du villageois d'un seul coup.*"
-    
+
     vm "Pourritures ! Salauds !"
 
     e "Parfait. Maintenant, parlez."
-    
+
     vm "Nous ne savons rien ! Absolument rien !"
 
     e "Et vos hommes, où sont-ils ?"
-    
+
     vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
-    
+
     e "Foutus mensonges !"
-    
+
     l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
-    
+
     e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
     call choix_retour_village_1 pass (massacre = True)
 
 label e_intimider_villageois_village_1:
-    
+
     e "Vous devriez parler. Maintenant. Les soldats que vous avez devant vous ont tué plus d'hommes que vous n'en avez jamais rencontré dans votre vie."
-    
+
     e "Vous ne tiendriez pas trois minutes face à nous. Parlez avant que je ne donne l'ordre de tout raser."
 
     vm "Nous ne savons rien ! Absolument rien !"
 
     e "Et vos hommes, où sont-ils ?"
-    
+
     vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
-    
+
     e "Foutus mensonges !"
-    
+
     l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
-    
+
     e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
     jump choix_retour_village_1
@@ -820,7 +820,7 @@ label e_nom_villageoise_maison_1:
     vm "Ne m'adressez pas la parole !"
 
     e "Je me suis montré courtois, mais ça pourrait vite changer. Répond : qui es-tu ?"
-    
+
     m "Moira."
 
     $ already_talk = True
@@ -842,7 +842,7 @@ label e_info_rebelle_maison_1:
     e "Que sais-tu des rebelles ?"
 
     vm "Rien."
-    
+
     e "Tu es aussi belle que décevante."
 
     $ already_talk = True
@@ -852,7 +852,7 @@ label e_info_rebelle_maison_1:
 label e_tuer_moira_maison_1:
 
     e "Cette rencontre s'achève ici."
-    
+
     "*Einar tire son épée et tue la villageoise*"
 
     vm "Vengeanghghh..."
@@ -860,21 +860,21 @@ label e_tuer_moira_maison_1:
     l "Cette fille était sans défenses !"
 
     e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler."
-    
+
     vm "Monstres ! Ils ont tué Moira !"
 
     e "Parfait. Maintenant, parlez."
-    
+
     vm "Nous ne savons rien ! Absolument rien !"
 
     e "Et vos hommes, où sont-ils ?"
-    
+
     vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
-    
+
     e "Foutus mensonges !"
-    
+
     l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
-    
+
     e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
     jump e_massacre_village_1
@@ -891,20 +891,20 @@ label choix_retour_village_1(massacre = False):
 
     if massacre:
         e "Empilez les cadavres avant le départ."
-        
+
         l "Nous étions censés trouver le village rebelle, pas massacrer des paysans !"
-        
+
         e "Ta détermination flanche ? Harald sera sûrement satisfait de voir le travail accompli."
-        
+
         e "Si c'était les rebelles, nous avons éliminé le problème. Si les gens de Perth étaient innocents, les villages alentours nous craindront."
-        
+
         e "Nous gagnons sur tous les tableaux."
-        
+
         l "Mieux vaudrait que tu ais raison..."
-        
+
     else:
         l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
-        
+
         e "J'espère pour toi que tu as raison, Logan."
 
     gv "Où allons-nous ?"
@@ -928,39 +928,39 @@ label foret_2(lieu = ""):
     if lieu == "chateau":
 
         "Sur le chemin du retour..."
-        
+
         gv "Pourquoi sommes-nous déjà sur le retour ?"
-        
+
         e "Parce que j'ai de sérieux doutes sur ce village. Les gens de Perth étaient bien trop louches, quoi qu'en dise Logan."
-        
+
         l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
-        
+
         e "Je ne suis sûr de rien."
-        
+
     else:
         "En poursuivant vers le nord..."
-        
+
         gv "Pourquoi devons-nous poursuivre vers le nord ? Je croyais que nous avions trouvé les rebelles !"
-        
-        e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique." 
+
+        e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
 
 
     "..."
-    
+
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
-    
+
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
-    
+
     gv "Ha Ha Ha !"
-    
+
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
-    
+
     l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
-    
+
     e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
-    
+
     l "Des écossais rebelles, oui. Pas des innocents."
-    
+
     e "Tu te ramollis, mon vieux Logan..."
 
     menu:
@@ -979,24 +979,24 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
 
         gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
-        
+
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
 
     elif message == "deception":
 
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
-        
+
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-        
+
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
-        
+
         e "..."
 
     elif message == "attitude":
         e "Ces villageois avaient l'air étranges..."
-        
+
         l "Etranges ?"
-        
+
         e "Oui, louches."
 
         menu :
@@ -1006,12 +1006,12 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
                 e "La vue de douze guerriers à dû les effrayer. Ils n'avaient probablement jamais vu autant d'armes à la fois !"
                 l "Ils ont dû croire que nous étions là pour raser leur village. Ils sont forcément au courant du meurtre de Montgomery, ils auront fait le rapprochement en nous voyant arriver."
                 e "A juste titre ! Je regrette presque de ne pas les avoir massa..."
-                
+
             "Se moquer des villageois":
                 l "Ils étaient effrayés, c'est évident."
                 e "Ils ont dû être impressionnés par notre présence. C'était une bande d'abrutis congénitaux, ils n'avaient jamais vu d'hommes armés !"
                 e "Isolés qu'ils sont dans leur village d'arriérés, à élever leurs chiards et leurs mout..."
-                
+
 
         menu menu_avertissement_villageois:
             "Mettre en garde le groupe":
@@ -1028,18 +1028,18 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
         gv "Ha ha ha !"
         l "Ferme la Ein..."
-    
+
     "*Un cor retentit dans les bois, très proche.*"
-    
+
     e "En position de combat, tous !"
     gv "Ça venait d'où ?"
     l "Sur la gauche ! Des torches !"
-    
+
     "*Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings.*"
     "*Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout.*"
-    
+
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
-    
+
     "*Un meneur semble émerger du groupe des assaillants.*"
     "*Les vikings se font massacrer et ne répondent plus aux ordres d'Einar.*"
 
@@ -1048,25 +1048,25 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     e "Approchez, charognes ! Je..."
 
     "*Une flèche frappe Einar de plein fouet à l'épaule, le désarmant.*"
-    
+
     l "Einar ! Derrière toi !"
-    
+
     e "Que..."
-    
+
     "*L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol.*"
 
     e "Aaarrggh ! Logan, aide-moi !"
-    
+
     l "Je suis là !"
-    
+
     "*Logan est frappé derrière la tête et tombe au sol, face à Einar.*"
-    
+
     "*Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
 
     "*Le meneur fixe Einar.*"
-    
+
     ge "Les chiens du roi-empereur ont échoué."
 
     menu:
@@ -1083,45 +1083,45 @@ label massacre_foret_2(lieu = ""):
     if lieu == "chateau":
 
         "Sur le chemin du retour..."
-        
+
         gv "Pourquoi sommes-nous déjà sur le retour ?"
-        
+
         e "Parce que nous avons massacré les rebelles. Mission accomplie, nous rentrons chez nous."
-        
+
         l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
-        
+
         e "Bien sûr ! Leur manque de coopération était plus qu'évident. Ils étaient les rebelles. Harald sera satisfait !"
-        
+
     else:
         "En poursuivant vers le nord..."
-        
+
         gv "Pourquoi devons-nous poursuivre vers le nord ? Nous ne venons pas de massacrer les rebelles ?"
-        
+
         e "Si, probablement. Mais j'ai tout de même un doute. Autant s'assurer d'avoir fait ce qu'il fallait !"
-        
+
         e "Une visite des villages plus au nord s'impose. Et nous reproduirons les mêmes actions si nous rencontrons la moindre résistance !"
-        
+
         gv "Voilà qui fait plaisir à entendre !"
 
 
     "..."
-    
+
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
-    
+
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
-    
+
     gv "Ha Ha Ha !"
-    
+
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
-    
+
     e "J'ai bien remarqué ton comportement à Perth. Tu n'as tué personne. Tu as à peine incendié une grange."
-    
+
     l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
-    
+
     e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
-    
+
     l "Des écossais rebelles, oui. Pas des innocents."
-    
+
     e "Ne remet pas mes ordres en question. Tu te ramollis, mon vieux Logan."
 
     menu:
@@ -1137,38 +1137,38 @@ label massacre_foret_2(lieu = ""):
 label attaque_massacre_foret_2(message = ""):
 
     if message == "attentif":
-        
+
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
 
         gv "Nous avons massacré le village ! Qui pourrait nous attaquer ?"
-        
+
         e "Et les hommes, abruti ? Il n'y en avait presque aucun à Perth."
-        
+
         gv "Les hommes ? Il n'y a que des fermiers, dans le coin !"
-        
+
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
-        
+
     elif message == "deception":
 
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
-        
+
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-        
+
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
-        
+
         e "Au moins, Perth nous aura fournit une petite distraction !"
-        
+
         gv "J'aurais préféré des cibles qui se défendent..."
 
     elif message == "moquerie":
         gv "Hé, regardez ! J'ai une dent incrustée dans mon bouclier !"
-        
+
         e "Ne la retire pas, ça porte bonheur, ha ha !"
-        
+
         gv "Ils étaient tellement faibles ! Je me souviendrai de Perth comme..."
-        
+
         e "On ne se souviendra de rien, Garm ! Ce serait faire trop d'honneur à un village d'abrutis consanguins perdu au bout du mon..."
-        
+
 
     else:
         e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
@@ -1179,16 +1179,16 @@ label attaque_massacre_foret_2(message = ""):
         l "Ferme-la Ein..."
 
     "*Un cor retentit dans les bois, très proche.*"
-    
+
     e "En position de combat, tous !"
     gv "Ça venait d'où ?"
     l "Sur la gauche ! Des torches !"
-    
+
     "*Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings.*"
     "*Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout.*"
-    
+
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
-    
+
     "*Un meneur semble émerger du groupe des assaillants.*"
     "*Les vikings se font massacrer et ne répondent plus aux ordres d'Einar.*"
 
@@ -1197,34 +1197,34 @@ label attaque_massacre_foret_2(message = ""):
     e "Approchez, charognes ! Je..."
 
     "*Une flèche frappe Einar de plein fouet à l'épaule, le désarmant.*"
-    
+
     l "Einar ! Derrière toi !"
-    
+
     e "Que..."
-    
+
     "*L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol.*"
 
     e "Aaarrggh ! Logan, aide-moi !"
-    
+
     l "Je suis là !"
-    
+
     "*Logan est frappé derrière la tête et tombe au sol, face à Einar.*"
-    
+
     "*Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
 
     "*Le meneur fixe Einar.*"
-    
+
     ge "Les chiens du roi-empereur ont échoué."
 
     menu:
         "Qui es-tu ?":
-            call e_demande_nom_foret_2 pass (bad_ending = true)
+            call e_demande_nom_foret_2 pass (bad_ending = True)
         "Non ne me tue pas, pitié!":
-            call e_implore_pitie_foret_2 pass (bad_ending = true)
+            call e_implore_pitie_foret_2 pass (bad_ending = True)
         "Menacer le meneur":
-            call e_menace_foret_2 pass (bad_ending = true)
+            call e_menace_foret_2 pass (bad_ending = True)
 
 
 label e_demande_nom_foret_2(bad_ending = False):
@@ -1262,43 +1262,43 @@ label e_menace_foret_2(bad_ending = False):
         ge "Je ne crains pas ton roi."
         "*Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient.*"
         jump e_reveil_village_2
-        
+
 
 #Sequence 8
 label e_reveil_village_2:
 
     $ already_talk = False
-    
+
     e "Huugh..."
 
     ge "Ogma ! Il se réveille !"
-    
+
     o "Ah ! La belle endormie. "
-    
+
     e "Arrgh... Mon épaule..."
-    
+
     o "Oui je sais, ça fait mal. La tête de la flèche est toujours à sa place."
-    
+
     e "Enfoiré ! Vous les avez tous tués !"
-    
+
     o "..."
-    
+
     e "Qui... Aarrgh... êtes vous ?"
-    
+
     o "Ça me paraît assez évident. Nous sommes ceux que toi et les tiens cherchiez. Bravo, vous nous avez trouvé."
 
     e "Les rebelles ?"
-    
+
     o "..."
 
     e "Où sont les autres ? Où sont mes compagnons ?"
-    
+
     e "Ordure ! Je me rappelle ! C'est toi qui a tué Logan !"
-    
+
     o "C'était un traître."
-    
+
     e "C'est lui qui m'a retenu de massacrer Perth ! C'est lui qui a sauvé la vie de vos vieux et de vos truies de femmes !"
-    
+
     o "Alors j'imagine que sa mort est regrettable."
 
     menu reveil_einar_village_2:
@@ -1321,9 +1321,9 @@ label e_rapport_village_village_2:
     e "Est-ce qu'il y a un rapport avec le village d'hier ?"
 
     o "Perth. Et la réponse est oui. Nos éclaireurs avaient vu votre groupe et nous l'avaient signalé."
-    
+
     o "Nous avons quitté le village peu avant votre arrivée, et nous avons observé la scène, avec la ferme intention de vous tendre une embuscade ensuite."
-    
+
     o "Ce que, comme tu as pu le voir, nous avons fait."
 
     jump o_explication_vie_village_2
@@ -1331,15 +1331,15 @@ label e_rapport_village_village_2:
 label e_insulte_village_2:
 
     e "Salopards ! J'aurais du enfermer vos truies de femmes et leurs gamins dans vos cahutes merdeuses avant d'y foutre le feu !"
-    
+
     "*Ogma frappe Einar sur son épaule blessée*"
-    
+
     e "AAARGH !"
 
     o "Les insultes et les menaces n'ont que peu de poids venant de la part d'un soldat blessé, attaché et seul."
 
     o "Tu ferais mieux de contenir ta colère. J'ai décidé de t'épargner. Rien ne m'empêche de changer d'avis."
-    
+
     e "Tu me demandes d'être reconnaissant, pourriture ?!"
 
     o "Oui. Tu me dois la vie."
@@ -1410,21 +1410,21 @@ label o_explication_vie_village_2:
 label refuser_trahir_village_2:
 
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
-    
+
     o "Mauvaise réponse."
-    
+
     "*Ogma enfonce deux doigts dans la plaie de l'épaule d'Einar, pressant la pointe de flèche.*"
-    
+
     e "AAAAARRRGH !"
-    
+
     o "Tiens, on dirait que la pointe est coincée dans une articulation !"
-       
+
     e "AAAHH ! STOP !"
-    
+
     o "Jouer les fortes têtes ne te servira à rien ici. Tout ça est bien plus éprouvant pour toi que pour moi."
 
     e "ARRÊTEZ ! ARRÊTAAAARGH !"
-    
+
     "*Ogma retire ses doigts de la plaie.*"
 
     o "Tu as changé d'avis sur la question ?"
