@@ -17,6 +17,7 @@ image harald normal = "harald_min.png"
 
 #Ogma
 define o = Character('Ogma', color="#d35400")
+image ogma normal = "ogma.png"
 
 #Moira
 define m = Character("Moira", color = "#f00")
@@ -93,11 +94,13 @@ label intro:
     scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
-
+    show harald normal at left with dissolve
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
 
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
-
+    show logan fache at right with dissolve
+    "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis longtemps et le mène jusqu'au château de Dunbar."
+    show einar serious at center with dissolve
     "Einar est l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
 
     menu:
@@ -111,13 +114,12 @@ label intro:
     show einar serious
 
 label harald_choice:
-
-    show einar serious
+    hide logan fache
 
     e "Mon Roi, sommes-nous proches ?"
 
     show einar serious at left
-    show harald normal at right with dissolve
+    show harald normal at right
 
     h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
 
@@ -144,12 +146,10 @@ label harald_choice:
 
 label logan_choice :
 
-    show einar serious
-
     e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
     show einar serious at left
-    show logan fache at right with dissolve
+    show logan fache at right 
 
     l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
@@ -201,7 +201,7 @@ label h_info_region :
 
     h "Nous ne sommes encore que dans les Lowlands ; les Highlands sont plus au nord."
 
-    h "La seule différence entre les deux est la quantité de rocaille. "
+    h "Et hormis le nom, je dois dire que je ne vois que peu de différences entre ces deux territoires. "
 
     e "La région a l'air inhospitalière..."
 
@@ -227,7 +227,7 @@ label h_confiance :
 
     h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
 
-    e "Ha ! Les dirigeants du monde entier craindraient les paysans écossais !"
+    e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
 
     jump menu_harald_choice_foret
 
@@ -312,8 +312,12 @@ label plaine_1 :
     scene bg mer with dissolve
 
     "*Une heure plus tard.*"
+    
+    show harald normal at right with dissolve
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend."
+    
+    show einar serious at left with dissolve
 
     e "Dois-je envoyer un émissaire annoncer notre arrivée ?"
 
@@ -340,7 +344,7 @@ label plaine_1 :
 label h_refus_village :
     e "Mon roi, je me vois dans l'obligation de refuser cette responsabilité."
 
-    h "Pardon ? C'est un ordre, Einar. Pas une proposition. Ton attitude est décevante."
+    h "Pardon ? C'est un ordre, Einar. Pas une proposition."
 
     e "Pardonnez-moi, sire. "
 
@@ -368,7 +372,7 @@ label h_accepter :
 
     e "J'accepte cette mission."
 
-    h "Et j'en suis satisfait. Part dès maintenant : il n'y a pas de temps à perdre. Tu atteindras les premiers villages des Highlands avant la nuit."
+    h "Et j'en suis satisfait. Part dès maintenant : il n'y a pas de temps à perdre. Tu atteindras Stirling avant la nuit. Les villages que je soupçonne d'être rebelles se trouvent à une journée plus loin."
 
     e "Fort bien. "
 
@@ -383,7 +387,7 @@ label h_accepter_fayot :
     jump logan_aide
 
 label logan_aide :
-
+    show logan fache at center
     l "Einar, je t'accompagne ! Mes connaissances de la région ne seront pas de trop, et la vue d'un écossais parmi les vikings rassurera peut-être les villageois. "
 
     menu:
@@ -430,10 +434,15 @@ label e_contrecoeur :
 
 #Sequence 3
 label plaine_2:
-
+    hide logan fache
+    hide einar serious
+    hide harald normal
     "*Le lendemain...*"
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
+    gv "Nous aurions dû rester plus longtemps à Stirling. Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
+    
+    show einar serious at right with dissolve
 
     menu:
         "Mettre en garde" :
@@ -449,7 +458,8 @@ label plaine_2:
 
 label e_mettre_en_garde:
 
-    e "Méfiez vous. Le roi n'est pas avec nous. Sans la Hache, nous sommes à la merci de n'importe quel piège."
+    e "Méfiez vous. Le roi n'est pas avec nous. Sans la Hache, nous sommes à la merci de n'importe quel piège. Faites silence et restez aux aguets."
+    e "Rien qu'en t'écoutant, je suis sûr que les rebelles connaissent déjà ton nom, celui de tes parents et la taille de ta queue, Alvin."
 
     gv "Vous avez entendu, les gars ? Ouvrez l'oeil."
 
@@ -458,7 +468,7 @@ label e_mettre_en_garde:
 label e_ininteret_mission:
 
     e "Je suis bien d'accord. Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
-
+    show logan fache at left with dissolve
     l "Tu le prends comme une punition ?"
 
     e "Oui. J'estime qu'après tout le temps passé en campagne aux côtés du roi, il aurait pu choisir quelqu'un d'autre pour accomplir ses basses besognes."
@@ -467,7 +477,7 @@ label e_ininteret_mission:
 
 label e_motiver_troupe_plaine_2:
 
-    e "Et je suis convaincu que nous ne rencontrerons rien de pire que cette foutue caillasse ! Ha, se défouler sur des villageois, ce sera notre récompense !"
+    e "Et je suis convaincu que nous ne rencontrerons rien de plus excitant qu'une tavernière au milieu de toute cette foutue caillasse ! Ha, se défouler sur des villageois, ce sera notre récompense !"
 
     e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
 
@@ -478,7 +488,7 @@ label e_motiver_troupe_plaine_2:
 label e_chambrer_logan_plaine_2:
 
     e "Tu ne parles pas beaucoup, Logan. Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
-
+    show logan fache at left with dissolve
     l "..."
 
     e "Ha, il est obéissant en plus ! Tu attends aussi des autorisations royales pour baiser ? Notre bon Harald doit te la tenir ?"
@@ -492,7 +502,7 @@ label e_chambrer_logan_plaine_2:
 label e_jouer_chef:
 
     e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et pressons le pas."
-
+    show logan fache at left with dissolve
     l "Einar, les hommes sont aussi fatigués que nous. Tu devrais..."
 
     e "Toi aussi, tais-toi. Je veux que nous menions cette mission de la façon la plus exemplaire possible."
@@ -507,7 +517,7 @@ label foret_1:
     scene bg forest with dissolve
 
     "*Un jour plus tard...*"
-
+    show einar serious at left with dissolve
     e "Une forêt. Encore..."
 
     menu:
@@ -531,7 +541,7 @@ label e_impatient_norvege:
     gv "J'aimerais retrouver la Suède. Je n'ai aucune nouvelles de ma famille depuis notre campagne d'Egypte."
 
     gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-
+    show logan fache at right with dissolve
     l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
 
     gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
@@ -541,7 +551,7 @@ label e_impatient_norvege:
     menu:
         "Il me tarde de recevoir mes terres":
             jump e_espoir_terre_norvege_foret_1
-        "Assez de niaiserie pour aujourd'hui":
+        "Assez de niaiseries pour aujourd'hui":
             jump e_ordre_taire_guerrier_foret_1
 
 label e_se_moquer_foret_1:
@@ -551,7 +561,7 @@ label e_se_moquer_foret_1:
     e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
 
     gv "Ha ha !"
-
+    show logan fache at right with dissolve
     l "Non. Nous vivons dans des maisons de pierre. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
 
     jump village_1
@@ -571,7 +581,7 @@ label e_motiver_troupe_foret_1:
 label e_chambrer_logan_foret_1:
 
     e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps sculptural d'une de ces magnifiques brebis écossaises ?"
-
+    show logan fache at right with dissolve
     l "..."
 
     gv "Ha ha !"
@@ -581,7 +591,7 @@ label e_chambrer_logan_foret_1:
 label e_avis_logan_mission_foret_1:
 
     e "Tu es le seul à ne pas encore t'être plaint de la mission que nous a confié le roi."
-
+    show logan fache at right with dissolve
     l "Je ne vois pas de raisons de me plaindre. J'accomplis mon devoir. Le roi nous récompensera à notre retour."
 
     e "Tu es bien optimiste ! Depuis le temps qu'il me promet des terres..."
@@ -599,7 +609,7 @@ label e_espoir_terre_norvege_foret_1:
     e "Le roi m'a promit des terres. Ça fait des années qu'il me fait miroiter des récompenses sans jamais me les offrir."
 
     e "Une fois sur mes terres, je ferai bâtir un manoir."
-
+    show logan fache at right with dissolve
     l "Et si ces terres ne sont pas en Norvège ?"
 
     e "Peu importe. Tout ce que je veux, c'est enfin pouvoir me sentir chez moi. Norvège ou pas."
@@ -609,7 +619,7 @@ label e_espoir_terre_norvege_foret_1:
 label e_ordre_taire_guerrier_foret_1:
 
     e "Taisez-vous. Nous ne sommes qu'à mi-chemin, la route est encore longue. Demain, nous atteindrons Perth."
-
+    show logan fache at right with dissolve
     l "Perth ?"
 
     e "Oui. D'après les rapports, les rebelles sont venus de cette région. C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
@@ -619,7 +629,7 @@ label e_ordre_taire_guerrier_foret_1:
 label e_pourquoi_logan_accompagne_foret_1:
 
     e "Pourquoi avoir choisi de m'accompagner ? "
-
+    
     l "Je l'ai déjà dit. Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous. Et ma présence facilitera les relations avec les autres écossais."
 
     e "J'imagine."
@@ -675,15 +685,16 @@ label e_poids_logan_foret_1:
 #Scequence 5
 #Scene 1
 label village_1:
-
+    hide einar serious
     $ moira_met = False
 
     show bg village with dissolve
-
+    "*Peu après midi, la troupe parvient en vue d'un village...*"
+    show logan fache at right with dissolve
     l "Nous y sommes. Perth."
 
     "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
-
+    show einar serious at left with dissolve
     e "Ça me semble bien calme."
 
     gv "On dirait qu'il n'y a pas grand monde..."
@@ -764,6 +775,8 @@ label e_fouiller_village_1(einarFouille = False):
         e "Je suis à peine surpris... J'arrive !"
 
     scene bg house
+    show moira at center 
+    show einar serious at left with dissolve
     menu menu_maison_1:
         "Qui es-tu ?":
             jump e_nom_villageoise_maison_1
