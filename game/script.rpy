@@ -1466,12 +1466,170 @@ label accepter_trahir_village_2:
     o "Ha ha ! Pas d'enthousiasme excessif ! Si je te laissais partir maintenant, tu mourrais aussitôt ! Nous allons soigner tes blessures."
     o "Je vais te laisser. Nous nous retrouverons bientôt. Remet-toi, ha ha !"
 
-    jump village_3
+    jump interieur_maison_village_1
 
 #Acte 2
 #Sequence 1
-label village_3:
-    jump cote_1
+label interieur_maison_village_1:
+
+    $ critique_ogma = False
+
+    "La vue est rendue à Einar, qui se trouve dans une maison du village visité précédemment. Une jeune femme se tient auprès de lui. Einar est attaché sur un lit."
+
+    menu menu_rencontre_moira_blesse:
+        "Que dire ?"
+        "Toi ?" if moira_met:
+            e "Toi ?"
+            jump menu_rencontre_moira_blesse
+
+        "Qui es-tu ?":
+            e "Qui es-tu "
+            jump menu_rencontre_moira_blesse
+
+        "Où sommes-nous ?"
+            e "Où sommes-nous ?"
+            jump menu_rencontre_moira_blesse
+
+        "Demander de reculer et de le laisser tranquille"
+            e "Laisse-moi tranquille"
+
+        "Sarcasme."
+            e "La situation est assez... satisfaisante."
+            "Moira demande à Einar de ne plus jamais s'adresser à elle de cette façon. Elle lui met un coup de pied dans le genoux sans qu'il ne puisse se débattre."
+
+
+    "Moira broie quelque chose avec un pilon"
+
+    menu:
+        "Que fait-elle ?"
+
+        "Que fais-tu?":
+            e "Que fais-tu ?"
+        "Ne rien dire":
+            e "..."
+        "Humour":
+            e "J'ai encore mes dents, je n'ai pas besoin que l'on broie ma nourriture."
+        "Pas faim":
+            e "Je n'ai pas faim, merci."
+
+    "Moira explique qu'elle lui prépare un onguent, sur ordre de son père."
+
+    menu :
+        "Que lui dire ?"
+        "La remercier":
+            e "Je te remercie"
+        "Ne rien dire":
+            e "..."
+        "Pas de besoin d'attention"
+            e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné."
+
+    "Einar est emmené au village qu'il avait visité précédemment. Il y rencontre Moira, qui se présente comme étant la fille d'Ogma."
+    "Ogma arrive et se place aux côtés de Moira. Il lui demande si tout va bien et comment se comporte Einar. Il lui demande ensuite son état de santé. Ogma n'adresse pas un regard au viking. Il ressort de la pièce."
+
+    menu :
+        "Que dire ?"
+        "Un problème ?":
+            e "Il a une dent contre moi ?"
+        "cynisme":
+            e "J'aurais mieux fait de mourir avec les autres"
+            m "Estime toi heureux d'être en vie, il n'avait pas prévu de te laisser en vie"
+            jump interieur_maison_village_2
+        "Critiquer":
+            e "Quelle attitude déplorable !"
+            $ critique_ogma = True
+        "Il devrait avoir honte":
+            e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins."
+            $ critique_ogma = True
+
+    if critique_ogma:
+        "Moira répond sechement en lui réclamant le respect pour son père. Sans quoi il pourra aller se faire voir dans l'enclos des boucs."
+
+        menu :
+            "Elle a l'air contrarié"
+            "Ne rien dire":
+                e "..."
+            "Demander pardon":
+                e "Excuse moi."
+            "Macho":
+                e "Pas d'ordres à recevoir d'une fille à papa"
+
+    "Moira explique que depuis l'assassinat de Kennocha, Ogma et elle-même ne portent plus Harald et ses hommes dans leur coeur. Elle explique que son père n'est pas une mauvaise personne."
+
+    jump interieur_maison_village_2
+
+#Sequence 2
+label interieur_maison_village_2:
+    "Moira entre dans la pièce et annonce qu'elle vient changer les bandages d'Einar"
+
+    menu:
+        "Que dire ?"
+
+        "Appele moi Einar":
+             e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger"
+             m "Alors parle moi comme si j'étais ton amie"
+        "Remercier":
+            "Moira explique qu'il ne doit pas la remercier : il est un prisonnier. Cela dit, elle apprécie ces moments de calme où elle le soigne : son esprit est occupé pendant ce temps là, et elle oublie les drames récents"
+        "Humour":
+            e "Pas la peine d'insister : je ne suis toujours pas interessé"
+            "Moira ne répond pas à la pique mais sourit discrètement."
+
+    "Moira quitte la pièce."
+    jump interieur_maison_village_3
+
+#Sequence 3
+label interieur_maison_village_2:
+    "Dans la pièce, Ogma et Moira discutent avec Einar. Moira est assise au bout du lit. Ogma termine une anecdote concernant sa vie avant d'être \"chef rebelle\" et demande à Einar d'où il vient."
+
+    menu :
+        "Que répondre ?"
+
+        "Agressif":
+            e "Ca ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
+            "Moira s'emporte et s'apprête à gifler Einar. Ogma l'interromp, et explique que le viking n'a pas totalement tort."
+            "Il n'est pour rien dans cette histoire et n'a fait que suivre son roi."
+
+        "Nostalgique":
+            e "La Norvège me manque"
+            "Moira se montre interessée et demande plus de détails, auxquels Einar répond. Elle lui demande s'il a une femme ou une famille là-bas, ce à quoi il répond négativement."
+
+        "Éluder la question":
+            e "Je ne sais pas quoi mettre"
+            "Ogma se montre compréhensif. Moira paraît déçue."
+
+    "Un villageois ouvre la porte, l'air atterré. Il annonce à Ogma qu'un village à été rasé et incendié"
+    "Ogma dit qu'il n'est pas surpris, que ce n'est pas le premier village a être détruit par Harald depuis que la troupe d'Einar a été massacrée."
+
+    menu :
+        "Comment réagir ?"
+        "Compatir":
+            "Ogma remercie EInar et se dit agréablement surpris. Moira se montre heureuse de ne pas devoir soigner un monstre, mais un homme juste."
+        "Ne rien dire":
+            e "..."
+            "Ogma comprend que la position d'EInar est délicate, et prend son silence comme une forme de retrait respectueux."
+        "Se montrer heureux":
+            e "Cool Harald est à ma recherche"
+            "Ogma est déçu, et reproche à EInar de se réjouir du massacre d'innocents. Il se met à penser que la clémence d'Einar a été une marque de lâcheté ou de fainéantise."
+
+    "Moira soigne chaque jour Einar. Petit à petit, une intimité s'installe entre eux. Quelques jours après la capture d'Einar, des rumeurs parviennent au village : des villages voisins sont massacrés et rasés par les vikings."
+
+    jump interieur_maison_village_3
+
+#Sequence 4
+label interieur_maison_village_3:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Acte 3
 
