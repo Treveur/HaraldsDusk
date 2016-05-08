@@ -2029,6 +2029,11 @@ label e_epargne_harald_no_axe_donjon:
         "Ogma est déçu mais comprend pourquoi Einar a laissé s'enfuir le roi : sans sa Hache, l'empire va s'effondrer sous peu."
 
         jump village_5
+    else:
+        "Un peu plus tard"
+        "Ogma est sur les remparts, au dessus de la mer. Harald est à genoux devant lui."
+        "Sous les yeux des rebelles et des survivants vikings, Il tranche la gorge du roi et propulse son cadavre dans la mer. Derrière, le château brûle."
+        jump village_6
 
 label village_5:
     "Ogma remercie Einar pour avoir tenu sa parole et lui donne l'or convenu."
@@ -2046,6 +2051,58 @@ label village_5:
 
 
     jump foret_4
+
+label village_6:
+
+    $ refuer_ogma_main_moira = False
+
+    "Ogma félicite Einar pour avoir triomphé de Harald. Il lui donne la part de trésor promise. Moira se tient légèrement à l'écart."
+
+    menu:
+        "Que dire ?"
+        "Remercier":
+            e "Je vous remercie."
+        "Regrets":
+            e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
+        "Juste une question de survie":
+            e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
+            o "Cette décision t'honore."
+
+    "Ogma décide d'offrir la main de sa fille à Einar : parce qu'il sait qu'ils s'aiment, et qu'il serait heureux d'avoir celui qui a permis la libération de son peuple dans sa famille."
+    "Moira lance un regard plein d'espoir vers Einar."
+
+    menu:
+        "Accepter de se marrier avec Moira ?"
+        "Même sans votre concentement":
+            e "SI vous ne me l'aviez pas proposé, j'aurais enlevé votre fille ! Ha ha !"
+        "Un honneur":
+            e "J'accepte. C'est un grand honneur que vous me faites."
+        "Pas de sentiments":
+            e "Ces sentiments ne sont pas partagés. Je préfère conserver ma liberté."
+            $ refuer_ogma_main_moira = True
+
+    if refuer_ogma_main_moira:
+        "Moira s'en va. Elle pleure probablement mais ne le montre pas. Ogma est profondément déçu et demande à Einar ce qu'il compte faire désormais"
+
+        menu:
+            "Que faire par la suite ?"
+            "Ermite":
+                e "Rester ici, en Ecosse. Seul."
+            "Norvège":
+                e "Rentrer en Norvège, malgré le danger. C'est sa seule demeure."
+            "Vivre au jour le jour":
+                e "Errer. Il n'y a pas de plan bien déterminé."
+            "Asie":
+                e "Aller en Asie, là où personne ne viendra le chercher. C'est une région du monde qui l'a toujours intrigué."
+
+        call good_ending_15 pass (marier = False)
+    else:
+        jump good_ending_15
+
+
+
+
+
 
 label foret_4:
 
@@ -2078,11 +2135,6 @@ label foret_4:
         call good_ending_14 pass (rejete = True)
     else:
         jump good_ending_14
-
-
-
-
-
 
 label fuite_harald_pont_baisse_donjon:
     "Harald s'échappe sans demander son reste. Par une meurtrière, Einar voit le roi sur une barque, sortant d'une anfractuosité au pied de la falaise."
@@ -2191,21 +2243,6 @@ label lieu_encore_inconnu_1(axe = True):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Ending
 label bad_ending_1:
     "*Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt.*"
@@ -2271,3 +2308,9 @@ label good_ending_14(rejete = True):
         "Moira reste immobile au milieu du chemin alors qu'Einar la dépasse."
     else:
         "Elle court vers Einar et se jette dans ses bras."
+
+label good_ending_15(marier = True):
+    if marier:
+        "Moira se jette dans les bras d'Einar et l'embrasse."
+    else:
+        "Einar décide continuer sa vie seul"
