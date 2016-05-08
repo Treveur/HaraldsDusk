@@ -1780,7 +1780,24 @@ label village_3:
 
 #Sequence 7
 label foret_3:
-    "fdfs"
+
+    menu :
+        "Que dire ?"
+
+        "Destination ?":
+            e "Où allons-nous?"
+        "Ordre d'Ogma ?":
+            e "Et les instructions de ton père ?"
+        "Sarcasme":
+            e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt"
+
+    "Moira lui demande gentiment de se taire, en faisant un \"chut\", un doigt sur la bouche"
+
+    jump paradis_foret_1
+
+#Sequence 8
+label paradis_foret_1:
+
 
 
 
