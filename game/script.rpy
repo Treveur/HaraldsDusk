@@ -1617,6 +1617,103 @@ label interieur_maison_village_2:
 #Sequence 4
 label interieur_maison_village_3:
 
+    $ libre_ask = False
+    $ trahir_talk = False
+    $ decevoir_moira = False
+
+    "Moira arrive dans la chambre, un couteau à la main."
+
+    menu menu_moira_couteau:
+        "Que dire ?"
+
+        "Ne rien dire" if libre_ask == False:
+            e "..."
+        "libre ?" if libre_ask == False:
+            e "Je suis libre ?"
+            "Moira répond que non. Elle va accomplir ce que son père n'a pas fait avant, et aurait dû faire depuis longtemps. Elle a un regard terrible."
+            $ libre_ask = True
+
+        "Appeler des secours"
+            e "À l'aide !"
+
+        "Humour":
+            e "Notre relation manquait de piment : des accessoires ne seront pas de trop."
+
+        "Inquiet"
+            e "Alors c'est la fin ? Pourquoi aujourd'hui ? Pourquoi m'avoir soigné pendant toutes ces semaines ?"
+
+    if libre_ask:
+        "Moira rit. Elle explique qu'elle est venue rendre sa liberté de mouvement à Einar"
+
+    "Ogma a demandé à Moira de libérer Einar. Après plus d'un mois, il estime que le viking a le droit de se dégourdir un peu les jambes."
+    "Il ne faudrait pas qu'il soit affaibli pour le combat qui s'annonce."
+
+    menu:
+        "Que dire dire ?"
+        "Piège ?":
+            e "Où est le piège ?"
+            m "Pas de piège !"
+
+        "Humour":
+            e "Être déçu qu'il ne s'agisse pas d'un \"jeu\"."
+            "Elle rit et adresse un sourire taquin au viking"
+
+        "Crainte d'Ogma ?":
+            e "Il ne se méfie pas ?"
+
+    "Son père a choisi de lui faire confiance. Néanmoins, il ne devra pas quitter le village sans autorisation directe."
+    "Moira souligne que l'état de santé d'Einar s'est considérablement amélioré et qu'il sera parfaitement remis d'ici peu."
+
+    menu :
+        "Que dire ?"
+
+        "Parler de trahir Harald":
+            e "Et je serai tenu de trahir mon roi à ce moment là..."
+            "Moira s'assombrit. Oui, Einar devra faire ce qu'il a promit. Elle lui demande ce qu'il compte faire une fois sa trahison achevée."
+            $ trahir_talk = True
+
+        "Grâce à Moira":
+            e "Grace à toi, Moira !"
+            "Moira lui répond par un grand sourire. Elle lui dit qu'elle n'a fait qu'une partie du travail : sa constitution solide a bien participé à l'efficacité des soins."
+
+        "Ne rien dire":
+            e "..."
+            "Moira s'attendait à quelques remerciements et à plus d'enthousiasme à l'idée de pouvoir enfin sortir."
+
+        "Sortir ?":
+            e "On peut sortir ? La lumière du jour me manque."
+            "Moira aquiesce avec un sourire, et mène Einar a l'extérieur."
+
+    if trahir_talk:
+        menu:
+            "De quoi parler ?"
+
+            "Arrêter d'être soldat":
+                e "Abandonner la carrière militaire et rentrer en Norvège"
+                $ decevoir_moira = True
+
+            "Aller dans une région plus chaude":
+                e "Partir dans une région plus chaude, la Mediterranée peut-être."
+                $ decevoir_moira = True
+
+            "Rester ici":
+                e "Rester ici : il n'aura plus sa place en Norvège ni ailleurs, traqué par Harald"
+
+
+            "Ne sais pas":
+                e "Je ne sais pas"
+
+        if decevoir_moira:
+            "Moira est visiblement déçue."
+        else:
+            "Le visage de Moira s'illumine et elle se fend d'un sourire discret"
+
+    "Moira entraîne Einar a l'extérieur en lui tenant la main"
+    jump village_2
+
+label village_2:
+    "To do"
+
 
 
 
