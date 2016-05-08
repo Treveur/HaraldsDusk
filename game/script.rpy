@@ -309,7 +309,7 @@ label l_innocents :
 label plaine_1 :
 
     scene bg mer
-    
+
     "*Une heure plus tard.*"
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend."
@@ -429,7 +429,7 @@ label e_contrecoeur :
 
 #Sequence 3
 label plaine_2:
-    
+
     "*Le lendemain...*"
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
@@ -502,9 +502,9 @@ label e_jouer_chef:
 
 #Scequence 4
 label foret_1:
-    
+
     scene bg forest
-    
+
     "*Un jour plus tard...*"
 
     e "Une forêt. Encore..."
@@ -825,7 +825,7 @@ label e_intimider_villageois_village_1:
 
 #Scequence 6 (alternative)
 label e_nom_villageoise_maison_1:
-    
+
     e "Qui es-tu ?"
 
     vm "Ne m'adressez pas la parole !"
@@ -1893,7 +1893,7 @@ label e_bruler_donjon_obeir__donjon:
 
 label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
-
+    $ epargner_harld_donjon = False
 
     if jetee:
         menu :
@@ -1935,8 +1935,151 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
             "Épargner":
                 e "Vous avez déjà perdu. Je vais vous épargner."
+                $ epargner_harld_donjon = True
             "Je te suis supérieur":
                 e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+                $ epargner_harld_donjon = True
+    else:
+        "Le combat s'engage entre le roi et l'huscarl"
+        "Phase combat WIP"
+
+        menu:
+            "Gagner":
+                "J'y reviens tout suite"
+            "Perdre":
+                jump bad_ending_12
+
+    if epargner_harld_donjon:
+        menu :
+            "Que dois-je faire de lui ?"
+            "Le laisser s'enfuir":
+                jump fuite_harald_pont_baisse_donjon
+
+            "Le livrer à Ogma":
+                "Ogma se place au dessus des remparts avec Harald à genoux devant lui, s'assurant que les rebelles ainsi que les survivants vikings voient leur roi se faire trancher la gorge avant d'être précipité dans la mer."
+                "Le château brûle."
+                jump good_ending_11
+
+    else:
+        "Dans la cour, Ogma félicite Einar pour avoir triomphé de Harald. Einar est le libérateur des écossais."
+        "Ogma réclame la Hache : elle doit être détruite."
+
+        menu:
+            "Que faire ?"
+            "Donner hache":
+                jump good_ending_7
+            "Donner hache":
+                jump e_garder_hache_pont_baisse_donjon
+
+label fuite_harald_pont_baisse_donjon:
+    "Harald s'échappe sans demander son reste. Par une meurtrière, Einar voit le roi sur une barque, sortant d'une anfractuosité au pied de la falaise."
+    "Harald s'échappe par la mer, empruntant une petite barque qu'il semblait avoir dissimulé dans une anfractuosité naturelle."
+    "La bataille arrive à sa fin. Les rebelles achèvent les vikings qui rampent au sol."
+    "Depuis les remparts, Ogma observe Harald fuir sur la mer. Puis il regarde Einar et remarque qu'il est en possession de la Hache. Il la lui réclame."
+
+    menu:
+        "Que faire ?"
+        "Conserver la Hache":
+            jump e_garder_hache_pont_baisse_donjon
+        "Donner la Sainte Hache":
+            jump normal_ending_10
+
+
+label e_garder_hache_pont_baisse_donjon:
+    "Ogma se montre menaçant et tend la main pour se saisir de la Hache."
+
+    menu :
+        "Que dire ?"
+        "Reculez !":
+            e "Recule !"
+        "Je la mérite":
+            e "J'ai pris cette Hache des mains d'un empereur. Je suis le seul à la mériter."
+
+    "Ogma est désarçonné par l'attitude d'Einar : il le sait désormais immortel et invincible."
+
+    o "Que comptes-tu faire de la relique ? Elle devrait être détruite. Elle a déjà provoqué suffisament de malheurs et asservi trop d'hommes."
+
+    menu:
+        "Répondre quoi ?"
+        "La détruire soi-même":
+            e "Je la détruirai moi-même. C'est mon devoir."
+            jump lieu_encore_inconnu_1
+        "La garder !":
+            "Je l'ai prise, elle m'appartient. J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient."
+            jump good_ending_9
+
+
+label lieu_encore_inconnu_1:
+
+    $ demander_main_moira = False
+    $ refuser_or = False
+
+    "Ogma remercie Einar d'avoir détruit la hache : il aurait surement été tenté d'en faire mauvais usage. Einar reçoit sa part du trésor. Moira se tient à l'écart."
+
+    menu:
+        "Que dire ?"
+
+        "Demander la main de Moira":
+            e "Ogma, j'aimerais vous demander plus. La main de votre fille."
+            "Je ne peux accepter. Je refuse de condamner ma fille et sa descendance à partager le nom d'un régicide. Comprends bien que je sois navré et que tout ceci me remplisse d'amertume."
+            $ demander_main_moira = True
+
+        "Remercier":
+            e "Je vous remercie."
+
+        "Prendre l'or avec amertume":
+            e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
+
+        "Refuser l'or":
+            e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
+            $ refuser_or = True
+
+
+    if demander_main_moira:
+        menu menu_demande_main_moira_lieu_encore_inconnu_1:
+            "Comment réagir ?"
+            "Accepter la décision":
+                e "Je comprends."
+            "Avis Moira":
+                e "Moira, qu'en penses-tu ?"
+                "Elle répond qu'elle est triste mais qu'elle ne peut que se ranger à l'avis de son père."
+            "Pas à Ogma de décider":
+                e "Moira, qu'en penses-tu ?"
+                "Elle demande à Einar de se calmer. Elle est triste mais elle ne peut que se ranger à l'avis de son père."
+
+    if refuser_or:
+        o "Cette décision t'honore. Et maintenant ? Que vas-tu faire ?"
+    else:
+        o "Ogma demande à Einar ce qu'il compte faire désormais"
+
+
+    menu plan_futur_lieu_encore_inconnu_1:
+        "Que faire par la suite ?"
+
+        "Profiter" if refuser_or == False:
+            e "Dépenser l'or en femmes et en jeux."
+        "Choisir la voie de l'ermite":
+            e "Rester ici, en Ecosse. Seul."
+        "Rentrer en Norvège":
+            e "Rentrer en Norvège, malgré le danger. C'est sa seule demeure."
+        "Décider au jour le jour":
+            e "Errer. Il n'y a pas de plan bien déterminé."
+        "Découvrir l'Asie":
+            e "Aller en Asie, là où personne ne viendra le chercher. C'est une région du monde qui l'a toujours intrigué."
+
+    jump good_ending_8
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1972,3 +2115,28 @@ label bad_ending_5:
 label bad_ending_6:
     "Harald surgit au coeur de la mêlée, armé de sa hache. Il rassemble les vikings autour de lui et lance une contre-attaque imparable. Les rebelles sont balayés avec violence et Einar est décapité par le roi en personne"
     return
+
+label good_ending_7:
+    "Ogma souligne la droiture et l'humilité d'Einar. Le chef rebelle annonce qu'il compte la faire fondre en une claymore pour sa famille, le clan Wallace."
+    "Ogma annonce qu'il souhaite faire fondre la hache en une nouvelle épée, une claymore, qu'il déclare destinée à sa famille : le clan Wallace. Cette épée symbolise la destruction de l'oppression et l'émergence de la Liberté."
+    return
+
+label good_ending_8:
+    "Ogma remercie Einar d'avoir détruit la hache : il en aurait probablement fait un mauvais usage. C'est une preuve de sagesse que de savoir s'arrêter le moment venu. Einar reçoit sa part du trésor, comme convenu."
+    return
+
+label good_ending_9:
+    "Einar est à la tête d'une vaste armée et porte une tenue de général. Il s'apprête à affronter uner armée asiatique sur leurs propres terres."
+    "Einar mène une armée innombrable face à ce qui semble être une armée asiatique"
+    return
+
+label normal_ending_10:
+    "Ogma s'empare de la hache et la brandit aux yeux de tous. Il tient alors un discours annonçant son ambition de \"libérer\" le reste de la Grande-Bretagne et pourquoi pas le reste de l'Europe. Le monde mérite un empereur écossais !"
+    return
+
+label good_ending_11:
+    "Revenus au village, Ogma félicite Einar et annonce publiquement qu'il lui donne la main de sa fille."
+    return
+
+label bad_ending_12:
+    "Einar meurt étranglé par son roi, ses vertèbres craquant sous l'étreinte du monarque."
