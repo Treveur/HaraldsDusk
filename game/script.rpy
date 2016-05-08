@@ -1473,11 +1473,12 @@ label refuser_trahir_village_2:
 
 
 label accepter_trahir_village_2:
-
+    
+    e "Très bien... Je vais faire ce que vous me demandez."
     o "Tu as fait le bon choix."
     e "Quand dois-je partir ?"
     o "Ha ha ! Pas d'enthousiasme excessif ! Si je te laissais partir maintenant, tu mourrais aussitôt ! Nous allons soigner tes blessures."
-    o "Je vais te laisser. Nous nous retrouverons bientôt. Remet-toi, ha ha !"
+    o "Je vais te laisser. Nous nous retrouverons bientôt."
 
     jump interieur_maison_village_1
 
@@ -1487,45 +1488,75 @@ label interieur_maison_village_1:
 
     $ critique_ogma = False
 
-    "La vue est rendue à Einar, qui se trouve dans une maison du village visité précédemment. Une jeune femme se tient auprès de lui. Einar est attaché sur un lit."
+    "*Einar émerge du sommeil...*"
+    e "Où... Je suis entravé ? Huuugh..."
 
     menu menu_rencontre_moira_blesse:
-        "Que dire ?"
         "Toi ?" if moira_met:
-            e "Toi ?"
+            e "Toi ? ... Moira ?"
+            m "Vous vous rappelez de moi ?"
+            e "Oui. Tu étais à Perth."
+            m "Ne me tutoyez pas, s'il vous plaît. J'étais bien à Perth quand vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
             jump menu_rencontre_moira_blesse
 
         "Qui es-tu ?":
-            e "Qui es-tu "
+            e "Qui es-tu ? Je t'ai déjà rencontré ?"
+            m "Je suis Moira, fille d'Ogma. Celui que l'on surnomme \"Le Hurleur\"."
+            m "J'étais à Perth lorsque vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
+            e "J'aurais probablement dû t'accorder plus d'attention..."
+            m "Ne me tutoyez pas."
             jump menu_rencontre_moira_blesse
 
         "Où sommes-nous ?":
-            e "Où sommes-nous ?"
+            e "Où sommes-nous ? "
+            m "Nous sommes à Perth. Cette maison appartient à mon père."
+            m "Vous devriez vous habituer. Vous allez passer un certain temps ici."
+            e "Pourquoi ?"
+            m "Vos blessures sont graves. Une infection a déjà commencé à attaquer votre cuisse. Il vous faudra plus d'un mois pour vous remettre."
             jump menu_rencontre_moira_blesse
 
-        "Demander de reculer et de le laisser tranquille":
-            e "Laisse-moi tranquille"
+        "Arrière ! Laisse-moi !":
+            e "Laisse-moi tranquille ! Où est Ogma ? Je veux sortir d'ici !"
+            m "Du calme, du calme."
+            m "Je n'ai aucune intention de vous faire du mal."
 
-        "Sarcasme.":
-            e "La situation est assez... satisfaisante."
-            "Moira demande à Einar de ne plus jamais s'adresser à elle de cette façon. Elle lui met un coup de pied dans le genoux sans qu'il ne puisse se débattre."
+        "Faire une allusion sexuelle sarcastique":
+            e "La situation est assez... satisfaisante. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme ..."
+            "* Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse de défendre.*"
+            m "A l'avenir, vous éviterez ce genre de... choses. Soyez correct avec moi et je serai correcte avec vous."
 
-
-    "Moira broie quelque chose avec un pilon"
+    "*Moira broie quelque chose avec un pilon*"
 
     menu:
-        "Que fait-elle ?"
 
-        "Que fais-tu?":
-            e "Que fais-tu ?"
+        "Que fait-elle ?":
+            e "Qu'est ce que c'est ? Qu'est-ce que vous faites ?"
+            m "Je broie des plantes pour vous."
+            e "Pour moi ?"
+            m "Oui ! C'est du millepertuis, mélangé avec d'autres herbes."
+            
         "Ne rien dire":
             e "..."
-        "Humour":
+            m " Vous pouvez parler, j'ai le droit de vous répondre."
+            e "..."
+            m "J'imagine que vous ne dites rien par fierté ? Ne soyez pas idiot. Vous vous doutez que ce que je prépare vous est destiné !"
+            e "Qu'est-ce que c'est ?"
+               
+        "Trait d'humour":
             e "J'ai encore mes dents, je n'ai pas besoin que l'on broie ma nourriture."
+            m "... *elle esquisse un sourire fugace*"
+            m "Ce n'est pas de la nourriture !"
+            
         "Pas faim":
             e "Je n'ai pas faim, merci."
+            m "... *elle esquisse un sourire fugace*"
+            m "Ce n'est pas de la nourriture !"
 
-    "Moira explique qu'elle lui prépare un onguent, sur ordre de son père."
+    m "Je vous prépare un onguent, pour l'infection de votre cuisse."
+    e "Un onguent ?"
+    m "Soyez rassuré : c'est un ancien qui m'a donné les plantes, et il ne se trompe jamais !"
+    e "Mmmh..."
+    m "C'est mon père qui m'a demandé de vous soigner. Quand vous le verrez, essayez de vous montrer reconnaissant."
 
     menu :
         "Que lui dire ?"
