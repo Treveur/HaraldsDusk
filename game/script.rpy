@@ -2432,10 +2432,24 @@ label e_sauve_ogma_defendre_porte:
 
     "Encore sur le champ de bataille, Einar voit Ogma sur les remparts, brandissant la Hache Sainte."
 
-    "En se réveillant sur le champ de bataille, EInar voit le château brûler. Ogma est sur les remparts, brandissant la hache."
+    "En se réveillant sur le champ de bataille, Einar voit le château brûler. Ogma est sur les remparts, brandissant la hache."
 
     if moira_dead:
-        jump bad_ending_19
+        "Ogma voit Einar et se jette immédiatement sur lui, Hache levée."
+
+        menu :
+            "Pourquoi m'attaques-tu ?"
+            "Moira ?":
+                e "Tu es en colère à cause de ta fille, c'est ça ?"
+            "Combat un peu plus honorable":
+                e "J'aurais souhaité un combat honorable."
+            "Provoquer":
+                e "Au moment où j'ai tué ta fille, elle s'apprêtait à me chevaucher comme une folle !"
+
+        "Ogma atteint Einar et le massacre sur place, ne laissant rien de reconnaissable."
+
+        jump bad_ending_22
+
     else:
         "Ogma remercie Einar pour la victoire sur Harald, mais sa double trahison a coûté la vie à bien plus d'hommes que nécessaire. Pourquoi avoir agi ainsi ?"
 
@@ -2567,4 +2581,8 @@ label bad_ending_20:
 
 label bad_ending_21:
     "Ogma s'adresse à Einar en lui disant qu'il lui était redevable pour la victoire sur Harald, mais que sa trahison envers les vikings et les rebelles a provoqué bien plus de morts que nécessaire. Aussi, il est banni d'Ecosse et privé de toute récompense."
+    return
+
+label bad_ending_22:
+    "Ogma s'élance vers Einar dès qu'il l'aperçoit, hache levée. Einar n'a même pas le temps d'engager le combat. Ogma se jette sur lui et le massacre, le démembrant et le rendant impossible à reconnaître."
     return
