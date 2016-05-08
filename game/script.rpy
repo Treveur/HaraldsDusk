@@ -20,6 +20,7 @@ define o = Character('Ogma', color="#d35400")
 
 #Moira
 define m = Character("Moira", color = "#f00")
+image moira normal = "moira.png"
 
 #Patrick
 define p = Character("Patrick")
@@ -89,7 +90,7 @@ label intro:
     $ intro_dial = False
     $ eclaireur_dial = False
 
-    scene bg forest
+    scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
 
@@ -308,7 +309,7 @@ label l_innocents :
 #Sequence 2
 label plaine_1 :
 
-    scene bg mer
+    scene bg mer with dissolve
 
     "*Une heure plus tard.*"
 
@@ -503,7 +504,7 @@ label e_jouer_chef:
 #Scequence 4
 label foret_1:
 
-    scene bg forest
+    scene bg forest with dissolve
 
     "*Un jour plus tard...*"
 
@@ -677,9 +678,11 @@ label village_1:
 
     $ moira_met = False
 
-    show bg village
+    show bg village with dissolve
 
     l "Nous y sommes. Perth."
+    
+    "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
 
     e "Ça me semble bien calme."
 
@@ -759,7 +762,8 @@ label e_fouiller_village_1(einarFouille = False):
         gv "Einar ! Une fille, dans une maison !"
 
         e "Je suis à peine surpris... J'arrive !"
-
+        
+    scene bg house 
     menu menu_maison_1:
         "Qui es-tu ?":
             jump e_nom_villageoise_maison_1
@@ -860,6 +864,14 @@ label e_info_rebelle_maison_1:
 
     jump menu_maison_1
 
+label e_villagoise_partir_maison_1:
+    e "Sors d'ici et rejoint les autres."
+
+    vm "..."
+
+    jump choix_retour_village_1
+    
+    
 label e_tuer_moira_maison_1:
 
     e "Cette rencontre s'achève ici."
@@ -871,6 +883,8 @@ label e_tuer_moira_maison_1:
     l "Cette fille était sans défenses !"
 
     e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler."
+    
+    scene bg village with dissolve
 
     vm "Monstres ! Ils ont tué Moira !"
 
@@ -889,13 +903,6 @@ label e_tuer_moira_maison_1:
     e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
     jump e_massacre_village_1
-
-label e_villagoise_partir_maison_1:
-    e "Sors d'ici et rejoint les autres."
-
-    vm "..."
-
-    jump choix_retour_village_1
 #fin Scequence 6
 
 label choix_retour_village_1(massacre = False):
@@ -935,6 +942,7 @@ label choix_retour_village_1(massacre = False):
 
 #Scequence 7
 label foret_2(lieu = ""):
+    scene bg forest with dissolve
 
     if lieu == "chateau":
 
@@ -955,7 +963,7 @@ label foret_2(lieu = ""):
 
         e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
 
-
+    scene bg forestnight with dissolve
     "..."
 
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
@@ -1012,6 +1020,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
         menu :
             "Craindre un piège":
+                
                 jump menu_avertissement_villageois
             "Ils ont dû être effrayés":
                 e "La vue de douze guerriers à dû les effrayer. Ils n'avaient probablement jamais vu autant d'armes à la fois !"
@@ -1277,6 +1286,7 @@ label e_menace_foret_2(bad_ending = False):
 
 #Sequence 8
 label e_reveil_village_2:
+    scene bg house with dissolve
 
     $ already_talk = False
 
