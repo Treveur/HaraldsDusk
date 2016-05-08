@@ -1821,11 +1821,11 @@ label paradis_foret_1:
             "Tuer Moira":
                 e "(C'est une occasion en or de la tuer et s'enfuir)"
                 $ moira_dead = True
-                jump cote_1
+                jump cote_2
 
             "S'enfuir":
                 e "(C'est une occasion en or de s'enfuir)"
-                jump cote_1
+                jump cote_2
 
             "La regarder":
                 e "(Mignonne la petite)"
@@ -1863,9 +1863,40 @@ label village_4:
 
     jump sentier_foret_1
 
+
+#Sequence 10
 label sentier_foret_1:
 
-    "Wip"
+    "Einar repense à ce qu'il a vécu ces derniers temps, notamment aux raisons qui le pousseraient à trahir Harald"
+
+    menu :
+        "Fidélité à Harald":
+            e "Il est mon seigneur et je lui dois tout depuis de très nombreuses années. Impensable."
+        "Penser aux terre promises":
+            e "Il me fait miroiter des terres depuis si longtemps... Sans jamais récompenser mes efforts à leur juste valeur"
+        "Oppression"
+            e "Ces gens vivent dans la pauvreté et n'ont fait que se défendre face à un oppresseur. Ils m'ont sauvé. Mais le meurtre lâche de mes hommes et de Logan..."
+
+    jump foret_5
+
+label foret_5:
+
+    "Einar repense à Moira et au temps passé avec elle"
+
+    menu:
+        "Reconnaissant":
+            e "(Elle s'est occupée de moi pendant un mois, sans jamais se montrer lasse ni désagréable. Je lui dois beaucoup. )"
+        "Ogma lui avait demandé":
+            e "(Elle ne s'est occupée de moi que parce que son père le lui avait demandé. Je me demande si notre petite escapade en forêt était aussi une idée de son père...)"
+        "Qu'une amourette"
+            e "J'ai bien profité d'elle. Elle a été attentionnée avec moi. Mais ce n'est pas la première femme que j'ai rencontré... Que représente cette petite histoire face aux engagements d'un huscarl ?"
+
+    jump cote_1
+
+label cote_1:
+
+    "Einar imagine les implications futures de sa trahison"
+
 
 
 
@@ -1890,7 +1921,7 @@ label sentier_foret_1:
 #Acte 3
 
 #Sequence 1
-label cote_1:
+label cote_2:
     e "Hummmm me voilà tout près du chateau"
     e "Que vais-je faire?"
     e "Trahir mon roi ? Non impossible, je suis à ses côtés depuis bien longtemps"
