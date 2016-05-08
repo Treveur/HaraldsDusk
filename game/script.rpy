@@ -1830,10 +1830,46 @@ label paradis_foret_1:
             "La regarder":
                 e "(Mignonne la petite)"
                 "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
+                "Passer un bon moment avec Moira"
                 jump village_4
 
+#Sequence 9
 label village_4:
-    "WIP"
+    "Einar est au milieu du village. Il a récupéré ses affaires et est équipé comme lorsqu'il a été capturé. Ogma est présent ainsi que Moira."
+    "Il s'adresse à EInar en lui rappelant qu'il a fait une promesse. Les rebelles l'ont soigné et se sont occupés de lui : il doit maintenant accomplir sa part du marché."
+    "Lorsque l'assaut aura commencé, Ogma lancera un signal à destination d'Einar : un double son de cor. Il devra ouvrir le pont-levis."
+
+    menu:
+        "Que dire ?"
+
+        "Tenir promesse":
+            e "Je sais ce que j'ai à faire."
+        "Tenir promesse à contrecoeur":
+            e "Je vous suis reconnaissant. J'accomplirai ma promesse, même si c'est à contrecoeur."
+        "Acquiescer":
+            e "Très bien."
+
+    "Moira souligne qu'en donnant sa parole à Ogma, il lui a aussi donné sa parole à elle. Elle se montre inquiète et s'approche d'Einar."
+
+    menu :
+        "Que dire à Moira ?"
+
+        "L'embrasser":
+            "Il l'embrasse"
+        "La serrer contre soi et la rassurer":
+            "Il la rassure"
+        "L'ignorer"
+            "Il l'ignore"
+
+    jump sentier_foret_1
+
+label sentier_foret_1:
+
+    "Wip"
+
+
+
+
 
 
 
