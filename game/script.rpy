@@ -1893,31 +1893,22 @@ label foret_5:
 
     jump cote_1
 
+#Sequence 11
 label cote_1:
 
     "Einar imagine les implications futures de sa trahison"
 
+    menu :
 
+        "Chute d'un empire":
+            e "(Trahir mon roi entraînera la mort d'un nombre incalculable d'hommes et de femmes. Le pouvoir de Harald vacillera en même temps que la stabilité politique du plus grand Empire connu.)"
+        "Je serai un paria":
+            e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps...)"
+        "Il en va de ma vie":
+            e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera t'il à Moira ?)"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    jump cote_2
+    
 #Acte 3
 
 #Sequence 1
