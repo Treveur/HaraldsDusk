@@ -2,16 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1502: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Où sommes-nous ?"
-                      ^
+File "game/script.rpy", line 1818: expected menuitem
+    menu :
+    ^
 
-File "game/script.rpy", line 1536: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Pas de besoin d'attention"
-                               ^
-
-File "game/script.rpy", line 1649: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Appeler des secours"
-                         ^
+File "game/script.rpy", line 1877: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Oppression"
+                ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227
