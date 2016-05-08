@@ -1798,7 +1798,42 @@ label foret_3:
 #Sequence 8
 label paradis_foret_1:
 
+    $ moira_dead = False
 
+    menu :
+        "Que dire ?"
+
+        "Quel est cet endroit ?":
+            e "Où sommes-nous ?"
+
+        "Ne rien dire":
+            e "..."
+
+        "Endroit magnifique"
+            e "C'est un très bel endroit."
+
+
+        "Moira force Einar à s'asseoir au pied d'un arbre, en silence. Elle tourne le dos à Einar et commence à se dénuder."
+
+        menu :
+            "Que faire ?"
+
+            "Tuer Moira":
+                e "(C'est une occasion en or de la tuer et s'enfuir)"
+                $ moira_dead = True
+                jump cote_1
+
+            "S'enfuir":
+                e "(C'est une occasion en or de s'enfuir)"
+                jump cote_1
+
+            "La regarder":
+                e "(Mignonne la petite)"
+                "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
+                jump village_4
+
+label village_4:
+    "WIP"
 
 
 
@@ -1854,9 +1889,6 @@ label exterieur_chateau_1:
 
 #Sequence 3
 label cours_chateau_1:
-
-    #A mettre plus tard au bon endroit
-    $ moira_dead = False
 
     $ retour_silence_1 = False
     $ soupcon_harald_1 = False
