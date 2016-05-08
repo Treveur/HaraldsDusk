@@ -1750,6 +1750,40 @@ label village_2:
 #Sequence 6
 label village_3:
 
+    $ einar_raler = False
+
+    "Après quelques semaines, Einar est en bien meilleure santé. On lui permet de se déplacer librement dans le village. Moira l'accompagne en permanence."
+    "Moira demande si Einar apprécie cette première sortie"
+
+    menu :
+        "Que lui répondre"
+
+        "Envie de bouger":
+            e "Oui. Je commençais à être sérieusement engourdi !"
+
+        "Agréable compagnie":
+            e "Oui. Cette sortie est agréable, surtout aussi bien accompagné."
+
+        "Désagréable":
+            e "Pas vraiment. J'aime pas l'Ecosse."
+            $ einar_raler = True
+        "Se plaindre":
+            e "Non. Mes blessures me lancent."
+            $ einar_raler = True
+
+    if einar_raler:
+        m "Ne râle pas ! "
+
+    "Avant de le ramener à la maison, Moira prend Einar par la main et l'entraîne derrière elle, lui disant qu'elle voudrait lui montrer un endroit spécial."
+
+    jump foret_3
+
+#Sequence 7
+label foret_3:
+    "fdfs"
+
+
+
 
 
 
