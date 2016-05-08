@@ -681,7 +681,7 @@ label village_1:
     show bg village with dissolve
 
     l "Nous y sommes. Perth."
-    
+
     "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
 
     e "Ça me semble bien calme."
@@ -762,8 +762,8 @@ label e_fouiller_village_1(einarFouille = False):
         gv "Einar ! Une fille, dans une maison !"
 
         e "Je suis à peine surpris... J'arrive !"
-        
-    scene bg house 
+
+    scene bg house
     menu menu_maison_1:
         "Qui es-tu ?":
             jump e_nom_villageoise_maison_1
@@ -870,8 +870,8 @@ label e_villagoise_partir_maison_1:
     vm "..."
 
     jump choix_retour_village_1
-    
-    
+
+
 label e_tuer_moira_maison_1:
 
     e "Cette rencontre s'achève ici."
@@ -883,7 +883,7 @@ label e_tuer_moira_maison_1:
     l "Cette fille était sans défenses !"
 
     e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler."
-    
+
     scene bg village with dissolve
 
     vm "Monstres ! Ils ont tué Moira !"
@@ -1020,7 +1020,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
         menu :
             "Craindre un piège":
-                
+
                 jump menu_avertissement_villageois
             "Ils ont dû être effrayés":
                 e "La vue de douze guerriers à dû les effrayer. Ils n'avaient probablement jamais vu autant d'armes à la fois !"
@@ -1744,7 +1744,7 @@ label interieur_grande_porte_chateau_1:
     "La horde progresse en courant à travers la plaine. Lorsque les rebelles ne sont plus qu'à une centaine de mètres, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir la porte."
 
     menu:
-        "Dois-je baisser le pond-levis ?"
+        "Dois-je baisser le pont-levis ?"
         "Le baisser":
             if soupcon_harald_1:
                 jump bad_ending_3
@@ -1752,8 +1752,13 @@ label interieur_grande_porte_chateau_1:
                 jump pont_levis_baisse
 
         "Laisser fermer":
-            "A faire"
+            if soupcon_harald_1:
+                jump soupcon_harald_defendre_porte
+            else:
+                "To do"
 
+
+#Baisser pont-levis
 label pont_levis_baisse:
 
     #A mettre plus tard au bon endroit
@@ -1900,6 +1905,7 @@ label e_bruler_donjon_obeir__donjon:
 
         "L'ignorer":
             e "Le donjon est en feu, que cette maudite hache brûle avec"
+            jump e_confrontation_harald_pont_axe_laissee_baisse_donjon
 
 label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
@@ -1980,6 +1986,46 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 jump good_ending_7
             "Donner hache":
                 jump e_garder_hache_pont_baisse_donjon
+
+label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
+    "Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure."
+    "Harald arrive dans le dos d'Einar et lui demande ce qu'il a fait, et pourquoi."
+
+    menu :
+        "Que répondre ?"
+        "Liberté":
+            "J'ai voulu croire en la Liberté d'un peuple sur ses propres terres."
+        "Las des promesses":
+            "J'étais las de vos promesses de terres et d'or qui ne se réalisaient jamais"
+        "Vous être un monstre":
+            "J'ai rencontré une jeune femme et son père, qui ont su me convaincre que vous êtes un monstre."
+        "Provoquer":
+            "Simplement l'envie de mettre un coup de pied dans la fourmilière."
+
+    "Harald est déçu. Il brandit la Hache et demande à Einar s'il est conscient qu'il va mourir sans rien pouvoir y faire."
+
+    menu :
+        "Que répondre ?"
+
+        "J'ai mon amulette protectrice":
+            e "C'est l'occasion de voir si ce vieux grigri fonctionne vraiment."
+            e "Même à l'article de la mort, tu continues à être insolent."
+
+        "C'est mon choix":
+            e "Peu importe : j'ai fait ce que je devais faire"
+            e "Au moins, Einar aura suivi ses convictions. Quitte à trahir les siens et tuer ses frères."
+
+        "Demander pardon":
+            e "Et si j'implore votre pardon ?"
+            e "C'est une blague ?"
+
+        "Vous avez déjà perdu"
+            e "Me tuer ne changera rien au fait que vous avez perdu cette bataille."
+            h "Harald rassure Einar : ce petite soulèvement écossais n'écornera pas sa toute-puissance"
+
+    "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol. Il quitte la pièce en marchant."
+
+    jump bad_ending_16
 
 label win_battle_harald_no_axe_pont_baisse_donjon:
 
@@ -2108,11 +2154,6 @@ label village_6:
         call good_ending_15 pass (marier = False)
     else:
         jump good_ending_15
-
-
-
-
-
 
 label foret_4:
 
@@ -2251,6 +2292,79 @@ label lieu_encore_inconnu_1(axe = True):
     else:
         jump good_ending_13
 
+#Défendre porte
+jump soupcon_harald_defendre_porte:
+    "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
+    "Lorsque les rebelles parviennent au pont-levis, ils s'apprêtent à dresser une échelle par dessus les douves."
+    "Au même moment une troupe de vikings d'élite, dissimulés à l'extérieur du château, prend les rebelles à revers et repousse sans peine la masse devant le pont-levis."
+    "Un groupe de rebelles arrive par la mer, profitant du brouillard pour débarquer discrètement à l'intérieur de l'enceinte, derrière les vikings. Ils lancent un deuxième assaut qui divise les efforts des vikings."
+    "Harald demande à Einar de mener les huscarls au combat au delà de la porte, qui va céder."
+
+    menu:
+        "Mener les huscarls"
+
+        "Autoritaire":
+            e "A moi, huscarls !"
+        "Dressez vos boucliers":
+            e "Je veux une ligne parfaite ! Dressez vos boucliers !"
+        "Porte inatteignable":
+            e "Nous ne pouvons pas franchir la porte !"
+
+    "La porte finit par s'ouvrir et Ogma pénètre dans l'enceinte. Il fait face à Einar."
+
+    o"Traître ! Tu t'es joué de nous uniquement pour sauver ta vie de lâche ! Regarde combien d'hommes meurent aujourd'hui par ta faute !"
+
+    menu:
+        "Que répondre ?"
+        "Massacrez-les":
+            e "Huscarls, massacrez les rebelles, sans exception ! Mais laissez-moi le chef !"
+        "Que des porcs":
+            e "Quels hommes ? Je ne vois que des porcs."
+        "Ne rien dire":
+            e "..."
+        "Provoquer"
+            e "J'en fini avec toi, et ensuite je retourne m'occuper de ta fille !"
+
+    menu :
+        "Un combat s'engage entre Ogma et Einar"
+        "Mini jeu combat WIP"
+        "Gagner":
+            "Einar frappe Ogma en travers du torse avec sa hachette, ce qui le propulse dans les douves."
+            "Terrorisés, les rebelles commencent à prendre la fuite. Harald se lance à leur poursuite sur le dos de son cheval et massacre les fuyards en s'amusant."
+
+        "Perdre":
+            jump bad_ending_17
+
+    "Un peu plus tard"
+
+    "Harald félicite publiquement Einar pour sa fidélité et sa bravoure."
+
+    menu:
+        "Que réondre ?"
+        "Remercier":
+            e "Merci, mon roi."
+            h "Pas de modestie ! Tu nous a tous sauvés."
+
+        "Fidèle":
+            e "Je n'ai fait qu'être fidèle. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
+            h "C'est vrai. Mais ne sois pas si sombre !"
+
+        "Que l'on se souvienne de moi":
+            e "J'ai mené l'assaut final et tué le chef rebelle : qu'on se souvienne longtemps de mes exploits !"
+            h "C'est vrai. C'est une attitude peu modeste, mais il s'agit véritablement d'exploits. La gloire t'appartient aujourd'hui ! "
+
+    h "Pour tes exploits, voici ta récompense : Stirling et les terres alentours ! J'ai brûlé le village il y a peu, mais les terres fourniront de bons revenus d'ici quelques années."
+
+    menu :
+        "Que répondre ?"
+        "Remercier":
+            e "Merci."
+        "Honneur":
+            e "Quel grand honneur ! Merci, mon roi !"
+        "Terre infertiles"
+            e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ?  "
+
+    jump normal_ending_18
 
 
 #Ending
@@ -2318,9 +2432,23 @@ label good_ending_14(rejete = True):
         "Moira reste immobile au milieu du chemin alors qu'Einar la dépasse."
     else:
         "Elle court vers Einar et se jette dans ses bras."
+    return
 
 label good_ending_15(marier = True):
     if marier:
         "Moira se jette dans les bras d'Einar et l'embrasse."
     else:
         "Einar décide continuer sa vie seul"
+    return
+
+label bad_ending_16:
+    "Dans le donjon, Einar tombe nez-à-nez avec Harald. Le roi est en position de force : il brandit sa hache sainte. D'un moulinet il désarme Einar avant de le fendre en deux sans effort."
+    return
+
+label bad_ending_17:
+    "En plein combat, une flèche vient frapper Einar à l'épaule. Ogma profite de cette ouverture pour transperçer le viking de sa lame, et laisse tomber son cadavre dans les douves."
+    return
+
+label normal_ending_18:
+    "Le soir, Harald annonce au cours d'un grand repas qu'il souhaite récompenser Einar en lui offrant des terres autour de Stirling, le village qu'il a ordonné de brûler quelques jours plus tôt."
+    return
