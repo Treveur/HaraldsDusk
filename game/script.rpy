@@ -31,7 +31,9 @@ define pe3 = Character("Prissonière écossais 1")
 
 #Scene
 image bg forest = "foret_cabane.jpg"
+image bg forestnight = "forest_night.jpg"
 image bg village = "village.jpg"
+image bg house = "house.jpg"
 image bg mer = "chateau_mer.jpg"
 
 #Fond uni
@@ -307,6 +309,8 @@ label l_innocents :
 label plaine_1 :
 
     scene bg mer
+    
+    "*Une heure plus tard.*"
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend."
 
@@ -425,6 +429,8 @@ label e_contrecoeur :
 
 #Sequence 3
 label plaine_2:
+    
+    "*Le lendemain...*"
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
 
@@ -496,6 +502,10 @@ label e_jouer_chef:
 
 #Scequence 4
 label foret_1:
+    
+    scene bg forest
+    
+    "*Un jour plus tard...*"
 
     e "Une forêt. Encore..."
 
@@ -740,7 +750,7 @@ label e_fouiller_village_1(einarFouille = False):
 
 
     else:
-        e "Fouillez moi ces taudis ! Si vous trouvez quoi que ce soit, ramenez le moi !"
+        e "Fouillez moi ces taudis ! Si vous trouvez quoi que ce soit, ramenez-le moi !"
 
         gv "HAAAAA !"
         
@@ -815,6 +825,7 @@ label e_intimider_villageois_village_1:
 
 #Scequence 6 (alternative)
 label e_nom_villageoise_maison_1:
+    
     e "Qui es-tu ?"
 
     vm "Ne m'adressez pas la parole !"

@@ -1,16 +1,16 @@
-Sun May 08 02:33:17 2016
+Sun May 08 12:21:27 2016
 Windows-8-6.2.9200
 Ren'Py 6.99.10.1227
  
 
-Bootstrap to the start of init.init took 0.06s
+Bootstrap to the start of init.init took 0.05s
 Early init took 0.01s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.33s
+Loading script took 0.29s
 Loading persistent took 0.01s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.06s
+Running init code took 0.05s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -19,7 +19,7 @@ Dump and make backups. took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 DPI scale factor: 1.000000
-Creating interface object took 0.04s
+Creating interface object took 0.03s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
@@ -35,7 +35,7 @@ Interface start took 0.00s
 
 primary display bounds: (0, 0, 1920, 1080)
 Windowed mode.
-Screen sizes: virtual=(1920, 1080) physical=(1731, 974) drawable=(1731, 974)
+Screen sizes: virtual=(1920, 1080) physical=(1728, 972) drawable=(1728, 972)
 Vendor: 'NVIDIA Corporation'
 Renderer: 'GeForce GTX 680/PCIe/SSE2'
 Version: '4.5.0 NVIDIA 364.51'
@@ -379,11 +379,75 @@ Texture testing:
 - 1024px textures work.
 - 2048px textures work.
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 0.955999851227s
+Total time until interface ready: 0.839999914169s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
+- Frame drawn at 0.042000 seconds.
+- Frame drawn at 0.044000 seconds.
 - Frame drawn at 0.048000 seconds.
-- Frame drawn at 0.052000 seconds.
-- Frame drawn at 0.052000 seconds.
-- Frame drawn at 0.066000 seconds.
-- 0.066000 seconds to render 5 frames.
+- Frame drawn at 0.064000 seconds.
+- 0.064000 seconds to render 5 frames.
+Traceback (most recent call last):
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\execution.py", line 408, in run
+    node.execute()
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\ast.py", line 604, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\exports.py", line 1122, in say
+    who(what, interact=interact)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\character.py", line 841, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\character.py", line 690, in do_display
+    **display_args)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\character.py", line 493, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\ui.py", line 277, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\core.py", line 2425, in interact
+    repeat, rv = self.interact_core(preloads=preloads, **kwargs)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\core.py", line 2779, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\core.py", line 1848, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 416, in renpy.display.render.render_screen (gen\renpy.display.render.c:6685)
+    rv = render(root, width, height, 0, 0)
+  File "renpy/display/render.pyx", line 185, in renpy.display.render.render (gen\renpy.display.render.c:2857)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\layout.py", line 649, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 103, in renpy.display.render.render (gen\renpy.display.render.c:3319)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 185, in renpy.display.render.render (gen\renpy.display.render.c:2857)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\layout.py", line 649, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 103, in renpy.display.render.render (gen\renpy.display.render.c:3319)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 185, in renpy.display.render.render (gen\renpy.display.render.c:2857)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\layout.py", line 649, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 103, in renpy.display.render.render (gen\renpy.display.render.c:3319)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 185, in renpy.display.render.render (gen\renpy.display.render.c:2857)
+    rv = d.render(widtho, heighto, st, at)
+  File "renpy/display/accelerator.pyx", line 104, in renpy.display.accelerator.transform_render (gen\renpy.display.accelerator.c:1965)
+    cr = render(child, widtho, heighto, st - self.child_st_base, at)
+  File "renpy/display/render.pyx", line 185, in renpy.display.render.render (gen\renpy.display.render.c:2857)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\image.py", line 261, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\image.py", line 124, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "renpy/display/render.pyx", line 103, in renpy.display.render.render (gen\renpy.display.render.c:3319)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 185, in renpy.display.render.render (gen\renpy.display.render.c:2857)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\im.py", line 478, in render
+    im = cache.get(self)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\im.py", line 200, in get
+    surf = image.load()
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\display\im.py", line 529, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "D:\Logiciels\Renpy\renpy-6.99.10-sdk\renpy\loader.py", line 533, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'forest_night.jpg'.
