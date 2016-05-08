@@ -149,7 +149,7 @@ label logan_choice :
     e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
     show einar serious at left
-    show logan fache at right 
+    show logan fache at right
 
     l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
@@ -312,11 +312,11 @@ label plaine_1 :
     scene bg mer with dissolve
 
     "*Une heure plus tard.*"
-    
+
     show harald normal at right with dissolve
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend."
-    
+
     show einar serious at left with dissolve
 
     e "Dois-je envoyer un émissaire annoncer notre arrivée ?"
@@ -441,7 +441,7 @@ label plaine_2:
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
     gv "Nous aurions dû rester plus longtemps à Stirling. Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
-    
+
     show einar serious at right with dissolve
 
     menu:
@@ -629,7 +629,7 @@ label e_ordre_taire_guerrier_foret_1:
 label e_pourquoi_logan_accompagne_foret_1:
 
     e "Pourquoi avoir choisi de m'accompagner ? "
-    
+
     l "Je l'ai déjà dit. Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous. Et ma présence facilitera les relations avec les autres écossais."
 
     e "J'imagine."
@@ -775,7 +775,7 @@ label e_fouiller_village_1(einarFouille = False):
         e "Je suis à peine surpris... J'arrive !"
 
     scene bg house
-    show moira at center 
+    show moira at center
     show einar serious at left with dissolve
     menu menu_maison_1:
         "Qui es-tu ?":
@@ -1499,14 +1499,14 @@ label interieur_maison_village_1:
             e "Qui es-tu "
             jump menu_rencontre_moira_blesse
 
-        "Où sommes-nous ?"
+        "Où sommes-nous ?":
             e "Où sommes-nous ?"
             jump menu_rencontre_moira_blesse
 
-        "Demander de reculer et de le laisser tranquille"
+        "Demander de reculer et de le laisser tranquille":
             e "Laisse-moi tranquille"
 
-        "Sarcasme."
+        "Sarcasme.":
             e "La situation est assez... satisfaisante."
             "Moira demande à Einar de ne plus jamais s'adresser à elle de cette façon. Elle lui met un coup de pied dans le genoux sans qu'il ne puisse se débattre."
 
@@ -1533,7 +1533,7 @@ label interieur_maison_village_1:
             e "Je te remercie"
         "Ne rien dire":
             e "..."
-        "Pas de besoin d'attention"
+        "Pas de besoin d'attention":
             e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné."
 
     "Einar est emmené au village qu'il avait visité précédemment. Il y rencontre Moira, qui se présente comme étant la fille d'Ogma."
@@ -1646,13 +1646,13 @@ label interieur_maison_village_3:
             "Moira répond que non. Elle va accomplir ce que son père n'a pas fait avant, et aurait dû faire depuis longtemps. Elle a un regard terrible."
             $ libre_ask = True
 
-        "Appeler des secours"
+        "Appeler des secours":
             e "À l'aide !"
 
         "Humour":
             e "Notre relation manquait de piment : des accessoires ne seront pas de trop."
 
-        "Inquiet"
+        "Inquiet":
             e "Alors c'est la fin ? Pourquoi aujourd'hui ? Pourquoi m'avoir soigné pendant toutes ces semaines ?"
 
     if libre_ask:
