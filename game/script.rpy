@@ -1512,6 +1512,9 @@ label exterieur_chateau_1:
 #Sequence 3
 label cours_chateau_1:
 
+    #A mettre plus tard au bon endroit
+    $ moira_dead = False
+
     $ retour_silence_1 = False
     $ soupcon_harald_1 = False
     $ mentir_harald_1 = False
@@ -1755,14 +1758,11 @@ label interieur_grande_porte_chateau_1:
             if soupcon_harald_1:
                 jump soupcon_harald_defendre_porte
             else:
-                "To do"
+                jump harald_defendre_porte
 
 
 #Baisser pont-levis
 label pont_levis_baisse:
-
-    #A mettre plus tard au bon endroit
-    $ moira_dead = False
 
     "Le pont s'abaisse brutalement, laissant le champ libre aux rebelles pour entrer."
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont abaissé."
@@ -2286,7 +2286,6 @@ label lieu_encore_inconnu_1(axe = True):
         "Découvrir l'Asie":
             e "Aller en Asie, là où personne ne viendra le chercher. C'est une région du monde qui l'a toujours intrigué."
 
-
     if axe:
         jump good_ending_8
     else:
@@ -2294,6 +2293,7 @@ label lieu_encore_inconnu_1(axe = True):
 
 #Défendre porte
 jump soupcon_harald_defendre_porte:
+
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
     "Lorsque les rebelles parviennent au pont-levis, ils s'apprêtent à dresser une échelle par dessus les douves."
     "Au même moment une troupe de vikings d'élite, dissimulés à l'extérieur du château, prend les rebelles à revers et repousse sans peine la masse devant le pont-levis."
@@ -2365,6 +2365,108 @@ jump soupcon_harald_defendre_porte:
             e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ?  "
 
     jump normal_ending_18
+
+label harald_defendre_porte:
+
+    "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
+    "Harald survient et alnce immédiatement une grande contre-offensive en ouvrant la porte et en chargeant les assaillants personnellement. Désorganisés, les rebelles sont séparés en deux groupes."
+
+    menu :
+        "Que faire ?"
+
+        "Suivre le roi":
+            e "Suivez le roi ! Suivez le !"
+        "Massacrez-les":
+            e "En avant, sire ! Massacrez ces chiens !"
+        "Ne rien dire"
+            e "..."
+
+    "Harald pârvient au contact d'Ogma et un combat s'engage."
+    "Harald survient et concentre les efforts de ses troupes sur la grande porte, parvenant à lancer une grande contre-offensive tranchant net dans la progression des rebelles."
+    "Les vikings séparent les rangs ennemis en deux et atteignent Ogma. Un combat féroce s'engage entre les deux chefs."
+    "Harald prend nettement l'avantage : la Hache le rend invincible. Ogma est au sol et le roi s'apprête à l'achever."
+
+    "Au cours du combat Harald prend l'ascendant et s'apprête à achever Ogma le Hurleur."
+
+    menu :
+        "Ogma est en mauvaise posture"
+
+        "Tuez-le !":
+            e "Tuez-le, sire ! "
+            jump e_laisse_ogma_mort_defendre_porte
+        "Arrêtez !":
+            e "Non ! Ne l'achevez pas !"
+            jump e_sauve_ogma_defendre_porte
+
+
+label e_laisse_ogma_mort_defendre_porte:
+
+    "Ogma est tranché en deux par l'énorme hache à double tranchant de Harald. Immédiatement les rebelles se dispersent, traumatisés de voir leur héros détruit par le roi viking."
+
+    menu :
+        "Que dire ?"
+        "Beau coup !":
+            e "Beau coup, sire !"
+        "Se moquer des rebelles":
+            e "Regardez-les détaler comme des lapins ! "
+        "J'aurais dû le tuer moi-même il y a déjà longtemps."
+
+    jump cour_chateau_ogma_mort_defendre_porte
+
+label cour_chateau_ogma_mort_defendre_porte:
+
+    "Dans la cour du château, les rebelles survivants sont tous attachés sur des bûchers. Moira fait partie d'eux."
+    "Einar assiste à la scène depuis la foule, tandis que Patrick s'apprête à mettre le feu aux bûchers. Harald exulte."
+
+    menu :
+        "Que faire ?"
+        "Regarder":
+            jump bad_ending_19
+        "Sauver Moira":
+            jump bad_ending_20
+
+label e_sauve_ogma_defendre_porte:
+
+    "Einar dévie le coup de hache et sauve Ogma. Ce dernier en profite pour trancher les deux tendons d'achille du roi et l'achever au sol alors qu'il a laissé sa hache lui échapper des mains."
+    "Aussitôt la horde resserre son étau sur les vikings en les massacrant. Einar est piétiné et laissé pour mort."
+
+    "Encore sur le champ de bataille, Einar voit Ogma sur les remparts, brandissant la Hache Sainte."
+
+    "En se réveillant sur le champ de bataille, EInar voit le château brûler. Ogma est sur les remparts, brandissant la hache."
+
+    if moira_dead:
+        jump bad_ending_19
+    else:
+        "Ogma remercie Einar pour la victoire sur Harald, mais sa double trahison a coûté la vie à bien plus d'hommes que nécessaire. Pourquoi avoir agi ainsi ?"
+
+        menu :
+            "Que dire ?"
+
+            "Remords":
+                e "J'ai été le jouet de mes propres remords."
+            "Ce n'est qu'un jeu":
+                e "L'envie de prendre à leur propre jeu deux dirigeants ambitieux."
+            "Étourderie"
+                e "L'étourderie, peut-être ?"
+
+        "Ogma pardonne. Mais Einar est banni d'Ecosse à tout jamais et privé de sa récompense. Il n'a plus qu'à partir immédiatement. Des guerriers rebelles l'entourent."
+
+        menu :
+            "Que dire ?"
+
+            "Adieu":
+                e "Adieu, et sans rancune."
+            "Et Moira ?":
+                e "Et Moira ? Où est-elle ?"
+                o "Ne prononce même pas son nom. Je ne veux plus que tu ais le moindre rapport avec elle. Elle ne le veut pas non plus. Pars, maintenant."
+            "Norvège":
+                e "Je ne comptais pas rester. Il est temps que je rentre en Norvège."
+            "Quel ingrat":
+                e "Quelle ingratitude ! Et dire que je vous trouvais sympathique !"
+
+        jump bad_ending_21
+
+
 
 
 #Ending
@@ -2451,4 +2553,18 @@ label bad_ending_17:
 
 label normal_ending_18:
     "Le soir, Harald annonce au cours d'un grand repas qu'il souhaite récompenser Einar en lui offrant des terres autour de Stirling, le village qu'il a ordonné de brûler quelques jours plus tôt."
+    return
+
+label bad_ending_19:
+    "Les bûchers prennent feu, un à un. Lorsque vient le tour de Moira, elle découvre Einar et leurs regardes se fixent. Alors que les flammes commencent à la dévorer, elle ne hurle pas."
+    "Elle contient toute sa rage et sa colère, adressant un regard de haine pure à Einar alors que des larmes coulent sur ses joues."
+    return
+
+label bad_ending_20:
+    "Einar s'élance vers le bûcher et tente de détacher Moira. Il y parvient, mais un archer lui lance une flèche dans l'abdomen. Moira n'essaie même pas de s'enfuir."
+    "Elle arrache sa hachette de la ceinture d'Einar et lui en assène un coup violent au milieu du dos."
+    return
+
+label bad_ending_21:
+    "Ogma s'adresse à Einar en lui disant qu'il lui était redevable pour la victoire sur Harald, mais que sa trahison envers les vikings et les rebelles a provoqué bien plus de morts que nécessaire. Aussi, il est banni d'Ecosse et privé de toute récompense."
     return
