@@ -1229,82 +1229,120 @@ label attaque_massacre_foret_2(message = ""):
 
 label e_demande_nom_foret_2(bad_ending = False):
 
-    e "Mais qui es-tu donc ?"
+    e "Qui es-tu, lâche ?"
 
     if bad_ending:
-        o "Tu ne le saura jamais"
+        ge "..."
         jump bad_ending_1
     else:
-        o "Tu le saura bien assez tôt"
+        o "Ogma. Le Hurleur."
+        "*Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient.*"
         jump e_reveil_village_2
 
 label e_implore_pitie_foret_2(bad_ending = False):
 
-    e "Par pitié, ne me tue pas"
+    e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
 
     if bad_ending:
-        o "Comtpe là dessus et bois de l'eau"
+        ge "Lâche jusqu'au bout..."
         jump bad_ending_1
     else:
-        o "Suprise Motherfucker. Tu y as cru ?"
+        ge "Nous allons voir ça..."
+        "*Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient.*"
         jump e_reveil_village_2
 
 label e_menace_foret_2(bad_ending = False):
 
-    e "Si tu me tues Harald, arriva pour tous vous buter"
+    e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
     if bad_ending:
-        o "Hasta la vista bady!"
+        ge "Je ne crains pas ton roi."
         jump bad_ending_1
     else:
-        "nope"
+        ge "Je ne crains pas ton roi."
+        "*Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient.*"
         jump e_reveil_village_2
+        
 
-#Scequence 8
+#Sequence 8
 label e_reveil_village_2:
 
     $ already_talk = False
+    
+    e "Huugh..."
 
-    o "Tu te reveiles enfin"
+    ge "Ogma ! Il se réveille !"
+    
+    o "Ah ! La belle endormie. "
+    
+    e "Arrgh... Mon épaule..."
+    
+    o "Oui je sais, ça fait mal. La tête de la flèche est toujours à sa place."
+    
+    e "Enfoiré ! Vous les avez tous tués !"
+    
+    o "..."
+    
+    e "Qui... Aarrgh... êtes vous ?"
+    
+    o "Ça me paraît assez évident. Nous sommes ceux que toi et les tiens cherchiez. Bravo, vous nous avez trouvé."
 
-    e "Ahhhh je souffre, pardonne moi logan de t'avoir sous estimé"
+    e "Les rebelles ?"
+    
+    o "..."
 
-    e "(Où suis-je ?)"
-
-    e "Hey mais je te reconnais, c'est toi qui à tué mon bff"
+    e "Où sont les autres ? Où sont mes compagnons ?"
+    
+    e "Ordure ! Je me rappelle ! C'est toi qui a tué Logan !"
+    
+    o "C'était un traître."
+    
+    e "C'est lui qui m'a retenu de massacrer Perth ! C'est lui qui a sauvé la vie de vos vieux et de vos truies de femmes !"
+    
+    o "Alors j'imagine que sa mort est regrettable."
 
     menu reveil_einar_village_2:
-        "pouquoi je suis le seul encore en vie ?":
+        "Pourquoi m'avoir laissé en vie ?":
             jump e_demande_vie_village_2
-        "Est-ce qu'il y a un rapport avec le village plus tôt ?":
+        "Il y a un rapport avec Perth ?":
             jump e_rapport_village_village_2
-        "Pauvre con!" if already_talk == False:
+        "Crevure !" if already_talk == False:
             jump e_insulte_village_2
 
 label e_demande_vie_village_2:
-    e "Pourquoi m'avoir épargné ?"
+    e "Pourquoi m'avoir épargné ? Pourquoi moi et pas les autres ?"
 
-    o "Tu es un brave gars!"
+    o "J'ai donné l'ordre de t'épargner parce que tu étais le seul dont nous avions besoin."
 
     jump o_explication_vie_village_2
 
 label e_rapport_village_village_2:
 
-    e "Est-ce qu'il y a un rapport avec le village d'hier"
+    e "Est-ce qu'il y a un rapport avec le village d'hier ?"
 
-    o "Yep biatch"
+    o "Perth. Et la réponse est oui. Nos éclaireurs avaient vu votre groupe et nous l'avaient signalé."
+    
+    o "Nous avons quitté le village peu avant votre arrivée, et nous avons observé la scène, avec la ferme intention de vous tendre une embuscade ensuite."
+    
+    o "Ce que, comme tu as pu le voir, nous avons fait."
 
     jump o_explication_vie_village_2
 
 label e_insulte_village_2:
 
-    e "Espèce de salaud"
+    e "Salopards ! J'aurais du enfermer vos truies de femmes et leurs gamins dans vos cahutes merdeuses avant d'y foutre le feu !"
+    
+    "*Ogma frappe Einar sur son épaule blessée*"
+    
+    e "AAARGH !"
 
-    o "Le train de tes insultes roule sur le rail de mon indiférence"
+    o "Les insultes et les menaces n'ont que peu de poids venant de la part d'un soldat blessé, attaché et seul."
 
-    o "Je préfère partir que de devenir sourd"
+    o "Tu ferais mieux de contenir ta colère. J'ai décidé de t'épargner. Rien ne m'empêche de changer d'avis."
+    
+    e "Tu me demandes d'être reconnaissant, pourriture ?!"
 
-    o "et puis tu vas te calmer merdeux"
+    o "Oui. Tu me dois la vie."
 
     $ already_talk = True
 
@@ -1315,11 +1353,13 @@ label o_explication_vie_village_2:
     $ already_talk = False
     $ choix_ogma_1 = ""
 
-    o "Tu as été cool avec les villageaois"
-    o "Tu es proche d'Harald et tu sais tout sur lui alors"
+    o "Tu n'es vivant que pour deux raisons."
+    o "D'abord, tu t'es montré clément envers les miens. En tant que meneur, cette décision n'appartenait qu'à toi. Je te remercie."
+    o "Ensuite, je sais que tu es proche de Harald. Ta tenue, la façon dont tu parlais à tes hommes : tu es un huscarl."
+    e "Vous m'avez épargné pour m'utiliser contre mon roi ?"
+    o "Oui."
 
     menu :
-        "Je ne comprends pas trop"
         "Quel est ton but ?":
             $ choix_ogma_1 = "incomprehension"
         "Insulter":
@@ -1329,28 +1369,37 @@ label o_explication_vie_village_2:
 
     if choix_ogma_1 == "incomprehension":
 
-        e "J'avoue ne pas tout commprend"
+        e "J'ai peur de ne pas tout comprendre."
 
-        o "Mais pourtant c'est simple"
+        o "L'explication est simple."
     elif choix_ogma_1 == "insulter":
-        e "T'es qu'un gros batard"
+        e "Vous allez être déçus ! Vous n'obtiendrez rien de moi, charognes ! Vous ne me ferez pas trahir mon allégeance !"
 
-        o "Calme toi, mon petit"
+        o "Calme toi. Les termes de mon offre suffiront à te faire changer d'avis, j'en suis sûr."
     else:
         "..."
 
-    o "Laisse moi t'expliquer ce que je veux concrètement"
-    o "Trahis Harald, ouvre le pont-levis et tu sera riche"
+    o "Je ne veux que peu de choses. En échange de la trahison du roi, je t'offre le droit de survivre, de reprendre ta liberté et de partir avec ce que tu pourras porter d'or."
+    e "Ma vie et de l'or contre la trahison du souverain le plus puissant ayant jamais existé ?"
+    o "Exactement."
+    o "Une fois que je t'aurai relâché, tu retourneras au château de Dunbar. Au signal que je te donnerai, tu abaisseras le pont-levis."
+    e "C'est tout ? Harald ne me laissera jamais faire !"
+    o "Peu importe la méthode. Tout ce que je demande, c'est que la porte soit ouverte quand mes troupes arriveront au château pour le roi."
+    e "Les troupes ? Vos vingt fermiers ? Et que comptez-vous faire, une fois à l'intérieur ? Tuer le roi ? Ha ha ! Il pourrait vous affronter à lui tout seul !"
+    o "Je ne veux pas le tuer. Pas nécessairement. Je veux uniquement l'obliger à quitter l'Ecosse. Je veux montrer au reste du monde que l'élu divin peut reculer face à des hommes déterminés."
+    e "Et en admettant que j'accepte votre offre, quelles sont mes garanties de survie ensuite ? Le roi me fera chercher sur tout les continents."
+    o "Tu pourras rester en Ecosse ou aller où tu veux. Ce n'est pas mon problème."
+    o "Alors, quelle est ta décision ?"
 
     menu menu_choix_trahison_village_2:
         "Refuser":
             jump refuser_trahir_village_2
-        "Quelles garanties ?" if already_talk == False:
+        "Quelles sont vos garanties ?" if already_talk == False:
 
-            e "Qui me dit que tu vas tenir ta parole ."
-
-            o "Pour faire simple, tu n'as pas le choix"
-            o "J'ai des agents partout en Angleterre, je te rerouverai et te buterai"
+            e "Qui vous dit que je tiendrai parole une fois remis en liberté ?"
+            o "Pour faire simple, tu es obligé de respecter notre accord."
+            o "J'ai des contacts partout en Grande-Bretagne et sur le continent, je te retrouverais en quelques jours à peine."
+            o "Et tu n'aimerais pas que je te retrouve. Alors ?"
 
             $ already_talk = True
 
@@ -1360,34 +1409,46 @@ label o_explication_vie_village_2:
 
 label refuser_trahir_village_2:
 
-    e "Jamais de la vie, plutôt mourir"
+    e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
+    
+    o "Mauvaise réponse."
+    
+    "*Ogma enfonce deux doigts dans la plaie de l'épaule d'Einar, pressant la pointe de flèche.*"
+    
+    e "AAAAARRRGH !"
+    
+    o "Tiens, on dirait que la pointe est coincée dans une articulation !"
+       
+    e "AAAHH ! STOP !"
+    
+    o "Jouer les fortes têtes ne te servira à rien ici. Tout ça est bien plus éprouvant pour toi que pour moi."
 
-    o "Et si je te mettais un doigt içi"
+    e "ARRÊTEZ ! ARRÊTAAAARGH !"
+    
+    "*Ogma retire ses doigts de la plaie.*"
 
-    e "Arggg! Non, jamais!"
-
-    o "Je vais continue de te torturer jusqu'à que tu acceptes"
-
-    o "Le cas contraire, je te tuerais de mes propres mains"
+    o "Tu as changé d'avis sur la question ?"
 
     menu:
-        "Finir par céder":
-            o "Ahhh ba tu vois quand tu veux"
+        "Céder":
+            e "Très bien... Hhhggh... J'accepte..."
+            o "Parfait !"
             jump accepter_trahir_village_2
-        "S'obsiner à refuser":
+        "Ne rien lâcher":
             jump bad_ending_2
 
 
 label accepter_trahir_village_2:
 
-    o "Je suis content que tu ais finalement accepté"
-
-    o "Tu as fait le bon choix"
+    o "Tu as fait le bon choix."
+    e "Quand dois-je partir ?"
+    o "Ha ha ! Pas d'enthousiasme excessif ! Si je te laissais partir maintenant, tu mourrais aussitôt ! Nous allons soigner tes blessures."
+    o "Je vais te laisser. Nous nous retrouverons bientôt. Remet-toi, ha ha !"
 
     jump village_3
 
 #Acte 2
-#Scequence 1
+#Sequence 1
 label village_3:
     jump cote_1
 
@@ -1859,8 +1920,8 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
             "Fin du règne":
                 e "Votre règne s'achève ici et maintenant. Vous allez mourir."
-            "Pas de répix":
-                e "Pas de paix. Pas de répit.  Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+            "Pas de répit":
+                e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
             "Épargner":
                 e "Vous avez déjà perdu. Je vais vous épargner."
             "Je te suis supérieur":
@@ -1873,13 +1934,15 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
 #Ending
 label bad_ending_1:
-    "Einar se fait tuer comme une merde parce qu'il n'a pas eu l'intelligence de réfléchir"
-    "Et oui, il faut réfléchir"
+    "*Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt.*"
     return
 
 label bad_ending_2:
-    o "Tu aurais pu vivre dommage"
-    "Après avoir été torturé pendant plusieurs jours, Ogma fini par décapiter Einar"
+    e "Je n'ai qu'une parole. Vous pouvez aller vous faire foutre."
+    o "C'est décevant... Tu crois être unique ? Si ce n'est pas toi, un autre fera le travail à ta place."
+    "*Ogma égorge Einar alors qu'il est entravé.*"
+    e "Grrblbhh..."
+    "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
     return
 
 label bad_ending_3:
