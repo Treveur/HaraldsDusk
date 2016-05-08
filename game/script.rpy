@@ -1945,7 +1945,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
         menu:
             "Gagner":
-                "J'y reviens tout suite"
+                jump win_battle_harald_no_axe_pont_baisse_donjon
             "Perdre":
                 jump bad_ending_12
 
@@ -1970,6 +1970,119 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 jump good_ending_7
             "Donner hache":
                 jump e_garder_hache_pont_baisse_donjon
+
+label win_battle_harald_no_axe_pont_baisse_donjon:
+
+    $ epargner_harld__no_axe_donjon = False
+
+    "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage. Harald est au sol. Il reconnaît la supériorité d'Einar et implore sa pitié."
+
+
+    menu :
+        "Que dire à Harald ?"
+
+        "Fin du règne":
+            e "Votre règne s'achève ici et maintenant. Vous allez mourir."
+        "Pas de répit":
+            e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+        "Épargner":
+            e "Vous avez déjà perdu. Je vais vous épargner."
+            $ epargner_harld__no_axe_donjon = True
+        "Je te suis supérieur":
+            e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+            $ epargner_harld__no_axe_donjon = True
+
+
+    if epargner_harld__no_axe_donjon:
+        jump e_epargne_harald_no_axe_donjon
+    else:
+        call lieu_encore_inconnu_1 pass (axe = False)
+
+label e_epargne_harald_no_axe_donjon:
+
+    $ harald_echape_no_axe = True
+
+    h "Tu comptes me laisser en vie ? Mais pourquoi ?"
+
+    menu:
+        "Que répondre"
+
+        "Choice 1":
+            e "Vous pouvez fuir, seul. Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera. Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
+        "Choice 2":
+            e "Fuyez, avant que je ne change d'avis. Ne me demandez pas d'explications."
+        "Livrer au Hurleur":
+            e "Je vais vous livrer au Hurleur. Il saura quoi faire de vous. Tout ceci n'est plus de mon ressort."
+            $ harald_echape_no_axe = False
+        "Faire peur":
+            e "Je connais quelques personnes qui voudraient vous rencontrer."
+            $ harald_echape_no_axe = False
+
+    if harald_echape_no_axe:
+        "Harald s'échappe sans demander son reste. Par une meurtrière, Einar voit le roi sur une barque, sortant d'une anfractuosité au pied de la falaise."
+        "Harald s'échappe par la mer, empruntant une petite barque qu'il semblait avoir dissimulé dans une anfractuosité naturelle."
+        "La bataille arrive à sa fin. Les rebelles achèvent les vikings qui rampent au sol."
+        "Depuis les remparts, Ogma observe Harald fuir sur la mer. Puis il regarde Einar, semblant lui faire comprendre qu'il sait qu'il lui a permit de s'enfuir."
+
+        "Un peu plus tard..."
+
+        "Ogma est déçu mais comprend pourquoi Einar a laissé s'enfuir le roi : sans sa Hache, l'empire va s'effondrer sous peu."
+
+        jump village_5
+
+label village_5:
+    "Ogma remercie Einar pour avoir tenu sa parole et lui donne l'or convenu."
+    "Mais il lui explique qu'il ne pourra jamais avoir une totale confiance envers celui qui a son ennemi de s'enfuir : il demande à Einar de quitter l'Ecosse pour toujours."
+
+    menu:
+        "Que lui répondre ?"
+
+        "Suivi sont coeur":
+            e "J'ai fait ce qui me semblait juste. Je regrette que nous nous éparions en ces termes."
+        "Etre désolé":
+            e "Je regrette de l'avoir laissé partir. J'espère que vous me pardonnerez. "
+        "Partir":
+            e "Je ne comptais pas rester ici. Adieu."
+
+
+    jump foret_4
+
+label foret_4:
+
+    $ premier_refus_moira_foret_4 = False
+    $ rejeter_moira_foret_4 = False
+
+    "Dans la forêt, Einar voit Moira sur le sentier. Elle lui explique qu'elle a décidé de venir avec lui. Elle trouve son père injuste et elle aime Einar."
+
+    menu menu_reponse_moira_suivre_einar:
+        "Que dire ?"
+
+        "Pas de raison de le suivre" if premier_refus_moira_foret_4 == False:
+            e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
+            $ premier_refus_moira_foret_4 = False
+
+        "Pas contrarier Ogma" if premier_refus_moira == False:
+            e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père. Laisse moi partir seul."
+            $ premier_refus_moira_foret_4 = False
+
+        "Pas les même sentiments":
+            e "Nous ne partageons pas les même sentiments. Je ne t'aime pas. Rentre chez toi."
+            $ rejeter_moira_foret_4 = True
+
+        "Tendre les bras":
+            "(Ne rien dire mais lui tendre les bras.)"
+        "Viens":
+            "Viens avec moi"
+
+    if rejeter_moira_foret_4:
+        call good_ending_14 pass (rejete = True)
+    else:
+        jump good_ending_14
+
+
+
+
+
 
 label fuite_harald_pont_baisse_donjon:
     "Harald s'échappe sans demander son reste. Par une meurtrière, Einar voit le roi sur une barque, sortant d'une anfractuosité au pied de la falaise."
@@ -2009,12 +2122,15 @@ label e_garder_hache_pont_baisse_donjon:
             jump good_ending_9
 
 
-label lieu_encore_inconnu_1:
+label lieu_encore_inconnu_1(axe = True):
 
     $ demander_main_moira = False
     $ refuser_or = False
 
-    "Ogma remercie Einar d'avoir détruit la hache : il aurait surement été tenté d'en faire mauvais usage. Einar reçoit sa part du trésor. Moira se tient à l'écart."
+    if axe:
+        "Ogma remercie Einar d'avoir détruit la hache : il aurait surement été tenté d'en faire mauvais usage. Einar reçoit sa part du trésor. Moira se tient à l'écart."
+    else:
+        "Ogma félicite Einar pour avoir triomphé de Harald. Il lui donne la part de trésor promise. Moira se tient légèrement à l'écart."
 
     menu:
         "Que dire ?"
@@ -2067,7 +2183,11 @@ label lieu_encore_inconnu_1:
         "Découvrir l'Asie":
             e "Aller en Asie, là où personne ne viendra le chercher. C'est une région du monde qui l'a toujours intrigué."
 
-    jump good_ending_8
+
+    if axe:
+        jump good_ending_8
+    else:
+        jump good_ending_13
 
 
 
@@ -2140,3 +2260,14 @@ label good_ending_11:
 
 label bad_ending_12:
     "Einar meurt étranglé par son roi, ses vertèbres craquant sous l'étreinte du monarque."
+    return
+
+label good_ending_13:
+    "Revenus au village, Ogma félicite Einar. Il refuse cependant de marier sa fille, Moira, à un régicide."
+    return
+
+label good_ending_14(rejete = True):
+    if rejete:
+        "Moira reste immobile au milieu du chemin alors qu'Einar la dépasse."
+    else:
+        "Elle court vers Einar et se jette dans ses bras."
