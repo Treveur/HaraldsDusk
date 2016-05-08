@@ -2322,7 +2322,7 @@ label soupcon_harald_defendre_porte:
             e "Quels hommes ? Je ne vois que des porcs."
         "Ne rien dire":
             e "..."
-        "Provoquer"
+        "Provoquer":
             e "J'en fini avec toi, et ensuite je retourne m'occuper de ta fille !"
 
     menu :
@@ -2361,7 +2361,7 @@ label soupcon_harald_defendre_porte:
             e "Merci."
         "Honneur":
             e "Quel grand honneur ! Merci, mon roi !"
-        "Terre infertiles"
+        "Terre infertiles":
             e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ?  "
 
     jump normal_ending_18

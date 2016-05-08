@@ -2,20 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 2022: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Vous avez déjà perdu"
-                          ^
+File "game/script.rpy", line 2325: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Provoquer"
+               ^
 
-File "game/script.rpy", line 2297: Line is indented, but the preceding jump statement statement does not expect a block. Please check this line's indentation.
-    "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
-    ^
-
-File "game/script.rpy", line 2381: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Ne rien dire"
-                  ^
-
-File "game/script.rpy", line 2463: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Étourderie"
-                ^
+File "game/script.rpy", line 2364: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Terre infertiles"
+                      ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227
