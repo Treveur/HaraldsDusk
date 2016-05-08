@@ -2019,7 +2019,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             e "Et si j'implore votre pardon ?"
             e "C'est une blague ?"
 
-        "Vous avez déjà perdu"
+        "Vous avez déjà perdu":
             e "Me tuer ne changera rien au fait que vous avez perdu cette bataille."
             h "Harald rassure Einar : ce petite soulèvement écossais n'écornera pas sa toute-puissance"
 
@@ -2292,7 +2292,7 @@ label lieu_encore_inconnu_1(axe = True):
         jump good_ending_13
 
 #Défendre porte
-jump soupcon_harald_defendre_porte:
+label soupcon_harald_defendre_porte:
 
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
     "Lorsque les rebelles parviennent au pont-levis, ils s'apprêtent à dresser une échelle par dessus les douves."
@@ -2378,7 +2378,7 @@ label harald_defendre_porte:
             e "Suivez le roi ! Suivez le !"
         "Massacrez-les":
             e "En avant, sire ! Massacrez ces chiens !"
-        "Ne rien dire"
+        "Ne rien dire":
             e "..."
 
     "Harald pârvient au contact d'Ogma et un combat s'engage."
@@ -2460,7 +2460,7 @@ label e_sauve_ogma_defendre_porte:
                 e "J'ai été le jouet de mes propres remords."
             "Ce n'est qu'un jeu":
                 e "L'envie de prendre à leur propre jeu deux dirigeants ambitieux."
-            "Étourderie"
+            "Étourderie":
                 e "L'étourderie, peut-être ?"
 
         "Ogma pardonne. Mais Einar est banni d'Ecosse à tout jamais et privé de sa récompense. Il n'a plus qu'à partir immédiatement. Des guerriers rebelles l'entourent."
