@@ -35,14 +35,8 @@ define pe3 = Character("Prissonière écossais 1")
 image bg forest = "foret_cabane.jpg"
 image bg forestnight = "forest_night.jpg"
 image bg village = "village.jpg"
-image bg village2_jour = "village2_jour.jpg"
-image bg village2_crepuscule = "village2_crepuscule.jpg"
 image bg house = "house.jpg"
-image bg house2_jour = "house2_jour.jpg"
-image bg house2_night = "house2_night.jpg"
-image bg house2_aube = "house2_aube.jpg"
 image bg mer = "chateau_mer.jpg"
-
 
 #Fond uni
 image bg black = "#000"
@@ -448,7 +442,7 @@ label plaine_2:
     gv "Cette mission n'a rien de terrible... Je suis déçu."
     gv "Nous aurions dû rester plus longtemps à Stirling. Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
 
-    show einar serious at left with dissolve
+    show einar serious at right with dissolve
 
     menu:
         "Mettre en garde" :
@@ -717,7 +711,7 @@ label village_1:
         "Fouillez le village!":
             jump e_fouiller_village_1
         "Chercher soi-même dans le village":
-            call e_fouiller_village_1 pass (einarFouille = True) from _call_e_fouiller_village_1
+            call e_fouiller_village_1 pass (einarFouille = True)
 
 label e_massacre_village_1:
 
@@ -728,7 +722,7 @@ label e_massacre_village_1:
     vm "Sauvez les enfants ! Les enfants !"
 
 
-    call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
+    call choix_retour_village_1 pass (massacre = True)
 
 label e_demander_information_village_1:
 
@@ -824,7 +818,7 @@ label e_tuer_villageois_village_1:
 
     e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
-    call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1_1
+    call choix_retour_village_1 pass (massacre = True)
 
 label e_intimider_villageois_village_1:
 
@@ -949,15 +943,15 @@ label choix_retour_village_1(massacre = False):
     if massacre:
         menu:
             "Rentrer au Chateau de Dunbar":
-                call massacre_foret_2 pass (lieu = "chateau") from _call_massacre_foret_2
+                call massacre_foret_2 pass (lieu = "chateau")
             "Poursuivre vers le nord":
-                call massacre_foret_2 pass (lieu = "nord") from _call_massacre_foret_2_1
+                call massacre_foret_2 pass (lieu = "nord")
     else:
         menu:
             "Rentrer au Chateau de Dunbar":
-                call foret_2 pass (lieu = "chateau") from _call_foret_2
+                call foret_2 pass (lieu = "chateau")
             "Poursuivre vers le nord":
-                call foret_2 pass (lieu = "nord") from _call_foret_2_1
+                call foret_2 pass (lieu = "nord")
 
 #Scequence 7
 label foret_2(lieu = ""):
@@ -1003,13 +997,13 @@ label foret_2(lieu = ""):
 
     menu:
         "Mettre en garde le groupe":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif")
         "La mission est décevante...":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "deception") from _call_attaque_massacre_einar_sauf_foret_2_1
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "deception")
         "Attitude suspecte des villageois":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude") from _call_attaque_massacre_einar_sauf_foret_2_2
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude")
         "Chambrer Logan":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_einar_sauf_foret_2_3
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan")
 
 label attaque_massacre_einar_sauf_foret_2(message = ""):
 
@@ -1054,7 +1048,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
         menu menu_avertissement_villageois:
             "Mettre en garde le groupe":
-                call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
+                call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif")
             "Ne pas craindre des paysans":
                 e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
                 gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
@@ -1165,13 +1159,13 @@ label massacre_foret_2(lieu = ""):
 
     menu:
         "Mettre en garde le groupe":
-            call attaque_massacre_foret_2 pass (message = "attentif") from _call_attaque_massacre_foret_2
+            call attaque_massacre_foret_2 pass (message = "attentif")
         "La mission est décevante...":
-            call attaque_massacre_foret_2 pass (message = "deception") from _call_attaque_massacre_foret_2_1
+            call attaque_massacre_foret_2 pass (message = "deception")
         "Se moquer des villageois":
-            call attaque_massacre_foret_2 pass (message = "moquerie") from _call_attaque_massacre_foret_2_2
+            call attaque_massacre_foret_2 pass (message = "moquerie")
         "Chambrer Logan":
-            call attaque_massacre_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_foret_2_3
+            call attaque_massacre_foret_2 pass (message = "chambre_logan")
 
 label attaque_massacre_foret_2(message = ""):
 
@@ -1259,11 +1253,11 @@ label attaque_massacre_foret_2(message = ""):
 
     menu:
         "Qui es-tu ?":
-            call e_demande_nom_foret_2 pass (bad_ending = True) from _call_e_demande_nom_foret_2
+            call e_demande_nom_foret_2 pass (bad_ending = True)
         "Non ne me tue pas, pitié!":
-            call e_implore_pitie_foret_2 pass (bad_ending = True) from _call_e_implore_pitie_foret_2
+            call e_implore_pitie_foret_2 pass (bad_ending = True)
         "Menacer le meneur":
-            call e_menace_foret_2 pass (bad_ending = True) from _call_e_menace_foret_2
+            call e_menace_foret_2 pass (bad_ending = True)
 
 
 label e_demande_nom_foret_2(bad_ending = False):
@@ -1491,7 +1485,6 @@ label accepter_trahir_village_2:
 #Acte 2
 #Sequence 1
 label interieur_maison_village_1:
-    scene bg house2_jour with dissolve
 
     $ critique_ogma = False
 
@@ -1566,114 +1559,50 @@ label interieur_maison_village_1:
     m "C'est mon père qui m'a demandé de vous soigner. Quand vous le verrez, essayez de vous montrer reconnaissant."
 
     menu :
+        "Que lui dire ?"
         "La remercier":
-            e "Merci. Je ne m'attendais pas à être soigné ici."
-            m "Ce n'est pas moi que vous devez remercier, je ne fais que suivre les instructions de mon père."
+            e "Je te remercie"
         "Ne rien dire":
             e "..."
-            m "..."
         "Pas de besoin d'attention":
-            e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné !"
-            m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
-            m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
-            m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
-    
-    show
-    o "Alors ? Comment va le prisonnier ?"
-    m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
-    o "Et l'épaule ?"
-    m "La cicatrisation commence à peine, la blessure était profonde. Le vieux m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
-    e "Je ..."
-    o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
-    
-    hide ogma normal
+            e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné."
+
+    "Einar est emmené au village qu'il avait visité précédemment. Il y rencontre Moira, qui se présente comme étant la fille d'Ogma."
+    "Ogma arrive et se place aux côtés de Moira. Il lui demande si tout va bien et comment se comporte Einar. Il lui demande ensuite son état de santé. Ogma n'adresse pas un regard au viking. Il ressort de la pièce."
 
     menu :
+        "Que dire ?"
         "Un problème ?":
             e "Il a une dent contre moi ?"
-            m "Pas contre vous en particulier, non."
-        "J'aurais dû mourir...":
-            e "J'aurais mieux fait de mourir avec les autres."
-            m "Estimez-vous heureux d'être en vie. Il voulait tous vous tuer."
-            e "Pourquoi cette colère contre nous ?"
+        "cynisme":
+            e "J'aurais mieux fait de mourir avec les autres"
+            m "Estime toi heureux d'être en vie, il n'avait pas prévu de te laisser en vie"
             jump interieur_maison_village_2
         "Critiquer":
-            e "Quel enfoiré ! Il ne m'a même pas adressé la parole !"
+            e "Quelle attitude déplorable !"
             $ critique_ogma = True
         "Il devrait avoir honte":
-            e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins !"
+            e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins."
             $ critique_ogma = True
 
     if critique_ogma:
-        "*Moira gifle Einar*"
-        m "C'est la dernière fois que vous manquez de respect à mon père. Ou bien vous irez vous faire voir dans l'enclos des boucs."
+        "Moira répond sechement en lui réclamant le respect pour son père. Sans quoi il pourra aller se faire voir dans l'enclos des boucs."
 
         menu :
+            "Elle a l'air contrarié"
             "Ne rien dire":
                 e "..."
-                m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
-                e "Plusieurs vies ?"
-                m "La votre, dans un premier temps."
-                e "Et ?"
-                m "Et celle de Kennocha, ma mère."
-                
             "Demander pardon":
-                e "Excusez-moi."
-                m "N'en parlons plus."
-                e "..."
-                m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
-                e "Plusieurs vies ?"
-                m "La votre, dans un premier temps."
-                e "Et ?"
-                m "Et celle de Kennocha, ma mère."
-                
+                e "Excuse moi."
             "Macho":
-                e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
-                "* Moira gifle Einar à nouveau, sur l'autre joue.*"
-                m "J'ai omis de préciser que vous me deviez aussi le respect."
-                m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
-                e "Plusieurs vies ?"
-                m "La votre, dans un premier temps."
-                e "Et ?"
-                m "Et celle de Kennocha, ma mère."
+                e "Pas d'ordres à recevoir d'une fille à papa"
 
-    m "J'imagine que si le roi est venu en Ecosse, c'est pour punir ceux qui ont tué son intendant ?"
-    e "Oui."
-    m "Savez vous seulement pourquoi nous l'avons tué ? Je suis certaine que la question ne vous a même pas effleuré."
-    e "Le roi nous a demandé de mater la rébellion et de venger l'intendant Montgomery. Le reste ne nous regarde pas."
-    m "Montgomery méritait de mourir !"
-    e "Qu'est-ce qui vous a donné le droit de le tuer ?"
-    m "Il a tué ma mère, Kennocha."
-    e "..."
-    m "Clyde Montgomery n'était pas intendant. C'était un porc, doublé d'un tortionnaire ! Il saignait l'Ecosse à blanc ! Il exigeait de nous plus que ce que nous avions !"
-    e "Quel rapport avec votre mère ?"
-    m "Un matin, l'intendant est arrivé accompagné de ses sous-fifres. Il a exigé qu'on lui donne immédiatement l'impôt ainsi que de la nourriture pour ses hommes."
-    m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
-    m "Montgomery n'était pas satisfait, et il a demandé à ses gardes de fouiller nos maisons."
-    m "Ils ont découvert une réserve de nourriture que ma mère avait dissimulé. Sans rien dire, Montgomery s'est approché de ma mère et l'a tuée devant tout le village, sur la place."
-    m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été tabassés, personne n'a pu faire quoi que ce soit."
-    e "Où étiez-vous ? Où était votre père ?"
-    m "J'étais parmi ceux que les gardes ont frappé. Quand j'ai vu ma mère tomber, j'ai voulu me jeter sur l'intendant. Je n'ai même pas pu passer ses gardes."
-    m "Quand mon père est revenu, il a franchi le cercle que formaient les gens du village. Personne ne parlait. Il revenait de la rivière avec quelques prises du matin."
-    m "A ce moment là, Montgomery était déjà parti. Mon père a retrouvé ma mère allongée dans la boue et dans son sang, devant tout le monde."
-    m "La suite, vous la connaissez."
-    e "Alors c'est Ogma lui-même qui a assassiné l'intendant..."
-    m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
-    e "..."
-    m "Mon père n'est pas une mauvaise personne. Il a tué l'intendant de plein droit."
-    e "..."
-    e "Pourquoi toutes ces révélations ?"
-    m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
-    m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
-    
-    
+    "Moira explique que depuis l'assassinat de Kennocha, Ogma et elle-même ne portent plus Harald et ses hommes dans leur coeur. Elle explique que son père n'est pas une mauvaise personne."
 
     jump interieur_maison_village_2
 
 #Sequence 2
 label interieur_maison_village_2:
-    scene bg house2_night with dissolve
-
     "Moira entre dans la pièce et annonce qu'elle vient changer les bandages d'Einar"
 
     menu:
@@ -1692,9 +1621,7 @@ label interieur_maison_village_2:
     jump interieur_maison_village_3
 
 #Sequence 3
-label interieur_maison_village_3:
-    scene bg house2_jour with dissolve
-
+label interieur_maison_village_2:
     "Dans la pièce, Ogma et Moira discutent avec Einar. Moira est assise au bout du lit. Ogma termine une anecdote concernant sa vie avant d'être \"chef rebelle\" et demande à Einar d'où il vient."
 
     menu :
@@ -1729,11 +1656,10 @@ label interieur_maison_village_3:
 
     "Moira soigne chaque jour Einar. Petit à petit, une intimité s'installe entre eux. Quelques jours après la capture d'Einar, des rumeurs parviennent au village : des villages voisins sont massacrés et rasés par les vikings."
 
-    jump interieur_maison_village_4
+    jump interieur_maison_village_3
 
 #Sequence 4
-label interieur_maison_village_4:
-    scene bg house2_jour with dissolve
+label interieur_maison_village_3:
 
     $ libre_ask = False
     $ trahir_talk = False
@@ -1831,8 +1757,6 @@ label interieur_maison_village_4:
 
 #Sequence 5
 label village_2:
-    scene bg village2_jour with dissolve
-
     "Les villageois le regardent à peine"
 
     menu :
@@ -1856,7 +1780,6 @@ label village_2:
 
 #Sequence 6
 label village_3:
-    scene bg village2_crepuscule with dissolve
 
     $ einar_raler = False
 
@@ -1864,7 +1787,7 @@ label village_3:
     "Moira demande si Einar apprécie cette première sortie"
 
     menu :
-        "Que lui répondre ?"
+        "Que lui répondre"
 
         "Envie de bouger":
             e "Oui. Je commençais à être sérieusement engourdi !"
@@ -2442,7 +2365,7 @@ label e_bruler_donjon_obeir__donjon:
 
         "S'en débarasser":
             "Einar jette la Hache à la mer à travers une meurtrière de la pièce."
-            call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
+            call e_confrontation_harald_pont_baisse_donjon pass (jetee = True)
 
         "L'ignorer":
             e "Le donjon est en feu, que cette maudite hache brûle avec"
@@ -2593,7 +2516,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     if epargner_harld__no_axe_donjon:
         jump e_epargne_harald_no_axe_donjon
     else:
-        call lieu_encore_inconnu_1 pass (axe = False) from _call_lieu_encore_inconnu_1
+        call lieu_encore_inconnu_1 pass (axe = False)
 
 label e_epargne_harald_no_axe_donjon:
 
@@ -2692,7 +2615,7 @@ label village_6:
             "Asie":
                 e "Aller en Asie, là où personne ne viendra le chercher. C'est une région du monde qui l'a toujours intrigué."
 
-        call good_ending_15 pass (marier = False) from _call_good_ending_15
+        call good_ending_15 pass (marier = False)
     else:
         jump good_ending_15
 
@@ -2724,7 +2647,7 @@ label foret_4:
             "Viens avec moi"
 
     if rejeter_moira_foret_4:
-        call good_ending_14 pass (rejete = True) from _call_good_ending_14
+        call good_ending_14 pass (rejete = True)
     else:
         jump good_ending_14
 
@@ -3027,7 +2950,7 @@ label e_sauve_ogma_defendre_porte:
 #Ending
 label bad_ending_1:
     "*Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt.*"
-    jump credits
+    return
 
 label bad_ending_2:
     e "Je n'ai qu'une parole. Vous pouvez aller vous faire foutre."
@@ -3035,100 +2958,95 @@ label bad_ending_2:
     "*Ogma égorge Einar alors qu'il est entravé.*"
     e "Grrblbhh..."
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
-    jump credits
+    return
 
 label bad_ending_3:
     "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
     " Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers. Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
-    jump credits
+    return
 
 label bad_ending_4:
     "A l'instant où Ogma franchit la porte, il se rue sur Einar. La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place."
-    jump credits
+    return
 
 label bad_ending_5:
     "Einar est massacré alors que les huscarls le transforment en une pulpe sanglante sous une pluie de coups."
-    jump credits
+    return
 
 label bad_ending_6:
     "Harald surgit au coeur de la mêlée, armé de sa hache. Il rassemble les vikings autour de lui et lance une contre-attaque imparable. Les rebelles sont balayés avec violence et Einar est décapité par le roi en personne"
-    jump credits
+    return
 
 label good_ending_7:
     "Ogma souligne la droiture et l'humilité d'Einar. Le chef rebelle annonce qu'il compte la faire fondre en une claymore pour sa famille, le clan Wallace."
     "Ogma annonce qu'il souhaite faire fondre la hache en une nouvelle épée, une claymore, qu'il déclare destinée à sa famille : le clan Wallace. Cette épée symbolise la destruction de l'oppression et l'émergence de la Liberté."
-    jump credits
+    return
 
 label good_ending_8:
     "Ogma remercie Einar d'avoir détruit la hache : il en aurait probablement fait un mauvais usage. C'est une preuve de sagesse que de savoir s'arrêter le moment venu. Einar reçoit sa part du trésor, comme convenu."
-    jump credits
+    return
 
 label good_ending_9:
     "Einar est à la tête d'une vaste armée et porte une tenue de général. Il s'apprête à affronter uner armée asiatique sur leurs propres terres."
     "Einar mène une armée innombrable face à ce qui semble être une armée asiatique"
-    jump credits
+    return
 
 label normal_ending_10:
     "Ogma s'empare de la hache et la brandit aux yeux de tous. Il tient alors un discours annonçant son ambition de \"libérer\" le reste de la Grande-Bretagne et pourquoi pas le reste de l'Europe. Le monde mérite un empereur écossais !"
-    jump credits
+    return
 
 label good_ending_11:
     "Revenus au village, Ogma félicite Einar et annonce publiquement qu'il lui donne la main de sa fille."
-    jump credits
+    return
 
 label bad_ending_12:
     "Einar meurt étranglé par son roi, ses vertèbres craquant sous l'étreinte du monarque."
-    jump credits
+    return
 
 label good_ending_13:
     "Revenus au village, Ogma félicite Einar. Il refuse cependant de marier sa fille, Moira, à un régicide."
-    jump credits
+    return
 
 label good_ending_14(rejete = True):
     if rejete:
         "Moira reste immobile au milieu du chemin alors qu'Einar la dépasse."
     else:
         "Elle court vers Einar et se jette dans ses bras."
-    jump credits
+    return
 
 label good_ending_15(marier = True):
     if marier:
         "Moira se jette dans les bras d'Einar et l'embrasse."
     else:
         "Einar décide continuer sa vie seul"
-    jump credits
+    return
 
 label bad_ending_16:
     "Dans le donjon, Einar tombe nez-à-nez avec Harald. Le roi est en position de force : il brandit sa hache sainte. D'un moulinet il désarme Einar avant de le fendre en deux sans effort."
-    jump credits
+    return
 
 label bad_ending_17:
     "En plein combat, une flèche vient frapper Einar à l'épaule. Ogma profite de cette ouverture pour transperçer le viking de sa lame, et laisse tomber son cadavre dans les douves."
-    jump credits
+    return
 
 label normal_ending_18:
     "Le soir, Harald annonce au cours d'un grand repas qu'il souhaite récompenser Einar en lui offrant des terres autour de Stirling, le village qu'il a ordonné de brûler quelques jours plus tôt."
-    jump credits
+    return
 
 label bad_ending_19:
     "Les bûchers prennent feu, un à un. Lorsque vient le tour de Moira, elle découvre Einar et leurs regardes se fixent. Alors que les flammes commencent à la dévorer, elle ne hurle pas."
     "Elle contient toute sa rage et sa colère, adressant un regard de haine pure à Einar alors que des larmes coulent sur ses joues."
-    jump credits
+    return
 
 label bad_ending_20:
     "Einar s'élance vers le bûcher et tente de détacher Moira. Il y parvient, mais un archer lui lance une flèche dans l'abdomen. Moira n'essaie même pas de s'enfuir."
     "Elle arrache sa hachette de la ceinture d'Einar et lui en assène un coup violent au milieu du dos."
-    jump credits
+    return
 
 label bad_ending_21:
     "Ogma s'adresse à Einar en lui disant qu'il lui était redevable pour la victoire sur Harald, mais que sa trahison envers les vikings et les rebelles a provoqué bien plus de morts que nécessaire. Aussi, il est banni d'Ecosse et privé de toute récompense."
-    jump credits
+    return
 
 label bad_ending_22:
     "Ogma s'élance vers Einar dès qu'il l'aperçoit, hache levée. Einar n'a même pas le temps d'engager le combat. Ogma se jette sur lui et le massacre, le démembrant et le rendant impossible à reconnaître."
-    jump credits
-
-label credits:
-    scene bg black with dissolve
-
     return
