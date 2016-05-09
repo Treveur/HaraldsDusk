@@ -2,6 +2,11 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
+File "game/script.rpy", line 1263: end of line expected.
+    jump e_demande_nom_foret_2 pass (bad_ending = True)
+                               ^
+=======
 File "game/script.rpy", line 1818: expected menuitem
     menu :
     ^
@@ -9,5 +14,6 @@ File "game/script.rpy", line 1818: expected menuitem
 File "game/script.rpy", line 1877: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
     "Oppression"
                 ^
+>>>>>>> b301b206a8d9d980e11df1f6d142449e33b10cc1
 
 Ren'Py Version: Ren'Py 6.99.10.1227

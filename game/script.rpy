@@ -33,7 +33,10 @@ define pe3 = Character("Prissonière écossais 1")
 
 #Scene
 image bg forest = "foret_cabane.jpg"
-image bg forestnight = "forest_night.jpg"
+image bg forest_night = "forest_night.jpg"
+image bg forest_crepuscule = "forest_crepuscule.jpg"
+image bg little_heaven = "little_heaven.jpg"
+image bg sentier_jour = "sentier_foret.jpg"
 image bg village = "village.jpg"
 image bg village2_jour = "village2_jour.jpg"
 image bg village2_crepuscule = "village2_crepuscule.jpg"
@@ -42,6 +45,7 @@ image bg house2_jour = "house2_jour.jpg"
 image bg house2_night = "house2_night.jpg"
 image bg house2_aube = "house2_aube.jpg"
 image bg mer = "chateau_mer.jpg"
+image bg cote1 = "cote1.jpg"
 
 
 #Fond uni
@@ -982,7 +986,7 @@ label foret_2(lieu = ""):
 
         e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
 
-    scene bg forestnight with dissolve
+    scene bg forest_night with dissolve
     "..."
 
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
@@ -1260,6 +1264,7 @@ label attaque_massacre_foret_2(message = ""):
     menu:
         "Qui es-tu ?":
             call e_demande_nom_foret_2 pass (bad_ending = True) from _call_e_demande_nom_foret_2
+            #jump e_demande_nom_foret_2 pass (bad_ending = True)
         "Non ne me tue pas, pitié!":
             call e_implore_pitie_foret_2 pass (bad_ending = True) from _call_e_implore_pitie_foret_2
         "Menacer le meneur":
@@ -1921,6 +1926,7 @@ label village_3:
 
 #Sequence 7
 label foret_3:
+    scene bg forest_crepuscule with dissolve
 
     menu :
         "Que dire ?"
@@ -1938,6 +1944,7 @@ label foret_3:
 
 #Sequence 8
 label paradis_foret_1:
+    scene bg little_heaven with dissolve
 
     $ moira_dead = False
 
@@ -1976,6 +1983,8 @@ label paradis_foret_1:
 
 #Sequence 9
 label village_4:
+    scene bg village2_jour with dissolve
+
     "Einar est au milieu du village. Il a récupéré ses affaires et est équipé comme lorsqu'il a été capturé. Ogma est présent ainsi que Moira."
     "Il s'adresse à EInar en lui rappelant qu'il a fait une promesse. Les rebelles l'ont soigné et se sont occupés de lui : il doit maintenant accomplir sa part du marché."
     "Lorsque l'assaut aura commencé, Ogma lancera un signal à destination d'Einar : un double son de cor. Il devra ouvrir le pont-levis."
@@ -2007,6 +2016,7 @@ label village_4:
 
 #Sequence 10
 label sentier_foret_1:
+    scene bg sentier_jour with dissolve
 
     "Einar repense à ce qu'il a vécu ces derniers temps, notamment aux raisons qui le pousseraient à trahir Harald"
 
@@ -2021,6 +2031,7 @@ label sentier_foret_1:
     jump foret_5
 
 label foret_5:
+    scene bg forest_night with dissolve
 
     "Einar repense à Moira et au temps passé avec elle"
 
@@ -2036,6 +2047,7 @@ label foret_5:
 
 #Sequence 11
 label cote_1:
+    scene bg cote1 with dissolve
 
     "Einar imagine les implications futures de sa trahison"
 
@@ -2054,6 +2066,8 @@ label cote_1:
 
 #Sequence 1
 label cote_2:
+    scene bg mer with dissolve
+
     e "Hummmm me voilà tout près du chateau"
     e "Que vais-je faire?"
     e "Trahir mon roi ? Non impossible, je suis à ses côtés depuis bien longtemps"
@@ -2064,6 +2078,7 @@ label cote_2:
 
 #Sequence 2
 label exterieur_chateau_1:
+    scene bg 
 
     e "Me voici enfin arrivé au chateau"
     e "(Devant le pont-levis, deux gardes me font obstruciton)"
@@ -3163,5 +3178,4 @@ label bad_ending_22:
 
 label credits:
     scene bg black with dissolve
-
-    return
+    $ renpy.full_restart()
