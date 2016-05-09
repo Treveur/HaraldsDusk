@@ -1567,45 +1567,107 @@ label interieur_maison_village_1:
     m "C'est mon père qui m'a demandé de vous soigner. Quand vous le verrez, essayez de vous montrer reconnaissant."
 
     menu :
-        "Que lui dire ?"
         "La remercier":
-            e "Je te remercie"
+            e "Merci. Je ne m'attendais pas à être soigné ici."
+            m "Ce n'est pas moi que vous devez remercier, je ne fais que suivre les instructions de mon père."
         "Ne rien dire":
             e "..."
+            m "..."
         "Pas de besoin d'attention":
-            e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné."
-
-    "Einar est emmené au village qu'il avait visité précédemment. Il y rencontre Moira, qui se présente comme étant la fille d'Ogma."
-    "Ogma arrive et se place aux côtés de Moira. Il lui demande si tout va bien et comment se comporte Einar. Il lui demande ensuite son état de santé. Ogma n'adresse pas un regard au viking. Il ressort de la pièce."
+            e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné !"
+            m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
+            m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
+            m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
+    
+    show
+    o "Alors ? Comment va le prisonnier ?"
+    m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
+    o "Et l'épaule ?"
+    m "La cicatrisation commence à peine, la blessure était profonde. Le vieux m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
+    e "Je ..."
+    o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
+    
+    hide ogma normal
 
     menu :
-        "Que dire ?"
         "Un problème ?":
             e "Il a une dent contre moi ?"
-        "cynisme":
-            e "J'aurais mieux fait de mourir avec les autres"
-            m "Estime toi heureux d'être en vie, il n'avait pas prévu de te laisser en vie"
+            m "Pas contre vous en particulier, non."
+        "J'aurais dû mourir...":
+            e "J'aurais mieux fait de mourir avec les autres."
+            m "Estimez-vous heureux d'être en vie. Il voulait tous vous tuer."
+            e "Pourquoi cette colère contre nous ?"
             jump interieur_maison_village_2
         "Critiquer":
-            e "Quelle attitude déplorable !"
+            e "Quel enfoiré ! Il ne m'a même pas adressé la parole !"
             $ critique_ogma = True
         "Il devrait avoir honte":
-            e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins."
+            e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins !"
             $ critique_ogma = True
 
     if critique_ogma:
-        "Moira répond sechement en lui réclamant le respect pour son père. Sans quoi il pourra aller se faire voir dans l'enclos des boucs."
+        "*Moira gifle Einar*"
+        m "C'est la dernière fois que vous manquez de respect à mon père. Ou bien vous irez vous faire voir dans l'enclos des boucs."
 
         menu :
-            "Elle a l'air contrarié"
             "Ne rien dire":
                 e "..."
+                m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
+                e "Plusieurs vies ?"
+                m "La votre, dans un premier temps."
+                e "Et ?"
+                m "Et celle de Kennocha, ma mère."
+                
             "Demander pardon":
-                e "Excuse moi."
+                e "Excusez-moi."
+                m "N'en parlons plus."
+                e "..."
+                m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
+                e "Plusieurs vies ?"
+                m "La votre, dans un premier temps."
+                e "Et ?"
+                m "Et celle de Kennocha, ma mère."
+                
             "Macho":
-                e "Pas d'ordres à recevoir d'une fille à papa"
+                e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
+                "* Moira gifle Einar à nouveau, sur l'autre joue.*"
+                m "J'ai omis de préciser que vous me deviez aussi le respect."
+                m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
+                e "Plusieurs vies ?"
+                m "La votre, dans un premier temps."
+                e "Et ?"
+                m "Et celle de Kennocha, ma mère."
 
-    "Moira explique que depuis l'assassinat de Kennocha, Ogma et elle-même ne portent plus Harald et ses hommes dans leur coeur. Elle explique que son père n'est pas une mauvaise personne."
+    m "J'imagine que si le roi est venu en Ecosse, c'est pour punir ceux qui ont tué son intendant ?"
+    e "Oui."
+    m "Savez vous seulement pourquoi nous l'avons tué ? Je suis certaine que la question ne vous a même pas effleuré."
+    e "Le roi nous a demandé de mater la rébellion et de venger l'intendant Montgomery. Le reste ne nous regarde pas."
+    m "Montgomery méritait de mourir !"
+    e "Qu'est-ce qui vous a donné le droit de le tuer ?"
+    m "Il a tué ma mère, Kennocha."
+    e "..."
+    m "Clyde Montgomery n'était pas intendant. C'était un porc, doublé d'un tortionnaire ! Il saignait l'Ecosse à blanc ! Il exigeait de nous plus que ce que nous avions !"
+    e "Quel rapport avec votre mère ?"
+    m "Un matin, l'intendant est arrivé accompagné de ses sous-fifres. Il a exigé qu'on lui donne immédiatement l'impôt ainsi que de la nourriture pour ses hommes."
+    m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
+    m "Montgomery n'était pas satisfait, et il a demandé à ses gardes de fouiller nos maisons."
+    m "Ils ont découvert une réserve de nourriture que ma mère avait dissimulé. Sans rien dire, Montgomery s'est approché de ma mère et l'a tuée devant tout le village, sur la place."
+    m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été tabassés, personne n'a pu faire quoi que ce soit."
+    e "Où étiez-vous ? Où était votre père ?"
+    m "J'étais parmi ceux que les gardes ont frappé. Quand j'ai vu ma mère tomber, j'ai voulu me jeter sur l'intendant. Je n'ai même pas pu passer ses gardes."
+    m "Quand mon père est revenu, il a franchi le cercle que formaient les gens du village. Personne ne parlait. Il revenait de la rivière avec quelques prises du matin."
+    m "A ce moment là, Montgomery était déjà parti. Mon père a retrouvé ma mère allongée dans la boue et dans son sang, devant tout le monde."
+    m "La suite, vous la connaissez."
+    e "Alors c'est Ogma lui-même qui a assassiné l'intendant..."
+    m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
+    e "..."
+    m "Mon père n'est pas une mauvaise personne. Il a tué l'intendant de plein droit."
+    e "..."
+    e "Pourquoi toutes ces révélations ?"
+    m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
+    m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
+    
+    
 
     jump interieur_maison_village_2
 
