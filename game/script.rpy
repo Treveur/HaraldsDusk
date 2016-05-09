@@ -1583,7 +1583,6 @@ label interieur_maison_village_1:
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
     
-    show
     o "Alors ? Comment va le prisonnier ?"
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
@@ -1729,43 +1728,77 @@ label interieur_maison_village_2:
 #Sequence 3
 label interieur_maison_village_3:
     scene bg house2_jour with dissolve
+    "Quelques semaines plus tard..."
     o "... je la voyait se débattre comme jamais une truite ne s'était débattue ! Je tire sur la ligne en essayant de la remonter, mais ce foutu poisson passe derrière un rocher : la ligne casse !"
     m "A ce moment là je saute dans la rivière depuis la berge !"
     o "Ta mère était folle ! Elle était persuadée que tu allais te noyer ! L'eau était vive et glacée, c'était au début du printemps."
     m "Et j'ai bien cru me noyer aussi !"
-    "Dans la pièce, Ogma et Moira discutent avec Einar. Moira est assise au bout du lit. Ogma termine une anecdote concernant sa vie avant d'être \"chef rebelle\" et demande à Einar d'où il vient."
+    o "On ne voyait plus que tes cheveux hors de l'eau ! Tu as dérivé sur une vingtaine de mètres, et puis tu as levé tes bras hors de l'eau !"
+    m "Je tenais la truite au-dessus de moi ! Elle était énorme !"
+    o "Pas si grosse que ça, mais tu étais à peine plus grande qu'elle, ha ha !"
+    o "Ensuite ta mère t'a sortie de l'eau. Tu étais toute bleue, mais tu ne voulais pas lâcher le poisson ! On t'a ramenée à la maison et tu n'as lâché la truite qu'une fois rentrée !"
+    m "J'aimerais retourner pêcher..."
+    o "Pas pour le moment. Nous avons des choses à régler d'abord..."
+    e "Logan aussi était un bon pêcheur..."
+    o "D'où venait-il ?"
+    e "D'Aberdeen, loin au nord."
+    o "Je n'y suis jamais allé... Et vous Einar, vous n'avez rien à raconter ? D'où venez-vous ?"
 
     menu :
-        "Que répondre ?"
 
-        "Agressif":
-            e "Ca ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
+        "Être agressif":
+            e "Ça ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
+            m "Einar !"
+            "*Moira lève la main et s'apprête à gifler Einar. Ogma l'interromp en saisissant son bras au vol.*"
+            o "Non... Laisse-le dire. Il n'a pas tort. J'ai tué ses amis."
+            m "Mais il t'a insulté !"
+            o "Il n'est pas responsable de grand chose dans cette histoire. Il a suivi les ordres de son roi."
+            m "..."
+            e "..."
             "Moira s'emporte et s'apprête à gifler Einar. Ogma l'interromp, et explique que le viking n'a pas totalement tort."
             "Il n'est pour rien dans cette histoire et n'a fait que suivre son roi."
 
-        "Nostalgique":
-            e "La Norvège me manque"
-            "Moira se montre interessée et demande plus de détails, auxquels Einar répond. Elle lui demande s'il a une femme ou une famille là-bas, ce à quoi il répond négativement."
+        "Nostalgie de la Norvège":
+            e "Je viens de Norvège. Le pays me manque..."
+            m "A quoi ça ressemble, la Norvège ?"
+            e "Ce n'est pas si différent de l'Ecosse. Nous avons le même climat, peut être un peu plus froid. Et il y a de grands fjords."
+            o "Des fjords ?"
+            e "Des rivières et des fleuves encaissés dans des vallées. C'est très beau."
+            m "J'imagine..."
+            e "Lorsqu'on va loin au nord, la nuit, on peut voir de grandes lumières vertes ou rouges dans le ciel. Certains disent que sont des hommages divins pour les héros morts au combat."
+            m "J'aimerais beaucoup voir ça, un jour..."
+            m "Tu as une femme, là-bas ? Une famille ?"
+            e "Non. Je n'ai plus personne."
 
         "Éluder la question":
-            e "Je ne sais pas quoi mettre"
-            "Ogma se montre compréhensif. Moira paraît déçue."
+            e "Je ne souhaite pas en parler."
+            o "Je comprends."
+            m "..."
 
-    "Un villageois ouvre la porte, l'air atterré. Il annonce à Ogma qu'un village à été rasé et incendié"
-    "Ogma dit qu'il n'est pas surpris, que ce n'est pas le premier village a être détruit par Harald depuis que la troupe d'Einar a été massacrée."
+    vm "Ogma !"
+    o "Fenella ? Quelque chose ne va pas ?"
+    vm "Kircaldy a brûlé ce matin !"
+    o "Le roi... Je ne suis pas surpris."
+    e "Vous n'avez pas l'air affecté par la nouvelle !"
+    m "Stirling et Falkirk ont déjà été rasée il y a quelques jours. Le roi est en marche."
+    o "Depuis que vous avez été capturé, Harald n'a pas cessé de vous chercher. Nous avons déjà eu la visite d'un émissaire."
 
     menu :
-        "Comment réagir ?"
         "Compatir":
-            "Ogma remercie EInar et se dit agréablement surpris. Moira se montre heureuse de ne pas devoir soigner un monstre, mais un homme juste."
+            e "Je regrette. Ces gens étaient innocents. Harald avait pourtant dit qu'il ne voulait pas lancer d'attaques au hasard..."
+            o "Merci. Je ne pense pas qu'il s'agisse d'attaques au hasard. Le roi a décidé de tuer des innocents pour nous faire sortir de nos cachettes et provoquer le rejet du peuple."
+            m "Le roi aurait trahi sa parole, Einar ?"
+            e "Ce n'est pas dans ses habitudes. Mais il y a peut-être été poussé. Ces massacres ne devraient pas avoir lieu. Je regrette sincèrement d'avoir amené la mort dans mon sillage."
+            m "..."
+            o "Vous êtes quelqu'un de juste, Einar. Vous n'êtes pas responsable de ce qui se produit."
+    
         "Ne rien dire":
             e "..."
-            "Ogma comprend que la position d'EInar est délicate, et prend son silence comme une forme de retrait respectueux."
+            o "Votre silence vous honore. Je comprends que vous ne vouliez pas prendre parti, votre position est délicate."
+            
         "Se montrer heureux":
-            e "Cool Harald est à ma recherche"
-            "Ogma est déçu, et reproche à EInar de se réjouir du massacre d'innocents. Il se met à penser que la clémence d'Einar a été une marque de lâcheté ou de fainéantise."
-
-    "Moira soigne chaque jour Einar. Petit à petit, une intimité s'installe entre eux. Quelques jours après la capture d'Einar, des rumeurs parviennent au village : des villages voisins sont massacrés et rasés par les vikings."
+            e "Harald est à ma recherche. Bientôt, je serai libre. Ces massacres ne sont que les signes annonciateurs de ma libération."
+            "Ogma est déçu, et reproche à Einar de se réjouir du massacre d'innocents. Il se met à penser que la clémence d'Einar a été une marque de lâcheté ou de fainéantise."
 
     jump interieur_maison_village_4
 
