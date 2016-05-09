@@ -35,8 +35,14 @@ define pe3 = Character("Prissonière écossais 1")
 image bg forest = "foret_cabane.jpg"
 image bg forestnight = "forest_night.jpg"
 image bg village = "village.jpg"
+image bg village2_jour = "village2_jour.jpg"
+image bg village2_crepuscule = "village2_crepuscule.jpg"
 image bg house = "house.jpg"
+image bg house2_jour = "house2_jour.jpg"
+image bg house2_night = "house2_night.jpg"
+image bg house2_aube = "house2_aube.jpg"
 image bg mer = "chateau_mer.jpg"
+
 
 #Fond uni
 image bg black = "#000"
@@ -1485,6 +1491,7 @@ label accepter_trahir_village_2:
 #Acte 2
 #Sequence 1
 label interieur_maison_village_1:
+    scene bg house2_jour with dissolve
 
     $ critique_ogma = False
 
@@ -1603,6 +1610,8 @@ label interieur_maison_village_1:
 
 #Sequence 2
 label interieur_maison_village_2:
+    scene bg house2_night with dissolve
+
     "Moira entre dans la pièce et annonce qu'elle vient changer les bandages d'Einar"
 
     menu:
@@ -1621,7 +1630,9 @@ label interieur_maison_village_2:
     jump interieur_maison_village_3
 
 #Sequence 3
-label interieur_maison_village_2:
+label interieur_maison_village_3:
+    scene bg house2_jour with dissolve
+
     "Dans la pièce, Ogma et Moira discutent avec Einar. Moira est assise au bout du lit. Ogma termine une anecdote concernant sa vie avant d'être \"chef rebelle\" et demande à Einar d'où il vient."
 
     menu :
@@ -1656,10 +1667,11 @@ label interieur_maison_village_2:
 
     "Moira soigne chaque jour Einar. Petit à petit, une intimité s'installe entre eux. Quelques jours après la capture d'Einar, des rumeurs parviennent au village : des villages voisins sont massacrés et rasés par les vikings."
 
-    jump interieur_maison_village_3
+    jump interieur_maison_village_4
 
 #Sequence 4
-label interieur_maison_village_3:
+label interieur_maison_village_4:
+    scene bg house2_jour with dissolve
 
     $ libre_ask = False
     $ trahir_talk = False
@@ -1757,6 +1769,8 @@ label interieur_maison_village_3:
 
 #Sequence 5
 label village_2:
+    scene bg village2_jour with dissolve
+
     "Les villageois le regardent à peine"
 
     menu :
@@ -1780,6 +1794,7 @@ label village_2:
 
 #Sequence 6
 label village_3:
+    scene bg village2_crepuscule with dissolve
 
     $ einar_raler = False
 
@@ -1787,7 +1802,7 @@ label village_3:
     "Moira demande si Einar apprécie cette première sortie"
 
     menu :
-        "Que lui répondre"
+        "Que lui répondre ?"
 
         "Envie de bouger":
             e "Oui. Je commençais à être sérieusement engourdi !"
