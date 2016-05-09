@@ -1260,6 +1260,7 @@ label attaque_massacre_foret_2(message = ""):
     menu:
         "Qui es-tu ?":
             call e_demande_nom_foret_2 pass (bad_ending = True) from _call_e_demande_nom_foret_2
+            #jump e_demande_nom_foret_2 pass (bad_ending = True)
         "Non ne me tue pas, pitié!":
             call e_implore_pitie_foret_2 pass (bad_ending = True) from _call_e_implore_pitie_foret_2
         "Menacer le meneur":
@@ -3068,5 +3069,4 @@ label bad_ending_22:
 
 label credits:
     scene bg black with dissolve
-
-    return
+    $ renpy.full_restart()
