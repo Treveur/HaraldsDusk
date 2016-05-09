@@ -1673,28 +1673,61 @@ label interieur_maison_village_1:
 #Sequence 2
 label interieur_maison_village_2:
     scene bg house2_night with dissolve
+    "*Quelques jours plus tard...*"
 
-    "Moira entre dans la pièce et annonce qu'elle vient changer les bandages d'Einar"
+    m "Bonjour ! Je viens changer vos bandages."
+    e "Bonjour."
 
     menu:
-        "Que dire ?"
 
-        "Appele moi Einar":
-             e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger"
-             m "Alors parle moi comme si j'étais ton amie"
+        "Appelle moi Einar":
+            e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger. Appelez moi-Einar"
+            m "Alors parle moi comme si j'étais ton amie."
+            e "Très bien, Moira."
+            
         "Remercier":
-            "Moira explique qu'il ne doit pas la remercier : il est un prisonnier. Cela dit, elle apprécie ces moments de calme où elle le soigne : son esprit est occupé pendant ce temps là, et elle oublie les drames récents"
-        "Humour":
-            e "Pas la peine d'insister : je ne suis toujours pas interessé"
-            "Moira ne répond pas à la pique mais sourit discrètement."
+            e "Merci."
+            m "Pour ?"
+            e "Les soins, les bandages, tout."
+            m "Vous n'allez pas me remercier à chaque fois que je viens m'occuper de vous ! "
+            e "Je vous suis redevable !"
+            m "..."
+            e "Oui ?"
+            m "Je suis lasse de devoir m'adresser à vous comme à un prisonnier."
+            e "Alors appelez moi Einar."
+            m "Parlez-moi comme vous le feriez à une amie."
+            e "Très bien ! Alors voilà : je te remercie pour tes soins, Moira !"
+            m "C'est mieux comme ça..."
+            e "Quelque chose ne va pas ?"
+            m "Non, tout va très bien, au contraire !"
+            e "Tu en es certaine ?"
+            m "Oui ! Ça va te sembler bizarre, mais j'apprécie ces moments."
+            e "De quoi tu parles ?"
+            m "Les moments où je te soigne. Pendant ce temps, je ne pense pas au reste. Ça me change les idées !"
+            e "Tu te distrais en changeant les bandages souillés d'un prisonnier de guerre ?"
+            m "Je préfère encore ça plutôt que de m'occuper des bêtes, bien que ce ne soit pas si différent !"
+            
+        "Faire de l'humour":
+            e "Pas la peine d'insister : je ne suis toujours pas interessé !"
+            m "Ne soit pas idiot !" #Elle sourit discrètement
+            e "Tiens ? On se tutoie maintenant ?"
+            m "Oui. J'en ai assez de devoir te parler comme à un étranger."
+            e "Ça me va !"
+            
+    "* Les bandages d'Einar sont remplacés.*"
+    m "Je vais te laisser, c'est tout pour aujourd'hui."
+    e "A demain ?"
+    m "A demain."
 
-    "Moira quitte la pièce."
     jump interieur_maison_village_3
 
 #Sequence 3
 label interieur_maison_village_3:
     scene bg house2_jour with dissolve
-
+    o "... je la voyait se débattre comme jamais une truite ne s'était débattue ! Je tire sur la ligne en essayant de la remonter, mais ce foutu poisson passe derrière un rocher : la ligne casse !"
+    m "A ce moment là je saute dans la rivière depuis la berge !"
+    o "Ta mère était folle ! Elle était persuadée que tu allais te noyer ! L'eau était vive et glacée, c'était au début du printemps."
+    m "Et j'ai bien cru me noyer aussi !"
     "Dans la pièce, Ogma et Moira discutent avec Einar. Moira est assise au bout du lit. Ogma termine une anecdote concernant sa vie avant d'être \"chef rebelle\" et demande à Einar d'où il vient."
 
     menu :
