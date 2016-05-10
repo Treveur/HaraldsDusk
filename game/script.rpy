@@ -25,9 +25,11 @@ image moira normal = "moira.png"
 
 #Patrick
 define p = Character("Patrick")
+image patrick normal = "cure.png"
 
 #Villageois
 define pe1 = Character("Prissonier écossais 1")
+image prisonnier normal = "prisonnier.png"
 define pe2 = Character("Prissonier écossais 2")
 define pe3 = Character("Prissonière écossais 1")
 
@@ -42,6 +44,8 @@ image bg house2_jour = "house2_jour.jpg"
 image bg house2_night = "house2_night.jpg"
 image bg house2_aube = "house2_aube.jpg"
 image bg mer = "chateau_mer.jpg"
+image bg pont_levis = "pont_levis.jpg"
+image bg cours_chateau = "cours_chateau.png"
 
 
 #Fond uni
@@ -53,7 +57,9 @@ image bg black = "#000"
 
 define gv = Character('Guerriers Vikings', color="#e67e22")
 define vm = Character('Villageois', color="#3498db")
+
 define gc = Character("Garde du Chateau")
+image garde_chateau  normal= ("garde_chateau.png")
 
 define ge = Character('Guerriers écossais', color="#f39c12")
 
@@ -1578,15 +1584,15 @@ label interieur_maison_village_1:
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
-    
-    show
+
+
     o "Alors ? Comment va le prisonnier ?"
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
     m "La cicatrisation commence à peine, la blessure était profonde. Le vieux m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
     e "Je ..."
     o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
-    
+
     hide ogma normal
 
     menu :
@@ -1617,7 +1623,7 @@ label interieur_maison_village_1:
                 m "La votre, dans un premier temps."
                 e "Et ?"
                 m "Et celle de Kennocha, ma mère."
-                
+
             "Demander pardon":
                 e "Excusez-moi."
                 m "N'en parlons plus."
@@ -1627,7 +1633,7 @@ label interieur_maison_village_1:
                 m "La votre, dans un premier temps."
                 e "Et ?"
                 m "Et celle de Kennocha, ma mère."
-                
+
             "Macho":
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
                 "* Moira gifle Einar à nouveau, sur l'autre joue.*"
@@ -1666,8 +1672,8 @@ label interieur_maison_village_1:
     e "Pourquoi toutes ces révélations ?"
     m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
     m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
-    
-    
+
+
 
     jump interieur_maison_village_2
 
@@ -2022,6 +2028,10 @@ label cote_1:
 
 #Sequence 1
 label cote_2:
+    scene bg mer with dissolve
+
+    show einar serious at center with dissolve
+
     e "Hummmm me voilà tout près du chateau"
     e "Que vais-je faire?"
     e "Trahir mon roi ? Non impossible, je suis à ses côtés depuis bien longtemps"
@@ -2032,6 +2042,11 @@ label cote_2:
 
 #Sequence 2
 label exterieur_chateau_1:
+
+    scene bg pont_levis with dissolve
+
+    show einar serious with moveinleft
+    show garde_chateau normal at right with dissolve
 
     e "Me voici enfin arrivé au chateau"
     e "(Devant le pont-levis, deux gardes me font obstruciton)"
@@ -2052,23 +2067,33 @@ label exterieur_chateau_1:
 
     gc "D'accord, entre"
 
+    hide garde_chateau with dissolve
+
     jump cours_chateau_1
 
 #Sequence 3
 label cours_chateau_1:
+
+    scene bg cours_chateau with dissolve
 
     $ retour_silence_1 = False
     $ soupcon_harald_1 = False
     $ mentir_harald_1 = False
     $ interpose_bucher = False
 
+    show einar serious at center with dissolve
+
     e "Me voilà enfin entré dans le chateau"
     e "Harald est en train de discuter avec un aute huscarl"
     e "Il m'a vu, se dirige vers moi"
     e "J'espère qu'il va être doux"
-    e "Que devrais-je lui dire"
+
+    show einar serious at left
+    show harald normal at right
 
     menu:
+        "Que devrais-je lui dire"
+
         "Content d'être rentré":
             e "Quel plaisir de vous retrouver, mon roi !"
 
@@ -2077,38 +2102,38 @@ label cours_chateau_1:
         "Peur de ne pas revenir":
             e "J'ai bien cru ne jamais revenir"
 
-            o "Eh bien après tous ce temps, on te croyais mort"
-            o "C'est pour celà que j'ai envoyé quelques expéditions punitive afin de te venger"
+            h "Eh bien après tous ce temps, on te croyais mort"
+            h "C'est pour celà que j'ai envoyé quelques expéditions punitive afin de te venger"
 
             e "Il ne fallait pas, ce n'est que trop d'honneur"
 
         "Ne rien dire":
             e "..."
-            o "Je suppose que tu dois être fatigué depuis tout ce temps"
+            h "Je suppose que tu dois être fatigué depuis tout ce temps"
 
-    o "Mais dis-moi, qu'est-ce qui t'est arrivé?"
-    o "Et l'escorte qui t'accompagnais ?"
-    o "Logan n'est pas là non plus"
-    o "Mais bon sang, raconte-moi tout !"
+    h "Mais dis-moi, qu'est-ce qui t'est arrivé?"
+    h"Et l'escorte qui t'accompagnais ?"
+    h"Logan n'est pas là non plus"
+    h"Mais bon sang, raconte-moi tout !"
 
     menu:
         "Que devrais-je dire ?"
 
         "Dire ne rien savoir":
             e "Je ne sais pas. J'ai été assommé. A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
-            o "Admettons mais qui t'a soigné ?"
+            h"Admettons mais qui t'a soigné ?"
             jump menu_assome_cours_chateau
 
         "Raconter l'embuscade":
         #modifaction pour indiquer le lieu par la suite
             e "Il nous prit au dépourvu, le soir dans la forêt en continuant vers le nord"
-            o "Admettons mais qui t'a soigné ?"
+            h"Admettons mais qui t'a soigné ?"
 
             jump menu_embusscade_ou_silence_cours_chateau
 
         "Ne rien dire":
-            o "Eh bien, je t'ai connu plus bavard"
-            o "Parles et nous pourrons venger les morts"
+            h"Eh bien, je t'ai connu plus bavard"
+            h"Parles et nous pourrons venger les morts"
 
             $ retour_silence_1 = True
 
@@ -2161,25 +2186,35 @@ label cours_chateau_1:
             $ mentir_harald_1 = True
 
     if mentir_harald_1:
-        o "Je te remercie Einar pour m'avoir dévoilé leur perfide plan"
-        o "Grâce à toi, nous allons pouvoir nous pouvoir nous préparer et réduire la rebellion à néant une bonne fois pour toute"
-        o "Tu devrais rejoindre les autres soldats pour te préparé à les acceuillir"
+        h "Je te remercie Einar pour m'avoir dévoilé leur perfide plan"
+        h "Grâce à toi, nous allons pouvoir nous pouvoir nous préparer et réduire la rebellion à néant une bonne fois pour toute"
+        h "Tu devrais rejoindre les autres soldats pour te préparé à les acceuillir"
 
         e "Bien mon Roi"
     else:
         e "Bon j'avoue, je sèche un peu là pour le coup"
 
-        o "J'ai eu des doutes sur toi"
-        o "Ne me fait plus jamais peur comme ça"
-        o "Les autres vont être content de ton retour"
-        o "Vas les rejoindre dans la salle de banquet"
+        h "J'ai eu des doutes sur toi"
+        h "Ne me fait plus jamais peur comme ça"
+        h "Les autres vont être content de ton retour"
+        h "Vas les rejoindre dans la salle de banquet"
 
         e "Bien mon Roi"
 
     "Einar se dirige vers la salle de banquet et vois L'evêque Patrick juger 3 écossais qui sont déjà sur le bûcher"
 
+    hide einar
+    hide harald
+
+    show patrick normal at center with dissolve
+
+
+
     p "Que Dieu, est-pitié de vous! Les flammes purificatrices vont laver tous vos pêchés"
     p "Deus propitius tibi!"
+
+    show patrick normal at left
+    show prisonnier normal at right with dissolve
 
     pe3 "Non arretez! Je suis enceinte!"
     pe3 "Même si vous me concidérez comme coupable, vous allez tuer un innocent"
@@ -2187,9 +2222,12 @@ label cours_chateau_1:
     p "Je n'ai que faire de tes mensonges femme!"
     p "Tout ce que tu veux, c'est m'amener vers le diable"
 
-    e "(Que devrais-je faire ?)"
+    hide prisonnier
+    show einar normal at left with dissolve
+    show patrick normal at right
 
     menu:
+        "(Que devrais-je faire ?)"
 
         "Arrêter le massacre":
             e "Stop! arretez-tout, ce ne sont que de simples paysans"
@@ -3131,4 +3169,6 @@ label bad_ending_22:
 
 label credits:
     scene bg black with dissolve
+    with Pause(2.5)
+
     $ renpy.full_restart()
