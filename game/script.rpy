@@ -291,7 +291,7 @@ label intro:
 
     show einar serious
 
-    jump plaine_1    
+    jump plaine_1
 
 #Sequence 2
 label plaine_1 :
@@ -318,104 +318,78 @@ label plaine_1 :
 
     menu menu_harald_eclaireur_foret_1:
         "Je refuse cette responsabilité":
-            jump h_refus_village
+
+            e "Mon roi, je me vois dans l'obligation de refuser cette responsabilité."
+
+            h "Pardon ? C'est un ordre, Einar. Pas une proposition."
+
+            e "Pardonnez-moi, sire. "
+
+            jump menu_harald_eclaireur_foret_1
+
         "Pourquoi ?":
-            jump h_demande_information
+
+            e "Pourquoi dois-je mener ce groupe de reconnaissance ?"
+
+            h "Parce que je te le demande. Comme je te l'ai dit, je suis convaincu que tes qualités te permettront de mener à bien cette mission mieux que quiconque."
+
+            h "Cette reconnaissance est très importante : elle me permettra de cibler précisément le village à châtier. Nous gagnerons un temps précieux et nous épargnerons les villages n'ayant aucun rapport avec cette rébellion."
+
+            jump menu_harald_eclaireur_foret_1
+
         "A quel dangers dois-je m'attendre ?":
-            jump h_demande_nb_detachement
+
+            e "Sire, quels sont les dangers de cette mission ? A quoi dois-je m'attendre ?"
+
+            h "Il n'y a aucun danger. Dans le pire des cas, tu pourrais te faire insulter par une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings. Tu es un huscarl. Rien ne va te résister."
+
+            jump menu_harald_eclaireur_foret_1
+
         "J'accepte":
-            jump h_accepter
+
+            e "J'accepte cette mission."
+
+            h "Et j'en suis satisfait. Part dès maintenant : il n'y a pas de temps à perdre. Tu atteindras Stirling avant la nuit. Les villages que je soupçonne d'être rebelles se trouvent à une journée plus loin."
+
+            e "Fort bien. "
+
         "Avec grand plaisir !":
-            jump h_accepter_fayot
 
-label h_refus_village :
-    e "Mon roi, je me vois dans l'obligation de refuser cette responsabilité."
+            e "Comme il vous plaira, mon roi. C'est un grand honneur que vous me faites ! "
 
-    h "Pardon ? C'est un ordre, Einar. Pas une proposition."
+            h "Cesse tes flagorneries et part sans tarder."
 
-    e "Pardonnez-moi, sire. "
-
-    jump menu_harald_eclaireur_foret_1
-
-label h_demande_information :
-
-    e "Pourquoi dois-je mener ce groupe de reconnaissance ?"
-
-    h "Parce que je te le demande. Comme je te l'ai dit, je suis convaincu que tes qualités te permettront de mener à bien cette mission mieux que quiconque."
-
-    h "Cette reconnaissance est très importante : elle me permettra de cibler précisément le village à châtier. Nous gagnerons un temps précieux et nous épargnerons les villages n'ayant aucun rapport avec cette rébellion."
-
-    jump menu_harald_eclaireur_foret_1
-
-label h_demande_nb_detachement :
-
-    e "Sire, quels sont les dangers de cette mission ? A quoi dois-je m'attendre ?"
-
-    h "Il n'y a aucun danger. Dans le pire des cas, tu pourrais te faire insulter par une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings. Tu es un huscarl. Rien ne va te résister."
-
-    jump menu_harald_eclaireur_foret_1
-
-label h_accepter :
-
-    e "J'accepte cette mission."
-
-    h "Et j'en suis satisfait. Part dès maintenant : il n'y a pas de temps à perdre. Tu atteindras Stirling avant la nuit. Les villages que je soupçonne d'être rebelles se trouvent à une journée plus loin."
-
-    e "Fort bien. "
-
-    jump logan_aide
-
-label h_accepter_fayot :
-
-    e "Comme il vous plaira, mon roi. C'est un grand honneur que vous me faites ! "
-
-    h "Cesse tes flagorneries et part sans tarder."
-
-    jump logan_aide
-
-label logan_aide :
     show logan fache at center
     l "Einar, je t'accompagne ! Mes connaissances de la région ne seront pas de trop, et la vue d'un écossais parmi les vikings rassurera peut-être les villageois. "
 
     menu:
         "Merci Logan !":
-            jump e_reconnaissant
+
+            e "Merci beaucoup Logan. Je suis heureux de pouvoir compter sur toi !"
+
+            l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
+
+            h "Ne vous inquiétez pas. Vous aurez tout les deux de quoi boire et manger une fois revenus ! Maintenant, partez !"
+
         "Je regrette, mais non.":
-            jump e_refus
+
+            e "Non, je refuse. Je n'ai pas besoin de toi, Logan. C'est une mission de reconnaissance : moins nous sommes, mieux c'est."
+
+            l "..."
+
+            h "Ton ingratitude est exaspérante, Einar. Logan t'accompagnera, que tu le veuilles ou non. C'est un ordre !"
+
+            l "Sire, vous..."
+
+            h "Silence. Partez maintenant, ne perdez pas de temps."
+
         "Très bien, puisque tu insistes...":
-            jump e_contrecoeur
 
+            e "Très bien... Viens, mais tais-toi. J'en ai assez de voyager à travers tout le continent. Nous accomplissons notre devoir et nous rentrons au château. Arrange-toi pour ne pas me déranger."
 
-label e_reconnaissant :
+            l "Moi aussi, j'aime voyager dans une ambiance chaleureuse."
 
-    e "Merci beaucoup Logan. Je suis heureux de pouvoir compter sur toi !"
-
-    l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
-
-    h "Ne vous inquiétez pas. Vous aurez tout les deux de quoi boire et manger une fois revenus ! Maintenant, partez !"
-
-    jump plaine_2
-
-label e_refus :
-    e "Non, je refuse. Je n'ai pas besoin de toi, Logan. C'est une mission de reconnaissance : moins nous sommes, mieux c'est."
-
-    l "..."
-
-    h "Ton ingratitude est exaspérante, Einar. Logan t'accompagnera, que tu le veuilles ou non. C'est un ordre !"
-
-    l "Sire, vous..."
-
-    h "Silence. Partez maintenant, ne perdez pas de temps."
-
-    jump plaine_2
-
-label e_contrecoeur :
-
-    e "Très bien... Viens, mais tais-toi. J'en ai assez de voyager à travers tout le continent. Nous accomplissons notre devoir et nous rentrons au château. Arrange-toi pour ne pas me déranger."
-
-    l "Moi aussi, j'aime voyager dans une ambiance chaleureuse."
-
-    h "Parfait. Je suis certain que Logan saura se montrer utile. Partez, et ne revenez qu'après avoir trouvé les rebelles !"
+            h "Parfait. Je suis certain que Logan saura se montrer utile. Partez, et ne revenez qu'après avoir trouvé les rebelles !"
 
     jump plaine_2
 
