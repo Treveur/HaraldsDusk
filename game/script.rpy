@@ -407,68 +407,57 @@ label plaine_2:
 
     menu:
         "Mettre en garde" :
-            jump e_mettre_en_garde
+
+                e "Méfiez vous. Le roi n'est pas avec nous. Sans la Hache, nous sommes à la merci de n'importe quel piège. Faites silence et restez aux aguets."
+
+                e "Rien qu'en t'écoutant, je suis sûr que les rebelles connaissent déjà ton nom, celui de tes parents et la taille de ta queue, Alvin."
+
+                gv "Vous avez entendu, les gars ? Ouvrez l'oeil."
+
         "C'est une mission sans intérêt" :
-            jump e_ininteret_mission
+
+                e "Je suis bien d'accord. Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
+
+                show logan fache at left with dissolve
+
+                l "Tu le prends comme une punition ?"
+
+                e "Oui. J'estime qu'après tout le temps passé en campagne aux côtés du roi, il aurait pu choisir quelqu'un d'autre pour accomplir ses basses besognes."
+
         "Motiver les troupes" :
-            jump e_motiver_troupe_plaine_2
+
+            e "Et je suis convaincu que nous ne rencontrerons rien de plus excitant qu'une tavernière au milieu de toute cette foutue caillasse ! Ha, se défouler sur des villageois, ce sera notre récompense !"
+
+            e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
+
+            gv "Ha ha ! Bien parlé !"
+
         "Chambrer Logan" :
-            jump e_chambrer_logan_plaine_2
+
+            e "Tu ne parles pas beaucoup, Logan. Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
+
+            show logan fache at left with dissolve
+
+            l "..."
+
+            e "Ha, il est obéissant en plus ! Tu attends aussi des autorisations royales pour baiser ? Notre bon Harald doit te la tenir ?"
+
+            l "..."
+
+            gv "Ha ha ha !"
+
         "Silence ! Je veux deux groupes à l'avant..." :
-            jump e_jouer_chef
 
-label e_mettre_en_garde:
 
-    e "Méfiez vous. Le roi n'est pas avec nous. Sans la Hache, nous sommes à la merci de n'importe quel piège. Faites silence et restez aux aguets."
-    e "Rien qu'en t'écoutant, je suis sûr que les rebelles connaissent déjà ton nom, celui de tes parents et la taille de ta queue, Alvin."
+            e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et pressons le pas."
 
-    gv "Vous avez entendu, les gars ? Ouvrez l'oeil."
+            show logan fache at left with dissolve
 
-    jump foret_1
+            l "Einar, les hommes sont aussi fatigués que nous. Tu devrais..."
 
-label e_ininteret_mission:
+            e "Toi aussi, tais-toi. Je veux que nous menions cette mission de la façon la plus exemplaire possible."
 
-    e "Je suis bien d'accord. Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
-    show logan fache at left with dissolve
-    l "Tu le prends comme une punition ?"
-
-    e "Oui. J'estime qu'après tout le temps passé en campagne aux côtés du roi, il aurait pu choisir quelqu'un d'autre pour accomplir ses basses besognes."
-
-    jump foret_1
-
-label e_motiver_troupe_plaine_2:
-
-    e "Et je suis convaincu que nous ne rencontrerons rien de plus excitant qu'une tavernière au milieu de toute cette foutue caillasse ! Ha, se défouler sur des villageois, ce sera notre récompense !"
-
-    e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
-
-    gv "Ha ha ! Bien parlé !"
-
-    jump foret_1
-
-label e_chambrer_logan_plaine_2:
-
-    e "Tu ne parles pas beaucoup, Logan. Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
-    show logan fache at left with dissolve
-    l "..."
-
-    e "Ha, il est obéissant en plus ! Tu attends aussi des autorisations royales pour baiser ? Notre bon Harald doit te la tenir ?"
-
-    l "..."
-
-    gv "Ha ha ha !"
-
-    jump foret_1
-
-label e_jouer_chef:
-
-    e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et pressons le pas."
-    show logan fache at left with dissolve
-    l "Einar, les hommes sont aussi fatigués que nous. Tu devrais..."
-
-    e "Toi aussi, tais-toi. Je veux que nous menions cette mission de la façon la plus exemplaire possible."
-
-    l "Bien."
+            l "Bien."
 
     jump foret_1
 
