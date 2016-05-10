@@ -467,168 +467,130 @@ label foret_1:
     scene bg forest with dissolve
 
     "*Un jour plus tard...*"
+
     show einar serious at left with dissolve
+
     e "Une forêt. Encore..."
 
     menu:
         "Impatient de rentrer en Norvège":
-            jump e_impatient_norvege
+
+            e "Plus le temps passe, plus la Norvège me manque. Depuis combien de temps n'y suis-je pas retourné ?"
+
+            gv "J'aimerais retrouver la Suède. Je n'ai aucune nouvelles de ma famille depuis notre campagne d'Egypte."
+
+            gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
+            show logan fache at right with dissolve
+            l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
+
+            gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
+
+            l "..."
+
+            menu:
+                "Il me tarde de recevoir mes terres":
+
+                    e "Le roi m'a promit des terres. Ça fait des années qu'il me fait miroiter des récompenses sans jamais me les offrir."
+
+                    e "Une fois sur mes terres, je ferai bâtir un manoir."
+
+                    show logan fache at right with dissolve
+
+                    l "Et si ces terres ne sont pas en Norvège ?"
+
+                    e "Peu importe. Tout ce que je veux, c'est enfin pouvoir me sentir chez moi. Norvège ou pas."
+
+                "Assez de niaiseries pour aujourd'hui":
+
+                    e "Taisez-vous. Nous ne sommes qu'à mi-chemin, la route est encore longue. Demain, nous atteindrons Perth."
+
+                    show logan fache at right with dissolve
+
+                    l "Perth ?"
+
+                    e "Oui. D'après les rapports, les rebelles sont venus de cette région. C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
+
         "Se moquer des autochtones" :
-            jump e_se_moquer_foret_1
+
+            e "J'imagine la tête des sauvages qui vivent dans la région. C'est une bonne chose que les écossais aient intégré l'empire : ça les civilisera un peu !"
+
+            e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
+
+            gv "Ha ha !"
+
+            show logan fache at right with dissolve
+
+            l "Non. Nous vivons dans des maisons de pierre. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
+
         "Impatient de terminer la mission" :
-            jump e_impatient_mision_foret_1
+
+            e "Je commence à être lassé de notre petite randonnée. Une journée à crapahuter sur cette saloperie d'île sans voir âme qui vive. On trouve le village et on rentre au château. Et à bride abattue !"
+
         "Motiver les troupes" :
-            jump e_motiver_troupe_foret_1
+
+            e "Ne relâchez pas l'effort. D'ici une journée, nous nous serons suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
+
         "Chambrer Logan" :
-            jump e_chambrer_logan_foret_1
+
+            e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps sculptural d'une de ces magnifiques brebis écossaises ?"
+
+            show logan fache at right with dissolve
+
+            l "..."
+
+            gv "Ha ha !"
+
         "Demander à Logan ce qu'il pense de la mission" :
-            jump e_avis_logan_mission_foret_1
 
-label e_impatient_norvege:
+            e "Tu es le seul à ne pas encore t'être plaint de la mission que nous a confié le roi."
+            show logan fache at right with dissolve
+            l "Je ne vois pas de raisons de me plaindre. J'accomplis mon devoir. Le roi nous récompensera à notre retour."
 
-    e "Plus le temps passe, plus la Norvège me manque. Depuis combien de temps n'y suis-je pas retourné ?"
+            e "Tu es bien optimiste ! Depuis le temps qu'il me promet des terres..."
 
-    gv "J'aimerais retrouver la Suède. Je n'ai aucune nouvelles de ma famille depuis notre campagne d'Egypte."
+            menu:
+                "Pourquoi as-tu décidé de m'accompagner ?":
 
-    gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-    show logan fache at right with dissolve
-    l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
+                    e "Pourquoi avoir choisi de m'accompagner ? "
 
-    gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
+                    l "Je l'ai déjà dit. Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous. Et ma présence facilitera les relations avec les autres écossais."
 
-    l "..."
+                    e "J'imagine."
 
-    menu:
-        "Il me tarde de recevoir mes terres":
-            jump e_espoir_terre_norvege_foret_1
-        "Assez de niaiseries pour aujourd'hui":
-            jump e_ordre_taire_guerrier_foret_1
+                "Je suis content que tu sois là":
 
-label e_se_moquer_foret_1:
+                    e "Quoi qu'il en soit, merci d'avoir choisi de m'accompagner."
 
-    e "J'imagine la tête des sauvages qui vivent dans la région. C'est une bonne chose que les écossais aient intégré l'empire : ça les civilisera un peu !"
+                    l "Ce n'est rien. Si un jour une campagne m'amène en Norvège, je serai heureux de compter sur toi."
 
-    e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
+                "Tu aurais du rester au château":
 
-    gv "Ha ha !"
-    show logan fache at right with dissolve
-    l "Non. Nous vivons dans des maisons de pierre. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
+                    e "Tu aurais du rester avec Harald!"
 
-    jump village_1
+                    l "Pourquoi ?"
 
-label e_impatient_mision_foret_1:
+                    menu:
+                        "Une vie de plus en danger":
 
-    e "Je commence à être lassé de notre petite randonnée. Une journée à crapahuter sur cette saloperie d'île sans voir âme qui vive. On trouve le village et on rentre au château. Et à bride abattue !"
+                            e "C'est une mission de reconnaissance. Nous pourrions tomber dans une embuscade à tout moment !"
 
-    jump village_1
+                            l "Ces gens ne sont que des paysans. Ils fuiraient rien qu'en nous entendant arriver."
 
-label e_motiver_troupe_foret_1:
+                            e "Peut-être pas. Tu as mis ta vie en jeu sans raison. Et tu nous rends plus repérables. "
 
-    e "Ne relâchez pas l'effort. D'ici une journée, nous nous serons suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
+                            l "Plus repérables ? Vraiment ? Quelle différence entre onze et douze hommes ?"
 
-    jump village_1
+                            e "..."
 
-label e_chambrer_logan_foret_1:
+                        "Tu es inutile":
 
-    e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps sculptural d'une de ces magnifiques brebis écossaises ?"
-    show logan fache at right with dissolve
-    l "..."
+                            e "Nous étions déjà bien assez nombreux. Onze guerriers vikings dont un huscarl !"
 
-    gv "Ha ha !"
+                            l "Aucun d'entre vous ne connaît la région."
 
-    jump village_1
+                            e "Je me fout de tes compétences ! Nous ne sommes pas là pour observer un panorama ou cueillir des champignons !"
 
-label e_avis_logan_mission_foret_1:
-
-    e "Tu es le seul à ne pas encore t'être plaint de la mission que nous a confié le roi."
-    show logan fache at right with dissolve
-    l "Je ne vois pas de raisons de me plaindre. J'accomplis mon devoir. Le roi nous récompensera à notre retour."
-
-    e "Tu es bien optimiste ! Depuis le temps qu'il me promet des terres..."
-
-    menu:
-        "Pourquoi as-tu décidé de m'accompagner ?":
-            jump e_pourquoi_logan_accompagne_foret_1
-        "Je suis content que tu sois là":
-            jump e_reconnaissant_logan_foret_1
-        "Tu aurais du rester au château":
-            jump e_rester_haral_foret_1
-
-label e_espoir_terre_norvege_foret_1:
-
-    e "Le roi m'a promit des terres. Ça fait des années qu'il me fait miroiter des récompenses sans jamais me les offrir."
-
-    e "Une fois sur mes terres, je ferai bâtir un manoir."
-    show logan fache at right with dissolve
-    l "Et si ces terres ne sont pas en Norvège ?"
-
-    e "Peu importe. Tout ce que je veux, c'est enfin pouvoir me sentir chez moi. Norvège ou pas."
-
-    jump village_1
-
-label e_ordre_taire_guerrier_foret_1:
-
-    e "Taisez-vous. Nous ne sommes qu'à mi-chemin, la route est encore longue. Demain, nous atteindrons Perth."
-    show logan fache at right with dissolve
-    l "Perth ?"
-
-    e "Oui. D'après les rapports, les rebelles sont venus de cette région. C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
-
-    jump village_1
-
-label e_pourquoi_logan_accompagne_foret_1:
-
-    e "Pourquoi avoir choisi de m'accompagner ? "
-
-    l "Je l'ai déjà dit. Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous. Et ma présence facilitera les relations avec les autres écossais."
-
-    e "J'imagine."
-
-    jump village_1
-
-label e_reconnaissant_logan_foret_1:
-
-    e "Quoi qu'il en soit, merci d'avoir choisi de m'accompagner."
-
-    l "Ce n'est rien. Si un jour une campagne m'amène en Norvège, je serai heureux de compter sur toi."
-
-    jump village_1
-
-label e_rester_haral_foret_1:
-
-    e "Tu aurais du rester avec Harald!"
-
-    l "Pourquoi ?"
-
-    menu:
-        "Une vie de plus en danger":
-            jump e_attention_logan_foret_1
-        "Tu es inutile":
-            jump e_poids_logan_foret_1
-
-label e_attention_logan_foret_1:
-
-    e "C'est une mission de reconnaissance. Nous pourrions tomber dans une embuscade à tout moment !"
-
-    l "Ces gens ne sont que des paysans. Ils fuiraient rien qu'en nous entendant arriver."
-
-    e "Peut-être pas. Tu as mis ta vie en jeu sans raison. Et tu nous rends plus repérables. "
-
-    l "Plus repérables ? Vraiment ? Quelle différence entre onze et douze hommes ?"
-
-    e "..."
-
-    jump village_1
-
-label e_poids_logan_foret_1:
-
-    e "Nous étions déjà bien assez nombreux. Onze guerriers vikings dont un huscarl !"
-
-    l "Aucun d'entre vous ne connaît la région."
-
-    e "Je me fout de tes compétences ! Nous ne sommes pas là pour observer un panorama ou cueillir des champignons !"
-
-    e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
+                            e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
     jump village_1
 
