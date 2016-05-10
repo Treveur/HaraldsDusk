@@ -2,18 +2,40 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-File "game/script.rpy", line 2031: end of line expected.
-    show einar serious with dissolve at center
-                                     ^
+File "game/script.rpy", line 50: expected statement.
+    <<<<<<< HEAD
+                ^
 
-File "game/script.rpy", line 2047: end of line expected.
-    show garde_chateau  normal with dissolve at right
-                                             ^
-=======
-File "game/script.rpy", line 1586: expected 'image_name_component' not found.
-    show
-        ^
->>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
+File "game/script.rpy", line 53: expected statement.
+    =======
+          ^
+
+File "game/script.rpy", line 55: expected statement.
+    >>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
+                                                    ^
+
+File "game/script.rpy", line 1594: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/script.rpy", line 1597: expected statement.
+    =======
+          ^
+
+File "game/script.rpy", line 1599: expected statement.
+    >>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
+                                                    ^
+
+File "game/script.rpy", line 2118: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/script.rpy", line 2121: expected statement.
+    =======
+          ^
+
+File "game/script.rpy", line 2122: expected statement.
+    >>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
+                                                    ^
 
 Ren'Py Version: Ren'Py 6.99.10.1227

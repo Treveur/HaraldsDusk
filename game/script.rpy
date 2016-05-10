@@ -47,12 +47,9 @@ image bg house2_jour = "house2_jour.jpg"
 image bg house2_night = "house2_night.jpg"
 image bg house2_aube = "house2_aube.jpg"
 image bg mer = "chateau_mer.jpg"
-<<<<<<< HEAD
 image bg pont_levis = "pont_levis.jpg"
 image bg cours_chateau = "cours_chateau.png"
-=======
 image bg cote1 = "cote1.jpg"
->>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
 
 
 #Fond uni
@@ -1591,12 +1588,7 @@ label interieur_maison_village_1:
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
-<<<<<<< HEAD
 
-
-=======
-    
->>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
     o "Alors ? Comment va le prisonnier ?"
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
@@ -1702,7 +1694,7 @@ label interieur_maison_village_2:
             e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger. Appelez moi-Einar"
             m "Alors parle moi comme si j'étais ton amie."
             e "Très bien, Moira."
-            
+
         "Remercier":
             e "Merci."
             m "Pour ?"
@@ -1724,14 +1716,14 @@ label interieur_maison_village_2:
             m "Les moments où je te soigne. Pendant ce temps, je ne pense pas au reste. Ça me change les idées !"
             e "Tu te distrais en changeant les bandages souillés d'un prisonnier de guerre ?"
             m "Je préfère encore ça plutôt que de m'occuper des bêtes, bien que ce ne soit pas si différent !"
-            
+
         "Faire de l'humour":
             e "Pas la peine d'insister : je ne suis toujours pas interessé !"
             m "Ne soit pas idiot !" #Elle sourit discrètement
             e "Tiens ? On se tutoie maintenant ?"
             m "Oui. J'en ai assez de devoir te parler comme à un étranger."
             e "Ça me va !"
-            
+
     "* Les bandages d'Einar sont remplacés.*"
     m "Je vais te laisser, c'est tout pour aujourd'hui."
     e "A demain ?"
@@ -1805,11 +1797,11 @@ label interieur_maison_village_3:
             e "Ce n'est pas dans ses habitudes. Mais il y a peut-être été poussé. Ces massacres ne devraient pas avoir lieu. Je regrette sincèrement d'avoir amené la mort dans mon sillage."
             m "..."
             o "Vous êtes quelqu'un de juste, Einar. Vous n'êtes pas responsable de ce qui se produit."
-    
+
         "Ne rien dire":
             e "..."
             o "Votre silence vous honore. Je comprends que vous ne vouliez pas prendre parti, votre position est délicate."
-            
+
         "Se montrer heureux":
             e "Harald est à ma recherche. Bientôt, je serai libre. Ces massacres ne sont que les signes annonciateurs de ma libération."
             "Ogma est déçu, et reproche à Einar de se réjouir du massacre d'innocents. Il se met à penser que la clémence d'Einar a été une marque de lâcheté ou de fainéantise."
@@ -2115,11 +2107,8 @@ label cote_1:
 label cote_2:
     scene bg mer with dissolve
 
-<<<<<<< HEAD
     show einar serious at center with dissolve
 
-=======
->>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
     e "Hummmm me voilà tout près du chateau"
     e "Que vais-je faire?"
     e "Trahir mon roi ? Non impossible, je suis à ses côtés depuis bien longtemps"
@@ -2130,7 +2119,7 @@ label cote_2:
 
 #Sequence 2
 label exterieur_chateau_1:
-    scene bg 
+    scene bg
 
     scene bg pont_levis with dissolve
 
