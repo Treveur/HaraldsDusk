@@ -121,206 +121,177 @@ label intro:
 
     menu:
         "Parler à Harald":
-            jump harald_choice
+            hide logan fache
+
+            e "Mon Roi, sommes-nous proches ?"
+
+            show einar serious at left
+            show harald normal at right
+
+            h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
+
+            menu menu_harald_choice_foret:
+                "Quel est le plan ?":
+
+                    e "Quelles sont les instructions, sire ? A quoi devons-nous nous préparer ?"
+
+                    h "Tout d'abord, nous allons atteindre le château de Dunbar. Là, l'évêque Patrick d'Edimbourg nous accueillera."
+
+                    h "Ensuite je détacherai un groupe d'éclaireurs. Je veux retrouver le village des rebelles le plus vite possible."
+
+                    h "Une fois le village retrouvé, j'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire."
+
+                    jump menu_harald_choice_foret
+
+                "Parler de la région":
+
+                    e "Qu'indiquent les cartes à propos de la région, sire ? Je n'ai pas eu le loisir de les consulter."
+
+                    h "Pas grand chose. Des plaines d'herbe rase, des rocailles abruptes, quelques forêts. Et surtout, la mer."
+
+                    h "Nous ne sommes encore que dans les Lowlands ; les Highlands sont plus au nord."
+
+                    h "Et hormis le nom, je dois dire que je ne vois que peu de différences entre ces deux territoires. "
+
+                    e "La région a l'air inhospitalière..."
+
+                    h "Sauf pour les moutons. Il y a plus de moutons que d'hommes, par ici. Et quand je parle d'hommes, je suis encore trop élogieux. N'en déplaise à Logan."
+
+                    jump menu_harald_choice_foret
+
+                "Se montrer enthousiaste":
+
+                    e "Sire, il me tarde de massacrer quelques paysans !"
+
+                    h "Ha ha ! Ne sois pas si hatif, Einar. Il ne s'agit pas de tuer tout ce qui bouge. Pas pour le moment. "
+
+                    e "Sauf votre respect, Sire, votre Hache nous a privé de nombreuses batailles. D'habitude, vos ennemis se rendent dès qu'ils la voient ! Alors un soulèvement paysan, c'est une chance inespérée !"
+
+                    h "Ton enthousiasme fait plaisir à voir !"
+
+                    jump menu_harald_choice_foret
+
+                "Pourquoi tant de confiance ?":
+
+                    e "Mon roi, votre présence ici m'intrigue : pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
+
+                    h "Je suis l'élu divin, Einar. Je porte une relique du Christ. La Hache me rend immortel. Une flèche me ferait rire, rien de plus."
+
+                    h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
+
+                    e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
+
+                    jump menu_harald_choice_foret
+
+                "Est-il vraiment nécessaire de massacrer une bande paysans ?":
+
+                    e "Mon Roi, est-il vraiment nécessaire de tuer des paysans ? Ne pensez-vous pas que de nombreux innocents risquent de perde la vie ?"
+
+                    h "Quelle mollesse de ta part, Einar ! Je suis surpris !"
+
+                    h "Il n'y a pas d'innocents sur ces terres. En tuant mon intendant, ils se sont attaqués à moi. Ils mourront tous pour l'exemple."
+
+                    h "J'ai un message à faire passer au reste du monde. La moindre rébellion entraînera une sanction immédiate, sans distinction."
+
+                    e "La mort."
+
+                    h "Exactement !"
+
+                    jump menu_harald_choice_foret
+
+                "Continuer silencieusement":
+                    e "..."
+
         "Parler à Logan":
-            jump logan_choice
+            e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
+
+            show einar serious at left
+            show logan fache at right
+
+            l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
+
+            e "Depuis tout ce temps passé en campagne, j'en avais oublié tes racines."
+
+            l "Je me demande si Aberdeen a beaucoup changé."
+
+            e "La nostalgie de la maison, hein ? Si tu veux, je peux peut-être glisser un mot au roi pour..."
+
+            l "Non, merci. Je ne tiens pas à y retourner."
+
+            menu menu_logan_choice_foret:
+                "Se remémorer un bon souvenir":
+
+                    e "Tu te souviens de la bataille de Wertheim ?"
+
+                    l "L'automne dernier ? Et comment ! Je revois encore les seins de la petite que j'avais attrapé ! J'ai passé une bonne nuit cette fois là !"
+
+                    l "Je ne me rappelle même pas de son nom. Dorthe, Dorothe, quelque chose comme ça. Le lendemain, sur le départ, elle a insisté pour que je l'emmène ! La garce ! Ha ha ! "
+
+                    e "Tu as toujours de la chance quand il s'agit de dégoter de belles filles. Même au milieu de nul part !"
+
+                    l "Remarque, ça fait un moment que je ne t'ai pas vu avec une fille. Pas une captive, rien ! Monsieur cherche le grand amour ? A moins qu'il ne soit plus du genre à embrasser les garçons ?"
+
+                    e "Ferme la, sale porc. Quand je passe du bon temps, j'aime que la fille ne sois pas entrain de se débattre."
+
+                    l "Chacun son truc !"
+
+                    jump menu_logan_choice_foret
+
+                "Parler de la région":
+
+                    e "Tu reconnais la région ?"
+
+                    l "Pas vraiment. Aberdeen est bien plus loin au nord, je ne suis jamais venu jusqu'ici."
+
+                    l "Cela dit, je ne suis pas dépaysé. La différence entre ici et chez moi, ce sont les montagnes."
+
+                    l "Pour le reste, tout est identique : mêmes forêts, mêmes plaines herbeuses. Et la mer."
+
+                    l "Quant aux gens qui vivent ici, j'imagine qu'ils sont identiques à ceux d'Aberdeen."
+
+                    jump menu_logan_choice_foret
+
+                "Se montrer enthousiaste":
+
+                    e "Ma hache me démange. Je fracasserais bien quelques crânes."
+
+                    l "Moi aussi ! Je ne supporte plus ces voyages interminables. Deux mois que nous n'avons pas combattu ! Et plus d'un an depuis la dernière vraie bataille. Il est grand temps de nous dégourdir un peu !"
+
+                    e "Tuer des écossais ne te posera pas de problème ?"
+
+                    l "Je n'aurai pas plus de problèmes que toi. Ces gens sont des inconnus, et ils ont tué l'un des vassaux de notre roi. C'est une motivation amplement suffisante pour trancher la tête de quelques compatriotes."
+
+                    jump menu_logan_choice_foret
+
+                "Pourquoi Harald est-il si confiant ?":
+
+                    e "Le roi me paraît bien confiant."
+
+                    l "Et pourquoi ne le serait-il pas ? Il est le plus grand souverain que le monde connaisse. Il porte une Hache Sainte incrustée des Clous de la Sainte Croix."
+
+                    l "Il est immortel et invincible. Une armée de vétérans marche avec lui. S'il y a bien une personne sur cette terre qui puisse avoir confiance en lui-même, c'est notre roi."
+
+                    jump menu_logan_choice_foret
+
+                "Est-il vraiment nécessaire de massacrer une bande de paysans ?":
+
+                    e "Je me demande si le massacre de paysans innocents est justifié."
+
+                    l "Tu te poses beaucoup de questions. Si notre roi nous le demande, nous le faisons."
+
+                    l "Et à titre personnel, tuer des paysans ne me pose aucun problème. C'est un message que nous envoyons à tous les rebelles potentiels : trahissez Harald, et vous verrez vos familles mourir."
+
+                    jump menu_logan_choice_foret
+
+                "Continuer silencieusement":
+                    e "..."
+
         "Ne rien dire":
-            jump plaine_1
+            e "..."
 
     show einar serious
 
-label harald_choice:
-    hide logan fache
-
-    e "Mon Roi, sommes-nous proches ?"
-
-    show einar serious at left
-    show harald normal at right
-
-    h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
-
-    menu menu_harald_choice_foret:
-        "Quel est le plan ?":
-            jump h_souvenir_bataille
-
-        "Parler de la région":
-            jump h_info_region
-
-        "Se montrer enthousiaste":
-            jump h_enthousiaste
-
-        "Pourquoi tant de confiance ?":
-            jump h_confiance
-
-        "Est-il vraiment nécessaire de massacrer une bande paysans ?":
-            jump h_innocents
-
-        "Continuer silencieusement":
-            jump plaine_1
-
-
-
-label logan_choice :
-
-    e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
-
-    show einar serious at left
-    show logan fache at right
-
-    l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
-
-    e "Depuis tout ce temps passé en campagne, j'en avais oublié tes racines."
-
-    l "Je me demande si Aberdeen a beaucoup changé."
-
-    e "La nostalgie de la maison, hein ? Si tu veux, je peux peut-être glisser un mot au roi pour..."
-
-    l "Non, merci. Je ne tiens pas à y retourner."
-
-    menu menu_logan_choice_foret:
-        "Se remémorer un bon souvenir":
-            jump l_souvenir_bataille
-
-        "Parler de la région":
-            jump l_info_region
-
-        "Se montrer enthousiaste":
-            jump l_enthousiaste
-
-        "Pourquoi Harald est-il si confiant ?":
-            jump l_confiance
-
-        "Est-il vraiment nécessaire de massacrer une bande de paysans ?":
-            jump l_innocents
-
-        "Continuer silencieusement":
-            jump plaine_1
-
-
-#Harald
-label h_souvenir_bataille :
-    e "Quelles sont les instructions, sire ? A quoi devons-nous nous préparer ?"
-
-    h "Tout d'abord, nous allons atteindre le château de Dunbar. Là, l'évêque Patrick d'Edimbourg nous accueillera."
-
-    h "Ensuite je détacherai un groupe d'éclaireurs. Je veux retrouver le village des rebelles le plus vite possible."
-
-    h "Une fois le village retrouvé, j'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire."
-
-
-    jump menu_harald_choice_foret
-
-label h_info_region :
-    e "Qu'indiquent les cartes à propos de la région, sire ? Je n'ai pas eu le loisir de les consulter."
-
-    h "Pas grand chose. Des plaines d'herbe rase, des rocailles abruptes, quelques forêts. Et surtout, la mer."
-
-    h "Nous ne sommes encore que dans les Lowlands ; les Highlands sont plus au nord."
-
-    h "Et hormis le nom, je dois dire que je ne vois que peu de différences entre ces deux territoires. "
-
-    e "La région a l'air inhospitalière..."
-
-    h "Sauf pour les moutons. Il y a plus de moutons que d'hommes, par ici. Et quand je parle d'hommes, je suis encore trop élogieux. N'en déplaise à Logan."
-
-    jump menu_harald_choice_foret
-
-label h_enthousiaste :
-    e "Sire, il me tarde de massacrer quelques paysans !"
-
-    h "Ha ha ! Ne sois pas si hatif, Einar. Il ne s'agit pas de tuer tout ce qui bouge. Pas pour le moment. "
-
-    e "Sauf votre respect, Sire, votre Hache nous a privé de nombreuses batailles. D'habitude, vos ennemis se rendent dès qu'ils la voient ! Alors un soulèvement paysan, c'est une chance inespérée !"
-
-    h "Ton enthousiasme fait plaisir à voir !"
-
-    jump menu_harald_choice_foret
-
-label h_confiance :
-    e "Mon roi, votre présence ici m'intrigue : pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
-
-    h "Je suis l'élu divin, Einar. Je porte une relique du Christ. La Hache me rend immortel. Une flèche me ferait rire, rien de plus."
-
-    h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
-
-    e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
-
-    jump menu_harald_choice_foret
-
-label h_innocents :
-    e "Mon Roi, est-il vraiment nécessaire de tuer des paysans ? Ne pensez-vous pas que de nombreux innocents risquent de perde la vie ?"
-
-    h "Quelle mollesse de ta part, Einar ! Je suis surpris !"
-
-    h "Il n'y a pas d'innocents sur ces terres. En tuant mon intendant, ils se sont attaqués à moi. Ils mourront tous pour l'exemple."
-
-    h "J'ai un message à faire passer au reste du monde. La moindre rébellion entraînera une sanction immédiate, sans distinction."
-
-    e "La mort."
-
-    h "Exactement !"
-    jump menu_harald_choice_foret
-
-#Logan
-label l_souvenir_bataille :
-    e "Tu te souviens de la bataille de Wertheim ?"
-
-    l "L'automne dernier ? Et comment ! Je revois encore les seins de la petite que j'avais attrapé ! J'ai passé une bonne nuit cette fois là !"
-
-    l "Je ne me rappelle même pas de son nom. Dorthe, Dorothe, quelque chose comme ça. Le lendemain, sur le départ, elle a insisté pour que je l'emmène ! La garce ! Ha ha ! "
-
-    e "Tu as toujours de la chance quand il s'agit de dégoter de belles filles. Même au milieu de nul part !"
-
-    l "Remarque, ça fait un moment que je ne t'ai pas vu avec une fille. Pas une captive, rien ! Monsieur cherche le grand amour ? A moins qu'il ne soit plus du genre à embrasser les garçons ?"
-
-    e "Ferme la, sale porc. Quand je passe du bon temps, j'aime que la fille ne sois pas entrain de se débattre."
-
-    l "Chacun son truc !"
-
-    jump menu_logan_choice_foret
-
-label l_info_region :
-    e "Tu reconnais la région ?"
-
-    l "Pas vraiment. Aberdeen est bien plus loin au nord, je ne suis jamais venu jusqu'ici."
-
-    l "Cela dit, je ne suis pas dépaysé. La différence entre ici et chez moi, ce sont les montagnes."
-
-    l "Pour le reste, tout est identique : mêmes forêts, mêmes plaines herbeuses. Et la mer."
-
-    l "Quant aux gens qui vivent ici, j'imagine qu'ils sont identiques à ceux d'Aberdeen."
-
-    jump menu_logan_choice_foret
-
-label l_enthousiaste :
-    e "Ma hache me démange. Je fracasserais bien quelques crânes."
-
-    l "Moi aussi ! Je ne supporte plus ces voyages interminables. Deux mois que nous n'avons pas combattu ! Et plus d'un an depuis la dernière vraie bataille. Il est grand temps de nous dégourdir un peu !"
-
-    e "Tuer des écossais ne te posera pas de problème ?"
-
-    l "Je n'aurai pas plus de problèmes que toi. Ces gens sont des inconnus, et ils ont tué l'un des vassaux de notre roi. C'est une motivation amplement suffisante pour trancher la tête de quelques compatriotes."
-
-    jump menu_logan_choice_foret
-
-label l_confiance :
-    e "Le roi me paraît bien confiant."
-
-    l "Et pourquoi ne le serait-il pas ? Il est le plus grand souverain que le monde connaisse. Il porte une Hache Sainte incrustée des Clous de la Sainte Croix."
-
-    l "Il est immortel et invincible. Une armée de vétérans marche avec lui. S'il y a bien une personne sur cette terre qui puisse avoir confiance en lui-même, c'est notre roi."
-
-    jump menu_logan_choice_foret
-
-label l_innocents :
-    e "Je me demande si le massacre de paysans innocents est justifié."
-
-    l "Tu te poses beaucoup de questions. Si notre roi nous le demande, nous le faisons."
-
-    l "Et à titre personnel, tuer des paysans ne me pose aucun problème. C'est un message que nous envoyons à tous les rebelles potentiels : trahissez Harald, et vous verrez vos familles mourir."
-
-    jump menu_logan_choice_foret
-
+    jump plaine_1    
 
 #Sequence 2
 label plaine_1 :
@@ -1805,7 +1776,7 @@ label interieur_maison_village_3:
         "Se montrer heureux":
             e "Harald est à ma recherche. Bientôt, je serai libre. Ces massacres ne sont que les signes annonciateurs de ma libération."
             o "J'ai cru que vous étiez quelqu'un de juste. Je me trompais probablement. Vous me dégoûtez."
-            
+
     m "Le roi ne risque pas d'arriver ici sous peu ?"
     o "Non, tout a été prévu. Hier, j'ai demandé à mes hommes d'accomplir deux choses : la première était de tenter d'assassiner l'ami du roi dans son propre château, l'évêque Patrick d'Edimbourg."
     o "La seconde était de brûler les navires par lesquelles les troupes vikings sont arrivées."
@@ -1824,7 +1795,7 @@ label interieur_maison_village_4:
     $ libre_ask = False
     $ trahir_talk = False
     $ decevoir_moira = ""
-    
+
     "Deux semaines plus tard..."
 
     "*Moira arrive dans la chambre, un couteau à la main.*"
@@ -1833,7 +1804,7 @@ label interieur_maison_village_4:
     menu menu_moira_couteau:
         "Ne rien dire" if libre_ask == False:
             e "..."
-            
+
         "Je suis libre ?" if libre_ask == False:
             e "Tu vas me libérer ?"
             m "Non. Je vais accomplir ce que mon père aurait dû faire depuis longtemps..."
@@ -1904,7 +1875,7 @@ label interieur_maison_village_4:
         menu:
 
             "Arrêter d'être soldat":
-                e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres." 
+                e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres."
                 e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié !"
                 $ decevoir_moira = "partir"
 
@@ -1927,7 +1898,7 @@ label interieur_maison_village_4:
             e "Je ne sais pas..."
             "*Moira est visiblement déçue.*"
             m "Suis-moi, je vais te montrer l'extérieur."
-            
+
         elif decevoir_moira == "rien":
             m "J'espère que tu trouveras vite la réponse. Une fois que tu seras parti pour le château, tu seras au pied du mur..."
             e "Qu'est-ce que tu voudrais, toi ?"
@@ -1936,10 +1907,10 @@ label interieur_maison_village_4:
             m "Tu pourrais rester ici. Tu vivrais avec nous..."
             e "..."
             m "Je en veux pas te gêner, excuse-moi. Allez, il est temps de sortir !"
-            
+
         else:
             "Le visage de Moira s'illumine et elle se fend d'un sourire discret"
-            
+
     m "Viens !"
     "*Moira entraîne Einar a l'extérieur en lui tenant la main*"
     jump village_2
