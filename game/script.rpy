@@ -1783,7 +1783,7 @@ label interieur_maison_village_3:
 
     vm "Ogma !"
     o "Fenella ? Quelque chose ne va pas ?"
-    vm "Kircaldy a brûlé ce matin !"
+    vm "Dunfermline a brûlé ce matin !"
     o "Le roi... Je ne suis pas surpris."
     e "Vous n'avez pas l'air affecté par la nouvelle !"
     m "Stirling et Falkirk ont déjà été rasée il y a quelques jours. Le roi est en marche."
@@ -1905,7 +1905,7 @@ label interieur_maison_village_4:
 
             "Arrêter d'être soldat":
                 e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres." 
-                e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié !"
+                e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié ! Passé un certain temps, la gloire ne suffit plus."
                 $ decevoir_moira = "partir"
 
             "Aller dans une région plus chaude":
@@ -1947,25 +1947,43 @@ label interieur_maison_village_4:
 #Sequence 5
 label village_2:
     scene bg village2_jour with dissolve
-
-    "Les villageois le regardent à peine"
+    
+    vm "... et il faudra que tu penses à rentrer les bêtes plus tôt !"
+    vm "Mamie ! J'ai trouvé un caillou qui brille !"
+    
+    "*Les villageois remarquent à peine la présence d'Einar.*"
 
     menu :
-        "Que dire ?"
-        "Sarcasme":
-            e "Pas d'applaudissements ? Pas d'ovation populaire ?"
-            "Moira rit ouvertement. Les gens lui feront un accueil princier une fois qu'il les aura aidé à faire partir Harald."
+        "Être sarcastique":
+            e "Pas d'applaudissements ? Pas d'ovation populaire ? C'est ainsi que le bon peuple accueille le héros qui doit le libérer du joug du terrible roi-empereur ?"
+            m "Ha ha ha ! Ne soit pas trop exigeant ! Tu auras un accueil princier une fois que tu auras fait partir Harald !"
+            e "Des encouragements auraient été enthousiasmants."
 
         "Ne rien dire":
             e "..."
+            m "On dirait que voir l'extérieur et le village ne te fait pas plus d'effet que ça... J'imagine que tu ne réalises pas vraiment que tu as recouvré une partie de ta liberté."
+            e "C'est sûrement ça..."
 
-        "Etre agressif":
-            e "Les paysans n'ont pas changé depuis la dernière fois. Même odeur, mêmes têtes d'abrutis"
-            "Moira fronce les sourcils. Ces paysans sont ma famille et mes amis. Tu devrais être un peu plus reconnaissant envers les personnes qui t'ont soigné, nourri et abrité pendant tout ce temps. "
+        "Être agressif":
+            e "Les paysans n'ont pas changé depuis la dernière fois. Mêmes odeurs, mêmes têtes d'abrutis consanguins."
+            m "Ces gens sont ma famille et mes amis. Un peu de reconnaissance pour ceux qui t'ont soigné, nourri et abrité pendant tout ce temps ne serait pas de trop."
+            e "Je n'ai vu qu'une seule personne me soigner, et c'était toi."
+            m "Peut-être. Mais ta nourriture venait bien de ces gens. Et les herbes et remèdes que je t'ai administré m'ont été conseillés par le vieux Murray."
+            m "Tu dois quelque chose à chacune de ces personnes."
+            e "Tu salueras le vieux Murray de ma part, alors..."
 
-        "Ogma ?":
+        "Où est Ogma ?":
             e "Ogma n'est pas ici ?"
-            "Moira explique qu'Ogma est parti à la rencontre d'autres villages. Elle reste évasive et n'en dit pas plus."
+            m "Non, mon père est parti hier soir du village."
+            e "Pourquoi ?"
+            m "Je ne sais pas vraiment... Je crois qu'il est parti rencontrer les gens de Kircaldy."
+            e "Mmmh..."
+
+    m "..."
+    m "Je vais te faire visiter Perth. Nous allons d'abord voir Fenella, elle a hâte de te rencontrer depuis qu'elle t'a vu l'autre jour."
+    e "Fenella ? La dernière fois, c'était une grosse femme rougeaude qui sentait l'ail. Il s'agit de cette Fenella ?"
+    m "Ha ha, oui ! Et je crois bien que tu lui plaît beaucoup ! Elle a perdu son mari il y a quelques années. Il te ressemblait un peu, je crois."
+    e "La journée va être longue..."
 
     jump village_3
 
@@ -1975,29 +1993,53 @@ label village_3:
 
     $ einar_raler = False
 
-    "Après quelques semaines, Einar est en bien meilleure santé. On lui permet de se déplacer librement dans le village. Moira l'accompagne en permanence."
-    "Moira demande si Einar apprécie cette première sortie"
+    m "Alors ? Qu'as-tu pensé de cette première sortie ? Tu as apprécié ?"
 
     menu :
-        "Que lui répondre ?"
 
-        "Envie de bouger":
-            e "Oui. Je commençais à être sérieusement engourdi !"
+        "Besoin de bouger":
+            e "Oui. Je commençais à être sérieusement engourdi ! Le sensation de l'herbe sous mes pieds... Ça me manquait !"
+            m "J'imagine ! Des tas de choses ont dû te manquer pendant que tu étais enfermé ici..."
 
         "Agréable compagnie":
             e "Oui. Cette sortie est agréable, surtout aussi bien accompagné."
+            m "..." #elle sourit
+            m "Moi aussi, j'ai apprécié de passer du temps avec toi."
 
         "Désagréable":
-            e "Pas vraiment. J'aime pas l'Ecosse."
+            e "Pas vraiment. Je n'aimais déjà pas l'Ecosse quand j'y ai accosté, et mon opinion n'a toujours pas changé."
+            e "D'ailleurs, je crois que personne n'était heureux de venir ici à part Logan."
+            e "Et quand je dis heureux, c'est exagéré."
+            e "Je pense que l'Ecosse m'insupporte parce qu'elle ressemble beaucoup à la Norvège, tout en n'y étant pas égale."
+            e "Ah, si je pouvais retourner là-bas, je..."
             $ einar_raler = True
+            
         "Se plaindre":
-            e "Non. Mes blessures me lancent."
+            e "Non. Mes blessures me lancent. Et le repas chez Fenella était un enfer."
+            m "Tu n'as pas aimé les oatcakes ?"
+            e "Non. Cette saloperie était plus sèche que l'Anatolie ! J'ai cru m'étouffer !"
+            m "Et le haggis ? Je suis sûre que tu as aimé !"
+            e "Pas vraiment."
+            m "Pourtant, quand je t'en ai donné alors que tu étais attaché, tu avais l'air d'adorer ça."
+            e "Tu les préparais mieux."
+            m "Ils étaient préparés par Fenella."
+            e "..."
+            e "A vrai dire, la seule chose que j'ai apprécié était cette eau de vie que le vieux Murray m'a fait goûter."
+            m "Ah ? C'est drôle, c'est la seule chose que je déteste ! L'odeur, le goût..."
+            e "Avec quoi a-t-il dit que c'était fabriqué ?"
+            m "De l'eau de source et des céréales, de l'orge je crois. C'est son vieux cousin Campbell qui lui en a donné un tonnelet."
+            e "Une fois toute cette histoire terminée, j'irai chercher ce fameux cousin ! J'aimerais lui acheter un peu de sa production."
+            m "Finalement, cette journée était plutôt agréable !"
+            e "Non, je persiste. J'ai detesté le..."
+            
             $ einar_raler = True
 
     if einar_raler:
-        m "Ne râle pas ! "
+        m "Arrête de râler ! Tu auras beau dire ce que tu veux, j'ai bien vu que tu avais apprécié ce que je t'ai montré. "
 
-    "Avant de le ramener à la maison, Moira prend Einar par la main et l'entraîne derrière elle, lui disant qu'elle voudrait lui montrer un endroit spécial."
+    m "Avant de te ramener à la maison, j'aimerais te montrer une dernière chose. C'est un endroit que j'aime beaucoup."
+    "*Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village.*"
+
 
     jump foret_3
 
@@ -2006,16 +2048,17 @@ label foret_3:
     scene bg forest_crepuscule with dissolve
 
     menu :
-        "Que dire ?"
-
         "Destination ?":
             e "Où allons-nous?"
-        "Ordre d'Ogma ?":
-            e "Et les instructions de ton père ?"
-        "Sarcasme":
-            e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt"
+            
+        "Et l'ordre d'Ogma ?":
+            e "Et les instructions de ton père ? Je croyais que je n'avais pas le droit de sortir, sauf autorisation spéciale."
+            
+        "Être sarcastique":
+            e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt et..."
 
-    "Moira lui demande gentiment de se taire, en faisant un \"chut\", un doigt sur la bouche"
+    "*Moira demande à EInar de se taire, en mettant un doigt sur sa bouche.*"
+    m "Chuuut..."
 
     jump paradis_foret_1
 
@@ -2026,8 +2069,6 @@ label paradis_foret_1:
     $ moira_dead = False
 
     menu :
-        "Que dire ?"
-
         "Quel est cet endroit ?":
             e "Où sommes-nous ?"
 
@@ -2035,58 +2076,76 @@ label paradis_foret_1:
             e "..."
 
         "Endroit magnifique":
-            e "C'est un très bel endroit."
+            e "C'est un très bel endroit. Est-ce que..."
 
 
-        "Moira force Einar à s'asseoir au pied d'un arbre, en silence. Elle tourne le dos à Einar et commence à se dénuder."
+        "*Moira pousse doucement Einar contre un arbre.*"
+        "*Elle recule de quelques pas, puis se retourne.*"
+        "*Elle se dénude lentement devant Einar, sans le regarder.*"
 
     menu :
-        "Que faire ?"
-
+        
         "Tuer Moira":
-            e "(C'est une occasion en or de la tuer et s'enfuir)"
+            e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
+            "*Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme.*"
+            "*Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante.*"
+            "*Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte.*"
+            e "Il est temps pour moi de retrouver les miens."
             $ moira_dead = True
             jump cote_2
 
         "S'enfuir":
-            e "(C'est une occasion en or de s'enfuir)"
+            e "(C'est une occasion en or de s'enfuir.)"
+            "*Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons.*"
+            m "Einar ? Einar ?"
             jump cote_2
 
         "La regarder":
-            e "(Mignonne la petite)"
-            "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
-            "Passer un bon moment avec Moira"
+            e "(Comme elle est belle...)"
+            "*Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements.*"
+            e "Tu..."
+            m "Ne dis rien."
+            "*Elle embrasse doucement Einar et commence à l'enlacer.*"
+            "*Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite.*"
+            "..."
             jump village_4
 
 #Sequence 9
 label village_4:
     scene bg village2_jour with dissolve
 
-    "Einar est au milieu du village. Il a récupéré ses affaires et est équipé comme lorsqu'il a été capturé. Ogma est présent ainsi que Moira."
-    "Il s'adresse à EInar en lui rappelant qu'il a fait une promesse. Les rebelles l'ont soigné et se sont occupés de lui : il doit maintenant accomplir sa part du marché."
-    "Lorsque l'assaut aura commencé, Ogma lancera un signal à destination d'Einar : un double son de cor. Il devra ouvrir le pont-levis."
+    "*Le lendemain...*"
+    o "Vous voilà prêt à partir, Einar."
+    e "Je pense être prêt, oui. Retrouver mes affaires me fait du bien."
+    o "Avant de vous souhaiter bonne route, je veux vous rappeler quelque chose. Vous nous avez fait une promesse."
+    o "Nous vous avons soigné, nous nous sommes occupé de vous. Vous nous êtes redevable. Remplissez votre part du marché."
+    o "Lorsque l'assaut aura commencé, je mènerai mes hommes au combat. Lorsque vous entendra deux coups de cor successifs, vous ouvrirez le pont-levis du château."
 
     menu:
-        "Que dire ?"
-
-        "Tenir promesse":
-            e "Je sais ce que j'ai à faire."
-        "Tenir promesse à contrecoeur":
-            e "Je vous suis reconnaissant. J'accomplirai ma promesse, même si c'est à contrecoeur."
+        
+        "Tenir sa promesse":
+            e "Je sais ce que j'ai à faire. Je ne pense qu'à ça depuis plus d'un mois."
+            
+        "Tenir sa promesse à contrecoeur":
+            e "Je vous suis reconnaissant pour tout ce que vous avez fait. J'accomplirai ma promesse, même si ce n'est pas de gaieté de coeur."
+            
         "Acquiescer":
             e "Très bien."
 
-    "Moira souligne qu'en donnant sa parole à Ogma, il lui a aussi donné sa parole à elle. Elle se montre inquiète et s'approche d'Einar."
+    m "Tu as donné ta parole à mon père. Je considère que tu m'as également donné ta parole. S'il te plaît, ne me déçois pas..."
+    "*Moira s'approche d'Einar.*"
 
     menu :
-        "Que dire à Moira ?"
-
+        
         "L'embrasser":
-            "Il l'embrasse"
+            "*Einar embrasse doucement Moira en caressant son visage*"
+            
         "La serrer contre soi et la rassurer":
-            "Il la rassure"
+            "*Einar saisit Moira par les hanches et l'attire contre lui, puis l'enlace.*"
+            e "Ne t'inquiète pas. Je reviendrai."
+            
         "L'ignorer":
-            "Il l'ignore"
+            "*Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
 
     jump sentier_foret_1
 
@@ -2094,31 +2153,32 @@ label village_4:
 #Sequence 10
 label sentier_foret_1:
     scene bg sentier_jour with dissolve
-
-    "Einar repense à ce qu'il a vécu ces derniers temps, notamment aux raisons qui le pousseraient à trahir Harald"
+    "..."
+    "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
     menu :
         "Fidélité à Harald":
-            e "Il est mon seigneur et je lui dois tout depuis de très nombreuses années. Impensable."
+            e "(Harald est mon seigneur et celui de tout le monde connu, y comprit les rebelles. Je lui dois tout depuis de très nombreuses années. Le trahir est impensable.)"
         "Penser aux terre promises":
-            e "Il me fait miroiter des terres depuis si longtemps... Sans jamais récompenser mes efforts à leur juste valeur"
-        "Oppression":
-            e "Ces gens vivent dans la pauvreté et n'ont fait que se défendre face à un oppresseur. Ils m'ont sauvé. Mais le meurtre lâche de mes hommes et de Logan..."
+            e "(Le roi m'a fait miroiter des terres et des richesses depuis si longtemps... Sans jamais récompenser mes efforts à leur juste valeur. Pourquoi respecter mes engagements pour un roi qui ne respecte pas les siens ?)"
+        "Oppression des écossais":
+            e "(Ces gens vivent dans la pauvreté et n'ont fait que se défendre face à un oppresseur. Ils m'ont sauvé. Mais le meurtre lâche de mes hommes et de Logan...)"
+            e "(Tout ceci n'a été qu'un enchaînement malheureux d'événements qui n'arrangent personne. Le seul vrai coupable, c'était l'intendant Clyde Montgomery. Et il est mort.)"
 
     jump foret_5
 
 label foret_5:
     scene bg forest_night with dissolve
 
-    "Einar repense à Moira et au temps passé avec elle"
+    "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
     menu:
         "Reconnaissant":
-            e "(Elle s'est occupée de moi pendant un mois, sans jamais se montrer lasse ni désagréable. Je lui dois beaucoup. )"
-        "Ogma lui avait demandé":
+            e "(Elle s'est occupée de moi pendant plus d'un mois, sans jamais se montrer lasse ni désagréable. Je lui dois beaucoup. Elle s'est attachée à moi. La décevoir serait terrible. )"
+        "Ogma le lui avait demandé":
             e "(Elle ne s'est occupée de moi que parce que son père le lui avait demandé. Je me demande si notre petite escapade en forêt était aussi une idée de son père...)"
-        "Qu'une amourette":
-            e "J'ai bien profité d'elle. Elle a été attentionnée avec moi. Mais ce n'est pas la première femme que j'ai rencontré... Que représente cette petite histoire face aux engagements d'un huscarl ?"
+        "Rien qu'une amourette":
+            e "(J'ai bien profité d'elle. Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
 
     jump cote_1
 
@@ -2126,16 +2186,17 @@ label foret_5:
 label cote_1:
     scene bg cote1 with dissolve
 
-    "Einar imagine les implications futures de sa trahison"
+    "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
     menu :
 
         "Chute d'un empire":
-            e "(Trahir mon roi entraînera la mort d'un nombre incalculable d'hommes et de femmes. Le pouvoir de Harald vacillera en même temps que la stabilité politique du plus grand Empire connu.)"
+            e "(Trahir Harald entraînera la mort d'un nombre incalculable d'hommes et de femmes. Le pouvoir de Harald vacillera en même temps que la stabilité politique du plus grand Empire connu.)"
+            e "(Ce sera la porte ouverte à toutes les guerres, et des petits seigneurs ne tarderont pas à se comporter en vautours en se nourrissant sur la carcasse de l'empire décadent...)"
         "Je serai un paria":
-            e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps...)"
+            e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps... Pourvu qu'Ogma respecte sa parole, lui !)"
         "Il en va de ma vie":
-            e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera t'il à Moira ?)"
+            e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera-t-il à Moira ?)"
 
     jump cote_2
 
