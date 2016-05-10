@@ -1792,7 +1792,7 @@ label interieur_maison_village_3:
     menu :
         "Compatir":
             e "Je regrette. Ces gens étaient innocents. Harald avait pourtant dit qu'il ne voulait pas lancer d'attaques au hasard..."
-            o "Merci. Je ne pense pas qu'il s'agisse d'attaques au hasard. Le roi a décidé de tuer des innocents pour nous faire sortir de nos cachettes et provoquer le rejet du peuple."
+            o "Merci. Je ne pense pas qu'il s'agisse d'attaques aveugles. Le roi a décidé de tuer des innocents pour nous faire sortir de nos cachettes et provoquer le rejet du peuple."
             m "Le roi aurait trahi sa parole, Einar ?"
             e "Ce n'est pas dans ses habitudes. Mais il y a peut-être été poussé. Ces massacres ne devraient pas avoir lieu. Je regrette sincèrement d'avoir amené la mort dans mon sillage."
             m "..."
@@ -1804,7 +1804,16 @@ label interieur_maison_village_3:
 
         "Se montrer heureux":
             e "Harald est à ma recherche. Bientôt, je serai libre. Ces massacres ne sont que les signes annonciateurs de ma libération."
-            "Ogma est déçu, et reproche à Einar de se réjouir du massacre d'innocents. Il se met à penser que la clémence d'Einar a été une marque de lâcheté ou de fainéantise."
+            o "J'ai cru que vous étiez quelqu'un de juste. Je me trompais probablement. Vous me dégoûtez."
+            
+    m "Le roi ne risque pas d'arriver ici sous peu ?"
+    o "Non, tout a été prévu. Hier, j'ai demandé à mes hommes d'accomplir deux choses : la première était de tenter d'assassiner l'ami du roi dans son propre château, l'évêque Patrick d'Edimbourg."
+    o "La seconde était de brûler les navires par lesquelles les troupes vikings sont arrivées."
+    o "L'assassinat aura lieu ce soir. Quant à l'incendie des navires, il aura eu lieu d'ici deux jours. Les délais sont très courts, mais cela devrait obliger Harald à reculer pour quelques temps."
+    e "Il va vouloir consolider ses forces au château. Votre assaut n'en sera que plus difficile."
+    o "Je n'avais pas le choix ! Sans ces décisions, les troupes du roi seraient arrivées ici après-demain au plus tard."
+    o "Nous allons vous laisser. Reposez-vous."
+    m "..."
 
     jump interieur_maison_village_4
 
@@ -1814,96 +1823,125 @@ label interieur_maison_village_4:
 
     $ libre_ask = False
     $ trahir_talk = False
-    $ decevoir_moira = False
+    $ decevoir_moira = ""
+    
+    "Deux semaines plus tard..."
 
-    "Moira arrive dans la chambre, un couteau à la main."
+    "*Moira arrive dans la chambre, un couteau à la main.*"
+    m "Bonjour, Einar."
 
     menu menu_moira_couteau:
-        "Que dire ?"
-
         "Ne rien dire" if libre_ask == False:
             e "..."
-        "libre ?" if libre_ask == False:
-            e "Je suis libre ?"
-            "Moira répond que non. Elle va accomplir ce que son père n'a pas fait avant, et aurait dû faire depuis longtemps. Elle a un regard terrible."
+            
+        "Je suis libre ?" if libre_ask == False:
+            e "Tu vas me libérer ?"
+            m "Non. Je vais accomplir ce que mon père aurait dû faire depuis longtemps..."
+            e "Au secours ! A moi !"
             $ libre_ask = True
 
         "Appeler des secours":
-            e "À l'aide !"
+            e "À l'aide ! Elle va me saigner !"
+            m "Mais non ! Calme toi. Je n'ai pas prévu de saigner qui que ce soit aujourd'hui !"
 
         "Humour":
-            e "Notre relation manquait de piment : des accessoires ne seront pas de trop."
+            e "Mmmh... Notre relation manquait un peu de piment. Des accessoires ne seront pas de trop..."
+            m "Ne dis pas de choses pareilles ! " #elle sourit
 
         "Inquiet":
             e "Alors c'est la fin ? Pourquoi aujourd'hui ? Pourquoi m'avoir soigné pendant toutes ces semaines ?"
+            e "Ça n'a pas de sens !"
 
     if libre_ask:
-        "Moira rit. Elle explique qu'elle est venue rendre sa liberté de mouvement à Einar"
+        m "Ha ha ha, je viens bien te libérer, idiot ! Je n'ai aucune intention de te faire mal. Pour le moment !"
 
-    "Ogma a demandé à Moira de libérer Einar. Après plus d'un mois, il estime que le viking a le droit de se dégourdir un peu les jambes."
-    "Il ne faudrait pas qu'il soit affaibli pour le combat qui s'annonce."
+    m "Mon père a demandé à ce qu'on te rende ta liberté de mouvement. Il a dit que tu devais te dégourdir un peu les jambes : il ne faudrait pas que tu sois affaibli pour les combats à venir."
+    e "Je n'ai pas vu l'extérieur depuis un mois..."
+    m "Sortir te fera du bien ! Tu es encore plus pâle qu'au moment où tu es arrivé ici."
 
     menu:
-        "Que dire dire ?"
-        "Piège ?":
-            e "Où est le piège ?"
-            m "Pas de piège !"
+        "Il y a un piège ?":
+            e "Où est le piège ? Ça me semble trop beau..."
+            m "Il n'y a pas de piège !"
 
         "Humour":
-            e "Être déçu qu'il ne s'agisse pas d'un \"jeu\"."
-            "Elle rit et adresse un sourire taquin au viking"
+            e "Je suis déçu qu'il ne s'agisse pas d'un \"jeu\"... Tu ne veux pas me torturer un peu ?"
+            m "Arrête, ça devient gênant !" #elle sourit
 
-        "Crainte d'Ogma ?":
-            e "Il ne se méfie pas ?"
+        "Craintes d'Ogma ?":
+            e "Ton père ne se méfie pas ? Je pourrais m'échapper..."
 
-    "Son père a choisi de lui faire confiance. Néanmoins, il ne devra pas quitter le village sans autorisation directe."
-    "Moira souligne que l'état de santé d'Einar s'est considérablement amélioré et qu'il sera parfaitement remis d'ici peu."
+    m "Mon père a choisi de te faire confiance. Tu pourras aller dehors, mais tu ne sortiras pas du village à moins de recevoir une autorisation directe. Et tu devras être accompagné en permanence !"
+    m "Je suis heureuse de voir que ton état s'est bien amélioré. Je ne te cache pas que j'ai eu des doutes au début !"
+    e "C'est rassurant..."
+    m "D'ici peu de temps, tu seras complètement remis."
 
     menu :
-        "Que dire ?"
 
         "Parler de trahir Harald":
             e "Et je serai tenu de trahir mon roi à ce moment là..."
-            "Moira s'assombrit. Oui, Einar devra faire ce qu'il a promit. Elle lui demande ce qu'il compte faire une fois sa trahison achevée."
+            m "Oui... Tu as fait une promesse Einar. Nous comptons tous sur toi."
+            e "..."
+            m "Je me demande... Que comptes-tu faire après avoir tenu ta promesse ? Après avoir trahi Harald ?"
             $ trahir_talk = True
 
         "Grâce à Moira":
-            e "Grace à toi, Moira !"
-            "Moira lui répond par un grand sourire. Elle lui dit qu'elle n'a fait qu'une partie du travail : sa constitution solide a bien participé à l'efficacité des soins."
+            e "Grâce à toi, Moira !"
+            m "..." # elle sourit
+            m "Je n'ai fait qu'une partie du travail. Tu es solide ! Ton corps à largement participé à l'efficacité de mes soins."
 
         "Ne rien dire":
             e "..."
-            "Moira s'attendait à quelques remerciements et à plus d'enthousiasme à l'idée de pouvoir enfin sortir."
+            m "C'est tout ? Je m'attendais à des remerciements, à de l'enthousiasme ! Tu n'as pas envie d'aller dehors ?"
+            e "Si, si..."
 
         "Sortir ?":
-            e "On peut sortir ? La lumière du jour me manque."
-            "Moira aquiesce avec un sourire, et mène Einar a l'extérieur."
+            e "On peut sortir maintenant ? La lumière du jour me manque."
+            m "Bien sûr ! Reste près de moi." # elle sourit
+
 
     if trahir_talk:
         menu:
-            "De quoi parler ?"
 
             "Arrêter d'être soldat":
-                e "Abandonner la carrière militaire et rentrer en Norvège"
-                $ decevoir_moira = True
+                e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres." 
+                e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié !"
+                $ decevoir_moira = "partir"
 
             "Aller dans une région plus chaude":
-                e "Partir dans une région plus chaude, la Mediterranée peut-être."
-                $ decevoir_moira = True
+                e "Je partirai dans une région plus chaude. La méditerranée, peut-être. Je n'ai plus ma place auprès du roi, et je ne veux pas rester ici."
+                e "L'éloignement est sûrement ma seule option : autant aller sous de meilleures latitudes."
+                $ decevoir_moira = "partir"
 
             "Rester ici":
-                e "Rester ici : il n'aura plus sa place en Norvège ni ailleurs, traqué par Harald"
-
+                e "Je vais rester ici. Je n'ai plus ma place en Norvège ni ailleurs. Harald me traquera partout où il le pourra. Je suppose que mon seul abri sera l'Ecosse."
+                m "Si tu réussis, nous serons heureux de te compter parmi nous. Allez, il est temps de sortir !"
 
             "Ne sais pas":
-                e "Je ne sais pas"
+                e "Je ne sais pas. J'ai besoin de temps pour y réfléchir..."
+                m "Je comprends."
+                $ decevoir_moira = "rien"
 
-        if decevoir_moira:
-            "Moira est visiblement déçue."
+        if decevoir_moira == "partir":
+            m "Oh... Tu pourrais rester ici ? Je pense que les gens accepteraient ta présence si tu participais à la vie du village."
+            e "Je ne sais pas..."
+            "*Moira est visiblement déçue.*"
+            m "Suis-moi, je vais te montrer l'extérieur."
+            
+        elif decevoir_moira == "rien":
+            m "J'espère que tu trouveras vite la réponse. Une fois que tu seras parti pour le château, tu seras au pied du mur..."
+            e "Qu'est-ce que tu voudrais, toi ?"
+            m "Ce n'est pas à moi de te dire ce que tu dois faire. J'aimerais juste savoir que tu es en sécurité. Le roi voudra se venger de toi."
+            e "Où pourrais-je aller ? Harald domine le monde."
+            m "Tu pourrais rester ici. Tu vivrais avec nous..."
+            e "..."
+            m "Je en veux pas te gêner, excuse-moi. Allez, il est temps de sortir !"
+            
         else:
             "Le visage de Moira s'illumine et elle se fend d'un sourire discret"
-
-    "Moira entraîne Einar a l'extérieur en lui tenant la main"
+            
+    m "Viens !"
+    "*Moira entraîne Einar a l'extérieur en lui tenant la main*"
     jump village_2
 
 #Sequence 5
