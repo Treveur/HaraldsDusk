@@ -2,6 +2,7 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
 File "game/script.rpy", line 2031: end of line expected.
     show einar serious with dissolve at center
                                      ^
@@ -9,5 +10,10 @@ File "game/script.rpy", line 2031: end of line expected.
 File "game/script.rpy", line 2047: end of line expected.
     show garde_chateau  normal with dissolve at right
                                              ^
+=======
+File "game/script.rpy", line 1586: expected 'image_name_component' not found.
+    show
+        ^
+>>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
 
 Ren'Py Version: Ren'Py 6.99.10.1227

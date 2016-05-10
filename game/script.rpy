@@ -35,7 +35,10 @@ define pe3 = Character("Prissonière écossais 1")
 
 #Scene
 image bg forest = "foret_cabane.jpg"
-image bg forestnight = "forest_night.jpg"
+image bg forest_night = "forest_night.jpg"
+image bg forest_crepuscule = "forest_crepuscule.jpg"
+image bg little_heaven = "little_heaven.jpg"
+image bg sentier_jour = "sentier_foret.jpg"
 image bg village = "village.jpg"
 image bg village2_jour = "village2_jour.jpg"
 image bg village2_crepuscule = "village2_crepuscule.jpg"
@@ -44,8 +47,12 @@ image bg house2_jour = "house2_jour.jpg"
 image bg house2_night = "house2_night.jpg"
 image bg house2_aube = "house2_aube.jpg"
 image bg mer = "chateau_mer.jpg"
+<<<<<<< HEAD
 image bg pont_levis = "pont_levis.jpg"
 image bg cours_chateau = "cours_chateau.png"
+=======
+image bg cote1 = "cote1.jpg"
+>>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
 
 
 #Fond uni
@@ -988,7 +995,7 @@ label foret_2(lieu = ""):
 
         e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
 
-    scene bg forestnight with dissolve
+    scene bg forest_night with dissolve
     "..."
 
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
@@ -1584,8 +1591,12 @@ label interieur_maison_village_1:
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
     o "Alors ? Comment va le prisonnier ?"
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
@@ -1680,61 +1691,128 @@ label interieur_maison_village_1:
 #Sequence 2
 label interieur_maison_village_2:
     scene bg house2_night with dissolve
+    "*Quelques jours plus tard...*"
 
-    "Moira entre dans la pièce et annonce qu'elle vient changer les bandages d'Einar"
+    m "Bonjour ! Je viens changer vos bandages."
+    e "Bonjour."
 
     menu:
-        "Que dire ?"
 
-        "Appele moi Einar":
-             e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger"
-             m "Alors parle moi comme si j'étais ton amie"
+        "Appelle moi Einar":
+            e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger. Appelez moi-Einar"
+            m "Alors parle moi comme si j'étais ton amie."
+            e "Très bien, Moira."
+            
         "Remercier":
-            "Moira explique qu'il ne doit pas la remercier : il est un prisonnier. Cela dit, elle apprécie ces moments de calme où elle le soigne : son esprit est occupé pendant ce temps là, et elle oublie les drames récents"
-        "Humour":
-            e "Pas la peine d'insister : je ne suis toujours pas interessé"
-            "Moira ne répond pas à la pique mais sourit discrètement."
+            e "Merci."
+            m "Pour ?"
+            e "Les soins, les bandages, tout."
+            m "Vous n'allez pas me remercier à chaque fois que je viens m'occuper de vous ! "
+            e "Je vous suis redevable !"
+            m "..."
+            e "Oui ?"
+            m "Je suis lasse de devoir m'adresser à vous comme à un prisonnier."
+            e "Alors appelez moi Einar."
+            m "Parlez-moi comme vous le feriez à une amie."
+            e "Très bien ! Alors voilà : je te remercie pour tes soins, Moira !"
+            m "C'est mieux comme ça..."
+            e "Quelque chose ne va pas ?"
+            m "Non, tout va très bien, au contraire !"
+            e "Tu en es certaine ?"
+            m "Oui ! Ça va te sembler bizarre, mais j'apprécie ces moments."
+            e "De quoi tu parles ?"
+            m "Les moments où je te soigne. Pendant ce temps, je ne pense pas au reste. Ça me change les idées !"
+            e "Tu te distrais en changeant les bandages souillés d'un prisonnier de guerre ?"
+            m "Je préfère encore ça plutôt que de m'occuper des bêtes, bien que ce ne soit pas si différent !"
+            
+        "Faire de l'humour":
+            e "Pas la peine d'insister : je ne suis toujours pas interessé !"
+            m "Ne soit pas idiot !" #Elle sourit discrètement
+            e "Tiens ? On se tutoie maintenant ?"
+            m "Oui. J'en ai assez de devoir te parler comme à un étranger."
+            e "Ça me va !"
+            
+    "* Les bandages d'Einar sont remplacés.*"
+    m "Je vais te laisser, c'est tout pour aujourd'hui."
+    e "A demain ?"
+    m "A demain."
 
-    "Moira quitte la pièce."
     jump interieur_maison_village_3
 
 #Sequence 3
 label interieur_maison_village_3:
     scene bg house2_jour with dissolve
-
-    "Dans la pièce, Ogma et Moira discutent avec Einar. Moira est assise au bout du lit. Ogma termine une anecdote concernant sa vie avant d'être \"chef rebelle\" et demande à Einar d'où il vient."
+    "Quelques semaines plus tard..."
+    o "... je la voyait se débattre comme jamais une truite ne s'était débattue ! Je tire sur la ligne en essayant de la remonter, mais ce foutu poisson passe derrière un rocher : la ligne casse !"
+    m "A ce moment là je saute dans la rivière depuis la berge !"
+    o "Ta mère était folle ! Elle était persuadée que tu allais te noyer ! L'eau était vive et glacée, c'était au début du printemps."
+    m "Et j'ai bien cru me noyer aussi !"
+    o "On ne voyait plus que tes cheveux hors de l'eau ! Tu as dérivé sur une vingtaine de mètres, et puis tu as levé tes bras hors de l'eau !"
+    m "Je tenais la truite au-dessus de moi ! Elle était énorme !"
+    o "Pas si grosse que ça, mais tu étais à peine plus grande qu'elle, ha ha !"
+    o "Ensuite ta mère t'a sortie de l'eau. Tu étais toute bleue, mais tu ne voulais pas lâcher le poisson ! On t'a ramenée à la maison et tu n'as lâché la truite qu'une fois rentrée !"
+    m "J'aimerais retourner pêcher..."
+    o "Pas pour le moment. Nous avons des choses à régler d'abord..."
+    e "Logan aussi était un bon pêcheur..."
+    o "D'où venait-il ?"
+    e "D'Aberdeen, loin au nord."
+    o "Je n'y suis jamais allé... Et vous Einar, vous n'avez rien à raconter ? D'où venez-vous ?"
 
     menu :
-        "Que répondre ?"
 
-        "Agressif":
-            e "Ca ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
+        "Être agressif":
+            e "Ça ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
+            m "Einar !"
+            "*Moira lève la main et s'apprête à gifler Einar. Ogma l'interromp en saisissant son bras au vol.*"
+            o "Non... Laisse-le dire. Il n'a pas tort. J'ai tué ses amis."
+            m "Mais il t'a insulté !"
+            o "Il n'est pas responsable de grand chose dans cette histoire. Il a suivi les ordres de son roi."
+            m "..."
+            e "..."
             "Moira s'emporte et s'apprête à gifler Einar. Ogma l'interromp, et explique que le viking n'a pas totalement tort."
             "Il n'est pour rien dans cette histoire et n'a fait que suivre son roi."
 
-        "Nostalgique":
-            e "La Norvège me manque"
-            "Moira se montre interessée et demande plus de détails, auxquels Einar répond. Elle lui demande s'il a une femme ou une famille là-bas, ce à quoi il répond négativement."
+        "Nostalgie de la Norvège":
+            e "Je viens de Norvège. Le pays me manque..."
+            m "A quoi ça ressemble, la Norvège ?"
+            e "Ce n'est pas si différent de l'Ecosse. Nous avons le même climat, peut être un peu plus froid. Et il y a de grands fjords."
+            o "Des fjords ?"
+            e "Des rivières et des fleuves encaissés dans des vallées. C'est très beau."
+            m "J'imagine..."
+            e "Lorsqu'on va loin au nord, la nuit, on peut voir de grandes lumières vertes ou rouges dans le ciel. Certains disent que sont des hommages divins pour les héros morts au combat."
+            m "J'aimerais beaucoup voir ça, un jour..."
+            m "Tu as une femme, là-bas ? Une famille ?"
+            e "Non. Je n'ai plus personne."
 
         "Éluder la question":
-            e "Je ne sais pas quoi mettre"
-            "Ogma se montre compréhensif. Moira paraît déçue."
+            e "Je ne souhaite pas en parler."
+            o "Je comprends."
+            m "..."
 
-    "Un villageois ouvre la porte, l'air atterré. Il annonce à Ogma qu'un village à été rasé et incendié"
-    "Ogma dit qu'il n'est pas surpris, que ce n'est pas le premier village a être détruit par Harald depuis que la troupe d'Einar a été massacrée."
+    vm "Ogma !"
+    o "Fenella ? Quelque chose ne va pas ?"
+    vm "Kircaldy a brûlé ce matin !"
+    o "Le roi... Je ne suis pas surpris."
+    e "Vous n'avez pas l'air affecté par la nouvelle !"
+    m "Stirling et Falkirk ont déjà été rasée il y a quelques jours. Le roi est en marche."
+    o "Depuis que vous avez été capturé, Harald n'a pas cessé de vous chercher. Nous avons déjà eu la visite d'un émissaire."
 
     menu :
-        "Comment réagir ?"
         "Compatir":
-            "Ogma remercie EInar et se dit agréablement surpris. Moira se montre heureuse de ne pas devoir soigner un monstre, mais un homme juste."
+            e "Je regrette. Ces gens étaient innocents. Harald avait pourtant dit qu'il ne voulait pas lancer d'attaques au hasard..."
+            o "Merci. Je ne pense pas qu'il s'agisse d'attaques au hasard. Le roi a décidé de tuer des innocents pour nous faire sortir de nos cachettes et provoquer le rejet du peuple."
+            m "Le roi aurait trahi sa parole, Einar ?"
+            e "Ce n'est pas dans ses habitudes. Mais il y a peut-être été poussé. Ces massacres ne devraient pas avoir lieu. Je regrette sincèrement d'avoir amené la mort dans mon sillage."
+            m "..."
+            o "Vous êtes quelqu'un de juste, Einar. Vous n'êtes pas responsable de ce qui se produit."
+    
         "Ne rien dire":
             e "..."
-            "Ogma comprend que la position d'EInar est délicate, et prend son silence comme une forme de retrait respectueux."
+            o "Votre silence vous honore. Je comprends que vous ne vouliez pas prendre parti, votre position est délicate."
+            
         "Se montrer heureux":
-            e "Cool Harald est à ma recherche"
-            "Ogma est déçu, et reproche à EInar de se réjouir du massacre d'innocents. Il se met à penser que la clémence d'Einar a été une marque de lâcheté ou de fainéantise."
-
-    "Moira soigne chaque jour Einar. Petit à petit, une intimité s'installe entre eux. Quelques jours après la capture d'Einar, des rumeurs parviennent au village : des villages voisins sont massacrés et rasés par les vikings."
+            e "Harald est à ma recherche. Bientôt, je serai libre. Ces massacres ne sont que les signes annonciateurs de ma libération."
+            "Ogma est déçu, et reproche à Einar de se réjouir du massacre d'innocents. Il se met à penser que la clémence d'Einar a été une marque de lâcheté ou de fainéantise."
 
     jump interieur_maison_village_4
 
@@ -1895,6 +1973,7 @@ label village_3:
 
 #Sequence 7
 label foret_3:
+    scene bg forest_crepuscule with dissolve
 
     menu :
         "Que dire ?"
@@ -1912,6 +1991,7 @@ label foret_3:
 
 #Sequence 8
 label paradis_foret_1:
+    scene bg little_heaven with dissolve
 
     $ moira_dead = False
 
@@ -1950,6 +2030,8 @@ label paradis_foret_1:
 
 #Sequence 9
 label village_4:
+    scene bg village2_jour with dissolve
+
     "Einar est au milieu du village. Il a récupéré ses affaires et est équipé comme lorsqu'il a été capturé. Ogma est présent ainsi que Moira."
     "Il s'adresse à EInar en lui rappelant qu'il a fait une promesse. Les rebelles l'ont soigné et se sont occupés de lui : il doit maintenant accomplir sa part du marché."
     "Lorsque l'assaut aura commencé, Ogma lancera un signal à destination d'Einar : un double son de cor. Il devra ouvrir le pont-levis."
@@ -1981,6 +2063,7 @@ label village_4:
 
 #Sequence 10
 label sentier_foret_1:
+    scene bg sentier_jour with dissolve
 
     "Einar repense à ce qu'il a vécu ces derniers temps, notamment aux raisons qui le pousseraient à trahir Harald"
 
@@ -1995,6 +2078,7 @@ label sentier_foret_1:
     jump foret_5
 
 label foret_5:
+    scene bg forest_night with dissolve
 
     "Einar repense à Moira et au temps passé avec elle"
 
@@ -2010,6 +2094,7 @@ label foret_5:
 
 #Sequence 11
 label cote_1:
+    scene bg cote1 with dissolve
 
     "Einar imagine les implications futures de sa trahison"
 
@@ -2030,8 +2115,11 @@ label cote_1:
 label cote_2:
     scene bg mer with dissolve
 
+<<<<<<< HEAD
     show einar serious at center with dissolve
 
+=======
+>>>>>>> 72a9754c7fc865609af30315aa793016b57e8125
     e "Hummmm me voilà tout près du chateau"
     e "Que vais-je faire?"
     e "Trahir mon roi ? Non impossible, je suis à ses côtés depuis bien longtemps"
@@ -2042,6 +2130,7 @@ label cote_2:
 
 #Sequence 2
 label exterieur_chateau_1:
+    scene bg 
 
     scene bg pont_levis with dissolve
 
