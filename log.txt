@@ -1,4 +1,4 @@
-Tue May 10 23:53:55 2016
+Wed May 11 00:20:07 2016
 Windows-8-6.2.9200
 Ren'Py 6.99.10.1227
  
@@ -7,8 +7,8 @@ Bootstrap to the start of init.init took 0.06s
 Early init took 0.01s
 Loader init took 0.01s
 Loading error handling took 0.01s
-Loading script took 0.52s
-Loading persistent took 0.01s
+Loading script took 0.51s
+Loading persistent took 0.02s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.05s
 Loading analysis data took 0.01s
@@ -379,11 +379,11 @@ Texture testing:
 - 1024px textures work.
 - 2048px textures work.
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.20799994469s
+Total time until interface ready: 1.20399999619s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
 - Frame drawn at 0.057000 seconds.
-- Frame drawn at 0.059000 seconds.
-- Frame drawn at 0.064000 seconds.
-- Frame drawn at 0.080000 seconds.
-- 0.080000 seconds to render 5 frames.
+- Frame drawn at 0.060000 seconds.
+- Frame drawn at 0.063000 seconds.
+- Frame drawn at 0.079000 seconds.
+- 0.079000 seconds to render 5 frames.

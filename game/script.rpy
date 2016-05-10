@@ -1250,50 +1250,43 @@ label e_reveil_village_2:
 
     menu reveil_einar_village_2:
         "Pourquoi m'avoir laissé en vie ?":
-            jump e_demande_vie_village_2
+
+            e "Pourquoi m'avoir épargné ? Pourquoi moi et pas les autres ?"
+
+            o "J'ai donné l'ordre de t'épargner parce que tu étais le seul dont nous avions besoin."
+
+            jump o_explication_vie_village_2
+
         "Il y a un rapport avec Perth ?":
-            jump e_rapport_village_village_2
+
+            e "Est-ce qu'il y a un rapport avec le village d'hier ?"
+
+            o "Perth. Et la réponse est oui. Nos éclaireurs avaient vu votre groupe et nous l'avaient signalé."
+
+            o "Nous avons quitté le village peu avant votre arrivée, et nous avons observé la scène, avec la ferme intention de vous tendre une embuscade ensuite."
+
+            o "Ce que, comme tu as pu le voir, nous avons fait."
+
+            jump o_explication_vie_village_2
         "Crevure !" if already_talk == False:
-            jump e_insulte_village_2
 
-label e_demande_vie_village_2:
-    e "Pourquoi m'avoir épargné ? Pourquoi moi et pas les autres ?"
+            e "Salopards ! J'aurais du enfermer vos truies de femmes et leurs gamins dans vos cahutes merdeuses avant d'y foutre le feu !"
 
-    o "J'ai donné l'ordre de t'épargner parce que tu étais le seul dont nous avions besoin."
+            "*Ogma frappe Einar sur son épaule blessée*"
 
-    jump o_explication_vie_village_2
+            e "AAARGH !"
 
-label e_rapport_village_village_2:
+            o "Les insultes et les menaces n'ont que peu de poids venant de la part d'un soldat blessé, attaché et seul."
 
-    e "Est-ce qu'il y a un rapport avec le village d'hier ?"
+            o "Tu ferais mieux de contenir ta colère. J'ai décidé de t'épargner. Rien ne m'empêche de changer d'avis."
 
-    o "Perth. Et la réponse est oui. Nos éclaireurs avaient vu votre groupe et nous l'avaient signalé."
+            e "Tu me demandes d'être reconnaissant, pourriture ?!"
 
-    o "Nous avons quitté le village peu avant votre arrivée, et nous avons observé la scène, avec la ferme intention de vous tendre une embuscade ensuite."
+            o "Oui. Tu me dois la vie."
 
-    o "Ce que, comme tu as pu le voir, nous avons fait."
+            $ already_talk = True
 
-    jump o_explication_vie_village_2
-
-label e_insulte_village_2:
-
-    e "Salopards ! J'aurais du enfermer vos truies de femmes et leurs gamins dans vos cahutes merdeuses avant d'y foutre le feu !"
-
-    "*Ogma frappe Einar sur son épaule blessée*"
-
-    e "AAARGH !"
-
-    o "Les insultes et les menaces n'ont que peu de poids venant de la part d'un soldat blessé, attaché et seul."
-
-    o "Tu ferais mieux de contenir ta colère. J'ai décidé de t'épargner. Rien ne m'empêche de changer d'avis."
-
-    e "Tu me demandes d'être reconnaissant, pourriture ?!"
-
-    o "Oui. Tu me dois la vie."
-
-    $ already_talk = True
-
-    jump reveil_einar_village_2
+            jump reveil_einar_village_2
 
 label o_explication_vie_village_2:
 
