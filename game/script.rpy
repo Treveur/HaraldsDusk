@@ -1820,13 +1820,10 @@ label interieur_maison_village_4:
         menu:
 
             "Arrêter d'être soldat":
-<<<<<<< HEAD
-                e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres." 
-                e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié ! Passé un certain temps, la gloire ne suffit plus."
-=======
+
                 e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres."
-                e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié !"
->>>>>>> origin/master
+                e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié ! Passé un certain temps, la gloire ne suffit plus."
+
                 $ decevoir_moira = "partir"
 
             "Aller dans une région plus chaude":
@@ -1868,10 +1865,10 @@ label interieur_maison_village_4:
 #Sequence 5
 label village_2:
     scene bg village2_jour with dissolve
-    
+
     vm "... et il faudra que tu penses à rentrer les bêtes plus tôt !"
     vm "Mamie ! J'ai trouvé un caillou qui brille !"
-    
+
     "*Les villageois remarquent à peine la présence d'Einar.*"
 
     menu :
@@ -1934,7 +1931,7 @@ label village_3:
             e "Je pense que l'Ecosse m'insupporte parce qu'elle ressemble beaucoup à la Norvège, tout en n'y étant pas égale."
             e "Ah, si je pouvais retourner là-bas, je..."
             $ einar_raler = True
-            
+
         "Se plaindre":
             e "Non. Mes blessures me lancent. Et le repas chez Fenella était un enfer."
             m "Tu n'as pas aimé les oatcakes ?"
@@ -1952,7 +1949,7 @@ label village_3:
             e "Une fois toute cette histoire terminée, j'irai chercher ce fameux cousin ! J'aimerais lui acheter un peu de sa production."
             m "Finalement, cette journée était plutôt agréable !"
             e "Non, je persiste. J'ai detesté le..."
-            
+
             $ einar_raler = True
 
     if einar_raler:
@@ -1971,10 +1968,10 @@ label foret_3:
     menu :
         "Destination ?":
             e "Où allons-nous?"
-            
+
         "Et l'ordre d'Ogma ?":
             e "Et les instructions de ton père ? Je croyais que je n'avais pas le droit de sortir, sauf autorisation spéciale."
-            
+
         "Être sarcastique":
             e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt et..."
 
@@ -2005,7 +2002,7 @@ label paradis_foret_1:
         "*Elle se dénude lentement devant Einar, sans le regarder.*"
 
     menu :
-        
+
         "Tuer Moira":
             e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
             "*Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme.*"
@@ -2043,13 +2040,13 @@ label village_4:
     o "Lorsque l'assaut aura commencé, je mènerai mes hommes au combat. Lorsque vous entendra deux coups de cor successifs, vous ouvrirez le pont-levis du château."
 
     menu:
-        
+
         "Tenir sa promesse":
             e "Je sais ce que j'ai à faire. Je ne pense qu'à ça depuis plus d'un mois."
-            
+
         "Tenir sa promesse à contrecoeur":
             e "Je vous suis reconnaissant pour tout ce que vous avez fait. J'accomplirai ma promesse, même si ce n'est pas de gaieté de coeur."
-            
+
         "Acquiescer":
             e "Très bien."
 
@@ -2057,14 +2054,14 @@ label village_4:
     "*Moira s'approche d'Einar.*"
 
     menu :
-        
+
         "L'embrasser":
             "*Einar embrasse doucement Moira en caressant son visage*"
-            
+
         "La serrer contre soi et la rassurer":
             "*Einar saisit Moira par les hanches et l'attire contre lui, puis l'enlace.*"
             e "Ne t'inquiète pas. Je reviendrai."
-            
+
         "L'ignorer":
             "*Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
 
