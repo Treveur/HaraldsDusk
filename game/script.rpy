@@ -107,6 +107,13 @@ label intro:
     $ intro_dial = False
     $ eclaireur_dial = False
 
+    #Variable menu
+    $ plan_choice = True
+    $ region_choice = True
+    $ enthousiaste_choice = True
+    $ confiance_choice = True
+    $ tuer_choice = True
+
     scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
@@ -131,7 +138,7 @@ label intro:
             h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
 
             menu menu_harald_choice_foret:
-                "Quel est le plan ?":
+                "Quel est le plan ?" if plan_choice:
 
                     e "Quelles sont les instructions, sire ? A quoi devons-nous nous préparer ?"
 
@@ -141,9 +148,11 @@ label intro:
 
                     h "Une fois le village retrouvé, j'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire."
 
+                    $ plan_choice = False
+
                     jump menu_harald_choice_foret
 
-                "Parler de la région":
+                "Parler de la région" if region_choice:
 
                     e "Qu'indiquent les cartes à propos de la région, sire ? Je n'ai pas eu le loisir de les consulter."
 
@@ -157,9 +166,11 @@ label intro:
 
                     h "Sauf pour les moutons. Il y a plus de moutons que d'hommes, par ici. Et quand je parle d'hommes, je suis encore trop élogieux. N'en déplaise à Logan."
 
+                    $ region_choice = False
+
                     jump menu_harald_choice_foret
 
-                "Se montrer enthousiaste":
+                "Se montrer enthousiaste" if enthousiaste_choice:
 
                     e "Sire, il me tarde de massacrer quelques paysans !"
 
@@ -169,9 +180,11 @@ label intro:
 
                     h "Ton enthousiasme fait plaisir à voir !"
 
+                    $ enthousiaste_choice = False
+
                     jump menu_harald_choice_foret
 
-                "Pourquoi tant de confiance ?":
+                "Pourquoi tant de confiance ?" if confiance_choice:
 
                     e "Mon roi, votre présence ici m'intrigue : pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
 
@@ -181,9 +194,11 @@ label intro:
 
                     e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
 
+                    $ confiance_choice = False
+
                     jump menu_harald_choice_foret
 
-                "Est-il vraiment nécessaire de massacrer une bande paysans ?":
+                "Est-il vraiment nécessaire de massacrer une bande paysans ?" if tuer_choice:
 
                     e "Mon Roi, est-il vraiment nécessaire de tuer des paysans ? Ne pensez-vous pas que de nombreux innocents risquent de perde la vie ?"
 
@@ -196,6 +211,8 @@ label intro:
                     e "La mort."
 
                     h "Exactement !"
+
+                    $ tuer_choice = False
 
                     jump menu_harald_choice_foret
 
@@ -219,7 +236,7 @@ label intro:
             l "Non, merci. Je ne tiens pas à y retourner."
 
             menu menu_logan_choice_foret:
-                "Se remémorer un bon souvenir":
+                "Se remémorer un bon souvenir" if plan_choice:
 
                     e "Tu te souviens de la bataille de Wertheim ?"
 
@@ -235,9 +252,11 @@ label intro:
 
                     l "Chacun son truc !"
 
+                    $ plan_choice = False
+
                     jump menu_logan_choice_foret
 
-                "Parler de la région":
+                "Parler de la région" if region_choice:
 
                     e "Tu reconnais la région ?"
 
@@ -249,9 +268,11 @@ label intro:
 
                     l "Quant aux gens qui vivent ici, j'imagine qu'ils sont identiques à ceux d'Aberdeen."
 
+                    $ region_choice = False
+
                     jump menu_logan_choice_foret
 
-                "Se montrer enthousiaste":
+                "Se montrer enthousiaste" if enthousiaste_choice:
 
                     e "Ma hache me démange. Je fracasserais bien quelques crânes."
 
@@ -261,9 +282,11 @@ label intro:
 
                     l "Je n'aurai pas plus de problèmes que toi. Ces gens sont des inconnus, et ils ont tué l'un des vassaux de notre roi. C'est une motivation amplement suffisante pour trancher la tête de quelques compatriotes."
 
+                    $ enthousiaste_choice = False
+
                     jump menu_logan_choice_foret
 
-                "Pourquoi Harald est-il si confiant ?":
+                "Pourquoi Harald est-il si confiant ?" if confiance_choice:
 
                     e "Le roi me paraît bien confiant."
 
@@ -271,15 +294,19 @@ label intro:
 
                     l "Il est immortel et invincible. Une armée de vétérans marche avec lui. S'il y a bien une personne sur cette terre qui puisse avoir confiance en lui-même, c'est notre roi."
 
+                    $ confiance_choice = False
+
                     jump menu_logan_choice_foret
 
-                "Est-il vraiment nécessaire de massacrer une bande de paysans ?":
+                "Est-il vraiment nécessaire de massacrer une bande de paysans ?" if tuer_choice:
 
                     e "Je me demande si le massacre de paysans innocents est justifié."
 
                     l "Tu te poses beaucoup de questions. Si notre roi nous le demande, nous le faisons."
 
                     l "Et à titre personnel, tuer des paysans ne me pose aucun problème. C'est un message que nous envoyons à tous les rebelles potentiels : trahissez Harald, et vous verrez vos familles mourir."
+
+                    $ tuer_choice = False
 
                     jump menu_logan_choice_foret
 
