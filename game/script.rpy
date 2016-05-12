@@ -6,14 +6,72 @@
 #Einar
 define e = Character('Einar', color="#e74c3c")
 image einar serious = "einar_1.png"
+#Debout
+#image einar debout_normal = "einar_debout_nomal.png"
+#image einar debout_souriant = "einar_debout_souriant.png"
+#image einar debout_furieux = "einar_debout_furieux.png"
+#image einar debout_attriste = "einar_debout_attriste.png"
+#image einar debout_blesse = "einar_debout_blesse.png"
+#image einar debout_contratrie = "einar_debout_contratrie.png"
+#image einar debout_effraye = "einar_debout_effraye.png"
+#image einar debout_determine = "einar_debout_determine.png"
+
+#Combat
+#image einar combat_normal = "einar_combat_normal.png"
+#image einar combat_furieux = "einar_combat_furieux.png"
+#image einar combat_blesse = "einar_combat_blesse.png"
+#image einar combat_determine = "einar_debout_determine.png"
+
+#Attaché
+#image einar attache_normal = "einar_attache_nomal.png"
+#image einar attache_souriant = "einar_attache_souriant.png"
+#image einar attache_furieux = "einar_attache_furieux.png"
+#image einar attache_attriste = "einar_attache_attriste.png"
+#image einar attache_effraye = "einar_attache_effraye.png"
+#image einar attache_determine = "einar_debout_determine.png"
+
+#Général
+#image einar general_determine = "einar_general_determine.png"
 
 #Logan
 define l = Character('Logan', color="#f1c40f")
 image logan fache = "logan.png"
+#Debout
+#image logan debout_normal = "logan_debout_nomal.png"
+#image logan debout_souriant = "logan_debout_souriant.png"
+#image logan debout_attriste = "logan_debout_attriste.png"
+#image logan debout_contratrie = "logan_debout_contratrie.png"
+#image logan debout_determine = "logan_debout_determine.png"
+
+#Combat
+#image logan combat_normal = "logan_combat_normal.png"
+#image logan combat_furieux = "logan_combat_furieux.png"
+#image logan combat_blesse = "logan_combat_blesse.png"
+#image logan combat_contratrie = "logan_combat_contratrie.png"
+#image logan combat_determine = "logan_debout_determine.png"
 
 #Harald
 define h = Character('Harald', color="#3498db")
 image harald normal = "harald_min.png"
+#image harald debout_normal = "harald_debout_nomal.png"
+#image harald debout_furieux = "harald_debout_furieux.png"
+#image harald debout_blesse = "harald_debout_blesse.png"
+#image harald debout_contratrie = "harald_debout_contratrie.png"
+#image harald debout_determine = "harald_debout_determine.png"
+
+#Combat Hache
+#image harald combat_hache_normal = "harald_combat_hache_normal.png"
+#image harald combat_hache_furieux = "harald_combat_hache_furieux.png"
+#image harald combat_hache_blesse = "harald_combat_hache_blesse.png"
+#image harald combat_hache_contratrie = "harald_combat_hache_contratrie.png"
+#image harald combat_hache_determine = "harald_combat_hache_determine.png"
+
+#Combat
+#image harald combat_normal = "harald_combat_normal.png"
+#image harald combat_furieux = "harald_combat_furieux.png"
+#image harald combat_blesse = "harald_combat_blesse.png"
+#image harald combat_contratrie = "harald_combat_contratrie.png"
+#image harald combat_determine = "harald_debout_determine.png"
 
 #Ogma
 define o = Character('Ogma', color="#d35400")
