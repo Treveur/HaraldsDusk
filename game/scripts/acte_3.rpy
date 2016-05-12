@@ -6,12 +6,9 @@ label cote_2:
 
     show einar serious at center with dissolve
 
-    e "Hummmm me voilà tout près du chateau"
-    e "Que vais-je faire?"
-    e "Trahir mon roi ? Non impossible, je suis à ses côtés depuis bien longtemps"
-    e "Mais d'un autre côté, celà fait un moment qu'il m'a promit des terre"
-    e "Et jusquà aujourd'hui, je les attends toujours."
-    e "hummm, j'attends d'être là-bas avant de prendre une décision"
+    e "Dunbar. Déjà..."
+    e "..."
+
     jump exterieur_chateau_1
 
 #Sequence 2
@@ -22,24 +19,28 @@ label exterieur_chateau_1:
     show einar serious with moveinleft
     show garde_chateau normal at right with dissolve
 
-    e "Me voici enfin arrivé au chateau"
-    e "(Devant le pont-levis, deux gardes me font obstruciton)"
+    e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
 
-    gc "Je te reconnais, Einar, çà Harald ne croyait plus en ton retour"
-    gc "Qui plus est, tu es tout seul"
-    gc "Comment ça se fait ?"
+    gc "Einar ! C'est bien toi ?"
+    e "..."
+    gc "Tout le monde te croyait mort !"
+    gc "Qu'est-il arrivé aux autres ?"
 
     menu :
-        "Que dois-je dire"
-
+        
         "Pousse-toi":
-            e"Écarte-toi, Geir! Je dois parler au roi immédiatement"
+            e "Écarte-toi, Geir! Je dois parler au roi sans tarder !"
+            gc "Bien sûr, excuse-moi."
+            
         "Explications vagues":
-            e "Il m'est arrivé toutes sorte de chose que toi même tu ne comprendrais pas"
+            e "Il m'est arrivé toutes sorte de chose que je n'ai ni le temps ni l'envie de te raconter. Les autres sont tous morts et j'ai bien failli y passer aussi."
+            e "Maintenant, laisse-moi passer."
+            gc "Bien sûr, excuse-moi."
+            
         "Menacer":
-            e "Laisse-moi passer, andouille. Je fais partie de cette armée depuis plus longtemps que toi. Et je suis huscarl !"
+            e "Laisse-moi passer, andouille. On ne barre pas la route à un huscarl ! Je dois voir le roi au plus vite !"
+            gc "Bien sûr, excuse-moi."
 
-    gc "D'accord, entre"
 
     hide garde_chateau with dissolve
 
@@ -57,57 +58,58 @@ label cours_chateau_1:
 
     show einar serious at center with dissolve
 
-    e "Me voilà enfin entré dans le chateau"
-    e "Harald est en train de discuter avec un aute huscarl"
-    e "Il m'a vu, se dirige vers moi"
-    e "J'espère qu'il va être doux"
+    "*Harald est en grande discussion avec un huscarl au milieu de la cour*"
+    e "Sire ! Sire !"
+    h "... dois nous faire venir de nouveaux navires de guerre, et..."
+    h "Einar ? Que... D'où viens-tu ? Où as-tu passé tout ce temps ? Où sont tes compagnons ? J'ai beaucoup de questions à te poser !"
 
     show einar serious at left
     show harald normal at right
 
     menu:
-        "Que devrais-je lui dire"
 
         "Content d'être rentré":
             e "Quel plaisir de vous retrouver, mon roi !"
-
-            h "Tout le plaisir est pour moi, je croyais ne plus revoir un des mes meilleurs huscarls"
+            h "La surprise est bonne ! Je désesperais de te revoir un jour. J'étais convaincu d'avoir perdu l'un de mes meilleurs huscarls !"
+            h "A vrai dire, je tenais pour acquis que tu étais mort quelque part dans le nord, victime des rebelles..."
 
         "Peur de ne pas revenir":
-            e "J'ai bien cru ne jamais revenir"
-
-            h "Eh bien après tous ce temps, on te croyais mort"
-            h "C'est pour celà que j'ai envoyé quelques expéditions punitive afin de te venger"
-
-            e "Il ne fallait pas, ce n'est que trop d'honneur"
+            e "J'ai bien cru ne jamais revenir, sire."
+            h "Eh bien après tous ce temps, on te croyait mort. J'étais persuadé que toi et tes compagnons étiez morts de la main des rebelles !"
+            h "J'ai d'ailleurs passé tout le temps depuis ta disparition à envoyer des troupes raser l'Ecosse. Ces ordures de rebelles finiront par se montrer en voyant leur peuple se faire exterminer."
+            h "Crois-moi, les écossais ont payé le prix fort pour votre disparition, à toi et tes hommes !"
+            e "C'est un honneur que d'être vengé par son roi !"
 
         "Ne rien dire":
             e "..."
-            h "Je suppose que tu dois être fatigué depuis tout ce temps"
+            h "J'imagine que tu as dû vivre des choses terribles, et que tu dois être épuisé."
 
-    h "Mais dis-moi, qu'est-ce qui t'est arrivé?"
-    h"Et l'escorte qui t'accompagnais ?"
-    h"Logan n'est pas là non plus"
-    h"Mais bon sang, raconte-moi tout !"
+    h "Mais dis-moi, que t'est-il arrivé ?"
+    h "Et l'escorte qui t'accompagnais ? Et Logan ?"
 
     menu:
-        "Que devrais-je dire ?"
-
-        "Dire ne rien savoir":
-            e "Je ne sais pas. J'ai été assommé. A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
-            h"Admettons mais qui t'a soigné ?"
+        "Dire ne rien savoir (mentir)":
+            e "Je ne sais pas. Nous traversions une forêt en pleine nuit. J'ai été assommé... A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
+            h "Un fossé ?"
+            e "Oui, au détour d'un sentier en pleine forêt."
+            h "Et tes blessures ? Comment les as-tu soignées ?"
             jump menu_assome_cours_chateau
 
         "Raconter l'embuscade":
         #modifaction pour indiquer le lieu par la suite
-            e "Il nous prit au dépourvu, le soir dans la forêt en continuant vers le nord"
-            h"Admettons mais qui t'a soigné ?"
+            e "Nous venions de traverser le village de Perth, que nous soupçonnions d'abriter les rebelles."
+            e "Nous étions ensuite repartis. Les hommes discutaient entre eux, nous étions sûrs de nous. Puis la nuit est tombée."
+            e "Il nous ont prit au dépourvu. Une bande d'une trentaine de guerriers écossais nous est tombée dessus sans que nous ne puissions nous défendre."
+            e "Des archers dissimulés dans l'obscurité ont lancé une salve qui a touché un grand nombre des nôtres."
+            e "Ensuite, le meneur s'est approché de moi. Il a égorgé Logan sous mes yeux puis m'a assommé."
+            h "Qui t'a soigné ? Tu devais être blessé... Je te connais, rien ne t'arrête jamais quand il s'agit de combattre !"
 
             jump menu_embusscade_ou_silence_cours_chateau
 
         "Ne rien dire":
-            h"Eh bien, je t'ai connu plus bavard"
-            h"Parles et nous pourrons venger les morts"
+            e "..."
+            h "Tu dois tout me raconter, Einar. Je ne suis pas idiot, je sais que tes compagnons sont morts. C'est évident. Pourquoi serais-tu revenu seul, sinon ?"
+            h "Tu dois me dire ce qu'il s'est passé. Nous devons venger la mort de nos hommes ! Nous devons éradiquer les rebelles !"
 
             $ retour_silence_1 = True
 
@@ -116,64 +118,95 @@ label cours_chateau_1:
 
     menu menu_assome_cours_chateau:
 
-        "Je me suis débrouillé":
-            e "Je me suis remis, lentement mais surement, dans la nature."
+        "Je me suis débrouillé (mentir)":
+            e "Je me suis remis, lentement mais sûrement, dans la nature."
+            "*Harald hausse les sourcils*"
+            h "Dans la nature ? J'ai du mal à te croire..."
+            e "J'ai trouvé des plantes et des baies qui m'ont permit de me soigner."
+            h "Mmmh..."
             $ soupcon_harald_1 = True
 
-        "Aide":
+        "J'ai reçu l'aide d'un autochtone (mentir)":
             e "J'ai été soigné par un vieux paysan."
+            h "Un paysan ?"
+            e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
+            e "Il m'a gardé dans sa cabane pendant un mois entier, à me soigner et à me nourrir."
+            e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
+            h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
     menu menu_embusscade_ou_silence_cours_chateau:
 
         "Village et Moira":
-            e "J'ai été aidé par un village écossais"
-            e "Un femme du non de Moira m'a soigné"
-            e "J'ai fini par m'enfuir"
+            e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
+            e "Un chasseur m'a trouvé alors qu'il allait relever des collets. Il m'a ramené à son village puis sa fille s'est occupée de moi. Elle s'appelait Moira."
+            e "Pendant un mois, cette jeune femme m'a prodigué les soins nécessaires. Lorsqu'enfin mon état s'est amélioré, j'ai pu repartir."
+            h "Il ne s'agissait donc pas des rebelles ?"
+            e "..."
 
-        "Aide":
+        "J'ai reçu l'aide d'un autochtone (mentir)":
             e "J'ai été soigné par un vieux paysan."
+            h "Un paysan ?"
+            e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
+            e "Il m'a gardé dans sa cabane pendant un mois entier, à me soigner et à me nourrir."
+            e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
+            h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
-        "Perte de mémoire" if retour_silence_1:
-            e "Tout ce dont je me souviens, c'est l'attaque et que j'ai été bléssé"
-            e "Après, tout es flou"
-            e "Je me suis réveillé il y a peu et mes blessures étaient soignés"
+        "Perte de mémoire (mentir)" if retour_silence_1:
+            e "Je ne me rappelle de rien... Simplement de ce coup à la tête."
+            e "Après, il n'y a qu'un grand vide jusqu'à il y a trois jours, lorsque je me suis réveillé dans les bois."
+            e "Mes blessures étaient soignées et un repas était posé à côté de moi. Je l'ai mangé et ai prit la route pour revenir jusqu'ici."
             $ soupcon_harald_1 = True
 
-    "Harald se mon soupconeux"
-
-    h "J'espère que tout ce que tu me dis est vrai"
-    h "Parce que tu sais très bien ce qu'il en coute de me trahir"
-    h "Mais j'espère pouvoir te faire confiance mon ami"
+    h "..."
+    h "J'espère que tout ce que tu me dis là est vrai."
+    h "Je ne tolère pas le mensonge, Einar. Ton histoire me paraît bien obscure. Je te fais confiance, mais si j'apprends que tu m'as menti..."
+    h "Es-tu certain de m'avoir dit la vérité ? Si ce n'est pas le cas, je suis prêt à te pardonner pourvu que tu m'avoues ce qu'il s'est réellement passé."
 
     menu :
-        "C'est le moment ou jamais de dire la vérité"
-        "Dire vérité":
-            e "Mon Roi, j'ai été recceuilli par les sauvages uniquement pour me convaincre de vous trahir"
-            e "Il m'ont forcé à accepter ce pacte"
-            e "Mais au fond de moi, je vous ai toujours été fidèle et j'attendais patiemment le jour où je pouvais rentrer pour tout vous dévoiler"
-            e "Ogma, chef de l'armée rebelle, veut que je baisse le pont-levis et que je prenne votre hache pour vous affaiblir "
-        "Fidèle (mentir)":
+        e "(C'est maintenant ou jamais...)"
+        
+        "Dire toute la vérité":
+            e "Très bien. Voici la vérité."
+            e "Après avoir traversé le village de Perth, nous sommes tombés dans une embuscade des rebelles. Ils avaient probablement été prévenus de notre arrivée."
+            e "Tous mes compagnons sont morts, y compris Logan."
+            h "Et toi ? Tu t'es enfui ?"
+            e "Non. Alors que j'avais été mis à terre, le meneur des rebelles s'est approché de moi. J'ai cru mon heure arrivée."
+            e "Il s'est penché sur moi puis m'a demandé de coopérer. Je n'ai pas eu d'autre choix que d'accepter."
+            e "J'ai ensuite été assommé. A mon réveil, j'étais dans l'une de ces maisons écossaises, comme nous en avions vu au village."
+            e "Pendant un mois, une jeune femme s'est occupée de moi. Elle s'appelait Moira et était la fille du meneur des rebelles, Ogma le Hurleur."
+            h "Ogma le Hurleur ? Ce n'est pas un nom..."
+            e "Dans ce cas, je ne connaît pas sa véritable identité."
+            e "Lorsqu'enfin mes blessures étaient guéries, un mois s'était écoulé. Alors que je m'apprêtais à partir, Ogma m'a rappelé mon engagement."
+            h "Ton engagement ?"
+            e "Oui. Il était question que je survive à condition que je vous trahisse en ouvrant le pont-levis du château aux rebelles."
+            h "Ils comptent lancer une attaque ? Quand !?"
+            e "Hélas, je n'en sais rien, sire. Mais je présage que cet assaut aura lieu très prochainement."
+            e "Quoi qu'il en soit, je n'ai jamais cessé de vous être fidèle. Tout ce que j'ai fait, c'était dans votre intérêt. J'ai patiemment attendu le moment où je pourrais vous révéler leurs intentions. Et voilà."
+            
+
+            
+        "Je vous suis fidèle (mentir)":
             e "Nul ne vous est plus fidèle que moi !"
             $ mentir_harald_1 = True
-        "Menti aux rebelles (mentir)":
-            e "J'ai rusé en pactisant avec les rebelles uniquement dans le but de revenir à votre service"
+            
+        "J'ai rusé dans votre intérêt (mentir)":
+            e "J'ai rusé de toutes les manières possibles uniquement dans le but de revenir à votre service."
             $ mentir_harald_1 = True
 
     if mentir_harald_1:
-        h "Je te remercie Einar pour m'avoir dévoilé leur perfide plan"
-        h "Grâce à toi, nous allons pouvoir nous pouvoir nous préparer et réduire la rebellion à néant une bonne fois pour toute"
-        h "Tu devrais rejoindre les autres soldats pour te préparé à les acceuillir"
-
-        e "Bien mon Roi"
+        h "Je te remercie pour ta sincérité, Einar."
+        h "Grâce à toi, nous allons profiter de toutes les informations que tu as pu glâner pendant ce mois dans les Highlands."
+        h "Mais pour le moment tu devrais rejoindre les autres soldats. Ils seront heureux de retrouver l'un des leurs."
+        e "Bien mon Roi."
+        
     else:
-        e "Bon j'avoue, je sèche un peu là pour le coup"
-
-        h "J'ai eu des doutes sur toi"
-        h "Ne me fait plus jamais peur comme ça"
-        h "Les autres vont être content de ton retour"
-        h "Vas les rejoindre dans la salle de banquet"
-
-        e "Bien mon Roi"
+        h "Ces salopards comptent attaquer prochainement ? Il faut impérativement préparer nos défenses !"
+        e "Le château n'est pas suffisant ?"
+        h "Si, mais uniquement si les hommes qui le défendent sont à leurs postes !"
+        h "Je te remercie de m'avoir tout avoué. J'ai eu des doutes sur toi pendant un instant, mais me voilà rassuré."
+        h "Pendant que je vais planifier la défense du château, tu devrais aller à la rencontre des autres soldats. Ils seront heureux de te retrouver."
+        h "Les morts ne reviennent pas tous les jours !"
+        e "Bien mon Roi."
 
     "Einar se dirige vers la salle de banquet et vois L'evêque Patrick juger 3 écossais qui sont déjà sur le bûcher"
 
