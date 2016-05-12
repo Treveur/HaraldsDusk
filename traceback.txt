@@ -1,37 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 725, in script call
-    call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
-  File "game/script.rpy", line 946, in script call
-    call massacre_foret_2 pass (lieu = "chateau") from _call_massacre_foret_2
-  File "game/script.rpy", line 1162, in script call
-    call attaque_massacre_foret_2 pass (message = "attentif") from _call_attaque_massacre_foret_2
-  File "game/script.rpy", line 1256, in script call
-    call e_demande_nom_foret_2 pass (bad_ending = True) from _call_e_demande_nom_foret_2
-  File "game/script.rpy", line 3057, in script
-    jump main_menu
-ScriptError: could not find label 'main_menu'.
+ScriptError: Name u'intro' is defined twice, at game/script.rpy:101 and game/scripts/acte_1.rpy:4.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 725, in script call
-    call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
-  File "game/script.rpy", line 946, in script call
-    call massacre_foret_2 pass (lieu = "chateau") from _call_massacre_foret_2
-  File "game/script.rpy", line 1162, in script call
-    call attaque_massacre_foret_2 pass (message = "attentif") from _call_attaque_massacre_foret_2
-  File "game/script.rpy", line 1256, in script call
-    call e_demande_nom_foret_2 pass (bad_ending = True) from _call_e_demande_nom_foret_2
-  File "game/script.rpy", line 3057, in script
-    jump main_menu
-  File "C:\Users\Benjamin\Downloads\renpy-6.99.10-sdk\renpy\ast.py", line 1520, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\Benjamin\Downloads\renpy-6.99.10-sdk\renpy\script.py", line 843, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'main_menu'.
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\main.py", line 354, in main
+    renpy.game.script.load_script() # sets renpy.game.script.
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\script.py", line 259, in load_script
+    self.load_appropriate_file(".rpyc", ".rpy", dir, fn, initcode)
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\script.py", line 738, in load_appropriate_file
+    self.finish_load(stmts, initcode, filename=fn + source)
+  File "D:\Bibliothèque\Downloads\renpy-6.99.10-sdk\renpy\script.py", line 414, in finish_load
+    bad_node.filename, bad_node.linenumber))
+ScriptError: Name u'intro' is defined twice, at game/script.rpy:101 and game/scripts/acte_1.rpy:4.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.10.1227
-Harald's Dusk 0.0
+ 
