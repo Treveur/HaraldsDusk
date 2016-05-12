@@ -38,7 +38,7 @@ image bg forest = "foret_cabane.jpg"
 image bg forest_night = "forest_night.jpg"
 image bg forest_crepuscule = "forest_crepuscule.jpg"
 image bg little_heaven = "little_heaven.jpg"
-image bg sentier_jour = "sentier_foret.jpg"
+image bg sentier_jour = "sentier_foret_jour.jpg"
 image bg village = "village.jpg"
 image bg village2_jour = "village2_jour.jpg"
 image bg village2_crepuscule = "village2_crepuscule.jpg"
@@ -2136,7 +2136,6 @@ label cote_2:
 
 #Sequence 2
 label exterieur_chateau_1:
-    scene bg
 
     scene bg pont_levis with dissolve
 
@@ -2349,7 +2348,7 @@ label cours_chateau_1:
                 e "Je ne les ai pas vu, lorsque j'étais dans le village"
                 e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons"
 
-                if mentir_harald_1 == False && soupcon_harald_1 == False:
+                if mentir_harald_1 == False and soupcon_harald_1 == False:
                     $ soupcon_harald_1 = True
 
             "Ils ont l'air innoffencifs":
@@ -2552,7 +2551,7 @@ label e_bruler_donjon_desobeir_donjon:
 
     jump bad_ending_6
 
-label e_bruler_donjon_obeir__donjon:
+label e_bruler_donjon_obeir_donjon:
 
     $ prendre_hache = False
 

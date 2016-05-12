@@ -1,13 +1,13 @@
 ﻿
-Ren'Py 6.99.10.1227 lint report, generated at: Thu May 05 22:09:49 2016
+Ren'Py 6.99.10.1227 lint report, generated at: Thu May 12 20:49:50 2016
 
 
 Statistics:
 
-The game contains 340 dialogue blocks, containing 3,865 words and 21,121
-characters, for an average of 11.4 words and 62 characters per block.
+The game contains 1,203 dialogue blocks, containing 15,302 words and 84,633
+characters, for an average of 12.7 words and 70 characters per block.
 
-The game contains 31 menus, 7 images, and 12 screens.
+The game contains 96 menus, 25 images, and 12 screens.
 
 
 Remember to set config.developer to False before releasing.
