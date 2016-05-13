@@ -208,7 +208,7 @@ label cours_chateau_1:
         h "Les morts ne reviennent pas tous les jours !"
         e "Bien mon Roi."
 
-    "Einar se dirige vers la salle de banquet et vois L'evêque Patrick juger 3 écossais qui sont déjà sur le bûcher"
+    "*Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés.*"
 
     hide einar
     hide harald
@@ -217,31 +217,30 @@ label cours_chateau_1:
 
 
 
-    p "Que Dieu, est-pitié de vous! Les flammes purificatrices vont laver tous vos pêchés"
+    p "Que Dieu, ait pitié de vous ! Les flammes purificatrices vont laver tous vos pêchés."
     p "Deus propitius tibi!"
 
     show patrick normal at left
     show prisonnier normal at right with dissolve
 
-    pe3 "Non arretez! Je suis enceinte!"
-    pe3 "Même si vous me concidérez comme coupable, vous allez tuer un innocent"
-
-    p "Je n'ai que faire de tes mensonges femme!"
-    p "Tout ce que tu veux, c'est m'amener vers le diable"
+    pe3 "Arrêtez ! Je suis enceinte !"
+    p "Je n'ai que faire de tes mensonges, femme !"
+    p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
     hide prisonnier
     show einar debout_normal at left with dissolve
     show patrick normal at right
 
     menu:
-        "(Que devrais-je faire ?)"
-
         "Arrêter le massacre":
-            e "Stop! arretez-tout, ce ne sont que de simples paysans"
-
-            p "Mais dis-moi, Einar, tu es porté disparu pendant presque un mois"
-            p "Et te voilà en pleine forme, à défendre ces hérétiques."
-            p "Qu'est-ce qui te fait dire qu'ils sont innocents ?"
+            e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
+            p "Einar ? Tu étais porté disparu depuis un mois !"
+            p "Et te voilà sorti de nul part, prêt à défendre ces hérétiques !"
+            p "Ces gens ne sont pas innocents ! Ils ont été capturés alors qu'ils menacaient de m'assassiner !"
+            e "Une femme enceinte ? Y croyez-vous vraiment, Excellence ?"
+            p "Elle était avec eux lorsque nous les avons capturés. Elle ne peut être innocente : elle a avoué !"
+            e "Sous la torture ? Vous auriez pu lui faire avouer n'importe quoi !"
+            p "Comment peux-tu savoir que ces gens sont innocents ? As-tu des révélations à nous faire ?"
 
             $ interpose_bucher = True
 
@@ -249,99 +248,106 @@ label cours_chateau_1:
 
         "Ne rien dire":
             e "..."
+            
         "Brûlez-les":
-            e "Vous avez raisons Monseigneur, brûlez-les!"
-            e "Brûlez cette racaille"
+            e "Vous avez raison, Excellence !"
+            e "Brûlez-les !"
 
     if interpose_bucher:
 
 
         menu menu_sauver_rebelle_cours_chateau:
-            "Parler du village":
-                e "Je ne les ai pas vu, lorsque j'étais dans le village"
-                e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons"
+            "Pas vus à Perth":
+                e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
+                e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
+                p "Mensonge ! Ils ont tenté de m'assassiner ! Ils ont tout avoué !"
+                p "Ils se sont opposés à un homme de Dieu et ont agi à l'encontre du porteur de la Hache Sainte !"
 
                 if mentir_harald_1 == False and soupcon_harald_1 == False:
                     $ soupcon_harald_1 = True
 
-            "Ils ont l'air innoffencifs":
-                e "Je ne sais rien d'eux mais ils n'ont pas l'air méchant"
-                e "De plus, je pense qu'une future mère ne mettrait pas la vie de son enfant en danger"
+            "Ils ont l'air innoffensifs":
+                e "Je ne sais rien d'eux, mais croyez-vous vraiment que ces trois paysans soient responsables d''une tentative d'assassinat ?"
+                e "Une mère ne mettrait pas la vie de son enfant en danger !"
 
-        p "Ne t'interpose pas avec la volonté de Dieu"
-        p "Sinon je vais finir par croire que tu es avec eux"
-        p "Et tu as sous les yeux le châtiment que nous réservons au traitres!"
+        p "Ne t'interpose pas avec la volonté de Dieu !"
+        p "Je pourrais croire que tu cherches à leur épargner le châtiment qu'ils méritent..."
+        p "Et tu vois toi-même le sort réservé aux traîtres !"
 
-        e "Pardonnez-moi pas Monseigneur, je ne v...."
-
-        p "Tu ne voulais pas quoi ?"
-        p "Intérompre ma divine mission ?"
-        p "Déguerpis avant que je pense que tu sois avec ses hérétiques"
-
-    p "Amenez les torches et faite les bruler"
-
-    pe3 "Non pas ça"
-    pe1 "Nonnnnnn"
-    pe2 "Arggggg"
-
-    "Pendant que les condamnés sont en train de brûler, Einar regarde autour de lui et peut remarque que certain soldats se réjouissent de voir souffrir des hérétiques"
-    "Mais d'autres sont mal à l'aise dont un particulèrement qui semble être sur le point de pleurer"
-    "Einar se dirige vers lui"
+    p "Amenez les torches, et que brûlent les hérétiques !"
+    
+    pe1 "Pitié ! Epargnez ma femme !"
+    pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
+    pe2 "Laissez partir les autres ! Je suis responsable de tout !"
+    
+    p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
+    
+    "*Un homme apporte une torche. Un par un, il allume les bûchers."
+    gv "Regardez-les s'agiter comme des vers, ha ha !"
+    "*Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait.*"
+    "*Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui.*"
 
     #Variable
     $ reponse_reconfort = ""
 
     menu :
-        "Est-ce que j'essaye de lui remonter le moral ou pas"
 
-        "Une bande de porc":
+        "Une bande de porcs qui rôtissent !":
             e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
             $ reponse_reconfort = "pleurer"
         "Pas besoin de les pleurer":
             e "Ne pleure pas ces parasites, ils ne le méritent pas."
+            e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
+            e "Alors réjouis-toi, gamin ! En voilà trois de moins !"
             $ reponse_reconfort = "pleurer"
-        "Tu es impuissant":
+        "Nous n'y pouvons rien":
             e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
             $ reponse_reconfort = "larme_aux_yeux"
         "Ne rien dire":
             e "..."
             $ reponse_reconfort = "larme_aux_yeux"
-        "L'évêque peut se tromper":
+        "L'évêque peut se tromper, mais pas Dieu":
             e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient Justes, les condamnés iront au paradis."
             $ reponse_reconfort = "rassure"
 
     if reponse_reconfort == "pleurer":
-        "Le jeune soldat pleure sans se cacher"
+        "*Le jeune soldat pleure sans se cacher.*"
     elif reponse_reconfort == "larme_aux_yeux":
-        "Le jeune soldat ne change pas d'état"
+        "*Le jeune soldat semble toujours aussi bouleversé.*"
     else:
-        "Le jeune soldat semble rassuré"
+        "*Le jeune soldat semble rassuré.*"
 
     jump cours_chateau_2
 
 #Sequence 4
 label cours_chateau_2:
-
-    "Un garde avertit depuis les remparts qu'une horde rebelle vient d'émerger des bois, de l'autre côté de la plaine. Un homme est à leur tête, et porte des peintures bleues. Les rebelles sont plusieurs centaines."
-    "Harald demande à ses hommes de se tenir à la grande porte, prêts à la défendre et à empêcher quiconque de pénétrer l'enceinte. Le roi disparaît dans le donjon et va s'équiper pour la bataille."
+    
+    "*Au crépuscule...*"
+    gv "Sire ! Sire !"
+    h "Qu'y a-t-il ? Parle !"
+    gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
+    h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
+    h "Tous à vos postes de combat ! Huscarls, préparez-vous à défendre la porte ! Je veux vingt archers sur les remparts !"
+    "*Une fois ses ordres donnés, Harald disparaît dans le donjon.*"
 
     jump interieur_grande_porte_chateau_1
 
 #Sequence 5
 label interieur_grande_porte_chateau_1:
 
-    "Einar est posté à proximité du système d'ouverture des portes."
-    "La horde progresse en courant à travers la plaine. Lorsque les rebelles ne sont plus qu'à une centaine de mètres, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir la porte."
+    "*Einar est posté à proximité du système d'ouverture des portes.*"
+    gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
+    "*La horde progresse en courant à travers la plaine.*" 
+    "*A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis.*"
 
     menu:
-        "Dois-je baisser le pont-levis ?"
-        "Le baisser":
+        "Ouvrir le pont-levis":
             if soupcon_harald_1:
                 jump bad_ending_3
             else:
                 jump pont_levis_baisse
 
-        "Laisser fermer":
+        "Laisser fermé":
             if soupcon_harald_1:
                 jump soupcon_harald_defendre_porte
             else:
@@ -350,38 +356,42 @@ label interieur_grande_porte_chateau_1:
 
 #Baisser pont-levis
 label pont_levis_baisse:
-
-    "Le pont s'abaisse brutalement, laissant le champ libre aux rebelles pour entrer."
-    "Une volée de flèches abat une partie des rebelles qui foncent vers le pont abaissé."
-    "Les soldats proches se tournent vers Einar en l'insultant de traître, et s'apprêtent à le massacrer"
+    
+    gv "Attendez... Attendez..."
+    gv "Tirez ! Abattez-moi ces salopards !"
+    "*Une volée de flèches abat une partie des rebelles qui foncent vers le château.*"
+    "*Le pont s'abaisse brutalement, laissant le champ libre.*"
+    gv "Trahison ! Bloquez le passage, vite !"
+    "..."
+    "*Les soldats proches se tournent vers Einar.*"
 
     menu:
-        "Que dois-je leurs dire ?"
 
         "Reculez !":
             e "Arrière ! Je vous ferai rendre gorge !"
         "Tactique du roi":
             e "C'était une tactique imaginée par notre roi !"
         "Venez, je vous attends !":
-            e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur."
+            e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur !"
         "Ne rien dire":
             e "..."
-
-    "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-
-    "La bataille commence. La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings. Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte, ravageant tout sur son passage."
+            
+    "*La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings.*"
+    "*Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte.*"
+    "*Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar.*"
+    ge "HAAAAA !"
+    gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
 
     if moira_dead:
 
         "Ogma surgit au milieu de la mêlée, franchissant la Grande Porte. Il se rue sur Einar, un regard fou dans les yeux et la bave aux lèvres. Il hurle le nom de sa fille."
 
-        o "MOIRAAAAAAAAAAAAAAA"
+        o "MOIRAAAAAAAA !"
+        o "POURQUOI L'AVOIR TUÉE ?"
 
         menu:
 
-            "Je dois essayer de le raisonner"
-
-            "Tuer le père":
+            "J'avais juste envie":
                 e "L'envie de voir de près un salopard d'écossais déborder de rage !"
             "Votre fille m'insuportait":
                 e "J'aimais votre cause, pas votre fille !"
@@ -389,7 +399,8 @@ label pont_levis_baisse:
                 e "Je n'ai pas réfléchi !"
             "Viens te battre":
                 e "Ferme la et bats-toi, raclure !"
-
+        
+        o "Tout s'achève, ici et maintenant !"
         "Phase de combat, impossible à gagner WIP"
 
         jump bad_ending_4
@@ -398,69 +409,73 @@ label pont_levis_baisse:
 
         $ loose_battle = False
 
-        "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls. Ils le défient et l'insultent."
+        "*Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls.*"
+        gv "Tu as trahi tes frères pour ça ? Pour rejoindre des paysans ?"
+        gv "Ha, il a du tomber sur un beau garçon de ferme !"
+        gv "Défend-toi, traître !"
 
-        "Einar se retrouve pris entre les deux forces et est contraint d'affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
+        "Affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
 
         if loose_battle:
 
             jump bad_ending_5
 
         else:
-            "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
-            "Il lui demande de brûler le donjon en urgence : si Harald n'est pas encore entrain de se battre, c'est qu'il n'a surement pas fini de s'équiper : il est possible de le piéger !"
+            "*Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl.*"
+            o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
+            e "Le donjon ? Pourquoi ?"
+            o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
+            o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
+
 
             "Ogma réclame que l'on brûle le donjon en urgence."
 
             menu :
-                "Que faire ?"
 
-                "Tu ne me donnes pas d'ordres":
+                "Ne me donne pas d'ordres":
                     e "Je n'ai pas d'ordres à recevoir !"
                     jump e_bruler_donjon_desobeir_donjon
 
-                "Choice 2":
+                "J'y vais !":
                     e "J'y vais!"
                     jump e_bruler_donjon_obeir_donjon
 
 label e_bruler_donjon_desobeir_donjon:
 
-    "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
+    "*Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle.*"
 
     menu :
-        "Que faire ?"
-
+        
         "Le tuer":
-            e "Désolé petit"
-            "Tuer le jeune soldat"
+            e "Désolé, petit. Nous ne sommes plus dans le même camp."
+            "*Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément.*"
 
         "L'assommer":
-            e "Tu auras peut être la chance de survivre"
-            "L'assommer d'un bon coup de poing"
+            e "Je t'offre l'occasion de refaire ta vie, saisi-la."
+            "*Du plat de sa hache, Einar frappe le soldat à la tempe. Iol s'écroule à terre, inconscient*"
 
         "L'ignorer":
-            e "(Je n'ai pas le temps de m'occuper de lui)"
+            e "(Je n'ai pas le temps de m'occuper de lui.)"
 
-    "Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte."
-    "Il se jette dans les combats et taille un chemin sanglant jusqu'à la porte. La présence de Harald semble redonner courage aux vikings, qui balaient les rebelles."
+    "*Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte.*"
+    h "A moi, huscarls ! Suivez votre roi !"
+    gv "HAAAAAA !"
+    "*Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles.*"
 
-    "Harald arrive devant Einar, couvert du sang de ses victimes. Il lui explique qu'il le libère de son allégeance, car il n'a plus besoin de ses services."
+    "*Harald arrive devant Einar, couvert du sang de ses victimes.*" 
+    h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
-        "Que répondre ?"
-
         "Ne rien regretter":
             e "Je ne regrette rien."
-            h "Crève"
 
         "Demander pardon":
             e "Je regrette tout et vous demande pardon."
-            h "Non"
-        "Aucun roi présent":
+            
+        "Je ne vois aucun roi !":
             e "Je ne vois aucun souverain ici : il n'y a personne pour me libérer d'une allégeance quelconque !"
-            h "C'est comme ça que tu me remercie ?"
 
-    "Garde ta langue de traître derrière tes dents ! Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de parler."
+    h "Garde ta langue de traître derrière tes dents !" 
 
     jump bad_ending_6
 

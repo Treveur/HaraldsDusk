@@ -1,5 +1,6 @@
 #Dossiers
 game/saves/*
+game/cache/*
 tmp/*
 #Fichiers
 errors.txt

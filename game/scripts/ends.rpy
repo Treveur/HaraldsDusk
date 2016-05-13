@@ -25,7 +25,8 @@ label bad_ending_5:
     jump credits
 
 label bad_ending_6:
-    "Harald surgit au coeur de la mêlée, armé de sa hache. Il rassemble les vikings autour de lui et lance une contre-attaque imparable. Les rebelles sont balayés avec violence et Einar est décapité par le roi en personne"
+    "*Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de parler.*"
+    h "Et maintenant, au tour des écossais..."
     jump credits
 
 label good_ending_7:

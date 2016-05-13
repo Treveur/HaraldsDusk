@@ -35,9 +35,9 @@ image einar debout_normal = "einar_debout_nomal.png"
 
 #Logan
 define l = Character('Logan', color="#f1c40f")
-image logan fache = "logan.png"
+
 #Debout
-#image logan debout_normal = "logan_debout_nomal.png"
+image logan debout_normal = "logan_debout_nomal.png"
 #image logan debout_souriant = "logan_debout_souriant.png"
 #image logan debout_attriste = "logan_debout_attriste.png"
 #image logan debout_contratrie = "logan_debout_contratrie.png"
