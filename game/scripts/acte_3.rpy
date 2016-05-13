@@ -483,29 +483,25 @@ label e_bruler_donjon_obeir_donjon:
 
     $ prendre_hache = False
 
-    "Einar s'élance en direction du donjon, passant à l'arrière des affrontements."
-    "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
-
-    "\"Incendier le donjon\""
-
-    "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte, entrain de terminer de s'équiper de son armure. Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
-
-    "Alors qu'il commence à mettre le feu au donjon, Einar découvre la Hache Sainte, accrochée à un râtelier dans la chambre du roi."
+    "*Einar s'élance en direction du donjon, passant à l'arrière des affrontements.*"
+    "*Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries.*"
+    "..."
+    "*En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte.*"
+    "*Le roi est entrain de s'équiper de son armure.*" 
+    "*Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé.*"
 
     menu:
-        "Que faire de la hache ?"
-
-        "La prendre":
-            e "je ressents la puissance!"
-            "Harald arrive dans le dos d'Einar et lui demande ce qu'il fait avec la Hache."
+        "Prendre la Hache":
+            e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
+            h "Einar ? Que fais-tu avec ma Hache ?"
             $ prendre_hache = True
             jump e_confrontation_harald_pont_baisse_donjon
 
-        "S'en débarasser":
-            "Einar jette la Hache à la mer à travers une meurtrière de la pièce."
+        "Se débarrasser de la Hache":
+            "*Einar jette la Hache à la mer à travers une meurtrière de la pièce."
             call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
 
-        "L'ignorer":
+        "Ignorer la Hache":
             e "Le donjon est en feu, que cette maudite hache brûle avec"
             jump e_confrontation_harald_pont_axe_laissee_baisse_donjon
 
