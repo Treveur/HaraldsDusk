@@ -498,11 +498,11 @@ label e_bruler_donjon_obeir_donjon:
             jump e_confrontation_harald_pont_baisse_donjon
 
         "Se débarrasser de la Hache":
-            "*Einar jette la Hache à la mer à travers une meurtrière de la pièce."
+            "*Einar jette la Hache à la mer à travers une meurtrière.*"
             call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
 
         "Ignorer la Hache":
-            e "Le donjon est en feu, que cette maudite hache brûle avec"
+            e "..."
             jump e_confrontation_harald_pont_axe_laissee_baisse_donjon
 
 label e_confrontation_harald_pont_baisse_donjon(jetee = False):
@@ -512,49 +512,69 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
     if jetee:
         menu :
 
-            "Harald arrive dans le dos d'Einar et lui demande ce qu'il a fait de la Hache."
+            "Einar ? Que fais-tu ici ? Où est la Hache ?"
 
             "Je l'ai jeté":
                 e "La Hache est perdue. Tout est terminé."
+                h "Tu es fou ? Tu mens !"
+                h "Où l'as-tu mise ? Tu veux la garder pour toi !"
+                e "Votre relique est dans la vase, sous l'eau."
             "Je ne sais pas":
                 e "Je ne sais pas."
+                h "Tu me mens ! Encore !"
             "Mentir":
                 e "J'ai vu Geir la voler !"
+                h "Cesse de me mentir !"
 
     else:
 
         menu:
-            "Harald arrive dans le dos d'Einar et lui demande ce qu'il fait avec la Hache."
+            "Einar ? Que fais-tu avec ma Hache ?"
 
             "Harald n'est plus rien":
-                e "Je l'ai prise, en même temps que le pouvoir. Vous n'êtes plus rien. Dieu vous a abandonné."
+                e "Je l'ai prise, en même temps que le pouvoir. Vous n'êtes plus rien."
+                h "Tu ne peux pas faire ça ! Dieu m'a choisi !"
+                e "Alors il vous a abandonné !"
             "Je suis un Dieu":
-                e "L'opportunité de posséder une relique sainte était trop grande : me voilà élu divin !"
+                e "La relique me revient de droit ! Je suis un Dieu !"
+                h "Tu es complètement fou !"
             "Rétablir l'équilibre":
                 e "Je l'ai prise pour vous en priver. Il est temps de rétablir l'ordre naturel des choses."
 
-    h "Comment oses-tu ?"
+    h "Comment oses-tu ?!"
+    h "CETTE HACHE EST A MOI !"
 
-    "Harald devient comme fou et se jette sur Einar."
+    "*Harald devient comme fou et se jette sur Einar.*"
 
     if prendre_hache:
-        "Harald place un coup de dague très rapide au flanc d'Einar. Mais il n'est pas blessé. La Hache lui a donné ses pouvoirs."
+        "*Harald place un coup de dague très rapide au flanc d'Einar.*"
+        "*Einar n'est pas blessé et n'a même pas ressenti le coup.*"
+        e "J'ai la Hache. Vous ne pouvez rien contre moi !"
 
         menu:
-            "Que dire à Harald ?"
-
-            "Fin du règne":
+            "Fin du règne (le tuer)":
                 e "Votre règne s'achève ici et maintenant. Vous allez mourir."
-            "Pas de répit":
+                h "Je m'avoue vaincu ! Ne me tue pas !"
+                e "Pardon ?"
+                h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
+            "Pas de répit (le tuer)":
                 e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+                h "Tu es fou !"
             "Épargner":
                 e "Vous avez déjà perdu. Je vais vous épargner."
+                h "Merci ! J'ai toujours su que tu étais un homme bon !"
+                e "Ne vous réjouissez pas trop vite."
+                h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
-            "Je te suis supérieur":
+            "Je vous suis supérieur":
                 e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+                h "Alors tu t'es donné tout ce mal uniquement pour m'humilier ?"
+                h "Que t'ai-je fait ?"
+                e "Ce n'est pas le moment de discuter."
+                h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
     else:
-        "Le combat s'engage entre le roi et l'huscarl"
+        "*Le combat s'engage entre le roi et son huscarl*"
         "Phase combat WIP"
 
         menu:
@@ -565,37 +585,61 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     if epargner_harld_donjon:
         menu :
-            "Que dois-je faire de lui ?"
+
             "Le laisser s'enfuir":
+                e "Partez d'ici. Ne revenez jamais en Ecosse."
+                h "Tu me laisse m'enfuir ? Pourquoi ?"
+                e "Vous êtes vaincu et vous n'avez plus votre Hache."
+                e "Le règne du roi-empereur Harald Sigurdsson est terminé !"
+                e "La nouvelle de votre défaite va se répandre à travers le monde. L'empire que vous avez bâti va s'écrouler."
+                e "Vous tuer ici ne servirait à rien. Partez !"
+                "*Harald s'enfuit sans demander son reste*"
                 jump fuite_harald_pont_baisse_donjon
 
             "Le livrer à Ogma":
-                "Ogma se place au dessus des remparts avec Harald à genoux devant lui, s'assurant que les rebelles ainsi que les survivants vikings voient leur roi se faire trancher la gorge avant d'être précipité dans la mer."
-                "Le château brûle."
+                "..."
+                "*Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald et à genoux devant lui.*"
+                o "Voyez ! La liberté a vaincu le tyran !"
+                o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
+                o "Le règne du roi-empereur est terminé !"
+                "*Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang.*"
+                o "VOUS ÊTES LIBRES !"
+                "*Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer.*"
+                "*Dans la lumière du crépuscule, Dunbar continue de brûler.*"
                 jump good_ending_11
 
     else:
         "Dans la cour, Ogma félicite Einar pour avoir triomphé de Harald. Einar est le libérateur des écossais."
-        "Ogma réclame la Hache : elle doit être détruite."
+        o "Félicitations, Einar !"
+        ge "HOURRAAA !"
+        o "Tu as libéré l'Ecosse ! Tu as libéré le reste du monde !"
+        ge "HOURRAAA !"
+        o "Pour que la victoire soit complète, nous devons détruire la Hache."
+        e "Pourquoi ?"
+        o "Si la Hache tombe à nouveau dans les mains d'un conquérant, le monde sera à nouveau enchaîné."
+        o "Nous devons nous assurer que la Hache soit détruite !"
+        o "Donne la moi, s'il-te-plaît."
 
         menu:
-            "Que faire ?"
-            "Donner hache":
+            "Donner la Hache Sainte":
                 jump good_ending_7
-            "Donner hache":
+            "Garder la Hache Sainte":
                 jump e_garder_hache_pont_baisse_donjon
 
 label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
-    "Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure."
-    "Harald arrive dans le dos d'Einar et lui demande ce qu'il a fait, et pourquoi."
+    "*Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure du donjon.*"
+    h "Einar ? Que fais-tu ?!"
 
     menu :
-        "Que répondre ?"
-        "Liberté":
-            "J'ai voulu croire en la Liberté d'un peuple sur ses propres terres."
+        "Pour la Liberté":
+            e "J'ai voulu croire en la liberté d'un peuple sur ses propres terres."
+            e "Les écossais en ont assez de recevoir des ordres. Il est temps pour eux de reprendre leur destin en main !"
+            h "Tu penses réellement que ce peuple de paysans arriéré serait capable de prendre les bonnes décisions ?"
+            h "Sans moi, sans l'empire, ils sont voués à rester à l'état de petits clans épars, rongé par leurs petites guerres ridicules !"
+            e "Le choix ne vous appartient plus, désormais."
         "Las des promesses":
             "J'étais las de vos promesses de terres et d'or qui ne se réalisaient jamais"
-        "Vous être un monstre":
+        "Vous êtes un monstre":
             "J'ai rencontré une jeune femme et son père, qui ont su me convaincre que vous êtes un monstre."
         "Provoquer":
             "Simplement l'envie de mettre un coup de pied dans la fourmilière."
