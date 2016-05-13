@@ -20,13 +20,13 @@ label intro:
     scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
-    show harald debout_normal at left with dissolve
+    show harald debout_normal at center with dissolve
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
 
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
     show logan debout_normal at right with dissolve
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis longtemps et le mène jusqu'au château de Dunbar."
-    show einar debout_normal at center with dissolve
+    show einar debout_normal at left with dissolve
     "Einar est l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
 
     menu:
@@ -323,17 +323,20 @@ label plaine_1 :
 
             h "Parfait. Je suis certain que Logan saura se montrer utile. Partez, et ne revenez qu'après avoir trouvé les rebelles !"
 
+    hide logan debout_normal
+    hide einar debout_normal
+    hide harald debout_normal
+
     jump plaine_2
 
 #Sequence 3
 label plaine_2:
-    hide logan debout_normal
 
-    hide einar debout_normal
-    hide harald debout_normal
     scene bg cote1 with dissolve
 
     "*Le lendemain...*"
+    
+    show guerrierv at center with dissolve
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
     gv "Nous aurions dû rester plus longtemps à Stirling. Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
@@ -351,9 +354,11 @@ label plaine_2:
 
         "C'est une mission sans intérêt" :
 
+                hide guerrierv with dissolve
+
                 e "Je suis bien d'accord. Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
 
-                show logan debout_normal at left with dissolve
+                show logan debout_normal at right with dissolve
 
                 l "Tu le prends comme une punition ?"
 
@@ -369,9 +374,11 @@ label plaine_2:
 
         "Chambrer Logan" :
 
+            hide guerrierv with dissolve
+
             e "Tu ne parles pas beaucoup, Logan. Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
 
-            show logan debout_normal at left with dissolve
+            show logan debout_normal at right with dissolve
 
             l "..."
 
@@ -383,16 +390,20 @@ label plaine_2:
 
         "Silence ! Je veux deux groupes à l'avant..." :
 
+            hide guerrierv with dissolve
 
             e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et pressons le pas."
 
-            show logan debout_normal at left with dissolve
+            show logan debout_normal at right with dissolve
 
             l "Einar, les hommes sont aussi fatigués que nous. Tu devrais..."
 
             e "Toi aussi, tais-toi. Je veux que nous menions cette mission de la façon la plus exemplaire possible."
 
             l "Bien."
+
+    hide einar debout_normal
+    hide logan debout_normal
 
     jump foret_1
 
@@ -417,10 +428,11 @@ label foret_1:
             gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
             show logan debout_normal at right with dissolve
             l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
-
+            show guerrierv at center with dissolve
             gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
 
             l "..."
+            hide guerrierv with dissolve
 
             menu:
                 "Il me tarde de recevoir mes terres":
@@ -450,13 +462,13 @@ label foret_1:
             e "J'imagine la tête des sauvages qui vivent dans la région. C'est une bonne chose que les écossais aient intégré l'empire : ça les civilisera un peu !"
 
             e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
-
+            show guerrierv at center with dissolve
             gv "Ha ha !"
 
             show logan debout_normal at right with dissolve
 
             l "Non. Nous vivons dans des maisons de pierre. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
-
+            hide guerrierv with dissolve
         "Impatient de terminer la mission" :
 
             e "Je commence à être lassé de notre petite randonnée. Une journée à crapahuter sur cette saloperie d'île sans voir âme qui vive. On trouve le village et on rentre au château. Et à bride abattue !"
@@ -472,9 +484,9 @@ label foret_1:
             show logan debout_normal at right with dissolve
 
             l "..."
-
+            show guerrierv at center with dissolve
             gv "Ha ha !"
-
+            hide guerrierv with dissolve
         "Demander à Logan ce qu'il pense de la mission" :
 
             e "Tu es le seul à ne pas encore t'être plaint de la mission que nous a confié le roi."
@@ -527,12 +539,15 @@ label foret_1:
 
                             e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
+    hide einar debout_normal
+    hide logan debout_normal
+
     jump village_1
 
 #Scequence 5
 #Scene 1
 label village_1:
-    hide einar debout_normal
+
     $ moira_met = False
 
     scene bg village with dissolve
@@ -567,7 +582,6 @@ label e_massacre_village_1:
     gv "HAAAAA !"
 
     vm "Sauvez les enfants ! Les enfants !"
-
 
     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 

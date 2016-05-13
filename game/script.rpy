@@ -89,6 +89,7 @@ define gv = Character('Guerriers Vikings', color="#e67e22")
 define gc = Character("Garde du Chateau")
 define jgv = Character("Jeune Guerrier Viking")
 
+image guerrierv = "guerrier_viking.jpg"
 image garde_chateau  normal= ("garde_chateau.png")
 #Debout
 #image gv debout_normaux = "gv_debout_nomaux.png"
@@ -166,6 +167,9 @@ define ge = Character('rebelles écossais', color="#f39c12")
 
 ##Villageois / prisonniers
 define vm = Character('Villageois', color="#3498db")
+define vm = Character('Villageois', color="#3498db")
+
+image villageois = "villageois.png"
 
 define pe1 = Character("Prissonier écossais 1")
 define pe2 = Character("Prissonier écossais 2")
@@ -215,9 +219,14 @@ image bg black = "#000"
 
 # Déclarez les personnages utilisés dans le jeu.
 
+<<<<<<< HEAD
 
 
 
+=======
+define gc = Character("Garde du Chateau")
+image garde_chateau  normal= ("garde_chateau.png")
+>>>>>>> 3b50c9d73369433bbf9bb736789024b38ddd8231
 
 
 
