@@ -328,6 +328,8 @@ label plaine_2:
     hide logan fache
     hide einar serious
     hide harald normal
+    scene bg cote1 with dissolve
+
     "*Le lendemain...*"
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
