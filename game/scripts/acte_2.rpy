@@ -95,8 +95,6 @@ label interieur_maison_village_1:
     e "Je ..."
     o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
 
-    hide ogma normal
-
     menu :
         "Un problème ?":
             e "Il a une dent contre moi ?"
