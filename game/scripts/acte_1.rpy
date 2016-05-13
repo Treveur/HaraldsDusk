@@ -24,14 +24,14 @@ label intro:
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
 
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
-    show logan fache at right with dissolve
+    show logan debout_normal at right with dissolve
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis longtemps et le mène jusqu'au château de Dunbar."
     show einar debout_normal at center with dissolve
     "Einar est l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
 
     menu:
         "Parler à Harald":
-            hide logan fache
+            hide logan debout_normal
 
             e "Mon Roi, sommes-nous proches ?"
 
@@ -126,7 +126,7 @@ label intro:
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
             show einar debout_normal at left
-            show logan fache at right
+            show logan debout_normal at right
 
             l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
@@ -289,7 +289,7 @@ label plaine_1 :
 
             h "Cesse tes flagorneries et part sans tarder."
 
-    show logan fache at center
+    show logan debout_normal at center
     l "Einar, je t'accompagne ! Mes connaissances de la région ne seront pas de trop, et la vue d'un écossais parmi les vikings rassurera peut-être les villageois. "
 
     menu:
@@ -325,7 +325,7 @@ label plaine_1 :
 
 #Sequence 3
 label plaine_2:
-    hide logan fache
+    hide logan debout_normal
 
     hide einar debout_normal
     hide harald debout_normal
@@ -351,7 +351,7 @@ label plaine_2:
 
                 e "Je suis bien d'accord. Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
 
-                show logan fache at left with dissolve
+                show logan debout_normal at left with dissolve
 
                 l "Tu le prends comme une punition ?"
 
@@ -369,7 +369,7 @@ label plaine_2:
 
             e "Tu ne parles pas beaucoup, Logan. Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
 
-            show logan fache at left with dissolve
+            show logan debout_normal at left with dissolve
 
             l "..."
 
@@ -384,7 +384,7 @@ label plaine_2:
 
             e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et pressons le pas."
 
-            show logan fache at left with dissolve
+            show logan debout_normal at left with dissolve
 
             l "Einar, les hommes sont aussi fatigués que nous. Tu devrais..."
 
@@ -413,7 +413,7 @@ label foret_1:
             gv "J'aimerais retrouver la Suède. Je n'ai aucune nouvelles de ma famille depuis notre campagne d'Egypte."
 
             gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-            show logan fache at right with dissolve
+            show logan debout_normal at right with dissolve
             l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
 
             gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
@@ -427,7 +427,7 @@ label foret_1:
 
                     e "Une fois sur mes terres, je ferai bâtir un manoir."
 
-                    show logan fache at right with dissolve
+                    show logan debout_normal at right with dissolve
 
                     l "Et si ces terres ne sont pas en Norvège ?"
 
@@ -437,7 +437,7 @@ label foret_1:
 
                     e "Taisez-vous. Nous ne sommes qu'à mi-chemin, la route est encore longue. Demain, nous atteindrons Perth."
 
-                    show logan fache at right with dissolve
+                    show logan debout_normal at right with dissolve
 
                     l "Perth ?"
 
@@ -451,7 +451,7 @@ label foret_1:
 
             gv "Ha ha !"
 
-            show logan fache at right with dissolve
+            show logan debout_normal at right with dissolve
 
             l "Non. Nous vivons dans des maisons de pierre. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
 
@@ -467,7 +467,7 @@ label foret_1:
 
             e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps sculptural d'une de ces magnifiques brebis écossaises ?"
 
-            show logan fache at right with dissolve
+            show logan debout_normal at right with dissolve
 
             l "..."
 
@@ -476,7 +476,7 @@ label foret_1:
         "Demander à Logan ce qu'il pense de la mission" :
 
             e "Tu es le seul à ne pas encore t'être plaint de la mission que nous a confié le roi."
-            show logan fache at right with dissolve
+            show logan debout_normal at right with dissolve
             l "Je ne vois pas de raisons de me plaindre. J'accomplis mon devoir. Le roi nous récompensera à notre retour."
 
             e "Tu es bien optimiste ! Depuis le temps qu'il me promet des terres..."
@@ -535,7 +535,7 @@ label village_1:
 
     scene bg village with dissolve
     "*Peu après midi, la troupe parvient en vue d'un village...*"
-    show logan fache at right with dissolve
+    show logan debout_normal at right with dissolve
     l "Nous y sommes. Perth."
 
     "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
