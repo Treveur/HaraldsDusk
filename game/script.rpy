@@ -90,7 +90,7 @@ define gc = Character("Garde du Chateau")
 define jgv = Character("Jeune Guerrier Viking")
 
 image guerrierv = "guerrier_viking.jpg"
-image garde_chateau  normal= ("garde_chateau.png")
+
 #Debout
 #image gv debout_normaux = "gv_debout_nomaux.png"
 #image gv debout_enthousiastex = "gv_debout_enthousiastex.png"
@@ -182,8 +182,7 @@ define pe3 = Character("Prissonière écossais 1")
 #image vm debout_furieux = "ve_debout_furieux.png"
 
 #Buchet
-image prisonnier normal = "prisonnier.png"
-#image vm buchet_normaux = "vm_buchet_effrayes.png"
+image vm buchet_normaux = "vm_buchet_effrayes.png"
 #image vm buchet_craintifs = "vm_buchet_pleurent.png"
 
 ##Patrick
@@ -218,24 +217,6 @@ image bg cote1 = "cote1.jpg"
 image bg black = "#000"
 
 # Déclarez les personnages utilisés dans le jeu.
-
-<<<<<<< HEAD
-
-
-
-=======
-define gc = Character("Garde du Chateau")
-image garde_chateau  normal= ("garde_chateau.png")
->>>>>>> 3b50c9d73369433bbf9bb736789024b38ddd8231
-
-
-
-
-
-
-
-
-
 
 # Le jeu commence ici
 

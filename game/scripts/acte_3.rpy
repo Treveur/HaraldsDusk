@@ -221,7 +221,7 @@ label cours_chateau_1:
     p "Deus propitius tibi!"
 
     show patrick normal at left
-    show prisonnier normal at right with dissolve
+    show vm buchet_normaux at right with dissolve
 
     pe3 "Arrêtez ! Je suis enceinte !"
     p "Je n'ai que faire de tes mensonges, femme !"
@@ -248,7 +248,7 @@ label cours_chateau_1:
 
         "Ne rien dire":
             e "..."
-            
+
         "Brûlez-les":
             e "Vous avez raison, Excellence !"
             e "Brûlez-les !"
@@ -275,13 +275,13 @@ label cours_chateau_1:
         p "Et tu vois toi-même le sort réservé aux traîtres !"
 
     p "Amenez les torches, et que brûlent les hérétiques !"
-    
+
     pe1 "Pitié ! Epargnez ma femme !"
     pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
     pe2 "Laissez partir les autres ! Je suis responsable de tout !"
-    
+
     p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
-    
+
     "*Un homme apporte une torche. Un par un, il allume les bûchers."
     gv "Regardez-les s'agiter comme des vers, ha ha !"
     "*Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait.*"
@@ -321,7 +321,7 @@ label cours_chateau_1:
 
 #Sequence 4
 label cours_chateau_2:
-    
+
     "*Au crépuscule...*"
     gv "Sire ! Sire !"
     h "Qu'y a-t-il ? Parle !"
@@ -337,7 +337,7 @@ label interieur_grande_porte_chateau_1:
 
     "*Einar est posté à proximité du système d'ouverture des portes.*"
     gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
-    "*La horde progresse en courant à travers la plaine.*" 
+    "*La horde progresse en courant à travers la plaine.*"
     "*A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis.*"
 
     menu:
@@ -356,7 +356,7 @@ label interieur_grande_porte_chateau_1:
 
 #Baisser pont-levis
 label pont_levis_baisse:
-    
+
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
     "*Une volée de flèches abat une partie des rebelles qui foncent vers le château.*"
@@ -375,7 +375,7 @@ label pont_levis_baisse:
             e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur !"
         "Ne rien dire":
             e "..."
-            
+
     "*La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings.*"
     "*Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte.*"
     "*Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar.*"
@@ -399,7 +399,7 @@ label pont_levis_baisse:
                 e "Je n'ai pas réfléchi !"
             "Viens te battre":
                 e "Ferme la et bats-toi, raclure !"
-        
+
         o "Tout s'achève, ici et maintenant !"
         "Phase de combat, impossible à gagner WIP"
 
@@ -445,7 +445,7 @@ label e_bruler_donjon_desobeir_donjon:
     "*Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle.*"
 
     menu :
-        
+
         "Le tuer":
             e "Désolé, petit. Nous ne sommes plus dans le même camp."
             "*Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément.*"
@@ -462,7 +462,7 @@ label e_bruler_donjon_desobeir_donjon:
     gv "HAAAAAA !"
     "*Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles.*"
 
-    "*Harald arrive devant Einar, couvert du sang de ses victimes.*" 
+    "*Harald arrive devant Einar, couvert du sang de ses victimes.*"
     h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
@@ -471,11 +471,11 @@ label e_bruler_donjon_desobeir_donjon:
 
         "Demander pardon":
             e "Je regrette tout et vous demande pardon."
-            
+
         "Je ne vois aucun roi !":
             e "Je ne vois aucun souverain ici : il n'y a personne pour me libérer d'une allégeance quelconque !"
 
-    h "Garde ta langue de traître derrière tes dents !" 
+    h "Garde ta langue de traître derrière tes dents !"
 
     jump bad_ending_6
 
@@ -487,7 +487,7 @@ label e_bruler_donjon_obeir_donjon:
     "*Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries.*"
     "..."
     "*En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte.*"
-    "*Le roi est entrain de s'équiper de son armure.*" 
+    "*Le roi est entrain de s'équiper de son armure.*"
     "*Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé.*"
 
     menu:
