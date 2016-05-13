@@ -219,7 +219,9 @@ label intro:
         "Ne rien dire":
             e "..."
 
-    show einar debout_normal
+    hide einar debout_normal
+    hide logan fache
+    hide harald debout_normal
 
     jump plaine_1
 
