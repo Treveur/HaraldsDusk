@@ -227,7 +227,7 @@ label cours_chateau_1:
     p "Je n'ai que faire de tes mensonges, femme !"
     p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
-    hide prisonnier
+    hide vm
     show einar debout_normal at left with dissolve
     show patrick normal at right
 
