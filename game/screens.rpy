@@ -227,7 +227,8 @@ screen navigation:
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Main Menu") action MainMenu()
         textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit()
+        #Enlever confirm=False pour la build final
+        textbutton _("Quit") action Quit(confirm=False)
 
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
