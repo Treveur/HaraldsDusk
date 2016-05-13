@@ -326,8 +326,11 @@ label plaine_1 :
 #Sequence 3
 label plaine_2:
     hide logan fache
+
     hide einar debout_normal
     hide harald debout_normal
+    scene bg cote1 with dissolve
+
     "*Le lendemain...*"
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
