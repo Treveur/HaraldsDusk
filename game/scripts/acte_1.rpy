@@ -575,7 +575,6 @@ label e_massacre_village_1:
 
     vm "Sauvez les enfants ! Les enfants !"
 
-
     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 
 label e_demander_information_village_1:

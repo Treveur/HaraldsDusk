@@ -104,6 +104,10 @@ image prisonnier normal = "prisonnier.png"
 define pe2 = Character("Prissonier écossais 2")
 define pe3 = Character("Prissonière écossais 1")
 
+#Guerrier Viking
+define gv = Character('Guerriers Vikings', color="#e67e22")
+image guerrierv = "guerrier_viking.jpg"
+
 #Scene
 image bg forest = "foret_cabane.jpg"
 image bg forest_night = "forest_night.jpg"
@@ -130,7 +134,7 @@ image bg black = "#000"
 
 
 
-define gv = Character('Guerriers Vikings', color="#e67e22")
+
 define vm = Character('Villageois', color="#3498db")
 
 define gc = Character("Garde du Chateau")
