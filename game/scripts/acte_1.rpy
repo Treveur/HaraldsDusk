@@ -20,13 +20,13 @@ label intro:
     scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
-    show harald debout_normal at left with dissolve
+    show harald debout_normal at center with dissolve
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
 
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
     show logan debout_normal at right with dissolve
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis longtemps et le mène jusqu'au château de Dunbar."
-    show einar debout_normal at center with dissolve
+    show einar debout_normal at left with dissolve
     "Einar est l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
 
     menu:
@@ -323,14 +323,15 @@ label plaine_1 :
 
             h "Parfait. Je suis certain que Logan saura se montrer utile. Partez, et ne revenez qu'après avoir trouvé les rebelles !"
 
+    hide logan debout_normal
+    hide einar debout_normal
+    hide harald debout_normal
+
     jump plaine_2
 
 #Sequence 3
 label plaine_2:
-    hide logan debout_normal
 
-    hide einar debout_normal
-    hide harald debout_normal
     scene bg cote1 with dissolve
 
     "*Le lendemain...*"
@@ -393,6 +394,9 @@ label plaine_2:
             e "Toi aussi, tais-toi. Je veux que nous menions cette mission de la façon la plus exemplaire possible."
 
             l "Bien."
+
+    hide einar debout_normal
+    hide logan debout_normal
 
     jump foret_1
 
@@ -527,12 +531,15 @@ label foret_1:
 
                             e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
+    hide einar debout_normal
+    hide logan debout_normal
+
     jump village_1
 
 #Scequence 5
 #Scene 1
 label village_1:
-    hide einar debout_normal
+
     $ moira_met = False
 
     scene bg village with dissolve
