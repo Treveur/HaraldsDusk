@@ -552,19 +552,21 @@ label village_1:
 
     scene bg village with dissolve
     "*Peu après midi, la troupe parvient en vue d'un village...*"
-    show logan debout_normal at right with dissolve
+    show logan debout_normal at right zorder 5 with dissolve
     l "Nous y sommes. Perth."
 
     "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
-    show einar debout_normal at left with dissolve
+    show einar debout_normal at left zorder 5 with dissolve
     e "Ça me semble bien calme."
-
+    show guerrierv at center with dissolve
     gv "On dirait qu'il n'y a pas grand monde..."
 
     e "Si. Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard... Einar ?"
-
+    hide guerrierv with dissolve
+    show guerrierv at left zorder 1 with dissolve
+    show villageois at right zorder 1 with dissolve
     menu:
         "Massacrez-les !":
             jump e_massacre_village_1
