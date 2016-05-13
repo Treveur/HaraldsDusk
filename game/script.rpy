@@ -99,6 +99,8 @@ define p = Character("Patrick")
 image patrick normal = "cure.png"
 
 #Villageois
+define vm = Character('Villageois', color="#3498db")
+image villageois = "villageois.png"
 define pe1 = Character("Prissonier écossais 1")
 image prisonnier normal = "prisonnier.png"
 define pe2 = Character("Prissonier écossais 2")
@@ -131,11 +133,6 @@ image bg cote1 = "cote1.jpg"
 image bg black = "#000"
 
 # Déclarez les personnages utilisés dans le jeu.
-
-
-
-
-define vm = Character('Villageois', color="#3498db")
 
 define gc = Character("Garde du Chateau")
 image garde_chateau  normal= ("garde_chateau.png")
