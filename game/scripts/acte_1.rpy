@@ -20,13 +20,13 @@ label intro:
     scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
-    show harald normal at left with dissolve
+    show harald debout_normal at left with dissolve
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
 
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
     show logan fache at right with dissolve
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis longtemps et le mène jusqu'au château de Dunbar."
-    show einar serious at center with dissolve
+    show einar debout_normal at center with dissolve
     "Einar est l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
 
     menu:
@@ -35,8 +35,8 @@ label intro:
 
             e "Mon Roi, sommes-nous proches ?"
 
-            show einar serious at left
-            show harald normal at right
+            show einar debout_normal at left
+            show harald debout_normal at right
 
             h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
 
@@ -125,7 +125,7 @@ label intro:
         "Parler à Logan":
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
-            show einar serious at left
+            show einar debout_normal at left
             show logan fache at right
 
             l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
@@ -219,7 +219,7 @@ label intro:
         "Ne rien dire":
             e "..."
 
-    show einar serious
+    show einar debout_normal
 
     jump plaine_1
 
@@ -229,12 +229,12 @@ label plaine_1 :
     scene bg mer with dissolve
 
     "*Une heure plus tard.*"
-    hide logan fache
-    show harald normal at right with dissolve
+
+    show harald debout_normal at right with dissolve
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend."
 
-    show einar serious at left with dissolve
+    show einar debout_normal at left with dissolve
 
     e "Dois-je envoyer un émissaire annoncer notre arrivée ?"
 
@@ -326,8 +326,9 @@ label plaine_1 :
 #Sequence 3
 label plaine_2:
     hide logan fache
-    hide einar serious
-    hide harald normal
+
+    hide einar debout_normal
+    hide harald debout_normal
     scene bg cote1 with dissolve
 
     "*Le lendemain...*"
@@ -335,7 +336,7 @@ label plaine_2:
     gv "Cette mission n'a rien de terrible... Je suis déçu."
     gv "Nous aurions dû rester plus longtemps à Stirling. Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
 
-    show einar serious at left with dissolve
+    show einar debout_normal at left with dissolve
 
     menu:
         "Mettre en garde" :
@@ -400,7 +401,7 @@ label foret_1:
 
     "*Un jour plus tard...*"
 
-    show einar serious at left with dissolve
+    show einar debout_normal at left with dissolve
 
     e "Une forêt. Encore..."
 
@@ -529,7 +530,7 @@ label foret_1:
 #Scequence 5
 #Scene 1
 label village_1:
-    hide einar serious
+    hide einar debout_normal
     $ moira_met = False
 
     scene bg village with dissolve
@@ -538,7 +539,7 @@ label village_1:
     l "Nous y sommes. Perth."
 
     "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
-    show einar serious at left with dissolve
+    show einar debout_normal at left with dissolve
     e "Ça me semble bien calme."
 
     gv "On dirait qu'il n'y a pas grand monde..."
@@ -550,7 +551,7 @@ label village_1:
     menu:
         "Massacrez-les !":
             jump e_massacre_village_1
-        "Demander des infomation sur les rebelles":
+        "Demander des infomations sur les rebelles":
             jump e_demander_information_village_1
         "Fouillez le village!":
             jump e_fouiller_village_1
@@ -620,7 +621,7 @@ label e_fouiller_village_1(einarFouille = False):
 
     scene bg house
     show moira at center
-    show einar serious at left with dissolve
+    show einar debout_normal at left with dissolve
     menu menu_maison_1:
         "Qui es-tu ?":
             jump e_nom_villageoise_maison_1
