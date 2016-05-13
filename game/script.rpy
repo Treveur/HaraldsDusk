@@ -89,7 +89,7 @@ define gv = Character('Guerriers Vikings', color="#e67e22")
 define gc = Character("Garde du Chateau")
 define jgv = Character("Jeune Guerrier Viking")
 
-image guerrierv = "guerrier_viking.jpg"
+image guerrierv = "guerrier_viking.png"
 
 #Debout
 #image gv debout_normaux = "gv_debout_nomaux.png"
