@@ -4,7 +4,7 @@
 label cote_2:
     scene bg mer with dissolve
 
-    show einar serious at center with dissolve
+    show einar debout_normal at center with dissolve
 
     e "Dunbar. Déjà..."
     e "..."
@@ -16,7 +16,7 @@ label exterieur_chateau_1:
 
     scene bg pont_levis with dissolve
 
-    show einar serious with moveinleft
+    show einar debout_normal with moveinleft
     show garde_chateau normal at right with dissolve
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
@@ -27,16 +27,16 @@ label exterieur_chateau_1:
     gc "Qu'est-il arrivé aux autres ?"
 
     menu :
-        
+
         "Pousse-toi":
             e "Écarte-toi, Geir! Je dois parler au roi sans tarder !"
             gc "Bien sûr, excuse-moi."
-            
+
         "Explications vagues":
             e "Il m'est arrivé toutes sorte de chose que je n'ai ni le temps ni l'envie de te raconter. Les autres sont tous morts et j'ai bien failli y passer aussi."
             e "Maintenant, laisse-moi passer."
             gc "Bien sûr, excuse-moi."
-            
+
         "Menacer":
             e "Laisse-moi passer, andouille. On ne barre pas la route à un huscarl ! Je dois voir le roi au plus vite !"
             gc "Bien sûr, excuse-moi."
@@ -56,15 +56,15 @@ label cours_chateau_1:
     $ mentir_harald_1 = False
     $ interpose_bucher = False
 
-    show einar serious at center with dissolve
+    show einar debout_normal at center with dissolve
 
     "*Harald est en grande discussion avec un huscarl au milieu de la cour*"
     e "Sire ! Sire !"
     h "... dois nous faire venir de nouveaux navires de guerre, et..."
     h "Einar ? Que... D'où viens-tu ? Où as-tu passé tout ce temps ? Où sont tes compagnons ? J'ai beaucoup de questions à te poser !"
 
-    show einar serious at left
-    show harald normal at right
+    show einar debout_normal at left
+    show harald debout_normal at right
 
     menu:
 
@@ -164,7 +164,7 @@ label cours_chateau_1:
 
     menu :
         e "(C'est maintenant ou jamais...)"
-        
+
         "Dire toute la vérité":
             e "Très bien. Voici la vérité."
             e "Après avoir traversé le village de Perth, nous sommes tombés dans une embuscade des rebelles. Ils avaient probablement été prévenus de notre arrivée."
@@ -182,13 +182,13 @@ label cours_chateau_1:
             h "Ils comptent lancer une attaque ? Quand !?"
             e "Hélas, je n'en sais rien, sire. Mais je présage que cet assaut aura lieu très prochainement."
             e "Quoi qu'il en soit, je n'ai jamais cessé de vous être fidèle. Tout ce que j'ai fait, c'était dans votre intérêt. J'ai patiemment attendu le moment où je pourrais vous révéler leurs intentions. Et voilà."
-            
 
-            
+
+
         "Je vous suis fidèle (mentir)":
             e "Nul ne vous est plus fidèle que moi !"
             $ mentir_harald_1 = True
-            
+
         "J'ai rusé dans votre intérêt (mentir)":
             e "J'ai rusé de toutes les manières possibles uniquement dans le but de revenir à votre service."
             $ mentir_harald_1 = True
@@ -198,7 +198,7 @@ label cours_chateau_1:
         h "Grâce à toi, nous allons profiter de toutes les informations que tu as pu glâner pendant ce mois dans les Highlands."
         h "Mais pour le moment tu devrais rejoindre les autres soldats. Ils seront heureux de retrouver l'un des leurs."
         e "Bien mon Roi."
-        
+
     else:
         h "Ces salopards comptent attaquer prochainement ? Il faut impérativement préparer nos défenses !"
         e "Le château n'est pas suffisant ?"
@@ -230,7 +230,7 @@ label cours_chateau_1:
     p "Tout ce que tu veux, c'est m'amener vers le diable"
 
     hide prisonnier
-    show einar normal at left with dissolve
+    show einar debout_normal at left with dissolve
     show patrick normal at right
 
     menu:
