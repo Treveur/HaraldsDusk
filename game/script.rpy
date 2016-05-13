@@ -5,9 +5,9 @@
 #Image représentant les personnages
 #Einar
 define e = Character('Einar', color="#e74c3c")
-image einar serious = "einar_1.png"
+
 #Debout
-#image einar debout_normal = "einar_debout_nomal.png"
+image einar debout_normal = "einar_debout_nomal.png"
 #image einar debout_souriant = "einar_debout_souriant.png"
 #image einar debout_furieux = "einar_debout_furieux.png"
 #image einar debout_attriste = "einar_debout_attriste.png"
@@ -52,8 +52,7 @@ image logan fache = "logan.png"
 
 #Harald
 define h = Character('Harald', color="#3498db")
-image harald normal = "harald_min.png"
-#image harald debout_normal = "harald_debout_nomal.png"
+image harald debout_normal = "harald_debout_nomal.png"
 #image harald debout_furieux = "harald_debout_furieux.png"
 #image harald debout_blesse = "harald_debout_blesse.png"
 #image harald debout_contratrie = "harald_debout_contratrie.png"
@@ -79,7 +78,21 @@ image ogma normal = "ogma.png"
 
 #Moira
 define m = Character("Moira", color = "#f00")
-image moira normal = "moira.png"
+
+#Debout
+image moira debout_normal = "moira_debout_nomal.png"
+#image moira debout_souriant = "moira_debout_souriant.png"
+#image moira debout_furieux = "moira_debout_furieux.png"
+#image moira debout_attriste = "moira_debout_attriste.png"
+#image moira debout_blesse = "moira_debout_blesse.png"
+#image moira debout_contratrie = "moira_debout_contratrie.png"
+#image moira debout_effraye = "moira_debout_effraye.png"
+#image moira debout_determine = "moira_debout_determine.png"
+
+#nude
+#image moira nue_normal = "moira_nue_nomal.png"
+#image moira nue_souriant = "moira_nue_souriant.png"
+#image moira nue_effraye = "moira_nue_effraye.png"
 
 #Patrick
 define p = Character("Patrick")

@@ -580,9 +580,9 @@ label paradis_foret_1:
             e "C'est un très bel endroit. Est-ce que..."
 
 
-        "*Moira pousse doucement Einar contre un arbre.*"
-        "*Elle recule de quelques pas, puis se retourne.*"
-        "*Elle se dénude lentement devant Einar, sans le regarder.*"
+    "*Moira pousse doucement Einar contre un arbre.*"
+    "*Elle recule de quelques pas, puis se retourne.*"
+    "*Elle se dénude lentement devant Einar, sans le regarder.*"
 
     menu :
 
@@ -654,8 +654,8 @@ label village_4:
 #Sequence 10
 label sentier_foret_1:
     scene bg sentier_jour with dissolve
-    "..."
-    "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
+    e "..."
+    e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
     menu :
         "Fidélité à Harald":
@@ -687,7 +687,7 @@ label foret_5:
 label cote_1:
     scene bg cote1 with dissolve
 
-    "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
+    e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
     menu :
 
