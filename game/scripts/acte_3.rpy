@@ -375,26 +375,23 @@ label pont_levis_baisse:
             e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur !"
         "Ne rien dire":
             e "..."
-
+            
+    "*La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings.*"
+    "*Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte.*"
     "*Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar.*"
     ge "HAAAAA !"
     gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
-    
-
-    "*La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings.*"
-    "*Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte.*"
 
     if moira_dead:
 
         "Ogma surgit au milieu de la mêlée, franchissant la Grande Porte. Il se rue sur Einar, un regard fou dans les yeux et la bave aux lèvres. Il hurle le nom de sa fille."
 
-        o "MOIRAAAAAAAAAAAAAAA"
+        o "MOIRAAAAAAAA !"
+        o "POURQUOI L'AVOIR TUÉE ?"
 
         menu:
 
-            "Je dois essayer de le raisonner"
-
-            "Tuer le père":
+            "J'avais juste envie":
                 e "L'envie de voir de près un salopard d'écossais déborder de rage !"
             "Votre fille m'insuportait":
                 e "J'aimais votre cause, pas votre fille !"
@@ -402,7 +399,8 @@ label pont_levis_baisse:
                 e "Je n'ai pas réfléchi !"
             "Viens te battre":
                 e "Ferme la et bats-toi, raclure !"
-
+        
+        o "Tout s'achève, ici et maintenant !"
         "Phase de combat, impossible à gagner WIP"
 
         jump bad_ending_4
@@ -411,69 +409,73 @@ label pont_levis_baisse:
 
         $ loose_battle = False
 
-        "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls. Ils le défient et l'insultent."
+        "*Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls.*"
+        gv "Tu as trahi tes frères pour ça ? Pour rejoindre des paysans ?"
+        gv "Ha, il a du tomber sur un beau garçon de ferme !"
+        gv "Défend-toi, traître !"
 
-        "Einar se retrouve pris entre les deux forces et est contraint d'affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
+        "Affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
 
         if loose_battle:
 
             jump bad_ending_5
 
         else:
-            "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
-            "Il lui demande de brûler le donjon en urgence : si Harald n'est pas encore entrain de se battre, c'est qu'il n'a surement pas fini de s'équiper : il est possible de le piéger !"
+            "*Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl.*"
+            o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
+            e "Le donjon ? Pourquoi ?"
+            o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
+            o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
+
 
             "Ogma réclame que l'on brûle le donjon en urgence."
 
             menu :
-                "Que faire ?"
 
-                "Tu ne me donnes pas d'ordres":
+                "Ne me donne pas d'ordres":
                     e "Je n'ai pas d'ordres à recevoir !"
                     jump e_bruler_donjon_desobeir_donjon
 
-                "Choice 2":
+                "J'y vais !":
                     e "J'y vais!"
                     jump e_bruler_donjon_obeir_donjon
 
 label e_bruler_donjon_desobeir_donjon:
 
-    "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
+    "*Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle.*"
 
     menu :
-        "Que faire ?"
-
+        
         "Le tuer":
-            e "Désolé petit"
-            "Tuer le jeune soldat"
+            e "Désolé, petit. Nous ne sommes plus dans le même camp."
+            "*Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément.*"
 
         "L'assommer":
-            e "Tu auras peut être la chance de survivre"
-            "L'assommer d'un bon coup de poing"
+            e "Je t'offre l'occasion de refaire ta vie, saisi-la."
+            "*Du plat de sa hache, Einar frappe le soldat à la tempe. Iol s'écroule à terre, inconscient*"
 
         "L'ignorer":
-            e "(Je n'ai pas le temps de m'occuper de lui)"
+            e "(Je n'ai pas le temps de m'occuper de lui.)"
 
-    "Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte."
-    "Il se jette dans les combats et taille un chemin sanglant jusqu'à la porte. La présence de Harald semble redonner courage aux vikings, qui balaient les rebelles."
+    "*Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte.*"
+    h "A moi, huscarls ! Suivez votre roi !"
+    gv "HAAAAAA !"
+    "*Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles.*"
 
-    "Harald arrive devant Einar, couvert du sang de ses victimes. Il lui explique qu'il le libère de son allégeance, car il n'a plus besoin de ses services."
+    "*Harald arrive devant Einar, couvert du sang de ses victimes.*" 
+    h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
-        "Que répondre ?"
-
         "Ne rien regretter":
             e "Je ne regrette rien."
-            h "Crève"
 
         "Demander pardon":
             e "Je regrette tout et vous demande pardon."
-            h "Non"
-        "Aucun roi présent":
+            
+        "Je ne vois aucun roi !":
             e "Je ne vois aucun souverain ici : il n'y a personne pour me libérer d'une allégeance quelconque !"
-            h "C'est comme ça que tu me remercie ?"
 
-    "Garde ta langue de traître derrière tes dents ! Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de parler."
+    h "Garde ta langue de traître derrière tes dents !" 
 
     jump bad_ending_6
 
