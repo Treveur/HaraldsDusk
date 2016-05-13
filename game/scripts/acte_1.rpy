@@ -229,7 +229,7 @@ label plaine_1 :
     scene bg mer with dissolve
 
     "*Une heure plus tard.*"
-
+    hide logan fache
     show harald normal at right with dissolve
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend."
