@@ -229,7 +229,7 @@ label plaine_1 :
 
     menu menu_harald_eclaireur_foret_1:
         
-            "J'accepte":
+        "J'accepte":
 
             e "Bien, sire. Où les éclaireurs ont-ils repéré ces mouvements ?"
             
