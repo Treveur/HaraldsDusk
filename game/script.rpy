@@ -86,7 +86,7 @@ image harald debout_normal = "harald_debout_nomal.png"
 
 ##Garde / Guerriers Vikings / Jeune Guerrier Viking
 define gv = Character('Guerriers Vikings', color="#e67e22")
-define gc = Character("Garde du Chateau")
+define gc = Character("Garde du Château")
 define jgv = Character("Jeune Guerrier Viking")
 
 image guerrierv = "guerrier_viking.png"
@@ -171,9 +171,9 @@ define vm = Character('Villageois', color="#3498db")
 
 image villageois = "villageois.png"
 
-define pe1 = Character("Prissonier écossais 1")
-define pe2 = Character("Prissonier écossais 2")
-define pe3 = Character("Prissonière écossais 1")
+define pe1 = Character("Prisonnier écossais 1")
+define pe2 = Character("Prisonnier écossais 2")
+define pe3 = Character("Prisonnière écossaise 1")
 
 #Debout
 #image vm debout_normaux = "ve_debout_nomaux.png"

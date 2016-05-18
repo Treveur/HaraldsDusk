@@ -410,7 +410,7 @@ label pont_levis_baisse:
         $ loose_battle = False
 
         "*Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls.*"
-        gv "Tu as trahi tes frères pour ça ? Pour rejoindre des paysans ?"
+        gv "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
         gv "Ha, il a du tomber sur un beau garçon de ferme !"
         gv "Défend-toi, traître !"
 
@@ -470,10 +470,11 @@ label e_bruler_donjon_desobeir_donjon:
             e "Je ne regrette rien."
 
         "Demander pardon":
-            e "Je regrette tout et vous demande pardon."
+            e "Je regrette tout et vous demande pardon, Sire."
 
         "Je ne vois aucun roi !":
-            e "Je ne vois aucun souverain ici : il n'y a personne pour me libérer d'une allégeance quelconque !"
+            e "Je ne vois aucun souverain ici..."
+            e "Il n'y a personne pour me libérer d'une allégeance quelconque !"
 
     h "Garde ta langue de traître derrière tes dents !"
 
@@ -598,7 +599,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
             "Le livrer à Ogma":
                 "..."
-                "*Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald et à genoux devant lui.*"
+                "*Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui.*"
                 o "Voyez ! La liberté a vaincu le tyran !"
                 o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
                 o "Le règne du roi-empereur est terminé !"
@@ -609,7 +610,6 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 jump good_ending_11
 
     else:
-        "Dans la cour, Ogma félicite Einar pour avoir triomphé de Harald. Einar est le libérateur des écossais."
         o "Félicitations, Einar !"
         ge "HOURRAAA !"
         o "Tu as libéré l'Ecosse ! Tu as libéré le reste du monde !"
@@ -638,11 +638,28 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             h "Sans moi, sans l'empire, ils sont voués à rester à l'état de petits clans épars, rongé par leurs petites guerres ridicules !"
             e "Le choix ne vous appartient plus, désormais."
         "Las des promesses":
-            "J'étais las de vos promesses de terres et d'or qui ne se réalisaient jamais"
+            e "J'étais las de vos promesses de terres et d'or qui ne se concrétisaient jamais, alors j'ai changé de camp."
+            h "C'est l'appât du gain qui te fait te rebeller contre moi ? Tu es prêt à condamner tout l'empire par caprice ?"
+            h "Tu es complètement fou !"
+            e "Peut-être."
         "Vous êtes un monstre":
-            "J'ai rencontré une jeune femme et son père, qui ont su me convaincre que vous êtes un monstre."
+            e "J'ai rencontré une jeune femme et son père, qui m'ont convaincu que vous êtes un monstre."
+            e "Le monde ne devrait jamais être entre les mains d'un seul homme."
+            e "Vous n'avez fait qu'enchaîner massacres sur prises de pouvoir, vous avez privé le monde de son libre arbitre."
+            h "Je suis l'élu divin ! Dieu a fait de moi son émissaire ! Je rassemble tous les peuples sous Sa bannière !"
+            e "Je ne sais pas si vous y croyez vous-même."
+            h "Je suis le porteur de la Hache ! J'ai été guidé par le Seigneur jusqu'aux Clous de la Sainte-Croix !"
         "Provoquer":
-            "Simplement l'envie de mettre un coup de pied dans la fourmilière."
+            e "L'ordre des choses m'ennuyait..."
+            e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."
+            h "Tu es complètement fou !"
+            e "Probable."
+    
+    h "Tu me déçois, Einar. D'entre tous mes huscarls, il a fallu que ce soit toi qui me trahisse."
+    h "Tu crois être unique ? D'autres prendront ta place." 
+    h "Mon règne se poursuivra longtemps après ta mort."
+    "Harald brandit la Hache"
+    h "Es-tu conscient de ta totale impuissance ?"
 
     "Harald est déçu. Il brandit la Hache et demande à Einar s'il est conscient qu'il va mourir sans rien pouvoir y faire."
 
@@ -650,22 +667,24 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
         "Que répondre ?"
 
         "J'ai mon amulette protectrice":
-            e "C'est l'occasion de voir si ce vieux grigri fonctionne vraiment."
-            e "Même à l'article de la mort, tu continues à être insolent."
+            e "C'est l'occasion de voir si ce vieux grigri fonctionne vraiment..."
+            e "Voyez, Sire ! C'est un crucifix sculpté une nuit de pleine lune à l'équinoxe de printemps !"
+            h "Même à l'article de la mort, tu ne cesses pas d'être insolent..."
+            h "Ce sera ton dernier blasphème, traître."
 
-        "C'est mon choix":
-            e "Peu importe : j'ai fait ce que je devais faire"
-            e "Au moins, Einar aura suivi ses convictions. Quitte à trahir les siens et tuer ses frères."
+        "Peu importe, je suis satisfait":
+            e "Peu importe. J'ai fait ce que je devais faire."
+            h "Au moins, tu auras suivi tes convictions..."
+            h "Quitte à trahir ton roi et à provoquer la mort de tous ceux qui te comptaient comme un ami !"
 
         "Demander pardon":
-            e "Et si j'implore votre pardon ?"
-            e "C'est une blague ?"
+            e "Et si j'implore votre pardon, Sire ?"
 
         "Vous avez déjà perdu":
             e "Me tuer ne changera rien au fait que vous avez perdu cette bataille."
-            h "Harald rassure Einar : ce petite soulèvement écossais n'écornera pas sa toute-puissance"
-
-    "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol. Il quitte la pièce en marchant."
+            e "Le château n'est plus sous votre contrôle et vous n'avez plus d'hommes ici. Vous allez quitter l'Ecosse !"
+            h "Rassure-toi, ce petit soulèvement paysan n'écornera pas ma toute-puissance."
+            h "L'Histoire ne se souviendra même pas de cet incident !"
 
     jump bad_ending_16
 
@@ -673,21 +692,35 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
 
     $ epargner_harld__no_axe_donjon = False
 
-    "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage. Harald est au sol. Il reconnaît la supériorité d'Einar et implore sa pitié."
+    "*Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage.*"
+    h "Hggghh..."
+    h "Je suis vaincu. Tu as gagné."
+    h "... Laisse-moi vivre, s'il-te-plaît."
 
 
     menu :
         "Que dire à Harald ?"
 
-        "Fin du règne":
+        "Fin du règne (le tuer)":
             e "Votre règne s'achève ici et maintenant. Vous allez mourir."
-        "Pas de répit":
+            h "Je m'avoue vaincu ! Ne me tue pas !"
+            e "Pardon ?"
+            h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
+        "Pas de répit (le tuer)":
             e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+            h "Tu es fou !"
         "Épargner":
             e "Vous avez déjà perdu. Je vais vous épargner."
-            $ epargner_harld__no_axe_donjon = True
-        "Je te suis supérieur":
+            h "Merci ! J'ai toujours su que tu étais un homme bon !"
+            e "Ne vous réjouissez pas trop vite."
+            h "Que vas-tu faire de moi?"
+            $ epargner_harld_donjon = True
+        "Je vous suis supérieur":
             e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+            h "Alors tu t'es donné tout ce mal uniquement pour m'humilier ?"
+            h "Que t'ai-je fait ?"
+            e "Ce n'est pas le moment de discuter."
+            h "Que vas-tu faire de moi?"
             $ epargner_harld__no_axe_donjon = True
 
 
@@ -700,20 +733,21 @@ label e_epargne_harald_no_axe_donjon:
 
     $ harald_echape_no_axe = True
 
-    h "Tu comptes me laisser en vie ? Mais pourquoi ?"
+    h "Tu comptes me laisser en vie ? Que vas-tu faire de moi ?"
 
     menu:
-        "Que répondre"
 
-        "Choice 1":
-            e "Vous pouvez fuir, seul. Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera. Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
-        "Choice 2":
+        "Pas envie de tuer un roi (Laisser fuir)":
+            e "Vous pouvez fuir, seul." 
+            e "Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera."
+            e "Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
+        "Partez maintenant (Laisser fuir)":
             e "Fuyez, avant que je ne change d'avis. Ne me demandez pas d'explications."
-        "Livrer au Hurleur":
-            e "Je vais vous livrer au Hurleur. Il saura quoi faire de vous. Tout ceci n'est plus de mon ressort."
+        "Livrer à Ogma":
+            e "Je vais vous livrer au Hurleur, il saura quoi faire de vous. Tout ceci n'est plus de mon ressort."
             $ harald_echape_no_axe = False
-        "Faire peur":
-            e "Je connais quelques personnes qui voudraient vous rencontrer."
+        "Des gens veulent vous rencontrer":
+            e "Je connais quelques personnes qui voudraient vous rencontrer..."
             $ harald_echape_no_axe = False
 
     if harald_echape_no_axe:
@@ -729,8 +763,15 @@ label e_epargne_harald_no_axe_donjon:
         jump village_5
     else:
         "Un peu plus tard"
-        "Ogma est sur les remparts, au dessus de la mer. Harald est à genoux devant lui."
-        "Sous les yeux des rebelles et des survivants vikings, Il tranche la gorge du roi et propulse son cadavre dans la mer. Derrière, le château brûle."
+        "..."
+        "*Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui.*"
+        o "Voyez ! La liberté a vaincu le tyran !"
+        o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
+        o "Le règne du roi-empereur est terminé !"
+        "*Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang.*"
+        o "VOUS ÊTES LIBRES !"
+        "*Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer.*"
+        "*Dans la lumière du crépuscule, Dunbar continue de brûler.*"
         jump village_6
 
 label village_5:
