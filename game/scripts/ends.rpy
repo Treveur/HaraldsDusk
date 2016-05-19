@@ -12,26 +12,37 @@ label bad_ending_2:
     jump credits
 
 label bad_ending_3:
-    "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
-    " Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers. Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
+    "*Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos.*"
+    "*Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers.*"
+    "*Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts.*"
     jump credits
 
 label bad_ending_4:
-    "A l'instant où Ogma franchit la porte, il se rue sur Einar. La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place."
+    "*La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place.*"
+    "*Alors que les rebelles continuent d'affluer dans l'enceinte, Ogma tombe à genoux devant le cadavre d'Einar.*"
+    o "Grrr..."
+    "*Il tire une dague et commence à poignarder et mutiler sans relâche les restes du viking...*"
     jump credits
 
 label bad_ending_5:
-    "Einar est massacré alors que les huscarls le transforment en une pulpe sanglante sous une pluie de coups."
+    "*Les forces coordonnées des huscarls surpassent le talent d'Einar, qui est jeté au sol.*"
+    "*Les huscarls le transforment en une pulpe sanglante sous une pluie de coups furieux.*"
     jump credits
 
 label bad_ending_6:
-    "*Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de parler.*"
+    "*Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de répliquer.*"
     h "Et maintenant, au tour des écossais..."
     jump credits
 
 label good_ending_7:
-    "Ogma souligne la droiture et l'humilité d'Einar. Le chef rebelle annonce qu'il compte la faire fondre en une claymore pour sa famille, le clan Wallace."
-    "Ogma annonce qu'il souhaite faire fondre la hache en une nouvelle épée, une claymore, qu'il déclare destinée à sa famille : le clan Wallace. Cette épée symbolise la destruction de l'oppression et l'émergence de la Liberté."
+    e "Voici la Hache."
+    o "Merci beaucoup. Combien auraient cédé à l'appel du pouvoir ?"
+    o "Peu d'hommes auraient eu ta droiture et ton humilité !"
+    e "Vous allez détruire la Hache ?"
+    o "Oui. Je la ferai fondre en une arme nouvelle, une claymore."
+    o "Elle sera destinée à ma famille, le clan Wallace. Elle symbolisera la fin de l'oppression et l'émergence de la Liberté !"
+    ge "HOURRAAA !"
+    
     jump credits
 
 label good_ending_8:
@@ -49,10 +60,24 @@ label normal_ending_10:
 
 label good_ending_11:
     "Revenus au village, Ogma félicite Einar et annonce publiquement qu'il lui donne la main de sa fille."
+    o "Aujourd'hui et au nom du peuple d'Ecosse, je te remercie, Einar !"
+    o "Nous te sommes tous redevables !"
+    ge "HOURRAAA !"
+    o "Tu as agit pour le bien du plus grand nombre, ne l'oublie jamais."
+    o "Comme promis, tu es désormais libre d'aller où bon te semble. Un cheval harnaché avec des fontes remplies d'or t'attends."
+    e "Merci."
+    o "Nous avons organisé un grand repas pour fêter la victoire, nous aimerions que tu te joignes à nous."
+    e "Je ne suis pas sûr..."
+    o "A vrai dire, il y a quelqu'un en particulier qui tient énormément à ta présence."
+    e "Ah ?"
+    o "Je sais que Moira et toi êtes devenus très proches..."
+    o "Aussi, j'ai décidé de t'offrir la main de ma fille !"
     jump credits
 
 label bad_ending_12:
-    "Einar meurt étranglé par son roi, ses vertèbres craquant sous l'étreinte du monarque."
+    "*Les deux vikings rendent coup pour coup.*"
+    "*Mais le roi projette Einar contre le mur avant de se ruer sur lui.*"
+    "*Einar meurt étranglé par son roi, les vertèbres craquant sous l'étreinte du monarque.*"
     jump credits
 
 label good_ending_13:
@@ -68,13 +93,14 @@ label good_ending_14(rejete = True):
 
 label good_ending_15(marier = True):
     if marier:
-        "Moira se jette dans les bras d'Einar et l'embrasse."
+        "*Moira se jette dans les bras d'Einar et l'embrasse.*"
     else:
         "Einar décide continuer sa vie seul"
     jump credits
 
 label bad_ending_16:
-    "Dans le donjon, Einar tombe nez-à-nez avec Harald. Le roi est en position de force : il brandit sa hache sainte. D'un moulinet il désarme Einar avant de le fendre en deux sans effort."
+    "*Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol.*" 
+    "*Le roi quitte la pièce en marchant.*"
     jump credits
 
 label bad_ending_17:
