@@ -76,8 +76,8 @@ label intro:
 
                     h "Ha ha ! Ne sois pas si hatif, il ne s'agit pas de tuer tout ce qui bouge. Pas pour le moment ! "
 
-                    e "Sauf votre respect, Sire, votre Hache nous a privé de nombreuses batailles. D'habitude, vos ennemis se rendent dès qu'ils la voient !" 
-                    
+                    e "Sauf votre respect, Sire, votre Hache nous a privé de nombreuses batailles. D'habitude, vos ennemis se rendent dès qu'ils la voient !"
+
                     e "Un soulèvement paysan, c'est une chance inespérée !"
 
                     h "Ton enthousiasme fait plaisir à voir !"
@@ -91,7 +91,7 @@ label intro:
                     e "Sire, votre présence ici m'intrigue... Pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
 
                     h "Je suis l'élu divin, je porte une relique du Christ !"
-                    
+
                     h "La Hache me rend immortel. Une flèche me ferait rire, rien de plus."
 
                     h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
@@ -173,11 +173,11 @@ label intro:
                     e "Le roi me paraît bien confiant."
 
                     l "Il a toutes les raisons de l'être !"
-                    
+
                     l "Il est le plus grand souverain que le monde connaisse. Il porte une hache incrustée des Clous de la Sainte Croix."
 
                     l "Il est immortel, invincible, et une armée de vétérans marche avec lui."
-                    
+
                     l "S'il y a bien une personne sur cette terre qui peut avoir confiance en lui-même, c'est notre roi !"
 
                     $ confiance_choice = False
@@ -189,7 +189,7 @@ label intro:
 
         "Ne rien dire":
             e "..."
-    
+
     gv "Sire ! Un rapport des éclaireurs !"
     h "Donne-moi ça..."
     "*Harald lit rapidement le rapport.*"
@@ -220,19 +220,19 @@ label plaine_1 :
     e "Autre chose ?"
 
     h "Nos éclaireurs ont repéré des mouvements au nord."
-    
+
     e "Les rebelles ?"
-    
+
     h "Je ne suis sûr de rien. J'ai besoin d'envoyer un groupe de reconnaissance à l'avant de l'armée, afin de tirer cette affaire au clair."
 
     h "Je compte sur toi pour diriger la troupe. Les hommes t'écouteront et ton expérience du pistage vous facilitera la tâche."
 
     menu menu_harald_eclaireur_foret_1:
-        
+
         "J'accepte":
 
             e "Bien, sire. Où les éclaireurs ont-ils repéré ces mouvements ?"
-            
+
             h "Les rapports manquent de détails, mais Logan m'a parlé de plusieurs petits villages qui pourraient abriter la rébellion."
 
         "Pourquoi moi ?":
@@ -267,11 +267,11 @@ label plaine_1 :
             l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
 
             h "Ne vous inquiétez pas. Vous aurez tout les deux de quoi boire et manger une fois revenus !"
-            
-            h "Partez dès maintenant, il n'y a pas de temps à perdre. Vous atteindrez Stirling avant la nuit." 
-            
+
+            h "Partez dès maintenant, il n'y a pas de temps à perdre. Vous atteindrez Stirling avant la nuit."
+
             h "Vous atteindrez les villages signalés par les éclaireurs d'ici demain."
-            
+
 
         "Je regrette, mais non.":
 
@@ -281,8 +281,8 @@ label plaine_1 :
 
             h "J'ai personnellement demandé à Logan de t'accompagner. Il est le seul à connaître la région, et il facilitera les relations avec les écossais."
 
-            h "Partez dès maintenant, il n'y a pas de temps à perdre. Vous atteindrez Stirling avant la nuit." 
-            
+            h "Partez dès maintenant, il n'y a pas de temps à perdre. Vous atteindrez Stirling avant la nuit."
+
             h "Vous atteindrez les villages signalés par les éclaireurs d'ici demain."
 
     hide logan debout_normal
@@ -297,7 +297,7 @@ label plaine_2:
     scene bg cote1 with dissolve
 
     "*Le lendemain...*"
-    
+
     show guerrierv at center with dissolve
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
@@ -308,18 +308,18 @@ label plaine_2:
     menu:
         "Motiver les troupes" :
 
-            e "Et je suis convaincu que nous ne rencontrerons rien de plus excitant qu'une tavernière au milieu de toute cette foutue caillasse !" 
-            
+            e "Et je suis convaincu que nous ne rencontrerons rien de plus excitant qu'une tavernière au milieu de toute cette foutue caillasse !"
+
             e "Ha ! Se défouler sur des villageois, ce sera notre récompense !"
 
             e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
 
             gv "Ha ha ! Bien parlé !"
-            
+
         "Mettre en garde" :
 
-                e "Méfiez vous, le roi n'est pas avec nous." 
-                
+                e "Méfiez vous, le roi n'est pas avec nous."
+
                 e "Sans la Hache, nous sommes à la merci de n'importe quel piège. Restez aux aguets !"
 
                 e "Rien qu'en t'écoutant, je suis sûr que les rebelles connaissent déjà ton nom, celui de tes parents et la taille de ta queue, Alvin."
@@ -328,9 +328,9 @@ label plaine_2:
 
         "C'est une mission sans intérêt" :
 
-                e "Je suis bien d'accord..." 
+                e "Je suis bien d'accord..."
                 e "Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
-                
+
                 hide guerrierv with dissolve
 
                 show logan debout_normal at right with dissolve
@@ -338,7 +338,7 @@ label plaine_2:
                 l "Tu le prends comme une punition ?"
 
                 e "Oui ! J'estime qu'après tout ce temps à servir Harald, il aurait pu choisir quelqu'un d'autre pour accomplir ce genre de mission."
-                
+
                 e "Je n'en suis plus à mon coup d'essai, bordel !"
 
         "Chambrer Logan" :
@@ -390,8 +390,8 @@ label foret_1:
     menu:
         "Impatient de rentrer en Norvège":
 
-            e "Plus le temps passe, plus la Norvège me manque..." 
-            
+            e "Plus le temps passe, plus la Norvège me manque..."
+
             e "Je ne sais même plus depuis combien de temps je n'y ai pas foutu les pieds."
 
             gv "J'aimerais retrouver la Suède. Je n'ai aucunes nouvelles de ma famille depuis notre campagne d'Egypte."
@@ -409,7 +409,7 @@ label foret_1:
                 "J'ai hâte de recevoir les récompens qui m'ont été promises":
 
                     e "Ça fait des années que le roi me fait miroiter des récompenses sans jamais me les offrir..."
-                    
+
                     e "Depuis le temps qu'il me promet des terres, je devrais déjà vivre comme un prince !"
 
                     show logan debout_normal at right with dissolve
@@ -421,15 +421,15 @@ label foret_1:
                 "Assez de niaiseries pour aujourd'hui":
 
                     e "Taisez-vous maintenant. La route est encore longue et j'en ai déjà assez d'écouter vos histoires de bonnefemmes."
-                    
+
                     e "Logan ? Où en sommes-nous ?"
 
                     show logan debout_normal at right with dissolve
 
                     l "Nous atteindrons Perth demain matin. C'est le premier village sur notre chemin."
-                    
+
                     l "D'après les rapports, les rebelles sont venus de cette région."
-                    
+
                     l "C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
 
         "Se moquer des autochtones" :
@@ -442,8 +442,8 @@ label foret_1:
 
             show logan debout_normal at right with dissolve
 
-            l "Non. Nous vivons dans des maisons de pierre." 
-            
+            l "Non. Nous vivons dans des maisons de pierre."
+
             l "Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
 
             hide guerrierv with dissolve
@@ -451,9 +451,9 @@ label foret_1:
         "Impatient de terminer la mission" :
 
             e "Je commence à être lassé de cette saloperie de randonnée."
-            
-            e "Une journée à crapahuter sans voir âme qui vive... " 
-            
+
+            e "Une journée à crapahuter sans voir âme qui vive... "
+
             e "On trouve le village et on rentre au château. Et à bride abattue !"
 
         "Motiver les troupes" :
@@ -484,11 +484,11 @@ label foret_1:
                     e "Pourquoi avoir choisi de m'accompagner ? "
 
                     l "Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous."
-                    
+
                     l "Et ma présence facilitera les relations avec les autres écossais."
 
                     e "Ils ne risquent pas de mal le prendre, au contraire ?"
-                    
+
                     l "C'est une autre possibilité."
 
                 "Je suis content que tu sois là":
@@ -555,11 +555,8 @@ label village_1:
     hide guerrierv with dissolve
     show guerrierv at left zorder 1 with dissolve
     show villageois at right zorder 1 with dissolve
-    
+
     menu menu_fouille_village:
-        
-        "Massacrez-les !":
-            jump e_massacre_village_1
 
         "Demander des infomations sur les rebelles":
             jump e_demander_information_village_1
@@ -573,17 +570,17 @@ label village_1:
 label e_massacre_village_1:
 
     e "Massa..."
-    
+
     l "Einar, non ! Nous ne sommes sûrs de rien !"
-    
+
     l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
-    
+
     l "Nous risquons d'aggraver la situation en rasant Perth. Le roi sera furieux !"
-    
+
     l "Et je ne parle même pas des écossais ! Nous ne pourrions pas revenir au château sans nous faire égorger sur le chemin !"
-    
+
     menu:
-        
+
         "Massacrez-les quand même":
             jump e_massacre_village_2
         "Se raviser":
@@ -592,11 +589,11 @@ label e_massacre_village_1:
 label e_massacre_village_2:
 
     e "Je me fout de ton avis, Logan !"
-    
+
     e "Massacrez-moi tout ça ! Et brûlez leurs cabanes !"
-    
+
     gv "HAAAAA !"
-    
+
     vm "Sauvez les enfants ! Les enfants !"
 
     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
@@ -651,7 +648,7 @@ label e_fouiller_village_1(einarFouille = False):
         e "Je suis à peine surpris... J'arrive !"
 
     scene bg house
-    show moira at center
+    show moira debout_normal at center
     show einar debout_normal at left with dissolve
     menu menu_maison_1:
         "Qui es-tu ?":
