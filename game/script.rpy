@@ -167,7 +167,6 @@ define ge = Character('rebelles écossais', color="#f39c12")
 
 ##Villageois / prisonniers
 define vm = Character('Villageois', color="#3498db")
-define vm = Character('Villageois', color="#3498db")
 
 image villageois = "villageois.png"
 
@@ -209,7 +208,9 @@ image bg house2_night = "house2_night.jpg"
 image bg house2_aube = "house2_aube.jpg"
 image bg mer = "chateau_mer.jpg"
 image bg pont_levis = "pont_levis.jpg"
-image bg cours_chateau = "cours_chateau.png"
+image bg chateau_porte = "chateau_porte.jpg"
+image bg cour_chateau = "cour_chateau.png"
+image bg cour_chateau = "cour_chateau_crepu.png"
 image bg cote1 = "cote1.jpg"
 
 

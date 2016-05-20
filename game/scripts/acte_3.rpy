@@ -14,7 +14,7 @@ label cote_2:
 #Sequence 2
 label exterieur_chateau_1:
 
-    scene bg pont_levis with dissolve
+    scene bg chateau_porte with dissolve
 
     show einar debout_normal with moveinleft
     show garde_chateau normal at right with dissolve
@@ -44,27 +44,28 @@ label exterieur_chateau_1:
 
     hide garde_chateau with dissolve
 
-    jump cours_chateau_1
+    jump cour_chateau_1
 
 #Sequence 3
-label cours_chateau_1:
+label cour_chateau_1:
 
-    scene bg cours_chateau with dissolve
+    scene bg cour_chateau with dissolve
 
     $ retour_silence_1 = False
     $ soupcon_harald_1 = False
     $ mentir_harald_1 = False
     $ interpose_bucher = False
 
-    show einar debout_normal at center with dissolve
+    show einar debout_normal at left with dissolve
 
     "*Harald est en grande discussion avec un huscarl au milieu de la cour*"
     e "Sire ! Sire !"
-    h "... dois nous faire venir de nouveaux navires de guerre, et..."
+    h "... doit nous faire venir de nouveaux navires de guerre, et..."
+    show harald debout_normal at right
     h "Einar ? Que... D'où viens-tu ? Où as-tu passé tout ce temps ? Où sont tes compagnons ? J'ai beaucoup de questions à te poser !"
 
     show einar debout_normal at left
-    show harald debout_normal at right
+
 
     menu:
 
@@ -93,7 +94,7 @@ label cours_chateau_1:
             h "Un fossé ?"
             e "Oui, au détour d'un sentier en pleine forêt."
             h "Et tes blessures ? Comment les as-tu soignées ?"
-            jump menu_assome_cours_chateau
+            jump menu_assome_cour_chateau
 
         "Raconter l'embuscade":
         #modifaction pour indiquer le lieu par la suite
@@ -104,7 +105,7 @@ label cours_chateau_1:
             e "Ensuite, le meneur s'est approché de moi. Il a égorgé Logan sous mes yeux puis m'a assommé."
             h "Qui t'a soigné ? Tu devais être blessé... Je te connais, rien ne t'arrête jamais quand il s'agit de combattre !"
 
-            jump menu_embusscade_ou_silence_cours_chateau
+            jump menu_embusscade_ou_silence_cour_chateau
 
         "Ne rien dire":
             e "..."
@@ -113,10 +114,10 @@ label cours_chateau_1:
 
             $ retour_silence_1 = True
 
-            jump menu_embusscade_ou_silence_cours_chateau
+            jump menu_embusscade_ou_silence_cour_chateau
 
 
-    menu menu_assome_cours_chateau:
+    menu menu_assome_cour_chateau:
 
         "Je me suis débrouillé (mentir)":
             e "Je me suis remis, lentement mais sûrement, dans la nature."
@@ -134,7 +135,7 @@ label cours_chateau_1:
             e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
             h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
-    menu menu_embusscade_ou_silence_cours_chateau:
+    menu menu_embusscade_ou_silence_cour_chateau:
 
         "Village et Moira":
             e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
@@ -244,7 +245,7 @@ label cours_chateau_1:
 
             $ interpose_bucher = True
 
-            jump menu_sauver_rebelle_cours_chateau
+            jump menu_sauver_rebelle_cour_chateau
 
         "Ne rien dire":
             e "..."
@@ -256,7 +257,7 @@ label cours_chateau_1:
     if interpose_bucher:
 
 
-        menu menu_sauver_rebelle_cours_chateau:
+        menu menu_sauver_rebelle_cour_chateau:
             "Pas vus à Perth":
                 e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
                 e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
@@ -317,10 +318,11 @@ label cours_chateau_1:
     else:
         "*Le jeune soldat semble rassuré.*"
 
-    jump cours_chateau_2
+    jump cour_chateau_2
 
 #Sequence 4
-label cours_chateau_2:
+label cour_chateau_2:
+    show bg cour_chateau_crepu with dissolve
 
     "*Au crépuscule...*"
     gv "Sire ! Sire !"
@@ -334,6 +336,7 @@ label cours_chateau_2:
 
 #Sequence 5
 label interieur_grande_porte_chateau_1:
+
 
     "*Einar est posté à proximité du système d'ouverture des portes.*"
     gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
@@ -393,7 +396,7 @@ label pont_levis_baisse:
 
             "J'avais juste envie":
                 e "L'envie de voir de près un salopard d'écossais déborder de rage !"
-            "Votre fille m'insuportait":
+            "Votre fille m'insupportait":
                 e "J'aimais votre cause, pas votre fille !"
             "C'est parti tout seul":
                 e "Je n'ai pas réfléchi !"

@@ -6,7 +6,9 @@ label interieur_maison_village_1:
     $ critique_ogma = False
 
     "*Einar émerge du sommeil...*"
+    show einar debout_normal at left with dissolve
     e "Où... Je suis entravé ? Huuugh..."
+    show moira debout_normal at right with dissolve
 
     menu menu_rencontre_moira_blesse:
         "Toi ?" if moira_met:
@@ -25,7 +27,7 @@ label interieur_maison_village_1:
             jump menu_rencontre_moira_blesse
 
         "Où sommes-nous ?":
-            e "Où sommes-nous ? "
+            e "Où sommes-nous ?"
             m "Nous sommes à Perth. Cette maison appartient à mon père."
             m "Vous devriez vous habituer. Vous allez passer un certain temps ici."
             e "Pourquoi ?"
@@ -87,13 +89,17 @@ label interieur_maison_village_1:
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
-
+    hide einar with dissolve
+    show ogma debout_normal at center with dissolve
     o "Alors ? Comment va le prisonnier ?"
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
     m "La cicatrisation commence à peine, la blessure était profonde. Le vieux m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
+    show einar debout_normal at left with dissolve
     e "Je ..."
     o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
+    hide ogma with dissolve
+
 
     menu :
         "Un problème ?":
@@ -173,8 +179,6 @@ label interieur_maison_village_1:
     m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
     m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
 
-
-
     jump interieur_maison_village_2
 
 #Sequence 2
@@ -225,12 +229,15 @@ label interieur_maison_village_2:
     m "Je vais te laisser, c'est tout pour aujourd'hui."
     e "A demain ?"
     m "A demain."
-
+    hide einar with dissolve
+    hide moira with dissolve
     jump interieur_maison_village_3
 
 #Sequence 3
 label interieur_maison_village_3:
     scene bg house2_jour with dissolve
+    show ogma debout_normal at center with dissolve
+    show moira debout_normal at right with dissolve
     "Quelques semaines plus tard..."
     o "... je la voyait se débattre comme jamais une truite ne s'était débattue ! Je tire sur la ligne en essayant de la remonter, mais ce foutu poisson passe derrière un rocher : la ligne casse !"
     m "A ce moment là je saute dans la rivière depuis la berge !"
@@ -242,13 +249,15 @@ label interieur_maison_village_3:
     o "Ensuite ta mère t'a sortie de l'eau. Tu étais toute bleue, mais tu ne voulais pas lâcher le poisson ! On t'a ramenée à la maison et tu n'as lâché la truite qu'une fois rentrée !"
     m "J'aimerais retourner pêcher..."
     o "Pas pour le moment. Nous avons des choses à régler d'abord..."
+    show einar debout_normal at left with dissolve
+    hide moira with dissolve
     e "Logan aussi était un bon pêcheur..."
     o "D'où venait-il ?"
     e "D'Aberdeen, loin au nord."
     o "Je n'y suis jamais allé... Et vous Einar, vous n'avez rien à raconter ? D'où venez-vous ?"
 
     menu :
-
+        show moira debout_normal at right with dissolve
         "Être agressif":
             e "Ça ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
             m "Einar !"
@@ -278,11 +287,17 @@ label interieur_maison_village_3:
             o "Je comprends."
             m "..."
 
+    hide einar with dissolve
+    hide moira with dissolve
+    show villageois at left with dissolve
     vm "Ogma !"
     o "Fenella ? Quelque chose ne va pas ?"
     vm "Dunfermline a brûlé ce matin !"
     o "Le roi... Je ne suis pas surpris."
+    hide villageois with dissolve
+    show einar debout_normal at left with dissolve
     e "Vous n'avez pas l'air affecté par la nouvelle !"
+    show moira debout_normal at right with dissolve
     m "Stirling et Falkirk ont déjà été rasée il y a quelques jours. Le roi est en marche."
     o "Depuis que vous avez été capturé, Harald n'a pas cessé de vous chercher. Nous avons déjà eu la visite d'un émissaire."
 
@@ -312,6 +327,9 @@ label interieur_maison_village_3:
     o "Nous allons vous laisser. Reposez-vous."
     m "..."
 
+    hide einar with dissolve
+    hide moira with dissolve
+    hide ogma with dissolve
     jump interieur_maison_village_4
 
 #Sequence 4
