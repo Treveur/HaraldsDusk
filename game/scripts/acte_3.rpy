@@ -654,9 +654,9 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."
             h "Tu es complètement fou !"
             e "Probable."
-    
+
     h "Tu me déçois, Einar. D'entre tous mes huscarls, il a fallu que ce soit toi qui me trahisse."
-    h "Tu crois être unique ? D'autres prendront ta place." 
+    h "Tu crois être unique ? D'autres prendront ta place."
     h "Mon règne se poursuivra longtemps après ta mort."
     "Harald brandit la Hache"
     h "Es-tu conscient de ta totale impuissance ?"
@@ -738,7 +738,7 @@ label e_epargne_harald_no_axe_donjon:
     menu:
 
         "Pas envie de tuer un roi (Laisser fuir)":
-            e "Vous pouvez fuir, seul." 
+            e "Vous pouvez fuir, seul."
             e "Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera."
             e "Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
         "Partez maintenant (Laisser fuir)":
@@ -840,7 +840,7 @@ label village_6:
 
 label foret_4:
 
-    $ premier_refus_moira_foret_4 = False
+    #$ premier_refus_moira_foret_4 = False
     $ rejeter_moira_foret_4 = False
 
     "Dans la forêt, Einar voit Moira sur le sentier. Elle lui explique qu'elle a décidé de venir avec lui. Elle trouve son père injuste et elle aime Einar."
@@ -848,13 +848,13 @@ label foret_4:
     menu menu_reponse_moira_suivre_einar:
         "Que dire ?"
 
-        "Pas de raison de le suivre" if premier_refus_moira_foret_4 == False:
+        "Pas de raison de le suivre" : #if premier_refus_moira_foret_4 == False:
             e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
-            $ premier_refus_moira_foret_4 = False
+            #$ premier_refus_moira_foret_4 = False
 
         "Pas contrarier Ogma" if premier_refus_moira == False:
             e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père. Laisse moi partir seul."
-            $ premier_refus_moira_foret_4 = False
+            #$ premier_refus_moira_foret_4 = False
 
         "Pas les même sentiments":
             e "Nous ne partageons pas les même sentiments. Je ne t'aime pas. Rentre chez toi."
