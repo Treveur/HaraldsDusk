@@ -93,9 +93,11 @@ label good_ending_14(rejete = True):
 
 label good_ending_15(marier = True):
     if marier:
+        "*Une tornade rousse se précipite vers les deux hommes.*"
         "*Moira se jette dans les bras d'Einar et l'embrasse.*"
+        vm "HOURRAAAA !"
     else:
-        "Einar décide continuer sa vie seul"
+        "*Einar enfourche son cheval et part, seul avec ses pensées.*"
     jump credits
 
 label bad_ending_16:
