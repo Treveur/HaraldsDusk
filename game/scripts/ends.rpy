@@ -42,7 +42,7 @@ label good_ending_7:
     o "Oui. Je la ferai fondre en une arme nouvelle, une claymore."
     o "Elle sera destinée à ma famille, le clan Wallace. Elle symbolisera la fin de l'oppression et l'émergence de la Liberté !"
     ge "HOURRAAA !"
-    
+
     jump credits
 
 label good_ending_8:
@@ -95,7 +95,7 @@ label good_ending_15(marier = True):
     if marier:
         "*Une tornade rousse se précipite vers les deux hommes.*"
         "*Moira se jette dans les bras d'Einar et l'embrasse.*"
-        vm "HOURRAAAA !"
+        ve "HOURRAAAA !"
     else:
         "*Einar enfourche son cheval et part, seul avec ses pensées.*"
     jump credits

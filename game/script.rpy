@@ -8,12 +8,12 @@
 define e = Character('Einar', color="#e74c3c")
 
 #Debout
-image einar debout_normal = "einar/debout/einar_debout_nomal.png"
+image einar debout_normal = "einar/debout/einar_debout_normal.png"
 image einar debout_souriant = "einar/debout/einar_debout_souriant.png"
 image einar debout_furieux = "einar/debout/einar_debout_furieux.png"
 image einar debout_attriste = "einar/debout/einar_debout_attriste.png"
 image einar debout_blesse = "einar/debout/einar_debout_blesse.png"
-image einar debout_contratrie = "einar/debout/einar_debout_contratrie.png"
+image einar debout_contrarie = "einar/debout/einar_debout_contrarie.png"
 image einar debout_effraye = "einar/debout/einar_debout_effraye.png"
 image einar debout_determine = "einar/debout/einar_debout_determine.png"
 
@@ -36,39 +36,37 @@ image einar general_determine = "einar/general/einar_general_determine.png"
 define l = Character('Logan', color="#f1c40f")
 
 #Debout
-image logan debout_normal = "logan/debout/logan_debout_nomal.png"
+image logan debout_normal = "logan/debout/logan_debout_normal.png"
 image logan debout_souriant = "logan/debout/logan_debout_souriant.png"
 image logan debout_attriste = "logan/debout/logan_debout_attriste.png"
-image logan debout_contratrie = "logan/debout/logan_debout_contratrie.png"
+image logan debout_contrarie = "logan/debout/logan_debout_contrarie.png"
 image logan debout_determine = "logan/debout/logan_debout_determine.png"
 
 #Combat
 image logan combat_normal = "logan/combat/logan_combat_normal.png"
-image logan combat_furieux = "logan/combat/logan_combat_furieux.png"
 image logan combat_blesse = "logan/combat/logan_combat_blesse.png"
-image logan combat_contratrie = "logan/combat/logan_combat_contratrie.png"
-image logan combat_determine = "logan/combat/logan_debout_determine.png"
+image logan combat_determine = "logan/combat/logan_combat_determine.png"
 
 ##Harald
 define h = Character('Harald', color="#3498db")
 
-image harald debout_normal = "harald/debout/harald_debout_nomal.png"
+image harald debout_normal = "harald/debout/harald_debout_normal.png"
 image harald debout_furieux = "harald/debout/harald_debout_furieux.png"
 #image harald debout_blesse = "harald/noraml/harald_debout_blesse.png"
-image harald debout_contratrie = "harald/debout/harald_debout_contratrie.png"
+image harald debout_contrarie = "harald/debout/harald_debout_contrarie.png"
 image harald debout_determine = "harald/debout/harald_debout_determine.png"
 
 #Combat Hache
 image harald combat_hache_normal = "harald/combat_hache/harald_combat_hache_normal.png"
 image harald combat_hache_furieux = "harald/combat_hache/harald_combat_hache_furieux.png"
-image harald combat_hache_contratrie = "harald/combat_hache/harald_combat_hache_contratrie.png"
+#image harald combat_hache_contrarie = "harald/combat_hache/harald_combat_hache_contrarie.png"
 image harald combat_hache_determine = "harald/combat_hache/harald_combat_hache_determine.png"
 
 #Combat
 image harald combat_normal = "harald/combat/harald_combat_normal.png"
 image harald combat_furieux = "harald/combat/harald_combat_furieux.png"
 image harald combat_blesse = "harald/combat/harald_combat_blesse.png"
-image harald combat_contratrie = "harald/combat/harald_combat_contratrie.png"
+image harald combat_contrarie = "harald/combat/harald_combat_contrarie.png"
 image harald combat_determine = "harald/combat/harald_debout_determine.png"
 
 ##Huscarls
@@ -94,7 +92,7 @@ image gv debout_normaux = "guerriers_vikings/debout/gv_debout_normaux.png"
 image gv debout_enthousiastex = "guerriers_vikings/debout/gv_debout_enthousiastex.png"
 image gv debout_furieux = "guerriers_vikings/debout/gv_debout_furieux.png"
 image gv debout_rire = "guerriers_vikings/debout/gv_debout_rire.png"
-image gv debout_contratriex = "guerriers_vikings/debout/gv_debout_contratriex.png"
+image gv debout_contrariex = "guerriers_vikings/debout/gv_debout_contrariex.png"
 image gv debout_determines = "guerriers_vikings/debout/gv_debout_determines.png"
 
 #Combat
@@ -102,24 +100,24 @@ image gv combat_normaux = "guerriers_vikings/combat/gv_combat_normaux.png"
 image gv combat_blesse = "guerriers_vikings/combat/gv_combat_blesse.png"
 
 #Jeune Guerrier Viking
-image jgv debout_normal = "jeune_viking/debout/jgv_debout_nomal.png"
+image jgv debout_normal = "jeune_viking/debout/jgv_debout_normal.png"
 image jgv debout_pleurant = "jeune_viking/debout/jgv_debout_pleurant.png"
 
 ##Ogma
 define o = Character('Ogma', color="#d35400")
 
 #Debout
-image ogma debout_normal = "ogma/debout/ogma_debout_nomal.png"
+image ogma debout_normal = "ogma/debout/ogma_debout_normal.png"
 image ogma debout_souriant = "ogma/debout/ogma_debout_souriant.png"
 image ogma debout_furieux = "ogma/debout/ogma_debout_furieux.png"
 image ogma debout_attriste = "ogma/debout/ogma_debout_attriste.png"
-image ogma debout_contratrie = "ogma/debout/ogma_debout_contratrie.png"
+image ogma debout_contrarie = "ogma/debout/ogma_debout_contrarie.png"
 image ogma debout_determine = "ogma/debout/ogma_debout_determine.png"
 
 #Combat
 image ogma combat_normal = "ogma/combat/ogma_combat_normal.png"
 image ogma combat_furieux = "ogma/combat/ogma_combat_furieux.png"
-image ogma combat_contratrie = "ogma/combat/ogma_combat_contratrie.png"
+image ogma combat_contrarie = "ogma/combat/ogma_combat_contrarie.png"
 image ogma combat_determine = "ogma/combat/ogma_combat_determine.png"
 
 #Combat Hache
@@ -130,17 +128,17 @@ image ogma combat_hache_determine = "ogma/combat_hache/ogma_combat_hache_determi
 define m = Character("Moira", color = "#f00")
 
 #Debout
-image moira debout_normal = "moira/debout/moira_debout_nomal.png"
+image moira debout_normal = "moira/debout/moira_debout_normal.png"
 image moira debout_souriant = "moira/debout/moira_debout_souriant.png"
 image moira debout_furieux = "moira/debout/moira_debout_furieux.png"
 image moira debout_attriste = "moira/debout/moira_debout_attriste.png"
 image moira debout_blesse = "moira/debout/moira_debout_blesse.png"
-image moira debout_contratrie = "moira/debout/moira_debout_contratrie.png"
+image moira debout_contrarie = "moira/debout/moira_debout_contrarie.png"
 image moira debout_effraye = "moira/debout/moira_debout_effraye.png"
 image moira debout_determine = "moira/debout/moira_debout_determine.png"
 
 #nude
-image moira nue_normal = "moira/nue/moira_nue_nomal.png"
+image moira nue_normal = "moira/nue/moira_nue_normale.png"
 image moira nue_souriant = "moira/nue/moira_nue_souriant.png"
 image moira nue_effraye = "moira/nue/moira_nue_effraye.png"
 
@@ -164,25 +162,25 @@ define ge = Character('rebelles écossais', color="#f39c12")
 
 
 ##Villageois / prisonniers
-define vm = Character('Villageois', color="#3498db")
+define ve = Character('Villageois', color="#3498db")
 
 define pe1 = Character("Prisonnier écossais 1")
 define pe2 = Character("Prisonnier écossais 2")
 define pe3 = Character("Prisonnière écossaise 1")
 
 #Debout
-image vm debout_normaux = "villageois_ecossais/debout/ve_debout_nomaux.png"
-image vm debout_craintifs = "villageois_ecossais/debout/ve_debout_craintifs.png"
-image vm debout_inquiets = "villageois_ecossais/debout/ve_debout_inquiets.png"
-image vm debout_furieux = "villageois_ecossais/debout/ve_debout_furieux.png"
+image ve debout_normaux = "villageois_ecossais/debout/ve_debout_nomaux.png"
+image ve debout_craintifs = "villageois_ecossais/debout/ve_debout_craintifs.png"
+image ve debout_inquiets = "villageois_ecossais/debout/ve_debout_inquiets.png"
+image ve debout_furieux = "villageois_ecossais/debout/ve_debout_furieux.png"
 
 #Buchet
-image vm buchet_normaux = "villageois_ecossais/buchet/vm_buchet_effrayes.png"
-image vm buchet_craintifs = "villageois_ecossais/buchet/vm_buchet_pleurent.png"
+image ve buchet_normaux = "villageois_ecossais/buchet/ve_buchet_effrayes.png"
+image ve buchet_craintifs = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
 
 ##Patrick
 define p = Character("Patrick")
-image patrick debout_normal = "patrick/deout/patrick_debout_nomal.png"
+image patrick debout_normal = "patrick/deout/patrick_debout_normal.png"
 image patrick debout_furieux = "patrick/deout/patrick_debout_furieux.png"
 
 #Guerriers Asiatiques
@@ -205,7 +203,7 @@ image bg mer = "chateau_mer.jpg"
 image bg pont_levis = "pont_levis.jpg"
 image bg chateau_porte = "chateau_porte.jpg"
 image bg cour_chateau = "cour_chateau.png"
-image bg cour_chateau = "cour_chateau_crepu.png"
+image bg cour_chateau_crepuscule = "cour_chateau_crepu.png"
 image bg cote1 = "cote1.jpg"
 
 

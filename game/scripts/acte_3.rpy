@@ -17,7 +17,7 @@ label exterieur_chateau_1:
     scene bg chateau_porte with dissolve
 
     show einar debout_normal with moveinleft
-    show garde_chateau normal at right with dissolve
+    show garde_chateau debout_normaux at right with dissolve
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
 
@@ -214,23 +214,23 @@ label cour_chateau_1:
     hide einar
     hide harald
 
-    show patrick normal at center with dissolve
+    show patrick debout_normal at center with dissolve
 
 
 
     p "Que Dieu, ait pitié de vous ! Les flammes purificatrices vont laver tous vos pêchés."
     p "Deus propitius tibi!"
 
-    show patrick normal at left
-    show vm buchet_normaux at right with dissolve
+    show patrick debout_normal at left
+    show ve buchet_normaux at right with dissolve
 
     pe3 "Arrêtez ! Je suis enceinte !"
     p "Je n'ai que faire de tes mensonges, femme !"
     p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
-    hide vm
+    hide ve
     show einar debout_normal at left with dissolve
-    show patrick normal at right
+    show patrick debout_normal at right
 
     menu:
         "Arrêter le massacre":
@@ -322,7 +322,7 @@ label cour_chateau_1:
 
 #Sequence 4
 label cour_chateau_2:
-    show bg cour_chateau_crepu with dissolve
+    show bg cour_chateau_crepuscule with dissolve
 
     "*Au crépuscule...*"
     gv "Sire ! Sire !"

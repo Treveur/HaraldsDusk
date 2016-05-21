@@ -554,7 +554,7 @@ label village_1:
 
     hide gv debout_normaux with dissolve
     show gv debout_normaux at left zorder 1 with dissolve
-    show villageois at right zorder 1 with dissolve
+    show ve debout_craintifs at right zorder 1 with dissolve
 
     menu menu_fouille_village:
 
@@ -594,7 +594,7 @@ label e_massacre_village_2:
 
     gv "HAAAAA !"
 
-    vm "Sauvez les enfants ! Les enfants !"
+    ve "Sauvez les enfants ! Les enfants !"
 
     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 
@@ -604,7 +604,7 @@ label e_demander_information_village_1:
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
-    vm "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens ! *crache*"
+    ve "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens ! *crache*"
 
     e "Quel succès, Logan."
 
@@ -668,23 +668,23 @@ label e_tuer_villageois_village_1:
 
     e "Toi. Approche."
 
-    vm "Moi ?"
+    ve "Moi ?"
 
     e "Oui ! Dépêche toi !"
 
-    vm "Monseigneur, je ..."
+    ve "Monseigneur, je ..."
 
     "*Einar tranche la gorge du villageois d'un seul coup.*"
 
-    vm "Pourritures ! Salauds !"
+    ve "Pourritures ! Salauds !"
 
     e "Parfait. Maintenant, parlez."
 
-    vm "Nous ne savons rien ! Absolument rien !"
+    ve "Nous ne savons rien ! Absolument rien !"
 
     e "Et vos hommes, où sont-ils ?"
 
-    vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+    ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
 
     e "Foutus mensonges !"
 
@@ -700,11 +700,11 @@ label e_intimider_villageois_village_1:
 
     e "Vous ne tiendriez pas trois minutes face à nous. Parlez avant que je ne donne l'ordre de tout raser."
 
-    vm "Nous ne savons rien ! Absolument rien !"
+    ve "Nous ne savons rien ! Absolument rien !"
 
     e "Et vos hommes, où sont-ils ?"
 
-    vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+    ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
 
     e "Foutus mensonges !"
 
@@ -719,7 +719,7 @@ label e_nom_villageoise_maison_1:
 
     e "Qui es-tu ?"
 
-    vm "Ne m'adressez pas la parole !"
+    ve "Ne m'adressez pas la parole !"
 
     e "Je me suis montré courtois, mais ça pourrait vite changer. Répond : qui es-tu ?"
 
@@ -732,7 +732,7 @@ label e_nom_villageoise_maison_1:
 label e_cache_villageoise_maison_1:
     e "Pourquoi te cacher ?"
 
-    vm "Parce que je connais les porcs dans votre genre."
+    ve "Parce que je connais les porcs dans votre genre."
 
     e "Mmmh."
 
@@ -743,7 +743,7 @@ label e_cache_villageoise_maison_1:
 label e_info_rebelle_maison_1:
     e "Que sais-tu des rebelles ?"
 
-    vm "Rien."
+    ve "Rien."
 
     e "Tu es aussi belle que décevante."
 
@@ -754,7 +754,7 @@ label e_info_rebelle_maison_1:
 label e_villagoise_partir_maison_1:
     e "Sors d'ici et rejoint les autres."
 
-    vm "..."
+    ve "..."
 
     jump choix_retour_village_1
 
@@ -765,7 +765,7 @@ label e_tuer_moira_maison_1:
 
     "*Einar tire son épée et tue la villageoise*"
 
-    vm "Vengeanghghh..."
+    ve "Vengeanghghh..."
 
     l "Cette fille était sans défenses !"
 
@@ -773,15 +773,15 @@ label e_tuer_moira_maison_1:
 
     scene bg village with dissolve
 
-    vm "Monstres ! Ils ont tué Moira !"
+    ve "Monstres ! Ils ont tué Moira !"
 
     e "Parfait. Maintenant, parlez."
 
-    vm "Nous ne savons rien ! Absolument rien !"
+    ve "Nous ne savons rien ! Absolument rien !"
 
     e "Et vos hommes, où sont-ils ?"
 
-    vm "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+    ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
 
     e "Foutus mensonges !"
 
