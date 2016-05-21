@@ -343,6 +343,8 @@ label interieur_maison_village_4:
     "Deux semaines plus tard..."
 
     "*Moira arrive dans la chambre, un couteau à la main.*"
+    show moira debout_normal at right with dissolve
+    show einar debout_normal at left with dissolve
     m "Bonjour, Einar."
 
     menu menu_moira_couteau:
@@ -458,6 +460,8 @@ label interieur_maison_village_4:
             "Le visage de Moira s'illumine et elle se fend d'un sourire discret"
 
     m "Viens !"
+    hide einar with dissolve
+    hide moira with dissolve
     "*Moira entraîne Einar a l'extérieur en lui tenant la main*"
     jump village_2
 
@@ -465,10 +469,16 @@ label interieur_maison_village_4:
 label village_2:
     scene bg village2_jour with dissolve
 
+    show villageois at center with dissolve
+
     vm "... et il faudra que tu penses à rentrer les bêtes plus tôt !"
     vm "Mamie ! J'ai trouvé un caillou qui brille !"
 
     "*Les villageois remarquent à peine la présence d'Einar.*"
+    hide villageois with dissolve
+
+    show einar debout_normal at left with dissolve
+    show moira debout_normal at right with dissolve
 
     menu :
         "Être sarcastique":
@@ -501,6 +511,8 @@ label village_2:
     e "Fenella ? La dernière fois, c'était une grosse femme rougeaude qui sentait l'ail. Il s'agit de cette Fenella ?"
     m "Ha ha, oui ! Et je crois bien que tu lui plaît beaucoup ! Elle a perdu son mari il y a quelques années. Il te ressemblait un peu, je crois."
     e "La journée va être longue..."
+    hide moira with dissolve
+    hide einar with dissolve
 
     jump village_3
 
@@ -509,6 +521,9 @@ label village_3:
     scene bg village2_crepuscule with dissolve
 
     $ einar_raler = False
+
+    show einar debout_normal at left with dissolve
+    show moira debout_normal at right with dissolve
 
     m "Alors ? Qu'as-tu pensé de cette première sortie ? Tu as apprécié ?"
 
@@ -556,13 +571,17 @@ label village_3:
 
     m "Avant de te ramener à la maison, j'aimerais te montrer une dernière chose. C'est un endroit que j'aime beaucoup."
     "*Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village.*"
-
+    hide einar with dissolve
+    hide moira with dissolve
 
     jump foret_3
 
 #Sequence 7
 label foret_3:
     scene bg forest_crepuscule with dissolve
+
+    show einar debout_normal at left with dissolve
+    show moira debout_normal at right with dissolve
 
     menu :
         "Destination ?":
@@ -577,11 +596,17 @@ label foret_3:
     "*Moira demande à EInar de se taire, en mettant un doigt sur sa bouche.*"
     m "Chuuut..."
 
+    hide einar with dissolve
+    hide moira with dissolve
+
     jump paradis_foret_1
 
 #Sequence 8
 label paradis_foret_1:
     scene bg little_heaven with dissolve
+
+    show einar debout_normal at left with dissolve
+    show moira debout_normal at right with dissolve
 
     $ moira_dead = False
 
@@ -599,6 +624,8 @@ label paradis_foret_1:
     "*Moira pousse doucement Einar contre un arbre.*"
     "*Elle recule de quelques pas, puis se retourne.*"
     "*Elle se dénude lentement devant Einar, sans le regarder.*"
+    hide moira with dissolve
+    show moira nue_normal at right with dissolve
 
     menu :
 
@@ -607,6 +634,7 @@ label paradis_foret_1:
             "*Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme.*"
             "*Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante.*"
             "*Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte.*"
+            hide moira with dissolve
             e "Il est temps pour moi de retrouver les miens."
             $ moira_dead = True
             jump cote_2
@@ -614,6 +642,7 @@ label paradis_foret_1:
         "S'enfuir":
             e "(C'est une occasion en or de s'enfuir.)"
             "*Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons.*"
+            hide einar with dissolve
             m "Einar ? Einar ?"
             jump cote_2
 
@@ -627,12 +656,18 @@ label paradis_foret_1:
             "..."
             jump village_4
 
+    hide moira with dissolve
+    hide einar with dissolve
+
 #Sequence 9
 label village_4:
     scene bg village2_jour with dissolve
 
     "*Le lendemain...*"
+
+    show ogma debout_normal at right with dissolve
     o "Vous voilà prêt à partir, Einar."
+    show einar debout_normal at left with dissolve
     e "Je pense être prêt, oui. Retrouver mes affaires me fait du bien."
     o "Avant de vous souhaiter bonne route, je veux vous rappeler quelque chose. Vous nous avez fait une promesse."
     o "Nous vous avons soigné, nous nous sommes occupé de vous. Vous nous êtes redevable. Remplissez votre part du marché."
@@ -648,7 +683,8 @@ label village_4:
 
         "Acquiescer":
             e "Très bien."
-
+    hide ogma with dissolve
+    show moira debout_normal at right with dissolve
     m "Tu as donné ta parole à mon père. Je considère que tu m'as également donné ta parole. S'il te plaît, ne me déçois pas..."
     "*Moira s'approche d'Einar.*"
 
@@ -664,12 +700,15 @@ label village_4:
         "L'ignorer":
             "*Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
 
-    jump sentier_foret_1
+    hide moira with dissolve
+    hide einar with dissolve
 
+    jump sentier_foret_1
 
 #Sequence 10
 label sentier_foret_1:
     scene bg sentier_jour with dissolve
+    show einar debout_normal with dissolve
     e "..."
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
@@ -681,12 +720,12 @@ label sentier_foret_1:
         "Oppression des écossais":
             e "(Ces gens vivent dans la pauvreté et n'ont fait que se défendre face à un oppresseur. Ils m'ont sauvé. Mais le meurtre lâche de mes hommes et de Logan...)"
             e "(Tout ceci n'a été qu'un enchaînement malheureux d'événements qui n'arrangent personne. Le seul vrai coupable, c'était l'intendant Clyde Montgomery. Et il est mort.)"
-
+    hide einar with dissolve
     jump foret_5
 
 label foret_5:
     scene bg forest_night with dissolve
-
+    show einar debout_normal with dissolve
     "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
     menu:
@@ -696,13 +735,13 @@ label foret_5:
             e "(Elle ne s'est occupée de moi que parce que son père le lui avait demandé. Je me demande si notre petite escapade en forêt était aussi une idée de son père...)"
         "Rien qu'une amourette":
             e "(J'ai bien profité d'elle. Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
-
+    hide einar with dissolve
     jump cote_1
 
 #Sequence 11
 label cote_1:
     scene bg cote1 with dissolve
-
+    show einar debout_normal with dissolve
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
     menu :
@@ -714,5 +753,5 @@ label cote_1:
             e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps... Pourvu qu'Ogma respecte sa parole, lui !)"
         "Il en va de ma vie":
             e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera-t-il à Moira ?)"
-
+    hide einar with dissolve
     jump cote_2
