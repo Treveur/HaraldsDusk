@@ -50,8 +50,9 @@ label good_ending_8:
     jump credits
 
 label good_ending_9:
-    "Einar est à la tête d'une vaste armée et porte une tenue de général. Il s'apprête à affronter uner armée asiatique sur leurs propres terres."
-    "Einar mène une armée innombrable face à ce qui semble être une armée asiatique"
+    "*Einar porte une tenue de général et mène une armée innombrable face à ce qui semble être une armée asiatique, dans un paysage exotique fait de montagnes et de cultures en étages.*"
+    e "Aujourd'hui, le dernier peuple dissident s'inclinera devant nous !"
+    e "CHARGEEEEEEEEZ !"
     jump credits
 
 label normal_ending_10:
@@ -77,18 +78,30 @@ label good_ending_11:
 label bad_ending_12:
     "*Les deux vikings rendent coup pour coup.*"
     "*Mais le roi projette Einar contre le mur avant de se ruer sur lui.*"
+    h "MEURS !"
     "*Einar meurt étranglé par son roi, les vertèbres craquant sous l'étreinte du monarque.*"
     jump credits
 
 label good_ending_13:
-    "Revenus au village, Ogma félicite Einar. Il refuse cependant de marier sa fille, Moira, à un régicide."
+    "*Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth.*"
+    "*Les villageois lui font leurs adieux et petit à petit, la place se vide.*"
+    "*Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner inexorablement.*"
+    "*Moira.*"
     jump credits
 
 label good_ending_14(rejete = True):
     if rejete:
-        "Moira reste immobile au milieu du chemin alors qu'Einar la dépasse."
+        "*Einar dépasse Moira qui reste immobile au milieu du sentier, les poings serrés, fixant le sol.*"
     else:
-        "Elle court vers Einar et se jette dans ses bras."
+        m "Où allons-nous ?"
+        e "Loin d'ici !"
+        e "Quand ton père aura compris que tu t'es enfuie pour m'accompagner, il se lancera à notre recherche."
+        e "Et je n'ai aucune envie de me retrouver à nouveau enfermé dans une cahutte pendant un mois !"
+        m "Ha ha ha !"
+        e "Il y a un endroit en particulier que tu voudrais voir ?"
+        m "Je ne sais pas... J'hésite entre la Norvège et la Méditerrannée."
+        e "Alors nous irons voir la Méditerrannée ! Retourner en Norvège, ce serait du suicide..."
+        "*Les deux voyageurs disparaissent dans les bois, prenant la direction du sud...*"
     jump credits
 
 label good_ending_15(marier = True):

@@ -723,7 +723,6 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
             h "Alors tu t'es donné tout ce mal uniquement pour m'humilier ?"
             h "Que t'ai-je fait ?"
             e "Ce n'est pas le moment de discuter."
-            h "Que vas-tu faire de moi?"
             $ epargner_harld__no_axe_donjon = True
 
 
@@ -919,20 +918,42 @@ label foret_4:
 
         "Pas de raison de le suivre" : #if premier_refus_moira_foret_4 == False:
             e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
+            e "Reste ici, avec ton père et les autres."
+            m "..."
+            m "Est-ce que tu reviendras ?"
+            e "Je ne sais pas. Rentre chez-toi, maintenant."
+            "..."
             #$ premier_refus_moira_foret_4 = False
 
         "Pas contrarier Ogma" if premier_refus_moira == False:
-            e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père. Laisse moi partir seul."
+            e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père." 
+            e "Il m'a interdit de rester ici, et il ne me permettra certainement pas de partir avec sa fille."
+            e "Laisse moi partir."
+            m "Je me fiche de tout ça ! Je n'appartient pas à mon père ! Si j'en ai envie, rien ne m'empêche de te suivre !"
+            e "Tu connais ton père. Il a déjà organisé l'assassinat d'un intendant pour venger sa femme, il n'hésitera pas à me traquer jusqu'au bout du monde pour te retrouver."
+            e "Je n'irai pas contre son avis. N'insiste pas."
+            e "Au revoir, Moira."
             #$ premier_refus_moira_foret_4 = False
 
         "Pas les même sentiments":
-            e "Nous ne partageons pas les même sentiments. Je ne t'aime pas. Rentre chez toi."
+            e "Nous ne partageons pas les même sentiments."
+            e "Je ne t'aime pas, Moira."
+            e "Je te suis reconnaissant pour tous tes soins, et j'ai apprécié le temps que nous avons passé ensemble."
+            e "Mais je ne t'aime pas."
+            m "Tu dis ça pour que je ne te suive pas !"
+            e "Non, je regrette. Laisse-moi partir maintenant, s'il-te-plaît."
             $ rejeter_moira_foret_4 = True
 
         "Tendre les bras":
-            "(Ne rien dire mais lui tendre les bras.)"
+            "*Sans dire un mot, Einar tend les bras vers Moira.*"
+            "*La jeune femme se précipite vers le viking et l'étreint.*"
+            "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
+            
         "Viens":
-            "Viens avec moi"
+            "Viens avec moi, Moira."
+            "*La jeune femme se précipite vers le viking et l'étreint.*"
+            "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
+            
 
     if rejeter_moira_foret_4:
         call good_ending_14 pass (rejete = True) from _call_good_ending_14
@@ -940,40 +961,65 @@ label foret_4:
         jump good_ending_14
 
 label fuite_harald_pont_baisse_donjon:
-    "Harald s'échappe sans demander son reste. Par une meurtrière, Einar voit le roi sur une barque, sortant d'une anfractuosité au pied de la falaise."
-    "Harald s'échappe par la mer, empruntant une petite barque qu'il semblait avoir dissimulé dans une anfractuosité naturelle."
-    "La bataille arrive à sa fin. Les rebelles achèvent les vikings qui rampent au sol."
-    "Depuis les remparts, Ogma observe Harald fuir sur la mer. Puis il regarde Einar et remarque qu'il est en possession de la Hache. Il la lui réclame."
+    "*Harald s'échappe sans demander son reste.*"
+    h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
+    h "JE ME VENGERAI !"
+    "..."
+    "*Par une meurtrière, Einar remarque une petite embarcation qui quitte le château.*"
+    "*Harald s'échappe par la mer, seul sur sa barque.*"
+    #Retour à l'extérieur
+    "*La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol.*"
+    "*Sur les remparts, la silouhette d'Ogma se découpe sur le ciel.*"
+    "*Le Hurleur semble observer la mer.*"
+    "..."
+    
+    o "Bravo Einar, la réussite est totale ! Mais pourquoi avoir laissé partir le roi ?"
+    e "Je..."
+    o "Ne réponds pas à ma question, je préfère ne pas savoir."
+    o "Le roi est vaincu et tu as la Hache Sainte, tu n'avais aucune raison de le tuer."
+    o "La Hache a l'air si... ordinaire."
+    e "Je peux vous assurer qu'elle n'a rien d'ordinaire !"
+    o "Sans doutes..."
+    o "Il va falloir que tu t'en sépare, désormais. Nous devons la détruire."
+    o "Donne-la moi, s'il-te-plaît."
 
     menu:
-        "Que faire ?"
         "Conserver la Hache":
             jump e_garder_hache_pont_baisse_donjon
-        "Donner la Sainte Hache":
+        "Donner la Hache Sainte":
             jump normal_ending_10
 
 
 label e_garder_hache_pont_baisse_donjon:
-    "Ogma se montre menaçant et tend la main pour se saisir de la Hache."
+    o "Ne sois pas idiot ! Nous devons la détruire sans tarder !"
+    o "Je suis prêt à aller jusqu'au bout pour m'en débarrasser !"
+    o "Donne-moi cette Hache !"
+    "*Ogma tend la main.*"
 
     menu :
-        "Que dire ?"
         "Reculez !":
-            e "Recule !"
+            e "Reculez ! Je suis le possesseur de la Hache, vous ne pouvez rien contre moi !"
         "Je la mérite":
-            e "J'ai pris cette Hache des mains d'un empereur. Je suis le seul à la mériter."
+            e "J'ai pris cette Hache des mains du roi-empereur. Je suis le seul à la mériter !"
+            e "Vous n'avez aucun moyen de m'en priver !"
 
-    "Ogma est désarçonné par l'attitude d'Einar : il le sait désormais immortel et invincible."
-
-    o "Que comptes-tu faire de la relique ? Elle devrait être détruite. Elle a déjà provoqué suffisament de malheurs et asservi trop d'hommes."
+    o "Très bien..."
+    o "Tu as raison, je ne peux rien faire contre toi."
+    o "Que comptes-tu faire de la relique ? Elle doit être détruite. Elle a déjà provoqué suffisamment de malheurs et asservi trop d'hommes."
 
     menu:
-        "Répondre quoi ?"
-        "La détruire soi-même":
+        "La détruire moi-même":
             e "Je la détruirai moi-même. C'est mon devoir."
+            o "Tu ne me fais pas confiance ?"
+            e "Ce n'est pas le problème. Je veux simplement être absolument certain que personne n'en profitera plus jamais."
             jump lieu_encore_inconnu_1
+            
         "La garder !":
-            "Je l'ai prise, elle m'appartient. J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient."
+            e "Je l'ai prise, elle m'appartient."
+            e "J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient !"
+            e "Harald n'était qu'un mou, il a cessé ses conquêtes bien trop tôt !"
+            e "Le monde se pliera devant moi !"
+            e "A genoux, manants ! HA HA HA !"
             jump good_ending_9
 
 
@@ -983,60 +1029,112 @@ label lieu_encore_inconnu_1(axe = True):
     $ refuser_or = False
 
     if axe:
-        "Ogma remercie Einar d'avoir détruit la hache : il aurait surement été tenté d'en faire mauvais usage. Einar reçoit sa part du trésor. Moira se tient à l'écart."
+        "..."
+        "*Moira se tient à l'écart mais semble interessée pas la conversation.*"
+        o "Merci pour tout, Einar."
+        o "Tu as vaincu le roi, tu as libéré mon peuple et surtout, tu as débarrassé le monde de la Hache Sainte."
+        o "Plus aucun tyran ne pourra abuser de la relique."
+        o "A vrai dire, je suis heureux que tu ais choisi de te débarrasser de la Hache toi-même."
+        o "J'aurais pu être tenté d'en fair un mauvais usage..."
+        o "Aucun homme ne devrait jamais avoir un tel pouvoir entre ses mains."
+        e "Je dois admettre qu'avoir la Hache était assez... grisant."
+        o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
+        o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
+        
     else:
         "Ogma félicite Einar pour avoir triomphé de Harald. Il lui donne la part de trésor promise. Moira se tient légèrement à l'écart."
+        "..."
+        "*Moira se tient à l'écart mais semble interessée pas la conversation.*"
+        o "Merci pour tout, Einar."
+        o "Tu as vaincu le roi, tu as libéré mon peuple et surtout, tu as libéré le monde du joug du roi."
+        o "Je ne sais pas ce que tu as fait de la Hache, mais je ne veux pas le savoir. Ne révèle jamais à personne ton secret."
+        o "A vrai dire, je suis heureux que tu ais choisi de te débarrasser de la Hache toi-même."
+        o "Aucun homme ne devrait jamais avoir un tel pouvoir entre ses mains."
+        e "Je dois admettre qu'avoir la Hache était assez... grisant."
+        o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
+        o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
+        
 
     menu:
-        "Que dire ?"
 
         "Demander la main de Moira":
-            e "Ogma, j'aimerais vous demander plus. La main de votre fille."
-            "Je ne peux accepter. Je refuse de condamner ma fille et sa descendance à partager le nom d'un régicide. Comprends bien que je sois navré et que tout ceci me remplisse d'amertume."
+            e "Ogma, j'aimerais vous demander plus."
+            o "Je t'écoute ?"
+            e "Je vous demande la main de votre fille."
+            "*Ogma soupire.*"
+            o "Je suis sincèrement navré, Einar, mais je ne peux pas accepter."
+            o "Je refuse que ma fille et sa descendance partagent le nom d'un régicide."
             $ demander_main_moira = True
 
         "Remercier":
             e "Je vous remercie."
+            e "Je n'étais pas certain que vous tiendriez votre parole."
+            o "Et je n'étais pas certain que tu tiendrais la tienne !"
+            o "Nous sommes quittes."
 
         "Prendre l'or avec amertume":
             e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
+            o "Ce que nous t'avons fait faire était cruel, mais nous n'avions pas d'autre choix, tu le sais."
+            o "Je comprends que tu éprouves de la rancoeur, mais ne la dirige pas vers l'Ecosse ni les gens d'ici."
+            o "Dirige-la vers moi. Je suis responsable de tout ce qui t'es arrivé."
+            e "..."
 
         "Refuser l'or":
             e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
+            o "Voilà une belle preuve d'humilité."
+            o "Je suis désolé de t'avoir entraîné dans ce massacre, mais je n'avais pas le choix."
+            o "Ce que j'ai fait, c'était avant tout pour le bien de l'Ecosse et du reste du monde."
+            e "Sans doute."
             $ refuser_or = True
 
 
     if demander_main_moira:
         menu menu_demande_main_moira_lieu_encore_inconnu_1:
-            "Comment réagir ?"
             "Accepter la décision":
-                e "Je comprends."
+                e "Je comprends. Si j'avais su, j'aurais épargné le roi..."
+                o "..."
             "Avis Moira":
                 e "Moira, qu'en penses-tu ?"
-                "Elle répond qu'elle est triste mais qu'elle ne peut que se ranger à l'avis de son père."
+                "*Elle se rapproche des deux hommes, comprenant de quoi il est question.*"
+                m "Je... Je suis d'accord avec mon père."
+                "*Les larmes lui montent aux yeux.*"
             "Pas à Ogma de décider":
-                e "Moira, qu'en penses-tu ?"
-                "Elle demande à Einar de se calmer. Elle est triste mais elle ne peut que se ranger à l'avis de son père."
+                e "Ce n'est pas à vous d'en décider. Votre fille doit choisir elle-même. Il s'agit de son propre avenir, pas du votre !"
+                o "J'aurais punis ton insolence si je ne comprenais pas ton désarroi."
+                m "Calme-toi, Einar. Je n'ai pas d'autre choi que de me ranger à l'avis de mon père."
+                "*Les larmes lui montent aux yeux.*"
 
     if refuser_or:
-        o "Cette décision t'honore. Et maintenant ? Que vas-tu faire ?"
+        o "Refuser l'or de la trahison et du sang t'honore. Et maintenant, que vas-tu faire ?"
     else:
-        o "Ogma demande à Einar ce qu'il compte faire désormais"
+        o "Et maintenant, que vas-tu faire ?"
 
 
     menu plan_futur_lieu_encore_inconnu_1:
-        "Que faire par la suite ?"
 
         "Profiter" if refuser_or == False:
-            e "Dépenser l'or en femmes et en jeux."
+            e "Je vais dépenser l'or en femmes et en jeux, ha ha !"
+            e "De toutes manières, je n'ai plus grand chose à faire."
+            e "Ma carrière militaire est terminée et je n'ai nul part où aller en particulier."
+            e "Je suis seul au monde ! Un peu de chaleur humaine ne me fera pas de mal !"
         "Choisir la voie de l'ermite":
             e "Rester ici, en Ecosse. Seul."
+            e "J'ai déjà suffisamment donné de ma personne."
+            o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
+            o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
         "Rentrer en Norvège":
-            e "Rentrer en Norvège, malgré le danger. C'est sa seule demeure."
+            e "Rentrer en Norvège, malgré le danger. C'est ma seule demeure, et je ne l'ai pas vue depuis bien trop longtemps."
+            o "La nostalgie des terres natales..."
+            o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
         "Décider au jour le jour":
-            e "Errer. Il n'y a pas de plan bien déterminé."
+            e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
+            o "J'imagine qu'à ta place, je n'en saurais pas plus."
+            o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
         "Découvrir l'Asie":
-            e "Aller en Asie, là où personne ne viendra le chercher. C'est une région du monde qui l'a toujours intrigué."
+            e "Aller en Asie, là où personne ne viendra me chercher. J'ai toujours été intrigué par cette région du monde."
+            o "C'est assez... Surprenant !"
+            o "Il ne me reste plus qu'à te souhaiter bon voyage."
+            o "Si le coeur t'en dit, n'hésite pas à revenir ici. Tu trouveras toujours des amis à Perth."
 
     if axe:
         jump good_ending_8
