@@ -256,8 +256,9 @@ label interieur_maison_village_3:
     e "D'Aberdeen, loin au nord."
     o "Je n'y suis jamais allé... Et vous Einar, vous n'avez rien à raconter ? D'où venez-vous ?"
 
+    show moira debout_normal at right with dissolve
+
     menu :
-        show moira debout_normal at right with dissolve
         "Être agressif":
             e "Ça ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
             m "Einar !"

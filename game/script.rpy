@@ -89,23 +89,21 @@ define gv = Character('Guerriers Vikings', color="#e67e22")
 define gc = Character("Garde du Château")
 define jgv = Character("Jeune Guerrier Viking")
 
-image guerrierv = "guerrier_viking.png"
-
 #Debout
-#image gv debout_normaux = "gv_debout_nomaux.png"
-#image gv debout_enthousiastex = "gv_debout_enthousiastex.png"
-#image gv debout_furieux = "gv_debout_furieux.png"
-#image gv debout_rire = "gv_debout_rire.png"
-#image gv debout_contratriex = "gv_debout_contratriex.png"
-#image gv debout_determines = "gv_debout_determines.png"
+image gv debout_normaux = "guerriers_vikings/debout/gv_debout_normaux.png"
+image gv debout_enthousiastex = "guerriers_vikings/debout/gv_debout_enthousiastex.png"
+image gv debout_furieux = "guerriers_vikings/debout/gv_debout_furieux.png"
+image gv debout_rire = "guerriers_vikings/debout/gv_debout_rire.png"
+image gv debout_contratriex = "guerriers_vikings/debout/gv_debout_contratriex.png"
+image gv debout_determines = "guerriers_vikings/debout/gv_debout_determines.png"
 
 #Combat
-#image gv combat_normaux = "gv_combat_normaux.png"
-#image gv combat_blesse = "gv_combat_blesse.png"
+image gv combat_normaux = "guerriers_vikings/combat/gv_combat_normaux.png"
+image gv combat_blesse = "guerriers_vikings/combat/gv_combat_blesse.png"
 
 #Jeune Guerrier Viking
-#image jgv debout_normal = "jgv_debout_nomal.png"
-#image jgv debout_pleurant = "jgv_debout_pleurant.png"
+image jgv debout_normal = "jeune_viking/debout/jgv_debout_nomal.png"
+image jgv debout_pleurant = "jeune_viking/debout/jgv_debout_pleurant.png"
 
 ##Ogma
 define o = Character('Ogma', color="#d35400")
@@ -168,27 +166,24 @@ define ge = Character('rebelles écossais', color="#f39c12")
 ##Villageois / prisonniers
 define vm = Character('Villageois', color="#3498db")
 
-image villageois = "villageois.png"
-
 define pe1 = Character("Prisonnier écossais 1")
 define pe2 = Character("Prisonnier écossais 2")
 define pe3 = Character("Prisonnière écossaise 1")
 
 #Debout
-#image vm debout_normaux = "ve_debout_nomaux.png"
-#image vm debout_craintifs = "ve_debout_craintifs.png"
-#image vm debout_inquiets = "ve_debout_inquiets.png"
-#image vm debout_furieux = "ve_debout_furieux.png"
+image vm debout_normaux = "villageois_ecossais/debout/ve_debout_nomaux.png"
+image vm debout_craintifs = "villageois_ecossais/debout/ve_debout_craintifs.png"
+image vm debout_inquiets = "villageois_ecossais/debout/ve_debout_inquiets.png"
+image vm debout_furieux = "villageois_ecossais/debout/ve_debout_furieux.png"
 
 #Buchet
-image vm buchet_normaux = "vm_buchet_effrayes.png"
-#image vm buchet_craintifs = "vm_buchet_pleurent.png"
+image vm buchet_normaux = "villageois_ecossais/buchet/vm_buchet_effrayes.png"
+image vm buchet_craintifs = "villageois_ecossais/buchet/vm_buchet_pleurent.png"
 
 ##Patrick
 define p = Character("Patrick")
-image patrick normal = "cure.png"
-#image patrick debout_normal = "patrick_debout_nomal.png"
-#image patrick debout_furieux = "patrick_debout_furieux.png"
+image patrick debout_normal = "patrick/deout/patrick_debout_nomal.png"
+image patrick debout_furieux = "patrick/deout/patrick_debout_furieux.png"
 
 #Guerriers Asiatiques
 #image ga combat_agressifs = "ga_combat_agressifs.png"

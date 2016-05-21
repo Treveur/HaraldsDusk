@@ -298,7 +298,7 @@ label plaine_2:
 
     "*Le lendemain...*"
 
-    show guerrierv at center with dissolve
+    show gv debout_normaux at center with dissolve
 
     gv "Cette mission n'a rien de terrible... Je suis déçu."
     gv "Nous aurions dû rester plus longtemps à Stirling. Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
@@ -331,7 +331,7 @@ label plaine_2:
                 e "Je suis bien d'accord..."
                 e "Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
 
-                hide guerrierv with dissolve
+                hide gv debout_normaux with dissolve
 
                 show logan debout_normal at right with dissolve
 
@@ -345,7 +345,7 @@ label plaine_2:
 
             e "Tu ne parles pas beaucoup, Logan... Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
 
-            hide guerrierv with dissolve
+            hide gv debout_normaux with dissolve
 
             show logan debout_normal at right with dissolve
 
@@ -359,7 +359,7 @@ label plaine_2:
 
         "Silence ! Je veux deux groupes à l'avant..." :
 
-            hide guerrierv with dissolve
+            hide gv debout_normaux with dissolve
 
             e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et magnez-vous le train !"
 
@@ -399,11 +399,11 @@ label foret_1:
             gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
             show logan debout_normal at right with dissolve
             l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
-            show guerrierv at center with dissolve
+            show gv debout_normaux at center with dissolve
             gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
 
             l "..."
-            hide guerrierv with dissolve
+            hide gv debout_normaux with dissolve
 
             menu:
                 "J'ai hâte de recevoir les récompens qui m'ont été promises":
@@ -437,7 +437,7 @@ label foret_1:
             e "J'imagine la tête des sauvages qui vivent dans la région. C'est une bonne chose que les écossais aient intégré l'empire : ça les civilise un peu !"
 
             e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
-            show guerrierv at center with dissolve
+            show gv debout_normaux at center with dissolve
             gv "Ha ha !"
 
             show logan debout_normal at right with dissolve
@@ -446,7 +446,7 @@ label foret_1:
 
             l "Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
 
-            hide guerrierv with dissolve
+            hide gv debout_normaux with dissolve
 
         "Impatient de terminer la mission" :
 
@@ -467,9 +467,9 @@ label foret_1:
             show logan debout_normal at right with dissolve
 
             l "..."
-            show guerrierv at center with dissolve
+            show gv debout_normaux at center with dissolve
             gv "Ha ha !"
-            hide guerrierv with dissolve
+            hide gv debout_normaux with dissolve
         "Demander à Logan ce qu'il pense de la mission" :
 
             e "Tu es le seul à ne pas encore t'être plaint..."
@@ -545,15 +545,15 @@ label village_1:
     "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
     show einar debout_normal at left zorder 5 with dissolve
     e "Ça me semble bien calme."
-    show guerrierv at center with dissolve
+    show gv debout_normaux at center with dissolve
     gv "On dirait qu'il n'y a pas grand monde..."
 
     e "Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard..."
 
-    hide guerrierv with dissolve
-    show guerrierv at left zorder 1 with dissolve
+    hide gv debout_normaux with dissolve
+    show gv debout_normaux at left zorder 1 with dissolve
     show villageois at right zorder 1 with dissolve
 
     menu menu_fouille_village:
