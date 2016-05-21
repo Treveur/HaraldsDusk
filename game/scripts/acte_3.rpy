@@ -17,7 +17,7 @@ label exterieur_chateau_1:
     scene bg chateau_porte with dissolve
 
     show einar debout_normal with moveinleft
-    show garde_chateau debout_normaux at right with dissolve
+    show gv debout_normaux at right with dissolve
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
 
@@ -42,7 +42,7 @@ label exterieur_chateau_1:
             gc "Bien sûr, excuse-moi."
 
 
-    hide garde_chateau with dissolve
+    hide gv with dissolve
 
     jump cour_chateau_1
 
@@ -926,7 +926,7 @@ label foret_4:
             #$ premier_refus_moira_foret_4 = False
 
         "Pas contrarier Ogma" if premier_refus_moira == False:
-            e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père." 
+            e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père."
             e "Il m'a interdit de rester ici, et il ne me permettra certainement pas de partir avec sa fille."
             e "Laisse moi partir."
             m "Je me fiche de tout ça ! Je n'appartient pas à mon père ! Si j'en ai envie, rien ne m'empêche de te suivre !"
@@ -948,12 +948,12 @@ label foret_4:
             "*Sans dire un mot, Einar tend les bras vers Moira.*"
             "*La jeune femme se précipite vers le viking et l'étreint.*"
             "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
-            
+
         "Viens":
             "Viens avec moi, Moira."
             "*La jeune femme se précipite vers le viking et l'étreint.*"
             "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
-            
+
 
     if rejeter_moira_foret_4:
         call good_ending_14 pass (rejete = True) from _call_good_ending_14
@@ -972,7 +972,7 @@ label fuite_harald_pont_baisse_donjon:
     "*Sur les remparts, la silouhette d'Ogma se découpe sur le ciel.*"
     "*Le Hurleur semble observer la mer.*"
     "..."
-    
+
     o "Bravo Einar, la réussite est totale ! Mais pourquoi avoir laissé partir le roi ?"
     e "Je..."
     o "Ne réponds pas à ma question, je préfère ne pas savoir."
@@ -1013,7 +1013,7 @@ label e_garder_hache_pont_baisse_donjon:
             o "Tu ne me fais pas confiance ?"
             e "Ce n'est pas le problème. Je veux simplement être absolument certain que personne n'en profitera plus jamais."
             jump lieu_encore_inconnu_1
-            
+
         "La garder !":
             e "Je l'ai prise, elle m'appartient."
             e "J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient !"
@@ -1040,7 +1040,7 @@ label lieu_encore_inconnu_1(axe = True):
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
-        
+
     else:
         "Ogma félicite Einar pour avoir triomphé de Harald. Il lui donne la part de trésor promise. Moira se tient légèrement à l'écart."
         "..."
@@ -1053,7 +1053,7 @@ label lieu_encore_inconnu_1(axe = True):
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
-        
+
 
     menu:
 

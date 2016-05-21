@@ -66,8 +66,8 @@ image harald combat_hache_determine = "harald/combat_hache/harald_combat_hache_d
 image harald combat_normal = "harald/combat/harald_combat_normal.png"
 image harald combat_furieux = "harald/combat/harald_combat_furieux.png"
 image harald combat_blesse = "harald/combat/harald_combat_blesse.png"
-image harald combat_contrarie = "harald/combat/harald_combat_contrarie.png"
-image harald combat_determine = "harald/combat/harald_debout_determine.png"
+#image harald combat_contrarie = "harald/combat/harald_combat_contrarie.png"
+image harald combat_determine = "harald/combat/harald_combat_determine.png"
 
 ##Huscarls
 
@@ -89,15 +89,15 @@ define jgv = Character("Jeune Guerrier Viking")
 
 #Debout
 image gv debout_normaux = "guerriers_vikings/debout/gv_debout_normaux.png"
-image gv debout_enthousiastex = "guerriers_vikings/debout/gv_debout_enthousiastex.png"
+image gv debout_enthousiastes = "guerriers_vikings/debout/gv_debout_enthousiastes.png"
 image gv debout_furieux = "guerriers_vikings/debout/gv_debout_furieux.png"
 image gv debout_rire = "guerriers_vikings/debout/gv_debout_rire.png"
-image gv debout_contrariex = "guerriers_vikings/debout/gv_debout_contrariex.png"
+image gv debout_contraries = "guerriers_vikings/debout/gv_debout_contraries.png"
 image gv debout_determines = "guerriers_vikings/debout/gv_debout_determines.png"
 
 #Combat
 image gv combat_normaux = "guerriers_vikings/combat/gv_combat_normaux.png"
-image gv combat_blesse = "guerriers_vikings/combat/gv_combat_blesse.png"
+image gv combat_blesses = "guerriers_vikings/combat/gv_combat_blesses.png"
 
 #Jeune Guerrier Viking
 image jgv debout_normal = "jeune_viking/debout/jgv_debout_normal.png"
@@ -132,15 +132,14 @@ image moira debout_normal = "moira/debout/moira_debout_normal.png"
 image moira debout_souriant = "moira/debout/moira_debout_souriant.png"
 image moira debout_furieux = "moira/debout/moira_debout_furieux.png"
 image moira debout_attriste = "moira/debout/moira_debout_attriste.png"
-image moira debout_blesse = "moira/debout/moira_debout_blesse.png"
 image moira debout_contrarie = "moira/debout/moira_debout_contrarie.png"
 image moira debout_effraye = "moira/debout/moira_debout_effraye.png"
 image moira debout_determine = "moira/debout/moira_debout_determine.png"
 
 #nude
 image moira nue_normal = "moira/nue/moira_nue_normale.png"
-image moira nue_souriant = "moira/nue/moira_nue_souriant.png"
-image moira nue_effraye = "moira/nue/moira_nue_effraye.png"
+image moira nue_souriant = "moira/nue/moira_nue_souriante.png"
+image moira nue_effraye = "moira/nue/moira_nue_effrayee.png"
 
 #Attache
 image moira attache_determine = "moira/buchet/moira_attache_determine.png"
@@ -169,10 +168,9 @@ define pe2 = Character("Prisonnier écossais 2")
 define pe3 = Character("Prisonnière écossaise 1")
 
 #Debout
-image ve debout_normaux = "villageois_ecossais/debout/ve_debout_nomaux.png"
+image ve debout_normaux = "villageois_ecossais/debout/ve_debout_normaux.png"
 image ve debout_craintifs = "villageois_ecossais/debout/ve_debout_craintifs.png"
-image ve debout_inquiets = "villageois_ecossais/debout/ve_debout_inquiets.png"
-image ve debout_furieux = "villageois_ecossais/debout/ve_debout_furieux.png"
+image ve debout_effrayes = "villageois_ecossais/debout/ve_debout_effrayes.png"
 
 #Buchet
 image ve buchet_normaux = "villageois_ecossais/buchet/ve_buchet_effrayes.png"
@@ -180,8 +178,8 @@ image ve buchet_craintifs = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
 
 ##Patrick
 define p = Character("Patrick")
-image patrick debout_normal = "patrick/deout/patrick_debout_normal.png"
-image patrick debout_furieux = "patrick/deout/patrick_debout_furieux.png"
+image patrick debout_normal = "patrick/debout/patrick_debout_normal.png"
+image patrick debout_furieux = "patrick/debout/patrick_debout_furieux.png"
 
 #Guerriers Asiatiques
 #image ga combat_agressifs = "ga_combat_agressifs.png"

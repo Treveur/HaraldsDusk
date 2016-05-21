@@ -290,12 +290,12 @@ label interieur_maison_village_3:
 
     hide einar with dissolve
     hide moira with dissolve
-    show villageois at left with dissolve
+    show ve debout_normaux at left with dissolve
     ve "Ogma !"
     o "Fenella ? Quelque chose ne va pas ?"
     ve "Dunfermline a brûlé ce matin !"
     o "Le roi... Je ne suis pas surpris."
-    hide villageois with dissolve
+    hide ve with dissolve
     show einar debout_normal at left with dissolve
     e "Vous n'avez pas l'air affecté par la nouvelle !"
     show moira debout_normal at right with dissolve
@@ -470,13 +470,13 @@ label interieur_maison_village_4:
 label village_2:
     scene bg village2_jour with dissolve
 
-    show villageois at center with dissolve
+    show ve debout_normaux at center with dissolve
 
     ve "... et il faudra que tu penses à rentrer les bêtes plus tôt !"
     ve "Mamie ! J'ai trouvé un caillou qui brille !"
 
     "*Les villageois remarquent à peine la présence d'Einar.*"
-    hide villageois with dissolve
+    hide ve with dissolve
 
     show einar debout_normal at left with dissolve
     show moira debout_normal at right with dissolve
