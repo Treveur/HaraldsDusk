@@ -208,7 +208,10 @@ image bg cote1 = "cote1.jpg"
 #Fond uni
 image bg black = "#000"
 
-# Déclarez les personnages utilisés dans le jeu.
+# sounds
+
+#musics
+#define audio.drama_slaughter = "sounds/musics/music_drama_slaughter.wav"
 
 # Le jeu commence ici
 

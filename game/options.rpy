@@ -179,12 +179,12 @@ init -1 python hide:
 
     ## Un son d'exemple utilisé pour vérifier le volume du son.
 
-    # config.sample_sound = "click.wav"
+    config.sample_sound = "sounds/sfx/SFX_WarHorn.mp3"
 
     ## Musique jouée lorsque le joueur se trouve dans le menu principal.
 
     # config.main_menu_music = "main_menu_theme.ogg"
-    config.main_menu_music = "../sounds/helvegen.ogg"
+    config.main_menu_music = "sounds/musics/helvegen.ogg"
 
 
     #########################################
