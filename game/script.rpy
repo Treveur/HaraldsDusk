@@ -76,7 +76,7 @@ image huscarls debout_normal = "huscarls/debout/huscarls_debout_normaux.png"
 image huscarls debout_rire = "huscarls/debout/huscarls_debout_rire.png"
 
 #Combat
-image huscarls combat_normal = "huscarls/combat/huscarls_combat_normaux.png"
+image huscarls combat_normaux = "huscarls/combat/huscarls_combat_normaux.png"
 image huscarls combat_enthousiaste = "huscarls/combat/huscarls_combat_enthousiaste.png"
 image huscarls combat_furieux = "huscarls/combat/huscarls_combat_furieux.png"
 image huscarls combat_inquiets = "huscarls/combat/huscarls_combat_inquiets.png"
@@ -218,13 +218,13 @@ define audio.slaughter = "sounds/musics/music_drama_slaughter.mp3"
 #define audio.drama_slaughter = "sounds/musics/music_drama_slaughter.wav"
 
 #SFX
-define audio.blade_1 = "sounds/musics/SFX_Blade1.mp3"
-define audio.blade_2 = "sounds/musics/SFX_Blade2.mp3"
-define audio.double_horn = "sounds/musics/SFX_Double_WarHorn.mp3"
-define audio.drawbrigde = "sounds/musics/SFX_Drawbridge_Down.mp3"
-define audio.hurt_man_1 = "sounds/musics/SFX_Hurt_Man.mp3"
-define audio.hurt_man_2 = "sounds/musics/SFX_Hurt_Man2.mp3"
-define audio.hurt_man_3 = "sounds/musics/SFX_Hurt_Man3.mp3"
+define audio.blade_1 = "sounds/sfx/SFX_Blade1.mp3"
+define audio.blade_2 = "sounds/sfx/SFX_Blade2.mp3"
+define audio.double_horn = "sounds/sfx/SFX_Double_WarHorn.mp3"
+define audio.drawbrigde = "sounds/sfx/SFX_Drawbridge_Down.mp3"
+define audio.hurt_man_1 = "sounds/sfx/SFX_Hurt_Man.mp3"
+define audio.hurt_man_2 = "sounds/sfx/SFX_Hurt_Man2.mp3"
+define audio.hurt_man_3 = "sounds/sfx/SFX_Hurt_Man3.mp3"
 
 #ambiance
 define audio.burning_dungeon = "sounds/ambiances/ambiance_burning_dungeonkeep.mp3"

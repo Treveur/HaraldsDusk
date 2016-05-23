@@ -597,8 +597,9 @@ label foret_3:
     "Moira demande à EInar de se taire, en mettant un doigt sur sa bouche."
     m "Chuuut..."
 
-    hide einar with dissolve
-    hide moira with dissolve
+    hide einar
+    hide moira
+    with dissolve
 
     jump paradis_foret_1
 
@@ -606,8 +607,9 @@ label foret_3:
 label paradis_foret_1:
     scene bg little_heaven with dissolve
 
-    show einar debout_normal at left with dissolve
-    show moira debout_normal at right with dissolve
+    show einar debout_normal at left
+    show moira debout_normal at right
+    with dissolve
 
     $ moira_dead = False
     $ premier_refus_moira_foret_4 = False

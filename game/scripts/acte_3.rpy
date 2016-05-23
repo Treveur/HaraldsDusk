@@ -327,9 +327,15 @@ label cour_chateau_1:
     with dissolve
 
     "Un homme apporte une torche. Un par un, il allume les bûchers."
+
     show gv debout_rire with dissolve
 
     gv "Regardez-les s'agiter comme des vers, ha ha !"
+    hide gv with dissolve
+
+    show einar debout_normal at left with dissolve
+    show jgv debout_normal at right with dissolve
+
     "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
     "Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui."
 
@@ -339,29 +345,42 @@ label cour_chateau_1:
     menu :
 
         "Une bande de porcs qui rôtissent !":
+            show einar debout_souriant at right
             e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
             $ reponse_reconfort = "pleurer"
+
         "Pas besoin de les pleurer":
             e "Ne pleure pas ces parasites, ils ne le méritent pas."
+            show einar debout_determine at right
             e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
             e "Alors réjouis-toi, gamin ! En voilà trois de moins !"
             $ reponse_reconfort = "pleurer"
+
         "Nous n'y pouvons rien":
+            show einar debout_attriste at right
             e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
             $ reponse_reconfort = "larme_aux_yeux"
+
         "Ne rien dire":
+            show einar debout_attriste at right
             e "..."
             $ reponse_reconfort = "larme_aux_yeux"
+
         "L'évêque peut se tromper, mais pas Dieu":
             e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient justes, les condamnés iront au paradis."
             $ reponse_reconfort = "rassure"
 
     if reponse_reconfort == "pleurer":
+        show jgv debout_pleurant at right
         "Le jeune soldat pleure sans se cacher."
     elif reponse_reconfort == "larme_aux_yeux":
+        show jgv debout_pleurant at right
         "Le jeune soldat semble toujours aussi bouleversé."
     else:
         "Le jeune soldat semble rassuré."
+
+    hide einar
+    hide jgv
 
     jump cour_chateau_2
 
@@ -370,12 +389,19 @@ label cour_chateau_2:
     show bg cour_chateau_crepuscule with dissolve
 
     "Au crépuscule..."
+    show gv debout_normaux at left with dissolve
+    show harald debout_normal at left with dissolve
     gv "Sire ! Sire !"
     h "Qu'y a-t-il ? Parle !"
     gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
+    show harald debout_furieux at left with dissolve
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
+    image harald combat_determine = "harald/combat/harald_combat_determine.png"
     h "Tous à vos postes de combat ! Huscarls, préparez-vous à défendre la porte ! Je veux vingt archers sur les remparts !"
     "Une fois ses ordres donnés, Harald disparaît dans le donjon."
+
+    hide harald
+    hide gv
 
     jump interieur_grande_porte_chateau_1
 
@@ -383,19 +409,26 @@ label cour_chateau_2:
 label interieur_grande_porte_chateau_1:
     show bg chateau_porte_interieur_crepuscule with dissolve
 
-    "Einar est posté à proximité du système d'ouverture des portes."
+    show gv debout_enthousiastes with dissolve
     gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
+    hide gv
     "La horde progresse en courant à travers la plaine."
     "A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis."
+    play sound double_horn
+
+    "Einar est posté à proximité du système d'ouverture des portes."
+
 
     menu:
         "Ouvrir le pont-levis":
+            hide einar
             if soupcon_harald_1:
                 jump bad_ending_3
             else:
                 jump pont_levis_baisse
 
         "Laisser fermé":
+            hide einar
             if soupcon_harald_1:
                 jump soupcon_harald_defendre_porte
             else:
@@ -405,34 +438,63 @@ label interieur_grande_porte_chateau_1:
 #Baisser pont-levis
 label pont_levis_baisse:
 
+    show gv combat_normaux at center with dissolve
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
     "Une volée de flèches abat une partie des rebelles qui foncent vers le château."
     "Le pont s'abaisse brutalement, laissant le champ libre."
     gv "Trahison ! Bloquez le passage, vite !"
     "..."
+
     "Les soldats proches se tournent vers Einar."
+
+    show gv combat_normaux at right
+    show einar debout_normal at left with dissolve
 
     menu:
 
         "Reculez !":
+            show einar combat_determine at left
             e "Arrière ! Je vous ferai rendre gorge !"
+
         "Tactique du roi":
+            show einar combat_normal at left
             e "C'était une tactique imaginée par notre roi !"
+
         "Venez, je vous attends !":
+            show einar combat_furieux at left
             e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur !"
+
         "Ne rien dire":
+            show einar debout_furieux at left
             e "..."
+
+    hide gv
+    hide einar
+    with dissolve
 
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
+    #show ge debout_enthousiastes
+    show gv debout_determines
+    with dissolve
+    #Ajouter un shake camera
     ge "HAAAAA !"
     gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
+
+    hide gv
+    #hide ge
+    with dissolve
 
     if moira_dead:
 
         "Ogma surgit au milieu de la mêlée, franchissant la Grande Porte. Il se rue sur Einar, un regard fou dans les yeux et la bave aux lèvres. Il hurle le nom de sa fille."
+
+        show einar debout_normal at left
+        show ogma combat_furieux at right
+        with dissolve
+
 
         o "MOIRAAAAAAAA !"
         o "POURQUOI L'AVOIR TUÉE ?"
@@ -440,16 +502,28 @@ label pont_levis_baisse:
         menu:
 
             "J'avais juste envie":
+                show einar combat_normal at left
                 e "L'envie de voir de près un salopard d'écossais déborder de rage !"
+
             "Votre fille m'insupportait":
+                show einar combat_furieux at left
                 e "J'aimais votre cause, pas votre fille !"
+
             "C'est parti tout seul":
+                show einar combat_normal at left
                 e "Je n'ai pas réfléchi !"
+
             "Viens te battre":
+                show einar combat_determine at left
                 e "Ferme la et bats-toi, raclure !"
 
+        show ogma combat_determine at right
         o "Tout s'achève, ici et maintenant !"
         "Phase de combat, impossible à gagner WIP"
+
+        hide einar
+        hide ogma
+        with dissolve
 
         jump bad_ending_4
 
@@ -458,9 +532,14 @@ label pont_levis_baisse:
         $ loose_battle = False
 
         "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls."
-        gv "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
-        gv "Ha, il a du tomber sur un beau garçon de ferme !"
-        gv "Défend-toi, traître !"
+
+        show einar combat_normal at left
+        show huscarls combat_normaux at right
+        with dissolve
+
+        hu "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
+        hu "Ha, il a du tomber sur un beau garçon de ferme !"
+        hu "Défend-toi, traître !"
 
         "Affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
 
