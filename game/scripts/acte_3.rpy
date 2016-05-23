@@ -549,9 +549,13 @@ label pont_levis_baisse:
 
         else:
             "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
+            show einar combat_normal at left
+            show ogma combat_normal at right
+            with dissolve
             o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
             e "Le donjon ? Pourquoi ?"
             o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
+            show ogma combat_determine at right
             o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
 
 
@@ -560,11 +564,21 @@ label pont_levis_baisse:
             menu :
 
                 "Ne me donne pas d'ordres":
+                    show einar combat_normal at left
                     e "Je n'ai pas d'ordres à recevoir !"
+
+                    hide einar
+                    hide ogma
+                    with dissolve
+
                     jump e_bruler_donjon_desobeir_donjon
 
                 "J'y vais !":
+                    show einar combat_determine at left
                     e "J'y vais!"
+                    hide einar
+                    hide ogma
+                    with dissolve
                     jump e_bruler_donjon_obeir_donjon
 
 label e_bruler_donjon_desobeir_donjon:
@@ -1391,10 +1405,10 @@ label harald_defendre_porte:
 
         "Massacrez-les":
             e "En avant, sire ! Massacrez ces chiens !"
-            
+
         "Ne rien dire":
             e "..."
-            
+
     "Le roi lance une grande contre-offensive à la tête de son armée."
     "Désorganisés, les rebelles sont séparés en deux groupes. Certains rompent les rangs."
     ge "Tout est perdu ! Fuyez !"
@@ -1441,7 +1455,7 @@ label e_laisse_ogma_mort_defendre_porte:
         "J'aurais dû faire ça moi-même"
             e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
             h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
-            
+
 
     jump cour_chateau_ogma_mort_defendre_porte
 
@@ -1471,11 +1485,11 @@ label e_sauve_ogma_defendre_porte:
 
     "Einar dévie le coup de hache du roi et sauve Ogma."
     "Emporté par son élan et son propre poids, la Hache se fiche dans le sol, déstabilisant Harald."
-    "Voyant que le roi a relâché son emprise sur la relique, Ogma en profite pour trancher les deux tendons d'achille du roi." 
+    "Voyant que le roi a relâché son emprise sur la relique, Ogma en profite pour trancher les deux tendons d'achille du roi."
     "Harald tombe aux côtés d'Ogma, qui l'achève en lui enfonçant son coutelas dans la gorge."
     "Aussitôt la horde rebelle resserre son étau sur les vikings, investie par une nouvelle vigueur."
     "Pris au coeur de la mêlée, Einar est piétiné et laissé pour mort."
-    
+
     "..."
 
     "Lorsqu'il reprend ses esprits, Einar voit Ogma sur les remparts, brandissant la Hache Sainte. Derrière lui, le château brûle."
