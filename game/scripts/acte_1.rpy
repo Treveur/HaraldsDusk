@@ -597,12 +597,10 @@ label e_massacre_village_2:
     e "Massacrez-moi tout ça ! Et brûlez leurs cabanes !"
 
     gv "HAAAAA !"
-
+    hide logan with dissolve
     ve "Sauvez les enfants ! Les enfants !"
-
-    hide gv with moveoutright
     hide ve with moveoutright
-
+    hide gv with moveoutright
     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 
 label e_demander_information_village_1:
@@ -674,7 +672,7 @@ label e_fouiller_village_1(einarFouille = False):
 
 
 label e_tuer_villageois_village_1:
-    show ve 
+    show ve
 
     e "Toi. Approche."
 
@@ -805,6 +803,7 @@ label e_tuer_moira_maison_1:
 label choix_retour_village_1(massacre = False):
 
     if massacre:
+        show logan debout_normal at right with dissolve
         e "Empilez les cadavres avant le départ."
 
         l "Nous étions censés trouver le village rebelle, pas massacrer des paysans !"
@@ -822,8 +821,9 @@ label choix_retour_village_1(massacre = False):
 
         e "J'espère pour toi que tu as raison, Logan."
 
+    show gv debout_normaux at halfsize, center with dissolve
     gv "Où allons-nous ?"
-
+    hide gv with dissolve
     if massacre:
         menu:
             "Rentrer au Chateau de Dunbar":
@@ -844,23 +844,25 @@ label foret_2(lieu = ""):
     if lieu == "chateau":
 
         "Sur le chemin du retour..."
-
+        show gv debout_normaux at center with dissolve
         gv "Pourquoi sommes-nous déjà sur le retour ?"
-
+        show einar debout_normal at left
         e "Parce que j'ai de sérieux doutes sur ce village. Les gens de Perth étaient bien trop louches, quoi qu'en dise Logan."
-
+        hide gv with dissolve
+        show logan debout_normal at right with dissolve
         l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
 
         e "Je ne suis sûr de rien."
 
     else:
         "En poursuivant vers le nord..."
-
+        show gv debout_normaux at center with dissolve
         gv "Pourquoi devons-nous poursuivre vers le nord ? Je croyais que nous avions trouvé les rebelles !"
-
+        show einar debout_normal at left with dissolve
         e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
 
     scene bg forest_night with dissolve
+    hide einar with dissolve
     "..."
 
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
@@ -868,9 +870,9 @@ label foret_2(lieu = ""):
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
 
     gv "Ha Ha Ha !"
-
+    show einar debout_normal at left with dissolve
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
-
+    show logan debout_normal at right with dissolve
     l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
 
     e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
