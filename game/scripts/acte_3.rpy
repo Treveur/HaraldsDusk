@@ -16,7 +16,7 @@ label exterieur_chateau_1:
 
     scene bg chateau_porte with dissolve
 
-    show einar debout_normal with moveinleft
+    show einar debout_normal at left with moveinleft
     show gv debout_normaux at right with dissolve
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
@@ -29,6 +29,7 @@ label exterieur_chateau_1:
     menu :
 
         "Pousse-toi":
+            show einar debout_determine at left
             e "Écarte-toi, Geir! Je dois parler au roi sans tarder !"
             gc "Bien sûr, excuse-moi."
 
@@ -38,6 +39,7 @@ label exterieur_chateau_1:
             gc "Bien sûr, excuse-moi."
 
         "Menacer":
+            show einar debout_determine at left
             e "Laisse-moi passer, andouille. On ne barre pas la route à un huscarl ! Je dois voir le roi au plus vite !"
             gc "Bien sûr, excuse-moi."
 
@@ -57,37 +59,42 @@ label cour_chateau_1:
     $ mentir_harald_1 = False
     $ interpose_bucher = False
 
-    show einar debout_normal at left with dissolve
-
     "*Harald est en grande discussion avec un huscarl au milieu de la cour*"
+
+    show einar debout_normal at left with dissolve
     e "Sire ! Sire !"
-    h "... doit nous faire venir de nouveaux navires de guerre, et..."
     show harald debout_normal at right with dissolve
+    h "... doit nous faire venir de nouveaux navires de guerre, et..."
     h "Einar ? Que... D'où viens-tu ? Où as-tu passé tout ce temps ? Où sont tes compagnons ? J'ai beaucoup de questions à te poser !"
 
     menu:
 
         "Content d'être rentré":
+            show einar debout_souriant at left
             e "Quel plaisir de vous retrouver, mon roi !"
             h "La surprise est bonne ! Je désesperais de te revoir un jour. J'étais convaincu d'avoir perdu l'un de mes meilleurs huscarls !"
             h "A vrai dire, je tenais pour acquis que tu étais mort quelque part dans le nord, victime des rebelles..."
 
         "Peur de ne pas revenir":
+            show einar debout_attriste at left
             e "J'ai bien cru ne jamais revenir, sire."
             h "Eh bien après tous ce temps, on te croyait mort. J'étais persuadé que toi et tes compagnons étiez morts de la main des rebelles !"
             h "J'ai d'ailleurs passé tout le temps depuis ta disparition à envoyer des troupes raser l'Ecosse. Ces ordures de rebelles finiront par se montrer en voyant leur peuple se faire exterminer."
             h "Crois-moi, les écossais ont payé le prix fort pour votre disparition, à toi et tes hommes !"
+            show einar debout_souriant at left
             e "C'est un honneur que d'être vengé par son roi !"
 
         "Ne rien dire":
+            show einar debout_attriste at left
             e "..."
-            h "J'imagine que tu as dû vivre des choses terribles, et que tu dois être épuisé."
+            h "J'imagine que tu as dû vivre des choses terribles..."
 
     h "Mais dis-moi, que t'est-il arrivé ?"
     h "Et l'escorte qui t'accompagnais ? Et Logan ?"
 
     menu:
         "Dire ne rien savoir (mentir)":
+            show einar debout_normal at left
             e "Je ne sais pas. Nous traversions une forêt en pleine nuit. J'ai été assommé... A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
             h "Un fossé ?"
             e "Oui, au détour d'un sentier en pleine forêt."
@@ -96,9 +103,11 @@ label cour_chateau_1:
 
         "Raconter l'embuscade":
         #modifaction pour indiquer le lieu par la suite
+            show einar debout_normal at left
             e "Nous venions de traverser le village de Perth, que nous soupçonnions d'abriter les rebelles."
             e "Nous étions ensuite repartis. Les hommes discutaient entre eux, nous étions sûrs de nous. Puis la nuit est tombée."
             e "Il nous ont prit au dépourvu. Une bande d'une trentaine de guerriers écossais nous est tombée dessus sans que nous ne puissions nous défendre."
+            show einar debout_attriste at left
             e "Des archers dissimulés dans l'obscurité ont lancé une salve qui a touché un grand nombre des nôtres."
             e "Ensuite, le meneur s'est approché de moi. Il a égorgé Logan sous mes yeux puis m'a assommé."
             h "Qui t'a soigné ? Tu devais être blessé... Je te connais, rien ne t'arrête jamais quand il s'agit de combattre !"
@@ -106,6 +115,7 @@ label cour_chateau_1:
             jump menu_embuscade_ou_silence_cour_chateau
 
         "Ne rien dire":
+            show einar debout_attriste at left
             e "..."
             h "Tu dois tout me raconter, Einar. Je ne suis pas idiot, je sais que tes compagnons sont morts. C'est évident. Pourquoi serais-tu revenu seul, sinon ?"
             h "Tu dois me dire ce qu'il s'est passé. Nous devons venger la mort de nos hommes ! Nous devons éradiquer les rebelles !"
@@ -118,6 +128,7 @@ label cour_chateau_1:
     menu menu_assome_cour_chateau:
 
         "Je me suis débrouillé (mentir)":
+            show einar debout_normal at left
             e "Je me suis remis, lentement mais sûrement, dans la nature."
             "*Harald hausse les sourcils*"
             h "Dans la nature ? J'ai du mal à te croire..."
@@ -126,6 +137,7 @@ label cour_chateau_1:
             $ soupcon_harald_1 = True
 
         "J'ai reçu l'aide d'un autochtone (mentir)":
+            show einar debout_normal at left
             e "J'ai été soigné par un vieux paysan."
             h "Un paysan ?"
             e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
@@ -136,6 +148,7 @@ label cour_chateau_1:
     menu menu_embuscade_ou_silence_cour_chateau:
 
         "Village et Moira":
+            show einar debout_normal at left
             e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
             e "Un chasseur m'a trouvé alors qu'il allait relever des collets. Il m'a ramené à son village puis sa fille s'est occupée de moi. Elle s'appelait Moira."
             e "Pendant un mois, cette jeune femme m'a prodigué les soins nécessaires. Lorsqu'enfin mon état s'est amélioré, j'ai pu repartir."
@@ -143,6 +156,7 @@ label cour_chateau_1:
             e "..."
 
         "J'ai reçu l'aide d'un autochtone (mentir)":
+            show einar debout_normal at left
             e "J'ai été soigné par un vieux paysan."
             h "Un paysan ?"
             e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
@@ -151,6 +165,7 @@ label cour_chateau_1:
             h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
         "Perte de mémoire (mentir)" if retour_silence_1:
+            show einar debout_normal at left
             e "Je ne me rappelle de rien... Simplement de ce coup à la tête."
             e "Après, il n'y a qu'un grand vide jusqu'à il y a trois jours, lorsque je me suis réveillé dans les bois."
             e "Mes blessures étaient soignées et un repas était posé à côté de moi. Je l'ai mangé et ai prit la route pour revenir jusqu'ici."
@@ -165,13 +180,16 @@ label cour_chateau_1:
         e "(C'est maintenant ou jamais...)"
 
         "Dire toute la vérité":
+            show einar debout_normal at left
             e "Très bien. Voici la vérité."
             e "Après avoir traversé le village de Perth, nous sommes tombés dans une embuscade des rebelles. Ils avaient probablement été prévenus de notre arrivée."
+            show einar debout_attriste at left
             e "Tous mes compagnons sont morts, y compris Logan."
             h "Et toi ? Tu t'es enfui ?"
             e "Non. Alors que j'avais été mis à terre, le meneur des rebelles s'est approché de moi. J'ai cru mon heure arrivée."
             e "Il s'est penché sur moi puis m'a demandé de coopérer. Je n'ai pas eu d'autre choix que d'accepter."
             e "J'ai ensuite été assommé. A mon réveil, j'étais dans l'une de ces maisons écossaises, comme nous en avions vu au village."
+            show einar debout_normal at left
             e "Pendant un mois, une jeune femme s'est occupée de moi. Elle s'appelait Moira et était la fille du meneur des rebelles, Ogma le Hurleur."
             h "Ogma le Hurleur ? Ce n'est pas un nom..."
             e "Dans ce cas, je ne connaît pas sa véritable identité."
@@ -183,32 +201,41 @@ label cour_chateau_1:
             e "Quoi qu'il en soit, je n'ai jamais cessé de vous être fidèle. Tout ce que j'ai fait, c'était dans votre intérêt. J'ai patiemment attendu le moment où je pourrais vous révéler leurs intentions. Et voilà."
 
         "Je vous suis fidèle (mentir)":
+            show einar debout_determine at left
             e "Nul ne vous est plus fidèle que moi !"
             $ mentir_harald_1 = True
 
         "J'ai rusé dans votre intérêt (mentir)":
+            show einar debout_determine at left
             e "J'ai rusé de toutes les manières possibles uniquement dans le but de revenir à votre service."
             $ mentir_harald_1 = True
 
     if mentir_harald_1:
+        show einar debout_normal at left
         h "Je te remercie pour ta sincérité, Einar."
+        show harald debout_determine at right
         h "Grâce à toi, nous allons profiter de toutes les informations que tu as pu glâner pendant ce mois dans les Highlands."
+        show harald debout_normal at right
         h "Mais pour le moment tu devrais rejoindre les autres soldats. Ils seront heureux de retrouver l'un des leurs."
         e "Bien mon Roi."
 
     else:
+        show harald debout_contrarie at right
+        show harald debout_normal at left
         h "Ces salopards comptent attaquer prochainement ? Il faut impérativement préparer nos défenses !"
         e "Le château n'est pas suffisant ?"
         h "Si, mais uniquement si les hommes qui le défendent sont à leurs postes !"
         h "Je te remercie de m'avoir tout avoué. J'ai eu des doutes sur toi pendant un instant, mais me voilà rassuré."
+        show harald debout_determine at right
         h "Pendant que je vais planifier la défense du château, tu devrais aller à la rencontre des autres soldats. Ils seront heureux de te retrouver."
         h "Les morts ne reviennent pas tous les jours !"
+        show einar debout_souriant at right
         e "Bien mon Roi."
 
-    "*Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés.*"
+        hide einar
+        hide harald
 
-    hide einar
-    hide harald
+    "*Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés.*"
 
     show patrick debout_normal at center with dissolve
 
@@ -219,6 +246,7 @@ label cour_chateau_1:
     show ve buchet_normaux at right with dissolve
 
     pe3 "Arrêtez ! Je suis enceinte !"
+    show patrick debout_furieux at left
     p "Je n'ai que faire de tes mensonges, femme !"
     p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
@@ -228,12 +256,17 @@ label cour_chateau_1:
 
     menu:
         "Arrêter le massacre":
+            show einar debout_furieux at left
             e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
+            show patrick debout_normal at right
             p "Einar ? Tu étais porté disparu depuis un mois !"
+            show patrick debout_furieux at right
             p "Et te voilà sorti de nul part, prêt à défendre ces hérétiques !"
             p "Ces gens ne sont pas innocents ! Ils ont été capturés alors qu'ils menacaient de m'assassiner !"
+            show einar debout_attriste at left
             e "Une femme enceinte ? Y croyez-vous vraiment, Excellence ?"
             p "Elle était avec eux lorsque nous les avons capturés. Elle ne peut être innocente : elle a avoué !"
+            show einar debout_furieux at left
             e "Sous la torture ? Vous auriez pu lui faire avouer n'importe quoi !"
             p "Comment peux-tu savoir que ces gens sont innocents ? As-tu des révélations à nous faire ?"
 
@@ -242,9 +275,11 @@ label cour_chateau_1:
             jump menu_sauver_rebelle_cour_chateau
 
         "Ne rien dire":
+            show einar debout_attriste at left
             e "..."
 
         "Brûlez-les":
+            show einar debout_determine at left
             e "Vous avez raison, Excellence !"
             e "Brûlez-les !"
 
@@ -252,8 +287,10 @@ label cour_chateau_1:
 
         menu menu_sauver_rebelle_cour_chateau:
             "Pas vus à Perth":
+                show einar debout_normal at left
                 e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
                 e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
+                show patrick debout_furieux at right
                 p "Mensonge ! Ils ont tenté de m'assassiner ! Ils ont tout avoué !"
                 p "Ils se sont opposés à un homme de Dieu et ont agi à l'encontre du porteur de la Hache Sainte !"
 
@@ -261,15 +298,19 @@ label cour_chateau_1:
                     $ soupcon_harald_1 = True
 
             "Ils ont l'air innoffensifs":
+                show einar debout_normal at left
                 e "Je ne sais rien d'eux, mais croyez-vous vraiment que ces trois paysans soient responsables d''une tentative d'assassinat ?"
                 e "Une mère ne mettrait pas la vie de son enfant en danger !"
 
+        show patrick debout_normal at right
         p "Ne t'interpose pas avec la volonté de Dieu !"
         p "Je pourrais croire que tu cherches à leur épargner le châtiment qu'ils méritent..."
         p "Et tu vois toi-même le sort réservé aux traîtres !"
 
+    show patrick debout_furieux at right
     p "Amenez les torches, et que brûlent les hérétiques !"
 
+    show patrick debout_furieux at right
     pe1 "Pitié ! Epargnez ma femme !"
     pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
     pe2 "Laissez partir les autres ! Je suis responsable de tout !"
@@ -1189,7 +1230,7 @@ label soupcon_harald_defendre_porte:
     menu :
         "*Un combat s'engage entre Ogma et Einar !*"
         "Mini jeu combat WIP"
-        
+
         "Gagner":
             "*Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves.*"
             "*Terrorisés, les rebelles prennent la fuite.*"
