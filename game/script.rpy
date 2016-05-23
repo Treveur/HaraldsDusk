@@ -173,7 +173,7 @@ image ve debout_effrayes = "villageois_ecossais/debout/ve_debout_effrayes.png"
 
 #Buchet
 image ve buchet_normaux = "villageois_ecossais/buchet/ve_buchet_effrayes.png"
-image ve buchet_craintifs = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
+image ve buchet_pleurent = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
 
 ##Patrick
 define p = Character("Patrick")
@@ -253,8 +253,6 @@ label start:
     centered "Revenu triomphalement en Norvège, il est couronné roi et entame de grandes campagnes militaires visant à christianiser le monde ainsi qu'à asseoir sa suprématie."
 
     centered "Armé de la Hache Sainte, Harald prend le contrôle de l'Europe, du Moyen-Orient et d'une partie de l'Asie et de l'Afrique. En 1080, Harald est devenu l'équivalent d'Alexandre le Grand : un roi-empereur, une légende vivante, un demi-dieu."
-
-    centered "L'hégémonie des vikings et du christianisme est presque totale."
 
     centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
 

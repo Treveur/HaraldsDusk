@@ -307,19 +307,27 @@ label cour_chateau_1:
         p "Je pourrais croire que tu cherches à leur épargner le châtiment qu'ils méritent..."
         p "Et tu vois toi-même le sort réservé aux traîtres !"
 
-    show patrick debout_furieux at right
+    show patrick debout_normal at right
     p "Amenez les torches, et que brûlent les hérétiques !"
 
     show patrick debout_furieux at left
-    show ve buchet_normaux at right
+    show ve buchet_pleurent at right
+
+    #A intégrer plus tars
 
     pe1 "Pitié ! Epargnez ma femme !"
     pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
     pe2 "Laissez partir les autres ! Je suis responsable de tout !"
 
+    show patrick debout_furieux at left
     p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
 
+    hide patrick
+    hide ve
+    with dissolve
+
     "*Un homme apporte une torche. Un par un, il allume les bûchers."
+    show gv debout_rire with dissolve
     gv "Regardez-les s'agiter comme des vers, ha ha !"
     "*Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait.*"
     "*Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui.*"
