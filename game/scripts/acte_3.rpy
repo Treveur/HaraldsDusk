@@ -899,7 +899,7 @@ label foret_4:
 
     "..."
     "*Moira apparaît sur le sentier.*"
-    if if premier_refus_moira == False:
+    if premier_refus_moira == False:
         e "Qu'est-ce que tu fais là ?"
         m "Je viens avec toi."
         e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
