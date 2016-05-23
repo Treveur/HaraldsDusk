@@ -237,6 +237,10 @@ define audio.village = "sounds/ambiances/ambiance_village.mp3"
 define audio.wood_night = "sounds/ambiances/ambiance_wood_night.mp3"
 define audio.wood = "sounds/ambiances/ambiance_woods.mp3"
 
+#transform
+transform halfsize :
+    zoom 0.5
+
 # Le jeu commence ici
 
 label start:

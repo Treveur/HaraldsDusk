@@ -557,12 +557,12 @@ label village_1:
     gv "Ça sent le traquenard..."
 
     hide gv debout_normaux with dissolve
-    show gv debout_normaux at left zorder 1 with dissolve
-    show ve debout_craintifs at right zorder 1 with dissolve
+    show gv debout_normaux at halfsize, left zorder 1 with dissolve
+    show ve debout_craintifs at halfsize, right zorder 1 with dissolve
 
     menu menu_fouille_village:
 
-        "Demander des infomations sur les rebelles":
+        "Demander des informations sur les rebelles":
             jump e_demander_information_village_1
         "Fouillez le village!":
             jump e_fouiller_village_1
@@ -599,6 +599,9 @@ label e_massacre_village_2:
     gv "HAAAAA !"
 
     ve "Sauvez les enfants ! Les enfants !"
+
+    hide gv with moveoutright
+    hide ve with moveoutright
 
     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 
