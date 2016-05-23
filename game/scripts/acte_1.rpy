@@ -196,7 +196,7 @@ label intro:
 
     gv "Sire ! Un rapport des éclaireurs !"
     h "Donne-moi ça..."
-    "*Harald lit rapidement le rapport.*"
+    "Harald lit rapidement le rapport."
 
     hide einar debout_normal
     hide logan fache
@@ -209,7 +209,7 @@ label plaine_1 :
 
     scene bg mer with dissolve
 
-    "*Une heure plus tard.*"
+    "Une heure plus tard."
 
     show harald debout_normal at right with dissolve
 
@@ -300,7 +300,7 @@ label plaine_2:
 
     scene bg cote1 with dissolve
 
-    "*Le lendemain...*"
+    "Le lendemain..."
 
     show gv debout_normaux at center with dissolve
 
@@ -385,7 +385,7 @@ label foret_1:
 
     scene bg forest with dissolve
 
-    "*Un jour plus tard...*"
+    "Un jour plus tard..."
 
     show einar debout_normal at left with dissolve
 
@@ -542,11 +542,11 @@ label village_1:
     $ moira_met = False
 
     scene bg village with dissolve
-    "*Peu après midi, la troupe parvient en vue d'un village...*"
+    "Peu après midi, la troupe parvient en vue d'un village..."
     show logan debout_normal at right zorder 5 with dissolve
     l "Nous y sommes. Perth."
 
-    "*Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive.*"
+    "Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive."
     show einar debout_normal at left zorder 5 with dissolve
     e "Ça me semble bien calme."
     show gv debout_normaux at center with dissolve
@@ -609,7 +609,7 @@ label e_demander_information_village_1:
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
-    ve "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens ! *crache*"
+    ve "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens ! crache"
 
     e "Quel succès, Logan."
 
@@ -638,7 +638,7 @@ label e_fouiller_village_1(einarFouille = False):
 
         e "Si qui que ce soit tente de s'enfuir ou se montre agressif, tuez-le."
 
-        "*Einar entre dans une maison*"
+        "Einar entre dans une maison"
 
 
     else:
@@ -682,7 +682,7 @@ label e_tuer_villageois_village_1:
 
     ve "Monseigneur, je ..."
 
-    "*Einar tranche la gorge du villageois d'un seul coup.*"
+    "Einar tranche la gorge du villageois d'un seul coup."
 
     ve "Pourritures ! Salauds !"
 
@@ -771,7 +771,7 @@ label e_tuer_moira_maison_1:
 
     e "Cette rencontre s'achève ici."
 
-    "*Einar tire son épée et tue la villageoise*"
+    "Einar tire son épée et tue la villageoise"
 
     ve "Vengeanghghh..."
 
@@ -955,44 +955,48 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     hide logan with dissolve
     hide gv with dissolve
 
-    "*Un cor retentit dans les bois, très proche.*"
+    "Un cor retentit dans les bois, très proche."
 
-
+    show einar debout_normal with dissolve
     e "En position de combat, tous !"
+    show gv debout_normaux at halfsize, center with dissolve
     gv "Ça venait d'où ?"
+    show logan debout_normal with dissolve
     l "Sur la gauche ! Des torches !"
 
-    "*Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings.*"
-    "*Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout.*"
-
+    "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
+    "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+    hide gv with dissolve
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
 
-    "*Un meneur semble émerger du groupe des assaillants.*"
-    "*Les vikings se font massacrer et ne répondent plus aux ordres d'Einar.*"
-
+    "Un meneur semble émerger du groupe des assaillants."
+    "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
+    hide logan with dissolve
+    #show ge debout_normaux at halfsize, right with dissolve
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     e "Approchez, charognes ! Je..."
 
-    "*Une flèche frappe Einar de plein fouet à l'épaule, le désarmant.*"
-
+    "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
+    #hide ge with dissolve
+    show logan debout_normal with dissolve
     l "Einar ! Derrière toi !"
 
     e "Que..."
 
-    "*L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol.*"
+    "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
 
     e "Aaarrggh ! Logan, aide-moi !"
 
     l "Je suis là !"
 
-    "*Logan est frappé derrière la tête et tombe au sol, face à Einar.*"
+    "Logan est frappé derrière la tête et tombe au sol, face à Einar."
 
-    "*Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
+    "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
 
-    "*Le meneur fixe Einar.*"
+    "Le meneur fixe Einar."
 
     ge "Les chiens du roi-empereur ont échoué."
 
@@ -1105,43 +1109,43 @@ label attaque_massacre_foret_2(message = ""):
         gv "Ha ha ha !"
         l "Ferme-la Ein..."
 
-    "*Un cor retentit dans les bois, très proche.*"
+    "Un cor retentit dans les bois, très proche."
 
     e "En position de combat, tous !"
     gv "Ça venait d'où ?"
     l "Sur la gauche ! Des torches !"
 
-    "*Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings.*"
-    "*Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout.*"
+    "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
+    "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
 
-    "*Un meneur semble émerger du groupe des assaillants.*"
-    "*Les vikings se font massacrer et ne répondent plus aux ordres d'Einar.*"
+    "Un meneur semble émerger du groupe des assaillants."
+    "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
 
     ge "Mourrez, chiens ! Vous allez regretter ce que vous avez fait à Perth !"
 
     e "Approchez, charognes ! Je..."
 
-    "*Une flèche frappe Einar de plein fouet à l'épaule, le désarmant.*"
+    "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
 
     l "Einar ! Derrière toi !"
 
     e "Que..."
 
-    "*L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol.*"
+    "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
 
     e "Aaarrggh ! Logan, aide-moi !"
 
     l "Je suis là !"
 
-    "*Logan est frappé derrière la tête et tombe au sol, face à Einar.*"
+    "Logan est frappé derrière la tête et tombe au sol, face à Einar."
 
-    "*Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
+    "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
 
-    "*Le meneur fixe Einar.*"
+    "Le meneur fixe Einar."
 
     ge "Les chiens du roi-empereur ont échoué."
 
@@ -1164,7 +1168,7 @@ label e_demande_nom_foret_2(bad_ending = False):
         jump bad_ending_1
     else:
         o "Ogma. Le Hurleur."
-        "*Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient.*"
+        "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         jump e_reveil_village_2
 
 label e_implore_pitie_foret_2(bad_ending = False):
@@ -1176,7 +1180,7 @@ label e_implore_pitie_foret_2(bad_ending = False):
         jump bad_ending_1
     else:
         ge "Nous allons voir ça..."
-        "*Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient.*"
+        "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         jump e_reveil_village_2
 
 label e_menace_foret_2(bad_ending = False):
@@ -1188,7 +1192,7 @@ label e_menace_foret_2(bad_ending = False):
         jump bad_ending_1
     else:
         ge "Je ne crains pas ton roi."
-        "*Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient.*"
+        "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         jump e_reveil_village_2
 
 
@@ -1254,7 +1258,7 @@ label e_reveil_village_2:
 
             e "Salopards ! J'aurais du enfermer vos truies de femmes et leurs gamins dans vos cahutes merdeuses avant d'y foutre le feu !"
 
-            "*Ogma frappe Einar sur son épaule blessée*"
+            "Ogma frappe Einar sur son épaule blessée"
 
             e "AAARGH !"
 
@@ -1336,7 +1340,7 @@ label refuser_trahir_village_2:
 
     o "Mauvaise réponse."
 
-    "*Ogma enfonce deux doigts dans la plaie de l'épaule d'Einar, pressant la pointe de flèche.*"
+    "Ogma enfonce deux doigts dans la plaie de l'épaule d'Einar, pressant la pointe de flèche."
 
     e "AAAAARRRGH !"
 
@@ -1348,7 +1352,7 @@ label refuser_trahir_village_2:
 
     e "ARRÊTEZ ! ARRÊTAAAARGH !"
 
-    "*Ogma retire ses doigts de la plaie.*"
+    "Ogma retire ses doigts de la plaie."
 
     o "Tu as changé d'avis sur la question ?"
 

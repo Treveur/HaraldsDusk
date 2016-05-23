@@ -5,7 +5,7 @@ label interieur_maison_village_1:
 
     $ critique_ogma = False
 
-    "*Einar émerge du sommeil...*"
+    "Einar émerge du sommeil..."
     show einar debout_normal at left with dissolve
     e "Où... Je suis entravé ? Huuugh..."
     show moira debout_normal at right with dissolve
@@ -41,10 +41,10 @@ label interieur_maison_village_1:
 
         "Faire une allusion sexuelle sarcastique":
             e "La situation est assez... satisfaisante. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme ..."
-            "* Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse de défendre.*"
+            " Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse de défendre."
             m "A l'avenir, vous éviterez ce genre de... choses. Soyez correct avec moi et je serai correcte avec vous."
 
-    "*Moira broie quelque chose avec un pilon*"
+    "Moira broie quelque chose avec un pilon"
 
     menu:
 
@@ -63,12 +63,12 @@ label interieur_maison_village_1:
 
         "Trait d'humour":
             e "J'ai encore mes dents, je n'ai pas besoin que l'on broie ma nourriture."
-            m "... *elle esquisse un sourire fugace*"
+            m "... elle esquisse un sourire fugace"
             m "Ce n'est pas de la nourriture !"
 
         "Pas faim":
             e "Je n'ai pas faim, merci."
-            m "... *elle esquisse un sourire fugace*"
+            m "... elle esquisse un sourire fugace"
             m "Ce n'est pas de la nourriture !"
 
     m "Je vous prépare un onguent, pour l'infection de votre cuisse."
@@ -118,7 +118,7 @@ label interieur_maison_village_1:
             $ critique_ogma = True
 
     if critique_ogma:
-        "*Moira gifle Einar*"
+        "Moira gifle Einar"
         m "C'est la dernière fois que vous manquez de respect à mon père. Ou bien vous irez vous faire voir dans l'enclos des boucs."
 
         menu :
@@ -142,7 +142,7 @@ label interieur_maison_village_1:
 
             "Macho":
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
-                "* Moira gifle Einar à nouveau, sur l'autre joue.*"
+                " Moira gifle Einar à nouveau, sur l'autre joue."
                 m "J'ai omis de préciser que vous me deviez aussi le respect."
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
@@ -184,7 +184,7 @@ label interieur_maison_village_1:
 #Sequence 2
 label interieur_maison_village_2:
     scene bg house2_night with dissolve
-    "*Quelques jours plus tard...*"
+    "Quelques jours plus tard..."
 
     m "Bonjour ! Je viens changer vos bandages."
     e "Bonjour."
@@ -225,7 +225,7 @@ label interieur_maison_village_2:
             m "Oui. J'en ai assez de devoir te parler comme à un étranger."
             e "Ça me va !"
 
-    "* Les bandages d'Einar sont remplacés.*"
+    " Les bandages d'Einar sont remplacés."
     m "Je vais te laisser, c'est tout pour aujourd'hui."
     e "A demain ?"
     m "A demain."
@@ -262,7 +262,7 @@ label interieur_maison_village_3:
         "Être agressif":
             e "Ça ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
             m "Einar !"
-            "*Moira lève la main et s'apprête à gifler Einar. Ogma l'interromp en saisissant son bras au vol.*"
+            "Moira lève la main et s'apprête à gifler Einar. Ogma l'interromp en saisissant son bras au vol."
             o "Non... Laisse-le dire. Il n'a pas tort. J'ai tué ses amis."
             m "Mais il t'a insulté !"
             o "Il n'est pas responsable de grand chose dans cette histoire. Il a suivi les ordres de son roi."
@@ -343,7 +343,7 @@ label interieur_maison_village_4:
 
     "Deux semaines plus tard..."
 
-    "*Moira arrive dans la chambre, un couteau à la main.*"
+    "Moira arrive dans la chambre, un couteau à la main."
     show moira debout_normal at right with dissolve
     show einar debout_normal at left with dissolve
     m "Bonjour, Einar."
@@ -445,7 +445,7 @@ label interieur_maison_village_4:
         if decevoir_moira == "partir":
             m "Oh... Tu pourrais rester ici ? Je pense que les gens accepteraient ta présence si tu participais à la vie du village."
             e "Je ne sais pas..."
-            "*Moira est visiblement déçue.*"
+            "Moira est visiblement déçue."
             m "Suis-moi, je vais te montrer l'extérieur."
 
         elif decevoir_moira == "rien":
@@ -463,7 +463,7 @@ label interieur_maison_village_4:
     m "Viens !"
     hide einar with dissolve
     hide moira with dissolve
-    "*Moira entraîne Einar a l'extérieur en lui tenant la main*"
+    "Moira entraîne Einar a l'extérieur en lui tenant la main"
     jump village_2
 
 #Sequence 5
@@ -475,7 +475,7 @@ label village_2:
     ve "... et il faudra que tu penses à rentrer les bêtes plus tôt !"
     ve "Mamie ! J'ai trouvé un caillou qui brille !"
 
-    "*Les villageois remarquent à peine la présence d'Einar.*"
+    "Les villageois remarquent à peine la présence d'Einar."
     hide ve with dissolve
 
     show einar debout_normal at left with dissolve
@@ -571,7 +571,7 @@ label village_3:
         m "Arrête de râler ! Tu auras beau dire ce que tu veux, j'ai bien vu que tu avais apprécié ce que je t'ai montré. "
 
     m "Avant de te ramener à la maison, j'aimerais te montrer une dernière chose. C'est un endroit que j'aime beaucoup."
-    "*Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village.*"
+    "Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village."
     hide einar with dissolve
     hide moira with dissolve
 
@@ -594,7 +594,7 @@ label foret_3:
         "Être sarcastique":
             e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt et..."
 
-    "*Moira demande à EInar de se taire, en mettant un doigt sur sa bouche.*"
+    "Moira demande à EInar de se taire, en mettant un doigt sur sa bouche."
     m "Chuuut..."
 
     hide einar with dissolve
@@ -623,9 +623,9 @@ label paradis_foret_1:
             e "C'est un très bel endroit. Est-ce que..."
 
 
-    "*Moira pousse doucement Einar contre un arbre.*"
-    "*Elle recule de quelques pas, puis se retourne.*"
-    "*Elle se dénude lentement devant Einar, sans le regarder.*"
+    "Moira pousse doucement Einar contre un arbre."
+    "Elle recule de quelques pas, puis se retourne."
+    "Elle se dénude lentement devant Einar, sans le regarder."
     hide moira with dissolve
     show moira nue_normal at right with dissolve
 
@@ -633,9 +633,9 @@ label paradis_foret_1:
 
         "Tuer Moira":
             e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
-            "*Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme.*"
-            "*Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante.*"
-            "*Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte.*"
+            "Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme."
+            "Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante."
+            "Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte."
             hide moira with dissolve
             e "Il est temps pour moi de retrouver les miens."
             $ moira_dead = True
@@ -643,7 +643,7 @@ label paradis_foret_1:
 
         "S'enfuir":
             e "(C'est une occasion en or de s'enfuir.)"
-            "*Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons.*"
+            "Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons."
             hide einar with dissolve
             m "Einar ? Einar ?"
             $ premier_refus_moira_foret_4 = True
@@ -651,11 +651,11 @@ label paradis_foret_1:
 
         "La regarder":
             e "(Comme elle est belle...)"
-            "*Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements.*"
+            "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
             e "Tu..."
             m "Ne dis rien."
-            "*Elle embrasse doucement Einar et commence à l'enlacer.*"
-            "*Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite.*"
+            "Elle embrasse doucement Einar et commence à l'enlacer."
+            "Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite."
             "..."
             jump village_4
 
@@ -666,7 +666,7 @@ label paradis_foret_1:
 label village_4:
     scene bg village2_jour with dissolve
 
-    "*Le lendemain...*"
+    "Le lendemain..."
 
     show ogma debout_normal at right with dissolve
     o "Vous voilà prêt à partir, Einar."
@@ -689,19 +689,19 @@ label village_4:
     hide ogma with dissolve
     show moira debout_normal at right with dissolve
     m "Tu as donné ta parole à mon père. Je considère que tu m'as également donné ta parole. S'il te plaît, ne me déçois pas..."
-    "*Moira s'approche d'Einar.*"
+    "Moira s'approche d'Einar."
 
     menu :
 
         "L'embrasser":
-            "*Einar embrasse doucement Moira en caressant son visage*"
+            "Einar embrasse doucement Moira en caressant son visage"
 
         "La serrer contre soi et la rassurer":
-            "*Einar saisit Moira par les hanches et l'attire contre lui, puis l'enlace.*"
+            "Einar saisit Moira par les hanches et l'attire contre lui, puis l'enlace."
             e "Ne t'inquiète pas. Je reviendrai."
 
         "L'ignorer":
-            "*Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
+            "Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
 
     hide moira with dissolve
     hide einar with dissolve
