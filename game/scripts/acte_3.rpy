@@ -1304,8 +1304,6 @@ label harald_defendre_porte:
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
     "Harald jaillit du donjon, armé de pied en cap."
     h "Baissez le pont ! Tous avec moi !"
-    "Le roi lance une grande contre-offensive à la tête de son armée."
-    "Désorganisés les rebelles sont séparés en deux groupes. Certains rompent les rangs."
 
     menu :
 
@@ -1314,104 +1312,156 @@ label harald_defendre_porte:
 
         "Massacrez-les":
             e "En avant, sire ! Massacrez ces chiens !"
+            
         "Ne rien dire":
             e "..."
-
-    "Harald parvient au contact d'Ogma et un combat s'engage."
-    "Harald survient et concentre les efforts de ses troupes sur la grande porte, parvenant à lancer une grande contre-offensive tranchant net dans la progression des rebelles."
-    "Les vikings séparent les rangs ennemis en deux et atteignent Ogma. Un combat féroce s'engage entre les deux chefs."
-    "Harald prend nettement l'avantage : la Hache le rend invincible. Ogma est au sol et le roi s'apprête à l'achever."
-
-    "Au cours du combat Harald prend l'ascendant et s'apprête à achever Ogma le Hurleur."
+            
+    "Le roi lance une grande contre-offensive à la tête de son armée."
+    "Désorganisés, les rebelles sont séparés en deux groupes. Certains rompent les rangs."
+    ge "Tout est perdu ! Fuyez !"
+    "Les combats sont déportés dans la plaine devant le château."
+    o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
+    "Harald parvient au contact d'Ogma et un duel s'engage."
+    h "Ha ! Tu es celui qui a assassiné mon intendant ?"
+    o "Oui, et je suis prêt à réitérer l'exploit avec un roi !"
+    h "Pourriture ! Tu vas rendre gorge !"
+    "La force et la technique de Harald s'opposent à la vitesse et à la ruse d'Ogma."
+    "D'une feinte, l'écossais parvient à atteindre le roi au ventre ; pas une goutte de sang ne coule."
+    "Harald prend l'avantage petit à petit : la Hache le rend invincible."
+    h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
+    o "Jamais !"
+    h "Meurs, chien maigre !"
+    "Du plat de sa hache, Harald frappe Ogma au torse, lui brisant les côtes et le jetant à terre."
+    "Le roi s'apprête à achever le chef rebelle."
 
     menu :
-        "Ogma est en mauvaise posture"
-
         "Tuez-le !":
-            e "Tuez-le, sire ! "
+            e "Tuez-le, sire !"
             jump e_laisse_ogma_mort_defendre_porte
-        "Arrêtez !":
+        "Ne le tuez pas ! (s'interposer)":
             e "Non ! Ne l'achevez pas !"
             jump e_sauve_ogma_defendre_porte
 
 
 label e_laisse_ogma_mort_defendre_porte:
 
-    "Ogma est tranché en deux par l'énorme hache à double tranchant de Harald. Immédiatement les rebelles se dispersent, traumatisés de voir leur héros détruit par le roi viking."
+    "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
+    "Immédiatement, les rebelles se dispersent, traumatisés de voir leur héros vaincu par le roi viking."
 
     menu :
-        "Que dire ?"
-        "Beau coup !":
+        "Joli !":
             e "Beau coup, sire !"
+            h "Ha ha ! Le compliment me va droit au coeur !"
+            h "Regarde ses yeux ! Je suis sûr qu'il est encore conscient !"
+            "Un huscarl s'approche pour achever l'écossais."
+            h "Non ! Laisse-le comme ça ! Je veux qu'il pourrisse ici !"
         "Se moquer des rebelles":
-            e "Regardez-les détaler comme des lapins ! "
-        "J'aurais dû le tuer moi-même il y a déjà longtemps."
+            e "Regardez-les détaler comme des lapins !"
+            h "Ha ha ! Fabuleux !"
+            h "Rattrappez-les, vous autres !"
+        "J'aurais dû faire ça moi-même"
+            e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
+            h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
+            
 
     jump cour_chateau_ogma_mort_defendre_porte
 
 label cour_chateau_ogma_mort_defendre_porte:
 
-    "Dans la cour du château, les rebelles survivants sont tous attachés sur des bûchers. Moira fait partie d'eux."
-    "Einar assiste à la scène depuis la foule, tandis que Patrick s'apprête à mettre le feu aux bûchers. Harald exulte."
+    "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
+    "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
+    gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
+    gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
+    e "..."
+    "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
+    p "Vous avez défié l'élu divin, porteur de la Hache Sainte !"
+    p "Pour vos blasphèmes, votre hérésie et votre félonie, il n'est d'autre jugement que la mort !"
+    h "Hâtez-vous, Patrick ! Il me tarde de les voir se tortiller sur leurs poteaux !"
+    p "Bien, bien. Que Dieu ait pitié de vos âmes !"
+    "Deux hommes amènent des torches et commencent à embraser les bûchers."
+    h "Ha ha ! Le Seigneur nous offre un beau spectacle à travers son jugement !"
+    "Les porteurs de torches s'approchent du bûcher de Moira."
 
     menu :
-        "Que faire ?"
-        "Regarder":
+        "Qu'elle brûle comme les autres":
             jump bad_ending_19
-        "Sauver Moira":
+        "Je dois sauver Moira !":
             jump bad_ending_20
 
 label e_sauve_ogma_defendre_porte:
 
-    "Einar dévie le coup de hache et sauve Ogma. Ce dernier en profite pour trancher les deux tendons d'achille du roi et l'achever au sol alors qu'il a laissé sa hache lui échapper des mains."
-    "Aussitôt la horde resserre son étau sur les vikings en les massacrant. Einar est piétiné et laissé pour mort."
+    "Einar dévie le coup de hache du roi et sauve Ogma."
+    "Emporté par son élan et son propre poids, la Hache se fiche dans le sol, déstabilisant Harald."
+    "Voyant que le roi a relâché son emprise sur la relique, Ogma en profite pour trancher les deux tendons d'achille du roi." 
+    "Harald tombe aux côtés d'Ogma, qui l'achève en lui enfonçant son coutelas dans la gorge."
+    "Aussitôt la horde rebelle resserre son étau sur les vikings, investie par une nouvelle vigueur."
+    "Pris au coeur de la mêlée, Einar est piétiné et laissé pour mort."
+    
+    "..."
 
-    "Encore sur le champ de bataille, Einar voit Ogma sur les remparts, brandissant la Hache Sainte."
-
-    "En se réveillant sur le champ de bataille, Einar voit le château brûler. Ogma est sur les remparts, brandissant la hache."
+    "Lorsqu'il reprend ses esprits, Einar voit Ogma sur les remparts, brandissant la Hache Sainte. Derrière lui, le château brûle."
+    "Depuis les remparts, Ogma semble remarquer le mouvement d'Einar au milieu des cadavres."
 
     if moira_dead:
-        "Ogma voit Einar et se jette immédiatement sur lui, Hache levée."
+        "Ogma court vers Einar, la Hache levée."
 
         menu :
-            "Pourquoi m'attaques-tu ?"
-            "Moira ?":
+            "En colère pour Moira ?":
                 e "Tu es en colère à cause de ta fille, c'est ça ?"
-            "Combat un peu plus honorable":
-                e "J'aurais souhaité un combat honorable."
-            "Provoquer":
+                e "Rien ne m'obligeait à la tuer, je l'ai fait parce que j'en avait envie !"
+            "Combat plus équitable":
+                e "J'aurais souhaité un combat honorable, un peu plus juste !"
+                h "PAS D'HONNEUR !"
+            "Elle était toute excitée !":
                 e "Au moment où j'ai tué ta fille, elle s'apprêtait à me chevaucher comme une folle !"
-
-        "Ogma atteint Einar et le massacre sur place, ne laissant rien de reconnaissable."
 
         jump bad_ending_22
 
     else:
-        "Ogma remercie Einar pour la victoire sur Harald, mais sa double trahison a coûté la vie à bien plus d'hommes que nécessaire. Pourquoi avoir agi ainsi ?"
+        "..."
+        o "Je ne comprends pas tes actes."
+        o "Je te suis malgré tout reconnaissant pour la victoire sur Harald, et pour m'avoir sauvé la vie alors que rien ne t'y obligeait."
+        o "Néanmoins, ta double trahison a coûté la vie à bien plus d'hommes que nécessaire, dans un camp comme dans l'autre."
+        o "Pourquoi avoir agi ainsi ?"
 
         menu :
-            "Que dire ?"
-
-            "Remords":
+            "J'ai eu des remords":
                 e "J'ai été le jouet de mes propres remords."
+                o "Ton inconstance a été terriblement coûteuse..."
+                o "J'en viendrais presque à regretter de t'avoir choisi pour cette \"mission\"..."
+            "J'ai pensé à Moira":
+                e "J'ai pensé à ce qu'il adviendrait de Moira si Harald triomphait."
+                o "Alors c'est l'affection que tu portes à ma fille qui m'a sauvé ?"
+                o "Je crois que c'est pire que ce que je pensait..."
+                o "Tu imagines bien qu'après tout ça, tu ne verras plus ma fille."
             "Ce n'est qu'un jeu":
-                e "L'envie de prendre à leur propre jeu deux dirigeants ambitieux."
-            "Étourderie":
-                e "L'étourderie, peut-être ?"
+                e "J'ai simplement eu l'envie de prendre à leur propre jeu deux dirigeants ambitieux."
+                o "Je ne sais pas si tu es terriblement cruel ou bien complètement fou."
+                o "Combien sont morts aujourd'hui par ta faute ?"
+                o "Tu as pris à la légère des enjeux qui te dépassaient complètement."
+                o "Tu pouvais devenir un héros, un libérateur ! Tu aurais même pu devenir un nouvel empereur, si tu avais été suffisamment égoïste et ambitieux !"
+                o "Je crois que j'aurais préféré cette alternative, plutôt que d'avoir à subir un tel massacre..."
 
-        "Ogma pardonne. Mais Einar est banni d'Ecosse à tout jamais et privé de sa récompense. Il n'a plus qu'à partir immédiatement. Des guerriers rebelles l'entourent."
+        o "Quoi qu'il en soit... Je vais t'épargner. Crois bien que l'envie de te tuer est grande, mais je refuse de tuer une personne de plus aujourd'hui. Et je te dois la vie."
+        o "Cependant, je te banni d'Ecosse à tout jamais. Bien entendu, tu n'auras pas l'or promis."
+        o "J'espère que tu nous considères comme quittes."
+        o "Tu n'as plus qu'à partir sur le champ."
+        "Des guerriers rebelles entourent Einar."
 
         menu :
-            "Que dire ?"
-
             "Adieu":
-                e "Adieu, et sans rancune."
+                e "Adieu."
+                o "..."
             "Et Moira ?":
                 e "Et Moira ? Où est-elle ?"
-                o "Ne prononce même pas son nom. Je ne veux plus que tu ais le moindre rapport avec elle. Elle ne le veut pas non plus. Pars, maintenant."
-            "Norvège":
+                o "Ne prononce même pas son nom. Je ne veux plus que tu ais le moindre rapport avec elle. Elle ne le veut pas non plus."
+                o "Pars, maintenant."
+            "Je rentre en Norvège":
                 e "Je ne comptais pas rester. Il est temps que je rentre en Norvège."
-            "Quel ingrat":
+                o "Peu importe où tu vas, pourvu que tu quittes l'Ecosse."
+            "Quel ingrat !":
                 e "Quelle ingratitude ! Et dire que je vous trouvais sympathique !"
+                o "Je ne suis pas certain que l'humour soit opportun."
+                o "Va-t-en, avant que je ne te tue."
 
         jump bad_ending_21
