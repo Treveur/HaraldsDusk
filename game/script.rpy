@@ -211,7 +211,20 @@ image bg black = "#000"
 # sounds
 
 #musics
+define audio.nature = "sounds/musics/music_travelling_in_nature.mp3"
+define audio.romance ="sounds/musics/music_romance.mp3"
+define audio.weird_village = "sounds/musics/music_village_weird.mp3"
+define audio.slaughter = "sounds/musics/music_drama_slaughter.mp3"
 #define audio.drama_slaughter = "sounds/musics/music_drama_slaughter.wav"
+
+#SFX
+define audio.blade_1 = "sounds/musics/SFX_Blade1.mp3"
+define audio.blade_2 = "sounds/musics/SFX_Blade2.mp3"
+define audio.double_horn = "sounds/musics/SFX_Double_WarHorn.mp3"
+define audio.drawbrigde = "sounds/musics/SFX_Drawbridge_Down.mp3"
+define audio.hurt_man_1 = "sounds/musics/SFX_Hurt_Man.mp3"
+define audio.hurt_man_2 = "sounds/musics/SFX_Hurt_Man2.mp3"
+define audio.hurt_man_3 = "sounds/musics/SFX_Hurt_Man3.mp3"
 
 # Le jeu commence ici
 
