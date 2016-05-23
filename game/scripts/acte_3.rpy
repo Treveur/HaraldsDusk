@@ -59,7 +59,7 @@ label cour_chateau_1:
     $ mentir_harald_1 = False
     $ interpose_bucher = False
 
-    "*Harald est en grande discussion avec un huscarl au milieu de la cour*"
+    "Harald est en grande discussion avec un huscarl au milieu de la cour"
 
     show einar debout_normal at left with dissolve
     e "Sire ! Sire !"
@@ -130,7 +130,7 @@ label cour_chateau_1:
         "Je me suis débrouillé (mentir)":
             show einar debout_normal at left
             e "Je me suis remis, lentement mais sûrement, dans la nature."
-            "*Harald hausse les sourcils*"
+            "Harald hausse les sourcils"
             h "Dans la nature ? J'ai du mal à te croire..."
             e "J'ai trouvé des plantes et des baies qui m'ont permit de me soigner."
             h "Mmmh..."
@@ -235,7 +235,7 @@ label cour_chateau_1:
         hide einar
         hide harald
 
-    "*Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés.*"
+    "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."
 
     show patrick debout_normal at center with dissolve
 
@@ -326,11 +326,12 @@ label cour_chateau_1:
     hide ve
     with dissolve
 
-    "*Un homme apporte une torche. Un par un, il allume les bûchers."
+    "Un homme apporte une torche. Un par un, il allume les bûchers."
     show gv debout_rire with dissolve
+
     gv "Regardez-les s'agiter comme des vers, ha ha !"
-    "*Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait.*"
-    "*Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui.*"
+    "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
+    "Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui."
 
     #Variable
     $ reponse_reconfort = ""
@@ -356,11 +357,11 @@ label cour_chateau_1:
             $ reponse_reconfort = "rassure"
 
     if reponse_reconfort == "pleurer":
-        "*Le jeune soldat pleure sans se cacher.*"
+        "Le jeune soldat pleure sans se cacher."
     elif reponse_reconfort == "larme_aux_yeux":
-        "*Le jeune soldat semble toujours aussi bouleversé.*"
+        "Le jeune soldat semble toujours aussi bouleversé."
     else:
-        "*Le jeune soldat semble rassuré.*"
+        "Le jeune soldat semble rassuré."
 
     jump cour_chateau_2
 
@@ -368,13 +369,13 @@ label cour_chateau_1:
 label cour_chateau_2:
     show bg cour_chateau_crepuscule with dissolve
 
-    "*Au crépuscule...*"
+    "Au crépuscule..."
     gv "Sire ! Sire !"
     h "Qu'y a-t-il ? Parle !"
     gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
     h "Tous à vos postes de combat ! Huscarls, préparez-vous à défendre la porte ! Je veux vingt archers sur les remparts !"
-    "*Une fois ses ordres donnés, Harald disparaît dans le donjon.*"
+    "Une fois ses ordres donnés, Harald disparaît dans le donjon."
 
     jump interieur_grande_porte_chateau_1
 
@@ -382,10 +383,10 @@ label cour_chateau_2:
 label interieur_grande_porte_chateau_1:
     show bg chateau_porte_interieur_crepuscule with dissolve
 
-    "*Einar est posté à proximité du système d'ouverture des portes.*"
+    "Einar est posté à proximité du système d'ouverture des portes."
     gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
-    "*La horde progresse en courant à travers la plaine.*"
-    "*A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis.*"
+    "La horde progresse en courant à travers la plaine."
+    "A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis."
 
     menu:
         "Ouvrir le pont-levis":
@@ -406,11 +407,11 @@ label pont_levis_baisse:
 
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
-    "*Une volée de flèches abat une partie des rebelles qui foncent vers le château.*"
-    "*Le pont s'abaisse brutalement, laissant le champ libre.*"
+    "Une volée de flèches abat une partie des rebelles qui foncent vers le château."
+    "Le pont s'abaisse brutalement, laissant le champ libre."
     gv "Trahison ! Bloquez le passage, vite !"
     "..."
-    "*Les soldats proches se tournent vers Einar.*"
+    "Les soldats proches se tournent vers Einar."
 
     menu:
 
@@ -423,9 +424,9 @@ label pont_levis_baisse:
         "Ne rien dire":
             e "..."
 
-    "*La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings.*"
-    "*Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte.*"
-    "*Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar.*"
+    "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
+    "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
+    "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
     ge "HAAAAA !"
     gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
 
@@ -456,7 +457,7 @@ label pont_levis_baisse:
 
         $ loose_battle = False
 
-        "*Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls.*"
+        "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls."
         gv "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
         gv "Ha, il a du tomber sur un beau garçon de ferme !"
         gv "Défend-toi, traître !"
@@ -468,7 +469,7 @@ label pont_levis_baisse:
             jump bad_ending_5
 
         else:
-            "*Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl.*"
+            "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
             o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
             e "Le donjon ? Pourquoi ?"
             o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
@@ -489,27 +490,27 @@ label pont_levis_baisse:
 
 label e_bruler_donjon_desobeir_donjon:
 
-    "*Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle.*"
+    "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
 
     menu :
 
         "Le tuer":
             e "Désolé, petit. Nous ne sommes plus dans le même camp."
-            "*Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément.*"
+            "Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément."
 
         "L'assommer":
             e "Je t'offre l'occasion de refaire ta vie, saisi-la."
-            "*Du plat de sa hache, Einar frappe le soldat à la tempe. Iol s'écroule à terre, inconscient*"
+            "Du plat de sa hache, Einar frappe le soldat à la tempe. Iol s'écroule à terre, inconscient"
 
         "L'ignorer":
             e "(Je n'ai pas le temps de m'occuper de lui.)"
 
-    "*Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte.*"
+    "Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte."
     h "A moi, huscarls ! Suivez votre roi !"
     gv "HAAAAAA !"
-    "*Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles.*"
+    "Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles."
 
-    "*Harald arrive devant Einar, couvert du sang de ses victimes.*"
+    "Harald arrive devant Einar, couvert du sang de ses victimes."
     h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
@@ -531,12 +532,12 @@ label e_bruler_donjon_obeir_donjon:
 
     $ prendre_hache = False
 
-    "*Einar s'élance en direction du donjon, passant à l'arrière des affrontements.*"
-    "*Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries.*"
+    "Einar s'élance en direction du donjon, passant à l'arrière des affrontements."
+    "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
     "..."
-    "*En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte.*"
-    "*Le roi est entrain de s'équiper de son armure.*"
-    "*Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé.*"
+    "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
+    "Le roi est entrain de s'équiper de son armure."
+    "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
 
     menu:
         "Prendre la Hache":
@@ -546,7 +547,7 @@ label e_bruler_donjon_obeir_donjon:
             jump e_confrontation_harald_pont_baisse_donjon
 
         "Se débarrasser de la Hache":
-            "*Einar jette la Hache à la mer à travers une meurtrière.*"
+            "Einar jette la Hache à la mer à travers une meurtrière."
             call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
 
         "Ignorer la Hache":
@@ -592,11 +593,11 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
     h "Comment oses-tu ?!"
     h "CETTE HACHE EST A MOI !"
 
-    "*Harald devient comme fou et se jette sur Einar.*"
+    "Harald devient comme fou et se jette sur Einar."
 
     if prendre_hache:
-        "*Harald place un coup de dague très rapide au flanc d'Einar.*"
-        "*Einar n'est pas blessé et n'a même pas ressenti le coup.*"
+        "Harald place un coup de dague très rapide au flanc d'Einar."
+        "Einar n'est pas blessé et n'a même pas ressenti le coup."
         e "J'ai la Hache. Vous ne pouvez rien contre moi !"
 
         menu:
@@ -622,7 +623,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
     else:
-        "*Le combat s'engage entre le roi et son huscarl*"
+        "Le combat s'engage entre le roi et son huscarl"
         "Phase combat WIP"
 
         menu:
@@ -641,19 +642,19 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 e "Le règne du roi-empereur Harald Sigurdsson est terminé !"
                 e "La nouvelle de votre défaite va se répandre à travers le monde. L'empire que vous avez bâti va s'écrouler."
                 e "Vous tuer ici ne servirait à rien. Partez !"
-                "*Harald s'enfuit sans demander son reste*"
+                "Harald s'enfuit sans demander son reste"
                 jump fuite_harald_pont_baisse_donjon
 
             "Le livrer à Ogma":
                 "..."
-                "*Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui.*"
+                "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
                 o "Voyez ! La liberté a vaincu le tyran !"
                 o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
                 o "Le règne du roi-empereur est terminé !"
-                "*Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang.*"
+                "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
                 o "VOUS ÊTES LIBRES !"
-                "*Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer.*"
-                "*Dans la lumière du crépuscule, Dunbar continue de brûler.*"
+                "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
+                "Dans la lumière du crépuscule, Dunbar continue de brûler."
                 jump good_ending_11
 
     else:
@@ -674,7 +675,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 jump e_garder_hache_pont_baisse_donjon
 
 label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
-    "*Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure du donjon.*"
+    "Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure du donjon."
     h "Einar ? Que fais-tu ?!"
 
     menu :
@@ -739,7 +740,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
 
     $ epargner_harld__no_axe_donjon = False
 
-    "*Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage.*"
+    "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, s'il-te-plaît."
@@ -797,16 +798,16 @@ label e_epargne_harald_no_axe_donjon:
             $ harald_echape_no_axe = False
 
     if harald_echape_no_axe:
-        "*Harald s'échappe sans demander son reste.*"
+        "Harald s'échappe sans demander son reste."
         h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
         h "JE ME VENGERAI !"
         "..."
-        "*Par une meurtrière, Einar remarque une petite embarcation qui quitte le château.*"
-        "*Harald s'échappe par la mer, seul sur sa barque.*"
+        "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
+        "Harald s'échappe par la mer, seul sur sa barque."
         #Retour à l'extérieur
-        "*La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol.*"
-        "*Sur les remparts, la silouhette d'Ogma se découpe sur le ciel.*"
-        "*Le Hurleur semble observer la mer.*"
+        "La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol."
+        "Sur les remparts, la silouhette d'Ogma se découpe sur le ciel."
+        "Le Hurleur semble observer la mer."
 
         "Un peu plus tard..."
 
@@ -824,14 +825,14 @@ label e_epargne_harald_no_axe_donjon:
     else:
         "Un peu plus tard"
         "..."
-        "*Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui.*"
+        "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
         o "Voyez ! La liberté a vaincu le tyran !"
         o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
         o "Le règne du roi-empereur est terminé !"
-        "*Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang.*"
+        "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
         o "VOUS ÊTES LIBRES !"
-        "*Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer.*"
-        "*Dans la lumière du crépuscule, Dunbar continue de brûler.*"
+        "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
+        "Dans la lumière du crépuscule, Dunbar continue de brûler."
         jump village_6
 
 label village_5:
@@ -864,7 +865,7 @@ label village_6:
 
     $ refuer_ogma_main_moira = False
 
-    "*Moira se tient légèrement à l'écart.*"
+    "Moira se tient légèrement à l'écart."
     o "Toute l'Ecosse t'es redevable, Einar !"
     o "Tu nous a rendu la liberté et provoqué la fin de l'empire !"
     o "Comme promis, voici ton or et un cheval prêt à t'emmener où bon te semble."
@@ -895,7 +896,7 @@ label village_6:
     o "Je serais heureux de compter le libérateur de mon peuple dans ma famille."
     o "J'ai l'honneur de t'offrir la main de ma fille, si tu l'acceptes."
 
-    "*Bien qu'à l'écart, Moira fait un grand sourire à Einar.*"
+    "Bien qu'à l'écart, Moira fait un grand sourire à Einar."
 
     menu:
 
@@ -912,7 +913,7 @@ label village_6:
             $ refuer_ogma_main_moira = True
 
     if refuer_ogma_main_moira:
-        "*Moira s'en va.*"
+        "Moira s'en va."
         o "A vrai dire, la déception de ma fille doit être encore plus grande..."
         o "Elle était à l'origine de cette demande."
         e "..."
@@ -949,7 +950,7 @@ label foret_4:
     $ rejeter_moira_foret_4 = False
 
     "..."
-    "*Moira apparaît sur le sentier.*"
+    "Moira apparaît sur le sentier."
     if premier_refus_moira == False:
         e "Qu'est-ce que tu fais là ?"
         m "Je viens avec toi."
@@ -990,14 +991,14 @@ label foret_4:
             $ rejeter_moira_foret_4 = True
 
         "Tendre les bras" if premier_refus_moira == False:
-            "*Sans dire un mot, Einar tend les bras vers Moira.*"
-            "*La jeune femme se précipite vers le viking et l'étreint.*"
-            "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
+            "Sans dire un mot, Einar tend les bras vers Moira."
+            "La jeune femme se précipite vers le viking et l'étreint."
+            "Einar et Moira passent quelques minutes à profiter de l'instant."
 
         "Viens" if premier_refus_moira == False:
             "Viens avec moi, Moira."
-            "*La jeune femme se précipite vers le viking et l'étreint.*"
-            "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
+            "La jeune femme se précipite vers le viking et l'étreint."
+            "Einar et Moira passent quelques minutes à profiter de l'instant."
 
         "Autre choix refus" if premier_refus_moira:
             e "Je me servi de toi pour quitter le village"
@@ -1010,16 +1011,16 @@ label foret_4:
         jump good_ending_14
 
 label fuite_harald_pont_baisse_donjon:
-    "*Harald s'échappe sans demander son reste.*"
+    "Harald s'échappe sans demander son reste."
     h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
     h "JE ME VENGERAI !"
     "..."
-    "*Par une meurtrière, Einar remarque une petite embarcation qui quitte le château.*"
-    "*Harald s'échappe par la mer, seul sur sa barque.*"
+    "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
+    "Harald s'échappe par la mer, seul sur sa barque."
     #Retour à l'extérieur
-    "*La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol.*"
-    "*Sur les remparts, la silouhette d'Ogma se découpe sur le ciel.*"
-    "*Le Hurleur semble observer la mer.*"
+    "La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol."
+    "Sur les remparts, la silouhette d'Ogma se découpe sur le ciel."
+    "Le Hurleur semble observer la mer."
     "..."
 
     o "Bravo Einar, la réussite est totale ! Mais pourquoi avoir laissé partir le roi ?"
@@ -1043,7 +1044,7 @@ label e_garder_hache_pont_baisse_donjon:
     o "Ne sois pas idiot ! Nous devons la détruire sans tarder !"
     o "Je suis prêt à aller jusqu'au bout pour m'en débarrasser !"
     o "Donne-moi cette Hache !"
-    "*Ogma tend la main.*"
+    "Ogma tend la main."
 
     menu :
         "Reculez !":
@@ -1079,7 +1080,7 @@ label lieu_encore_inconnu_1(axe = True):
 
     if axe:
         "..."
-        "*Moira se tient à l'écart mais semble interessée pas la conversation.*"
+        "Moira se tient à l'écart mais semble interessée pas la conversation."
         o "Merci pour tout, Einar."
         o "Tu as vaincu le roi, tu as libéré mon peuple et surtout, tu as débarrassé le monde de la Hache Sainte."
         o "Plus aucun tyran ne pourra abuser de la relique."
@@ -1093,7 +1094,7 @@ label lieu_encore_inconnu_1(axe = True):
     else:
         "Ogma félicite Einar pour avoir triomphé de Harald. Il lui donne la part de trésor promise. Moira se tient légèrement à l'écart."
         "..."
-        "*Moira se tient à l'écart mais semble interessée pas la conversation.*"
+        "Moira se tient à l'écart mais semble interessée pas la conversation."
         o "Merci pour tout, Einar."
         o "Tu as vaincu le roi, tu as libéré mon peuple et surtout, tu as libéré le monde du joug du roi."
         o "Je ne sais pas ce que tu as fait de la Hache, mais je ne veux pas le savoir. Ne révèle jamais à personne ton secret."
@@ -1110,7 +1111,7 @@ label lieu_encore_inconnu_1(axe = True):
             e "Ogma, j'aimerais vous demander plus."
             o "Je t'écoute ?"
             e "Je vous demande la main de votre fille."
-            "*Ogma soupire.*"
+            "Ogma soupire."
             o "Je suis sincèrement navré, Einar, mais je ne peux pas accepter."
             o "Je refuse que ma fille et sa descendance partagent le nom d'un régicide."
             $ demander_main_moira = True
@@ -1144,14 +1145,14 @@ label lieu_encore_inconnu_1(axe = True):
                 o "..."
             "Avis Moira":
                 e "Moira, qu'en penses-tu ?"
-                "*Elle se rapproche des deux hommes, comprenant de quoi il est question.*"
+                "Elle se rapproche des deux hommes, comprenant de quoi il est question."
                 m "Je... Je suis d'accord avec mon père."
-                "*Les larmes lui montent aux yeux.*"
+                "Les larmes lui montent aux yeux."
             "Pas à Ogma de décider":
                 e "Ce n'est pas à vous d'en décider. Votre fille doit choisir elle-même. Il s'agit de son propre avenir, pas du votre !"
                 o "J'aurais punis ton insolence si je ne comprenais pas ton désarroi."
                 m "Calme-toi, Einar. Je n'ai pas d'autre choi que de me ranger à l'avis de mon père."
-                "*Les larmes lui montent aux yeux.*"
+                "Les larmes lui montent aux yeux."
 
     if refuser_or:
         o "Refuser l'or de la trahison et du sang t'honore. Et maintenant, que vas-tu faire ?"
@@ -1193,19 +1194,19 @@ label lieu_encore_inconnu_1(axe = True):
 #Défendre porte
 label soupcon_harald_defendre_porte:
 
-    "*La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings.*"
+    "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     ge "L'échelle ! Apportez l'échelle !"
     gv "Les rebelles dressent une échelle par-dessus les douves !"
-    "*Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles.*"
-    "*Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
+    "Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles."
+    "Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
     gv "Crevez, salopards ! Ha ha !"
     h "Consolidez les rangs !"
-    "*Les rebelles sont contraints de reculer et restent à distance des remparts.*"
-    "*Alors que les vikings se réjouissent de leur supériorité, un cri retentit sur leurs arrières."
+    "Les rebelles sont contraints de reculer et restent à distance des remparts."
+    "Alors que les vikings se réjouissent de leur supériorité, un cri retentit sur leurs arrières."
     gv "Par la mer ! Ils arrivent par la mer !"
-    "*Profitant des combats, un groupe conséquent d'écossais a pénétré l'enceinte par la mer pour débarquer discrètement derrière les vikings.*"
-    "*Ils lancent un deuxième assaut sur l'arrière des vikings, dans l'enceinte.*"
-    "*A l'extérieur, les rebelles lancent un nouvel assaut et après avoir tendu des planches en travers des douves, commencent à détruire le tablier du pont à coup de haches.*"
+    "Profitant des combats, un groupe conséquent d'écossais a pénétré l'enceinte par la mer pour débarquer discrètement derrière les vikings."
+    "Ils lancent un deuxième assaut sur l'arrière des vikings, dans l'enceinte."
+    "A l'extérieur, les rebelles lancent un nouvel assaut et après avoir tendu des planches en travers des douves, commencent à détruire le tablier du pont à coup de haches."
     gv "Ça va céder !"
     h "Einar ! Prends le commandement des huscarls ! Mène le combat au-delà de la porte !"
 
@@ -1220,9 +1221,9 @@ label soupcon_harald_defendre_porte:
             e "Ces raclures ne passeront pas la porte !"
             e "Vengeance ! Pour le roi, pour Logan et pour tous les autres !"
 
-    "*Alors que la porte menace de céder, les vikings l'ouvrent et prennent de court les rebelles.*"
-    "*Immédiatement, les rebelles tentent de s'engouffrer dans l'ouverture, face à Einar et aux huscarls.*"
-    "*Une silouhette familière émerge des rebelles.*"
+    "Alors que la porte menace de céder, les vikings l'ouvrent et prennent de court les rebelles."
+    "Immédiatement, les rebelles tentent de s'engouffrer dans l'ouverture, face à Einar et aux huscarls."
+    "Une silouhette familière émerge des rebelles."
 
     o "Traître ! Tu t'es joué de nous pour sauver ta vie de lâche !"
     o "Regarde combien d'hommes meurent aujourd'hui par ta faute !"
@@ -1234,72 +1235,89 @@ label soupcon_harald_defendre_porte:
             e "Quels hommes ? Je ne vois que des porcs."
         "Ne rien dire":
             e "..."
-        "Provoquer":
-            e "J'en fini avec toi, et ensuite je retourne m'occuper de ta fille !"
+        "Je vais m'occuper de ta fille !":
+            e "J'en termine avec toi, et ensuite je retourne m'occuper de ta fille !"
 
     menu :
-        "*Un combat s'engage entre Ogma et Einar !*"
+        "Un combat s'engage entre Ogma et Einar !"
         "Mini jeu combat WIP"
 
         "Gagner":
-            "*Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves.*"
-            "*Terrorisés, les rebelles prennent la fuite.*"
+            "Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves."
+            "Terrorisés, les rebelles prennent la fuite."
             h "Ha ha ! Ils fuient, les lâches !"
             h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
+
             "*Harald s'élance à la poursuite des fuyards, le rire aux lèvres.*"
+            "*Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares.*"
+
 
         "Perdre":
             jump bad_ending_17
 
-    "*Un peu plus tard...*"
+    "Un peu plus tard..."
 
-    "Harald félicite publiquement Einar pour sa fidélité et sa bravoure."
     h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
     h "Il est le meilleur homme que j'ai eu sous mes ordres, et Dieu sait combien d'hommes valeureux j'ai eu à mon service !"
     h "Tu es du bois dont on fait les héros, Einar !"
 
     menu:
-        "Remercier":
+        "Merci":
             e "Merci, mon roi."
             h "Ne me remercie pas ! Tu nous a tous sauvés, c'est à nous de te remercier !"
 
         "Fidèle":
             e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
-            h "C'est vrai. "
+            h "C'est vrai, mais ton mérite et ton honneur n'en sont pas amoindris ! Sans toi, nous étions perdus !"
 
         "Que l'on se souvienne de moi":
-            e "J'ai mené l'assaut final et tué le chef rebelle : qu'on se souvienne longtemps de mes exploits !"
-            h "C'est vrai. C'est une attitude peu modeste, mais il s'agit véritablement d'exploits. La gloire t'appartient aujourd'hui ! "
+            e "J'ai mené l'assaut final et tué le chef rebelle, qu'on se souvienne longtemps de mes exploits !"
+            h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
 
-    h "Pour tes exploits, voici ta récompense : Stirling et les terres alentours ! J'ai brûlé le village il y a peu, mais les terres fourniront de bons revenus d'ici quelques années."
+    h "J'ai décidé de récompenser ta valeur."
+    h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
+    h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
 
     menu :
-        "Que répondre ?"
         "Remercier":
-            e "Merci."
+            e "... Merci, je n'en attendais pas tant !"
+            h "Ton désinteressement s'ajoute à tes prouesses ! On ne pourrait rêver d'avoir un meilleur homme à son service !"
         "Honneur":
-            e "Quel grand honneur ! Merci, mon roi !"
-        "Terre infertiles":
-            e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ?  "
+            e "Quel honneur ! Merci, mon roi !"
+            h "Depuis tout ce temps passé à mon service et toutes les promesses que je t'avais faites, te récompenser aujourd'hui me paraissait être une obligation !"
+
+        "Des terres infertiles":
+            e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ? "
+            e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
+            e "Vous vous moquez de moi, sire !"
+            gv "Sire !"
+            h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."
+            h "Tes exploits ne te dispensent pas de respecter ton roi et empereur, Einar."
+            h "Ne t'adresse plus jamais à moi de cette façon, ou la sanction sera exemplaire."
+            e "..."
+            e "Sire, pardonnez mon attitude..."
 
     jump normal_ending_18
 
 label harald_defendre_porte:
 
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
-    "Harald survient et alnce immédiatement une grande contre-offensive en ouvrant la porte et en chargeant les assaillants personnellement. Désorganisés, les rebelles sont séparés en deux groupes."
+    "Harald jaillit du donjon, armé de pied en cap."
+    h "Baissez le pont ! Tous avec moi !"
+    "Le roi lance une grande contre-offensive à la tête de son armée."
+    "Désorganisés les rebelles sont séparés en deux groupes. Certains rompent les rangs."
 
     menu :
-        "Que faire ?"
 
-        "Suivre le roi":
+        "Suivez le roi !":
             e "Suivez le roi ! Suivez le !"
+
         "Massacrez-les":
             e "En avant, sire ! Massacrez ces chiens !"
         "Ne rien dire":
             e "..."
 
-    "Harald pârvient au contact d'Ogma et un combat s'engage."
+    "Harald parvient au contact d'Ogma et un combat s'engage."
     "Harald survient et concentre les efforts de ses troupes sur la grande porte, parvenant à lancer une grande contre-offensive tranchant net dans la progression des rebelles."
     "Les vikings séparent les rangs ennemis en deux et atteignent Ogma. Un combat féroce s'engage entre les deux chefs."
     "Harald prend nettement l'avantage : la Hache le rend invincible. Ogma est au sol et le roi s'apprête à l'achever."

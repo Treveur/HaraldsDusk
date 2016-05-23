@@ -119,11 +119,12 @@ label bad_ending_16:
     jump credits
 
 label bad_ending_17:
-    "En plein combat, une flèche vient frapper Einar à l'épaule. Ogma profite de cette ouverture pour transperçer le viking de sa lame, et laisse tomber son cadavre dans les douves."
+    "*En plein combat, une flèche vient frapper Einar à l'épaule.*"
+    "*Ogma profite de cette ouverture pour transperçer le viking de sa lame, et laisse tomber son cadavre dans les douves.*"
     jump credits
 
 label normal_ending_18:
-    "Le soir, Harald annonce au cours d'un grand repas qu'il souhaite récompenser Einar en lui offrant des terres autour de Stirling, le village qu'il a ordonné de brûler quelques jours plus tôt."
+    "Le repas se poursuit toute la nuit, célébrant les exploits d'Einar autant que l'éradication des rebelles..."
     jump credits
 
 label bad_ending_19:

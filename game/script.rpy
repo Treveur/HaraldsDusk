@@ -148,7 +148,7 @@ image moira attache_furieus = "moira/buchet/moira_attache_furieuse.png"
 define ge = Character('rebelles écossais', color="#f39c12")
 
 #Debout
-#image ge debout_normaux = "ge_debout_nomaux.png"
+#image ge debout_normaux = "ge_debout_normaux.png"
 #image ge debout_enthousiastes = "ge_debout_enthousiaste.png"
 #image ge debout_inquiets = "ge_debout_inquiets.png"
 #image ge debout_rire = "ge_debout_rire.png"
