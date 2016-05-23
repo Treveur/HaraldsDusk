@@ -1189,29 +1189,32 @@ label soupcon_harald_defendre_porte:
     menu :
         "*Un combat s'engage entre Ogma et Einar !*"
         "Mini jeu combat WIP"
+        
         "Gagner":
             "*Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves.*"
             "*Terrorisés, les rebelles prennent la fuite.*"
-            h "Ha ha ! Ils fuient les lâches !"
+            h "Ha ha ! Ils fuient, les lâches !"
             h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
             "*Harald s'élance à la poursuite des fuyards, le rire aux lèvres.*"
 
         "Perdre":
             jump bad_ending_17
 
-    "Un peu plus tard"
+    "*Un peu plus tard...*"
 
     "Harald félicite publiquement Einar pour sa fidélité et sa bravoure."
+    h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
+    h "Il est le meilleur homme que j'ai eu sous mes ordres, et Dieu sait combien d'hommes valeureux j'ai eu à mon service !"
+    h "Tu es du bois dont on fait les héros, Einar !"
 
     menu:
-        "Que réondre ?"
         "Remercier":
             e "Merci, mon roi."
-            h "Pas de modestie ! Tu nous a tous sauvés."
+            h "Ne me remercie pas ! Tu nous a tous sauvés, c'est à nous de te remercier !"
 
         "Fidèle":
-            e "Je n'ai fait qu'être fidèle. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
-            h "C'est vrai. Mais ne sois pas si sombre !"
+            e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
+            h "C'est vrai. "
 
         "Que l'on se souvienne de moi":
             e "J'ai mené l'assaut final et tué le chef rebelle : qu'on se souvienne longtemps de mes exploits !"
