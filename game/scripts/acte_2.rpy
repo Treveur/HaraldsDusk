@@ -610,6 +610,7 @@ label paradis_foret_1:
     show moira debout_normal at right with dissolve
 
     $ moira_dead = False
+    $ premier_refus_moira_foret_4 = False
 
     menu :
         "Quel est cet endroit ?":
@@ -645,6 +646,7 @@ label paradis_foret_1:
             "*Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons.*"
             hide einar with dissolve
             m "Einar ? Einar ?"
+            $ premier_refus_moira_foret_4 = True
             jump cote_2
 
         "La regarder":

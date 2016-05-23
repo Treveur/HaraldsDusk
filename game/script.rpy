@@ -212,7 +212,30 @@ image bg black = "#000"
 # sounds
 
 #musics
+define audio.nature = "sounds/musics/music_travelling_in_nature.mp3"
+define audio.romance ="sounds/musics/music_romance.mp3"
+define audio.weird_village = "sounds/musics/music_village_weird.mp3"
+define audio.slaughter = "sounds/musics/music_drama_slaughter.mp3"
 #define audio.drama_slaughter = "sounds/musics/music_drama_slaughter.wav"
+
+#SFX
+define audio.blade_1 = "sounds/musics/SFX_Blade1.mp3"
+define audio.blade_2 = "sounds/musics/SFX_Blade2.mp3"
+define audio.double_horn = "sounds/musics/SFX_Double_WarHorn.mp3"
+define audio.drawbrigde = "sounds/musics/SFX_Drawbridge_Down.mp3"
+define audio.hurt_man_1 = "sounds/musics/SFX_Hurt_Man.mp3"
+define audio.hurt_man_2 = "sounds/musics/SFX_Hurt_Man2.mp3"
+define audio.hurt_man_3 = "sounds/musics/SFX_Hurt_Man3.mp3"
+
+#ambiance
+define audio.burning_dungeon = "sounds/ambiances/ambiance_burning_dungeonkeep.mp3"
+define audio.coast = "sounds/ambiances/ambiance_coast.mp3"
+define audio.fight = "sounds/ambiances/ambiance_fight.mp3"
+define audio.magnificente_wood = "sounds/ambiances/ambiance_magnificent_woods.mp3"
+define audio.home = "sounds/ambiances/ambiance_maison.mp3"
+define audio.village = "sounds/ambiances/ambiance_village.mp3"
+define audio.wood_night = "sounds/ambiances/ambiance_wood_night.mp3"
+define audio.wood = "sounds/ambiances/ambiance_woods.mp3"
 
 # Le jeu commence ici
 

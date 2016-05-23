@@ -895,28 +895,30 @@ label village_6:
 
 label foret_4:
 
-    #$ premier_refus_moira_foret_4 = False
     $ rejeter_moira_foret_4 = False
 
     "..."
     "*Moira apparaît sur le sentier.*"
-    e "Qu'est-ce que tu fais là ?"
-    m "Je viens avec toi."
-    e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
-    m "Mon père a été injuste. Tu as fait tout ce qu'il t'avait demandé et plus encore."
-    m "Je t'aime. Je veux venir avec toi."
+    if if premier_refus_moira == False:
+        e "Qu'est-ce que tu fais là ?"
+        m "Je viens avec toi."
+        e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
+        m "Mon père a été injuste. Tu as fait tout ce qu'il t'avait demandé et plus encore."
+        m "Je t'aime. Je veux venir avec toi."
+    else:
+        e "Qu'est-ce que tu fais là ?"
+        m "Pourquoi est-ce que tu es parti ?"
 
     menu menu_reponse_moira_suivre_einar:
 
-
-        "Pas de raison de le suivre" : #if premier_refus_moira_foret_4 == False:
+        "Pas de raison de le suivre" if premier_refus_moira_foret_4 == False:
             e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
             e "Reste ici, avec ton père et les autres."
             m "..."
             m "Est-ce que tu reviendras ?"
             e "Je ne sais pas. Rentre chez-toi, maintenant."
             "..."
-            #$ premier_refus_moira_foret_4 = False
+
 
         "Pas contrarier Ogma" if premier_refus_moira == False:
             e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père."
@@ -926,7 +928,6 @@ label foret_4:
             e "Tu connais ton père. Il a déjà organisé l'assassinat d'un intendant pour venger sa femme, il n'hésitera pas à me traquer jusqu'au bout du monde pour te retrouver."
             e "Je n'irai pas contre son avis. N'insiste pas."
             e "Au revoir, Moira."
-            #$ premier_refus_moira_foret_4 = False
 
         "Pas les même sentiments":
             e "Nous ne partageons pas les même sentiments."
@@ -937,15 +938,19 @@ label foret_4:
             e "Non, je regrette. Laisse-moi partir maintenant, s'il-te-plaît."
             $ rejeter_moira_foret_4 = True
 
-        "Tendre les bras":
+        "Tendre les bras" if premier_refus_moira == False:
             "*Sans dire un mot, Einar tend les bras vers Moira.*"
             "*La jeune femme se précipite vers le viking et l'étreint.*"
             "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
 
-        "Viens":
+        "Viens" if premier_refus_moira == False:
             "Viens avec moi, Moira."
             "*La jeune femme se précipite vers le viking et l'étreint.*"
             "*Einar et Moira passent quelques minutes à profiter de l'instant.*"
+
+        "Autre choix refus" if premier_refus_moira:
+            e "Je me servi de toi pour quitter le village"
+            $ rejeter_moira_foret_4 = True
 
 
     if rejeter_moira_foret_4:
