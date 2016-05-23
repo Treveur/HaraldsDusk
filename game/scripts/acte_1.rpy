@@ -853,18 +853,18 @@ label foret_2(lieu = ""):
         l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
 
         e "Je ne suis sûr de rien."
-
+        hide gv with dissolve
     else:
         "En poursuivant vers le nord..."
         show gv debout_normaux at center with dissolve
         gv "Pourquoi devons-nous poursuivre vers le nord ? Je croyais que nous avions trouvé les rebelles !"
         show einar debout_normal at left with dissolve
         e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
-
+        hide gv with dissolve
     scene bg forest_night with dissolve
     hide einar with dissolve
     "..."
-
+    show gv debout_normaux at halfsize, center with dissolve
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
 
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
@@ -874,7 +874,7 @@ label foret_2(lieu = ""):
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
     show logan debout_normal at right with dissolve
     l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
-
+    hide gv with dissolve
     e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
 
     l "Des écossais rebelles, oui. Pas des innocents."
@@ -894,8 +894,9 @@ label foret_2(lieu = ""):
 label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     if message == "attentif":
+        hide logan with dissolve
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-
+        show gv debout_normaux at center with dissolve
         gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
 
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
