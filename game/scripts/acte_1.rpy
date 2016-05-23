@@ -900,9 +900,6 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
 
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
-        hide einar with dissolve
-        hide logan with dissolve
-        hide gv with dissolve
 
     elif message == "deception":
 
@@ -913,10 +910,6 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
 
         e "..."
-        hide all with dissolve
-        hide einar with dissolve
-        hide logan with dissolve
-        hide gv with dissolve
 
     elif message == "attitude":
         e "Ces villageois avaient l'air étranges..."
@@ -939,7 +932,6 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
                 e "Ils ont dû être impressionnés par notre présence. C'était une bande d'abrutis congénitaux, ils n'avaient jamais vu d'hommes armés !"
                 e "Isolés qu'ils sont dans leur village d'arriérés, à élever leurs chiards et leurs mout..."
 
-
         menu menu_avertissement_villageois:
             "Mettre en garde le groupe":
                 call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
@@ -953,11 +945,15 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     else:
         e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
+        show gv debout_normaux at halfsize, center with dissolve
         gv "Ha ha !"
         l "..."
         e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
         gv "Ha ha ha !"
         l "Ferme la Ein..."
+    hide einar with dissolve
+    hide logan with dissolve
+    hide gv with dissolve
 
     "*Un cor retentit dans les bois, très proche.*"
 
