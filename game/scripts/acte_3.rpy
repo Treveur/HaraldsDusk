@@ -310,7 +310,9 @@ label cour_chateau_1:
     show patrick debout_furieux at right
     p "Amenez les torches, et que brûlent les hérétiques !"
 
-    show patrick debout_furieux at right
+    show patrick debout_furieux at left
+    show ve buchet_normaux at right
+
     pe1 "Pitié ! Epargnez ma femme !"
     pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
     pe2 "Laissez partir les autres ! Je suis responsable de tout !"
