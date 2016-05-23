@@ -899,7 +899,7 @@ label foret_4:
 
     "..."
     "*Moira apparaît sur le sentier.*"
-    if if premier_refus_moira == False:
+    if premier_refus_moira == False:
         e "Qu'est-ce que tu fais là ?"
         m "Je viens avec toi."
         e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
@@ -1142,30 +1142,43 @@ label lieu_encore_inconnu_1(axe = True):
 #Défendre porte
 label soupcon_harald_defendre_porte:
 
-    "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
-    "Lorsque les rebelles parviennent au pont-levis, ils s'apprêtent à dresser une échelle par dessus les douves."
-    "Au même moment une troupe de vikings d'élite, dissimulés à l'extérieur du château, prend les rebelles à revers et repousse sans peine la masse devant le pont-levis."
-    "Un groupe de rebelles arrive par la mer, profitant du brouillard pour débarquer discrètement à l'intérieur de l'enceinte, derrière les vikings. Ils lancent un deuxième assaut qui divise les efforts des vikings."
-    "Harald demande à Einar de mener les huscarls au combat au delà de la porte, qui va céder."
+    "*La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings.*"
+    ge "L'échelle ! Apportez l'échelle !"
+    gv "Les rebelles dressent une échelle par-dessus les douves !"
+    "*Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles.*"
+    "*Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
+    gv "Crevez, salopards ! Ha ha !"
+    h "Consolidez les rangs !"
+    "*Les rebelles sont contraints de reculer et restent à distance des remparts.*"
+    "*Alors que les vikings se réjouissent de leur supériorité, un cri retentit sur leurs arrières."
+    gv "Par la mer ! Ils arrivent par la mer !"
+    "*Profitant des combats, un groupe conséquent d'écossais a pénétré l'enceinte par la mer pour débarquer discrètement derrière les vikings.*"
+    "*Ils lancent un deuxième assaut sur l'arrière des vikings, dans l'enceinte.*"
+    "*A l'extérieur, les rebelles lancent un nouvel assaut et après avoir tendu des planches en travers des douves, commencent à détruire le tablier du pont à coup de haches.*"
+    gv "Ça va céder !"
+    h "Einar ! Prends le commandement des huscarls ! Mène le combat au-delà de la porte !"
 
     menu:
-        "Mener les huscarls"
-
         "Autoritaire":
             e "A moi, huscarls !"
+            e "Suivez-moi et ne me lâchez pas !"
         "Dressez vos boucliers":
             e "Je veux une ligne parfaite ! Dressez vos boucliers !"
-        "Porte inatteignable":
-            e "Nous ne pouvons pas franchir la porte !"
+            e "Vous avez déjà affronté bien pire que des paysans ! Souvenez-vous des éléphants de guerre !"
+        "Porte infranchissable ":
+            e "Ces raclures ne passeront pas la porte !"
+            e "Vengeance ! Pour le roi, pour Logan et pour tous les autres !"
 
-    "La porte finit par s'ouvrir et Ogma pénètre dans l'enceinte. Il fait face à Einar."
+    "*Alors que la porte menace de céder, les vikings l'ouvrent et prennent de court les rebelles.*"
+    "*Immédiatement, les rebelles tentent de s'engouffrer dans l'ouverture, face à Einar et aux huscarls.*"
+    "*Une silouhette familière émerge des rebelles.*"
 
-    o"Traître ! Tu t'es joué de nous uniquement pour sauver ta vie de lâche ! Regarde combien d'hommes meurent aujourd'hui par ta faute !"
+    o "Traître ! Tu t'es joué de nous pour sauver ta vie de lâche !"
+    o "Regarde combien d'hommes meurent aujourd'hui par ta faute !"
 
     menu:
-        "Que répondre ?"
         "Massacrez-les":
-            e "Huscarls, massacrez les rebelles, sans exception ! Mais laissez-moi le chef !"
+            e "Huscarls, massacrez ces foutus écossais, sans exception ! Mais laissez-moi le chef !"
         "Que des porcs":
             e "Quels hommes ? Je ne vois que des porcs."
         "Ne rien dire":
@@ -1174,11 +1187,14 @@ label soupcon_harald_defendre_porte:
             e "J'en fini avec toi, et ensuite je retourne m'occuper de ta fille !"
 
     menu :
-        "Un combat s'engage entre Ogma et Einar"
+        "*Un combat s'engage entre Ogma et Einar !*"
         "Mini jeu combat WIP"
         "Gagner":
-            "Einar frappe Ogma en travers du torse avec sa hachette, ce qui le propulse dans les douves."
-            "Terrorisés, les rebelles commencent à prendre la fuite. Harald se lance à leur poursuite sur le dos de son cheval et massacre les fuyards en s'amusant."
+            "*Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves.*"
+            "*Terrorisés, les rebelles prennent la fuite.*"
+            h "Ha ha ! Ils fuient les lâches !"
+            h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
+            "*Harald s'élance à la poursuite des fuyards, le rire aux lèvres.*"
 
         "Perdre":
             jump bad_ending_17
