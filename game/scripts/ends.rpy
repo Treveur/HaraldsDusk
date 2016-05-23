@@ -128,21 +128,30 @@ label normal_ending_18:
     jump credits
 
 label bad_ending_19:
-    "Les bûchers prennent feu, un à un. Lorsque vient le tour de Moira, elle découvre Einar et leurs regardes se fixent. Alors que les flammes commencent à la dévorer, elle ne hurle pas."
+    "Les regards d'Einar et Moira se croisent et se fixent." 
+    "Alors que les flammes commencent à la dévorer, elle ne hurle pas."
     "Elle contient toute sa rage et sa colère, adressant un regard de haine pure à Einar alors que des larmes coulent sur ses joues."
+    "Dans les hurlements des prisonniers, les flammes de la rébellion s'éteignent."
     jump credits
 
 label bad_ending_20:
-    "Einar s'élance vers le bûcher et tente de détacher Moira. Il y parvient, mais un archer lui lance une flèche dans l'abdomen. Moira n'essaie même pas de s'enfuir."
-    "Elle arrache sa hachette de la ceinture d'Einar et lui en assène un coup violent au milieu du dos."
+    "Einar fend la foule, s'élance vers le bûcher et tente de détacher Moira."
+    "Lorsqu'il parvient à trancher ses liens, un archer lui décoche une flèche dans l'abdomen."
+    e "Argh... Cours ! Va t'en !"
+    "Moira n'essaie même pas de bouger."
+    "Elle arrache la hachette de la ceinture d'Einar et lui en assène un coup violent en travers de la gorge."
+    "Alors qu'Einar s'effondre, il ne voit rien d'autre que les yeux larmoyants de haine de Moira."
     jump credits
 
 label bad_ending_21:
-    "Ogma s'adresse à Einar en lui disant qu'il lui était redevable pour la victoire sur Harald, mais que sa trahison envers les vikings et les rebelles a provoqué bien plus de morts que nécessaire. Aussi, il est banni d'Ecosse et privé de toute récompense."
+    "Einar s'éloigne du château en enjambant sans distinction les cadavres écossais et vikings, tâchant ses vêtements dans la végétation imbibée de sang. Derrière lui, Dunbar brûle."
     jump credits
 
 label bad_ending_22:
-    "Ogma s'élance vers Einar dès qu'il l'aperçoit, hache levée. Einar n'a même pas le temps d'engager le combat. Ogma se jette sur lui et le massacre, le démembrant et le rendant impossible à reconnaître."
+    "Ogma atteint Einar."
+    "Avant même que le viking n'ait pu esquisser le moindre mouvement, Ogma le massacre sur place."
+    "L'écossais ne laisse rien de reconnaissable, continuant à frapper bien après la mort d'Einar."
+    "Lorsque après de longues minutes il cesse d'abattre la Hache, il ne reste plus qu'une bouillie informe et rouge au milieu de la plaine."
     jump credits
 
 label credits:
