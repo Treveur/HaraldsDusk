@@ -652,7 +652,7 @@ label e_fouiller_village_1(einarFouille = False):
         e "Je suis à peine surpris... J'arrive !"
 
     scene bg house
-    show moira debout_normal at center
+    show moira debout_normal at center with dissolve
     show einar debout_normal at left with dissolve
     menu menu_maison_1:
         "Qui es-tu ?":
@@ -666,9 +666,12 @@ label e_fouiller_village_1(einarFouille = False):
             jump e_villagoise_partir_maison_1
         "Tuer la villageoise" if already_talk:
             jump e_tuer_moira_maison_1
+    hide moira with dissolve
+    hide einar with dissolve
 
 
 label e_tuer_villageois_village_1:
+    show ve 
 
     e "Toi. Approche."
 

@@ -43,6 +43,7 @@ label exterieur_chateau_1:
 
 
     hide gv with dissolve
+    hide einar with dissolve
 
     jump cour_chateau_1
 
@@ -61,11 +62,8 @@ label cour_chateau_1:
     "*Harald est en grande discussion avec un huscarl au milieu de la cour*"
     e "Sire ! Sire !"
     h "... doit nous faire venir de nouveaux navires de guerre, et..."
-    show harald debout_normal at right
+    show harald debout_normal at right with dissolve
     h "Einar ? Que... D'où viens-tu ? Où as-tu passé tout ce temps ? Où sont tes compagnons ? J'ai beaucoup de questions à te poser !"
-
-    show einar debout_normal at left
-
 
     menu:
 
@@ -105,7 +103,7 @@ label cour_chateau_1:
             e "Ensuite, le meneur s'est approché de moi. Il a égorgé Logan sous mes yeux puis m'a assommé."
             h "Qui t'a soigné ? Tu devais être blessé... Je te connais, rien ne t'arrête jamais quand il s'agit de combattre !"
 
-            jump menu_embusscade_ou_silence_cour_chateau
+            jump menu_embuscade_ou_silence_cour_chateau
 
         "Ne rien dire":
             e "..."
@@ -114,7 +112,7 @@ label cour_chateau_1:
 
             $ retour_silence_1 = True
 
-            jump menu_embusscade_ou_silence_cour_chateau
+            jump menu_embuscade_ou_silence_cour_chateau
 
 
     menu menu_assome_cour_chateau:
@@ -135,7 +133,7 @@ label cour_chateau_1:
             e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
             h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
-    menu menu_embusscade_ou_silence_cour_chateau:
+    menu menu_embuscade_ou_silence_cour_chateau:
 
         "Village et Moira":
             e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
@@ -184,8 +182,6 @@ label cour_chateau_1:
             e "Hélas, je n'en sais rien, sire. Mais je présage que cet assaut aura lieu très prochainement."
             e "Quoi qu'il en soit, je n'ai jamais cessé de vous être fidèle. Tout ce que j'ai fait, c'était dans votre intérêt. J'ai patiemment attendu le moment où je pourrais vous révéler leurs intentions. Et voilà."
 
-
-
         "Je vous suis fidèle (mentir)":
             e "Nul ne vous est plus fidèle que moi !"
             $ mentir_harald_1 = True
@@ -215,8 +211,6 @@ label cour_chateau_1:
     hide harald
 
     show patrick debout_normal at center with dissolve
-
-
 
     p "Que Dieu, ait pitié de vous ! Les flammes purificatrices vont laver tous vos pêchés."
     p "Deus propitius tibi!"
@@ -255,7 +249,6 @@ label cour_chateau_1:
             e "Brûlez-les !"
 
     if interpose_bucher:
-
 
         menu menu_sauver_rebelle_cour_chateau:
             "Pas vus à Perth":
@@ -308,7 +301,7 @@ label cour_chateau_1:
             e "..."
             $ reponse_reconfort = "larme_aux_yeux"
         "L'évêque peut se tromper, mais pas Dieu":
-            e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient Justes, les condamnés iront au paradis."
+            e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient justes, les condamnés iront au paradis."
             $ reponse_reconfort = "rassure"
 
     if reponse_reconfort == "pleurer":
@@ -336,7 +329,7 @@ label cour_chateau_2:
 
 #Sequence 5
 label interieur_grande_porte_chateau_1:
-
+    show bg chateau_porte_interieur_crepuscule with dissolve
 
     "*Einar est posté à proximité du système d'ouverture des portes.*"
     gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"

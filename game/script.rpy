@@ -202,6 +202,7 @@ image bg pont_levis = "pont_levis.jpg"
 image bg chateau_porte = "chateau_porte.jpg"
 image bg cour_chateau = "cour_chateau.png"
 image bg cour_chateau_crepuscule = "cour_chateau_crepu.png"
+image bg chateau_porte_interieur_crepuscule = "chateau_porte_interieur_crepu.jpg"
 image bg cote1 = "cote1.jpg"
 
 
