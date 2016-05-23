@@ -1224,8 +1224,8 @@ label soupcon_harald_defendre_porte:
             e "Quels hommes ? Je ne vois que des porcs."
         "Ne rien dire":
             e "..."
-        "Provoquer":
-            e "J'en fini avec toi, et ensuite je retourne m'occuper de ta fille !"
+        "Je vais m'occuper de ta fille !":
+            e "J'en termine avec toi, et ensuite je retourne m'occuper de ta fille !"
 
     menu :
         "*Un combat s'engage entre Ogma et Einar !*"
@@ -1237,59 +1237,74 @@ label soupcon_harald_defendre_porte:
             h "Ha ha ! Ils fuient, les lâches !"
             h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
             "*Harald s'élance à la poursuite des fuyards, le rire aux lèvres.*"
+            "*Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares.*"
 
         "Perdre":
             jump bad_ending_17
 
     "*Un peu plus tard...*"
 
-    "Harald félicite publiquement Einar pour sa fidélité et sa bravoure."
     h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
     h "Il est le meilleur homme que j'ai eu sous mes ordres, et Dieu sait combien d'hommes valeureux j'ai eu à mon service !"
     h "Tu es du bois dont on fait les héros, Einar !"
 
     menu:
-        "Remercier":
+        "Merci":
             e "Merci, mon roi."
             h "Ne me remercie pas ! Tu nous a tous sauvés, c'est à nous de te remercier !"
 
         "Fidèle":
             e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
-            h "C'est vrai. "
+            h "C'est vrai, mais ton mérite et ton honneur n'en sont pas amoindris ! Sans toi, nous étions perdus !"
 
         "Que l'on se souvienne de moi":
-            e "J'ai mené l'assaut final et tué le chef rebelle : qu'on se souvienne longtemps de mes exploits !"
-            h "C'est vrai. C'est une attitude peu modeste, mais il s'agit véritablement d'exploits. La gloire t'appartient aujourd'hui ! "
+            e "J'ai mené l'assaut final et tué le chef rebelle, qu'on se souvienne longtemps de mes exploits !"
+            h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
 
-    h "Pour tes exploits, voici ta récompense : Stirling et les terres alentours ! J'ai brûlé le village il y a peu, mais les terres fourniront de bons revenus d'ici quelques années."
+    h "J'ai décidé de récompenser ta valeur."
+    h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
+    h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
 
     menu :
-        "Que répondre ?"
         "Remercier":
-            e "Merci."
+            e "... Merci, je n'en attendais pas tant !"
+            h "Ton désinteressement s'ajoute à tes prouesses ! On ne pourrait rêver d'avoir un meilleur homme à son service !"
         "Honneur":
-            e "Quel grand honneur ! Merci, mon roi !"
-        "Terre infertiles":
-            e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ?  "
+            e "Quel honneur ! Merci, mon roi !"
+            h "Depuis tout ce temps passé à mon service et toutes les promesses que je t'avais faites, te récompenser aujourd'hui me paraissait être une obligation !"
+            
+        "Des terres infertiles":
+            e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ? "
+            e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
+            e "Vous vous moquez de moi, sire !"
+            gv "Sire !"
+            h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."
+            h "Tes exploits ne te dispensent pas de respecter ton roi et empereur, Einar."
+            h "Ne t'adresse plus jamais à moi de cette façon, ou la sanction sera exemplaire."
+            e "..."
+            e "Sire, pardonnez mon attitude..."
 
     jump normal_ending_18
 
 label harald_defendre_porte:
 
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
-    "Harald survient et alnce immédiatement une grande contre-offensive en ouvrant la porte et en chargeant les assaillants personnellement. Désorganisés, les rebelles sont séparés en deux groupes."
+    "Harald jaillit du donjon, armé de pied en cap."
+    h "Baissez le pont ! Tous avec moi !"
+    "Le roi lance une grande contre-offensive à la tête de son armée."
+    "Désorganisés les rebelles sont séparés en deux groupes. Certains rompent les rangs."
 
     menu :
-        "Que faire ?"
 
-        "Suivre le roi":
+        "Suivez le roi !":
             e "Suivez le roi ! Suivez le !"
+            
         "Massacrez-les":
             e "En avant, sire ! Massacrez ces chiens !"
         "Ne rien dire":
             e "..."
 
-    "Harald pârvient au contact d'Ogma et un combat s'engage."
+    "Harald parvient au contact d'Ogma et un combat s'engage."
     "Harald survient et concentre les efforts de ses troupes sur la grande porte, parvenant à lancer une grande contre-offensive tranchant net dans la progression des rebelles."
     "Les vikings séparent les rangs ennemis en deux et atteignent Ogma. Un combat féroce s'engage entre les deux chefs."
     "Harald prend nettement l'avantage : la Hache le rend invincible. Ogma est au sol et le roi s'apprête à l'achever."
