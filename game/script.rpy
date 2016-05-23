@@ -70,7 +70,7 @@ image harald combat_blesse = "harald/combat/harald_combat_blesse.png"
 image harald combat_determine = "harald/combat/harald_combat_determine.png"
 
 ##Huscarls
-
+define hu = Character("Huscarls")
 #Debout
 #image huscarls debout_normal = "huscarls_debout_normaux.png"
 #image huscarls debout_rire = "huscarls_debout_rire.png"
