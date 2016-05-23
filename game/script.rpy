@@ -72,15 +72,14 @@ image harald combat_determine = "harald/combat/harald_combat_determine.png"
 ##Huscarls
 define hu = Character("Huscarls")
 #Debout
-#image huscarls debout_normal = "huscarls_debout_normaux.png"
-#image huscarls debout_rire = "huscarls_debout_rire.png"
+image huscarls debout_normal = "huscarls/debout/huscarls_debout_normaux.png"
+image huscarls debout_rire = "huscarls/debout/huscarls_debout_rire.png"
 
 #Combat
-#image huscarls combat_normal = "huscarls_combat_normal.png"
-#image huscarls combat_enthousiaste = "huscarls_combat_enthousiaste.png"
-#image huscarls combat_furieux = "huscarls_combat_furieux.png"
-#image huscarls combat_inquiet = "huscarls_combat_inquiet.png"
-#image huscarls combat_determine = "huscarls_combat_determine.png"
+image huscarls combat_normal = "huscarls/combat/huscarls_combat_normaux.png"
+image huscarls combat_enthousiaste = "huscarls/combat/huscarls_combat_enthousiaste.png"
+image huscarls combat_furieux = "huscarls/combat/huscarls_combat_furieux.png"
+image huscarls combat_inquiets = "huscarls/combat/huscarls_combat_inquiets.png"
 
 ##Garde / Guerriers Vikings / Jeune Guerrier Viking
 define gv = Character('Guerriers Vikings', color="#e67e22")
