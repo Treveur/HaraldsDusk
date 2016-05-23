@@ -900,16 +900,23 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
 
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
+        hide einar with dissolve
+        hide logan with dissolve
+        hide gv with dissolve
 
     elif message == "deception":
 
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
 
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-
+        show gv debout_normaux at halfsize, center with dissolve
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
 
         e "..."
+        hide all with dissolve
+        hide einar with dissolve
+        hide logan with dissolve
+        hide gv with dissolve
 
     elif message == "attitude":
         e "Ces villageois avaient l'air étranges..."
@@ -920,8 +927,8 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
         menu :
             "Craindre un piège":
-
                 jump menu_avertissement_villageois
+
             "Ils ont dû être effrayés":
                 e "La vue de douze guerriers à dû les effrayer. Ils n'avaient probablement jamais vu autant d'armes à la fois !"
                 l "Ils ont dû croire que nous étions là pour raser leur village. Ils sont forcément au courant du meurtre de Montgomery, ils auront fait le rapprochement en nous voyant arriver."
@@ -937,9 +944,12 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
             "Mettre en garde le groupe":
                 call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
             "Ne pas craindre des paysans":
+                hide logan with dissolve
                 e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
+                show gv debout_normaux with dissolve
                 gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
-                gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher sa tro..."
+                gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher la tro..."
+
 
     else:
         e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
@@ -950,6 +960,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         l "Ferme la Ein..."
 
     "*Un cor retentit dans les bois, très proche.*"
+
 
     e "En position de combat, tous !"
     gv "Ça venait d'où ?"
