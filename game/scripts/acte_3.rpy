@@ -1244,6 +1244,10 @@ label village_6:
                 o "Il ne me reste plus qu'à te souhaiter bon voyage."
                 o "Si le coeur t'en dit, n'hésite pas à revenir ici. Tu trouveras toujours des amis à Perth."
 
+                hide ogma
+                hide einar
+                with dissolve
+
         call good_ending_15 pass (marier = False) from _call_good_ending_15
     else:
         jump good_ending_15
@@ -1254,21 +1258,31 @@ label foret_4:
 
     "..."
     "Moira apparaît sur le sentier."
+
+    show einar debout_normal at left with dissolve
+    show moira debout_normal at right with moveinright
+
     if premier_refus_moira == False:
         e "Qu'est-ce que tu fais là ?"
         m "Je viens avec toi."
+        show einar debout_attriste at left
         e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
+        show moira debout_contrarie at right
         m "Mon père a été injuste. Tu as fait tout ce qu'il t'avait demandé et plus encore."
+        show moira debout_determine at right
         m "Je t'aime. Je veux venir avec toi."
     else:
         e "Qu'est-ce que tu fais là ?"
+        show moira debout_furieux at right
         m "Pourquoi est-ce que tu es parti ?"
 
     menu menu_reponse_moira_suivre_einar:
 
         "Pas de raison de le suivre" if premier_refus_moira_foret_4 == False:
+            show einar debout_attriste at left
             e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
             e "Reste ici, avec ton père et les autres."
+            show moira debout_attriste at right
             m "..."
             m "Est-ce que tu reviendras ?"
             e "Je ne sais pas. Rentre chez-toi, maintenant."
@@ -1276,37 +1290,52 @@ label foret_4:
 
 
         "Pas contrarier Ogma" if premier_refus_moira == False:
+            show einar debout_attriste at left
             e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père."
+            show einar debout_contrarie at left
             e "Il m'a interdit de rester ici, et il ne me permettra certainement pas de partir avec sa fille."
             e "Laisse moi partir."
+            show moira debout_contrarie at right
             m "Je me fiche de tout ça ! Je n'appartient pas à mon père ! Si j'en ai envie, rien ne m'empêche de te suivre !"
+            show einar debout_attriste at left
             e "Tu connais ton père. Il a déjà organisé l'assassinat d'un intendant pour venger sa femme, il n'hésitera pas à me traquer jusqu'au bout du monde pour te retrouver."
             e "Je n'irai pas contre son avis. N'insiste pas."
             e "Au revoir, Moira."
 
         "Pas les même sentiments":
-            e "Nous ne partageons pas les même sentiments."
+            show einar debout_normal at left
             e "Je ne t'aime pas, Moira."
+            show einar debout_souriant at left
             e "Je te suis reconnaissant pour tous tes soins, et j'ai apprécié le temps que nous avons passé ensemble."
+            show einar debout_attriste at left
             e "Mais je ne t'aime pas."
+            show moira debout_attriste at right
             m "Tu dis ça pour que je ne te suive pas !"
             e "Non, je regrette. Laisse-moi partir maintenant, s'il-te-plaît."
             $ rejeter_moira_foret_4 = True
 
         "Tendre les bras" if premier_refus_moira == False:
+            show einar debout_souriant at left
+            show moira debout_souriant at right
             "Sans dire un mot, Einar tend les bras vers Moira."
             "La jeune femme se précipite vers le viking et l'étreint."
             "Einar et Moira passent quelques minutes à profiter de l'instant."
 
         "Viens" if premier_refus_moira == False:
-            "Viens avec moi, Moira."
+            show einar debout_souriant at left
+            e "Viens avec moi, Moira."
+            show moira debout_attriste at right
             "La jeune femme se précipite vers le viking et l'étreint."
             "Einar et Moira passent quelques minutes à profiter de l'instant."
 
         "Autre choix refus" if premier_refus_moira:
+            show einar debout_determine at left
             e "Je me servi de toi pour quitter le village"
+            show moira debout_attriste at right
             $ rejeter_moira_foret_4 = True
-
+    hide moira
+    hide einar
+    with dissolve
 
     if rejeter_moira_foret_4:
         call good_ending_14 pass (rejete = True) from _call_good_ending_14
@@ -1314,60 +1343,91 @@ label foret_4:
         jump good_ending_14
 
 label fuite_harald_pont_baisse_donjon:
+
     "Harald s'échappe sans demander son reste."
+
+    show harald debout_furieux at left with dissolve
+
     h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
     h "JE ME VENGERAI !"
     "..."
     "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
     "Harald s'échappe par la mer, seul sur sa barque."
+
+    #animation harald partir vers la droite
+    hide harald
+    with dissolve
+
     #Retour à l'extérieur
     "La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol."
     "Sur les remparts, la silouhette d'Ogma se découpe sur le ciel."
     "Le Hurleur semble observer la mer."
     "..."
 
+    show ogma debout_normal at right
+    show einar debout_normal at left
+    with dissolve
+
     o "Bravo Einar, la réussite est totale ! Mais pourquoi avoir laissé partir le roi ?"
+    show einar debout_attriste at left
     e "Je..."
+    show ogma debout_contrarie at right
     o "Ne réponds pas à ma question, je préfère ne pas savoir."
     o "Le roi est vaincu et tu as la Hache Sainte, tu n'avais aucune raison de le tuer."
     o "La Hache a l'air si... ordinaire."
+    show einar debout_normal at left
     e "Je peux vous assurer qu'elle n'a rien d'ordinaire !"
+    show ogma debout_normal at right
     o "Sans doutes..."
     o "Il va falloir que tu t'en sépare, désormais. Nous devons la détruire."
     o "Donne-la moi, s'il-te-plaît."
 
     menu:
         "Conserver la Hache":
+            show einar combat_hache_determine
             jump e_garder_hache_pont_baisse_donjon
         "Donner la Hache Sainte":
+
+            hide einar
+            hide ogma
+            with dissolve
+
             jump normal_ending_10
 
-
 label e_garder_hache_pont_baisse_donjon:
+
+    show ogma debout_contrarie at right
     o "Ne sois pas idiot ! Nous devons la détruire sans tarder !"
+    show ogma debout_determine at right
     o "Je suis prêt à aller jusqu'au bout pour m'en débarrasser !"
     o "Donne-moi cette Hache !"
     "Ogma tend la main."
 
     menu :
         "Reculez !":
+            show einar combat_hache_determine at left
             e "Reculez ! Je suis le possesseur de la Hache, vous ne pouvez rien contre moi !"
         "Je la mérite":
+            show einar combat_hache_determine at left
             e "J'ai pris cette Hache des mains du roi-empereur. Je suis le seul à la mériter !"
             e "Vous n'avez aucun moyen de m'en priver !"
 
+    show ogma debout_attriste at right
     o "Très bien..."
     o "Tu as raison, je ne peux rien faire contre toi."
     o "Que comptes-tu faire de la relique ? Elle doit être détruite. Elle a déjà provoqué suffisamment de malheurs et asservi trop d'hommes."
 
     menu:
+
         "La détruire moi-même":
+            show einar combat_hache_normal at left
             e "Je la détruirai moi-même. C'est mon devoir."
             o "Tu ne me fais pas confiance ?"
             e "Ce n'est pas le problème. Je veux simplement être absolument certain que personne n'en profitera plus jamais."
             jump lieu_encore_inconnu_1
 
         "La garder !":
+            show einar combat_hache_determine at left
             e "Je l'ai prise, elle m'appartient."
             e "J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient !"
             e "Harald n'était qu'un mou, il a cessé ses conquêtes bien trop tôt !"
