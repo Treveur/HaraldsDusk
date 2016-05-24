@@ -28,9 +28,9 @@ image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
 image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
 
-
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
+
 
 ##Logan
 define l = Character('Logan', color="#f1c40f")
