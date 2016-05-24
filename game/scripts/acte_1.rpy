@@ -1106,7 +1106,7 @@ label attaque_massacre_foret_2(message = ""):
     if message == "attentif":
         show einar debout_normal at left with dissolve
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-        show gv debout_normal at center with dissolve
+        show gv debout_normaux at center with dissolve
         gv "Nous avons massacré le village ! Qui pourrait nous attaquer ?"
 
         e "Et les hommes, abruti ? Il n'y en avait presque aucun à Perth."
@@ -1120,7 +1120,7 @@ label attaque_massacre_foret_2(message = ""):
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
         show logan debout_normal at right with dissolve
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-        show gv debout_normal at center with dissolve
+        show gv debout_normaux at center with dissolve
         hide logan with dissolve
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
 
@@ -1129,7 +1129,7 @@ label attaque_massacre_foret_2(message = ""):
         gv "J'aurais préféré des cibles qui se défendent..."
 
     elif message == "moquerie":
-        show gv debout_normal at center with dissolve
+        show gv debout_normaux at center with dissolve
         gv "Hé, regardez ! J'ai une dent incrustée dans mon bouclier !"
         show einar debout_normal at left with dissolve
         e "Ne la retire pas, ça porte bonheur, ha ha !"
@@ -1142,7 +1142,7 @@ label attaque_massacre_foret_2(message = ""):
     else:
         show einar debout_normal at left with dissolve
         e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
-        show gv debout_normal at center with dissolve
+        show gv debout_normaux at center with dissolve
         gv "Ha ha !"
         show logan debout_normal at right with dissolve
         l "..."
@@ -1159,7 +1159,7 @@ label attaque_massacre_foret_2(message = ""):
 
     show einar debout_normal at left with dissolve
     e "En position de combat, tous !"
-    show gv debout_normal at center with dissolve
+    show gv debout_normaux at center with dissolve
     gv "Ça venait d'où ?"
     show logan debout_normal at right with dissolve
     l "Sur la gauche ! Des torches !"
