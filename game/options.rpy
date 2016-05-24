@@ -26,7 +26,7 @@ init -1 python hide:
     ## Contrôle le nom et la version du jeu; qui apparaîtront dans les
     ## fichiers de débogage.
     config.name = "Harald's Dusk"
-    config.version = "0.4"
+    config.version = "0.4.1"
 
     #Changer couleur texte
     #style.default.color = "#FFFFFF"

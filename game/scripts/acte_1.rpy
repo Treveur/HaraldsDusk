@@ -147,7 +147,7 @@ label intro:
 
                     l "Je ne me rappelle même pas de son nom. Dorthe, Dorothe, quelque chose comme ça. Le lendemain, sur le départ, elle a insisté pour que je l'emmène ! La garce ! Ha ha ! "
 
-                    e "Tu as toujours de la chance quand il s'agit de dégoter de belles filles. Même au milieu de nul part !"
+                    e "Tu as toujours de la chance quand il s'agit de dégoter de belles filles. Même au milieu de nulle part !"
 
                     l "Remarque, ça fait un moment que je ne t'ai pas vu avec une fille. Pas une captive, rien ! Monsieur cherche le grand amour ? A moins qu'il ne soit plus du genre à embrasser les garçons ?"
 
@@ -590,18 +590,18 @@ label village_1:
     e "Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard..."
-    
+
     ve "Bonjour, étrangers. Nous pouvons vous aider ?"
-    
+
     e "Je veux que tout le village se rassemble sur la place, maintenant !"
-    
+
     e "Toute désobeissance sera punie !"
-    
+
     ve "Très bien, restez calme."
-    
+
     "Des villageois sortent de leurs maisons et abandonnent leurs activités pour se rassembler."
     "Il n'y a que très peu d'hommes parmi la cinquantaine de villageois."
-    
+
     ve "Nous... Nous sommes tous là."
 
     hide gv debout_normaux with dissolve
@@ -659,7 +659,7 @@ label e_demander_information_village_1:
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
     ve "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens !"
-    
+
     "Le vieil homme crache sur le sol, devant les pieds de Logan."
 
     e "Quel succès, Logan."
@@ -725,23 +725,23 @@ label e_fouiller_village_1(einarFouille = False):
 
 label e_tuer_villageois_village_1:
     show ve
-    
+
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un de vos vieux !"
-    
+
     l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
 
     l "Nous risquons d'aggraver la situation en rasant Perth. Le roi sera furieux !"
-    
+
     ve "Nous n'avons rien à vous dire ! Nous ne savons rien !"
-    
+
     menu:
-            
+
         "Votre détermination fait plaisir à voir":
-            
+
             e "Vous seriez prêt à laisser mourir l'un des votres pour couvrir votre rébellion ? Votre détermination fait plaisir à voir !"
-                
+
             e "Vous n'avez aucun avenir en trahissant l'empire ! Le roi Harald saura se montrer clément avec ceux qui ont coopéré !"
-                
+
             ve "Nous ne savons rien ! Absolument rien !"
 
             e "Et vos hommes, où sont-ils ?"
@@ -753,14 +753,14 @@ label e_tuer_villageois_village_1:
             l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
 
             e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
-                
+
             jump choix_retour_village_1
-                
-            
+
+
         "Vous l'aurez voulu ! (tuer un villageois)":
-        
+
             e "Vous l'avez cherché !"
-             
+
             e "Toi. Approche."
 
             ve "Moi ?"
@@ -776,24 +776,24 @@ label e_tuer_villageois_village_1:
             e "Parfait. Maintenant, parlez."
 
             ve "Vous ne saurez rien !"
-            
+
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
-            
+
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
-            
+
             gv "Vengeance !"
-            
+
             e "Je..."
-            
+
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
-            
+
             e "Battez-vous ! Tuez-les tous !"
-            
+
             "Le combat s'engage. Rapidement, les vikings reprennent l'ascendant et réduisent à néant toute résistance."
-            
+
             call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1_1
-    
-    
+
+
 
 label e_intimider_villageois_village_1:
 
@@ -861,15 +861,15 @@ label e_villagoise_partir_maison_1:
 label e_tuer_moira_maison_1:
 
     e "Je n'aime pas qu'on se moque de moi. Mes instructions étaient claires ! Cette rencontre s'achève ici."
-    
+
     "Einar tire la jeune femme par les cheveux sur la place, aux yeux de tous."
-    
+
     ve "Lâchez-moi ! Salaud !"
-    
-    l "Einar ! Non ! Cette pauvre fille n'a rien fait de mal ! Tu vas compromettre toute la mission ! Souviens-toi des instructions du roi !" 
-    
-    menu : 
-        
+
+    l "Einar ! Non ! Cette pauvre fille n'a rien fait de mal ! Tu vas compromettre toute la mission ! Souviens-toi des instructions du roi !"
+
+    menu :
+
         "Tais-toi ! (la tuer)":
 
             "Le viking abat sa hache sur la nuque de la femme, qui tombe au sol, inerte."
@@ -885,30 +885,30 @@ label e_tuer_moira_maison_1:
             e "Parfait. Maintenant, parlez."
 
             ve "Vous ne saurez rien !"
-            
+
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
-            
+
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
-            
+
             gv "Vengeance !"
-            
+
             e "Je..."
-            
+
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
-            
+
             e "Battez-vous ! Tuez-les tous !"
-            
+
             "Le combat s'engage. Rapidement, les vikings reprennent l'ascendant et réduisent à néant toute résistance."
 
             call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1_1
-            
-            
-        "... Tu as raison.": 
-            
+
+
+        "... Tu as raison.":
+
             e "Tu as raison. Elle ne mérite pas que j'émousse ma hache sur elle."
-            
+
             e "J'ai déjà retenu ma main une fois. Parlez maintenant ! Je ne renoncerai pas deux fois de suite !"
-        
+
             ve "Nous ne savons rien ! Absolument rien !"
 
             e "Et vos hommes, où sont-ils ?"
@@ -920,10 +920,10 @@ label e_tuer_moira_maison_1:
             l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
 
             e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
-                
+
             jump choix_retour_village_1
-        
-        
+
+
 #fin Scequence 6
 
 label choix_retour_village_1(massacre = False):
