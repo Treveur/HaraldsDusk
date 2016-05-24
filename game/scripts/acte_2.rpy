@@ -1,6 +1,9 @@
 #Acte 2
 #Sequence 1
 label interieur_maison_village_1:
+    hide einar
+    hide ogma
+    #hide ge
     scene bg house2_jour with dissolve
 
     $ critique_ogma = False
