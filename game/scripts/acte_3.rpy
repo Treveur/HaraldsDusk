@@ -585,35 +585,55 @@ label e_bruler_donjon_desobeir_donjon:
 
     "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
 
+    show einar combat_normal at left
+    show jgv debout_normal at right
+    with dissolve
+
     menu :
 
         "Le tuer":
+            show einar combat_determine at left
             e "Désolé, petit. Nous ne sommes plus dans le même camp."
             "Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément."
 
         "L'assommer":
+            show einar combat_determine at left
             e "Je t'offre l'occasion de refaire ta vie, saisi-la."
-            "Du plat de sa hache, Einar frappe le soldat à la tempe. Iol s'écroule à terre, inconscient"
+            "Du plat de sa hache, Einar frappe le soldat à la tempe. Il s'écroule à terre, inconscient"
 
         "L'ignorer":
+            #animation einar sortir
             e "(Je n'ai pas le temps de m'occuper de lui.)"
 
     "Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte."
+
+    show harald combat_hache_determine at left
+    show huscarls combat_enthousiaste at right
+
     h "A moi, huscarls ! Suivez votre roi !"
-    gv "HAAAAAA !"
+    hu "HAAAAAA !"
     "Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles."
 
+    hide huscarls with dissolve
+    show einar combat_normal at left with dissolve
+
     "Harald arrive devant Einar, couvert du sang de ses victimes."
+
+
+    show harald combat_hache_furieux at left
     h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
         "Ne rien regretter":
+            show einar combat_determine at left with dissolve
             e "Je ne regrette rien."
 
         "Demander pardon":
+            show einar debout_attriste at left with dissolve
             e "Je regrette tout et vous demande pardon, Sire."
 
         "Je ne vois aucun roi !":
+            show einar combat_furieux at left with dissolve
             e "Je ne vois aucun souverain ici..."
             e "Il n'y a personne pour me libérer d'une allégeance quelconque !"
 
@@ -631,6 +651,8 @@ label e_bruler_donjon_obeir_donjon:
     "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
     "Le roi est entrain de s'équiper de son armure."
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
+
+    show einar combat_normal at center with dissolve
 
     menu:
         "Prendre la Hache":
