@@ -42,10 +42,10 @@ label intro:
             hide logan
             hide harald
 
-            e "Mon Roi, sommes-nous proches de Dunbar ?"
+            show einar debout_normal at left with dissolve
+            show harald debout_normal at right with dissolve
 
-            show einar debout_normal at left
-            show harald debout_normal at right
+            e "Mon Roi, sommes-nous proches de Dunbar ?"
 
             h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
 
