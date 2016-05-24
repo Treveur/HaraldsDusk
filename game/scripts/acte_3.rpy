@@ -905,6 +905,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
     show harald combat_hache_normal at right
     h "Tu me déçois, Einar. D'entre tous mes huscarls, il a fallu que ce soit toi qui me trahisse."
     h "Tu crois être unique ? D'autres prendront ta place."
+    show harald combat_hache_determine at right
     h "Mon règne se poursuivra longtemps après ta mort."
     "Harald brandit la Hache"
     h "Es-tu conscient de ta totale impuissance ?"
@@ -915,22 +916,29 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
         "Que répondre ?"
 
         "J'ai mon amulette protectrice":
+            show einar combat_normal at left
             e "C'est l'occasion de voir si ce vieux grigri fonctionne vraiment..."
             e "Voyez, Sire ! C'est un crucifix sculpté une nuit de pleine lune à l'équinoxe de printemps !"
+            show harald combat_hache_furieux at right
             h "Même à l'article de la mort, tu ne cesses pas d'être insolent..."
             h "Ce sera ton dernier blasphème, traître."
 
         "Peu importe, je suis satisfait":
+            show einar combat_normal at left
             e "Peu importe. J'ai fait ce que je devais faire."
+            show harald combat_hache_normal at right
             h "Au moins, tu auras suivi tes convictions..."
             h "Quitte à trahir ton roi et à provoquer la mort de tous ceux qui te comptaient comme un ami !"
 
         "Demander pardon":
+            show einar combat_normal at left
             e "Et si j'implore votre pardon, Sire ?"
 
         "Vous avez déjà perdu":
             e "Me tuer ne changera rien au fait que vous avez perdu cette bataille."
+            show einar combat_determine at left
             e "Le château n'est plus sous votre contrôle et vous n'avez plus d'hommes ici. Vous allez quitter l'Ecosse !"
+            show harald combat_hache_furieux at right
             h "Rassure-toi, ce petit soulèvement paysan n'écornera pas ma toute-puissance."
             h "L'Histoire ne se souviendra même pas de cet incident !"
 
@@ -940,7 +948,11 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
 
     $ epargner_harld__no_axe_donjon = False
 
+    show einar combat_furieux at left
+    show harald combat_furieux at right
+
     "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
+    show harald combat_blesse
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, s'il-te-plaît."
@@ -950,21 +962,31 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
         "Que dire à Harald ?"
 
         "Fin du règne (le tuer)":
+            show einar combat_determine at left
             e "Votre règne s'achève ici et maintenant. Vous allez mourir."
             h "Je m'avoue vaincu ! Ne me tue pas !"
             e "Pardon ?"
             h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
+
         "Pas de répit (le tuer)":
+            show einar combat_determine at left
             e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+            show harald combat_furieux at right
             h "Tu es fou !"
+
         "Épargner":
+            show einar combat_normal at left
             e "Vous avez déjà perdu. Je vais vous épargner."
+            show harald combat_normal at right
             h "Merci ! J'ai toujours su que tu étais un homme bon !"
+            show einar combat_determine at left
             e "Ne vous réjouissez pas trop vite."
-            h "Que vas-tu faire de moi?"
-            $ epargner_harld_donjon = True
+            $ epargner_harld__no_axe_donjon = True
+
         "Je vous suis supérieur":
+            show einar combat_normal at left
             e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+            show harald combat_normal at right
             h "Alors tu t'es donné tout ce mal uniquement pour m'humilier ?"
             h "Que t'ai-je fait ?"
             e "Ce n'est pas le moment de discuter."
@@ -980,28 +1002,42 @@ label e_epargne_harald_no_axe_donjon:
 
     $ harald_echape_no_axe = True
 
+    show einar combat_normal at left
+    show harald combat_normal at right
+
     h "Tu comptes me laisser en vie ? Que vas-tu faire de moi ?"
 
     menu:
 
         "Pas envie de tuer un roi (Laisser fuir)":
+            show einar combat_determine at left
             e "Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera."
             e "Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
             e "Partez, maintenant."
+
         "Partez maintenant (Laisser fuir)":
+            show einar combat_furieux at left
             e "Fuyez, avant que je ne change d'avis. Ne me demandez pas d'explications."
+
         "Livrer à Ogma":
             e "Je vais vous livrer au Hurleur, il saura quoi faire de vous. Tout ceci n'est plus de mon ressort."
             $ harald_echape_no_axe = False
+
         "Des gens veulent vous rencontrer":
             e "Je connais quelques personnes qui voudraient vous rencontrer..."
             $ harald_echape_no_axe = False
 
     if harald_echape_no_axe:
         "Harald s'échappe sans demander son reste."
+        show harald combat_furieux at right
         h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
         h "JE ME VENGERAI !"
         "..."
+
+        hide harald
+        hide einar
+        with dissolve
+
         "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
         "Harald s'échappe par la mer, seul sur sa barque."
         #Retour à l'extérieur
@@ -1012,20 +1048,31 @@ label e_epargne_harald_no_axe_donjon:
         "Un peu plus tard..."
 
         "Ogma est déçu mais comprend pourquoi Einar a laissé s'enfuir le roi : sans sa Hache, l'empire va s'effondrer sous peu."
+        show einar debout_normal at left
+        show ogma debout_normal at right
         o "Pourquoi l'avoir laissé s'enfuir ?"
         o "Nous tenions celui qui a asservi le monde entier, privé de sa Hache..."
         o "Nous pouvions libérer le monde !"
+        show einar debout_attriste at right
         e "Je..."
+        show ogma debout_contrarie at right
         o "Ne répond pas à ma question, je préfère ne pas savoir."
+        show ogma debout_normal at right
         o "Tu avais sûrement une excellente raison de le laisser partir."
+        show ogma debout_souriant at right
         o "Quoi qu'il en soit, je te suis reconnaissant. Sans toi, rien de tout ceci n'aurait été possible."
+        show ogma debout_souriant at right
         o "L'empire va s'effondrer grace à nous. Privé de la Hache Sainte, Harald n'est plus rien."
 
         jump village_5
+
     else:
         "Un peu plus tard"
         "..."
+        show ogma combat_normal at left
+        show einar debout_blesse at right
         "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
+        show ogma combat_determine at left
         o "Voyez ! La liberté a vaincu le tyran !"
         o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
         o "Le règne du roi-empereur est terminé !"
@@ -1033,6 +1080,9 @@ label e_epargne_harald_no_axe_donjon:
         o "VOUS ÊTES LIBRES !"
         "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
         "Dans la lumière du crépuscule, Dunbar continue de brûler."
+        hide ogma
+        hide harald
+        with dissolve
         jump village_6
 
 label village_5:
