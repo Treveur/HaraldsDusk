@@ -620,7 +620,7 @@ label e_bruler_donjon_desobeir_donjon:
     "Harald arrive devant Einar, couvert du sang de ses victimes."
 
 
-    show harald combat_hache_furieux at left
+    show harald combat_hache_normal at left
     h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
@@ -637,7 +637,11 @@ label e_bruler_donjon_desobeir_donjon:
             e "Je ne vois aucun souverain ici..."
             e "Il n'y a personne pour me libérer d'une allégeance quelconque !"
 
+    show harald combat_hache_furieux at left
     h "Garde ta langue de traître derrière tes dents !"
+    hide einar
+    hide harald
+    with dissolve
 
     jump bad_ending_6
 
@@ -645,6 +649,7 @@ label e_bruler_donjon_obeir_donjon:
 
     $ prendre_hache = False
 
+    #Animation
     "Einar s'élance en direction du donjon, passant à l'arrière des affrontements."
     "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
     "..."
@@ -656,16 +661,19 @@ label e_bruler_donjon_obeir_donjon:
 
     menu:
         "Prendre la Hache":
+            show einar combat_hache_normal at left
+            show harald combat_normal at right with dissolve
             e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
-            h "Einar ? Que fais-tu avec ma Hache ?"
             $ prendre_hache = True
             jump e_confrontation_harald_pont_baisse_donjon
 
         "Se débarrasser de la Hache":
+            show einar debout_determine at center
             "Einar jette la Hache à la mer à travers une meurtrière."
             call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
 
         "Ignorer la Hache":
+            show einar debout_normal at center
             e "..."
             jump e_confrontation_harald_pont_axe_laissee_baisse_donjon
 
@@ -673,39 +681,64 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     $ epargner_harld_donjon = False
 
+    show einar combat_normal at left
+    show harald combat_normal at right
+    with dissolve
+
     if jetee:
         menu :
 
             "Einar ? Que fais-tu ici ? Où est la Hache ?"
 
             "Je l'ai jeté":
+                show einar combat_determine at left
                 e "La Hache est perdue. Tout est terminé."
+                show harald combat_furieux at left
                 h "Tu es fou ? Tu mens !"
                 h "Où l'as-tu mise ? Tu veux la garder pour toi !"
                 e "Votre relique est dans la vase, sous l'eau."
+
             "Je ne sais pas":
+                show einar combat_normal at left
                 e "Je ne sais pas."
+                show harald combat_furieux at left
                 h "Tu me mens ! Encore !"
+
             "Mentir":
+                show einar combat_normal at left
                 e "J'ai vu Geir la voler !"
+                show harald combat_furieux at left
                 h "Cesse de me mentir !"
 
     else:
+
+        show einar combat_hache_normal at left
+        show harald combat_normal at right
 
         menu:
             "Einar ? Que fais-tu avec ma Hache ?"
 
             "Harald n'est plus rien":
+                show einar combat_hache_normal at left
                 e "Je l'ai prise, en même temps que le pouvoir. Vous n'êtes plus rien."
+                show harald combat_furieux at right
                 h "Tu ne peux pas faire ça ! Dieu m'a choisi !"
+                show einar combat_hache_determine at left
                 e "Alors il vous a abandonné !"
+
             "Je suis un Dieu":
+                show einar combat_hache_furieux at left
                 e "La relique me revient de droit ! Je suis un Dieu !"
+                show harald combat_furieux at right
                 h "Tu es complètement fou !"
+
             "Rétablir l'équilibre":
+                show einar combat_hache_determine at left
                 e "Je l'ai prise pour vous en priver. Il est temps de rétablir l'ordre naturel des choses."
 
+    show harald combat_normal at right
     h "Comment oses-tu ?!"
+    show harald combat_normal at right
     h "CETTE HACHE EST A MOI !"
 
     "Harald devient comme fou et se jette sur Einar."
@@ -713,27 +746,43 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
     if prendre_hache:
         "Harald place un coup de dague très rapide au flanc d'Einar."
         "Einar n'est pas blessé et n'a même pas ressenti le coup."
+
+        show einar combat_hache_determine at left
         e "J'ai la Hache. Vous ne pouvez rien contre moi !"
 
         menu:
             "Fin du règne (le tuer)":
+                show einar combat_hache_normal at left
                 e "Votre règne s'achève ici et maintenant. Vous allez mourir."
+                show harald combat_blesse at right
                 h "Je m'avoue vaincu ! Ne me tue pas !"
+                show einar combat_hache_determine at left
                 e "Pardon ?"
                 h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
+
             "Pas de répit (le tuer)":
+                show einar combat_hache_normal at left
                 e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+                show harald combat_furieux at right
                 h "Tu es fou !"
+
             "Épargner":
+                show einar combat_hache_normal at left
                 e "Vous avez déjà perdu. Je vais vous épargner."
+                show harald combat_normal at right
                 h "Merci ! J'ai toujours su que tu étais un homme bon !"
+                show einar combat_hache_determine at left
                 e "Ne vous réjouissez pas trop vite."
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
+
             "Je vous suis supérieur":
+                show einar combat_hache_determine at left
                 e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+                show harald combat_blesse at right
                 h "Alors tu t'es donné tout ce mal uniquement pour m'humilier ?"
                 h "Que t'ai-je fait ?"
+                show einar combat_hache_normal at left
                 e "Ce n'est pas le moment de discuter."
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
@@ -749,13 +798,17 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     if epargner_harld_donjon:
         menu :
-
             "Le laisser s'enfuir":
+
+                show einar combat_hache_furieux at left
                 e "Partez d'ici. Ne revenez jamais en Ecosse."
+                show harald combat_blesse at right
                 h "Tu me laisse m'enfuir ? Pourquoi ?"
+                show einar combat_hache_normal at left
                 e "Vous êtes vaincu et vous n'avez plus votre Hache."
                 e "Le règne du roi-empereur Harald Sigurdsson est terminé !"
                 e "La nouvelle de votre défaite va se répandre à travers le monde. L'empire que vous avez bâti va s'écrouler."
+                show einar combat_hache_determine at left
                 e "Vous tuer ici ne servirait à rien. Partez !"
                 "Harald s'enfuit sans demander son reste"
                 jump fuite_harald_pont_baisse_donjon
@@ -763,23 +816,38 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Le livrer à Ogma":
                 "..."
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
+                show einar combat_hache_normal at left
+                show ogma combat_determine at right
                 o "Voyez ! La liberté a vaincu le tyran !"
                 o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
+                show ogma combat_furieux at right
                 o "Le règne du roi-empereur est terminé !"
                 "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
+                show ogma combat_determine at right
                 o "VOUS ÊTES LIBRES !"
                 "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
                 "Dans la lumière du crépuscule, Dunbar continue de brûler."
                 jump good_ending_11
 
     else:
+        show einar combat_hache_normal at left
+        show ogma combat_determine at right
+
         o "Félicitations, Einar !"
+        #show ge debout_rire at center
         ge "HOURRAAA !"
+        #hide ge
+        show ogma debout_souriant at right
         o "Tu as libéré l'Ecosse ! Tu as libéré le reste du monde !"
+        #show ge debout_rire at center
         ge "HOURRAAA !"
+        #hide ge
         o "Pour que la victoire soit complète, nous devons détruire la Hache."
+        show einar combat_hache_determine at left
         e "Pourquoi ?"
+        show ogma debout_contrarie at right
         o "Si la Hache tombe à nouveau dans les mains d'un conquérant, le monde sera à nouveau enchaîné."
+        show ogma debout_determine at right
         o "Nous devons nous assurer que la Hache soit détruite !"
         o "Donne la moi, s'il-te-plaît."
 
@@ -1474,7 +1542,7 @@ label e_laisse_ogma_mort_defendre_porte:
             e "Regardez-les détaler comme des lapins !"
             h "Ha ha ! Fabuleux !"
             h "Rattrappez-les, vous autres !"
-        "J'aurais dû faire ça moi-même"
+        "J'aurais dû faire ça moi-même":
             e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
             h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
 
