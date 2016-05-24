@@ -991,9 +991,11 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-
+    show ogma debout_normal at right with dissolve
+    hide logan with dissolve
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
-
+    hide ogma with dissolve
+    show ogma debout_normal at right with dissolve
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."

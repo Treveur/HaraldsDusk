@@ -1474,7 +1474,7 @@ label e_laisse_ogma_mort_defendre_porte:
             e "Regardez-les détaler comme des lapins !"
             h "Ha ha ! Fabuleux !"
             h "Rattrappez-les, vous autres !"
-        "J'aurais dû faire ça moi-même"
+        "J'aurais dû faire ça moi-même":
             e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
             h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
 
