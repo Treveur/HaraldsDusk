@@ -1017,7 +1017,7 @@ label massacre_foret_2(lieu = ""):
     if lieu == "chateau":
 
         "Sur le chemin du retour..."
-        show gv debout_normal at center with dissolve
+        show gv debout_normaux at center with dissolve
         gv "Pourquoi sommes-nous déjà sur le retour ?"
         show einar debout_normal at left with dissolve
         e "Parce que nous avons massacré les rebelles. Mission accomplie, nous rentrons chez nous."
@@ -1029,7 +1029,7 @@ label massacre_foret_2(lieu = ""):
 
     else:
         "En poursuivant vers le nord..."
-        show gv debout_normal at center with dissolve
+        show gv debout_normaux at center with dissolve
         gv "Pourquoi devons-nous poursuivre vers le nord ? Nous ne venons pas de massacrer les rebelles ?"
         show einar debout_normal at left with dissolve
         e "Si, probablement. Mais j'ai tout de même un doute. Autant s'assurer d'avoir fait ce qu'il fallait !"
