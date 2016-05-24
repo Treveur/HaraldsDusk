@@ -1241,7 +1241,7 @@ label e_implore_pitie_foret_2(bad_ending = False):
     hide gv
     hide ogma
     show einar debout_normal at left with dissolve
-    show re debout_normal at right with dissolve
+    show re debout_normaux at right with dissolve
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
 
     if bad_ending:
@@ -1260,7 +1260,7 @@ label e_menace_foret_2(bad_ending = False):
     hide gv
     hide ogma
     show einar debout_normal at left with dissolve
-    show re debout_normal at right with dissolve
+    show re debout_normaux at right with dissolve
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
     if bad_ending:
@@ -1282,7 +1282,7 @@ label e_reveil_village_2:
 
     show einar debout_normal at left with dissolve
     e "Huugh..."
-    show re debout_normal at halfsize, center with dissolve
+    show re debout_normaux at halfsize, center with dissolve
     ge "Ogma ! Il se réveille !"
     show ogma debout_normal at right with dissolve
     o "Ah ! La belle endormie. "
