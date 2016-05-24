@@ -35,14 +35,18 @@ label intro:
     "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
     "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
 
+
     menu:
         "Sire, sommes-nous proches du château ?":
-            hide logan debout_normal
+            hide einar
+            hide logan
+            hide harald
+            with dissolve
+
+            show einar debout_normal at left with dissolve
+            show harald debout_normal at right with dissolve
 
             e "Mon Roi, sommes-nous proches de Dunbar ?"
-
-            show einar debout_normal at left
-            show harald debout_normal at right
 
             h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
 
@@ -54,9 +58,9 @@ label intro:
                     h "Tout d'abord, nous allons atteindre le château de Dunbar. Là, l'évêque Patrick d'Edimbourg nous accueillera."
 
                     h "Ensuite, nous planifierons nos actions dans les Highlands. Je veux retrouver le village des rebelles le plus vite possible, mais il ne s'agit pas de raser toute la région !"
-                    
+
                     h "Les rebelles sont encore isolés et peu nombreux, mais un excès de violence de notre part risquerait de mettre le feu aux poudres et de les rendre sympathiques au reste du peuple."
-                    
+
                     e "Et une fois le village retrouvé ?"
 
                     h "J'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire !"
@@ -108,9 +112,9 @@ label intro:
                     h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
 
                     e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
-                    
+
                     h "Si j'ai décidé de venir, c'est pour montrer au reste du monde que je ne suis pas l'un de ces anciens rois, mous et immobiles."
-                    
+
                     h "Accompagner les miens sur le champ de bataille me paraît important. Et je ne voudrais pas passer à côté d'une belle bataille ! Ha ha !"
 
                     $ confiance_choice = False
@@ -203,11 +207,12 @@ label intro:
         "Ne rien dire":
             e "..."
 
-    
 
-    hide einar debout_normal
-    hide logan fache
-    hide harald debout_normal
+
+    hide einar
+    hide logan
+    hide harald
+    with dissolve
 
     jump plaine_1
 
@@ -221,15 +226,15 @@ label plaine_1 :
     show harald debout_normal at right with dissolve
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
-    
+
     "Un cavalier arrive en trombe et descend de son cheval, avant de courir vers Harald."
-    
+
     gv "Sire ! Un rapport des éclaireurs !"
-    
+
     h "Donne-moi ça..."
-    
+
     "Harald lit rapidement le rapport."
-    
+
     h "Mmmh..."
 
     show einar debout_normal at left with dissolve
@@ -245,7 +250,7 @@ label plaine_1 :
     e "Les rebelles ?"
 
     h "Probablement, mais j'ai n'ai aucune certitude. Je veux envoyer un groupe de reconnaissance à l'avant de l'armée, et tirer cette affaire au clair."
-    
+
     h "Si ce sont bien les rebelles, c'est une chance unique de découvrir où ils se cachent."
 
     h "Je compte sur toi pour diriger la troupe. Je te confie dix soldats. Ils t'écouteront et ton expérience du pistage vous facilitera la tâche."
@@ -263,25 +268,25 @@ label plaine_1 :
             e "Pourquoi dois-je mener ce groupe de reconnaissance ?"
 
             h "Je t'envoie en tant qu'homme de confiance. Des éclaireurs ont déjà été assassinés, j'ai besoin d'envoyer quelqu'un qui sache se battre mais qui ait la tête sur les épaules."
-            
+
             h "Je compte sur ton sang-froid. Il ne s'agit pas de massacrer tout ce que tu trouveras !"
-            
+
             e "Pourquoi ne pas envoyer toute l'armée ?"
-            
+
             h "Parce que je veux éviter que la situation ne s'envenime ! Il ne s'agit pas de faciliter la tâche des rebelles en provoquant un soulèvement populaire !"
-            
+
             jump menu_harald_eclaireur_foret_1
 
         "Combien de rebelles ?":
 
             e "Sur combien de rebelles risquons-nous de tomber ? A quoi dois-je m'attendre ?"
-            
+
             h "Le rapport n'indique que peu de détails. Ils n'étaient que quelques dizaines, cinquante, tout au plus."
-            
+
             e "Cinquante ? Et nous ne partons qu'à onze ?"
 
             h "Il n'y a aucun danger. Ce n'est qu'une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings, tu es un huscarl. Rien ne va te résister !"
-            
+
             h "Mais surtout, tu n'es pas sensé te battre contre eux ! Il s'agit d'une mission de reconnaissance, n'engage le combat que si c'est une nécessité absolue !"
 
             jump menu_harald_eclaireur_foret_1
@@ -308,15 +313,16 @@ label plaine_1 :
             l "..."
 
             h "J'ai personnellement demandé à Logan de t'accompagner. Il est le seul à connaître la région, et il facilitera les relations avec les écossais."
-            
-            
+
+
     l "J'ai déjà planifié notre voyage."
     l "Nous passerons Stirling avant la nuit. Demain, nous atteindrons Perth. C'est le premier village douteux sur notre passage. Puis nous nous dirigerons vers Dundee, Forfar..."
     h "Parfait ! Il ne vous reste plus qu'à partir, les hommes vous attendent."
 
-    hide logan debout_normal
-    hide einar debout_normal
-    hide harald debout_normal
+    hide logan
+    hide einar
+    hide harald
+    with dissolve
 
     jump plaine_2
 
@@ -331,6 +337,7 @@ label plaine_2:
 
     gv "Cette mission n'a rien de terrible... Je m'attendais à rencontrer de l'opposition !"
     gv "Nous aurions dû rester plus longtemps à Stirling ! Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
+    show logan debout_normal at right with dissolve
     l "Ne vous sentez pas à l'abri. Nous ne sommes pas encore arrivés dans le territoire des rebelles, mais ça ne veut pas dire qu'ils ne peuvent pas nous tomber dessus."
 
     show einar debout_normal at left with dissolve
@@ -382,7 +389,7 @@ label plaine_2:
             l "..."
 
             e "Ha, il est obéissant en plus !"
-            
+
             e "Je suis sûr qu'il retrouvera la parole quand il trouvera un bel animal ! Séducteur de chèvres !"
 
             l "..."
@@ -403,8 +410,9 @@ label plaine_2:
 
             l "Bien."
 
-    hide einar debout_normal
-    hide logan debout_normal
+    hide einar
+    hide logan
+    with dissolve
 
     jump foret_1
 
@@ -487,7 +495,7 @@ label foret_1:
         "Ne vous découragez pas" :
 
             e "Ne relâchez pas l'effort. Nous nous sommes suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
-            
+
             e "Tout ça sera bientôt terminé !"
 
         "Alors Logan ? Tu rêves de brebis ? (chambrer)" :
@@ -499,7 +507,7 @@ label foret_1:
             l "..."
             show gv debout_normaux at center with dissolve
             gv "Ha ha !"
-            hide gv debout_normaux with dissolve
+            hide gv with dissolve
         "Que penses-tu de la mission, Logan ?" :
 
             e "Tu es le seul à ne pas encore t'être plaint..."
@@ -556,8 +564,9 @@ label foret_1:
 
                             e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
-    hide einar debout_normal
-    hide logan debout_normal
+    hide einar
+    hide logan
+    with dissolve
 
     jump village_1
 
@@ -642,6 +651,7 @@ label village_1:
 #    hide gv with moveoutright
 #    call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 
+
 label e_demander_information_village_1:
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
@@ -708,8 +718,9 @@ label e_fouiller_village_1(einarFouille = False):
             jump e_villagoise_partir_maison_1
         "Je n'aime pas qu'on ne suive pas mes instructions (la tuer)" if already_talk:
             jump e_tuer_moira_maison_1
-    hide moira with dissolve
-    hide einar with dissolve
+    hide moira
+    hide einar
+    with dissolve
 
 
 label e_tuer_villageois_village_1:
@@ -1062,9 +1073,10 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
         gv "Ha ha ha !"
         l "Ferme la Ein..."
-    hide einar with dissolve
-    hide logan with dissolve
-    hide gv with dissolve
+    hide einar
+    hide logan
+    hide gv
+    with dissolve
 
     "Un cor retentit dans les bois, très proche."
 
@@ -1077,19 +1089,20 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
-    hide gv with dissolve
-    e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
 
+    e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
+    hide gv with dissolve
+    show ogma debout_normal at halfsize, center with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide logan with dissolve
-    #show ge debout_normaux at halfsize, right with dissolve
+    show re debout_normaux at halfsize, right with dissolve
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     e "Approchez, charognes ! Je..."
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
-    #hide ge with dissolve
+    hide re with dissolve
     show logan debout_normal at right zorder 2 with dissolve
     l "Einar ! Derrière toi !"
 
@@ -1110,9 +1123,9 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-    #show ge debout_normaux at halfsize, center with dissolve
+    show re debout_normaux at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
-    #hide ge with dissolve
+    hide re with dissolve
 
     menu:
         "Qui es-tu ?":
@@ -1183,10 +1196,15 @@ label massacre_foret_2(lieu = ""):
 
 label attaque_massacre_foret_2(message = ""):
 
+    hide einar
+    hide logan
+    hide gv
+    with dissolve
+
     if message == "attentif":
-
+        show einar debout_normal at left with dissolve
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-
+        show gv debout_normaux at center with dissolve
         gv "Nous avons massacré le village ! Qui pourrait nous attaquer ?"
 
         e "Et les hommes, abruti ? Il n'y en avait presque aucun à Perth."
@@ -1196,11 +1214,12 @@ label attaque_massacre_foret_2(message = ""):
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
 
     elif message == "deception":
-
+        show einar debout_normal at left with dissolve
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
-
+        show logan debout_normal at right with dissolve
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-
+        show gv debout_normaux at center with dissolve
+        hide logan with dissolve
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
 
         e "Au moins, Perth nous aura fournit une petite distraction !"
@@ -1208,8 +1227,9 @@ label attaque_massacre_foret_2(message = ""):
         gv "J'aurais préféré des cibles qui se défendent..."
 
     elif message == "moquerie":
+        show gv debout_normaux at center with dissolve
         gv "Hé, regardez ! J'ai une dent incrustée dans mon bouclier !"
-
+        show einar debout_normal at left with dissolve
         e "Ne la retire pas, ça porte bonheur, ha ha !"
 
         gv "Ils étaient tellement faibles ! Je me souviendrai de Perth comme..."
@@ -1218,33 +1238,48 @@ label attaque_massacre_foret_2(message = ""):
 
 
     else:
+        show einar debout_normal at left with dissolve
         e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
+        show gv debout_normaux at center with dissolve
         gv "Ha ha !"
+        show logan debout_normal at right with dissolve
         l "..."
         e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
         gv "Ha ha ha !"
         l "Ferme-la Ein..."
 
+    hide einar
+    hide logan
+    hide gv
+    with dissolve
+
     "Un cor retentit dans les bois, très proche."
 
+
+    show einar debout_normal at left with dissolve
     e "En position de combat, tous !"
+    show gv debout_normaux at center with dissolve
     gv "Ça venait d'où ?"
+    show logan debout_normal at right with dissolve
     l "Sur la gauche ! Des torches !"
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
-
+    hide gv with dissolve
+    show ogma debout_normal at halfsize, center with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
-
+    hide ogma with dissolve
+    show re debout_normaux at halfsize, right with dissolve
     ge "Mourrez, chiens ! Vous allez regretter ce que vous avez fait à Perth !"
 
     e "Approchez, charognes ! Je..."
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
-
+    hide re with dissolve
+    show logan debout_normal at right zorder 2 with dissolve
     l "Einar ! Derrière toi !"
 
     e "Que..."
@@ -1256,14 +1291,17 @@ label attaque_massacre_foret_2(message = ""):
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-
+    show ogma debout_normal at right zorder 1 with dissolve
+    hide logan with dissolve
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
-
+    hide ogma with dissolve
+    show ogma debout_normal at right with dissolve
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-
+    show re debout_normaux at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
+    hide re with dissolve
 
     menu:
         "Qui es-tu ?":
@@ -1274,41 +1312,61 @@ label attaque_massacre_foret_2(message = ""):
         "Menacer le meneur":
             call e_menace_foret_2 pass (bad_ending = True) from _call_e_menace_foret_2
 
-
 label e_demande_nom_foret_2(bad_ending = False):
-
+    hide einar
+    hide logan
+    hide gv
+    hide ogma
+    show einar debout_normal at left with dissolve
+    show ogma debout_normal at right with dissolve
     e "Qui es-tu, lâche ?"
 
     if bad_ending:
         ge "..."
+        hide einar with dissolve
         jump bad_ending_1
     else:
         o "Ogma. Le Hurleur."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
+        hide einar with dissolve
         jump e_reveil_village_2
 
 label e_implore_pitie_foret_2(bad_ending = False):
-
+    hide einar
+    hide logan
+    hide gv
+    hide ogma
+    show einar debout_normal at left with dissolve
+    show re debout_normaux at right with dissolve
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
 
     if bad_ending:
         ge "Lâche jusqu'au bout..."
+        hide einar with dissolve
         jump bad_ending_1
     else:
         ge "Nous allons voir ça..."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
+        hide einar with dissolve
         jump e_reveil_village_2
 
 label e_menace_foret_2(bad_ending = False):
-
+    hide einar
+    hide logan
+    hide gv
+    hide ogma
+    show einar debout_normal at left with dissolve
+    show re debout_normaux at right with dissolve
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
     if bad_ending:
         ge "Je ne crains pas ton roi."
+        hide einar with dissolve
         jump bad_ending_1
     else:
         ge "Je ne crains pas ton roi."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
+        hide einar with dissolve
         jump e_reveil_village_2
 
 
@@ -1318,10 +1376,11 @@ label e_reveil_village_2:
 
     $ already_talk = False
 
+    show einar debout_normal at left with dissolve
     e "Huugh..."
-
+    show re debout_normaux at halfsize, center with dissolve
     ge "Ogma ! Il se réveille !"
-
+    show ogma debout_normal at right with dissolve
     o "Ah ! La belle endormie. "
 
     e "Arrgh... Mon épaule..."

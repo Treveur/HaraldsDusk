@@ -476,7 +476,7 @@ label pont_levis_baisse:
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    #show ge debout_enthousiastes
+    show re debout_enthousiastes
     show gv debout_determines
     with dissolve
     #Ajouter un shake camera
@@ -484,7 +484,7 @@ label pont_levis_baisse:
     gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
 
     hide gv
-    #hide ge
+    hide re
     with dissolve
 
     if moira_dead:
@@ -834,14 +834,14 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         show ogma combat_determine at right
 
         o "Félicitations, Einar !"
-        #show ge debout_rire at center
+        show re debout_rire at center
         ge "HOURRAAA !"
-        #hide ge
+        hide re
         show ogma debout_souriant at right
         o "Tu as libéré l'Ecosse ! Tu as libéré le reste du monde !"
-        #show ge debout_rire at center
+        show re debout_rire at center
         ge "HOURRAAA !"
-        #hide ge
+        hide re
         o "Pour que la victoire soit complète, nous devons détruire la Hache."
         show einar combat_hache_determine at left
         e "Pourquoi ?"
@@ -859,35 +859,53 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
 label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
     "Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure du donjon."
+
+    show einar combat_normal at left
+    show harald combat_hache_normal at right
+
     h "Einar ? Que fais-tu ?!"
 
     menu :
         "Pour la Liberté":
             e "J'ai voulu croire en la liberté d'un peuple sur ses propres terres."
+            show einar combat_determine at left
             e "Les écossais en ont assez de recevoir des ordres. Il est temps pour eux de reprendre leur destin en main !"
+            show harald combat_hache_furieux at right
             h "Tu penses réellement que ce peuple de paysans arriéré serait capable de prendre les bonnes décisions ?"
             h "Sans moi, sans l'empire, ils sont voués à rester à l'état de petits clans épars, rongé par leurs petites guerres ridicules !"
+            show einar combat_normal at left
             e "Le choix ne vous appartient plus, désormais."
+
         "Las des promesses":
             e "J'étais las de vos promesses de terres et d'or qui ne se concrétisaient jamais, alors j'ai changé de camp."
+            show harald combat_hache_furieux at right
             h "C'est l'appât du gain qui te fait te rebeller contre moi ? Tu es prêt à condamner tout l'empire par caprice ?"
             h "Tu es complètement fou !"
+            show einar combat_determine at left
             e "Peut-être."
+
         "Vous êtes un monstre":
+            show einar combat_normal at left
             e "J'ai rencontré une jeune femme et son père, qui m'ont convaincu que vous êtes un monstre."
             e "Le monde ne devrait jamais être entre les mains d'un seul homme."
             e "Vous n'avez fait qu'enchaîner massacres sur prises de pouvoir, vous avez privé le monde de son libre arbitre."
+            show harald combat_hache_furieux at right
             h "Je suis l'élu divin ! Dieu a fait de moi son émissaire ! Je rassemble tous les peuples sous Sa bannière !"
             e "Je ne sais pas si vous y croyez vous-même."
             h "Je suis le porteur de la Hache ! J'ai été guidé par le Seigneur jusqu'aux Clous de la Sainte-Croix !"
+
         "Provoquer":
+            show einar combat_normal at left
             e "L'ordre des choses m'ennuyait..."
             e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."
+            show harald combat_hache_furieux at right
             h "Tu es complètement fou !"
             e "Probable."
 
+    show harald combat_hache_normal at right
     h "Tu me déçois, Einar. D'entre tous mes huscarls, il a fallu que ce soit toi qui me trahisse."
     h "Tu crois être unique ? D'autres prendront ta place."
+    show harald combat_hache_determine at right
     h "Mon règne se poursuivra longtemps après ta mort."
     "Harald brandit la Hache"
     h "Es-tu conscient de ta totale impuissance ?"
@@ -898,22 +916,29 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
         "Que répondre ?"
 
         "J'ai mon amulette protectrice":
+            show einar combat_normal at left
             e "C'est l'occasion de voir si ce vieux grigri fonctionne vraiment..."
             e "Voyez, Sire ! C'est un crucifix sculpté une nuit de pleine lune à l'équinoxe de printemps !"
+            show harald combat_hache_furieux at right
             h "Même à l'article de la mort, tu ne cesses pas d'être insolent..."
             h "Ce sera ton dernier blasphème, traître."
 
         "Peu importe, je suis satisfait":
+            show einar combat_normal at left
             e "Peu importe. J'ai fait ce que je devais faire."
+            show harald combat_hache_normal at right
             h "Au moins, tu auras suivi tes convictions..."
             h "Quitte à trahir ton roi et à provoquer la mort de tous ceux qui te comptaient comme un ami !"
 
         "Demander pardon":
+            show einar combat_normal at left
             e "Et si j'implore votre pardon, Sire ?"
 
         "Vous avez déjà perdu":
             e "Me tuer ne changera rien au fait que vous avez perdu cette bataille."
+            show einar combat_determine at left
             e "Le château n'est plus sous votre contrôle et vous n'avez plus d'hommes ici. Vous allez quitter l'Ecosse !"
+            show harald combat_hache_furieux at right
             h "Rassure-toi, ce petit soulèvement paysan n'écornera pas ma toute-puissance."
             h "L'Histoire ne se souviendra même pas de cet incident !"
 
@@ -923,7 +948,11 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
 
     $ epargner_harld__no_axe_donjon = False
 
+    show einar combat_furieux at left
+    show harald combat_furieux at right
+
     "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
+    show harald combat_blesse
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, s'il-te-plaît."
@@ -933,21 +962,31 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
         "Que dire à Harald ?"
 
         "Fin du règne (le tuer)":
+            show einar combat_determine at left
             e "Votre règne s'achève ici et maintenant. Vous allez mourir."
             h "Je m'avoue vaincu ! Ne me tue pas !"
             e "Pardon ?"
             h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
+
         "Pas de répit (le tuer)":
+            show einar combat_determine at left
             e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+            show harald combat_furieux at right
             h "Tu es fou !"
+
         "Épargner":
+            show einar combat_normal at left
             e "Vous avez déjà perdu. Je vais vous épargner."
+            show harald combat_normal at right
             h "Merci ! J'ai toujours su que tu étais un homme bon !"
+            show einar combat_determine at left
             e "Ne vous réjouissez pas trop vite."
-            h "Que vas-tu faire de moi?"
-            $ epargner_harld_donjon = True
+            $ epargner_harld__no_axe_donjon = True
+
         "Je vous suis supérieur":
+            show einar combat_normal at left
             e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
+            show harald combat_normal at right
             h "Alors tu t'es donné tout ce mal uniquement pour m'humilier ?"
             h "Que t'ai-je fait ?"
             e "Ce n'est pas le moment de discuter."
@@ -963,28 +1002,42 @@ label e_epargne_harald_no_axe_donjon:
 
     $ harald_echape_no_axe = True
 
+    show einar combat_normal at left
+    show harald combat_normal at right
+
     h "Tu comptes me laisser en vie ? Que vas-tu faire de moi ?"
 
     menu:
 
         "Pas envie de tuer un roi (Laisser fuir)":
+            show einar combat_determine at left
             e "Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera."
             e "Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
             e "Partez, maintenant."
+
         "Partez maintenant (Laisser fuir)":
+            show einar combat_furieux at left
             e "Fuyez, avant que je ne change d'avis. Ne me demandez pas d'explications."
+
         "Livrer à Ogma":
             e "Je vais vous livrer au Hurleur, il saura quoi faire de vous. Tout ceci n'est plus de mon ressort."
             $ harald_echape_no_axe = False
+
         "Des gens veulent vous rencontrer":
             e "Je connais quelques personnes qui voudraient vous rencontrer..."
             $ harald_echape_no_axe = False
 
     if harald_echape_no_axe:
         "Harald s'échappe sans demander son reste."
+        show harald combat_furieux at right
         h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
         h "JE ME VENGERAI !"
         "..."
+
+        hide harald
+        hide einar
+        with dissolve
+
         "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
         "Harald s'échappe par la mer, seul sur sa barque."
         #Retour à l'extérieur
@@ -995,20 +1048,33 @@ label e_epargne_harald_no_axe_donjon:
         "Un peu plus tard..."
 
         "Ogma est déçu mais comprend pourquoi Einar a laissé s'enfuir le roi : sans sa Hache, l'empire va s'effondrer sous peu."
+        show einar debout_normal at left
+        show ogma debout_normal at right
         o "Pourquoi l'avoir laissé s'enfuir ?"
         o "Nous tenions celui qui a asservi le monde entier, privé de sa Hache..."
         o "Nous pouvions libérer le monde !"
+        show einar debout_attriste at right
         e "Je..."
+        show ogma debout_contrarie at right
         o "Ne répond pas à ma question, je préfère ne pas savoir."
+        show ogma debout_normal at right
         o "Tu avais sûrement une excellente raison de le laisser partir."
+        show ogma debout_souriant at right
         o "Quoi qu'il en soit, je te suis reconnaissant. Sans toi, rien de tout ceci n'aurait été possible."
+        show ogma debout_souriant at right
         o "L'empire va s'effondrer grace à nous. Privé de la Hache Sainte, Harald n'est plus rien."
 
         jump village_5
+
     else:
         "Un peu plus tard"
         "..."
+        show ogma combat_normal at left
+        show einar debout_blesse at right
+        show ogma combat_normal at left
+        show einar debout_blesse at right
         "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
+        show ogma combat_determine at left
         o "Voyez ! La liberté a vaincu le tyran !"
         o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
         o "Le règne du roi-empereur est terminé !"
@@ -1016,31 +1082,49 @@ label e_epargne_harald_no_axe_donjon:
         o "VOUS ÊTES LIBRES !"
         "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
         "Dans la lumière du crépuscule, Dunbar continue de brûler."
+        hide ogma
+        hide harald
+        with dissolve
         jump village_6
 
 label village_5:
+
     "..."
+
+    show einar debout_normal at left
+    show ogma debout_normal at right
+
     o "Voici ton or."
     o "Nous avons décidé de t'offrir un cheval. Il te mènera où bon te semble."
+    show einar debout_contrarie at left
     e "Et si je souhaite rester ici ?"
     o "Je ne peux pas te laisser cette liberté."
     o "Malgré tout ce que tu as fait pour nous et l'affection que te porte Moira, je ne peux pas t'autoriser à rester parmi nous."
     o "Tu nous a offert la victoire, et pour cela l'Ecosse te sera toujours redevable."
+    show ogma debout_contrarie at right
     o "Mais tu as laissé s'enfuir notre ennemi. Je veux que tu quittes l'Ecosse pour toujours."
     o "Ne reviens jamais ici."
 
     menu:
 
         "J'ai été juste":
+            show einar debout_attriste at left
             e "Lorsque vous m'avez capturé, vous m'avez expliqué que vous vouliez chasser le roi de vos terres."
             e "J'ai rempli ma part du contrat et fait ce qui me semblait juste. Je regrette que nous nous séparions en ces termes."
             e "Adieu."
+
         "Être désolé":
+            show einar debout_attriste at left
             e "Je regrette de l'avoir laissé partir. J'espère que vous me pardonnerez."
             o "Crois bien que je suis aussi navré que toi. Pars, maintenant."
+
         "Partir":
+            show einar debout_contrarie at left
             e "Je ne comptais pas rester ici. Adieu."
 
+    hide einar
+    hide ogma
+    with dissolve
 
     jump foret_4
 
@@ -1049,77 +1133,113 @@ label village_6:
     $ refuer_ogma_main_moira = False
 
     "Moira se tient légèrement à l'écart."
+    show einar debout_normal at left
+    show moira debout_normal at right
+    show ogma debout_normal at right
+    with dissolve
+
     o "Toute l'Ecosse t'es redevable, Einar !"
     o "Tu nous a rendu la liberté et provoqué la fin de l'empire !"
     o "Comme promis, voici ton or et un cheval prêt à t'emmener où bon te semble."
 
     menu:
         "Remercier":
+            show einar debout_souriant at left
             e "Je vous remercie."
             e "En vingt ans, jamais Harald ne m'avait offert autant de récompenses !"
             e "Libérer un peuple et repartir avec de l'or..."
             e "C'est bien plus gratifiant que de servir un roi qui ne tient pas ses promesses !"
 
         "Regrets":
+            show einar debout_contrarie at left
             e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
+            show ogma debout_attriste at right
             o "Je comprends. J'espère que ton amertume s'estompera avec le temps."
 
         "Juste une question de survie (refuser l'or)":
+            show einar debout_contrarie at left
             e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
+            show ogma debout_attriste at right
             o "Ton humilité est toute à ton honneur."
             o "Nous n'avons pas eu le choix. Nous avions besoin d'un instrument pour nous aider à faire basculer le roi."
             o "Malheureusement pour toi, tu as été notre élu."
             o "J'espère que tu nous pardonneras un jour..."
+            show ogma debout_determine at right
             o "Vois ces gens autour de toi : tu es leur libérateur !"
 
+    show ogma debout_normal at right
     o "Il y a autre chose dont j'aimerais te parler. Une dernière faveur."
     e "..."
     o "Cela concerne Moira."
+    show ogma debout_souriant at right
     o "Je crois savoir que vous vous portez une grande affection..."
     o "Je serais heureux de compter le libérateur de mon peuple dans ma famille."
     o "J'ai l'honneur de t'offrir la main de ma fille, si tu l'acceptes."
+    show ogma debout_normal at right
 
+    show moira debout_souriant at right
     "Bien qu'à l'écart, Moira fait un grand sourire à Einar."
 
     menu:
 
         "Même sans votre consentement":
+            show einar debout_souriant at left
             e "Si vous ne me l'aviez pas proposé, j'aurais enlevé votre fille ! Ha ha !"
+            show ogma debout_souriant at right
             o "À la bonne heure !"
+
         "Un honneur":
+            show einar debout_souriant at left
             e "J'accepte. C'est un grand honneur que vous me faites."
+            show ogma debout_souriant at right
             e "Je n'aurais pas pu espérer une plus belle récompense !"
+
         "Pas de sentiments":
+            show einar debout_attriste at left
             e "Ces sentiments ne sont pas partagés. Je préfère conserver ma liberté."
+            show ogma debout_contrarie at right
+            show moira debout_attriste at right
             o "..."
             o "Très bien. Ma déception est grande, mais je comprend."
             $ refuer_ogma_main_moira = True
 
     if refuer_ogma_main_moira:
+
+        #Animation moira part
+        hide moira debout_attriste with dissolve
         "Moira s'en va."
+        show ogma debout_attriste at right
         o "A vrai dire, la déception de ma fille doit être encore plus grande..."
         o "Elle était à l'origine de cette demande."
         e "..."
+        show ogma debout_normal at right
         o "Que comptes-tu faire désormais ?"
 
         menu:
+
             "Ermite en Ecosse":
+                show einar debout_normal at left
                 e "Rester ici, en Ecosse. Seul."
                 o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
                 o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
 
             "Rentrer en Norvège":
+                show einar debout_determine at left
                 e "Rentrer en Norvège, malgré le danger. C'est ma seule demeure, et je ne l'ai pas vue depuis bien trop longtemps."
+                show ogma debout_attriste at right
                 o "La nostalgie des terres natales..."
                 o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
 
             "Vivre au jour le jour":
+                show einar debout_normal at left
                 e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
                 o "J'imagine qu'à ta place, je n'en saurais pas plus."
                 o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
 
             "Aller en Asie":
+                show einar debout_normal at left
                 e "Aller en Asie, là où personne ne viendra me chercher. J'ai toujours été intrigué par cette région du monde."
+                show ogma debout_souriant at right
                 o "C'est assez... Surprenant !"
                 o "Il ne me reste plus qu'à te souhaiter bon voyage."
                 o "Si le coeur t'en dit, n'hésite pas à revenir ici. Tu trouveras toujours des amis à Perth."

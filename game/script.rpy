@@ -28,9 +28,9 @@ image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
 image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
 
-
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
+
 
 ##Logan
 define l = Character('Logan', color="#f1c40f")
@@ -148,15 +148,15 @@ image moira attache_furieus = "moira/buchet/moira_attache_furieuse.png"
 define ge = Character('rebelles écossais', color="#f39c12")
 
 #Debout
-#image ge debout_normaux = "ge_debout_normaux.png"
-#image ge debout_enthousiastes = "ge_debout_enthousiaste.png"
-#image ge debout_inquiets = "ge_debout_inquiets.png"
-#image ge debout_rire = "ge_debout_rire.png"
+image re debout_normaux = "rebelles_ecossais/debout/re_debout_normaux.png"
+image re debout_enthousiastes = "rebelles_ecossais/debout/re_debout_enthousiastes.png"
+image re debout_inquiets = "rebelles_ecossais/debout/re_debout_inquiets.png"
+image re debout_rire = "rebelles_ecossais/debout/re_debout_rire.png"
 
 #Combat
-#image ge combat_normaux = "ge_combat_normaux.png"
-#image ge combat_blesse = "ge_combat_blesse.png"
-#image ge combat_furieux = "ge_combat_furieux.png"
+image re combat_normaux = "rebelles_ecossais/combat/re_combat_normaux.png"
+image re combat_blesse = "rebelles_ecossais/combat/re_combat_blesses.png"
+image re combat_furieux = "rebelles_ecossais/combat/re_combat_furieux.png"
 
 
 ##Villageois / prisonniers
