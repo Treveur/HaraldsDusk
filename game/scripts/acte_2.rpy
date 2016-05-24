@@ -3,7 +3,7 @@
 label interieur_maison_village_1:
     hide einar
     hide ogma
-    #hide ge
+    hide re
     scene bg house2_jour with dissolve
 
     $ critique_ogma = False

@@ -1173,13 +1173,13 @@ label attaque_massacre_foret_2(message = ""):
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide ogma with dissolve
-    #show ge debout_normaux at halfsize, right with dissolve
+    show re debout_normaux at halfsize, right with dissolve
     ge "Mourrez, chiens ! Vous allez regretter ce que vous avez fait à Perth !"
 
     e "Approchez, charognes ! Je..."
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
-    #hide ge with dissolve
+    hide re with dissolve
     show logan debout_normal at right zorder 2 with dissolve
     l "Einar ! Derrière toi !"
 
@@ -1200,9 +1200,9 @@ label attaque_massacre_foret_2(message = ""):
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-    #show ge debout_normaux at halfsize, center with dissolve
+    show re debout_normaux at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
-    #hide ge with dissolve
+    hide re with dissolve
 
     menu:
         "Qui es-tu ?":
@@ -1238,7 +1238,7 @@ label e_implore_pitie_foret_2(bad_ending = False):
     hide gv
     hide ogma
     show einar debout_normal at left with dissolve
-    #show ge debout_normal at right with dissolve
+    show re debout_normal at right with dissolve
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
 
     if bad_ending:
@@ -1257,7 +1257,7 @@ label e_menace_foret_2(bad_ending = False):
     hide gv
     hide ogma
     show einar debout_normal at left with dissolve
-    #show ge debout_normal at right with dissolve
+    show re debout_normal at right with dissolve
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
     if bad_ending:
@@ -1279,7 +1279,7 @@ label e_reveil_village_2:
 
     show einar debout_normal at left with dissolve
     e "Huugh..."
-    #show ge debout_normal at halfsize, center with dissolve
+    show re debout_normal at halfsize, center with dissolve
     ge "Ogma ! Il se réveille !"
     show ogma debout_normal at right with dissolve
     o "Ah ! La belle endormie. "
