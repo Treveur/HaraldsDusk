@@ -28,6 +28,9 @@ init -1 python hide:
     config.name = "Harald's Dusk"
     config.version = "0.4"
 
+    #Changer couleur texte
+    #style.default.color = "#FFFFFF"
+
     #########################################
     ## Thèmes
 

@@ -476,7 +476,7 @@ label pont_levis_baisse:
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    #show ge debout_enthousiastes
+    show re debout_enthousiastes
     show gv debout_determines
     with dissolve
     #Ajouter un shake camera
@@ -484,7 +484,7 @@ label pont_levis_baisse:
     gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
 
     hide gv
-    #hide ge
+    hide re
     with dissolve
 
     if moira_dead:
@@ -834,14 +834,14 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         show ogma combat_determine at right
 
         o "Félicitations, Einar !"
-        #show ge debout_rire at center
+        show re debout_rire at center
         ge "HOURRAAA !"
-        #hide ge
+        hide re
         show ogma debout_souriant at right
         o "Tu as libéré l'Ecosse ! Tu as libéré le reste du monde !"
-        #show ge debout_rire at center
+        show re debout_rire at center
         ge "HOURRAAA !"
-        #hide ge
+        hide re
         o "Pour que la victoire soit complète, nous devons détruire la Hache."
         show einar combat_hache_determine at left
         e "Pourquoi ?"
@@ -859,20 +859,30 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
 label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
     "Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure du donjon."
+
+    show einar combat_normal at left
+    show harald combat_normal at right
+
     h "Einar ? Que fais-tu ?!"
 
     menu :
         "Pour la Liberté":
             e "J'ai voulu croire en la liberté d'un peuple sur ses propres terres."
+            show einar combat_determine at left
             e "Les écossais en ont assez de recevoir des ordres. Il est temps pour eux de reprendre leur destin en main !"
+            show harald combat_furieux at right
             h "Tu penses réellement que ce peuple de paysans arriéré serait capable de prendre les bonnes décisions ?"
             h "Sans moi, sans l'empire, ils sont voués à rester à l'état de petits clans épars, rongé par leurs petites guerres ridicules !"
+            show einar combat_normal at left
             e "Le choix ne vous appartient plus, désormais."
+
         "Las des promesses":
             e "J'étais las de vos promesses de terres et d'or qui ne se concrétisaient jamais, alors j'ai changé de camp."
+            show harald combat_furieux at right
             h "C'est l'appât du gain qui te fait te rebeller contre moi ? Tu es prêt à condamner tout l'empire par caprice ?"
             h "Tu es complètement fou !"
             e "Peut-être."
+
         "Vous êtes un monstre":
             e "J'ai rencontré une jeune femme et son père, qui m'ont convaincu que vous êtes un monstre."
             e "Le monde ne devrait jamais être entre les mains d'un seul homme."
@@ -880,6 +890,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             h "Je suis l'élu divin ! Dieu a fait de moi son émissaire ! Je rassemble tous les peuples sous Sa bannière !"
             e "Je ne sais pas si vous y croyez vous-même."
             h "Je suis le porteur de la Hache ! J'ai été guidé par le Seigneur jusqu'aux Clous de la Sainte-Croix !"
+
         "Provoquer":
             e "L'ordre des choses m'ennuyait..."
             e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."

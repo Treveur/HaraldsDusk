@@ -54,9 +54,9 @@ label intro:
                     h "Tout d'abord, nous allons atteindre le château de Dunbar. Là, l'évêque Patrick d'Edimbourg nous accueillera."
 
                     h "Ensuite, nous planifierons nos actions dans les Highlands. Je veux retrouver le village des rebelles le plus vite possible, mais il ne s'agit pas de raser toute la région !"
-                    
+
                     h "Les rebelles sont encore isolés et peu nombreux, mais un excès de violence de notre part risquerait de mettre le feu aux poudres et de les rendre sympathiques au reste du peuple."
-                    
+
                     e "Et une fois le village retrouvé ?"
 
                     h "J'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire !"
@@ -108,9 +108,9 @@ label intro:
                     h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
 
                     e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
-                    
+
                     h "Si j'ai décidé de venir, c'est pour montrer au reste du monde que je ne suis pas l'un de ces anciens rois, mous et immobiles."
-                    
+
                     h "Accompagner les miens sur le champ de bataille me paraît important. Et je ne voudrais pas passer à côté d'une belle bataille ! Ha ha !"
 
                     $ confiance_choice = False
@@ -203,7 +203,7 @@ label intro:
         "Ne rien dire":
             e "..."
 
-    
+
 
     hide einar debout_normal
     hide logan fache
@@ -221,15 +221,15 @@ label plaine_1 :
     show harald debout_normal at right with dissolve
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
-    
+
     "Un cavalier arrive en trombe et descend de son cheval, avant de courir vers Harald."
-    
+
     gv "Sire ! Un rapport des éclaireurs !"
-    
+
     h "Donne-moi ça..."
-    
+
     "Harald lit rapidement le rapport."
-    
+
     h "Mmmh..."
 
     show einar debout_normal at left with dissolve
@@ -245,7 +245,7 @@ label plaine_1 :
     e "Les rebelles ?"
 
     h "Probablement, mais j'ai n'ai aucune certitude. Je veux envoyer un groupe de reconnaissance à l'avant de l'armée, et tirer cette affaire au clair."
-    
+
     h "Si ce sont bien les rebelles, c'est une chance unique de découvrir où ils se cachent."
 
     h "Je compte sur toi pour diriger la troupe. Je te confie dix soldats. Ils t'écouteront et ton expérience du pistage vous facilitera la tâche."
@@ -263,25 +263,25 @@ label plaine_1 :
             e "Pourquoi dois-je mener ce groupe de reconnaissance ?"
 
             h "Je t'envoie en tant qu'homme de confiance. Des éclaireurs ont déjà été assassinés, j'ai besoin d'envoyer quelqu'un qui sache se battre mais qui ait la tête sur les épaules."
-            
+
             h "Je compte sur ton sang-froid. Il ne s'agit pas de massacrer tout ce que tu trouveras !"
-            
+
             e "Pourquoi ne pas envoyer toute l'armée ?"
-            
+
             h "Parce que je veux éviter que la situation ne s'envenime ! Il ne s'agit pas de faciliter la tâche des rebelles en provoquant un soulèvement populaire !"
-            
+
             jump menu_harald_eclaireur_foret_1
 
         "Combien de rebelles ?":
 
             e "Sur combien de rebelles risquons-nous de tomber ? A quoi dois-je m'attendre ?"
-            
+
             h "Le rapport n'indique que peu de détails. Ils n'étaient que quelques dizaines, cinquante, tout au plus."
-            
+
             e "Cinquante ? Et nous ne partons qu'à onze ?"
 
             h "Il n'y a aucun danger. Ce n'est qu'une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings, tu es un huscarl. Rien ne va te résister !"
-            
+
             h "Mais surtout, tu n'es pas sensé te battre contre eux ! Il s'agit d'une mission de reconnaissance, n'engage le combat que si c'est une nécessité absolue !"
 
             jump menu_harald_eclaireur_foret_1
@@ -308,8 +308,8 @@ label plaine_1 :
             l "..."
 
             h "J'ai personnellement demandé à Logan de t'accompagner. Il est le seul à connaître la région, et il facilitera les relations avec les écossais."
-            
-            
+
+
     l "J'ai déjà planifié notre voyage."
     l "Nous passerons Stirling avant la nuit. Demain, nous atteindrons Perth. C'est le premier village douteux sur notre passage. Puis nous nous dirigerons vers Dundee, Forfar..."
     h "Parfait ! Il ne vous reste plus qu'à partir, les hommes vous attendent."
@@ -382,7 +382,7 @@ label plaine_2:
             l "..."
 
             e "Ha, il est obéissant en plus !"
-            
+
             e "Je suis sûr qu'il retrouvera la parole quand il trouvera un bel animal ! Séducteur de chèvres !"
 
             l "..."
@@ -487,7 +487,7 @@ label foret_1:
         "Ne vous découragez pas" :
 
             e "Ne relâchez pas l'effort. Nous nous sommes suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
-            
+
             e "Tout ça sera bientôt terminé !"
 
         "Alors Logan ? Tu rêves de brebis ? (chambrer)" :
@@ -998,13 +998,13 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide logan with dissolve
-    #show ge debout_normaux at halfsize, right with dissolve
+    show re debout_normaux at halfsize, right with dissolve
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     e "Approchez, charognes ! Je..."
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
-    #hide ge with dissolve
+    hide re with dissolve
     show logan debout_normal at right zorder 2 with dissolve
     l "Einar ! Derrière toi !"
 
@@ -1025,9 +1025,9 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-    #show ge debout_normaux at halfsize, center with dissolve
+    show re debout_normaux at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
-    #hide ge with dissolve
+    hide re with dissolve
 
     menu:
         "Qui es-tu ?":
