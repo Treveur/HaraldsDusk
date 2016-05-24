@@ -35,9 +35,12 @@ label intro:
     "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
     "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
 
+
     menu:
         "Sire, sommes-nous proches du château ?":
-            hide logan debout_normal
+            hide einar
+            hide logan
+            hide harald
 
             e "Mon Roi, sommes-nous proches de Dunbar ?"
 
