@@ -41,6 +41,7 @@ label intro:
             hide einar
             hide logan
             hide harald
+            with dissolve
 
             show einar debout_normal at left with dissolve
             show harald debout_normal at right with dissolve
@@ -208,9 +209,10 @@ label intro:
 
 
 
-    hide einar debout_normal
-    hide logan fache
-    hide harald debout_normal
+    hide einar
+    hide logan
+    hide harald
+    with dissolve
 
     jump plaine_1
 
@@ -317,9 +319,10 @@ label plaine_1 :
     l "Nous passerons Stirling avant la nuit. Demain, nous atteindrons Perth. C'est le premier village douteux sur notre passage. Puis nous nous dirigerons vers Dundee, Forfar..."
     h "Parfait ! Il ne vous reste plus qu'à partir, les hommes vous attendent."
 
-    hide logan debout_normal
-    hide einar debout_normal
-    hide harald debout_normal
+    hide logan
+    hide einar
+    hide harald
+    with dissolve
 
     jump plaine_2
 
@@ -334,6 +337,7 @@ label plaine_2:
 
     gv "Cette mission n'a rien de terrible... Je m'attendais à rencontrer de l'opposition !"
     gv "Nous aurions dû rester plus longtemps à Stirling ! Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
+    show logan debout_normal at right with dissolve
     l "Ne vous sentez pas à l'abri. Nous ne sommes pas encore arrivés dans le territoire des rebelles, mais ça ne veut pas dire qu'ils ne peuvent pas nous tomber dessus."
 
     show einar debout_normal at left with dissolve
@@ -406,8 +410,9 @@ label plaine_2:
 
             l "Bien."
 
-    hide einar debout_normal
-    hide logan debout_normal
+    hide einar
+    hide logan
+    with dissolve
 
     jump foret_1
 
@@ -502,7 +507,7 @@ label foret_1:
             l "..."
             show gv debout_normaux at center with dissolve
             gv "Ha ha !"
-            hide gv debout_normaux with dissolve
+            hide gv with dissolve
         "Que penses-tu de la mission, Logan ?" :
 
             e "Tu es le seul à ne pas encore t'être plaint..."
@@ -559,8 +564,9 @@ label foret_1:
 
                             e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
-    hide einar debout_normal
-    hide logan debout_normal
+    hide einar
+    hide logan
+    with dissolve
 
     jump village_1
 
@@ -628,8 +634,9 @@ label e_massacre_village_2:
     gv "HAAAAA !"
     hide logan with dissolve
     ve "Sauvez les enfants ! Les enfants !"
-    hide ve with moveoutright
-    hide gv with moveoutright
+    hide ve
+    hide gv
+    with moveoutright
     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 
 label e_demander_information_village_1:
@@ -696,8 +703,9 @@ label e_fouiller_village_1(einarFouille = False):
             jump e_villagoise_partir_maison_1
         "Tuer la villageoise" if already_talk:
             jump e_tuer_moira_maison_1
-    hide moira with dissolve
-    hide einar with dissolve
+    hide moira
+    hide einar
+    with dissolve
 
 
 label e_tuer_villageois_village_1:
@@ -980,9 +988,10 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
         gv "Ha ha ha !"
         l "Ferme la Ein..."
-    hide einar with dissolve
-    hide logan with dissolve
-    hide gv with dissolve
+    hide einar
+    hide logan
+    hide gv
+    with dissolve
 
     "Un cor retentit dans les bois, très proche."
 
@@ -1102,9 +1111,10 @@ label massacre_foret_2(lieu = ""):
 
 label attaque_massacre_foret_2(message = ""):
 
-    hide einar with dissolve
-    hide logan with dissolve
-    hide gv with dissolve
+    hide einar
+    hide logan
+    hide gv
+    with dissolve
 
     if message == "attentif":
         show einar debout_normal at left with dissolve
@@ -1153,9 +1163,10 @@ label attaque_massacre_foret_2(message = ""):
         gv "Ha ha ha !"
         l "Ferme-la Ein..."
 
-    hide einar with dissolve
-    hide logan with dissolve
-    hide gv with dissolve
+    hide einar
+    hide logan
+    hide gv
+    with dissolve
 
     "Un cor retentit dans les bois, très proche."
 

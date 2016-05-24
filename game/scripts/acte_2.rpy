@@ -232,8 +232,9 @@ label interieur_maison_village_2:
     m "Je vais te laisser, c'est tout pour aujourd'hui."
     e "A demain ?"
     m "A demain."
-    hide einar with dissolve
-    hide moira with dissolve
+    hide einar
+    hide moira
+    with dissolve
     jump interieur_maison_village_3
 
 #Sequence 3
@@ -291,8 +292,9 @@ label interieur_maison_village_3:
             o "Je comprends."
             m "..."
 
-    hide einar with dissolve
-    hide moira with dissolve
+    hide einar
+    hide moira
+    with dissolve
     show ve debout_normaux at left with dissolve
     ve "Ogma !"
     o "Fenella ? Quelque chose ne va pas ?"
@@ -331,9 +333,10 @@ label interieur_maison_village_3:
     o "Nous allons vous laisser. Reposez-vous."
     m "..."
 
-    hide einar with dissolve
-    hide moira with dissolve
-    hide ogma with dissolve
+    hide einar
+    hide moira
+    hide ogma
+    with dissolve
     jump interieur_maison_village_4
 
 #Sequence 4
@@ -464,8 +467,9 @@ label interieur_maison_village_4:
             "Le visage de Moira s'illumine et elle se fend d'un sourire discret"
 
     m "Viens !"
-    hide einar with dissolve
-    hide moira with dissolve
+    hide einar
+    hide moira
+    with dissolve
     "Moira entraîne Einar a l'extérieur en lui tenant la main"
     jump village_2
 
@@ -515,8 +519,9 @@ label village_2:
     e "Fenella ? La dernière fois, c'était une grosse femme rougeaude qui sentait l'ail. Il s'agit de cette Fenella ?"
     m "Ha ha, oui ! Et je crois bien que tu lui plaît beaucoup ! Elle a perdu son mari il y a quelques années. Il te ressemblait un peu, je crois."
     e "La journée va être longue..."
-    hide moira with dissolve
-    hide einar with dissolve
+    hide moira
+    hide einar
+    with dissolve
 
     jump village_3
 
@@ -575,8 +580,9 @@ label village_3:
 
     m "Avant de te ramener à la maison, j'aimerais te montrer une dernière chose. C'est un endroit que j'aime beaucoup."
     "Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village."
-    hide einar with dissolve
-    hide moira with dissolve
+    hide einar
+    hide moira
+    with dissolve
 
     jump foret_3
 
@@ -664,8 +670,9 @@ label paradis_foret_1:
             "..."
             jump village_4
 
-    hide moira with dissolve
-    hide einar with dissolve
+    hide moira
+    hide einar
+    with dissolve
 
 #Sequence 9
 label village_4:
@@ -708,8 +715,9 @@ label village_4:
         "L'ignorer":
             "Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
 
-    hide moira with dissolve
-    hide einar with dissolve
+    hide moira
+    hide einar
+    with dissolve
 
     jump sentier_foret_1
 
