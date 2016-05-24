@@ -10,7 +10,7 @@ label interieur_maison_village_1:
 
     "Einar émerge du sommeil..."
     show einar debout_normal at left with dissolve
-    e "Où... Je suis entravé ? Huuugh..."
+    e "Je suis entravé ? Huuugh..."
     show moira debout_normal at right with dissolve
 
     menu menu_rencontre_moira_blesse:
@@ -42,7 +42,7 @@ label interieur_maison_village_1:
             m "Du calme, du calme."
             m "Je n'ai aucune intention de vous faire du mal."
 
-        "Faire une allusion sexuelle sarcastique":
+        "La situation est assez... plaisante !":
             e "La situation est assez... satisfaisante. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme ..."
             " Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse de défendre."
             m "A l'avenir, vous éviterez ce genre de... choses. Soyez correct avec moi et je serai correcte avec vous."
@@ -51,7 +51,7 @@ label interieur_maison_village_1:
 
     menu:
 
-        "Que fait-elle ?":
+        "Que faites-vous ?":
             e "Qu'est ce que c'est ? Qu'est-ce que vous faites ?"
             m "Je broie des plantes pour vous."
             e "Pour moi ?"
@@ -64,12 +64,12 @@ label interieur_maison_village_1:
             m "J'imagine que vous ne dites rien par fierté ? Ne soyez pas idiot. Vous vous doutez que ce que je prépare vous est destiné !"
             e "Qu'est-ce que c'est ?"
 
-        "Trait d'humour":
+        "J'ai encore toutes mes dents, merci":
             e "J'ai encore mes dents, je n'ai pas besoin que l'on broie ma nourriture."
             m "... elle esquisse un sourire fugace"
             m "Ce n'est pas de la nourriture !"
 
-        "Pas faim":
+        "Je n'ai pas faim":
             e "Je n'ai pas faim, merci."
             m "... elle esquisse un sourire fugace"
             m "Ce n'est pas de la nourriture !"
@@ -81,13 +81,13 @@ label interieur_maison_village_1:
     m "C'est mon père qui m'a demandé de vous soigner. Quand vous le verrez, essayez de vous montrer reconnaissant."
 
     menu :
-        "La remercier":
+        "Merci":
             e "Merci. Je ne m'attendais pas à être soigné ici."
             m "Ce n'est pas moi que vous devez remercier, je ne fais que suivre les instructions de mon père."
         "Ne rien dire":
             e "..."
             m "..."
-        "Pas de besoin d'attention":
+        "Je n'ai pas besoin des soins d'une rebelle !":
             e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné !"
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
@@ -105,7 +105,7 @@ label interieur_maison_village_1:
 
 
     menu :
-        "Un problème ?":
+        "Il a un problème avec moi ?":
             e "Il a une dent contre moi ?"
             m "Pas contre vous en particulier, non."
         "J'aurais dû mourir...":
@@ -113,10 +113,10 @@ label interieur_maison_village_1:
             m "Estimez-vous heureux d'être en vie. Il voulait tous vous tuer."
             e "Pourquoi cette colère contre nous ?"
             jump interieur_maison_village_2
-        "Critiquer":
+        "Quel salopard !":
             e "Quel enfoiré ! Il ne m'a même pas adressé la parole !"
             $ critique_ogma = True
-        "Il devrait avoir honte":
+        "Il doit avoir honte de s'adresser au survivant d'un assassinat lâche !":
             e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins !"
             $ critique_ogma = True
 
@@ -133,7 +133,7 @@ label interieur_maison_village_1:
                 e "Et ?"
                 m "Et celle de Kennocha, ma mère."
 
-            "Demander pardon":
+            "Je vous demande pardon":
                 e "Excusez-moi."
                 m "N'en parlons plus."
                 e "..."
@@ -143,7 +143,7 @@ label interieur_maison_village_1:
                 e "Et ?"
                 m "Et celle de Kennocha, ma mère."
 
-            "Macho":
+            "Vous n'avez pas d'ordres à me donner":
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
                 " Moira gifle Einar à nouveau, sur l'autre joue."
                 m "J'ai omis de préciser que vous me deviez aussi le respect."

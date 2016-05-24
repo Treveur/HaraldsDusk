@@ -728,6 +728,10 @@ label e_tuer_villageois_village_1:
     
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un de vos vieux !"
     
+    l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
+
+    l "Nous risquons d'aggraver la situation en rasant Perth. Le roi sera furieux !"
+    
     ve "Nous n'avons rien à vous dire ! Nous ne savons rien !"
     
     menu:
@@ -816,7 +820,7 @@ label e_nom_villageoise_maison_1:
 
     ve "Ne m'adressez pas la parole !"
 
-    e "Je me suis montré courtois, mais ça pourrait vite changer. Répond : qui es-tu ?"
+    e "Je me suis montré courtois, mais ça pourrait vite changer. Répond !"
 
     m "Moira."
 
@@ -936,7 +940,7 @@ label choix_retour_village_1(massacre = False):
 
         e "Nous gagnons sur tous les tableaux."
 
-        l "Mieux vaudrait que tu ais raison..."
+        l "J'espère que tu as raison..."
 
     else:
         l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
@@ -948,15 +952,15 @@ label choix_retour_village_1(massacre = False):
     hide gv with dissolve
     if massacre:
         menu:
-            "Rentrer au Chateau de Dunbar":
+            "Nous retournons à Dunbar":
                 call massacre_foret_2 pass (lieu = "chateau") from _call_massacre_foret_2
-            "Poursuivre vers le nord":
+            "Nous poursuivons vers le nord":
                 call massacre_foret_2 pass (lieu = "nord") from _call_massacre_foret_2_1
     else:
         menu:
-            "Rentrer au Chateau de Dunbar":
+            "Nous retournons à Dunbar":
                 call foret_2 pass (lieu = "chateau") from _call_foret_2
-            "Poursuivre vers le nord":
+            "Nous poursuivons vers le nord":
                 call foret_2 pass (lieu = "nord") from _call_foret_2_1
 
 #Scequence 7
@@ -1004,13 +1008,13 @@ label foret_2(lieu = ""):
     e "Tu te ramollis, mon vieux Logan..."
 
     menu:
-        "Mettre en garde le groupe":
+        "Ne relâchez pas votre attention":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2
-        "La mission est décevante...":
+        "La mission est décevante":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "deception") from _call_attaque_massacre_einar_sauf_foret_2_1
-        "Attitude suspecte des villageois":
+        "Les villageois avaient une attitude suspecte":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude") from _call_attaque_massacre_einar_sauf_foret_2_2
-        "Chambrer Logan":
+        "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
             call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_einar_sauf_foret_2_3
 
 label attaque_massacre_einar_sauf_foret_2(message = ""):
@@ -1041,7 +1045,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         e "Oui, louches."
 
         menu :
-            "Craindre un piège":
+            "Je redoute un piège":
                 jump menu_avertissement_villageois
 
             "Ils ont dû être effrayés":
@@ -1049,15 +1053,15 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
                 l "Ils ont dû croire que nous étions là pour raser leur village. Ils sont forcément au courant du meurtre de Montgomery, ils auront fait le rapprochement en nous voyant arriver."
                 e "A juste titre ! Je regrette presque de ne pas les avoir massa..."
 
-            "Se moquer des villageois":
+            "C'était une bande d'abrutis !":
                 l "Ils étaient effrayés, c'est évident."
                 e "Ils ont dû être impressionnés par notre présence. C'était une bande d'abrutis congénitaux, ils n'avaient jamais vu d'hommes armés !"
                 e "Isolés qu'ils sont dans leur village d'arriérés, à élever leurs chiards et leurs mout..."
 
         menu menu_avertissement_villageois:
-            "Mettre en garde le groupe":
+            "Ne relâchez pas votre attention":
                 call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
-            "Ne pas craindre des paysans":
+            "Nous ne craignons pas les paysans !":
                 hide logan with dissolve
                 e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
                 show gv debout_normaux at center with dissolve
@@ -1132,7 +1136,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
             jump e_demande_nom_foret_2
         "Non ! Ne me tue pas, pitié !":
             jump e_implore_pitie_foret_2
-        "Menacer le meneur":
+        "Vous mourrez tous !":
             jump e_menace_foret_2
 
 #Fin alternative n°1
@@ -1185,13 +1189,13 @@ label massacre_foret_2(lieu = ""):
     e "Ne remet pas mes ordres en question. Tu te ramollis, mon vieux Logan."
 
     menu:
-        "Mettre en garde le groupe":
+        "Ne relâchez pas votre attention":
             call attaque_massacre_foret_2 pass (message = "attentif") from _call_attaque_massacre_foret_2
-        "La mission est décevante...":
+        "La mission est décevante":
             call attaque_massacre_foret_2 pass (message = "deception") from _call_attaque_massacre_foret_2_1
-        "Se moquer des villageois":
+        "Les villageois étaient pitoyables !":
             call attaque_massacre_foret_2 pass (message = "moquerie") from _call_attaque_massacre_foret_2_2
-        "Chambrer Logan":
+        "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
             call attaque_massacre_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_foret_2_3
 
 label attaque_massacre_foret_2(message = ""):
@@ -1309,7 +1313,7 @@ label attaque_massacre_foret_2(message = ""):
             #jump e_demande_nom_foret_2 pass (bad_ending = True)
         "Non ne me tue pas, pitié!":
             call e_implore_pitie_foret_2 pass (bad_ending = True) from _call_e_implore_pitie_foret_2
-        "Menacer le meneur":
+        "Vous mourrez tous !":
             call e_menace_foret_2 pass (bad_ending = True) from _call_e_menace_foret_2
 
 label e_demande_nom_foret_2(bad_ending = False):
@@ -1465,7 +1469,7 @@ label o_explication_vie_village_2:
             $ choix_ogma_1 = "incomprehension"
         "Ne rien dire":
             $ choix_ogma_1 = "silcence"
-        "Insulter":
+        "Vous n'obtiendrez rien de moi !":
             $ choix_ogma_1 = "insulter"
 
 
@@ -1494,7 +1498,7 @@ label o_explication_vie_village_2:
     o "Alors, quelle est ta décision ?"
 
     menu menu_choix_trahison_village_2:
-        "Accepter":
+        "J'accepte":
             jump accepter_trahir_village_2
         "Vous me faites confiance ?" if already_talk == False:
 
@@ -1506,7 +1510,7 @@ label o_explication_vie_village_2:
             $ already_talk = True
 
             jump menu_choix_trahison_village_2
-        "Refuser":
+        "Jamais !":
             jump refuser_trahir_village_2
 
 label refuser_trahir_village_2:
@@ -1532,11 +1536,11 @@ label refuser_trahir_village_2:
     o "Tu as changé d'avis sur la question ?"
 
     menu:
-        "Céder":
+        "CJ'accepte":
             e "Très bien... Hhhggh... J'accepte..."
             o "Parfait !"
             jump accepter_trahir_village_2
-        "Ne rien lâcher":
+        "Je ne trahirai personne !":
             jump bad_ending_2
 
 

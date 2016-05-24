@@ -1,36 +1,36 @@
 #Ending
 label bad_ending_1:
-    "*Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt.*"
+    "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
     jump credits
 
 label bad_ending_2:
-    e "Je n'ai qu'une parole. Vous pouvez aller vous faire foutre."
+    e "Je n'ai qu'une parole. Vous pouvez aller vous faire foutre !"
     o "C'est décevant... Tu crois être unique ? Si ce n'est pas toi, un autre fera le travail à ta place."
-    "*Ogma égorge Einar alors qu'il est entravé.*"
+    "Ogma égorge Einar alors qu'il est entravé."
     e "Grrblbhh..."
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
     jump credits
 
 label bad_ending_3:
-    "*Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos.*"
-    "*Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers.*"
-    "*Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts.*"
+    "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
+    "Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers."
+    "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
     jump credits
 
 label bad_ending_4:
-    "*La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place.*"
-    "*Alors que les rebelles continuent d'affluer dans l'enceinte, Ogma tombe à genoux devant le cadavre d'Einar.*"
+    "La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place."
+    "Alors que les rebelles continuent d'affluer dans l'enceinte, Ogma tombe à genoux devant le cadavre d'Einar."
     o "Grrr..."
-    "*Il tire une dague et commence à poignarder et mutiler sans relâche les restes du viking...*"
+    "Il tire une dague et commence à poignarder et mutiler sans relâche les restes du viking..."
     jump credits
 
 label bad_ending_5:
-    "*Les forces coordonnées des huscarls surpassent le talent d'Einar, qui est jeté au sol.*"
-    "*Les huscarls le transforment en une pulpe sanglante sous une pluie de coups furieux.*"
+    "Les forces coordonnées des huscarls surpassent le talent d'Einar, qui est jeté au sol."
+    "Les huscarls le transforment en une pulpe sanglante sous une pluie de coups furieux."
     jump credits
 
 label bad_ending_6:
-    "*Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de répliquer.*"
+    "Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de répliquer."
     h "Et maintenant, au tour des écossais..."
     jump credits
 
@@ -50,7 +50,7 @@ label good_ending_8:
     jump credits
 
 label good_ending_9:
-    "*Einar porte une tenue de général et mène une armée innombrable face à ce qui semble être une armée asiatique, dans un paysage exotique fait de montagnes et de cultures en étages.*"
+    "Einar porte une tenue de général et mène une armée innombrable face à ce qui semble être une armée asiatique, dans un paysage exotique fait de montagnes et de cultures en étages."
     e "Aujourd'hui, le dernier peuple dissident s'inclinera devant nous !"
     e "CHARGEEEEEEEEZ !"
     jump credits
@@ -76,22 +76,22 @@ label good_ending_11:
     jump credits
 
 label bad_ending_12:
-    "*Les deux vikings rendent coup pour coup.*"
-    "*Mais le roi projette Einar contre le mur avant de se ruer sur lui.*"
+    "Les deux vikings rendent coup pour coup."
+    "Mais le roi projette Einar contre le mur avant de se ruer sur lui."
     h "MEURS !"
-    "*Einar meurt étranglé par son roi, les vertèbres craquant sous l'étreinte du monarque.*"
+    "Einar meurt étranglé par son roi, les vertèbres craquant sous l'étreinte du monarque."
     jump credits
 
 label good_ending_13:
-    "*Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth.*"
-    "*Les villageois lui font leurs adieux et petit à petit, la place se vide.*"
-    "*Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner inexorablement.*"
-    "*Moira.*"
+    "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
+    "Les villageois lui font leurs adieux et petit à petit, la place se vide."
+    "Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner inexorablement."
+    "Moira."
     jump credits
 
 label good_ending_14(rejete = True):
     if rejete:
-        "*Einar dépasse Moira qui reste immobile au milieu du sentier, les poings serrés, fixant le sol.*"
+        "Einar dépasse Moira qui reste immobile au milieu du sentier, les poings serrés, fixant le sol."
     else:
         m "Où allons-nous ?"
         e "Loin d'ici !"
@@ -101,26 +101,26 @@ label good_ending_14(rejete = True):
         e "Il y a un endroit en particulier que tu voudrais voir ?"
         m "Je ne sais pas... J'hésite entre la Norvège et la Méditerrannée."
         e "Alors nous irons voir la Méditerrannée ! Retourner en Norvège, ce serait du suicide..."
-        "*Les deux voyageurs disparaissent dans les bois, prenant la direction du sud...*"
+        "Les deux voyageurs disparaissent dans les bois, prenant la direction du sud..."
     jump credits
 
 label good_ending_15(marier = True):
     if marier:
-        "*Une tornade rousse se précipite vers les deux hommes.*"
-        "*Moira se jette dans les bras d'Einar et l'embrasse.*"
+        "Une tornade rousse se précipite vers les deux hommes."
+        "Moira se jette dans les bras d'Einar et l'embrasse."
         ve "HOURRAAAA !"
     else:
-        "*Einar enfourche son cheval et part, seul avec ses pensées.*"
+        "Einar enfourche son cheval et part, seul avec ses pensées."
     jump credits
 
 label bad_ending_16:
-    "*Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol.*" 
-    "*Le roi quitte la pièce en marchant.*"
+    "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol." 
+    "Le roi quitte la pièce en marchant."
     jump credits
 
 label bad_ending_17:
-    "*En plein combat, une flèche vient frapper Einar à l'épaule.*"
-    "*Ogma profite de cette ouverture pour transperçer le viking de sa lame, et laisse tomber son cadavre dans les douves.*"
+    "En plein combat, une flèche vient frapper Einar à l'épaule."
+    "Ogma profite de cette ouverture pour transperçer le viking de sa lame, et laisse tomber son cadavre dans les douves."
     jump credits
 
 label normal_ending_18:
