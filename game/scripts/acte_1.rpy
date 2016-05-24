@@ -40,11 +40,10 @@ label intro:
         "Sire, sommes-nous proches du château ?":
             hide einar
             hide logan
-            hide harald
             with dissolve
 
             show einar debout_normal at left with dissolve
-            show harald debout_normal at right with dissolve
+            show harald debout_normal at right with moveinright
 
             e "Mon Roi, sommes-nous proches de Dunbar ?"
 
@@ -125,10 +124,15 @@ label intro:
                     e "..."
 
         "Tu n'as pas l'air bien, Logan":
-            e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
+            hide einar
+            hide logan
+            hide harald
+            with dissolve
 
-            show einar debout_normal at left
-            show logan debout_normal at right
+            show einar debout_normal at left with dissolve
+            show logan debout_normal at right with dissolve
+
+            e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
             l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
@@ -440,9 +444,9 @@ label foret_1:
             gv "J'aimerais retrouver la Suède. Je n'ai aucunes nouvelles de ma famille depuis notre campagne d'Egypte."
 
             gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-            show logan debout_normal at right with dissolve
+            show logan debout_normal at right zorder 1 with dissolve
             l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
-            show gv debout_normaux at center with dissolve
+            show gv debout_normaux at center zorder 2 with dissolve
             gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
 
             l "..."
