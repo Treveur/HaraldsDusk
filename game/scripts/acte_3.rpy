@@ -861,7 +861,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
     "Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure du donjon."
 
     show einar combat_normal at left
-    show harald combat_normal at right
+    show harald combat_hache_normal at right
 
     h "Einar ? Que fais-tu ?!"
 
@@ -870,7 +870,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             e "J'ai voulu croire en la liberté d'un peuple sur ses propres terres."
             show einar combat_determine at left
             e "Les écossais en ont assez de recevoir des ordres. Il est temps pour eux de reprendre leur destin en main !"
-            show harald combat_furieux at right
+            show harald combat_hache_furieux at right
             h "Tu penses réellement que ce peuple de paysans arriéré serait capable de prendre les bonnes décisions ?"
             h "Sans moi, sans l'empire, ils sont voués à rester à l'état de petits clans épars, rongé par leurs petites guerres ridicules !"
             show einar combat_normal at left
@@ -878,25 +878,31 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
 
         "Las des promesses":
             e "J'étais las de vos promesses de terres et d'or qui ne se concrétisaient jamais, alors j'ai changé de camp."
-            show harald combat_furieux at right
+            show harald combat_hache_furieux at right
             h "C'est l'appât du gain qui te fait te rebeller contre moi ? Tu es prêt à condamner tout l'empire par caprice ?"
             h "Tu es complètement fou !"
+            show einar combat_determine at left
             e "Peut-être."
 
         "Vous êtes un monstre":
+            show einar combat_normal at left
             e "J'ai rencontré une jeune femme et son père, qui m'ont convaincu que vous êtes un monstre."
             e "Le monde ne devrait jamais être entre les mains d'un seul homme."
             e "Vous n'avez fait qu'enchaîner massacres sur prises de pouvoir, vous avez privé le monde de son libre arbitre."
+            show harald combat_hache_furieux at right
             h "Je suis l'élu divin ! Dieu a fait de moi son émissaire ! Je rassemble tous les peuples sous Sa bannière !"
             e "Je ne sais pas si vous y croyez vous-même."
             h "Je suis le porteur de la Hache ! J'ai été guidé par le Seigneur jusqu'aux Clous de la Sainte-Croix !"
 
         "Provoquer":
+            show einar combat_normal at left
             e "L'ordre des choses m'ennuyait..."
             e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."
+            show harald combat_hache_furieux at right
             h "Tu es complètement fou !"
             e "Probable."
 
+    show harald combat_hache_normal at right
     h "Tu me déçois, Einar. D'entre tous mes huscarls, il a fallu que ce soit toi qui me trahisse."
     h "Tu crois être unique ? D'autres prendront ta place."
     h "Mon règne se poursuivra longtemps après ta mort."
