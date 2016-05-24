@@ -938,7 +938,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
             "Ne pas craindre des paysans":
                 hide logan with dissolve
                 e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
-                show gv debout_normaux with dissolve
+                show gv debout_normaux at center with dissolve
                 gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
                 gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher la tro..."
 
@@ -957,11 +957,11 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     "Un cor retentit dans les bois, très proche."
 
-    show einar debout_normal with dissolve
+    show einar debout_normal at left with dissolve
     e "En position de combat, tous !"
     show gv debout_normaux at halfsize, center with dissolve
     gv "Ça venait d'où ?"
-    show logan debout_normal with dissolve
+    show logan debout_normal at right with dissolve
     l "Sur la gauche ! Des torches !"
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
@@ -979,7 +979,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
     #hide ge with dissolve
-    show logan debout_normal with dissolve
+    show logan debout_normal at right zorder 2 with dissolve
     l "Einar ! Derrière toi !"
 
     e "Que..."
@@ -991,7 +991,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-    show ogma debout_normal at right with dissolve
+    show ogma debout_normal at right zorder 1 with dissolve
     hide logan with dissolve
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
     hide ogma with dissolve
@@ -999,8 +999,9 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-
+    #show ge debout_normaux at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
+    #hide ge with dissolve
 
     menu:
         "Qui es-tu ?":
@@ -1016,20 +1017,21 @@ label massacre_foret_2(lieu = ""):
     if lieu == "chateau":
 
         "Sur le chemin du retour..."
-
+        show gv debout_normal at center with dissolve
         gv "Pourquoi sommes-nous déjà sur le retour ?"
-
+        show einar debout_normal at left with dissolve
         e "Parce que nous avons massacré les rebelles. Mission accomplie, nous rentrons chez nous."
-
+        hide gv with dissolve
+        show logan debout_normal at right with dissolve
         l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
 
         e "Bien sûr ! Leur manque de coopération était plus qu'évident. Ils étaient les rebelles. Harald sera satisfait !"
 
     else:
         "En poursuivant vers le nord..."
-
+        show gv debout_normal at center with dissolve
         gv "Pourquoi devons-nous poursuivre vers le nord ? Nous ne venons pas de massacrer les rebelles ?"
-
+        show einar debout_normal at left with dissolve
         e "Si, probablement. Mais j'ai tout de même un doute. Autant s'assurer d'avoir fait ce qu'il fallait !"
 
         e "Une visite des villages plus au nord s'impose. Et nous reproduirons les mêmes actions si nous rencontrons la moindre résistance !"
@@ -1044,7 +1046,8 @@ label massacre_foret_2(lieu = ""):
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
 
     gv "Ha Ha Ha !"
-
+    hide gv with dissolve
+    show logan debout_normal at right with dissolve
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
 
     e "J'ai bien remarqué ton comportement à Perth. Tu n'as tué personne. Tu as à peine incendié une grange."
