@@ -1071,6 +1071,8 @@ label e_epargne_harald_no_axe_donjon:
         "..."
         show ogma combat_normal at left
         show einar debout_blesse at right
+        show ogma combat_normal at left
+        show einar debout_blesse at right
         "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
         show ogma combat_determine at left
         o "Voyez ! La liberté a vaincu le tyran !"
@@ -1086,28 +1088,43 @@ label e_epargne_harald_no_axe_donjon:
         jump village_6
 
 label village_5:
+
     "..."
+
+    show einar debout_normal at left
+    show ogma debout_normal at right
+
     o "Voici ton or."
     o "Nous avons décidé de t'offrir un cheval. Il te mènera où bon te semble."
+    show einar debout_contrarie at left
     e "Et si je souhaite rester ici ?"
     o "Je ne peux pas te laisser cette liberté."
     o "Malgré tout ce que tu as fait pour nous et l'affection que te porte Moira, je ne peux pas t'autoriser à rester parmi nous."
     o "Tu nous a offert la victoire, et pour cela l'Ecosse te sera toujours redevable."
+    show ogma debout_contrarie at right
     o "Mais tu as laissé s'enfuir notre ennemi. Je veux que tu quittes l'Ecosse pour toujours."
     o "Ne reviens jamais ici."
 
     menu:
 
         "J'ai été juste":
+            show einar debout_attriste at left
             e "Lorsque vous m'avez capturé, vous m'avez expliqué que vous vouliez chasser le roi de vos terres."
             e "J'ai rempli ma part du contrat et fait ce qui me semblait juste. Je regrette que nous nous séparions en ces termes."
             e "Adieu."
+
         "Être désolé":
+            show einar debout_attriste at left
             e "Je regrette de l'avoir laissé partir. J'espère que vous me pardonnerez."
             o "Crois bien que je suis aussi navré que toi. Pars, maintenant."
+
         "Partir":
+            show einar debout_contrarie at left
             e "Je ne comptais pas rester ici. Adieu."
 
+    hide einar
+    hide ogma
+    with dissolve
 
     jump foret_4
 
@@ -1116,77 +1133,113 @@ label village_6:
     $ refuer_ogma_main_moira = False
 
     "Moira se tient légèrement à l'écart."
+    show einar debout_normal at left
+    show moira debout_normal at right
+    show ogma debout_normal at right
+    with dissolve
+
     o "Toute l'Ecosse t'es redevable, Einar !"
     o "Tu nous a rendu la liberté et provoqué la fin de l'empire !"
     o "Comme promis, voici ton or et un cheval prêt à t'emmener où bon te semble."
 
     menu:
         "Remercier":
+            show einar debout_souriant at left
             e "Je vous remercie."
             e "En vingt ans, jamais Harald ne m'avait offert autant de récompenses !"
             e "Libérer un peuple et repartir avec de l'or..."
             e "C'est bien plus gratifiant que de servir un roi qui ne tient pas ses promesses !"
 
         "Regrets":
+            show einar debout_contrarie at left
             e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
+            show ogma debout_attriste at right
             o "Je comprends. J'espère que ton amertume s'estompera avec le temps."
 
         "Juste une question de survie (refuser l'or)":
+            show einar debout_contrarie at left
             e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
+            show ogma debout_attriste at right
             o "Ton humilité est toute à ton honneur."
             o "Nous n'avons pas eu le choix. Nous avions besoin d'un instrument pour nous aider à faire basculer le roi."
             o "Malheureusement pour toi, tu as été notre élu."
             o "J'espère que tu nous pardonneras un jour..."
+            show ogma debout_determine at right
             o "Vois ces gens autour de toi : tu es leur libérateur !"
 
+    show ogma debout_normal at right
     o "Il y a autre chose dont j'aimerais te parler. Une dernière faveur."
     e "..."
     o "Cela concerne Moira."
+    show ogma debout_souriant at right
     o "Je crois savoir que vous vous portez une grande affection..."
     o "Je serais heureux de compter le libérateur de mon peuple dans ma famille."
     o "J'ai l'honneur de t'offrir la main de ma fille, si tu l'acceptes."
+    show ogma debout_normal at right
 
+    show moira debout_souriant at right
     "Bien qu'à l'écart, Moira fait un grand sourire à Einar."
 
     menu:
 
         "Même sans votre consentement":
+            show einar debout_souriant at left
             e "Si vous ne me l'aviez pas proposé, j'aurais enlevé votre fille ! Ha ha !"
+            show ogma debout_souriant at right
             o "À la bonne heure !"
+
         "Un honneur":
+            show einar debout_souriant at left
             e "J'accepte. C'est un grand honneur que vous me faites."
+            show ogma debout_souriant at right
             e "Je n'aurais pas pu espérer une plus belle récompense !"
+
         "Pas de sentiments":
+            show einar debout_attriste at left
             e "Ces sentiments ne sont pas partagés. Je préfère conserver ma liberté."
+            show ogma debout_contrarie at right
+            show moira debout_attriste at right
             o "..."
             o "Très bien. Ma déception est grande, mais je comprend."
             $ refuer_ogma_main_moira = True
 
     if refuer_ogma_main_moira:
+
+        #Animation moira part
+        hide moira debout_attriste with dissolve
         "Moira s'en va."
+        show ogma debout_attriste at right
         o "A vrai dire, la déception de ma fille doit être encore plus grande..."
         o "Elle était à l'origine de cette demande."
         e "..."
+        show ogma debout_normal at right
         o "Que comptes-tu faire désormais ?"
 
         menu:
+
             "Ermite en Ecosse":
+                show einar debout_normal at left
                 e "Rester ici, en Ecosse. Seul."
                 o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
                 o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
 
             "Rentrer en Norvège":
+                show einar debout_determine at left
                 e "Rentrer en Norvège, malgré le danger. C'est ma seule demeure, et je ne l'ai pas vue depuis bien trop longtemps."
+                show ogma debout_attriste at right
                 o "La nostalgie des terres natales..."
                 o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
 
             "Vivre au jour le jour":
+                show einar debout_normal at left
                 e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
                 o "J'imagine qu'à ta place, je n'en saurais pas plus."
                 o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
 
             "Aller en Asie":
+                show einar debout_normal at left
                 e "Aller en Asie, là où personne ne viendra me chercher. J'ai toujours été intrigué par cette région du monde."
+                show ogma debout_souriant at right
                 o "C'est assez... Surprenant !"
                 o "Il ne me reste plus qu'à te souhaiter bon voyage."
                 o "Si le coeur t'en dit, n'hésite pas à revenir ici. Tu trouveras toujours des amis à Perth."
