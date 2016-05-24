@@ -26,17 +26,20 @@ label intro:
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
     show harald debout_normal at center with dissolve
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
+    "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
     show logan debout_normal at right with dissolve
-    "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis longtemps et le mène jusqu'au château de Dunbar."
+    "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
+    "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
     show einar debout_normal at left with dissolve
-    "Einar est l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
+    "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
+    "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
 
     menu:
-        "Parler à Harald":
+        "Sire, sommes-nous proches du château ?":
             hide logan debout_normal
 
-            e "Mon Roi, sommes-nous proches ?"
+            e "Mon Roi, sommes-nous proches de Dunbar ?"
 
             show einar debout_normal at left
             show harald debout_normal at right
@@ -50,23 +53,27 @@ label intro:
 
                     h "Tout d'abord, nous allons atteindre le château de Dunbar. Là, l'évêque Patrick d'Edimbourg nous accueillera."
 
-                    h "Ensuite, je détacherai un groupe d'éclaireurs. Je veux retrouver le village des rebelles le plus vite possible."
+                    h "Ensuite, nous planifierons nos actions dans les Highlands. Je veux retrouver le village des rebelles le plus vite possible, mais il ne s'agit pas de raser toute la région !"
+                    
+                    h "Les rebelles sont encore isolés et peu nombreux, mais un excès de violence de notre part risquerait de mettre le feu aux poudres et de les rendre sympathiques au reste du peuple."
+                    
+                    e "Et une fois le village retrouvé ?"
 
-                    h "Après, j'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire !"
+                    h "J'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire !"
 
                     $ plan_choice = False
 
                     jump menu_harald_choice_foret
 
-                "Parler de la région" if region_choice:
+                "Qu'y a t'il à savoir sur la région ?" if region_choice:
 
                     e "Qu'indiquent les cartes à propos de la région, sire ? Je n'ai pas eu le loisir de les consulter."
 
-                    h "Pas grand chose. Des plaines d'herbe rase, des rocailles abruptes, quelques forêts. Et surtout, la mer."
+                    h "Pas grand chose. Des plaines d'herbe rase, des rocailles abruptes, quelques forêts, et la mer."
 
                     h "Nous ne sommes encore que dans les Lowlands ; les Highlands sont plus au nord."
 
-                    h "Et hormis le nom, je dois dire que je ne vois que peu de différences entre ces deux territoires. "
+                    h "Et hormis le nom, je dois dire que je ne vois que peu de différences entre ces deux territoires !"
 
                     e "La région a l'air inhospitalière..."
 
@@ -74,7 +81,7 @@ label intro:
 
                     jump menu_harald_choice_foret
 
-                "Se montrer enthousiaste" if enthousiaste_choice:
+                "J'ai hâte de me battre !" if enthousiaste_choice:
 
                     e "Sire, il me tarde de massacrer quelques paysans !"
 
@@ -90,7 +97,7 @@ label intro:
 
                     jump menu_harald_choice_foret
 
-                "Pourquoi tant de confiance ?" if confiance_choice:
+                "Je crains pour votre vie" if confiance_choice:
 
                     e "Sire, votre présence ici m'intrigue... Pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
 
@@ -101,6 +108,10 @@ label intro:
                     h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
 
                     e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
+                    
+                    h "Si j'ai décidé de venir, c'est pour montrer au reste du monde que je ne suis pas l'un de ces anciens rois, mous et immobiles."
+                    
+                    h "Accompagner les miens sur le champ de bataille me paraît important. Et je ne voudrais pas passer à côté d'une belle bataille ! Ha ha !"
 
                     $ confiance_choice = False
 
@@ -109,7 +120,7 @@ label intro:
                 "Continuer silencieusement":
                     e "..."
 
-        "Parler à Logan":
+        "Tu n'as pas l'air bien, Logan":
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
             show einar debout_normal at left
@@ -117,16 +128,14 @@ label intro:
 
             l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
-            e "Depuis tout ce temps passé en campagne, j'en avais oublié tes racines."
-
             l "Je me demande si Aberdeen a beaucoup changé."
 
-            e "La nostalgie de la maison, hein ? Si tu veux, je peux peut-être glisser un mot au roi pour..."
+            e "La nostalgie de la maison, hein ? Une fois tout ça terminé, tu auras peut-être l'occasion d'y retourner."
 
-            l "Non, merci. Je ne tiens pas à y retourner."
+            l "Non, merci, je n'y tiens pas."
 
             menu menu_logan_choice_foret:
-                "Se remémorer un bon souvenir" if plan_choice:
+                "Tu te souviens de cette bataille ?" if plan_choice:
 
                     e "Tu te souviens de la bataille de Wertheim ?"
 
@@ -146,7 +155,7 @@ label intro:
 
                     jump menu_logan_choice_foret
 
-                "Parler de la région" if region_choice:
+                "Tu reconnais le coin ?" if region_choice:
 
                     e "Tu reconnais la région ?"
 
@@ -158,7 +167,7 @@ label intro:
 
                     jump menu_logan_choice_foret
 
-                "Se montrer enthousiaste" if enthousiaste_choice:
+                "J'ai hâte de me battre !" if enthousiaste_choice:
 
                     e "Ma hache me démange. Je fracasserais bien quelques crânes !"
 
@@ -172,7 +181,7 @@ label intro:
 
                     jump menu_logan_choice_foret
 
-                "Pourquoi Harald est-il si confiant ?" if confiance_choice:
+                "Le roi me paraît sûr de lui !" if confiance_choice:
 
                     e "Le roi me paraît bien confiant."
 
@@ -194,9 +203,7 @@ label intro:
         "Ne rien dire":
             e "..."
 
-    gv "Sire ! Un rapport des éclaireurs !"
-    h "Donne-moi ça..."
-    "Harald lit rapidement le rapport."
+    
 
     hide einar debout_normal
     hide logan fache
@@ -209,11 +216,21 @@ label plaine_1 :
 
     scene bg mer with dissolve
 
-    "Une heure plus tard."
+    "Une heure plus tard, à proximité du château de Dunbar."
 
     show harald debout_normal at right with dissolve
 
-    h "Ha ! Dunbar, enfin. Un bon repas nous attend."
+    h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
+    
+    "Un cavalier arrive en trombe et descend de son cheval, avant de courir vers Harald."
+    
+    gv "Sire ! Un rapport des éclaireurs !"
+    
+    h "Donne-moi ça..."
+    
+    "Harald lit rapidement le rapport."
+    
+    h "Mmmh..."
 
     show einar debout_normal at left with dissolve
 
@@ -223,13 +240,15 @@ label plaine_1 :
 
     e "Autre chose ?"
 
-    h "Nos éclaireurs ont repéré des mouvements au nord."
+    h "Nos éclaireurs ont repéré des mouvements de troupes au nord."
 
     e "Les rebelles ?"
 
-    h "Je ne suis sûr de rien. J'ai besoin d'envoyer un groupe de reconnaissance à l'avant de l'armée, afin de tirer cette affaire au clair."
+    h "Probablement, mais j'ai n'ai aucune certitude. Je veux envoyer un groupe de reconnaissance à l'avant de l'armée, et tirer cette affaire au clair."
+    
+    h "Si ce sont bien les rebelles, c'est une chance unique de découvrir où ils se cachent."
 
-    h "Je compte sur toi pour diriger la troupe. Les hommes t'écouteront et ton expérience du pistage vous facilitera la tâche."
+    h "Je compte sur toi pour diriger la troupe. Je te confie dix soldats. Ils t'écouteront et ton expérience du pistage vous facilitera la tâche."
 
     menu menu_harald_eclaireur_foret_1:
 
@@ -243,20 +262,29 @@ label plaine_1 :
 
             e "Pourquoi dois-je mener ce groupe de reconnaissance ?"
 
-            h "Parce que je te le demande. Comme je te l'ai dit, je suis convaincu que tes qualités te permettront de mener à bien cette mission mieux que quiconque."
-
-            h "Cette reconnaissance est très importante : elle me permettra de cibler précisément le village à châtier. Nous gagnerons un temps précieux et nous épargnerons les villages n'ayant aucun rapport avec cette rébellion."
-
+            h "Je t'envoie en tant qu'homme de confiance. Des éclaireurs ont déjà été assassinés, j'ai besoin d'envoyer quelqu'un qui sache se battre mais qui ait la tête sur les épaules."
+            
+            h "Je compte sur ton sang-froid. Il ne s'agit pas de massacrer tout ce que tu trouveras !"
+            
+            e "Pourquoi ne pas envoyer toute l'armée ?"
+            
+            h "Parce que je veux éviter que la situation ne s'envenime ! Il ne s'agit pas de faciliter la tâche des rebelles en provoquant un soulèvement populaire !"
+            
             jump menu_harald_eclaireur_foret_1
 
-        "A quels dangers dois-je m'attendre ?":
+        "Combien de rebelles ?":
 
-            e "Sire, quels sont les dangers de cette mission ? A quoi dois-je m'attendre ?"
+            e "Sur combien de rebelles risquons-nous de tomber ? A quoi dois-je m'attendre ?"
+            
+            h "Le rapport n'indique que peu de détails. Ils n'étaient que quelques dizaines, cinquante, tout au plus."
+            
+            e "Cinquante ? Et nous ne partons qu'à onze ?"
 
-            h "Il n'y a aucun danger. Dans le pire des cas, tu pourrais te faire insulter par une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings. Tu es un huscarl. Rien ne va te résister."
+            h "Il n'y a aucun danger. Ce n'est qu'une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings, tu es un huscarl. Rien ne va te résister !"
+            
+            h "Mais surtout, tu n'es pas sensé te battre contre eux ! Il s'agit d'une mission de reconnaissance, n'engage le combat que si c'est une nécessité absolue !"
 
             jump menu_harald_eclaireur_foret_1
-
 
 
 
@@ -266,28 +294,25 @@ label plaine_1 :
     menu:
         "Merci Logan !":
 
-            e "Merci beaucoup Logan. Je suis heureux de pouvoir compter sur toi !"
+            e "Merci beaucoup Logan, tu ne seras pas de trop !"
 
             l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
 
-            h "Ne vous inquiétez pas. Vous aurez tout les deux de quoi boire et manger une fois revenus !"
-
-            h "Partez dès maintenant, il n'y a pas de temps à perdre. Vous atteindrez Stirling avant la nuit."
-
-            h "Vous atteindrez les villages signalés par les éclaireurs d'ici demain."
+            h "Ne vous inquiétez pas, vous aurez tout les deux de quoi boire et manger une fois revenus ! Ha ha !"
 
 
         "Je regrette, mais non.":
 
-            e "Non, je refuse. Je n'ai pas besoin de toi, Logan. C'est une mission de reconnaissance : moins nous sommes, mieux c'est."
+            e "Je n'ai pas besoin de toi, Logan. C'est une mission de reconnaissance : moins nous sommes, mieux c'est."
 
             l "..."
 
             h "J'ai personnellement demandé à Logan de t'accompagner. Il est le seul à connaître la région, et il facilitera les relations avec les écossais."
-
-            h "Partez dès maintenant, il n'y a pas de temps à perdre. Vous atteindrez Stirling avant la nuit."
-
-            h "Vous atteindrez les villages signalés par les éclaireurs d'ici demain."
+            
+            
+    l "J'ai déjà planifié notre voyage."
+    l "Nous passerons Stirling avant la nuit. Demain, nous atteindrons Perth. C'est le premier village douteux sur notre passage. Puis nous nous dirigerons vers Dundee, Forfar..."
+    h "Parfait ! Il ne vous reste plus qu'à partir, les hommes vous attendent."
 
     hide logan debout_normal
     hide einar debout_normal
@@ -304,13 +329,14 @@ label plaine_2:
 
     show gv debout_normaux at center with dissolve
 
-    gv "Cette mission n'a rien de terrible... Je suis déçu."
-    gv "Nous aurions dû rester plus longtemps à Stirling. Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
+    gv "Cette mission n'a rien de terrible... Je m'attendais à rencontrer de l'opposition !"
+    gv "Nous aurions dû rester plus longtemps à Stirling ! Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
+    l "Ne vous sentez pas à l'abri. Nous ne sommes pas encore arrivés dans le territoire des rebelles, mais ça ne veut pas dire qu'ils ne peuvent pas nous tomber dessus."
 
     show einar debout_normal at left with dissolve
 
     menu:
-        "Motiver les troupes" :
+        "Je suis bien d'accord : on s'ennuie !" :
 
             e "Et je suis convaincu que nous ne rencontrerons rien de plus excitant qu'une tavernière au milieu de toute cette foutue caillasse !"
 
@@ -320,7 +346,7 @@ label plaine_2:
 
             gv "Ha ha ! Bien parlé !"
 
-        "Mettre en garde" :
+        "Logan a raison, méfiez-vous" :
 
                 e "Méfiez vous, le roi n'est pas avec nous."
 
@@ -330,10 +356,10 @@ label plaine_2:
 
                 gv "Vous avez entendu, les gars ? Ouvrez l'oeil."
 
-        "C'est une mission sans intérêt" :
+        "Envoyer des soldats d'élite est injustifié" :
 
                 e "Je suis bien d'accord..."
-                e "Et je suis certain que nous ne rencontrerons rien de pire que des landes et des forêts. Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
+                e "Et je suis certain que nous ne rencontrerons rien de plus terrible que des landes et des forêts ! Pourquoi nous envoyer battre la campagne à la recherche d'une bande de péquenauds ?"
 
                 hide gv debout_normaux with dissolve
 
@@ -341,11 +367,11 @@ label plaine_2:
 
                 l "Tu le prends comme une punition ?"
 
-                e "Oui ! J'estime qu'après tout ce temps à servir Harald, il aurait pu choisir quelqu'un d'autre pour accomplir ce genre de mission."
+                e "Oui ! Après tout le temps que j'ai passé à servir Harald, il aurait pu m'attribuer une mission moins ingrate !"
 
                 e "Je n'en suis plus à mon coup d'essai, bordel !"
 
-        "Chambrer Logan" :
+        "Un problème, Logan ?(chambrer)" :
 
             e "Tu ne parles pas beaucoup, Logan... Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
 
@@ -355,7 +381,9 @@ label plaine_2:
 
             l "..."
 
-            e "Ha, il est obéissant en plus ! Tu attends aussi des autorisations royales pour baiser ? Notre bon Harald doit te la tenir ?"
+            e "Ha, il est obéissant en plus !"
+            
+            e "Je suis sûr qu'il retrouvera la parole quand il trouvera un bel animal ! Séducteur de chèvres !"
 
             l "..."
 
@@ -389,10 +417,13 @@ label foret_1:
 
     show einar debout_normal at left with dissolve
 
-    e "Une forêt. Encore..."
+    l "Nous ne sommes plus très loin de Perth, nous devrions y arriver dans l'après-midi."
+    gv "J'ai l'impression d'avoir déjà vu cette forêt... Tout se ressemble ici !"
+    l "Nous progressons, rassure-toi."
+    gv "Pays de merde ! Le Danemark, ça ressemble quand même à autre chose !"
 
     menu:
-        "Impatient de rentrer en Norvège":
+        "La Norvège me manque":
 
             e "Plus le temps passe, plus la Norvège me manque..."
 
@@ -410,11 +441,11 @@ label foret_1:
             hide gv debout_normaux with dissolve
 
             menu:
-                "J'ai hâte de recevoir les récompens qui m'ont été promises":
+                "J'ai hâte de recevoir les terres qui m'ont été promises":
 
-                    e "Ça fait des années que le roi me fait miroiter des récompenses sans jamais me les offrir..."
+                    e "Ça fait des années que le roi me fait miroiter des terres en Norvège sans jamais me les offrir..."
 
-                    e "Depuis le temps qu'il me promet des terres, je devrais déjà vivre comme un prince !"
+                    e "Depuis le temps qu'il me les promet, je devrais déjà vivre comme un prince !"
 
                     show logan debout_normal at right with dissolve
 
@@ -426,19 +457,14 @@ label foret_1:
 
                     e "Taisez-vous maintenant. La route est encore longue et j'en ai déjà assez d'écouter vos histoires de bonnefemmes."
 
-                    e "Logan ? Où en sommes-nous ?"
+                    e "Perth n'est plus très loin, restez silencieux."
 
                     show logan debout_normal at right with dissolve
 
-                    l "Nous atteindrons Perth demain matin. C'est le premier village sur notre chemin."
 
-                    l "D'après les rapports, les rebelles sont venus de cette région."
+        "J'imagine la tête de ces salopards d'écossais !" :
 
-                    l "C'est un petit village sans défenses. Si nous ne trouvons rien, nous poursuivrons jusqu'à Dundee."
-
-        "Se moquer des autochtones" :
-
-            e "J'imagine la tête des sauvages qui vivent dans la région. C'est une bonne chose que les écossais aient intégré l'empire : ça les civilise un peu !"
+            e "J'imagine la tête des sauvages qui vivent dans la région. Foutus écossais ! Il n'y a qu'à voir la trogne de Logan pour savoir que quelque chose ne tourne pas rond chez ces gens là !"
 
             e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
             show gv debout_normaux at center with dissolve
@@ -446,25 +472,25 @@ label foret_1:
 
             show logan debout_normal at right with dissolve
 
-            l "Non. Nous vivons dans des maisons de pierre."
-
-            l "Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
+            l "Nous vivons dans des maisons de pierre, à la différence de vos cabanes en bois. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
 
             hide gv debout_normaux with dissolve
 
-        "Impatient de terminer la mission" :
+        "Je voudrais déjà être rentré" :
 
-            e "Je commence à être lassé de cette saloperie de randonnée."
+            e "Je suis déjà lassé par cette foutue randonnée !"
 
             e "Une journée à crapahuter sans voir âme qui vive... "
 
-            e "On trouve le village et on rentre au château. Et à bride abattue !"
+            e "On trouve les rebelles et on rentre au château. Et à bride abattue !"
 
-        "Motiver les troupes" :
+        "Ne vous découragez pas" :
 
-            e "Ne relâchez pas l'effort. D'ici une journée, nous nous serons suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
+            e "Ne relâchez pas l'effort. Nous nous sommes suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
+            
+            e "Tout ça sera bientôt terminé !"
 
-        "Chambrer Logan" :
+        "Alors Logan ? Tu rêves de brebis ? (chambrer)" :
 
             e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps d'une de ces magnifiques brebis écossaises ?"
 
@@ -474,7 +500,7 @@ label foret_1:
             show gv debout_normaux at center with dissolve
             gv "Ha ha !"
             hide gv debout_normaux with dissolve
-        "Demander à Logan ce qu'il pense de la mission" :
+        "Que penses-tu de la mission, Logan ?" :
 
             e "Tu es le seul à ne pas encore t'être plaint..."
             show logan debout_normal at right with dissolve
