@@ -154,6 +154,10 @@ init -1 python hide:
     ## Notez que cela ne change que la taille de certains textes. Les
     ## boutons ont leur propre style.
 
+    #########################################
+    ## Ici nous personnalisons la police utilisé pour les personnages qui parle
+
+    style.say_label.font = "fonts/Anglorunic.otf"
 
     #########################################
     ## Ici nous changeons les sons utilisés par Ren'Py
