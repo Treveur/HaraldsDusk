@@ -4,8 +4,10 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
 
+renpy.register_anglorunik("runik", 22, filename="anglorunik.otf")
+
 ##Einar
-define e = Character('Einar', color="#e74c3c")
+define e = Character('Einar', what_font="anglorunik.otf", what_size=22 color="#e74c3c")
 
 #Debout
 image einar debout_normal = "einar/debout/einar_debout_normal.png"
