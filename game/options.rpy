@@ -28,9 +28,6 @@ init -1 python hide:
     config.name = "Harald's Dusk"
     config.version = "0.4.1"
 
-    #Changer couleur texte
-    #style.default.color = "#FFFFFF"
-
     #########################################
     ## Thèmes
 
@@ -150,6 +147,9 @@ init -1 python hide:
     ## La taille par défaut du texte.
 
     # style.default.size = 22
+
+    #Changer couleur texte
+    #style.default.color = "#FFFFFF"
 
     ## Notez que cela ne change que la taille de certains textes. Les
     ## boutons ont leur propre style.
