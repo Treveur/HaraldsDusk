@@ -97,6 +97,7 @@ init -2 python:
     style.menu_choice_button.set_parent(style.button)
     style.menu_choice_button.xminimum = int(config.screen_width * 0.75)
     style.menu_choice_button.xmaximum = int(config.screen_width * 0.75)
+    #style.menu_choice.font="FILE NAME HERE"
 
 
 ##############################################################################

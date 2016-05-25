@@ -4,7 +4,10 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
 
+#renpy.register_anglorunik("runik", 22, filename="anglorunik.otf")
+
 ##Einar
+#define e = Character('Einar', what_font="anglorunik.otf", what_size=22 color="#e74c3c")
 define e = Character('Einar', color="#e74c3c")
 
 #Debout
@@ -28,9 +31,9 @@ image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
 image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
 
-
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
+
 
 ##Logan
 define l = Character('Logan', color="#f1c40f")
@@ -76,7 +79,7 @@ image huscarls debout_normal = "huscarls/debout/huscarls_debout_normaux.png"
 image huscarls debout_rire = "huscarls/debout/huscarls_debout_rire.png"
 
 #Combat
-image huscarls combat_normal = "huscarls/combat/huscarls_combat_normaux.png"
+image huscarls combat_normaux = "huscarls/combat/huscarls_combat_normaux.png"
 image huscarls combat_enthousiaste = "huscarls/combat/huscarls_combat_enthousiaste.png"
 image huscarls combat_furieux = "huscarls/combat/huscarls_combat_furieux.png"
 image huscarls combat_inquiets = "huscarls/combat/huscarls_combat_inquiets.png"
@@ -148,15 +151,15 @@ image moira attache_furieus = "moira/buchet/moira_attache_furieuse.png"
 define ge = Character('rebelles écossais', color="#f39c12")
 
 #Debout
-#image ge debout_normaux = "ge_debout_normaux.png"
-#image ge debout_enthousiastes = "ge_debout_enthousiaste.png"
-#image ge debout_inquiets = "ge_debout_inquiets.png"
-#image ge debout_rire = "ge_debout_rire.png"
+image re debout_normaux = "rebelles_ecossais/debout/re_debout_normaux.png"
+image re debout_enthousiastes = "rebelles_ecossais/debout/re_debout_enthousiastes.png"
+image re debout_inquiets = "rebelles_ecossais/debout/re_debout_inquiets.png"
+image re debout_rire = "rebelles_ecossais/debout/re_debout_rire.png"
 
 #Combat
-#image ge combat_normaux = "ge_combat_normaux.png"
-#image ge combat_blesse = "ge_combat_blesse.png"
-#image ge combat_furieux = "ge_combat_furieux.png"
+image re combat_normaux = "rebelles_ecossais/combat/re_combat_normaux.png"
+image re combat_blesse = "rebelles_ecossais/combat/re_combat_blesses.png"
+image re combat_furieux = "rebelles_ecossais/combat/re_combat_furieux.png"
 
 
 ##Villageois / prisonniers
@@ -173,7 +176,7 @@ image ve debout_effrayes = "villageois_ecossais/debout/ve_debout_effrayes.png"
 
 #Buchet
 image ve buchet_normaux = "villageois_ecossais/buchet/ve_buchet_effrayes.png"
-image ve buchet_craintifs = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
+image ve buchet_pleurent = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
 
 ##Patrick
 define p = Character("Patrick")
@@ -218,13 +221,13 @@ define audio.slaughter = "sounds/musics/music_drama_slaughter.mp3"
 #define audio.drama_slaughter = "sounds/musics/music_drama_slaughter.wav"
 
 #SFX
-define audio.blade_1 = "sounds/musics/SFX_Blade1.mp3"
-define audio.blade_2 = "sounds/musics/SFX_Blade2.mp3"
-define audio.double_horn = "sounds/musics/SFX_Double_WarHorn.mp3"
-define audio.drawbrigde = "sounds/musics/SFX_Drawbridge_Down.mp3"
-define audio.hurt_man_1 = "sounds/musics/SFX_Hurt_Man.mp3"
-define audio.hurt_man_2 = "sounds/musics/SFX_Hurt_Man2.mp3"
-define audio.hurt_man_3 = "sounds/musics/SFX_Hurt_Man3.mp3"
+define audio.blade_1 = "sounds/sfx/SFX_Blade1.mp3"
+define audio.blade_2 = "sounds/sfx/SFX_Blade2.mp3"
+define audio.double_horn = "sounds/sfx/SFX_Double_WarHorn.mp3"
+define audio.drawbrigde = "sounds/sfx/SFX_Drawbridge_Down.mp3"
+define audio.hurt_man_1 = "sounds/sfx/SFX_Hurt_Man.mp3"
+define audio.hurt_man_2 = "sounds/sfx/SFX_Hurt_Man2.mp3"
+define audio.hurt_man_3 = "sounds/sfx/SFX_Hurt_Man3.mp3"
 
 #ambiance
 define audio.burning_dungeon = "sounds/ambiances/ambiance_burning_dungeonkeep.mp3"
@@ -246,15 +249,13 @@ label start:
 
     scene bg black
 
-    centered "En l'an 1038, Harald Sigurdsson de Norvège, frère d'Olaf le Saint, découvre les Clous de la Sainte Croix à Jérusalem alors qu'il est garde varègue au service de l'Impératrice Zoé de Constantinople."
+    centered "En l'an 1038, Harald Sigurdsson de Norvège, frère d'Olaf le Saint, s'empare des Clous de la Sainte Croix à Jérusalem alors qu'il est garde varègue au service de l'Impératrice Zoé de Constantinople."
 
     centered "Les Clous donnent à Harald la force et l'immortalité. Le viking, convaincu d'être un élu divin, décide d'orner sa hache des Clous. Il créé ainsi une nouvelle relique : la Hache Sainte."
 
     centered "Revenu triomphalement en Norvège, il est couronné roi et entame de grandes campagnes militaires visant à christianiser le monde ainsi qu'à asseoir sa suprématie."
 
     centered "Armé de la Hache Sainte, Harald prend le contrôle de l'Europe, du Moyen-Orient et d'une partie de l'Asie et de l'Afrique. En 1080, Harald est devenu l'équivalent d'Alexandre le Grand : un roi-empereur, une légende vivante, un demi-dieu."
-
-    centered "L'hégémonie des vikings et du christianisme est presque totale."
 
     centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
 
