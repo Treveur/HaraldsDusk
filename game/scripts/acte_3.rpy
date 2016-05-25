@@ -1333,6 +1333,7 @@ label foret_4:
             e "Je me servi de toi pour quitter le village"
             show moira debout_attriste at right
             $ rejeter_moira_foret_4 = True
+
     hide moira
     hide einar
     with dissolve
@@ -1424,6 +1425,7 @@ label e_garder_hache_pont_baisse_donjon:
             e "Je la détruirai moi-même. C'est mon devoir."
             o "Tu ne me fais pas confiance ?"
             e "Ce n'est pas le problème. Je veux simplement être absolument certain que personne n'en profitera plus jamais."
+            hide einar with dissolve
             jump lieu_encore_inconnu_1
 
         "La garder !":
@@ -1431,8 +1433,10 @@ label e_garder_hache_pont_baisse_donjon:
             e "Je l'ai prise, elle m'appartient."
             e "J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient !"
             e "Harald n'était qu'un mou, il a cessé ses conquêtes bien trop tôt !"
+            show einar combat_hache_determine at left
             e "Le monde se pliera devant moi !"
             e "A genoux, manants ! HA HA HA !"
+            hide einar with dissolve
             jump good_ending_9
 
 
@@ -1440,6 +1444,11 @@ label lieu_encore_inconnu_1(axe = True):
 
     $ demander_main_moira = False
     $ refuser_or = False
+
+    show einar debout_normal at left
+    show ogma debout_normal at right
+    show moira debout_normal at right
+    with dissolve
 
     if axe:
         "..."
@@ -1450,11 +1459,13 @@ label lieu_encore_inconnu_1(axe = True):
         o "A vrai dire, je suis heureux que tu ais choisi de te débarrasser de la Hache toi-même."
         o "J'aurais pu être tenté d'en fair un mauvais usage..."
         o "Aucun homme ne devrait jamais avoir un tel pouvoir entre ses mains."
+        show einar debout_contrarie at left
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
 
     else:
+        show ogma debout_souriant at right
         "Ogma félicite Einar pour avoir triomphé de Harald. Il lui donne la part de trésor promise. Moira se tient légèrement à l'écart."
         "..."
         "Moira se tient à l'écart mais semble interessée pas la conversation."
@@ -1463,10 +1474,12 @@ label lieu_encore_inconnu_1(axe = True):
         o "Je ne sais pas ce que tu as fait de la Hache, mais je ne veux pas le savoir. Ne révèle jamais à personne ton secret."
         o "A vrai dire, je suis heureux que tu ais choisi de te débarrasser de la Hache toi-même."
         o "Aucun homme ne devrait jamais avoir un tel pouvoir entre ses mains."
+        show einar debout_contrarie at left
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
 
+    show einar debout_normal at left
 
     menu:
 
@@ -1475,28 +1488,38 @@ label lieu_encore_inconnu_1(axe = True):
             o "Je t'écoute ?"
             e "Je vous demande la main de votre fille."
             "Ogma soupire."
+            show ogma debout_contrarie at right
             o "Je suis sincèrement navré, Einar, mais je ne peux pas accepter."
             o "Je refuse que ma fille et sa descendance partagent le nom d'un régicide."
             $ demander_main_moira = True
 
         "Remercier":
+            show einar debout_souriant at left
             e "Je vous remercie."
             e "Je n'étais pas certain que vous tiendriez votre parole."
+            show ogma debout_contrarie at right
             o "Et je n'étais pas certain que tu tiendrais la tienne !"
+            show ogma debout_souriant at right
             o "Nous sommes quittes."
 
         "Prendre l'or avec amertume":
+            show einar debout_attriste at left
             e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
+            show ogma debout_attriste at right
             o "Ce que nous t'avons fait faire était cruel, mais nous n'avions pas d'autre choix, tu le sais."
             o "Je comprends que tu éprouves de la rancoeur, mais ne la dirige pas vers l'Ecosse ni les gens d'ici."
             o "Dirige-la vers moi. Je suis responsable de tout ce qui t'es arrivé."
             e "..."
 
         "Refuser l'or":
+            show einar debout_contrarie at left
             e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
             o "Voilà une belle preuve d'humilité."
+            show ogma debout_attriste at right
             o "Je suis désolé de t'avoir entraîné dans ce massacre, mais je n'avais pas le choix."
+            show ogma debout_determine at right
             o "Ce que j'ai fait, c'était avant tout pour le bien de l'Ecosse et du reste du monde."
+            show einar debout_attriste at left
             e "Sans doute."
             $ refuser_or = True
 
@@ -1504,20 +1527,33 @@ label lieu_encore_inconnu_1(axe = True):
     if demander_main_moira:
         menu menu_demande_main_moira_lieu_encore_inconnu_1:
             "Accepter la décision":
+                show einar debout_attriste at left
                 e "Je comprends. Si j'avais su, j'aurais épargné le roi..."
+                show ogma debout_normal at right
                 o "..."
+
             "Avis Moira":
+                show einar debout_determine at left
                 e "Moira, qu'en penses-tu ?"
+                #Animation moira se rapprochant
                 "Elle se rapproche des deux hommes, comprenant de quoi il est question."
+                show moira debout_attriste at right
                 m "Je... Je suis d'accord avec mon père."
                 "Les larmes lui montent aux yeux."
+
             "Pas à Ogma de décider":
+                show einar debout_determine at left
                 e "Ce n'est pas à vous d'en décider. Votre fille doit choisir elle-même. Il s'agit de son propre avenir, pas du votre !"
+                show ogma debout_furieux at right
                 o "J'aurais punis ton insolence si je ne comprenais pas ton désarroi."
-                m "Calme-toi, Einar. Je n'ai pas d'autre choi que de me ranger à l'avis de mon père."
+                show moira debout_attriste at right
+                m "Calme-toi, Einar. Je n'ai pas d'autre choix que de me ranger à l'avis de mon père."
                 "Les larmes lui montent aux yeux."
 
+    show ogma debout_normal at right
+
     if refuser_or:
+
         o "Refuser l'or de la trahison et du sang t'honore. Et maintenant, que vas-tu faire ?"
     else:
         o "Et maintenant, que vas-tu faire ?"
