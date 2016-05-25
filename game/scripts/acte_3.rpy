@@ -1551,6 +1551,7 @@ label lieu_encore_inconnu_1(axe = True):
                 "Les larmes lui montent aux yeux."
 
     show ogma debout_normal at right
+    hide moira with dissolve
 
     if refuser_or:
 
@@ -1562,28 +1563,46 @@ label lieu_encore_inconnu_1(axe = True):
     menu plan_futur_lieu_encore_inconnu_1:
 
         "Je vais me payer des femmes et des jeux !" if refuser_or == False:
+            show einar debout_souriant at left
             e "Je vais dépenser l'or en femmes et en jeux, ha ha !"
             e "De toutes manières, je n'ai plus grand chose à faire."
             e "Ma carrière militaire est terminée et je n'ai nul part où aller en particulier."
             e "Je suis seul au monde ! Un peu de chaleur humaine ne me fera pas de mal !"
+
         "Ermite en Ecosse":
+            show einar debout_attriste at left
             e "Rester ici, en Ecosse. Seul."
             e "J'ai déjà suffisamment donné de ma personne."
+            show ogma debout_attriste at right
             o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
             o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
+
         "Je rentrerai en Norvège":
+            show einar debout_attriste at left
             e "Rentrer en Norvège, malgré le danger. C'est ma seule demeure, et je ne l'ai pas vue depuis bien trop longtemps."
             o "La nostalgie des terres natales..."
+            show ogma debout_attriste at right
             o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
+
         "Je vivrai au jour le jour":
+            show einar debout_normal at left
             e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
             o "J'imagine qu'à ta place, je n'en saurais pas plus."
+            show ogma debout_souriant at right
             o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
+
         "J'irai en Asie":
+            show einar debout_normal at left
             e "Aller en Asie, là où personne ne viendra me chercher. J'ai toujours été intrigué par cette région du monde."
             o "C'est assez... Surprenant !"
+            show ogma debout_normal at right
             o "Il ne me reste plus qu'à te souhaiter bon voyage."
+            show ogma debout_souriant at right
             o "Si le coeur t'en dit, n'hésite pas à revenir ici. Tu trouveras toujours des amis à Perth."
+
+    hide einar
+    hide ogma
+    with dissolve
 
     if axe:
         jump good_ending_8
