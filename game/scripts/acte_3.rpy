@@ -33,12 +33,12 @@ label exterieur_chateau_1:
             e "Écarte-toi, Geir! Je dois parler au roi sans tarder !"
             gc "Bien sûr, excuse-moi."
 
-        "Explications vagues":
+        "Pas mal de choses...":
             e "Il m'est arrivé toutes sorte de chose que je n'ai ni le temps ni l'envie de te raconter. Les autres sont tous morts et j'ai bien failli y passer aussi."
             e "Maintenant, laisse-moi passer."
             gc "Bien sûr, excuse-moi."
 
-        "Menacer":
+        "Ne me barre pas la route !":
             show einar debout_determine at left
             e "Laisse-moi passer, andouille. On ne barre pas la route à un huscarl ! Je dois voir le roi au plus vite !"
             gc "Bien sûr, excuse-moi."
@@ -69,13 +69,13 @@ label cour_chateau_1:
 
     menu:
 
-        "Content d'être rentré":
+        "Je suis content de vous revoir":
             show einar debout_souriant at left
             e "Quel plaisir de vous retrouver, mon roi !"
             h "La surprise est bonne ! Je désesperais de te revoir un jour. J'étais convaincu d'avoir perdu l'un de mes meilleurs huscarls !"
             h "A vrai dire, je tenais pour acquis que tu étais mort quelque part dans le nord, victime des rebelles..."
 
-        "Peur de ne pas revenir":
+        "J'ai cru ne pas pouvoir revenir":
             show einar debout_attriste at left
             e "J'ai bien cru ne jamais revenir, sire."
             h "Eh bien après tous ce temps, on te croyait mort. J'étais persuadé que toi et tes compagnons étiez morts de la main des rebelles !"
@@ -93,7 +93,7 @@ label cour_chateau_1:
     h "Et l'escorte qui t'accompagnais ? Et Logan ?"
 
     menu:
-        "Dire ne rien savoir (mentir)":
+        "Je n'en sais rien (mentir)":
             show einar debout_normal at left
             e "Je ne sais pas. Nous traversions une forêt en pleine nuit. J'ai été assommé... A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
             h "Un fossé ?"
@@ -101,7 +101,7 @@ label cour_chateau_1:
             h "Et tes blessures ? Comment les as-tu soignées ?"
             jump menu_assome_cour_chateau
 
-        "Raconter l'embuscade":
+        "Nous sommes tombés dans une embuscade":
         #modifaction pour indiquer le lieu par la suite
             show einar debout_normal at left
             e "Nous venions de traverser le village de Perth, que nous soupçonnions d'abriter les rebelles."
@@ -147,7 +147,7 @@ label cour_chateau_1:
 
     menu menu_embuscade_ou_silence_cour_chateau:
 
-        "Village et Moira":
+        "Je me suis retrouvé dans un village, des gens m'ont aidé":
             show einar debout_normal at left
             e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
             e "Un chasseur m'a trouvé alors qu'il allait relever des collets. Il m'a ramené à son village puis sa fille s'est occupée de moi. Elle s'appelait Moira."
@@ -164,7 +164,7 @@ label cour_chateau_1:
             e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
             h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
-        "Perte de mémoire (mentir)" if retour_silence_1:
+        "J'ai perdu la mémoire (mentir)" if retour_silence_1:
             show einar debout_normal at left
             e "Je ne me rappelle de rien... Simplement de ce coup à la tête."
             e "Après, il n'y a qu'un grand vide jusqu'à il y a trois jours, lorsque je me suis réveillé dans les bois."
@@ -175,11 +175,10 @@ label cour_chateau_1:
     h "J'espère que tout ce que tu me dis là est vrai."
     h "Je ne tolère pas le mensonge, Einar. Ton histoire me paraît bien obscure. Je te fais confiance, mais si j'apprends que tu m'as menti..."
     h "Es-tu certain de m'avoir dit la vérité ? Si ce n'est pas le cas, je suis prêt à te pardonner pourvu que tu m'avoues ce qu'il s'est réellement passé."
+    e "(C'est maintenant ou jamais...)"
 
     menu :
-        e "(C'est maintenant ou jamais...)"
-
-        "Dire toute la vérité":
+        "Voici toute la vérité":
             show einar debout_normal at left
             e "Très bien. Voici la vérité."
             e "Après avoir traversé le village de Perth, nous sommes tombés dans une embuscade des rebelles. Ils avaient probablement été prévenus de notre arrivée."
@@ -255,7 +254,7 @@ label cour_chateau_1:
     show patrick debout_normal at right
 
     menu:
-        "Arrêter le massacre":
+        "Arrêtez le massacre !":
             show einar debout_furieux at left
             e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
             show patrick debout_normal at right
@@ -286,7 +285,7 @@ label cour_chateau_1:
     if interpose_bucher:
 
         menu menu_sauver_rebelle_cour_chateau:
-            "Pas vus à Perth":
+            "Je ne les ai pas vus à Perth":
                 show einar debout_normal at left
                 e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
                 e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
@@ -349,7 +348,7 @@ label cour_chateau_1:
             e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
             $ reponse_reconfort = "pleurer"
 
-        "Pas besoin de les pleurer":
+        "Ne pleure pas ces parasites":
             e "Ne pleure pas ces parasites, ils ne le méritent pas."
             show einar debout_determine at right
             e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
@@ -457,7 +456,7 @@ label pont_levis_baisse:
             show einar combat_determine at left
             e "Arrière ! Je vous ferai rendre gorge !"
 
-        "Tactique du roi":
+        "C'est une tactique du roi":
             show einar combat_normal at left
             e "C'était une tactique imaginée par notre roi !"
 
@@ -513,7 +512,7 @@ label pont_levis_baisse:
                 show einar combat_normal at left
                 e "Je n'ai pas réfléchi !"
 
-            "Viens te battre":
+            "Viens te battre !":
                 show einar combat_determine at left
                 e "Ferme la et bats-toi, raclure !"
 
@@ -591,12 +590,12 @@ label e_bruler_donjon_desobeir_donjon:
 
     menu :
 
-        "Le tuer":
+        "Désolé (le tuer)":
             show einar combat_determine at left
             e "Désolé, petit. Nous ne sommes plus dans le même camp."
             "Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément."
 
-        "L'assommer":
+        "Saisi ta chance (l'assommer)":
             show einar combat_determine at left
             e "Je t'offre l'occasion de refaire ta vie, saisi-la."
             "Du plat de sa hache, Einar frappe le soldat à la tempe. Il s'écroule à terre, inconscient"
@@ -624,11 +623,11 @@ label e_bruler_donjon_desobeir_donjon:
     h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
-        "Ne rien regretter":
+        "Sans regrets !":
             show einar combat_determine at left with dissolve
             e "Je ne regrette rien."
 
-        "Demander pardon":
+        "Pardon":
             show einar debout_attriste at left with dissolve
             e "Je regrette tout et vous demande pardon, Sire."
 
@@ -690,7 +689,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
             "Einar ? Que fais-tu ici ? Où est la Hache ?"
 
-            "Je l'ai jeté":
+            "Je l'ai jetée":
                 show einar combat_determine at left
                 e "La Hache est perdue. Tout est terminé."
                 show harald combat_furieux at left
@@ -704,7 +703,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show harald combat_furieux at left
                 h "Tu me mens ! Encore !"
 
-            "Mentir":
+            "Geir l'a volée (mentir)":
                 show einar combat_normal at left
                 e "J'ai vu Geir la voler !"
                 show harald combat_furieux at left
@@ -718,7 +717,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         menu:
             "Einar ? Que fais-tu avec ma Hache ?"
 
-            "Harald n'est plus rien":
+            "Vous n'êtes plus rien":
                 show einar combat_hache_normal at left
                 e "Je l'ai prise, en même temps que le pouvoir. Vous n'êtes plus rien."
                 show harald combat_furieux at right
@@ -732,7 +731,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show harald combat_furieux at right
                 h "Tu es complètement fou !"
 
-            "Rétablir l'équilibre":
+            "Je rétablis l'équilibre":
                 show einar combat_hache_determine at left
                 e "Je l'ai prise pour vous en priver. Il est temps de rétablir l'ordre naturel des choses."
 
@@ -751,7 +750,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         e "J'ai la Hache. Vous ne pouvez rien contre moi !"
 
         menu:
-            "Fin du règne (le tuer)":
+            "Fin de votre règne (le tuer)":
                 show einar combat_hache_normal at left
                 e "Votre règne s'achève ici et maintenant. Vous allez mourir."
                 show harald combat_blesse at right
@@ -760,13 +759,13 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 e "Pardon ?"
                 h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
 
-            "Pas de répit (le tuer)":
+            "Pas de répit pour vous (le tuer)":
                 show einar combat_hache_normal at left
                 e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
                 show harald combat_furieux at right
                 h "Tu es fou !"
 
-            "Épargner":
+            "Vous avez déjà perdu (épargner)":
                 show einar combat_hache_normal at left
                 e "Vous avez déjà perdu. Je vais vous épargner."
                 show harald combat_normal at right
@@ -776,7 +775,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
 
-            "Je vous suis supérieur":
+            "Je vous suis supérieur (épargner)":
                 show einar combat_hache_determine at left
                 e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
                 show harald combat_blesse at right
@@ -798,7 +797,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     if epargner_harld_donjon:
         menu :
-            "Le laisser s'enfuir":
+            "Partez d'ici":
 
                 show einar combat_hache_furieux at left
                 e "Partez d'ici. Ne revenez jamais en Ecosse."
@@ -813,7 +812,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Harald s'enfuit sans demander son reste"
                 jump fuite_harald_pont_baisse_donjon
 
-            "Le livrer à Ogma":
+            "Ogma veut vous rencontrer...":
                 "..."
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
                 show einar combat_hache_normal at left
@@ -852,9 +851,9 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         o "Donne la moi, s'il-te-plaît."
 
         menu:
-            "Donner la Hache Sainte":
+            "La voilà.":
                 jump good_ending_7
-            "Garder la Hache Sainte":
+            "Elle est à moi !":
                 jump e_garder_hache_pont_baisse_donjon
 
 label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
@@ -894,7 +893,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             e "Je ne sais pas si vous y croyez vous-même."
             h "Je suis le porteur de la Hache ! J'ai été guidé par le Seigneur jusqu'aux Clous de la Sainte-Croix !"
 
-        "Provoquer":
+        "J'avais envie de déranger l'ordre établi":
             show einar combat_normal at left
             e "L'ordre des choses m'ennuyait..."
             e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."
@@ -915,7 +914,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
     menu :
         "Que répondre ?"
 
-        "J'ai mon amulette protectrice":
+        "J'ai mon amulette protectrice !":
             show einar combat_normal at left
             e "C'est l'occasion de voir si ce vieux grigri fonctionne vraiment..."
             e "Voyez, Sire ! C'est un crucifix sculpté une nuit de pleine lune à l'équinoxe de printemps !"
@@ -930,7 +929,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             h "Au moins, tu auras suivi tes convictions..."
             h "Quitte à trahir ton roi et à provoquer la mort de tous ceux qui te comptaient comme un ami !"
 
-        "Demander pardon":
+        "Pardon":
             show einar combat_normal at left
             e "Et si j'implore votre pardon, Sire ?"
 
@@ -961,20 +960,20 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     menu :
         "Que dire à Harald ?"
 
-        "Fin du règne (le tuer)":
+        "Fin de votre règne (le tuer)":
             show einar combat_determine at left
             e "Votre règne s'achève ici et maintenant. Vous allez mourir."
             h "Je m'avoue vaincu ! Ne me tue pas !"
             e "Pardon ?"
             h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
 
-        "Pas de répit (le tuer)":
+        "Pas de répit pour vous (le tuer)":
             show einar combat_determine at left
             e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
             show harald combat_furieux at right
             h "Tu es fou !"
 
-        "Épargner":
+        "Vous avez déjà perdu (épargner)":
             show einar combat_normal at left
             e "Vous avez déjà perdu. Je vais vous épargner."
             show harald combat_normal at right
@@ -983,7 +982,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
             e "Ne vous réjouissez pas trop vite."
             $ epargner_harld__no_axe_donjon = True
 
-        "Je vous suis supérieur":
+        "Je vous suis supérieur (épargner)":
             show einar combat_normal at left
             e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
             show harald combat_normal at right
@@ -1009,7 +1008,7 @@ label e_epargne_harald_no_axe_donjon:
 
     menu:
 
-        "Pas envie de tuer un roi (Laisser fuir)":
+        "Je ne veux pas tuer un roi (Laisser fuir)":
             show einar combat_determine at left
             e "Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera."
             e "Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
@@ -1019,7 +1018,7 @@ label e_epargne_harald_no_axe_donjon:
             show einar combat_furieux at left
             e "Fuyez, avant que je ne change d'avis. Ne me demandez pas d'explications."
 
-        "Livrer à Ogma":
+        "Je vais vous livrer à Ogma":
             e "Je vais vous livrer au Hurleur, il saura quoi faire de vous. Tout ceci n'est plus de mon ressort."
             $ harald_echape_no_axe = False
 
@@ -1113,12 +1112,12 @@ label village_5:
             e "J'ai rempli ma part du contrat et fait ce qui me semblait juste. Je regrette que nous nous séparions en ces termes."
             e "Adieu."
 
-        "Être désolé":
+        "Je suis désolé":
             show einar debout_attriste at left
             e "Je regrette de l'avoir laissé partir. J'espère que vous me pardonnerez."
             o "Crois bien que je suis aussi navré que toi. Pars, maintenant."
 
-        "Partir":
+        "Adieu":
             show einar debout_contrarie at left
             e "Je ne comptais pas rester ici. Adieu."
 
@@ -1143,20 +1142,20 @@ label village_6:
     o "Comme promis, voici ton or et un cheval prêt à t'emmener où bon te semble."
 
     menu:
-        "Remercier":
+        "Merci":
             show einar debout_souriant at left
             e "Je vous remercie."
             e "En vingt ans, jamais Harald ne m'avait offert autant de récompenses !"
             e "Libérer un peuple et repartir avec de l'or..."
             e "C'est bien plus gratifiant que de servir un roi qui ne tient pas ses promesses !"
 
-        "Regrets":
+        "L'or ne rachètera pas les morts":
             show einar debout_contrarie at left
             e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
             show ogma debout_attriste at right
             o "Je comprends. J'espère que ton amertume s'estompera avec le temps."
 
-        "Juste une question de survie (refuser l'or)":
+        "C'était une question de survie (refuser l'or)":
             show einar debout_contrarie at left
             e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
             show ogma debout_attriste at right
@@ -1188,13 +1187,13 @@ label village_6:
             show ogma debout_souriant at right
             o "À la bonne heure !"
 
-        "Un honneur":
+        "C'est un honneur":
             show einar debout_souriant at left
             e "J'accepte. C'est un grand honneur que vous me faites."
             show ogma debout_souriant at right
             e "Je n'aurais pas pu espérer une plus belle récompense !"
 
-        "Pas de sentiments":
+        "Pas de sentiments pour Moira":
             show einar debout_attriste at left
             e "Ces sentiments ne sont pas partagés. Je préfère conserver ma liberté."
             show ogma debout_contrarie at right
@@ -1223,20 +1222,20 @@ label village_6:
                 o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
                 o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
 
-            "Rentrer en Norvège":
+            "Je vais rentrer en Norvège":
                 show einar debout_determine at left
                 e "Rentrer en Norvège, malgré le danger. C'est ma seule demeure, et je ne l'ai pas vue depuis bien trop longtemps."
                 show ogma debout_attriste at right
                 o "La nostalgie des terres natales..."
                 o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
 
-            "Vivre au jour le jour":
+            "Je vivrai au jour le jour":
                 show einar debout_normal at left
                 e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
                 o "J'imagine qu'à ta place, je n'en saurais pas plus."
                 o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
 
-            "Aller en Asie":
+            "J'irai en Asie":
                 show einar debout_normal at left
                 e "Aller en Asie, là où personne ne viendra me chercher. J'ai toujours été intrigué par cette région du monde."
                 show ogma debout_souriant at right
@@ -1278,7 +1277,7 @@ label foret_4:
 
     menu menu_reponse_moira_suivre_einar:
 
-        "Pas de raison de le suivre" if premier_refus_moira_foret_4 == False:
+        "Tu n'as pas de raison de me suivre" if premier_refus_moira_foret_4 == False:
             show einar debout_attriste at left
             e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
             e "Reste ici, avec ton père et les autres."
@@ -1289,7 +1288,7 @@ label foret_4:
             "..."
 
 
-        "Pas contrarier Ogma" if premier_refus_moira == False:
+        "Je ne veux pas contrarier Ogma" if premier_refus_moira == False:
             show einar debout_attriste at left
             e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père."
             show einar debout_contrarie at left
@@ -1302,7 +1301,7 @@ label foret_4:
             e "Je n'irai pas contre son avis. N'insiste pas."
             e "Au revoir, Moira."
 
-        "Pas les même sentiments":
+        "Nous n'éprouvons pas les même sentiments":
             show einar debout_normal at left
             e "Je ne t'aime pas, Moira."
             show einar debout_souriant at left
@@ -1314,25 +1313,25 @@ label foret_4:
             e "Non, je regrette. Laisse-moi partir maintenant, s'il-te-plaît."
             $ rejeter_moira_foret_4 = True
 
-        "Tendre les bras" if premier_refus_moira == False:
+        "(Tendre les bras)" if premier_refus_moira == False:
             show einar debout_souriant at left
             show moira debout_souriant at right
             "Sans dire un mot, Einar tend les bras vers Moira."
             "La jeune femme se précipite vers le viking et l'étreint."
             "Einar et Moira passent quelques minutes à profiter de l'instant."
 
-        "Viens" if premier_refus_moira == False:
+        "Viens avec moi" if premier_refus_moira == False:
             show einar debout_souriant at left
             e "Viens avec moi, Moira."
             show moira debout_attriste at right
             "La jeune femme se précipite vers le viking et l'étreint."
             "Einar et Moira passent quelques minutes à profiter de l'instant."
 
-        "Autre choix refus" if premier_refus_moira:
-            show einar debout_determine at left
-            e "Je me servi de toi pour quitter le village"
-            show moira debout_attriste at right
-            $ rejeter_moira_foret_4 = True
+        #"Autre choix refus" if premier_refus_moira:
+            #show einar debout_determine at left
+            #e "Je me servi de toi pour quitter le village"
+            #show moira debout_attriste at right
+            #$ rejeter_moira_foret_4 = True
     hide moira
     hide einar
     with dissolve
@@ -1383,10 +1382,10 @@ label fuite_harald_pont_baisse_donjon:
     o "Donne-la moi, s'il-te-plaît."
 
     menu:
-        "Conserver la Hache":
+        "La voilà":
             show einar combat_hache_determine
             jump e_garder_hache_pont_baisse_donjon
-        "Donner la Hache Sainte":
+        "Elle est à moi !":
 
             hide einar
             hide ogma
@@ -1419,14 +1418,14 @@ label e_garder_hache_pont_baisse_donjon:
 
     menu:
 
-        "La détruire moi-même":
+        "Je la détruirai moi-même":
             show einar combat_hache_normal at left
             e "Je la détruirai moi-même. C'est mon devoir."
             o "Tu ne me fais pas confiance ?"
             e "Ce n'est pas le problème. Je veux simplement être absolument certain que personne n'en profitera plus jamais."
             jump lieu_encore_inconnu_1
 
-        "La garder !":
+        "Je la garde !":
             show einar combat_hache_determine at left
             e "Je l'ai prise, elle m'appartient."
             e "J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient !"
@@ -1470,7 +1469,7 @@ label lieu_encore_inconnu_1(axe = True):
 
     menu:
 
-        "Demander la main de Moira":
+        "Je voudrais la main de votre fille":
             e "Ogma, j'aimerais vous demander plus."
             o "Je t'écoute ?"
             e "Je vous demande la main de votre fille."
@@ -1479,20 +1478,20 @@ label lieu_encore_inconnu_1(axe = True):
             o "Je refuse que ma fille et sa descendance partagent le nom d'un régicide."
             $ demander_main_moira = True
 
-        "Remercier":
+        "Merci":
             e "Je vous remercie."
             e "Je n'étais pas certain que vous tiendriez votre parole."
             o "Et je n'étais pas certain que tu tiendrais la tienne !"
             o "Nous sommes quittes."
 
-        "Prendre l'or avec amertume":
+        "L'or ne rachètera pas les morts":
             e "L'or ne rachètera pas les vies qui ont été perdues, ni ma traîtrise envers les miens."
             o "Ce que nous t'avons fait faire était cruel, mais nous n'avions pas d'autre choix, tu le sais."
             o "Je comprends que tu éprouves de la rancoeur, mais ne la dirige pas vers l'Ecosse ni les gens d'ici."
             o "Dirige-la vers moi. Je suis responsable de tout ce qui t'es arrivé."
             e "..."
 
-        "Refuser l'or":
+        "C'était une question de survie (refuser l'or)":
             e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
             o "Voilà une belle preuve d'humilité."
             o "Je suis désolé de t'avoir entraîné dans ce massacre, mais je n'avais pas le choix."
@@ -1503,15 +1502,15 @@ label lieu_encore_inconnu_1(axe = True):
 
     if demander_main_moira:
         menu menu_demande_main_moira_lieu_encore_inconnu_1:
-            "Accepter la décision":
+            "Je comprends":
                 e "Je comprends. Si j'avais su, j'aurais épargné le roi..."
                 o "..."
-            "Avis Moira":
+            "Moira, qu'en penses-tu ?":
                 e "Moira, qu'en penses-tu ?"
                 "Elle se rapproche des deux hommes, comprenant de quoi il est question."
                 m "Je... Je suis d'accord avec mon père."
                 "Les larmes lui montent aux yeux."
-            "Pas à Ogma de décider":
+            "Ce n'est pas à vous de décider":
                 e "Ce n'est pas à vous d'en décider. Votre fille doit choisir elle-même. Il s'agit de son propre avenir, pas du votre !"
                 o "J'aurais punis ton insolence si je ne comprenais pas ton désarroi."
                 m "Calme-toi, Einar. Je n'ai pas d'autre choi que de me ranger à l'avis de mon père."
@@ -1525,25 +1524,25 @@ label lieu_encore_inconnu_1(axe = True):
 
     menu plan_futur_lieu_encore_inconnu_1:
 
-        "Profiter" if refuser_or == False:
+        "Je vais me payer des femmes et des jeux !" if refuser_or == False:
             e "Je vais dépenser l'or en femmes et en jeux, ha ha !"
             e "De toutes manières, je n'ai plus grand chose à faire."
             e "Ma carrière militaire est terminée et je n'ai nul part où aller en particulier."
             e "Je suis seul au monde ! Un peu de chaleur humaine ne me fera pas de mal !"
-        "Choisir la voie de l'ermite":
+        "Ermite en Ecosse":
             e "Rester ici, en Ecosse. Seul."
             e "J'ai déjà suffisamment donné de ma personne."
             o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
             o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
-        "Rentrer en Norvège":
+        "Je rentrerai en Norvège":
             e "Rentrer en Norvège, malgré le danger. C'est ma seule demeure, et je ne l'ai pas vue depuis bien trop longtemps."
             o "La nostalgie des terres natales..."
             o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
-        "Décider au jour le jour":
+        "Je vivrai au jour le jour":
             e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
             o "J'imagine qu'à ta place, je n'en saurais pas plus."
             o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
-        "Découvrir l'Asie":
+        "J'irai en Asie":
             e "Aller en Asie, là où personne ne viendra me chercher. J'ai toujours été intrigué par cette région du monde."
             o "C'est assez... Surprenant !"
             o "Il ne me reste plus qu'à te souhaiter bon voyage."
@@ -1574,13 +1573,13 @@ label soupcon_harald_defendre_porte:
     h "Einar ! Prends le commandement des huscarls ! Mène le combat au-delà de la porte !"
 
     menu:
-        "Autoritaire":
+        "Suivez-moi !":
             e "A moi, huscarls !"
             e "Suivez-moi et ne me lâchez pas !"
         "Dressez vos boucliers":
             e "Je veux une ligne parfaite ! Dressez vos boucliers !"
             e "Vous avez déjà affronté bien pire que des paysans ! Souvenez-vous des éléphants de guerre !"
-        "Porte infranchissable ":
+        "Ils ne passseront pas ! ":
             e "Ces raclures ne passeront pas la porte !"
             e "Vengeance ! Pour le roi, pour Logan et pour tous les autres !"
 
@@ -1629,11 +1628,11 @@ label soupcon_harald_defendre_porte:
             e "Merci, mon roi."
             h "Ne me remercie pas ! Tu nous a tous sauvés, c'est à nous de te remercier !"
 
-        "Fidèle":
+        "Je suis resté fidèle":
             e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
             h "C'est vrai, mais ton mérite et ton honneur n'en sont pas amoindris ! Sans toi, nous étions perdus !"
 
-        "Que l'on se souvienne de moi":
+        "Que l'on se souvienne de moi !":
             e "J'ai mené l'assaut final et tué le chef rebelle, qu'on se souvienne longtemps de mes exploits !"
             h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
 
@@ -1642,14 +1641,14 @@ label soupcon_harald_defendre_porte:
     h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
 
     menu :
-        "Remercier":
+        "Merci !":
             e "... Merci, je n'en attendais pas tant !"
             h "Ton désinteressement s'ajoute à tes prouesses ! On ne pourrait rêver d'avoir un meilleur homme à son service !"
-        "Honneur":
+        "Quel honneur !":
             e "Quel honneur ! Merci, mon roi !"
             h "Depuis tout ce temps passé à mon service et toutes les promesses que je t'avais faites, te récompenser aujourd'hui me paraissait être une obligation !"
 
-        "Des terres infertiles":
+        "Des terres brûlées ?":
             e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ? "
             e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
             e "Vous vous moquez de moi, sire !"
@@ -1718,7 +1717,7 @@ label e_laisse_ogma_mort_defendre_porte:
             h "Regarde ses yeux ! Je suis sûr qu'il est encore conscient !"
             "Un huscarl s'approche pour achever l'écossais."
             h "Non ! Laisse-le comme ça ! Je veux qu'il pourrisse ici !"
-        "Se moquer des rebelles":
+        "Regardez les fuir !":
             e "Regardez-les détaler comme des lapins !"
             h "Ha ha ! Fabuleux !"
             h "Rattrappez-les, vous autres !"
@@ -1772,7 +1771,7 @@ label e_sauve_ogma_defendre_porte:
             "En colère pour Moira ?":
                 e "Tu es en colère à cause de ta fille, c'est ça ?"
                 e "Rien ne m'obligeait à la tuer, je l'ai fait parce que j'en avait envie !"
-            "Combat plus équitable":
+            "J'aurais voulu un combat plus équitable":
                 e "J'aurais souhaité un combat honorable, un peu plus juste !"
                 h "PAS D'HONNEUR !"
             "Elle était toute excitée !":
