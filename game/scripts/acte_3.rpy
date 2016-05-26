@@ -1612,13 +1612,20 @@ label lieu_encore_inconnu_1(axe = True):
 #Défendre porte
 label soupcon_harald_defendre_porte:
 
+    show re combat_normaux at left
+    show gv combat_normaux at right
+    with dissolve
+
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     ge "L'échelle ! Apportez l'échelle !"
     gv "Les rebelles dressent une échelle par-dessus les douves !"
     "Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles."
     "Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
+    show gv combat_furieux at right
     gv "Crevez, salopards ! Ha ha !"
+    show harald combat_hache_determine at center with dissolve
     h "Consolidez les rangs !"
+    hide harald with dissolve
     "Les rebelles sont contraints de reculer et restent à distance des remparts."
     "Alors que les vikings se réjouissent de leur supériorité, un cri retentit sur leurs arrières."
     gv "Par la mer ! Ils arrivent par la mer !"
@@ -1626,34 +1633,64 @@ label soupcon_harald_defendre_porte:
     "Ils lancent un deuxième assaut sur l'arrière des vikings, dans l'enceinte."
     "A l'extérieur, les rebelles lancent un nouvel assaut et après avoir tendu des planches en travers des douves, commencent à détruire le tablier du pont à coup de haches."
     gv "Ça va céder !"
+    show harald combat_determine at center with dissolve
     h "Einar ! Prends le commandement des huscarls ! Mène le combat au-delà de la porte !"
+    hide harald
+    hide gv
+    hide re
+    with dissolve
+
+    show einar combat_normal at left
+    show huscarls combat_normaux at right
+    with dissolve
 
     menu:
         "Suivez-moi !":
+            show einar combat_determine at left
             e "A moi, huscarls !"
             e "Suivez-moi et ne me lâchez pas !"
+            show huscarls combat_enthousiaste at right
+
         "Dressez vos boucliers":
+            show einar combat_determine at left
             e "Je veux une ligne parfaite ! Dressez vos boucliers !"
             e "Vous avez déjà affronté bien pire que des paysans ! Souvenez-vous des éléphants de guerre !"
+            show huscarls combat_enthousiaste at right
+
         "Ils ne passseront pas ! ":
+            show einar combat_furieux at left
             e "Ces raclures ne passeront pas la porte !"
             e "Vengeance ! Pour le roi, pour Logan et pour tous les autres !"
+            show huscarls combat_furieux at right
 
     "Alors que la porte menace de céder, les vikings l'ouvrent et prennent de court les rebelles."
     "Immédiatement, les rebelles tentent de s'engouffrer dans l'ouverture, face à Einar et aux huscarls."
     "Une silouhette familière émerge des rebelles."
 
+    hide huscarls
+    show ogma combat_furieux at right
+    with dissolve
+
+    show einar combat_normal at left
+
     o "Traître ! Tu t'es joué de nous pour sauver ta vie de lâche !"
     o "Regarde combien d'hommes meurent aujourd'hui par ta faute !"
 
     menu:
+
         "Massacrez-les":
+            show einar combat_determine at left
             e "Huscarls, massacrez ces foutus écossais, sans exception ! Mais laissez-moi le chef !"
+
         "Que des porcs":
+            show einar combat_furieux at left
             e "Quels hommes ? Je ne vois que des porcs."
+
         "Ne rien dire":
             e "..."
+
         "Je vais m'occuper de ta fille !":
+            show einar combat_furieux at left
             e "J'en termine avec toi, et ensuite je retourne m'occuper de ta fille !"
 
     menu :
@@ -1661,9 +1698,14 @@ label soupcon_harald_defendre_porte:
         "Mini jeu combat WIP"
 
         "Gagner":
+            show ogma combat_blesse at right
             "Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves."
             "Terrorisés, les rebelles prennent la fuite."
+            hide ogma with dissolve
+
+            show harald combat_normal at right with dissolve
             h "Ha ha ! Ils fuient, les lâches !"
+            show harald combat_determine at right
             h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
 
             "*Harald s'élance à la poursuite des fuyards, le rire aux lèvres.*"
@@ -1673,114 +1715,195 @@ label soupcon_harald_defendre_porte:
         "Perdre":
             jump bad_ending_17
 
+    hide einar
+    hide harald
+    with dissolve
+
     "Un peu plus tard..."
 
+    show einar debout_normal at left
+    show harald debout_normal at right
+    with dissolve
+
     h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
+    show harald debout_souriant at right
     h "Il est le meilleur homme que j'ai eu sous mes ordres, et Dieu sait combien d'hommes valeureux j'ai eu à mon service !"
     h "Tu es du bois dont on fait les héros, Einar !"
+    show harald debout_normal at right
 
     menu:
+
         "Merci":
+            show einar debout_souriant at left
             e "Merci, mon roi."
             h "Ne me remercie pas ! Tu nous a tous sauvés, c'est à nous de te remercier !"
 
         "Je suis resté fidèle":
+            show einar debout_attriste at left
             e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
+            show harald debout_souriant at right
             h "C'est vrai, mais ton mérite et ton honneur n'en sont pas amoindris ! Sans toi, nous étions perdus !"
 
         "Que l'on se souvienne de moi !":
+            show einar debout_determine at left
             e "J'ai mené l'assaut final et tué le chef rebelle, qu'on se souvienne longtemps de mes exploits !"
             h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
 
+    show harald debout_normal at right
+    show harald debout_souriant at right
     h "J'ai décidé de récompenser ta valeur."
     h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
     h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
 
     menu :
+
         "Merci !":
+            show einar debout_souriant at left
             e "... Merci, je n'en attendais pas tant !"
             h "Ton désinteressement s'ajoute à tes prouesses ! On ne pourrait rêver d'avoir un meilleur homme à son service !"
+
         "Quel honneur !":
+            show einar debout_souriant at left
             e "Quel honneur ! Merci, mon roi !"
+            show harald debout_normal at right
             h "Depuis tout ce temps passé à mon service et toutes les promesses que je t'avais faites, te récompenser aujourd'hui me paraissait être une obligation !"
 
+        #A vérifier
         "Des terres brûlées ?":
+            show einar debout_contrarie at left
             e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ? "
+            show einar debout_attriste at left
             e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
+            show einar debout_contrarie at left
             e "Vous vous moquez de moi, sire !"
+            show gv debout_contraries at right with dissolve
             gv "Sire !"
+            show harald debout_contrarie at right
             h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."
+            hide gv with dissolve
+            show harald debout_normal at right
             h "Tes exploits ne te dispensent pas de respecter ton roi et empereur, Einar."
             h "Ne t'adresse plus jamais à moi de cette façon, ou la sanction sera exemplaire."
             e "..."
+            show einar debout_attriste at left
             e "Sire, pardonnez mon attitude..."
+
+    hide harald
+    hide einar
+    with dissolve
 
     jump normal_ending_18
 
 label harald_defendre_porte:
 
+    #Animation rebelles
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
     "Harald jaillit du donjon, armé de pied en cap."
+
+    show harald combat_determine at right
+    show einar combat_normal at left
+    with dissolve
+
     h "Baissez le pont ! Tous avec moi !"
 
     menu :
 
         "Suivez le roi !":
+            show einar combat_determine at left
             e "Suivez le roi ! Suivez le !"
 
         "Massacrez-les":
+            show einar combat_furieux at left
             e "En avant, sire ! Massacrez ces chiens !"
 
         "Ne rien dire":
             e "..."
 
+    hide harald
+    hide einar
+    with dissolve
+
+    show re combat_blesse at right
+    show ogma combat_normal at left
+    with dissolve
+
     "Le roi lance une grande contre-offensive à la tête de son armée."
     "Désorganisés, les rebelles sont séparés en deux groupes. Certains rompent les rangs."
     ge "Tout est perdu ! Fuyez !"
     "Les combats sont déportés dans la plaine devant le château."
+    show ogma combat_furieux at left
     o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
+    hide re with dissolve
     "Harald parvient au contact d'Ogma et un duel s'engage."
+    show harald combat_normal at right with dissolve
     h "Ha ! Tu es celui qui a assassiné mon intendant ?"
+    show ogma combat_determine at left
     o "Oui, et je suis prêt à réitérer l'exploit avec un roi !"
+    show harald combat_furieux at right
     h "Pourriture ! Tu vas rendre gorge !"
     "La force et la technique de Harald s'opposent à la vitesse et à la ruse d'Ogma."
     "D'une feinte, l'écossais parvient à atteindre le roi au ventre ; pas une goutte de sang ne coule."
     "Harald prend l'avantage petit à petit : la Hache le rend invincible."
+    show harald combat_normal at right
     h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
+    show ogma combat_blesse at left
     o "Jamais !"
+    show harald combat_furieux at right
     h "Meurs, chien maigre !"
     "Du plat de sa hache, Harald frappe Ogma au torse, lui brisant les côtes et le jetant à terre."
     "Le roi s'apprête à achever le chef rebelle."
 
+    show einar debout_normal at center with dissolve
+
     menu :
+
         "Tuez-le !":
+            show einar debout_furieux at center
             e "Tuez-le, sire !"
             jump e_laisse_ogma_mort_defendre_porte
         "Ne le tuez pas ! (s'interposer)":
+            show einar debout_furieux at center
             e "Non ! Ne l'achevez pas !"
             jump e_sauve_ogma_defendre_porte
 
 
 label e_laisse_ogma_mort_defendre_porte:
 
+    show ogma combat_blesse at left
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
+    hide ogma with dissolve
     "Immédiatement, les rebelles se dispersent, traumatisés de voir leur héros vaincu par le roi viking."
+
+    show einar combat_normal at left
 
     menu :
         "Joli !":
+            show einar debout_souriant at left
             e "Beau coup, sire !"
+            show harald debout_souriant at right
             h "Ha ha ! Le compliment me va droit au coeur !"
             h "Regarde ses yeux ! Je suis sûr qu'il est encore conscient !"
             "Un huscarl s'approche pour achever l'écossais."
+            show harald debout_normal at right
             h "Non ! Laisse-le comme ça ! Je veux qu'il pourrisse ici !"
+
         "Regardez les fuir !":
+            show einar debout_souriant at left
             e "Regardez-les détaler comme des lapins !"
+            show harald debout_souriant at right
             h "Ha ha ! Fabuleux !"
+            show harald debout_determine at right
             h "Rattrappez-les, vous autres !"
+
         "J'aurais dû faire ça moi-même":
+            show einar debout_normal at left
             e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
+            show harald debout_souriant at right
             h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
 
+    hide einar
+    hide harald
+    with dissolve
 
     jump cour_chateau_ogma_mort_defendre_porte
 
@@ -1788,22 +1911,43 @@ label cour_chateau_ogma_mort_defendre_porte:
 
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
+    show e debout_normal at left
+    show gv debout_rire at right
+    with dissolve
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
     gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
+    hide gv with dissolve
+    show einar debout_attriste at left
     e "..."
+    show moira debout_normal at left with dissolve
     "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
+    show moira debout_furieux at right
+    show patrick debout_normal at right with dissolve
     p "Vous avez défié l'élu divin, porteur de la Hache Sainte !"
+    show patrick debout_furieux at right
     p "Pour vos blasphèmes, votre hérésie et votre félonie, il n'est d'autre jugement que la mort !"
+    hide moira with dissolve
+    show harald debout_determine at left with dissolve
     h "Hâtez-vous, Patrick ! Il me tarde de les voir se tortiller sur leurs poteaux !"
+    show patrick debout_normal at right
     p "Bien, bien. Que Dieu ait pitié de vos âmes !"
     "Deux hommes amènent des torches et commencent à embraser les bûchers."
+    show harald debout_souriant at left
     h "Ha ha ! Le Seigneur nous offre un beau spectacle à travers son jugement !"
     "Les porteurs de torches s'approchent du bûcher de Moira."
 
+    hide harald
+    hide patrick
+    with dissolve
+
+    show moira debout_attriste at left with dissolve
+
     menu :
         "Qu'elle brûle comme les autres":
+            show einar debout_furieux at left
             jump bad_ending_19
         "Je dois sauver Moira !":
+            show einar debout_determine at left
             jump bad_ending_20
 
 label e_sauve_ogma_defendre_porte:
