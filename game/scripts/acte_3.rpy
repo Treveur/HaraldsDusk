@@ -1621,7 +1621,7 @@ label soupcon_harald_defendre_porte:
     gv "Les rebelles dressent une échelle par-dessus les douves !"
     "Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles."
     "Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
-    show gv combat_furieux at right
+    show gv combat_normaux at right
     gv "Crevez, salopards ! Ha ha !"
     show harald combat_hache_determine at center with dissolve
     h "Consolidez les rangs !"
@@ -1698,7 +1698,7 @@ label soupcon_harald_defendre_porte:
         "Mini jeu combat WIP"
 
         "Gagner":
-            show ogma combat_blesse at right
+            show ogma combat_normal at right
             "Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves."
             "Terrorisés, les rebelles prennent la fuite."
             hide ogma with dissolve
@@ -1726,7 +1726,7 @@ label soupcon_harald_defendre_porte:
     with dissolve
 
     h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
-    show harald debout_souriant at right
+    show harald debout_normal at right
     h "Il est le meilleur homme que j'ai eu sous mes ordres, et Dieu sait combien d'hommes valeureux j'ai eu à mon service !"
     h "Tu es du bois dont on fait les héros, Einar !"
     show harald debout_normal at right
@@ -1741,7 +1741,7 @@ label soupcon_harald_defendre_porte:
         "Je suis resté fidèle":
             show einar debout_attriste at left
             e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
-            show harald debout_souriant at right
+            show harald debout_normal at right
             h "C'est vrai, mais ton mérite et ton honneur n'en sont pas amoindris ! Sans toi, nous étions perdus !"
 
         "Que l'on se souvienne de moi !":
@@ -1750,7 +1750,7 @@ label soupcon_harald_defendre_porte:
             h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
 
     show harald debout_normal at right
-    show harald debout_souriant at right
+    show harald debout_normal at right
     h "J'ai décidé de récompenser ta valeur."
     h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
     h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
@@ -1846,7 +1846,7 @@ label harald_defendre_porte:
     "Harald prend l'avantage petit à petit : la Hache le rend invincible."
     show harald combat_normal at right
     h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
-    show ogma combat_blesse at left
+    show ogma combat_normal at left
     o "Jamais !"
     show harald combat_furieux at right
     h "Meurs, chien maigre !"
@@ -1869,7 +1869,7 @@ label harald_defendre_porte:
 
 label e_laisse_ogma_mort_defendre_porte:
 
-    show ogma combat_blesse at left
+    show ogma combat_normal at left
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
     hide ogma with dissolve
     "Immédiatement, les rebelles se dispersent, traumatisés de voir leur héros vaincu par le roi viking."
@@ -1880,7 +1880,7 @@ label e_laisse_ogma_mort_defendre_porte:
         "Joli !":
             show einar debout_souriant at left
             e "Beau coup, sire !"
-            show harald debout_souriant at right
+            show harald debout_normal at right
             h "Ha ha ! Le compliment me va droit au coeur !"
             h "Regarde ses yeux ! Je suis sûr qu'il est encore conscient !"
             "Un huscarl s'approche pour achever l'écossais."
@@ -1890,7 +1890,7 @@ label e_laisse_ogma_mort_defendre_porte:
         "Regardez les fuir !":
             show einar debout_souriant at left
             e "Regardez-les détaler comme des lapins !"
-            show harald debout_souriant at right
+            show harald debout_normal at right
             h "Ha ha ! Fabuleux !"
             show harald debout_determine at right
             h "Rattrappez-les, vous autres !"
@@ -1898,7 +1898,7 @@ label e_laisse_ogma_mort_defendre_porte:
         "J'aurais dû faire ça moi-même":
             show einar debout_normal at left
             e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
-            show harald debout_souriant at right
+            show harald debout_normal at right
             h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
 
     hide einar
@@ -1911,7 +1911,7 @@ label cour_chateau_ogma_mort_defendre_porte:
 
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
-    show e debout_normal at left
+    show einar debout_normal at left
     show gv debout_rire at right
     with dissolve
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
@@ -1932,7 +1932,7 @@ label cour_chateau_ogma_mort_defendre_porte:
     show patrick debout_normal at right
     p "Bien, bien. Que Dieu ait pitié de vos âmes !"
     "Deux hommes amènent des torches et commencent à embraser les bûchers."
-    show harald debout_souriant at left
+    show harald debout_normal at left
     h "Ha ha ! Le Seigneur nous offre un beau spectacle à travers son jugement !"
     "Les porteurs de torches s'approchent du bûcher de Moira."
 
