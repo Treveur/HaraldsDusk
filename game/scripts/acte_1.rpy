@@ -21,7 +21,7 @@ label intro:
 
     scene bg forest with dissolve
 
-    #play sound "sounds/sfx/SFX_WarHorn.mp3"
+    play audio wood
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
     show harald debout_normal at center with dissolve
@@ -423,6 +423,8 @@ label plaine_2:
 #Scequence 4
 label foret_1:
 
+    play audio wood
+
     scene bg forest with dissolve
 
     "Un jour plus tard..."
@@ -577,6 +579,8 @@ label foret_1:
 #Scequence 5
 #Scene 1
 label village_1:
+
+    play audio village
 
     $ moira_met = False
 
