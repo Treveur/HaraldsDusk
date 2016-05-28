@@ -1952,59 +1952,98 @@ label cour_chateau_ogma_mort_defendre_porte:
 
 label e_sauve_ogma_defendre_porte:
 
+    show einar combat_normal at center
+    show harald combat_hache_furieux at left
+    show ogma combat_furieux at right
+    with dissolve
+
     "Einar dévie le coup de hache du roi et sauve Ogma."
     "Emporté par son élan et son propre poids, la Hache se fiche dans le sol, déstabilisant Harald."
     "Voyant que le roi a relâché son emprise sur la relique, Ogma en profite pour trancher les deux tendons d'achille du roi."
     "Harald tombe aux côtés d'Ogma, qui l'achève en lui enfonçant son coutelas dans la gorge."
+    hide einar
+    hide harald
+    with dissolve
     "Aussitôt la horde rebelle resserre son étau sur les vikings, investie par une nouvelle vigueur."
     "Pris au coeur de la mêlée, Einar est piétiné et laissé pour mort."
 
     "..."
-
+    show ogma combat_hache_brandir at right
     "Lorsqu'il reprend ses esprits, Einar voit Ogma sur les remparts, brandissant la Hache Sainte. Derrière lui, le château brûle."
     "Depuis les remparts, Ogma semble remarquer le mouvement d'Einar au milieu des cadavres."
+
+    #Rerpise
+    show einar debout_blesse at left with dissolve
+    show ogma combat_hache_determine at right
 
     if moira_dead:
         "Ogma court vers Einar, la Hache levée."
 
         menu :
             "En colère pour Moira ?":
+                show einar debout_blesse at right
                 e "Tu es en colère à cause de ta fille, c'est ça ?"
                 e "Rien ne m'obligeait à la tuer, je l'ai fait parce que j'en avait envie !"
+
             "J'aurais voulu un combat plus équitable":
+                show einar combat_blesse at right
                 e "J'aurais souhaité un combat honorable, un peu plus juste !"
-                h "PAS D'HONNEUR !"
+                show ogma combat_hache_determine at right
+                o "PAS D'HONNEUR !"
+
             "Elle était toute excitée !":
+                show einar debout_souriant at right
                 e "Au moment où j'ai tué ta fille, elle s'apprêtait à me chevaucher comme une folle !"
+
+        hide einar
+        hide ogma
+        with dissolve
 
         jump bad_ending_22
 
     else:
+
+        show ogma debout_normal at right
+        show einar debout_blesse at left
         "..."
         o "Je ne comprends pas tes actes."
         o "Je te suis malgré tout reconnaissant pour la victoire sur Harald, et pour m'avoir sauvé la vie alors que rien ne t'y obligeait."
+        show ogma debout_attriste at right
         o "Néanmoins, ta double trahison a coûté la vie à bien plus d'hommes que nécessaire, dans un camp comme dans l'autre."
         o "Pourquoi avoir agi ainsi ?"
 
         menu :
+
             "J'ai eu des remords":
+                show einar debout_attriste at left
                 e "J'ai été le jouet de mes propres remords."
+                show ogma debout_contrarie at right
                 o "Ton inconstance a été terriblement coûteuse..."
                 o "J'en viendrais presque à regretter de t'avoir choisi pour cette \"mission\"..."
+
             "J'ai pensé à Moira":
+                show einar debout_attriste at left
                 e "J'ai pensé à ce qu'il adviendrait de Moira si Harald triomphait."
+                show ogma debout_contrarie at right
                 o "Alors c'est l'affection que tu portes à ma fille qui m'a sauvé ?"
                 o "Je crois que c'est pire que ce que je pensait..."
                 o "Tu imagines bien qu'après tout ça, tu ne verras plus ma fille."
+
             "Ce n'est qu'un jeu":
+                show einar debout_souriant at left
                 e "J'ai simplement eu l'envie de prendre à leur propre jeu deux dirigeants ambitieux."
+                show ogma debout_furieux at right
                 o "Je ne sais pas si tu es terriblement cruel ou bien complètement fou."
                 o "Combien sont morts aujourd'hui par ta faute ?"
+                show ogma debout_contrarie at right
                 o "Tu as pris à la légère des enjeux qui te dépassaient complètement."
-                o "Tu pouvais devenir un héros, un libérateur ! Tu aurais même pu devenir un nouvel empereur, si tu avais été suffisamment égoïste et ambitieux !"
+                show ogma debout_furieux at right
+                o "Tu pouvais devenir un héros, un libérateur ! Tu aurais même pu devenir un nouvel empereur, si tu avais été suffisamment égoïste et ambitieux !" #Tu étais l'élu !
                 o "Je crois que j'aurais préféré cette alternative, plutôt que d'avoir à subir un tel massacre..."
 
+        show ogma debout_attriste at right
         o "Quoi qu'il en soit... Je vais t'épargner. Crois bien que l'envie de te tuer est grande, mais je refuse de tuer une personne de plus aujourd'hui. Et je te dois la vie."
+        show ogma debout_determine at right
         o "Cependant, je te banni d'Ecosse à tout jamais. Bien entendu, tu n'auras pas l'or promis."
         o "J'espère que tu nous considères comme quittes."
         o "Tu n'as plus qu'à partir sur le champ."
@@ -2012,18 +2051,34 @@ label e_sauve_ogma_defendre_porte:
 
         menu :
             "Adieu":
+                show einar debout_normal at left
                 e "Adieu."
                 o "..."
+
             "Et Moira ?":
+                show einar debout_normal at left
                 e "Et Moira ? Où est-elle ?"
+                show ogma debout_furieux at right
                 o "Ne prononce même pas son nom. Je ne veux plus que tu ais le moindre rapport avec elle. Elle ne le veut pas non plus."
+                show ogma debout_normal at right
                 o "Pars, maintenant."
+
             "Je rentre en Norvège":
+                show einar debout_normal at left
                 e "Je ne comptais pas rester. Il est temps que je rentre en Norvège."
+                show ogma debout_normal at right
                 o "Peu importe où tu vas, pourvu que tu quittes l'Ecosse."
+
             "Quel ingrat !":
+                show einar debout_contrarie at left
                 e "Quelle ingratitude ! Et dire que je vous trouvais sympathique !"
+                show einar debout_normal at left
+                show ogma debout_contrarie at right
                 o "Je ne suis pas certain que l'humour soit opportun."
                 o "Va-t-en, avant que je ne te tue."
+
+        hide einar
+        hide ogma
+        with dissolve
 
         jump bad_ending_21
