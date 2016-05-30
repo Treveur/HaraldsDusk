@@ -223,6 +223,8 @@ label intro:
 #Sequence 2
 label plaine_1 :
 
+    #stop wood
+
     scene bg mer with dissolve
 
     "Une heure plus tard, à proximité du château de Dunbar."
