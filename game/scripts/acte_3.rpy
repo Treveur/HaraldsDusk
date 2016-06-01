@@ -197,6 +197,10 @@ label cour_chateau_1:
             e "Oui. Il était question que je survive à condition que je vous trahisse en ouvrant le pont-levis du château aux rebelles."
             h "Ils comptent lancer une attaque ? Quand !?"
             e "Hélas, je n'en sais rien, sire. Mais je présage que cet assaut aura lieu très prochainement."
+            e "Puis, peu avant mon retour à Dunbar, j'ai appris que j'avais été empoisonné."
+            h "Empoisonné ? Comment ?"
+            e "Ogma a voulu s'assurer que je suivrais ses instructions à la lettre. Il a empoisonné les provisions qui m'ont été données pour le voyage."
+            e "Depuis, la fièvre ne fait que s'accroître et mes entrailles me torturent. Je crache du sang. Demain ou après-demain, je serai mort."
             e "Quoi qu'il en soit, je n'ai jamais cessé de vous être fidèle. Tout ce que j'ai fait, c'était dans votre intérêt. J'ai patiemment attendu le moment où je pourrais vous révéler leurs intentions. Et voilà."
 
         "Je vous suis fidèle (mentir)":
@@ -221,7 +225,8 @@ label cour_chateau_1:
     else:
         show harald debout_contrarie at right
         show harald debout_normal at left
-        h "Ces salopards comptent attaquer prochainement ? Il faut impérativement préparer nos défenses !"
+        h "Nous verrons ce qu'il est possible de faire pour te sauver..."
+        h "Mais si ces salopards comptent attaquer prochainement,il faut impérativement préparer nos défenses !"
         e "Le château n'est pas suffisant ?"
         h "Si, mais uniquement si les hommes qui le défendent sont à leurs postes !"
         h "Je te remercie de m'avoir tout avoué. J'ai eu des doutes sur toi pendant un instant, mais me voilà rassuré."

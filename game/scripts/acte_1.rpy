@@ -1399,7 +1399,7 @@ label e_reveil_village_2:
 
     e "Arrgh... Mon épaule..."
 
-    o "Oui je sais, ça fait mal. La tête de la flèche est toujours à sa place."
+    o "La tête de la flèche est toujours à sa place."
 
     e "Enfoiré ! Vous les avez tous tués !"
 
@@ -1407,7 +1407,7 @@ label e_reveil_village_2:
 
     e "Qui... Aarrgh... êtes vous ?"
 
-    o "Ça me paraît assez évident. Nous sommes ceux que toi et les tiens cherchiez. Bravo, vous nous avez trouvé."
+    o "Nous sommes ceux que toi et les tiens cherchiez. Toutes mes félicitations, vous nous avez trouvé."
 
     e "Les rebelles ?"
 
@@ -1485,9 +1485,8 @@ label o_explication_vie_village_2:
 
     if choix_ogma_1 == "incomprehension":
 
-        e "J'ai peur de ne pas tout comprendre."
+        e "Vous allez devoir m'en dire plus."
 
-        o "L'explication est simple."
     elif choix_ogma_1 == "insulter":
         e "Vous allez être déçus ! Vous n'obtiendrez rien de moi, charognes ! Vous ne me ferez pas trahir mon allégeance !"
 
@@ -1513,9 +1512,10 @@ label o_explication_vie_village_2:
         "Vous me faites confiance ?" if already_talk == False:
 
             e "Qui vous dit que je tiendrai parole une fois remis en liberté ?"
-            o "Pour faire simple, tu es obligé de respecter notre accord."
-            o "J'ai des contacts partout en Grande-Bretagne et sur le continent, je te retrouverais en quelques jours à peine."
-            o "Et tu n'aimerais pas que je te retrouve. Alors ?"
+            o "... Je compte sur ta gratitude."
+            e "Vous vous moquez de moi ?"
+            o "Tu vas passer un certain temps ici. Nous allons te nourrir et te soigner, et tu verras que nous ne méritons pas le sort que nous réserve le roi."
+            o "Alors ?"
 
             $ already_talk = True
 
