@@ -24,14 +24,14 @@ label intro:
     play audio wood
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
-    show harald debout_normal at center with dissolve
+    show harald debout_normal_mid at center with dissolve
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
     "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
     show logan debout_normal at right with dissolve
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
     "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
     "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
 
@@ -42,8 +42,8 @@ label intro:
             hide logan
             with dissolve
 
-            show einar debout_normal at left with dissolve
-            show harald debout_normal at right with moveinright
+            show einar debout_normal_close at left with dissolve
+            show harald debout_normal_close at right with moveinright
 
             e "Mon Roi, sommes-nous proches de Dunbar ?"
 
