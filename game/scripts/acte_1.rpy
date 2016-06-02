@@ -243,7 +243,7 @@ label plaine_1 :
     h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
 
     "Un cavalier arrive en trombe et descend de son cheval, avant de courir vers Harald."
-    show gv debout_normaux_mid at left with moveinright
+    show gv debout_normaux_mid at left with moveinleft
 
     gv "Sire ! Un rapport des éclaireurs !"
 
@@ -372,10 +372,12 @@ label plaine_2:
         "Je suis bien d'accord : on s'ennuie !" :
 
             e "Et je suis convaincu que nous ne rencontrerons rien de plus excitant qu'une tavernière au milieu de toute cette foutue caillasse !"
+            show einar debout_souriant_mid at left
 
             e "Ha ! Se défouler sur des villageois, ce sera notre récompense !"
 
             e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
+            show gv debout_rire_mid at center
 
             gv "Ha ha ! Bien parlé !"
 
@@ -384,6 +386,7 @@ label plaine_2:
                 e "Méfiez vous, le roi n'est pas avec nous."
 
                 e "Sans la Hache, nous sommes à la merci de n'importe quel piège. Restez aux aguets !"
+                show einar debout_souriant_mid at left
 
                 e "Rien qu'en t'écoutant, je suis sûr que les rebelles connaissent déjà ton nom, celui de tes parents et la taille de ta queue, Alvin."
 
@@ -396,15 +399,17 @@ label plaine_2:
 
                 hide gv debout_normaux_mid with dissolve
 
-                show logan debout_normal_mid at right with dissolve
+                show logan debout_normal_close at right with dissolve
 
                 l "Tu le prends comme une punition ?"
+                show einar debout_furieux_close at left with dissolve
 
                 e "Oui ! Après tout le temps que j'ai passé à servir Harald, il aurait pu m'attribuer une mission moins ingrate !"
 
                 e "Je n'en suis plus à mon coup d'essai, bordel !"
 
         "Un problème, Logan ?(chambrer)" :
+            show einar debout_souriant_mid at left
 
             e "Tu ne parles pas beaucoup, Logan... Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
 
@@ -416,7 +421,8 @@ label plaine_2:
 
             e "Ha, il est obéissant en plus !"
 
-            e "Je suis sûr qu'il retrouvera la parole quand il trouvera un bel animal ! Séducteur de chèvres !"
+            e "Je suis sûr qu'il retrouvera la parole en présence d'un bel animal ! Séducteur de chèvres !"
+            show logan debout_contrarie_mid at right
 
             l "..."
 
@@ -425,6 +431,7 @@ label plaine_2:
         "Silence ! Je veux deux groupes à l'avant..." :
 
             hide gv debout_normaux_mid with dissolve
+            show einar debout_normal_mid at left
 
             e "Taisez-vous. Je veux deux groupes à l'avant, deux groupes à l'arrière. Au centre, Logan et moi. Et magnez-vous le train !"
 
@@ -452,14 +459,18 @@ label foret_1:
     "Un jour plus tard..."
 
     show einar debout_normal_mid at left with dissolve
+    show logan debout_normal_mid at center with dissolve
 
     l "Nous ne sommes plus très loin de Perth, nous devrions y arriver dans l'après-midi."
+    show gv debout_normaux_mid at right with dissolve
     gv "J'ai l'impression d'avoir déjà vu cette forêt... Tout se ressemble ici !"
     l "Nous progressons, rassure-toi."
+    show gv debout_contraries_mid at right
     gv "Pays de merde ! Le Danemark, ça ressemble quand même à autre chose !"
 
     menu:
         "La Norvège me manque":
+            show einar debout_contrarie_mid at left
 
             e "Plus le temps passe, plus la Norvège me manque..."
 
@@ -468,16 +479,18 @@ label foret_1:
             gv "J'aimerais retrouver la Suède. Je n'ai aucunes nouvelles de ma famille depuis notre campagne d'Egypte."
 
             gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-            show logan debout_normal_mid at right zorder 1 with dissolve
+            show logan debout_normal_mid at center with dissolve
             l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
-            show gv debout_normaux_mid at center zorder 2 with dissolve
+            show gv debout_normaux_mid at right with dissolve
             gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
+            show logan debout_contrarie_mid at center
 
             l "..."
             hide gv debout_normaux_mid with dissolve
 
             menu:
                 "J'ai hâte de recevoir les terres qui m'ont été promises":
+                    show einar debout_normal_mid at left
 
                     e "Ça fait des années que le roi me fait miroiter des terres en Norvège sans jamais me les offrir..."
 
@@ -490,6 +503,7 @@ label foret_1:
                     e "Peu importe. Tout ce que je veux, c'est enfin pouvoir me sentir chez moi."
 
                 "Assez de niaiseries pour aujourd'hui":
+                    show einar debout_normal_mid at left
 
                     e "Taisez-vous maintenant. La route est encore longue et j'en ai déjà assez d'écouter vos histoires de bonnefemmes."
 
@@ -499,20 +513,22 @@ label foret_1:
 
 
         "J'imagine la tête de ces salopards d'écossais !" :
+            show einar debout_souriant_mid at left
 
             e "J'imagine la tête des sauvages qui vivent dans la région. Foutus écossais ! Il n'y a qu'à voir la trogne de Logan pour savoir que quelque chose ne tourne pas rond chez ces gens là !"
 
             e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
-            show gv debout_normaux_mid at center with dissolve
+            show gv debout_rire_mid at center with dissolve
             gv "Ha ha !"
 
-            show logan debout_normal_mid at right with dissolve
+            show logan debout_souriant_mid at right with dissolve
 
             l "Nous vivons dans des maisons de pierre, à la différence de vos cabanes en bois. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
 
-            hide gv debout_normaux_mid with dissolve
+            hide gv debout_rire_mid with dissolve
 
         "Je voudrais déjà être rentré" :
+            show einar debout_normal_mid at left
 
             e "Je suis déjà lassé par cette foutue randonnée !"
 
@@ -521,21 +537,24 @@ label foret_1:
             e "On trouve les rebelles et on rentre au château. Et à bride abattue !"
 
         "Ne vous découragez pas" :
+            show einar debout_normal_mid at left
 
             e "Ne relâchez pas l'effort. Nous nous sommes suffisamment enfoncés dans les Highlands pour avoir une chance de trouver le village des rebelles."
 
             e "Tout ça sera bientôt terminé !"
 
         "Alors Logan ? Tu rêves de brebis ? (chambrer)" :
+            show einar debout_souriant_mid at left
 
             e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps d'une de ces magnifiques brebis écossaises ?"
 
-            show logan debout_normal_mid at right with dissolve
+            show logan debout_contrarie_mid at right with dissolve
 
             l "..."
-            show gv debout_normaux_mid at center with dissolve
+            show gv debout_rire_mid at center with dissolve
             gv "Ha ha !"
             hide gv with dissolve
+            
         "Que penses-tu de la mission, Logan ?" :
 
             e "Tu es le seul à ne pas encore t'être plaint..."
@@ -546,6 +565,7 @@ label foret_1:
 
             menu:
                 "Pourquoi as-tu décidé de m'accompagner ?":
+                    show einar debout_normal_mid at left
 
                     e "Pourquoi avoir choisi de m'accompagner ? "
 
@@ -558,12 +578,15 @@ label foret_1:
                     l "C'est une autre possibilité."
 
                 "Je suis content que tu sois là":
+                    show einar debout_souriant_mid at left
 
                     e "Quoi qu'il en soit, merci d'avoir choisi de m'accompagner."
+                    show logan debout_souriant_mid at right
 
                     l "Si un jour une campagne m'amène en Norvège, je serai heureux de compter sur toi."
 
                 "Tu aurais du rester au château":
+                    show einar debout_contrarie_mid at left
 
                     e "Tu aurais du rester avec Harald !"
 
@@ -571,8 +594,10 @@ label foret_1:
 
                     menu:
                         "Une vie de plus en danger":
+                            show einar debout_normal_mid at left
 
                             e "C'est une mission de reconnaissance. Nous pourrions tomber dans une embuscade à tout moment !"
+                            show logan debout_normal_mid at right
 
                             l "Ces gens ne sont que des paysans. Ils fuiraient rien qu'en nous entendant arriver."
 
@@ -583,12 +608,17 @@ label foret_1:
                             e "..."
 
                         "Tu es inutile":
+                            show einar debout_normal_mid at left
 
                             e "Nous étions déjà bien assez nombreux. Onze guerriers vikings dont un huscarl !"
+                            show logan debout_normal_mid at right
 
                             l "Aucun d'entre vous ne connaît la région."
+                            show einar debout_furieux_mid at left
 
                             e "Je me fout de tes compétences ! Nous ne sommes pas là pour observer un panorama ou cueillir des champignons !"
+                            show logan debout_contrarie_mid at right
+                            show einar debout_normal_mid at left
 
                             e "Ces salopards d'écossais sont hostiles. Je n'envisage même pas un dialogue avec eux ! Nous n'avions pas besoin de toi."
 
@@ -598,7 +628,7 @@ label foret_1:
 
     jump village_1
 
-#Scequence 5
+#Sequence 5
 #Scene 1
 label village_1:
 
@@ -683,8 +713,11 @@ label village_1:
 
 
 label e_demander_information_village_1:
+    show einar debout_determine_mid at left
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
+    
+    show logan debout_souriant_mid at center with dissolve
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
@@ -693,10 +726,14 @@ label e_demander_information_village_1:
     "Le vieil homme crache sur le sol, devant les pieds de Logan."
 
     e "Quel succès, Logan."
+    
+    hide logan with dissolve
 
     e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
+    show einar debout_furieux_mid at center with dissolve
 
     e "Votre attitude ressemble à un aveu de trahison !"
+    show logan debout_normal_mid at center with dissolve
 
     l "Calme-toi Einar. Comment réagirais-tu si tu voyais une armée byzantine débarquer en Norvège ?"
 
@@ -715,6 +752,7 @@ label e_fouiller_village_1(einarFouille = False):
     $ already_talk = False
 
     if einarFouille:
+        show einar debout_determine_mid at left
         e "Bien. Je vais moi-même jeter un oeil. Mieux vaudrait pour vous que vous ne cachiez rien !"
 
         e "Si qui que ce soit tente de s'enfuir ou se montre agressif, tuez-le."
@@ -723,6 +761,7 @@ label e_fouiller_village_1(einarFouille = False):
 
 
     else:
+        show einar debout_determine_mid at left
         e "Fouillez moi ces taudis ! Si vous trouvez quoi que ce soit, ramenez-le moi !"
 
         gv "HAAAAA !"
@@ -730,6 +769,7 @@ label e_fouiller_village_1(einarFouille = False):
         "..."
 
         gv "Einar ! Une fille, dans une maison !"
+        show einar debout_normal_mid at left
 
         e "Je suis à peine surpris... J'arrive !"
 
@@ -755,8 +795,11 @@ label e_fouiller_village_1(einarFouille = False):
 
 label e_tuer_villageois_village_1:
     show ve_mid
+    show einar debout_furieux_mid at left
 
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un de vos vieux !"
+    
+    show logan debout_determine_mid at center
 
     l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
 
@@ -767,6 +810,7 @@ label e_tuer_villageois_village_1:
     menu:
 
         "Votre détermination fait plaisir à voir":
+            show einar debout_determine_mid at left
 
             e "Vous seriez prêt à laisser mourir l'un des votres pour couvrir votre rébellion ? Votre détermination fait plaisir à voir !"
 
@@ -777,10 +821,15 @@ label e_tuer_villageois_village_1:
             e "Et vos hommes, où sont-ils ?"
 
             ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+            show einar debout_furieux_mid at left
 
             e "Foutus mensonges !"
+            
+            show logan debout_determine_mid at center
 
             l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
+            
+            show einar debout_normal_mid at left
 
             e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
@@ -788,6 +837,7 @@ label e_tuer_villageois_village_1:
 
 
         "Vous l'aurez voulu ! (tuer un villageois)":
+            show einar debout_determine_mid at left
 
             e "Vous l'avez cherché !"
 
@@ -800,6 +850,7 @@ label e_tuer_villageois_village_1:
             ve "Monseigneur, je ..."
 
             "Einar tranche la gorge du villageois d'un seul coup."
+            show ve debout_effrayes_mid at right
 
             ve "Pourritures ! Salauds !"
 
@@ -810,10 +861,14 @@ label e_tuer_villageois_village_1:
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
+            
+            show gv debout_furieux_mid at center
 
             gv "Vengeance !"
 
             e "Je..."
+            
+            show logan debout_determine_mid at right
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
@@ -826,18 +881,23 @@ label e_tuer_villageois_village_1:
 
 
 label e_intimider_villageois_village_1:
+    show einar debout_determine_mid at left
 
     e "Vous devriez parler. Maintenant. Les soldats que vous avez devant vous ont tué plus d'hommes que vous n'en avez jamais rencontré dans votre vie."
+    show ve debout_craintifs_mid at right
 
     ve "Nous ne savons rien ! Absolument rien !"
 
     e "Et vos hommes, où sont-ils ?"
 
     ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+    show einar debout_furieux_mid at left
 
     e "Foutus mensonges !"
+    show logan debout_determine_mid at center
 
     l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
+    show einar debout_normal_mid at left
 
     e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
@@ -845,10 +905,13 @@ label e_intimider_villageois_village_1:
 
 #Scequence 6 (alternative)
 label e_nom_villageoise_maison_1:
+    show einar debout_normal_mid at left
+    show moira debout_determine_mid at center
 
     e "Qui es-tu ?"
 
     ve "Ne m'adressez pas la parole !"
+    show einar debout_determine_mid at left
 
     e "Je me suis montré courtois, mais ça pourrait vite changer. Répond !"
 
@@ -862,6 +925,7 @@ label e_cache_villageoise_maison_1:
     e "Pourquoi te cacher ?"
 
     ve "Parce que je connais les porcs dans votre genre."
+    show einar debout_determine_mid at left
 
     e "Mmmh."
 
@@ -873,6 +937,7 @@ label e_info_rebelle_maison_1:
     e "Que sais-tu des rebelles ?"
 
     ve "Rien."
+    show einar debout_determine_mid at left
 
     e "Tu es aussi belle que décevante."
 
@@ -881,20 +946,28 @@ label e_info_rebelle_maison_1:
     jump menu_maison_1
 
 label e_villagoise_partir_maison_1:
+    show einar debout_determine_mid at left
     e "Sors d'ici et rejoint les autres."
 
     ve "..."
+    
+    hide moira
 
     jump choix_retour_village_1
 
 
 label e_tuer_moira_maison_1:
+    show einar debout_determine_mid at left
 
     e "Je n'aime pas qu'on se moque de moi. Mes instructions étaient claires ! Cette rencontre s'achève ici."
 
     "Einar tire la jeune femme par les cheveux sur la place, aux yeux de tous."
+    scene bg village with dissolve
+    show moira debout_furieux_mid at center
 
     ve "Lâchez-moi ! Salaud !"
+    
+    show logan debout_determine_mid at center
 
     l "Einar ! Non ! Cette pauvre fille n'a rien fait de mal ! Tu vas compromettre toute la mission ! Souviens-toi des instructions du roi !"
 
@@ -903,12 +976,13 @@ label e_tuer_moira_maison_1:
         "Tais-toi ! (la tuer)":
 
             "Le viking abat sa hache sur la nuque de la femme, qui tombe au sol, inerte."
+            show logan debout_attriste_mid at center
 
             l "Cette fille était sans défenses !"
 
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
-
-            scene bg village with dissolve
+            
+            show ve debout_effrayes_mid at right
 
             ve "Monstres ! Ils ont tué Moira !"
 
@@ -919,10 +993,12 @@ label e_tuer_moira_maison_1:
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
+            show gv debout_furieux_mid at center
 
             gv "Vengeance !"
 
             e "Je..."
+            show logan debout_determine_mid at right
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
@@ -934,6 +1010,7 @@ label e_tuer_moira_maison_1:
 
 
         "... Tu as raison.":
+            show einar debout_determine_mid at left
 
             e "Tu as raison. Elle ne mérite pas que j'émousse ma hache sur elle."
 
@@ -944,10 +1021,13 @@ label e_tuer_moira_maison_1:
             e "Et vos hommes, où sont-ils ?"
 
             ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+            show einar debout_furieux_mid at left
 
             e "Foutus mensonges !"
+            show logan debout_determine_mid at center
 
             l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
+            show einar debout_normal_mid at left
 
             e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
@@ -959,21 +1039,26 @@ label e_tuer_moira_maison_1:
 label choix_retour_village_1(massacre = False):
 
     if massacre:
-        show logan debout_normal_mid at right with dissolve
+        show einar debout_normal_mid at left with dissolve
         e "Empilez les cadavres avant le départ."
+        show logan debout_attriste_mid at right with dissolve
 
         l "Nous étions censés trouver le village rebelle, pas massacrer des paysans !"
+        show einar debout_determine_mid at left
 
         e "Ta détermination flanche ? Harald sera sûrement satisfait de voir le travail accompli."
 
         e "Si c'était les rebelles, nous avons éliminé le problème. Si les gens de Perth étaient innocents, les villages alentours nous craindront."
+        show einar debout_souriant_mid at left
 
         e "Nous gagnons sur tous les tableaux."
 
         l "J'espère que tu as raison..."
 
     else:
+        show logan debout_normal_mid at right with dissolve
         l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
+        show einar debout_normal_mid at left with dissolve
 
         e "J'espère pour toi que tu as raison, Logan."
 
@@ -993,7 +1078,7 @@ label choix_retour_village_1(massacre = False):
             "Nous poursuivons vers le nord":
                 call foret_2 pass (lieu = "nord") from _call_foret_2_1
 
-#Scequence 7
+#Sequence 7
 label foret_2(lieu = ""):
     scene bg forest with dissolve
 
