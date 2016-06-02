@@ -712,6 +712,7 @@ label village_4:
 
         "(L'ignorer)":
             "Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
+            
 
     hide moira
     hide einar
@@ -724,6 +725,7 @@ label sentier_foret_1:
     scene bg sentier_jour with dissolve
     show einar debout_normal with dissolve
     e "..."
+    e "(Ce qu'il fait chaud... Je ne me serais jamais attendu à avoir un temps pareil dans les Highlands !)"
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
     menu :
@@ -745,10 +747,12 @@ label foret_5:
     menu:
         "Je dois beaucoup à Moira":
             e "(Elle s'est occupée de moi pendant plus d'un mois, sans jamais se montrer lasse ni désagréable. Je lui dois beaucoup. Elle s'est attachée à moi. La décevoir serait terrible. )"
-        "Elle n'a agit que sur les ordresde son père":
+        "Elle n'a agit que sur les ordres de son père":
             e "(Elle ne s'est occupée de moi que parce que son père le lui avait demandé. Je me demande si notre petite escapade en forêt était aussi une idée de son père...)"
         "Ce n'était qu'une amourette":
             e "(J'ai bien profité d'elle. Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
+    
+    e "(Quelle chaleur... C'est insoutenable... Je n'y comprend rien...)"
     hide einar with dissolve
     jump cote_1
 
@@ -756,6 +760,7 @@ label foret_5:
 label cote_1:
     scene bg cote1 with dissolve
     show einar debout_normal with dissolve
+    e "(Ma fièvre ne fait qu'empirer... Je discerne à peine la fraîcheur de l'air marin..."
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
     menu :
@@ -767,5 +772,16 @@ label cote_1:
             e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps... Pourvu qu'Ogma respecte sa parole, lui !)"
         "Je dois abandonner les écossais, pour ma propre survie":
             e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera-t-il à Moira ?)"
+            
+    "Alors qu'il s'apprête à manger les dernières provisions qui lui ont été confiées au village, Einar remarque une lettre glissée dans le tissu."
+    "{i}Einar, je regrette d'avoir dû en arriver là mais je n'avais pas le choix.{/i}"
+    "{i}Je devais m'assurer que tu tiendrais ta promesse, pour protéger les miens et vaincre le roi.{/i}"
+    "{i}Toute la nourriture que tu as mangé ces trois derniers jours contenait un poison lent.{/i}"
+    "{i}Je suis le seul à posséder l'antidote. Tu mourras dans deux jours si tu ne remplis pas ta part du marché.{/i}"
+    "{i}N'en tiens rigueur à personne d'autre que moi, je suis le seul responsable. - Ogma Le Hurleur{/i}"
+    
+    e "Pourriture ! Il m'a empoisonné !"
+    e "Koff koff !"
+    "En toussant, Einar sent un liquide tiède couler le long de son menton : un filet de sang épais mêlé à sa salive."
     hide einar with dissolve
     jump cote_2

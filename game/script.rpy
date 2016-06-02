@@ -9,6 +9,8 @@ define e = Character('Einar', color="#e74c3c")
 
 #Debout
 image einar debout_normal = "einar/debout/einar_debout_normal.png"
+image einar debout_normal_mid = "einar/debout/einar_debout_normal_mid.png"
+image einar debout_normal_close = "einar/debout/einar_debout_normal_close.png"
 image einar debout_souriant = "einar/debout/einar_debout_souriant.png"
 image einar debout_furieux = "einar/debout/einar_debout_furieux.png"
 image einar debout_attriste = "einar/debout/einar_debout_attriste.png"
@@ -51,6 +53,8 @@ image logan combat_determine = "logan/combat/logan_combat_determine.png"
 define h = Character('Harald', color="#3498db")
 
 image harald debout_normal = "harald/debout/harald_debout_normal.png"
+image harald debout_normal_mid = "harald/debout/harald_debout_normal_mid.png"
+image harald debout_normal_close = "harald/debout/harald_debout_normal_close.png"
 image harald debout_furieux = "harald/debout/harald_debout_furieux.png"
 #image harald debout_blesse = "harald/noraml/harald_debout_blesse.png"
 image harald debout_contrarie = "harald/debout/harald_debout_contrarie.png"
@@ -107,6 +111,8 @@ define o = Character('Ogma', color="#d35400")
 
 #Debout
 image ogma debout_normal = "ogma/debout/ogma_debout_normal.png"
+image ogma debout_normal_mid = "ogma/debout/ogma_debout_normal_mid.png"
+image ogma debout_normal_close = "ogma/debout/ogma_debout_normal_close.png"
 image ogma debout_souriant = "ogma/debout/ogma_debout_souriant.png"
 image ogma debout_furieux = "ogma/debout/ogma_debout_furieux.png"
 image ogma debout_attriste = "ogma/debout/ogma_debout_attriste.png"
@@ -128,6 +134,8 @@ define m = Character("Moira", color = "#f00")
 
 #Debout
 image moira debout_normal = "moira/debout/moira_debout_normal.png"
+image moira debout_normal_mid = "moira/debout/moira_debout_normal_mid.png"
+image moira debout_normal_close = "moira/debout/moira_debout_normal_close.png"
 image moira debout_souriant = "moira/debout/moira_debout_souriant.png"
 image moira debout_furieux = "moira/debout/moira_debout_furieux.png"
 image moira debout_attriste = "moira/debout/moira_debout_attriste.png"
