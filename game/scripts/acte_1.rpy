@@ -19,9 +19,9 @@ label intro:
     $ confiance_choice = True
     $ tuer_choice = True
 
-    scene bg forest with dissolve
-
     play audio wood
+
+    scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
     show harald debout_normal at center with dissolve
@@ -223,7 +223,7 @@ label intro:
 #Sequence 2
 label plaine_1 :
 
-    #stop wood
+    #stop audio
 
     scene bg mer with dissolve
 
