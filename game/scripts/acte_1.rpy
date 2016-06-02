@@ -28,7 +28,7 @@ label intro:
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
     "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
-    show logan debout_normal_mid at right with dissolve
+    show logan debout_contrarie_mid at right with dissolve
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
     "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
     show einar debout_normal_mid at left with dissolve
@@ -84,6 +84,7 @@ label intro:
                     jump menu_harald_choice_foret
 
                 "J'ai hâte de me battre !" if enthousiaste_choice:
+                    show einar debout_souriant_mid at left
 
                     e "Sire, il me tarde de massacrer quelques paysans !"
 
@@ -100,6 +101,7 @@ label intro:
                     jump menu_harald_choice_foret
 
                 "Je crains pour votre vie" if confiance_choice:
+                    show einar debout_contrarie_mid at left
 
                     e "Sire, votre présence ici m'intrigue... Pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
 
@@ -129,7 +131,7 @@ label intro:
             with dissolve
 
             show einar debout_normal_mid at left with dissolve
-            show logan debout_normal_mid at right with dissolve
+            show logan debout_contrarie_mid at right with dissolve
 
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
@@ -143,8 +145,10 @@ label intro:
 
             menu menu_logan_choice_foret:
                 "Tu te souviens de cette bataille ?" if plan_choice:
-
+                    show einar debout_souriant_mid at left
+        
                     e "Tu te souviens de la bataille de Wertheim ?"
+                    show logan debout_souriant_mid at right
 
                     l "L'automne dernier ? Et comment ! Je revois encore les seins de la petite que j'avais attrapé ! J'ai passé une bonne nuit cette fois là !"
 
@@ -163,6 +167,7 @@ label intro:
                     jump menu_logan_choice_foret
 
                 "Tu reconnais le coin ?" if region_choice:
+                    show logan debout_normal_mid at right
 
                     e "Tu reconnais la région ?"
 
@@ -175,12 +180,15 @@ label intro:
                     jump menu_logan_choice_foret
 
                 "J'ai hâte de me battre !" if enthousiaste_choice:
+                    show einar debout_souriant_mid at left
 
                     e "Ma hache me démange. Je fracasserais bien quelques crânes !"
+                    show logan debout_souriant_mid at right
 
                     l "Moi aussi ! Je ne supporte plus ces voyages interminables. Deux mois que nous n'avons pas combattu ! Et plus d'un an depuis la dernière vraie bataille. Il est grand temps de nous dégourdir un peu !"
 
                     e "Tuer des écossais ne te posera pas de problème ?"
+                    show logan debout_normal_mid at right
 
                     l "Je n'aurai pas plus de problèmes que toi. Ces gens ont tué l'un des vassaux du roi. C'est une motivation amplement suffisante pour trancher la tête de quelques compatriotes."
 
@@ -189,6 +197,7 @@ label intro:
                     jump menu_logan_choice_foret
 
                 "Le roi me paraît sûr de lui !" if confiance_choice:
+                    show logan debout_normal_mid at right
 
                     e "Le roi me paraît bien confiant."
 
@@ -197,6 +206,7 @@ label intro:
                     l "Il est le plus grand souverain que le monde connaisse. Il porte une hache incrustée des Clous de la Sainte Croix."
 
                     l "Il est immortel, invincible, et une armée de vétérans marche avec lui."
+                    show logan debout_souriant_mid at right
 
                     l "S'il y a bien une personne sur cette terre qui peut avoir confiance en lui-même, c'est notre roi !"
 
@@ -233,10 +243,13 @@ label plaine_1 :
     h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
 
     "Un cavalier arrive en trombe et descend de son cheval, avant de courir vers Harald."
+    show gv debout_normaux_mid at left with moveinright
 
     gv "Sire ! Un rapport des éclaireurs !"
 
     h "Donne-moi ça..."
+    
+    hide gv
 
     "Harald lit rapidement le rapport."
 
@@ -253,6 +266,7 @@ label plaine_1 :
     h "Nos éclaireurs ont repéré des mouvements de troupes au nord."
 
     e "Les rebelles ?"
+    show harald debout_determine_mid at right
 
     h "Probablement, mais j'ai n'ai aucune certitude. Je veux envoyer un groupe de reconnaissance à l'avant de l'armée, et tirer cette affaire au clair."
 
@@ -263,6 +277,7 @@ label plaine_1 :
     menu menu_harald_eclaireur_foret_1:
 
         "J'accepte":
+            show einar debout_determine_mid at left
 
             e "Bien, sire. Où les éclaireurs ont-ils repéré ces mouvements ?"
 
@@ -298,11 +313,12 @@ label plaine_1 :
 
 
 
-    show logan debout_normal_mid at center
+    show logan debout_souriant_mid at center
     l "Je vais t'accompagner, Einar."
 
     menu:
         "Merci Logan !":
+            show einar debout_souriant_mid at left
 
             e "Merci beaucoup Logan, tu ne seras pas de trop !"
 
@@ -312,14 +328,17 @@ label plaine_1 :
 
 
         "Je regrette, mais non.":
+            show einar debout_determine_mid at left
 
             e "Je n'ai pas besoin de toi, Logan. C'est une mission de reconnaissance : moins nous sommes, mieux c'est."
+            show logan debout_contrarie_mid at center
 
             l "..."
 
             h "J'ai personnellement demandé à Logan de t'accompagner. Il est le seul à connaître la région, et il facilitera les relations avec les écossais."
 
-
+    show einar debout_normal_mid at left
+    show logan debout_normal_mid at center
     l "J'ai déjà planifié notre voyage."
     l "Nous passerons Stirling avant la nuit. Demain, nous atteindrons Perth. C'est le premier village douteux sur notre passage. Puis nous nous dirigerons vers Dundee, Forfar..."
     h "Parfait ! Il ne vous reste plus qu'à partir, les hommes vous attendent."
@@ -341,9 +360,11 @@ label plaine_2:
     show gv debout_normaux_mid at center with dissolve
 
     gv "Cette mission n'a rien de terrible... Je m'attendais à rencontrer de l'opposition !"
+    show gv debout_rire_mid at center
     gv "Nous aurions dû rester plus longtemps à Stirling ! Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
     show logan debout_normal_mid at right with dissolve
     l "Ne vous sentez pas à l'abri. Nous ne sommes pas encore arrivés dans le territoire des rebelles, mais ça ne veut pas dire qu'ils ne peuvent pas nous tomber dessus."
+    show gv debout_normaux_mid at center
 
     show einar debout_normal_mid at left with dissolve
 
