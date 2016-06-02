@@ -4,7 +4,7 @@
 label cote_2:
     scene bg mer with dissolve
 
-    show einar debout_normal at center with dissolve
+    show einar debout_normal_mid at center with dissolve
 
     e "Dunbar. Déjà..."
     e "..."
@@ -16,7 +16,7 @@ label exterieur_chateau_1:
 
     scene bg chateau_porte with dissolve
 
-    show einar debout_normal at left with moveinleft
+    show einar debout_normal_mid at left with moveinleft
     show gv debout_normaux at right with dissolve
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
@@ -61,9 +61,9 @@ label cour_chateau_1:
 
     "Harald est en grande discussion avec un huscarl au milieu de la cour"
 
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     e "Sire ! Sire !"
-    show harald debout_normal at right with dissolve
+    show harald debout_normal_mid at right with dissolve
     h "... doit nous faire venir de nouveaux navires de guerre, et..."
     h "Einar ? Que... D'où viens-tu ? Où as-tu passé tout ce temps ? Où sont tes compagnons ? J'ai beaucoup de questions à te poser !"
 
@@ -94,7 +94,7 @@ label cour_chateau_1:
 
     menu:
         "Je n'en sais rien (mentir)":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Je ne sais pas. Nous traversions une forêt en pleine nuit. J'ai été assommé... A mon réveil, il n'y avait plus personne et j'étais abandonné au fond d'un fossé."
             h "Un fossé ?"
             e "Oui, au détour d'un sentier en pleine forêt."
@@ -103,7 +103,7 @@ label cour_chateau_1:
 
         "Nous sommes tombés dans une embuscade":
         #modifaction pour indiquer le lieu par la suite
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Nous venions de traverser le village de Perth, que nous soupçonnions d'abriter les rebelles."
             e "Nous étions ensuite repartis. Les hommes discutaient entre eux, nous étions sûrs de nous. Puis la nuit est tombée."
             e "Il nous ont prit au dépourvu. Une bande d'une trentaine de guerriers écossais nous est tombée dessus sans que nous ne puissions nous défendre."
@@ -128,7 +128,7 @@ label cour_chateau_1:
     menu menu_assome_cour_chateau:
 
         "Je me suis débrouillé (mentir)":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Je me suis remis, lentement mais sûrement, dans la nature."
             "Harald hausse les sourcils"
             h "Dans la nature ? J'ai du mal à te croire..."
@@ -137,7 +137,7 @@ label cour_chateau_1:
             $ soupcon_harald_1 = True
 
         "J'ai reçu l'aide d'un autochtone (mentir)":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "J'ai été soigné par un vieux paysan."
             h "Un paysan ?"
             e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
@@ -148,7 +148,7 @@ label cour_chateau_1:
     menu menu_embuscade_ou_silence_cour_chateau:
 
         "Je me suis retrouvé dans un village, des gens m'ont aidé":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
             e "Un chasseur m'a trouvé alors qu'il allait relever des collets. Il m'a ramené à son village puis sa fille s'est occupée de moi. Elle s'appelait Moira."
             e "Pendant un mois, cette jeune femme m'a prodigué les soins nécessaires. Lorsqu'enfin mon état s'est amélioré, j'ai pu repartir."
@@ -156,7 +156,7 @@ label cour_chateau_1:
             e "..."
 
         "J'ai reçu l'aide d'un autochtone (mentir)":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "J'ai été soigné par un vieux paysan."
             h "Un paysan ?"
             e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
@@ -165,7 +165,7 @@ label cour_chateau_1:
             h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
         "J'ai perdu la mémoire (mentir)" if retour_silence_1:
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Je ne me rappelle de rien... Simplement de ce coup à la tête."
             e "Après, il n'y a qu'un grand vide jusqu'à il y a trois jours, lorsque je me suis réveillé dans les bois."
             e "Mes blessures étaient soignées et un repas était posé à côté de moi. Je l'ai mangé et ai prit la route pour revenir jusqu'ici."
@@ -179,7 +179,7 @@ label cour_chateau_1:
 
     menu :
         "Voici toute la vérité":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Très bien. Voici la vérité."
             e "Après avoir traversé le village de Perth, nous sommes tombés dans une embuscade des rebelles. Ils avaient probablement été prévenus de notre arrivée."
             show einar debout_attriste at left
@@ -188,7 +188,7 @@ label cour_chateau_1:
             e "Non. Alors que j'avais été mis à terre, le meneur des rebelles s'est approché de moi. J'ai cru mon heure arrivée."
             e "Il s'est penché sur moi puis m'a demandé de coopérer. Je n'ai pas eu d'autre choix que d'accepter."
             e "J'ai ensuite été assommé. A mon réveil, j'étais dans l'une de ces maisons écossaises, comme nous en avions vu au village."
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Pendant un mois, une jeune femme s'est occupée de moi. Elle s'appelait Moira et était la fille du meneur des rebelles, Ogma le Hurleur."
             h "Ogma le Hurleur ? Ce n'est pas un nom..."
             e "Dans ce cas, je ne connaît pas sa véritable identité."
@@ -214,17 +214,17 @@ label cour_chateau_1:
             $ mentir_harald_1 = True
 
     if mentir_harald_1:
-        show einar debout_normal at left
+        show einar debout_normal_mid at left
         h "Je te remercie pour ta sincérité, Einar."
         show harald debout_determine at right
         h "Grâce à toi, nous allons profiter de toutes les informations que tu as pu glâner pendant ce mois dans les Highlands."
-        show harald debout_normal at right
+        show harald debout_normal_mid at right
         h "Mais pour le moment tu devrais rejoindre les autres soldats. Ils seront heureux de retrouver l'un des leurs."
         e "Bien mon Roi."
 
     else:
         show harald debout_contrarie at right
-        show harald debout_normal at left
+        show harald debout_normal_mid at left
         h "Nous verrons ce qu'il est possible de faire pour te sauver..."
         h "Mais si ces salopards comptent attaquer prochainement,il faut impérativement préparer nos défenses !"
         e "Le château n'est pas suffisant ?"
@@ -255,7 +255,7 @@ label cour_chateau_1:
     p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
     hide ve
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     show patrick debout_normal at right
 
     menu:
@@ -291,7 +291,7 @@ label cour_chateau_1:
 
         menu menu_sauver_rebelle_cour_chateau:
             "Je ne les ai pas vus à Perth":
-                show einar debout_normal at left
+                show einar debout_normal_mid at left
                 e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
                 e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
                 show patrick debout_furieux at right
@@ -302,7 +302,7 @@ label cour_chateau_1:
                     $ soupcon_harald_1 = True
 
             "Ils ont l'air innoffensifs":
-                show einar debout_normal at left
+                show einar debout_normal_mid at left
                 e "Je ne sais rien d'eux, mais croyez-vous vraiment que ces trois paysans soient responsables d''une tentative d'assassinat ?"
                 e "Une mère ne mettrait pas la vie de son enfant en danger !"
 
@@ -337,7 +337,7 @@ label cour_chateau_1:
     gv "Regardez-les s'agiter comme des vers, ha ha !"
     hide gv with dissolve
 
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     show jgv debout_normal at right with dissolve
 
     "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
@@ -394,7 +394,7 @@ label cour_chateau_2:
 
     "Au crépuscule..."
     show gv debout_normaux at left with dissolve
-    show harald debout_normal at left with dissolve
+    show harald debout_normal_mid at left with dissolve
     gv "Sire ! Sire !"
     h "Qu'y a-t-il ? Parle !"
     gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
@@ -453,7 +453,7 @@ label pont_levis_baisse:
     "Les soldats proches se tournent vers Einar."
 
     show gv combat_normaux at right
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
 
     menu:
 
@@ -495,7 +495,7 @@ label pont_levis_baisse:
 
         "Ogma surgit au milieu de la mêlée, franchissant la Grande Porte. Il se rue sur Einar, un regard fou dans les yeux et la bave aux lèvres. Il hurle le nom de sa fille."
 
-        show einar debout_normal at left
+        show einar debout_normal_mid at left
         show ogma combat_furieux at right
         with dissolve
 
@@ -677,7 +677,7 @@ label e_bruler_donjon_obeir_donjon:
             call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
 
         "Ignorer la Hache":
-            show einar debout_normal at center
+            show einar debout_normal_mid at center
             e "..."
             jump e_confrontation_harald_pont_axe_laissee_baisse_donjon
 
@@ -1052,8 +1052,8 @@ label e_epargne_harald_no_axe_donjon:
         "Un peu plus tard..."
 
         "Ogma est déçu mais comprend pourquoi Einar a laissé s'enfuir le roi : sans sa Hache, l'empire va s'effondrer sous peu."
-        show einar debout_normal at left
-        show ogma debout_normal at right
+        show einar debout_normal_mid at left
+        show ogma debout_normal_mid at right
         o "Pourquoi l'avoir laissé s'enfuir ?"
         o "Nous tenions celui qui a asservi le monde entier, privé de sa Hache..."
         o "Nous pouvions libérer le monde !"
@@ -1061,7 +1061,7 @@ label e_epargne_harald_no_axe_donjon:
         e "Je..."
         show ogma debout_contrarie at right
         o "Ne répond pas à ma question, je préfère ne pas savoir."
-        show ogma debout_normal at right
+        show ogma debout_normal_mid at right
         o "Tu avais sûrement une excellente raison de le laisser partir."
         show ogma debout_souriant at right
         o "Quoi qu'il en soit, je te suis reconnaissant. Sans toi, rien de tout ceci n'aurait été possible."
@@ -1095,8 +1095,8 @@ label village_5:
 
     "..."
 
-    show einar debout_normal at left
-    show ogma debout_normal at right
+    show einar debout_normal_mid at left
+    show ogma debout_normal_mid at right
 
     o "Voici ton or."
     o "Nous avons décidé de t'offrir un cheval. Il te mènera où bon te semble."
@@ -1137,9 +1137,9 @@ label village_6:
     $ refuer_ogma_main_moira = False
 
     "Moira se tient légèrement à l'écart."
-    show einar debout_normal at left
-    show moira debout_normal at right
-    show ogma debout_normal at right
+    show einar debout_normal_mid at left
+    show moira debout_normal_mid at right
+    show ogma debout_normal_mid at right
     with dissolve
 
     o "Toute l'Ecosse t'es redevable, Einar !"
@@ -1171,7 +1171,7 @@ label village_6:
             show ogma debout_determine at right
             o "Vois ces gens autour de toi : tu es leur libérateur !"
 
-    show ogma debout_normal at right
+    show ogma debout_normal_mid at right
     o "Il y a autre chose dont j'aimerais te parler. Une dernière faveur."
     e "..."
     o "Cela concerne Moira."
@@ -1179,7 +1179,7 @@ label village_6:
     o "Je crois savoir que vous vous portez une grande affection..."
     o "Je serais heureux de compter le libérateur de mon peuple dans ma famille."
     o "J'ai l'honneur de t'offrir la main de ma fille, si tu l'acceptes."
-    show ogma debout_normal at right
+    show ogma debout_normal_mid at right
 
     show moira debout_souriant at right
     "Bien qu'à l'écart, Moira fait un grand sourire à Einar."
@@ -1216,13 +1216,13 @@ label village_6:
         o "A vrai dire, la déception de ma fille doit être encore plus grande..."
         o "Elle était à l'origine de cette demande."
         e "..."
-        show ogma debout_normal at right
+        show ogma debout_normal_mid at right
         o "Que comptes-tu faire désormais ?"
 
         menu:
 
             "Ermite en Ecosse":
-                show einar debout_normal at left
+                show einar debout_normal_mid at left
                 e "Rester ici, en Ecosse. Seul."
                 o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
                 o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
@@ -1235,7 +1235,7 @@ label village_6:
                 o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
 
             "Je vivrai au jour le jour":
-                show einar debout_normal at left
+                show einar debout_normal_mid at left
                 e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
                 o "J'imagine qu'à ta place, je n'en saurais pas plus."
                 o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
@@ -1263,8 +1263,8 @@ label foret_4:
     "..."
     "Moira apparaît sur le sentier."
 
-    show einar debout_normal at left with dissolve
-    show moira debout_normal at right with moveinright
+    show einar debout_normal_mid at left with dissolve
+    show moira debout_normal_mid at right with moveinright
 
     if premier_refus_moira == False:
         e "Qu'est-ce que tu fais là ?"
@@ -1307,7 +1307,7 @@ label foret_4:
             e "Au revoir, Moira."
 
         "Nous n'éprouvons pas les même sentiments":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Je ne t'aime pas, Moira."
             show einar debout_souriant at left
             e "Je te suis reconnaissant pour tous tes soins, et j'ai apprécié le temps que nous avons passé ensemble."
@@ -1369,8 +1369,8 @@ label fuite_harald_pont_baisse_donjon:
     "Le Hurleur semble observer la mer."
     "..."
 
-    show ogma debout_normal at right
-    show einar debout_normal at left
+    show ogma debout_normal_mid at right
+    show einar debout_normal_mid at left
     with dissolve
 
     o "Bravo Einar, la réussite est totale ! Mais pourquoi avoir laissé partir le roi ?"
@@ -1380,9 +1380,9 @@ label fuite_harald_pont_baisse_donjon:
     o "Ne réponds pas à ma question, je préfère ne pas savoir."
     o "Le roi est vaincu et tu as la Hache Sainte, tu n'avais aucune raison de le tuer."
     o "La Hache a l'air si... ordinaire."
-    show einar debout_normal at left
+    show einar debout_normal_mid at left
     e "Je peux vous assurer qu'elle n'a rien d'ordinaire !"
-    show ogma debout_normal at right
+    show ogma debout_normal_mid at right
     o "Sans doutes..."
     o "Il va falloir que tu t'en sépare, désormais. Nous devons la détruire."
     o "Donne-la moi, s'il-te-plaît."
@@ -1449,9 +1449,9 @@ label lieu_encore_inconnu_1(axe = True):
     $ demander_main_moira = False
     $ refuser_or = False
 
-    show einar debout_normal at left
-    show ogma debout_normal at right
-    show moira debout_normal at right
+    show einar debout_normal_mid at left
+    show ogma debout_normal_mid at right
+    show moira debout_normal_mid at right
     with dissolve
 
     if axe:
@@ -1483,7 +1483,7 @@ label lieu_encore_inconnu_1(axe = True):
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
 
-    show einar debout_normal at left
+    show einar debout_normal_mid at left
 
     menu:
 
@@ -1534,7 +1534,7 @@ label lieu_encore_inconnu_1(axe = True):
             "Je comprends":
                 show einar debout_attriste at left
                 e "Je comprends. Si j'avais su, j'aurais épargné le roi..."
-                show ogma debout_normal at right
+                show ogma debout_normal_mid at right
                 o "..."
 
             "Moira, qu'en penses-tu ?":
@@ -1555,7 +1555,7 @@ label lieu_encore_inconnu_1(axe = True):
                 m "Calme-toi, Einar. Je n'ai pas d'autre choix que de me ranger à l'avis de mon père."
                 "Les larmes lui montent aux yeux."
 
-    show ogma debout_normal at right
+    show ogma debout_normal_mid at right
     hide moira with dissolve
 
     if refuser_or:
@@ -1590,17 +1590,17 @@ label lieu_encore_inconnu_1(axe = True):
             o "Prend garde à toi une fois là-bas. Les gens voudront sans doute retrouver celui qui a condamné leur roi et fait basculer leur empire."
 
         "Je vivrai au jour le jour":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Errer. Je n'ai pas d'idées bien déterminées concernant la suite."
             o "J'imagine qu'à ta place, je n'en saurais pas plus."
             show ogma debout_souriant at right
             o "L'errance a du bon. C'est dans ces moments là que l'on fait les rencontres les plus étonnantes."
 
         "J'irai en Asie":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Aller en Asie, là où personne ne viendra me chercher. J'ai toujours été intrigué par cette région du monde."
             o "C'est assez... Surprenant !"
-            show ogma debout_normal at right
+            show ogma debout_normal_mid at right
             o "Il ne me reste plus qu'à te souhaiter bon voyage."
             show ogma debout_souriant at right
             o "Si le coeur t'en dit, n'hésite pas à revenir ici. Tu trouveras toujours des amis à Perth."
@@ -1726,8 +1726,8 @@ label soupcon_harald_defendre_porte:
 
     "Un peu plus tard..."
 
-    show einar debout_normal at left
-    show harald debout_normal at right
+    show einar debout_normal_mid at left
+    show harald debout_normal_mid at right
     with dissolve
 
     h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
@@ -1754,7 +1754,7 @@ label soupcon_harald_defendre_porte:
             e "J'ai mené l'assaut final et tué le chef rebelle, qu'on se souvienne longtemps de mes exploits !"
             h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
 
-    show harald debout_normal at right
+    show harald debout_normal_mid at right
     show harald debout_normal at right
     h "J'ai décidé de récompenser ta valeur."
     h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
@@ -1786,7 +1786,7 @@ label soupcon_harald_defendre_porte:
             show harald debout_contrarie at right
             h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."
             hide gv with dissolve
-            show harald debout_normal at right
+            show harald debout_normal_mid at right
             h "Tes exploits ne te dispensent pas de respecter ton roi et empereur, Einar."
             h "Ne t'adresse plus jamais à moi de cette façon, ou la sanction sera exemplaire."
             e "..."
@@ -1858,7 +1858,7 @@ label harald_defendre_porte:
     "Du plat de sa hache, Harald frappe Ogma au torse, lui brisant les côtes et le jetant à terre."
     "Le roi s'apprête à achever le chef rebelle."
 
-    show einar debout_normal at center with dissolve
+    show einar debout_normal_mid at center with dissolve
 
     menu :
 
@@ -1885,7 +1885,7 @@ label e_laisse_ogma_mort_defendre_porte:
         "Joli !":
             show einar debout_souriant at left
             e "Beau coup, sire !"
-            show harald debout_normal at right
+            show harald debout_normal_mid at right
             h "Ha ha ! Le compliment me va droit au coeur !"
             h "Regarde ses yeux ! Je suis sûr qu'il est encore conscient !"
             "Un huscarl s'approche pour achever l'écossais."
@@ -1901,7 +1901,7 @@ label e_laisse_ogma_mort_defendre_porte:
             h "Rattrappez-les, vous autres !"
 
         "J'aurais dû faire ça moi-même":
-            show einar debout_normal at left
+            show einar debout_normal_mid at left
             e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
             show harald debout_normal at right
             h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
@@ -1924,7 +1924,7 @@ label cour_chateau_ogma_mort_defendre_porte:
     hide gv with dissolve
     show einar debout_attriste at left
     e "..."
-    show moira debout_normal at left with dissolve
+    show moira debout_normal_mid at left with dissolve
     "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
     show moira debout_furieux at right
     show patrick debout_normal at right with dissolve
@@ -1937,7 +1937,7 @@ label cour_chateau_ogma_mort_defendre_porte:
     show patrick debout_normal at right
     p "Bien, bien. Que Dieu ait pitié de vos âmes !"
     "Deux hommes amènent des torches et commencent à embraser les bûchers."
-    show harald debout_normal at left
+    show harald debout_normal_mid at left
     h "Ha ha ! Le Seigneur nous offre un beau spectacle à travers son jugement !"
     "Les porteurs de torches s'approchent du bûcher de Moira."
 
@@ -2008,7 +2008,7 @@ label e_sauve_ogma_defendre_porte:
 
     else:
 
-        show ogma debout_normal at right
+        show ogma debout_normal_mid at right
         show einar debout_blesse at left
         "..."
         o "Je ne comprends pas tes actes."
@@ -2056,22 +2056,22 @@ label e_sauve_ogma_defendre_porte:
 
         menu :
             "Adieu":
-                show einar debout_normal at left
+                show einar debout_normal_mid at left
                 e "Adieu."
                 o "..."
 
             "Et Moira ?":
-                show einar debout_normal at left
+                show einar debout_normal_mid at left
                 e "Et Moira ? Où est-elle ?"
                 show ogma debout_furieux at right
                 o "Ne prononce même pas son nom. Je ne veux plus que tu ais le moindre rapport avec elle. Elle ne le veut pas non plus."
-                show ogma debout_normal at right
+                show ogma debout_normal_mid at right
                 o "Pars, maintenant."
 
             "Je rentre en Norvège":
-                show einar debout_normal at left
+                show einar debout_normal_mid at left
                 e "Je ne comptais pas rester. Il est temps que je rentre en Norvège."
-                show ogma debout_normal at right
+                show ogma debout_normal_mid at right
                 o "Peu importe où tu vas, pourvu que tu quittes l'Ecosse."
 
             "Quel ingrat !":

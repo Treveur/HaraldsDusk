@@ -9,9 +9,9 @@ label interieur_maison_village_1:
     $ critique_ogma = False
 
     "Einar émerge du sommeil..."
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     e "Je suis entravé ? Huuugh..."
-    show moira debout_normal at right with dissolve
+    show moira debout_normal_mid at right with dissolve
 
     menu menu_rencontre_moira_blesse:
         "Toi ?" if moira_met:
@@ -93,12 +93,12 @@ label interieur_maison_village_1:
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
     hide einar with dissolve
-    show ogma debout_normal at center with dissolve
+    show ogma debout_normal_mid at center with dissolve
     o "Alors ? Comment va le prisonnier ?"
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
     m "La cicatrisation commence à peine, la blessure était profonde. Le vieux m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     e "Je ..."
     o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
     hide ogma with dissolve
@@ -240,8 +240,8 @@ label interieur_maison_village_2:
 #Sequence 3
 label interieur_maison_village_3:
     scene bg house2_jour with dissolve
-    show ogma debout_normal at center with dissolve
-    show moira debout_normal at right with dissolve
+    show ogma debout_normal_mid at center with dissolve
+    show moira debout_normal_mid at right with dissolve
     "Quelques semaines plus tard..."
     o "... je la voyait se débattre comme jamais une truite ne s'était débattue ! Je tire sur la ligne en essayant de la remonter, mais ce foutu poisson passe derrière un rocher : la ligne casse !"
     m "A ce moment là je saute dans la rivière depuis la berge !"
@@ -253,14 +253,14 @@ label interieur_maison_village_3:
     o "Ensuite ta mère t'a sortie de l'eau. Tu étais toute bleue, mais tu ne voulais pas lâcher le poisson ! On t'a ramenée à la maison et tu n'as lâché la truite qu'une fois rentrée !"
     m "J'aimerais retourner pêcher..."
     o "Pas pour le moment. Nous avons des choses à régler d'abord..."
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     hide moira with dissolve
     e "Logan aussi était un bon pêcheur..."
     o "D'où venait-il ?"
     e "D'Aberdeen, loin au nord."
     o "Je n'y suis jamais allé... Et vous Einar, vous n'avez rien à raconter ? D'où venez-vous ?"
 
-    show moira debout_normal at right with dissolve
+    show moira debout_normal_mid at right with dissolve
 
     menu :
         "Ça ne vous regarde pas !":
@@ -301,9 +301,9 @@ label interieur_maison_village_3:
     ve "Dunfermline a brûlé ce matin !"
     o "Le roi... Je ne suis pas surpris."
     hide ve with dissolve
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     e "Vous n'avez pas l'air affecté par la nouvelle !"
-    show moira debout_normal at right with dissolve
+    show moira debout_normal_mid at right with dissolve
     m "Stirling et Falkirk ont déjà été rasée il y a quelques jours. Le roi est en marche."
     o "Depuis que vous avez été capturé, Harald n'a pas cessé de vous chercher. Nous avons déjà eu la visite d'un émissaire."
 
@@ -350,8 +350,8 @@ label interieur_maison_village_4:
     "Deux semaines plus tard..."
 
     "Moira arrive dans la chambre, un couteau à la main."
-    show moira debout_normal at right with dissolve
-    show einar debout_normal at left with dissolve
+    show moira debout_normal_mid at right with dissolve
+    show einar debout_normal_mid at left with dissolve
     m "Bonjour, Einar."
 
     menu menu_moira_couteau:
@@ -485,8 +485,8 @@ label village_2:
     "Les villageois remarquent à peine la présence d'Einar."
     hide ve with dissolve
 
-    show einar debout_normal at left with dissolve
-    show moira debout_normal at right with dissolve
+    show einar debout_normal_mid at left with dissolve
+    show moira debout_normal_mid at right with dissolve
 
     menu :
         "Pas d'ovation populaire ?":
@@ -531,8 +531,8 @@ label village_3:
 
     $ einar_raler = False
 
-    show einar debout_normal at left with dissolve
-    show moira debout_normal at right with dissolve
+    show einar debout_normal_mid at left with dissolve
+    show moira debout_normal_mid at right with dissolve
 
     m "Alors ? Qu'as-tu pensé de cette première sortie ? Tu as apprécié ?"
 
@@ -590,8 +590,8 @@ label village_3:
 label foret_3:
     scene bg forest_crepuscule with dissolve
 
-    show einar debout_normal at left with dissolve
-    show moira debout_normal at right with dissolve
+    show einar debout_normal_mid at left with dissolve
+    show moira debout_normal_mid at right with dissolve
 
     menu :
         "Où allons-nous ?":
@@ -616,8 +616,8 @@ label foret_3:
 label paradis_foret_1:
     scene bg little_heaven with dissolve
 
-    show einar debout_normal at left
-    show moira debout_normal at right
+    show einar debout_normal_mid at left
+    show moira debout_normal_mid at right
     with dissolve
 
     $ moira_dead = False
@@ -678,9 +678,9 @@ label village_4:
 
     "Le lendemain..."
 
-    show ogma debout_normal at right with dissolve
+    show ogma debout_normal_mid at right with dissolve
     o "Vous voilà prêt à partir, Einar."
-    show einar debout_normal at left with dissolve
+    show einar debout_normal_mid at left with dissolve
     e "Je pense être prêt, oui. Retrouver mes affaires me fait du bien."
     o "Avant de vous souhaiter bonne route, je veux vous rappeler quelque chose. Vous nous avez fait une promesse."
     o "Nous vous avons soigné, nous nous sommes occupé de vous. Vous nous êtes redevable. Remplissez votre part du marché."
@@ -697,7 +697,7 @@ label village_4:
         "Oui.":
             e "Très bien."
     hide ogma with dissolve
-    show moira debout_normal at right with dissolve
+    show moira debout_normal_mid at right with dissolve
     m "Tu as donné ta parole à mon père. Je considère que tu m'as également donné ta parole. S'il te plaît, ne me déçois pas..."
     "Moira s'approche d'Einar."
 
@@ -723,7 +723,7 @@ label village_4:
 #Sequence 10
 label sentier_foret_1:
     scene bg sentier_jour with dissolve
-    show einar debout_normal with dissolve
+    show einar debout_normal_mid with dissolve
     e "..."
     e "(Ce qu'il fait chaud... Je ne me serais jamais attendu à avoir un temps pareil dans les Highlands !)"
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
@@ -741,7 +741,7 @@ label sentier_foret_1:
 
 label foret_5:
     scene bg forest_night with dissolve
-    show einar debout_normal with dissolve
+    show einar debout_normal_mid with dissolve
     "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
     menu:
@@ -759,7 +759,7 @@ label foret_5:
 #Sequence 11
 label cote_1:
     scene bg cote1 with dissolve
-    show einar debout_normal with dissolve
+    show einar debout_normal_mid with dissolve
     e "(Ma fièvre ne fait qu'empirer... Je discerne à peine la fraîcheur de l'air marin..."
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
