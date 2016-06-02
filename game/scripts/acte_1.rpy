@@ -38,7 +38,6 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
-            hide einar
             hide logan
             with dissolve
 
