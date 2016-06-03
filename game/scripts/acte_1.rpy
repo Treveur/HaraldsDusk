@@ -19,7 +19,7 @@ label intro:
     $ confiance_choice = True
     $ tuer_choice = True
 
-    play audio wood
+    play audio wood loop
 
     scene bg forest with dissolve
 
@@ -146,7 +146,7 @@ label intro:
             menu menu_logan_choice_foret:
                 "Tu te souviens de cette bataille ?" if plan_choice:
                     show einar debout_souriant_mid at left
-        
+
                     e "Tu te souviens de la bataille de Wertheim ?"
                     show logan debout_souriant_mid at right
 
@@ -248,7 +248,7 @@ label plaine_1 :
     gv "Sire ! Un rapport des éclaireurs !"
 
     h "Donne-moi ça..."
-    
+
     hide gv
 
     "Harald lit rapidement le rapport."
@@ -452,7 +452,7 @@ label plaine_2:
 #Scequence 4
 label foret_1:
 
-    play audio wood
+    play audio wood loop
 
     scene bg forest with dissolve
 
@@ -554,7 +554,7 @@ label foret_1:
             show gv debout_rire_mid at center with dissolve
             gv "Ha ha !"
             hide gv with dissolve
-            
+
         "Que penses-tu de la mission, Logan ?" :
 
             e "Tu es le seul à ne pas encore t'être plaint..."
@@ -716,7 +716,7 @@ label e_demander_information_village_1:
     show einar debout_determine_mid at left
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
-    
+
     show logan debout_souriant_mid at center with dissolve
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
@@ -726,7 +726,7 @@ label e_demander_information_village_1:
     "Le vieil homme crache sur le sol, devant les pieds de Logan."
 
     e "Quel succès, Logan."
-    
+
     hide logan with dissolve
 
     e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
@@ -798,7 +798,7 @@ label e_tuer_villageois_village_1:
     show einar debout_furieux_mid at left
 
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un de vos vieux !"
-    
+
     show logan debout_determine_mid at center
 
     l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
@@ -824,11 +824,11 @@ label e_tuer_villageois_village_1:
             show einar debout_furieux_mid at left
 
             e "Foutus mensonges !"
-            
+
             show logan debout_determine_mid at center
 
             l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
-            
+
             show einar debout_normal_mid at left
 
             e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
@@ -861,13 +861,13 @@ label e_tuer_villageois_village_1:
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
-            
+
             show gv debout_furieux_mid at center
 
             gv "Vengeance !"
 
             e "Je..."
-            
+
             show logan debout_determine_mid at right
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
@@ -950,7 +950,7 @@ label e_villagoise_partir_maison_1:
     e "Sors d'ici et rejoint les autres."
 
     ve "..."
-    
+
     hide moira
 
     jump choix_retour_village_1
@@ -966,7 +966,7 @@ label e_tuer_moira_maison_1:
     show moira debout_furieux_mid at center
 
     ve "Lâchez-moi ! Salaud !"
-    
+
     show logan debout_determine_mid at center
 
     l "Einar ! Non ! Cette pauvre fille n'a rien fait de mal ! Tu vas compromettre toute la mission ! Souviens-toi des instructions du roi !"
@@ -981,7 +981,7 @@ label e_tuer_moira_maison_1:
             l "Cette fille était sans défenses !"
 
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
-            
+
             show ve debout_effrayes_mid at right
 
             ve "Monstres ! Ils ont tué Moira !"
