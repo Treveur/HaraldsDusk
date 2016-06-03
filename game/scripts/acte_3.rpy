@@ -557,13 +557,14 @@ label pont_levis_baisse:
             show ogma combat_normal at right
             with dissolve
             o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
+            "Un filet de sang goutte du menton du viking."
+            e "Lâche ! Tu m'as empoisonné !"
+            o "Tu auras l'antidote plus tard !"
+            o "Ce n'est pas le moment de discuter ! Brûle ce donjon !"
             e "Le donjon ? Pourquoi ?"
             o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
             show ogma combat_determine at right
             o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
-
-
-            "Ogma réclame que l'on brûle le donjon en urgence."
 
             menu :
 
@@ -611,7 +612,7 @@ label e_bruler_donjon_desobeir_donjon:
 
     "Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte."
 
-    show harald combat_hache_determine at left
+    show harald combat_hache_determine at center
     show huscarls combat_enthousiaste at right
 
     h "A moi, huscarls ! Suivez votre roi !"
@@ -624,7 +625,7 @@ label e_bruler_donjon_desobeir_donjon:
     "Harald arrive devant Einar, couvert du sang de ses victimes."
 
 
-    show harald combat_hache_normal at left
+    show harald combat_hache_normal at right
     h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
@@ -637,15 +638,13 @@ label e_bruler_donjon_desobeir_donjon:
             e "Je regrette tout et vous demande pardon, Sire."
 
         "Je ne vois aucun roi !":
-            show einar combat_furieux at left with dissolve
+            show einar combat_normal at left with dissolve
             e "Je ne vois aucun souverain ici..."
+            show einar combat_furieux at left
             e "Il n'y a personne pour me libérer d'une allégeance quelconque !"
 
-    show harald combat_hache_furieux at left
+    show harald combat_hache_furieux at right
     h "Garde ta langue de traître derrière tes dents !"
-    hide einar
-    hide harald
-    with dissolve
 
     jump bad_ending_6
 
@@ -742,7 +741,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     show harald combat_normal at right
     h "Comment oses-tu ?!"
-    show harald combat_normal at right
+    show harald combat_furieux at right
     h "CETTE HACHE EST A MOI !"
 
     "Harald devient comme fou et se jette sur Einar."
@@ -1388,11 +1387,11 @@ label fuite_harald_pont_baisse_donjon:
     o "Donne-la moi, s'il-te-plaît."
 
     menu:
-        "La voilà":
+        "Elle est à moi !":
             show einar combat_hache_determine
             jump e_garder_hache_pont_baisse_donjon
-        "Elle est à moi !":
-
+        
+        "La voilà":
             hide einar
             hide ogma
             with dissolve
@@ -1470,7 +1469,6 @@ label lieu_encore_inconnu_1(axe = True):
 
     else:
         show ogma debout_souriant at right
-        "Ogma félicite Einar pour avoir triomphé de Harald. Il lui donne la part de trésor promise. Moira se tient légèrement à l'écart."
         "..."
         "Moira se tient à l'écart mais semble interessée pas la conversation."
         o "Merci pour tout, Einar."
@@ -1570,8 +1568,10 @@ label lieu_encore_inconnu_1(axe = True):
         "Je vais me payer des femmes et des jeux !" if refuser_or == False:
             show einar debout_souriant at left
             e "Je vais dépenser l'or en femmes et en jeux, ha ha !"
+            show einar debout_normal at left
             e "De toutes manières, je n'ai plus grand chose à faire."
             e "Ma carrière militaire est terminée et je n'ai nul part où aller en particulier."
+            show einar debout_souriant at left
             e "Je suis seul au monde ! Un peu de chaleur humaine ne me fera pas de mal !"
 
         "Ermite en Ecosse":

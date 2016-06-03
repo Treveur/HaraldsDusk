@@ -1,52 +1,89 @@
 #Ending
 label bad_ending_1:
     "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
+    hide einar with dissolve
     jump credits
 
 label bad_ending_2:
+    show einar debout_furieux at left
     e "Je n'ai qu'une parole. Vous pouvez aller vous faire foutre !"
+    show ogma debout_contrarie at right
     o "C'est décevant... Tu crois être unique ? Si ce n'est pas toi, un autre fera le travail à ta place."
     "Ogma égorge Einar alors qu'il est entravé."
     e "Grrblbhh..."
+    hide einar with dissolve
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
     jump credits
 
 label bad_ending_3:
+    show einar debout_determine at left
     "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
+    show einar debout_blesse at left
     "Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers."
     "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
+    hide einar with dissolve
     jump credits
 
 label bad_ending_4:
-    "La furie sanguinaire d'Ogma est incontrôlable et Einar est massacré sur place."
+    show ogma combat_furieux at right
+    "La furie sanguinaire d'Ogma est incontrôlable. Affaibli par le poison, Einar est massacré sur place."
+    hide einar with dissolve
     "Alors que les rebelles continuent d'affluer dans l'enceinte, Ogma tombe à genoux devant le cadavre d'Einar."
     o "Grrr..."
     "Il tire une dague et commence à poignarder et mutiler sans relâche les restes du viking..."
     jump credits
 
 label bad_ending_5:
+    show hu combat_normal at right
+    show einar combat_blesse at left
     "Les forces coordonnées des huscarls surpassent le talent d'Einar, qui est jeté au sol."
+    show hu combat_furieux at right
     "Les huscarls le transforment en une pulpe sanglante sous une pluie de coups furieux."
+    hide einar with dissolve
     jump credits
 
 label bad_ending_6:
+    show harald combat_hache_furieux at right
     "Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de répliquer."
+    hide einar with dissolve
+    show harald combat_hache_determine at right
     h "Et maintenant, au tour des écossais..."
     jump credits
 
 label good_ending_7:
+    show einar combat_hache_normal at left
+    show ogma debout_determine at right
     e "Voici la Hache."
+    show einar debout_normal at left
     o "Merci beaucoup. Combien auraient cédé à l'appel du pouvoir ?"
+    show ogma debout_souriant at right
     o "Peu d'hommes auraient eu ta droiture et ton humilité !"
     e "Vous allez détruire la Hache ?"
+    show ogma debout_determine at right
     o "Oui. Je la ferai fondre en une arme nouvelle, une claymore."
     o "Elle sera destinée à ma famille, le clan Wallace. Elle symbolisera la fin de l'oppression et l'émergence de la Liberté !"
+    show re debout_enthousiastes at center
     ge "HOURRAAA !"
 
     jump credits
 
 label good_ending_8:
-    "Ogma remercie Einar d'avoir détruit la hache : il en aurait probablement fait un mauvais usage. C'est une preuve de sagesse que de savoir s'arrêter le moment venu. Einar reçoit sa part du trésor, comme convenu."
+    "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
+    "Les villageois lui font leurs adieux et petit à petit, la place se vide."
+    "Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner inexorablement."
+    "Moira."
+    
+        menu :
+            "(Quel soulagement d'avoir détruit la Hache)"
+                e "(Me voilà débarrassé de tous mes engagements...)"
+                e "(Maintenant que le monde est privé de la Hache, l'équilibre devrait revenir.)"
+                e "(Enfin, j'espère...)"
+                
+            "(Allons récupérer la Hache !)"
+                e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
+                e "(Il est temps de la récupérer ! Ce genre de choses ne devrait pas rester à traîner dans la nature...)"
+                e "(Et ensuite, à moi le pouvoir !)"
+                   
     jump credits
 
 label good_ending_9:
@@ -56,7 +93,15 @@ label good_ending_9:
     jump credits
 
 label normal_ending_10:
-    "Ogma s'empare de la hache et la brandit aux yeux de tous. Il tient alors un discours annonçant son ambition de \"libérer\" le reste de la Grande-Bretagne et pourquoi pas le reste de l'Europe. Le monde mérite un empereur écossais !"
+    o "Merci..."
+    "Ogma s'empare de la Hache et la brandit aux yeux de tous."
+    o "Aujourd'hui, nous nous sommes libérés de nos chaînes !"
+    o "L'Ecosse est libre ! Et désormais, un écossais porte la relique ! La Hache Sainte !"
+    ge "Gloire à Ogma !"
+    o "Nous ne nous arrêterons pas en si bon chemin... Car Dieu est avec nous !"
+    o "Il est temps de libérer le reste de la Grande-Bretagne ! Libérer l'Europe ! Libérer le monde !"
+    o "Le monde mérite un empereur écossais !"
+    ge "HOURRAAAA !"
     jump credits
 
 label good_ending_11:
@@ -156,6 +201,10 @@ label bad_ending_22:
 
 label credits:
     scene bg black with dissolve
+    centered "HARALD'S DUSK"
     with Pause(2.5)
+    centered "DESIGN ET PROGRAMMATION : Alexandre Allais - Benjamin Ramauge - Nicolas Duval"
+    centered "GRAPHISME : "
+    centered "SON : "
 
     $ renpy.full_restart()

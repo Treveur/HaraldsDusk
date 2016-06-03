@@ -976,6 +976,7 @@ label e_tuer_moira_maison_1:
         "Tais-toi ! (la tuer)":
 
             "Le viking abat sa hache sur la nuque de la femme, qui tombe au sol, inerte."
+            hide moira
             show logan debout_attriste_mid at center
 
             l "Cette fille était sans défenses !"

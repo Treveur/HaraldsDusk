@@ -633,11 +633,11 @@ label paradis_foret_1:
         "C'est magnifique":
             e "C'est un très bel endroit. Est-ce que..."
 
-
+    
     "Moira pousse doucement Einar contre un arbre."
     "Elle recule de quelques pas, puis se retourne."
-    "Elle se dénude lentement devant Einar, sans le regarder."
     hide moira with dissolve
+    "Elle se dénude lentement devant Einar, sans le regarder."
     show moira nue_normal at right with dissolve
 
     menu :
@@ -645,6 +645,7 @@ label paradis_foret_1:
         "C'est l'occasion de me débarrasser d'elle et de foutre le camp ! (Tuer Moira)":
             e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
             "Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme."
+            show moira nue_effraye at right
             "Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante."
             "Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte."
             hide moira with dissolve
@@ -662,6 +663,7 @@ label paradis_foret_1:
         "La regarder (Profiter du moment)":
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
             e "Tu..."
+            show moira nue_souriant at right
             m "Ne dis rien."
             "Elle embrasse doucement Einar et commence à l'enlacer."
             "Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite."
@@ -724,7 +726,7 @@ label village_4:
 label sentier_foret_1:
     scene bg sentier_jour with dissolve
     show einar debout_normal_mid with dissolve
-    e "..."
+    "..."
     e "(Ce qu'il fait chaud... Je ne me serais jamais attendu à avoir un temps pareil dans les Highlands !)"
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
@@ -742,6 +744,7 @@ label sentier_foret_1:
 label foret_5:
     scene bg forest_night with dissolve
     show einar debout_normal_mid with dissolve
+    "..."
     "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
     menu:
@@ -760,7 +763,8 @@ label foret_5:
 label cote_1:
     scene bg cote1 with dissolve
     show einar debout_normal_mid with dissolve
-    e "(Ma fièvre ne fait qu'empirer... Je discerne à peine la fraîcheur de l'air marin..."
+    "..."
+    e "(Ma fièvre ne fait qu'empirer... Je discerne à peine la fraîcheur de l'air marin...)"
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
     menu :
