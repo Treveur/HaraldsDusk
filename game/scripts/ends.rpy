@@ -189,7 +189,8 @@ label bad_ending_20:
     jump credits
 
 label bad_ending_21:
-    "Einar s'éloigne du château en enjambant sans distinction les cadavres écossais et vikings, tâchant ses vêtements dans la végétation imbibée de sang. Derrière lui, Dunbar brûle."
+    "Einar s'éloigne du château en enjambant sans distinction les cadavres écossais et vikings, tâchant ses vêtements dans la végétation imbibée de sang."
+    "Derrière lui, Dunbar brûle."
     jump credits
 
 label bad_ending_22:
