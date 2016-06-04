@@ -232,7 +232,7 @@ label intro:
 #Sequence 2
 label plaine_1 :
 
-    stop ambiance
+    play ambiance coast
 
     scene bg mer with dissolve
 
@@ -353,6 +353,8 @@ label plaine_1 :
 #Sequence 3
 label plaine_2:
 
+    play ambiance coast
+
     scene bg cote1 with dissolve
 
     "Le lendemain..."
@@ -452,7 +454,7 @@ label plaine_2:
 #Scequence 4
 label foret_1:
 
-    play audio wood loop
+    play ambiance wood
 
     scene bg forest with dissolve
 
@@ -632,7 +634,7 @@ label foret_1:
 #Scene 1
 label village_1:
 
-    play audio village
+    play ambiance village
 
     $ moira_met = False
 
@@ -773,6 +775,7 @@ label e_fouiller_village_1(einarFouille = False):
 
         e "Je suis à peine surpris... J'arrive !"
 
+    stop ambiance
     scene bg house
     show moira debout_normal_mid at center with dissolve
     show einar debout_normal_mid at left with dissolve
@@ -1081,6 +1084,9 @@ label choix_retour_village_1(massacre = False):
 
 #Sequence 7
 label foret_2(lieu = ""):
+
+    play ambiance wood_night
+
     scene bg forest with dissolve
 
     if lieu == "chateau":
@@ -1198,6 +1204,8 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     hide gv
     with dissolve
 
+    #Remplacer pas simple horn
+    play sound double_horn
     "Un cor retentit dans les bois, très proche."
 
     show einar debout_normal_mid at left with dissolve
@@ -1257,6 +1265,8 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
 #Fin alternative n°1
 label massacre_foret_2(lieu = ""):
+
+    play ambiance wood_night
 
     if lieu == "chateau":
 
@@ -1492,6 +1502,9 @@ label e_menace_foret_2(bad_ending = False):
 
 #Sequence 8
 label e_reveil_village_2:
+
+    play ambiance village
+
     scene bg house with dissolve
 
     $ already_talk = False
