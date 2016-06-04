@@ -382,6 +382,9 @@ label cour_chateau_1:
         "Le jeune soldat semble toujours aussi bouleversé."
     else:
         "Le jeune soldat semble rassuré."
+        
+    e "Koff Koff..."
+    "Une quinte de toux sanglante agite Einar."
 
     hide einar
     hide jgv
@@ -804,6 +807,8 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Partez d'ici":
 
                 show einar combat_hache_furieux at left
+                e "Koff Koff..."
+                h "La mort est déjà entrain de te ronger, Einar !"
                 e "Partez d'ici. Ne revenez jamais en Ecosse."
                 show harald combat_blesse at right
                 h "Tu me laisse m'enfuir ? Pourquoi ?"
@@ -817,6 +822,9 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 jump fuite_harald_pont_baisse_donjon
 
             "Ogma veut vous rencontrer...":
+                e "Le Hurleur sera heureux de vous rencontrer, j'en suis sûr... Koff Koff !"
+                h "Tu vas me livrer à lui ? Ils t'ont empoisonné ! Tu crache du sang comme un boeuf mal égorgé !"
+                e "J'aurai... L'antidote."
                 "..."
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
                 show einar combat_hache_normal at left
@@ -846,6 +854,8 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         ge "HOURRAAA !"
         hide re
         o "Pour que la victoire soit complète, nous devons détruire la Hache."
+        e "Et mon antidote ?"
+        o "Il est là, dans ma poche. Je te le donnerai une fois la Hache détruite."
         show einar combat_hache_determine at left
         e "Pourquoi ?"
         show ogma debout_contrarie at right
@@ -870,25 +880,34 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
 
     menu :
         "Pour la Liberté":
+            e "Koff Koff !"
+            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "J'ai voulu croire en la liberté d'un peuple sur ses propres terres."
+            h "Tu es ridicule ! A l'article de la mort ! Ces gens se sont servis de toi !"
+            e "Sans doutes... Mais j'aurai l'antidote. Et j'aurai libéré un peuple."
             show einar combat_determine at left
             e "Les écossais en ont assez de recevoir des ordres. Il est temps pour eux de reprendre leur destin en main !"
             show harald combat_hache_furieux at right
             h "Tu penses réellement que ce peuple de paysans arriéré serait capable de prendre les bonnes décisions ?"
             h "Sans moi, sans l'empire, ils sont voués à rester à l'état de petits clans épars, rongé par leurs petites guerres ridicules !"
+            h "Ton altruisme irraisonné m'écoeure !"
             show einar combat_normal at left
             e "Le choix ne vous appartient plus, désormais."
 
         "Las des promesses":
+            e "Koff Koff !"
+            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "J'étais las de vos promesses de terres et d'or qui ne se concrétisaient jamais, alors j'ai changé de camp."
             show harald combat_hache_furieux at right
             h "C'est l'appât du gain qui te fait te rebeller contre moi ? Tu es prêt à condamner tout l'empire par caprice ?"
-            h "Tu es complètement fou !"
+            h "Tu es complètement fou ! Regarde toi ! Tu es as l'article de la mort !"
             show einar combat_determine at left
             e "Peut-être."
 
         "Vous êtes un monstre":
             show einar combat_normal at left
+            e "Koff Koff !"
+            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "J'ai rencontré une jeune femme et son père, qui m'ont convaincu que vous êtes un monstre."
             e "Le monde ne devrait jamais être entre les mains d'un seul homme."
             e "Vous n'avez fait qu'enchaîner massacres sur prises de pouvoir, vous avez privé le monde de son libre arbitre."
@@ -899,6 +918,8 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
 
         "J'avais envie de déranger l'ordre établi":
             show einar combat_normal at left
+            e "Koff Koff !"
+            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "L'ordre des choses m'ennuyait..."
             e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."
             show harald combat_hache_furieux at right
@@ -936,6 +957,12 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
         "Pardon":
             show einar combat_normal at left
             e "Et si j'implore votre pardon, Sire ?"
+            
+        "Ça ou du poison...":
+            show einar combat_normal at left
+            e "Il faut bien mourir de quelque chose !"
+            e "La tête tranchée par une relique sainte ou le corps détruit par du poison..."
+            e "Le résultat sera le même !"
 
         "Vous avez déjà perdu":
             e "Me tuer ne changera rien au fait que vous avez perdu cette bataille."
@@ -1050,7 +1077,6 @@ label e_epargne_harald_no_axe_donjon:
 
         "Un peu plus tard..."
 
-        "Ogma est déçu mais comprend pourquoi Einar a laissé s'enfuir le roi : sans sa Hache, l'empire va s'effondrer sous peu."
         show einar debout_normal_mid at left
         show ogma debout_normal_mid at right
         o "Pourquoi l'avoir laissé s'enfuir ?"
@@ -1098,6 +1124,9 @@ label village_5:
     show ogma debout_normal_mid at right
 
     o "Voici ton or."
+    o "Oh, et bien sûr, l'antidote."
+    "Einar avale les quelques gouttes contenues dans la fiole."
+    o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
     o "Nous avons décidé de t'offrir un cheval. Il te mènera où bon te semble."
     show einar debout_contrarie at left
     e "Et si je souhaite rester ici ?"
@@ -1144,6 +1173,9 @@ label village_6:
     o "Toute l'Ecosse t'es redevable, Einar !"
     o "Tu nous a rendu la liberté et provoqué la fin de l'empire !"
     o "Comme promis, voici ton or et un cheval prêt à t'emmener où bon te semble."
+    o "Oh, et bien sûr, l'antidote."
+    "Einar avale les quelques gouttes contenues dans la fiole."
+    o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
 
     menu:
         "Merci":
@@ -1439,6 +1471,9 @@ label e_garder_hache_pont_baisse_donjon:
             show einar combat_hache_determine at left
             e "Le monde se pliera devant moi !"
             e "A genoux, manants ! HA HA HA !"
+            o "Tu es fou ! Nous ne te laisserons pas faire !"
+            o "Le poison aura raison de toi !"
+            e "Idiots ! La Hache me rend immortel !"
             hide einar with dissolve
             jump good_ending_9
 
@@ -1466,6 +1501,9 @@ label lieu_encore_inconnu_1(axe = True):
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
+        o "Oh, et bien sûr, l'antidote."
+        "Einar avale les quelques gouttes contenues dans la fiole."
+        o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
 
     else:
         show ogma debout_souriant at right
@@ -1480,6 +1518,9 @@ label lieu_encore_inconnu_1(axe = True):
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
+        o "Oh, et bien sûr, l'antidote."
+        "Einar avale les quelques gouttes contenues dans la fiole."
+        o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
 
     show einar debout_normal_mid at left
 
@@ -1756,6 +1797,10 @@ label soupcon_harald_defendre_porte:
 
     show harald debout_normal_mid at right
     show harald debout_normal at right
+    h "L'Evêque Patrick a pu t'obtenir un antidote pour le poison qui te ronge."
+    h "Il a extorqué la recette à un vieillard de Perth d'une façon assez... Spectaculaire !"
+    e "Merci, Sire !"
+    "Einar boit le contenu de la petite fiole."
     h "J'ai décidé de récompenser ta valeur."
     h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
     h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
@@ -1913,7 +1958,10 @@ label e_laisse_ogma_mort_defendre_porte:
     jump cour_chateau_ogma_mort_defendre_porte
 
 label cour_chateau_ogma_mort_defendre_porte:
-
+    
+    
+    "Einar a été soigné du poison : l'évêque Patrick a soutiré la recette à un vieillard écossais."
+    "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
     show einar debout_normal at left
@@ -2048,6 +2096,8 @@ label e_sauve_ogma_defendre_porte:
 
         show ogma debout_attriste at right
         o "Quoi qu'il en soit... Je vais t'épargner. Crois bien que l'envie de te tuer est grande, mais je refuse de tuer une personne de plus aujourd'hui. Et je te dois la vie."
+        o "Prend cet antidote. Ce sera ta seule récompense."
+        "Einar boit le contenu de la petite fiole."
         show ogma debout_determine at right
         o "Cependant, je te banni d'Ecosse à tout jamais. Bien entendu, tu n'auras pas l'or promis."
         o "J'espère que tu nous considères comme quittes."
