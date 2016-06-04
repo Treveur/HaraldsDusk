@@ -34,10 +34,10 @@ label bad_ending_4:
     jump credits
 
 label bad_ending_5:
-    show hu combat_normal at right
+    show huscarls combat_normaux at right
     show einar combat_blesse at left
     "Les forces coordonnées des huscarls surpassent le talent d'Einar, qui est jeté au sol."
-    show hu combat_furieux at right
+    show huscarls combat_furieux at right
     "Les huscarls le transforment en une pulpe sanglante sous une pluie de coups furieux."
     hide einar with dissolve
     jump credits

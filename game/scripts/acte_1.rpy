@@ -797,7 +797,7 @@ label e_fouiller_village_1(einarFouille = False):
 
 
 label e_tuer_villageois_village_1:
-    show ve_mid
+    show ve debout_normaux_mid
     show einar debout_furieux_mid at left
 
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un de vos vieux !"
