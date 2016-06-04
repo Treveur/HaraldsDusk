@@ -1085,7 +1085,7 @@ label choix_retour_village_1(massacre = False):
 #Sequence 7
 label foret_2(lieu = ""):
 
-    play ambiance wood_night
+    play ambiance wood
 
     scene bg forest with dissolve
 
@@ -1109,6 +1109,9 @@ label foret_2(lieu = ""):
         show einar debout_normal_mid at left with dissolve
         e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
         hide gv with dissolve
+
+    play ambiance wood_night
+
     scene bg forest_night with dissolve
     hide einar with dissolve
     "..."
@@ -1266,7 +1269,9 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 #Fin alternative n°1
 label massacre_foret_2(lieu = ""):
 
-    play ambiance wood_night
+    play ambiance wood
+
+    show bg forest with dissolve
 
     if lieu == "chateau":
 
@@ -1292,6 +1297,9 @@ label massacre_foret_2(lieu = ""):
 
         gv "Voilà qui fait plaisir à entendre !"
 
+    show bg forest_night with dissolve
+
+    play ambiance wood_night
 
     "..."
 
@@ -1504,6 +1512,7 @@ label e_menace_foret_2(bad_ending = False):
 label e_reveil_village_2:
 
     play ambiance village
+    #play ambiance home
 
     scene bg house with dissolve
 
