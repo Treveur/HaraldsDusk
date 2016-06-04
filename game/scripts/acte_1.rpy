@@ -19,7 +19,7 @@ label intro:
     $ confiance_choice = True
     $ tuer_choice = True
 
-    play audio wood loop
+    play ambiance wood
 
     scene bg forest with dissolve
 
@@ -232,7 +232,7 @@ label intro:
 #Sequence 2
 label plaine_1 :
 
-    #stop audio
+    stop ambiance
 
     scene bg mer with dissolve
 

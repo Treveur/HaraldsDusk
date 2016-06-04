@@ -72,18 +72,18 @@ label good_ending_8:
     "Les villageois lui font leurs adieux et petit à petit, la place se vide."
     "Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner inexorablement."
     "Moira."
-    
-        menu :
-            "(Quel soulagement d'avoir détruit la Hache)"
-                e "(Me voilà débarrassé de tous mes engagements...)"
-                e "(Maintenant que le monde est privé de la Hache, l'équilibre devrait revenir.)"
-                e "(Enfin, j'espère...)"
-                
-            "(Allons récupérer la Hache !)"
-                e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
-                e "(Il est temps de la récupérer ! Ce genre de choses ne devrait pas rester à traîner dans la nature...)"
-                e "(Et ensuite, à moi le pouvoir !)"
-                   
+
+    menu :
+        "(Quel soulagement d'avoir détruit la Hache)":
+            e "(Me voilà débarrassé de tous mes engagements...)"
+            e "(Maintenant que le monde est privé de la Hache, l'équilibre devrait revenir.)"
+            e "(Enfin, j'espère...)"
+
+        "(Allons récupérer la Hache !)":
+            e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
+            e "(Il est temps de la récupérer ! Ce genre de choses ne devrait pas rester à traîner dans la nature...)"
+            e "(Et ensuite, à moi le pouvoir !)"
+
     jump credits
 
 label good_ending_9:
@@ -159,7 +159,7 @@ label good_ending_15(marier = True):
     jump credits
 
 label bad_ending_16:
-    "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol." 
+    "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol."
     "Le roi quitte la pièce en marchant."
     jump credits
 
@@ -173,7 +173,7 @@ label normal_ending_18:
     jump credits
 
 label bad_ending_19:
-    "Les regards d'Einar et Moira se croisent et se fixent." 
+    "Les regards d'Einar et Moira se croisent et se fixent."
     "Alors que les flammes commencent à la dévorer, elle ne hurle pas."
     "Elle contient toute sa rage et sa colère, adressant un regard de haine pure à Einar alors que des larmes coulent sur ses joues."
     "Dans les hurlements des prisonniers, les flammes de la rébellion s'éteignent."
