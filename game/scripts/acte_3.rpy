@@ -2,6 +2,9 @@
 
 #Sequence 1
 label cote_2:
+
+    play ambiance coast
+
     scene bg mer with dissolve
 
     show einar debout_normal_mid at center with dissolve
@@ -51,6 +54,9 @@ label exterieur_chateau_1:
 
 #Sequence 3
 label cour_chateau_1:
+
+    stop ambiance
+    #play ambiance castle
 
     scene bg cour_chateau with dissolve
 
@@ -317,7 +323,7 @@ label cour_chateau_1:
     show patrick debout_furieux at left
     show ve buchet_pleurent at right
 
-    #A intégrer plus tars
+    #A intégrer plus tards
 
     pe1 "Pitié ! Epargnez ma femme !"
     pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
@@ -382,7 +388,7 @@ label cour_chateau_1:
         "Le jeune soldat semble toujours aussi bouleversé."
     else:
         "Le jeune soldat semble rassuré."
-        
+
     e "Koff Koff..."
     "Une quinte de toux sanglante agite Einar."
 
@@ -957,7 +963,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
         "Pardon":
             show einar combat_normal at left
             e "Et si j'implore votre pardon, Sire ?"
-            
+
         "Ça ou du poison...":
             show einar combat_normal at left
             e "Il faut bien mourir de quelque chose !"
@@ -1422,7 +1428,7 @@ label fuite_harald_pont_baisse_donjon:
         "Elle est à moi !":
             show einar combat_hache_determine
             jump e_garder_hache_pont_baisse_donjon
-        
+
         "La voilà":
             hide einar
             hide ogma
@@ -1958,8 +1964,8 @@ label e_laisse_ogma_mort_defendre_porte:
     jump cour_chateau_ogma_mort_defendre_porte
 
 label cour_chateau_ogma_mort_defendre_porte:
-    
-    
+
+
     "Einar a été soigné du poison : l'évêque Patrick a soutiré la recette à un vieillard écossais."
     "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
