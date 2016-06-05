@@ -516,7 +516,7 @@ label village_2:
 
     play ambiance village
 
-    scene bg village2_jour with dissolve
+    scene bg village with dissolve
 
     show ve debout_normaux at center with dissolve
 
@@ -726,7 +726,7 @@ label village_4:
 
     play ambiance village
 
-    scene bg village2_jour with dissolve
+    scene bg village with dissolve
 
     "Le lendemain..."
 
