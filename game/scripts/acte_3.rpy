@@ -460,7 +460,10 @@ label interieur_grande_porte_chateau_1:
 #Baisser pont-levis
 label pont_levis_baisse:
 
+    #???
+
     show gv combat_normaux at center with dissolve
+
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
     "Une volée de flèches abat une partie des rebelles qui foncent vers le château."
@@ -504,6 +507,8 @@ label pont_levis_baisse:
     #Ajouter un shake camera
     ge "HAAAAA !"
     gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
+
+    play ambiance fight
 
     hide gv
     hide re
@@ -1133,6 +1138,8 @@ label e_epargne_harald_no_axe_donjon:
 
 label village_5:
 
+    play ambiance village
+
     "..."
 
     show einar debout_normal_mid at left
@@ -1176,6 +1183,8 @@ label village_5:
     jump foret_4
 
 label village_6:
+
+    play ambiance village
 
     $ refuer_ogma_main_moira = False
 
@@ -1303,6 +1312,8 @@ label village_6:
         jump good_ending_15
 
 label foret_4:
+
+    play ambiance village
 
     $ rejeter_moira_foret_4 = False
 
@@ -1494,6 +1505,8 @@ label e_garder_hache_pont_baisse_donjon:
 
 
 label lieu_encore_inconnu_1(axe = True):
+
+    play ambiance village
 
     $ demander_main_moira = False
     $ refuser_or = False

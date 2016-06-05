@@ -659,6 +659,7 @@ label foret_3:
 #Sequence 8
 label paradis_foret_1:
 
+    play music romance
     play ambiance magnificente_wood
 
     scene bg little_heaven with dissolve
@@ -690,6 +691,7 @@ label paradis_foret_1:
     menu :
 
         "C'est l'occasion de me débarrasser d'elle et de foutre le camp ! (Tuer Moira)":
+            stop music
             e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
             "Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme."
             show moira nue_effraye at right
@@ -715,6 +717,7 @@ label paradis_foret_1:
             "Elle embrasse doucement Einar et commence à l'enlacer."
             "Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite."
             "..."
+            stop music
             jump village_4
 
     hide moira
