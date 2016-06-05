@@ -239,6 +239,14 @@ image moira nue_normal = "moira/nue/moira_nue_normale.png"
 image moira nue_souriant = "moira/nue/moira_nue_souriante.png"
 image moira nue_effraye = "moira/nue/moira_nue_effrayee.png"
 
+image moira nue_normal_mid = "moira/nue/moira_nue_normale_mid.png"
+image moira nue_souriant_mid = "moira/nue/moira_nue_souriant_mid.png"
+image moira nue_effraye_mid = "moira/nue/moira_nue_effraye_mid.png"
+
+image moira nue_normal_close = "moira/nue/moira_nue_normale_close.png"
+image moira nue_souriant_close = "moira/nue/moira_nue_souriant_close.png"
+image moira nue_effraye_close = "moira/nue/moira_nue_effraye_close.png"
+
 #Attache
 image moira attache_determine = "moira/buchet/moira_attache_determine.png"
 image moira attache_furieus = "moira/buchet/moira_attache_furieuse.png"

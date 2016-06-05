@@ -54,7 +54,7 @@ label interieur_maison_village_1:
             show einar debout_souriant_mid at left
             e "La situation est assez... satisfaisante. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme ..."
             show moira debout_furieux_mid at right
-            " Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse de défendre."
+            " Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse se défendre."
             e "Aaargh !"
             m "A l'avenir, vous éviterez ce genre de... choses. Soyez correct avec moi et je serai correcte avec vous."
             show moira debout_normal_mid at right
@@ -686,7 +686,7 @@ label paradis_foret_1:
     "Elle recule de quelques pas, puis se retourne."
     hide moira with dissolve
     "Elle se dénude lentement devant Einar, sans le regarder."
-    show moira nue_normal at right with dissolve
+    show moira nue_normal_mid at right with dissolve
 
     menu :
 
@@ -694,10 +694,12 @@ label paradis_foret_1:
             stop music
             e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
             "Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme."
-            show moira nue_effraye at right
+            show einar debout_determine_close at left
+            show moira nue_effraye_close at right
             "Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante."
             "Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte."
             hide moira with dissolve
+            show einar debout_souriant_close at left
             e "Il est temps pour moi de retrouver les miens."
             $ moira_dead = True
             jump cote_2
@@ -705,15 +707,19 @@ label paradis_foret_1:
         "C'est une occasion en or de s'enfuir (Fuir)":
             "Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons."
             hide einar with dissolve
+            "..."
+            show moira nue_normal_mid at right
             m "Einar ? Einar ?"
             $ premier_refus_moira_foret_4 = True
             jump cote_2
 
         "La regarder (Profiter du moment)":
+            show moira nue_souriant_close at right
+            show einar debout_normal_close at left
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
             e "Tu..."
-            show moira nue_souriant at right
             m "Ne dis rien."
+            show einar debout_souriant_close at left
             "Elle embrasse doucement Einar et commence à l'enlacer."
             "Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite."
             "..."
