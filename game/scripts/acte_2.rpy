@@ -4,6 +4,9 @@ label interieur_maison_village_1:
     hide einar
     hide ogma
     hide re
+
+    play ambiance home
+
     scene bg house2_jour with dissolve
 
     $ critique_ogma = False
@@ -100,13 +103,13 @@ label interieur_maison_village_1:
             e "Merci. Je ne m'attendais pas à être soigné ici."
             show moira debout_normal_mid at right
             m "Ce n'est pas moi que vous devez remercier, je ne fais que suivre les instructions de mon père."
-            
+
         "Ne rien dire":
             show einar debout_determine_mid at left
             e "..."
             show moira debout_determine_mid at right
             m "..."
-            
+
         "Je n'ai pas besoin des soins d'une rebelle !":
             show einar debout_contrarie_mid at left
             e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné !"
@@ -114,7 +117,7 @@ label interieur_maison_village_1:
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
             m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
-        
+
     "..."
     hide einar with dissolve
     show ogma debout_normal_mid at center with dissolve
@@ -135,7 +138,7 @@ label interieur_maison_village_1:
             show einar debout_normal_mid at left
             e "Il a une dent contre moi ?"
             m "Pas contre vous en particulier, non."
-            
+
         "J'aurais dû mourir...":
             show einar debout_attriste_mid at left
             e "J'aurais mieux fait de mourir avec les autres."
@@ -143,12 +146,12 @@ label interieur_maison_village_1:
             show einar debout_normal_mid at left
             e "Pourquoi cette colère contre nous ?"
             jump interieur_maison_village_2
-            
+
         "Quel salopard !":
             show einar debout_furieux_mid at left
             e "Quel enfoiré ! Il ne m'a même pas adressé la parole !"
             $ critique_ogma = True
-            
+
         "Il doit avoir honte de s'adresser au survivant d'un assassinat lâche !":
             show einar debout_determine_mid at left
             e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins !"
@@ -510,6 +513,9 @@ label interieur_maison_village_4:
 
 #Sequence 5
 label village_2:
+
+    play ambiance village
+
     scene bg village2_jour with dissolve
 
     show ve debout_normaux at center with dissolve
@@ -623,6 +629,9 @@ label village_3:
 
 #Sequence 7
 label foret_3:
+
+    play ambiance wood
+
     scene bg forest_crepuscule with dissolve
 
     show einar debout_normal_mid at left with dissolve
@@ -649,6 +658,9 @@ label foret_3:
 
 #Sequence 8
 label paradis_foret_1:
+
+    play ambiance magnificente_wood
+
     scene bg little_heaven with dissolve
 
     show einar debout_normal_mid at left
@@ -668,7 +680,7 @@ label paradis_foret_1:
         "C'est magnifique":
             e "C'est un très bel endroit. Est-ce que..."
 
-    
+
     "Moira pousse doucement Einar contre un arbre."
     "Elle recule de quelques pas, puis se retourne."
     hide moira with dissolve
@@ -711,6 +723,9 @@ label paradis_foret_1:
 
 #Sequence 9
 label village_4:
+
+    play ambiance village
+
     scene bg village2_jour with dissolve
 
     "Le lendemain..."
@@ -749,7 +764,7 @@ label village_4:
 
         "(L'ignorer)":
             "Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
-            
+
 
     hide moira
     hide einar
@@ -759,6 +774,9 @@ label village_4:
 
 #Sequence 10
 label sentier_foret_1:
+
+    play ambiance wood
+
     scene bg sentier_jour with dissolve
     show einar debout_normal_mid with dissolve
     "..."
@@ -789,13 +807,16 @@ label foret_5:
             e "(Elle ne s'est occupée de moi que parce que son père le lui avait demandé. Je me demande si notre petite escapade en forêt était aussi une idée de son père...)"
         "Ce n'était qu'une amourette":
             e "(J'ai bien profité d'elle. Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
-    
+
     e "(Quelle chaleur... C'est insoutenable... Je n'y comprend rien...)"
     hide einar with dissolve
     jump cote_1
 
 #Sequence 11
 label cote_1:
+
+    play ambiance coast
+
     scene bg cote1 with dissolve
     show einar debout_normal_mid with dissolve
     "..."
@@ -811,14 +832,14 @@ label cote_1:
             e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps... Pourvu qu'Ogma respecte sa parole, lui !)"
         "Je dois abandonner les écossais, pour ma propre survie":
             e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera-t-il à Moira ?)"
-            
+
     "Alors qu'il s'apprête à manger les dernières provisions qui lui ont été confiées au village, Einar remarque une lettre glissée dans le tissu."
     "{i}Einar, je regrette d'avoir dû en arriver là mais je n'avais pas le choix.{/i}"
     "{i}Je devais m'assurer que tu tiendrais ta promesse, pour protéger les miens et vaincre le roi.{/i}"
     "{i}Toute la nourriture que tu as mangé ces trois derniers jours contenait un poison lent.{/i}"
     "{i}Je suis le seul à posséder l'antidote. Tu mourras dans deux jours si tu ne remplis pas ta part du marché.{/i}"
     "{i}N'en tiens rigueur à personne d'autre que moi, je suis le seul responsable. - Ogma Le Hurleur{/i}"
-    
+
     e "Pourriture ! Il m'a empoisonné !"
     e "Koff koff !"
     "En toussant, Einar sent un liquide tiède couler le long de son menton : un filet de sang épais mêlé à sa salive."

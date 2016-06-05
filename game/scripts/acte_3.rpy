@@ -399,6 +399,7 @@ label cour_chateau_1:
 
 #Sequence 4
 label cour_chateau_2:
+    #toujours ambiance chateau
     show bg cour_chateau_crepuscule with dissolve
 
     "Au crépuscule..."
@@ -420,6 +421,10 @@ label cour_chateau_2:
 
 #Sequence 5
 label interieur_grande_porte_chateau_1:
+
+    #interieur chateau
+    #play ambiance interieur_castle
+
     show bg chateau_porte_interieur_crepuscule with dissolve
 
     show gv debout_enthousiastes with dissolve
@@ -434,6 +439,10 @@ label interieur_grande_porte_chateau_1:
 
     menu:
         "Ouvrir le pont-levis":
+
+            play sound drawbrigde
+            pause (3)
+
             hide einar
             if soupcon_harald_1:
                 jump bad_ending_3
