@@ -326,7 +326,7 @@ image bg little_heaven = "scenes/foretWestruther_ext_matin_paradis.png"
 image bg sentier_jour = "scenes/foretWestruther_ext_matin_sentier.jpg"
 
 #Village
-#interior
+#exterior
 image bg village = "scenes/perth_ext_jour_village.png"
 image bg village2_crepuscule = "scenes/perth_ext_jour_village.png"
 #ogma house
