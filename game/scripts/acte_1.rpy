@@ -744,7 +744,7 @@ label e_demander_information_village_1:
 
 label e_fouiller_village_1(einarFouille = False):
 
-
+    $ moira_name_know = False
     $ moira_met = True
     $ already_talk = False
 
@@ -772,20 +772,73 @@ label e_fouiller_village_1(einarFouille = False):
 
     stop ambiance
     scene bg house
+
+    play ambiance home
+
     show moira debout_normal_mid at center with dissolve
     show einar debout_normal_mid at left with dissolve
     menu menu_maison_1:
+
         "Qui es-tu ?":
-            jump e_nom_villageoise_maison_1
+
+            e "Qui es-tu ?"
+            show moira debout_determine_mid at center
+            ve "Ne m'adressez pas la parole !"
+            show einar debout_determine_mid at left
+            e "Je me suis montré courtois, mais ça pourrait vite changer. Réponds !"
+            m "Moira."
+
+            $ already_talk = True
+            $ moira_name_know = True
+
+            jump menu_maison_1
+
         "Pourquoi être cachée ?":
-            jump e_cache_villageoise_maison_1
+
+            e "Pourquoi te cacher ?"
+            if moira_name_know:
+                m "Parce que je connais les porcs dans votre genre."
+            else:
+                ve "Parce que je connais les porcs dans votre genre."
+            show einar debout_determine_mid at left
+            e "Mmmh."
+
+            $ already_talk = True
+
+            jump menu_maison_1
+
         "Où sont les rebelles ?":
-            jump e_info_rebelle_maison_1
+
+            e "Que sais-tu des rebelles ?"
+            if moira_name_know:
+                m "Rien."
+            else:
+                ve "Rien."
+
+            show einar debout_determine_mid at left
+            e "Tu es aussi belle que décevante."
+            $ already_talk = True
+
+            jump menu_maison_1
+
         #Si Einar à déjà parlé une fois à Moira
         "Rejoins les autres !" if already_talk:
-            jump e_villagoise_partir_maison_1
+
+            show einar debout_determine_mid at left
+
+            e "Sors d'ici et rejoint les autres."
+            if moira_name_know:
+                m "..."
+            else:
+                ve "..."
+
+            hide moira
+
+            jump choix_retour_village_1
+
         "Je n'aime pas qu'on ne suive pas mes instructions (la tuer)" if already_talk:
             jump e_tuer_moira_maison_1
+
     hide moira
     hide einar
     with dissolve
@@ -902,56 +955,13 @@ label e_intimider_villageois_village_1:
     jump choix_retour_village_1
 
 #Scequence 6 (alternative)
-label e_nom_villageoise_maison_1:
-    show einar debout_normal_mid at left
-    show moira debout_determine_mid at center
+# label e_nom_villageoise_maison_1:
+# label e_cache_villageoise_maison_1:
+# label e_info_rebelle_maison_1:
+# label e_villagoise_partir_maison_1:
 
-    e "Qui es-tu ?"
 
-    ve "Ne m'adressez pas la parole !"
-    show einar debout_determine_mid at left
 
-    e "Je me suis montré courtois, mais ça pourrait vite changer. Réponds !"
-
-    m "Moira."
-
-    $ already_talk = True
-
-    jump menu_maison_1
-
-label e_cache_villageoise_maison_1:
-    e "Pourquoi te cacher ?"
-
-    ve "Parce que je connais les porcs dans votre genre."
-    show einar debout_determine_mid at left
-
-    e "Mmmh."
-
-    $ already_talk = True
-
-    jump menu_maison_1
-
-label e_info_rebelle_maison_1:
-    e "Que sais-tu des rebelles ?"
-
-    ve "Rien."
-    show einar debout_determine_mid at left
-
-    e "Tu es aussi belle que décevante."
-
-    $ already_talk = True
-
-    jump menu_maison_1
-
-label e_villagoise_partir_maison_1:
-    show einar debout_determine_mid at left
-    e "Sors d'ici et rejoint les autres."
-
-    ve "..."
-
-    hide moira
-
-    jump choix_retour_village_1
 
 
 label e_tuer_moira_maison_1:
