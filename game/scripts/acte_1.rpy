@@ -1066,7 +1066,7 @@ label choix_retour_village_1(massacre = False):
 
         e "J'espère pour toi que tu as raison, Logan."
 
-    show gv debout_normaux_mid at , center with dissolve
+    show gv debout_normaux_mid at halfsize, center with dissolve
     gv "Où allons-nous ?"
     hide gv with dissolve
     if massacre:
