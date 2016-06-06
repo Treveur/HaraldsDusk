@@ -417,6 +417,7 @@ label cour_chateau_2:
     show harald debout_furieux_mid at right
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
     show harald combat_determine_mid at right
+
     h "Tous à vos postes de combat ! Huscarls, préparez-vous à défendre la porte ! Je veux vingt archers sur les remparts !"
     "Une fois ses ordres donnés, Harald disparaît dans le donjon."
 
