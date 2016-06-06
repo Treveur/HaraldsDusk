@@ -38,8 +38,7 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
-            hide logan
-            with dissolve
+            hide logan with dissolve
 
             show einar debout_normal_mid at left with dissolve
             show harald debout_normal_mid at right with moveinright
@@ -125,13 +124,10 @@ label intro:
                     e "..."
 
         "Tu n'as pas l'air bien, Logan":
-            hide einar
-            hide logan
-            hide harald
-            with dissolve
+            hide harald with dissolve
 
-            show einar debout_normal_mid at left with dissolve
-            show logan debout_contrarie_mid at right with dissolve
+            show einar debout_normal_mid at left
+            show logan debout_contrarie_mid at right
 
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
@@ -249,7 +245,7 @@ label plaine_1 :
 
     h "Donne-moi ça..."
 
-    hide gv
+    hide gv with dissolve
 
     "Harald lit rapidement le rapport."
 
@@ -447,6 +443,7 @@ label plaine_2:
 
     hide einar
     hide logan
+    hide gv
     with dissolve
 
     jump foret_1
@@ -481,9 +478,9 @@ label foret_1:
             gv "J'aimerais retrouver la Suède. Je n'ai aucunes nouvelles de ma famille depuis notre campagne d'Egypte."
 
             gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-            show logan debout_normal_mid at center with dissolve
+            show logan debout_normal_mid at center
             l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
-            show gv debout_normaux_mid at right with dissolve
+            show gv debout_normaux_mid at right
             gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
             show logan debout_contrarie_mid at center
 
@@ -549,8 +546,9 @@ label foret_1:
             show einar debout_souriant_mid at left
 
             e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps d'une de ces magnifiques brebis écossaises ?"
-
-            show logan debout_contrarie_mid at right with dissolve
+            hide gv
+            show logan debout_contrarie_mid at right
+            with dissolve
 
             l "..."
             show gv debout_rire_mid at center with dissolve
@@ -652,7 +650,7 @@ label village_1:
     e "Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard..."
-
+    show ve debout_craintifs_mid at halfsize, right zorder 1 with dissolve
     ve "Bonjour, étrangers. Nous pouvons vous aider ?"
 
     e "Je veux que tout le village se rassemble sur la place, maintenant !"
@@ -665,10 +663,7 @@ label village_1:
     "Il n'y a que très peu d'hommes parmi la cinquantaine de villageois."
 
     ve "Nous... Nous sommes tous là."
-
-    hide gv debout_normaux_mid with dissolve
     show gv debout_normaux_mid at halfsize, left zorder 1 with dissolve
-    show ve debout_craintifs_mid at halfsize, right zorder 1 with dissolve
 
     menu menu_fouille_village:
 
@@ -732,7 +727,7 @@ label e_demander_information_village_1:
     hide logan with dissolve
 
     e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
-    show einar debout_furieux_mid at center with dissolve
+    show einar debout_furieux_mid at left
 
     e "Votre attitude ressemble à un aveu de trahison !"
     show logan debout_normal_mid at center with dissolve
@@ -1224,42 +1219,43 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
-    show einar combat_determine at left
+
+    show einar combat_determine_mid at left
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide gv with dissolve
-    show ogma combat_determine at halfsize, center with dissolve
+    show ogma combat_determine_mid at halfsize, center with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide ogma
     hide logan
     with dissolve
-    show re combat_furieux at halfsize, right with dissolve
+    show re combat_furieux_mid at halfsize, right with dissolve
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     e "Approchez, charognes ! Je..."
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
     hide re with dissolve
-    show logan combat_normal at right zorder 2 with dissolve
+    show logan combat_normal_mid at right zorder 2 with dissolve
     l "Einar ! Derrière toi !"
 
     e "Que..."
 
     "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
-    show einar combat_blesse at left with dissolve
+    show einar combat_blesse_mid at left with dissolve
     e "Aaarrggh ! Logan, aide-moi !"
 
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-    show ogma combat_normal at right zorder 1 with dissolve
+    show ogma combat_normal_mid at right zorder 1 with dissolve
     hide logan with dissolve
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-    show re combat_normaux at halfsize, center with dissolve
+    show re combat_normaux_mid at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
     hide re with dissolve
 
@@ -1460,10 +1456,8 @@ label attaque_massacre_foret_2(message = ""):
             call e_menace_foret_2 pass (bad_ending = True) from _call_e_menace_foret_2
 
 label e_demande_nom_foret_2(bad_ending = False):
-    hide einar
     hide logan
     hide gv
-    hide ogma
     show einar debout_blesse_mid at left with dissolve
     show ogma debout_normal_mid at right with dissolve
     e "Qui es-tu, lâche ?"
@@ -1480,10 +1474,8 @@ label e_demande_nom_foret_2(bad_ending = False):
         jump e_reveil_village_2
 
 label e_implore_pitie_foret_2(bad_ending = False):
-    hide einar
     hide logan
     hide gv
-    hide ogma
     show einar debout_normal_mid at left with dissolve
     show re debout_normaux_mid at right with dissolve
     show ogma debout_normal_mid at center with dissolve
@@ -1500,7 +1492,6 @@ label e_implore_pitie_foret_2(bad_ending = False):
         jump e_reveil_village_2
 
 label e_menace_foret_2(bad_ending = False):
-    hide einar
     hide logan
     hide gv
     hide ogma
