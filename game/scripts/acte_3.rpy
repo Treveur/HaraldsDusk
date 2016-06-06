@@ -1323,7 +1323,7 @@ label foret_4:
     show einar debout_normal_mid at left with dissolve
     show moira debout_normal_mid at right with moveinright
 
-    if premier_refus_moira == False:
+    if premier_refus_moira_foret_4 == False:
         e "Qu'est-ce que tu fais là ?"
         m "Je viens avec toi."
         show einar debout_attriste at left
@@ -1337,9 +1337,20 @@ label foret_4:
         show moira debout_furieux at right
         m "Pourquoi est-ce que tu es parti ?"
 
+        menu :
+            "Tu ne me mérite pas":
+                e "Toi sauvage, moi civilisé (Bien sûr, ce n'est pas ça)"
+
+            "Une question de survie":
+                e "Un peu d'air !"
+
+            "RAB DE TA FACE DE SANS AME":
+                e "Tu pues de la shnek"
+                call good_ending_14 pass (rejete = True) from _call_good_ending_14
+
     menu menu_reponse_moira_suivre_einar:
 
-        "Tu n'as pas de raison de me suivre" if premier_refus_moira_foret_4 == False:
+        "Tu n'as pas de raison de me suivre":
             show einar debout_attriste at left
             e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
             e "Reste ici, avec ton père et les autres."
@@ -1350,7 +1361,7 @@ label foret_4:
             "..."
 
 
-        "Je ne veux pas contrarier Ogma" if premier_refus_moira == False:
+        "Je ne veux pas contrarier Ogma":
             show einar debout_attriste at left
             e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père."
             show einar debout_contrarie at left
@@ -1375,14 +1386,14 @@ label foret_4:
             e "Non, je regrette. Laisse-moi partir maintenant, s'il-te-plaît."
             $ rejeter_moira_foret_4 = True
 
-        "(Tendre les bras)" if premier_refus_moira == False:
+        "(Tendre les bras)":
             show einar debout_souriant at left
             show moira debout_souriant at right
             "Sans dire un mot, Einar tend les bras vers Moira."
             "La jeune femme se précipite vers le viking et l'étreint."
             "Einar et Moira passent quelques minutes à profiter de l'instant."
 
-        "Viens avec moi" if premier_refus_moira == False:
+        "Viens avec moi":
             show einar debout_souriant at left
             e "Viens avec moi, Moira."
             show moira debout_attriste at right
