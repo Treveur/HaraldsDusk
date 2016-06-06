@@ -6,6 +6,8 @@ label cote_2:
     play ambiance coast
 
     scene bg plaine_chateau_matin with dissolve
+    
+    "Et après trois jours de marche depuis Perth..."
 
     show einar debout_normal_mid at center with dissolve
 
@@ -99,7 +101,7 @@ label cour_chateau_1:
             h "J'imagine que tu as dû vivre des choses terribles..."
 
     h "Mais dis-moi, que t'est-il arrivé ?"
-    h "Et l'escorte qui t'accompagnais ? Et Logan ?"
+    h "Et l'escorte qui t'accompagnait ? Et Logan ?"
 
     menu:
         "Je n'en sais rien (mentir)":
@@ -181,6 +183,8 @@ label cour_chateau_1:
             $ soupcon_harald_1 = True
 
     h "..."
+    show einar debout_normal_close at left with dissolve
+    show harald debout_determine_close at right with dissolve
     h "J'espère que tout ce que tu me dis là est vrai."
     h "Je ne tolère pas le mensonge, Einar. Ton histoire me paraît bien obscure. Je te fais confiance, mais si j'apprends que tu m'as menti..."
     h "Es-tu certain de m'avoir dit la vérité ? Si ce n'est pas le cas, je suis prêt à te pardonner pourvu que tu m'avoues ce qu'il s'est réellement passé."
@@ -188,16 +192,16 @@ label cour_chateau_1:
 
     menu :
         "Voici toute la vérité":
-            show einar debout_normal_mid at left
+            show einar debout_normal_close at left
             e "Très bien. Voici la vérité."
             e "Après avoir traversé le village de Perth, nous sommes tombés dans une embuscade des rebelles. Ils avaient probablement été prévenus de notre arrivée."
-            show einar debout_attriste_mid at left
+            show einar debout_attriste_close at left
             e "Tous mes compagnons sont morts, y compris Logan."
             h "Et toi ? Tu t'es enfui ?"
             e "Non. Alors que j'avais été mis à terre, le meneur des rebelles s'est approché de moi. J'ai cru mon heure arrivée."
             e "Il s'est penché sur moi puis m'a demandé de coopérer. Je n'ai pas eu d'autre choix que d'accepter."
             e "J'ai ensuite été assommé. A mon réveil, j'étais dans l'une de ces maisons écossaises, comme nous en avions vu au village."
-            show einar debout_normal_mid at left
+            show einar debout_normal_close at left
             e "Pendant un mois, une jeune femme s'est occupée de moi. Elle s'appelait Moira et était la fille du meneur des rebelles, Ogma le Hurleur."
             h "Ogma le Hurleur ? Ce n'est pas un nom..."
             e "Dans ce cas, je ne connaît pas sa véritable identité."
@@ -206,43 +210,38 @@ label cour_chateau_1:
             e "Oui. Il était question que je survive à condition que je vous trahisse en ouvrant le pont-levis du château aux rebelles."
             h "Ils comptent lancer une attaque ? Quand !?"
             e "Hélas, je n'en sais rien, sire. Mais je présage que cet assaut aura lieu très prochainement."
-            e "Puis, peu avant mon retour à Dunbar, j'ai appris que j'avais été empoisonné."
-            h "Empoisonné ? Comment ?"
-            e "Ogma a voulu s'assurer que je suivrais ses instructions à la lettre. Il a empoisonné les provisions qui m'ont été données pour le voyage."
-            e "Depuis, la fièvre ne fait que s'accroître et mes entrailles me torturent. Je crache du sang. Demain ou après-demain, je serai mort."
             e "Quoi qu'il en soit, je n'ai jamais cessé de vous être fidèle. Tout ce que j'ai fait, c'était dans votre intérêt. J'ai patiemment attendu le moment où je pourrais vous révéler leurs intentions. Et voilà."
 
         "Je vous suis fidèle (mentir)":
-            show einar debout_determine_mid at left
+            show einar debout_determine_close at left
             e "Nul ne vous est plus fidèle que moi !"
             $ mentir_harald_1 = True
 
         "J'ai rusé dans votre intérêt (mentir)":
-            show einar debout_determine_mid at left
+            show einar debout_determine_close at left
             e "J'ai rusé de toutes les manières possibles uniquement dans le but de revenir à votre service."
             $ mentir_harald_1 = True
 
     if mentir_harald_1:
-        show einar debout_normal_mid at left
+        show einar debout_normal_close at left
         h "Je te remercie pour ta sincérité, Einar."
-        show harald debout_determine_mid at right
+        show harald debout_determine_close at right
         h "Grâce à toi, nous allons profiter de toutes les informations que tu as pu glâner pendant ce mois dans les Highlands."
-        show harald debout_normal_mid at right
+        show harald debout_normal_close at right
         h "Mais pour le moment tu devrais rejoindre les autres soldats. Ils seront heureux de retrouver l'un des leurs."
         e "Bien mon Roi."
 
     else:
-        show harald debout_contrarie_mid at right
-        show harald debout_normal_mid at left
-        h "Nous verrons ce qu'il est possible de faire pour te sauver..."
-        h "Mais si ces salopards comptent attaquer prochainement,il faut impérativement préparer nos défenses !"
+        show harald debout_contrarie_close at right
+        show harald debout_normal_close at left
+        h "Si ces salopards comptent attaquer prochainement,il faut impérativement préparer nos défenses !"
         e "Le château n'est pas suffisant ?"
         h "Si, mais uniquement si les hommes qui le défendent sont à leurs postes !"
         h "Je te remercie de m'avoir tout avoué. J'ai eu des doutes sur toi pendant un instant, mais me voilà rassuré."
-        show harald debout_determine_mid at right
+        show harald debout_determine_close at right
         h "Pendant que je vais planifier la défense du château, tu devrais aller à la rencontre des autres soldats. Ils seront heureux de te retrouver."
         h "Les morts ne reviennent pas tous les jours !"
-        show einar debout_souriant_mid at right
+        show einar debout_souriant_close at right
         e "Bien mon Roi."
 
         hide einar
@@ -393,9 +392,6 @@ label cour_chateau_1:
         "Le jeune soldat semble toujours aussi bouleversé."
     else:
         "Le jeune soldat semble rassuré."
-
-    e "Koff Koff..."
-    "Une quinte de toux sanglante agite Einar."
 
     hide einar
     hide jgv
@@ -586,10 +582,6 @@ label pont_levis_baisse:
             show ogma combat_normal_mid at right
             with dissolve
             o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
-            "Un filet de sang goutte du menton du viking."
-            e "Lâche ! Tu m'as empoisonné !"
-            o "Tu auras l'antidote plus tard !"
-            o "Ce n'est pas le moment de discuter ! Brûle ce donjon !"
             e "Le donjon ? Pourquoi ?"
             o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
             show ogma combat_determine_mid at right
@@ -639,7 +631,7 @@ label e_bruler_donjon_desobeir_donjon:
             #animation einar sortir
             e "(Je n'ai pas le temps de m'occuper de lui.)"
 
-    "Harald jaillit du donjon, protégé par son armure et portant le terrible Hache Sainte."
+    "Harald jaillit du donjon, protégé par son armure et portant la terrible Hache Sainte."
 
     show harald combat_hache_determine_mid at center
     show huscarls combat_enthousiaste_mid at right
@@ -833,8 +825,6 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Partez d'ici":
 
                 show einar combat_hache_furieux_mid at left
-                e "Koff Koff..."
-                h "La mort est déjà entrain de te ronger, Einar !"
                 e "Partez d'ici. Ne revenez jamais en Ecosse."
                 show harald combat_blesse_mid at right
                 h "Tu me laisse m'enfuir ? Pourquoi ?"
@@ -848,10 +838,9 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 jump fuite_harald_pont_baisse_donjon
 
             "Ogma veut vous rencontrer...":
-                e "Le Hurleur sera heureux de vous rencontrer, j'en suis sûr... Koff Koff !"
-                h "Tu vas me livrer à lui ? Ils t'ont empoisonné ! Tu crache du sang comme un boeuf mal égorgé !"
-                e "J'aurai... L'antidote."
-                "..."
+                e "Le Hurleur sera heureux de vous rencontrer, j'en suis sûr..."
+                scene bg chateau_rempart_crepuscule with dissolve
+                "Quelques minutes plus tard, alors que les combats sont terminés..."
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
                 show einar combat_hache_normal_mid at left
                 show ogma combat_determine_mid at right
@@ -880,8 +869,6 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         ge "HOURRAAA !"
         hide re
         o "Pour que la victoire soit complète, nous devons détruire la Hache."
-        e "Et mon antidote ?"
-        o "Il est là, dans ma poche. Je te le donnerai une fois la Hache détruite."
         show einar combat_hache_determine_mid at left
         e "Pourquoi ?"
         show ogma debout_contrarie_mid at right
@@ -906,11 +893,9 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
 
     menu :
         "Pour la Liberté":
-            e "Koff Koff !"
-            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "J'ai voulu croire en la liberté d'un peuple sur ses propres terres."
-            h "Tu es ridicule ! A l'article de la mort ! Ces gens se sont servis de toi !"
-            e "Sans doutes... Mais j'aurai l'antidote. Et j'aurai libéré un peuple."
+            h "Tu es ridicule ! Ces gens se sont servis de toi !"
+            e "Sans doutes... Mais j'aurai libéré un peuple."
             show einar combat_determine_mid at left
             e "Les écossais en ont assez de recevoir des ordres. Il est temps pour eux de reprendre leur destin en main !"
             show harald combat_hache_furieux_mid at right
@@ -921,19 +906,15 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
             e "Le choix ne vous appartient plus, désormais."
 
         "Las des promesses":
-            e "Koff Koff !"
-            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "J'étais las de vos promesses de terres et d'or qui ne se concrétisaient jamais, alors j'ai changé de camp."
             show harald combat_hache_furieux_mid at right
             h "C'est l'appât du gain qui te fait te rebeller contre moi ? Tu es prêt à condamner tout l'empire par caprice ?"
-            h "Tu es complètement fou ! Regarde toi ! Tu es as l'article de la mort !"
+            h "Tu es complètement fou !"
             show einar combat_determine_mid at left
             e "Peut-être."
 
         "Vous êtes un monstre":
             show einar combat_normal_mid at left
-            e "Koff Koff !"
-            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "J'ai rencontré une jeune femme et son père, qui m'ont convaincu que vous êtes un monstre."
             e "Le monde ne devrait jamais être entre les mains d'un seul homme."
             e "Vous n'avez fait qu'enchaîner massacres sur prises de pouvoir, vous avez privé le monde de son libre arbitre."
@@ -944,8 +925,6 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
 
         "J'avais envie de déranger l'ordre établi":
             show einar combat_normal_mid at left
-            e "Koff Koff !"
-            "Un nuage de gouttelettes de sang s'échappe de la bouche d'Einar à chaque quinte de toux."
             e "L'ordre des choses m'ennuyait..."
             e "J'ai simplement eu l'envie de mettre un coup de pied dans la fourmilière."
             show harald combat_hache_furieux_mid at right
@@ -959,8 +938,6 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
     h "Mon règne se poursuivra longtemps après ta mort."
     "Harald brandit la Hache"
     h "Es-tu conscient de ta totale impuissance ?"
-
-    "Harald est déçu. Il brandit la Hache et demande à Einar s'il est conscient qu'il va mourir sans rien pouvoir y faire."
 
     menu :
         "Que répondre ?"
@@ -983,12 +960,6 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
         "Pardon":
             show einar combat_normal_mid at left
             e "Et si j'implore votre pardon, Sire ?"
-
-        "Ça ou du poison...":
-            show einar combat_normal_mid at left
-            e "Il faut bien mourir de quelque chose !"
-            e "La tête tranchée par une relique sainte ou le corps détruit par du poison..."
-            e "Le résultat sera le même !"
 
         "Vous avez déjà perdu":
             e "Me tuer ne changera rien au fait que vous avez perdu cette bataille."
@@ -1122,7 +1093,7 @@ label e_epargne_harald_no_axe_donjon:
         jump village_5
 
     else:
-        "Un peu plus tard"
+        "Un peu plus tard, alors que les combats ont cessé..."
         "..."
         show ogma combat_normal_mid at left
         show einar debout_blesse at right
@@ -1152,9 +1123,6 @@ label village_5:
     show ogma debout_normal_mid at right
 
     o "Voici ton or."
-    o "Oh, et bien sûr, l'antidote."
-    "Einar avale les quelques gouttes contenues dans la fiole."
-    o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
     o "Nous avons décidé de t'offrir un cheval. Il te mènera où bon te semble."
     show einar debout_contrarie_mid at left
     e "Et si je souhaite rester ici ?"
@@ -1203,9 +1171,6 @@ label village_6:
     o "Toute l'Ecosse t'es redevable, Einar !"
     o "Tu nous a rendu la liberté et provoqué la fin de l'empire !"
     o "Comme promis, voici ton or et un cheval prêt à t'emmener où bon te semble."
-    o "Oh, et bien sûr, l'antidote."
-    "Einar avale les quelques gouttes contenues dans la fiole."
-    o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
 
     menu:
         "Merci":
@@ -1247,7 +1212,7 @@ label village_6:
 
     menu:
 
-        "Même sans votre consentement":
+        "Même sans votre consentement !":
             show einar debout_souriant_mid at left
             e "Si vous ne me l'aviez pas proposé, j'aurais enlevé votre fille ! Ha ha !"
             show ogma debout_souriant_mid at right
@@ -1341,18 +1306,39 @@ label foret_4:
     else:
         e "Qu'est-ce que tu fais là ?"
         show moira debout_furieux_mid at right
-        m "Pourquoi est-ce que tu es parti ?"
+        m "Pourquoi est-ce que tu es parti ? Pourquoi m'avoir abandonnée ?"
 
         menu :
-            "Tu ne me mérite pas":
-                e "Toi sauvage, moi civilisé (Bien sûr, ce n'est pas ça)"
+            "Excuse-moi":
+                e "Je regrette d'avoir fait ça..."
+                m "Pourquoi être parti ? Je pensais pouvoir te faire confiance."
+                e "Tu peux avoir confiance en moi !"
+                e "Simplement... J'étais enfermé depuis si longtemps... J'ai vu une occasion de reprendre ma liberté, et je l'ai saisie."
+                e "Ce qui ne m'a pas empêché de tenir mes engagements envers ton père."
+                m "Je vois..."
+                e "..."
+                m "C'est idiot mais... Je veux partir avec toi."
+                show einar debout_attriste_mid at left
+                e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
+                show moira debout_contrarie_mid at right
+                m "Mon père a été injuste. Tu as fait tout ce qu'il t'avait demandé et plus encore."
+                e "Mais je t'ai trahie ! Je t'ai laissé seule, nue, dans la forêt !"
+                show moira debout_determine_mid at right
+                m "Oui, et j'en ai été profondément déçue, et humiliée."
+                m "Mais malgré tout, je comprends ce qui a pu te pousser à agir ainsi."
+                m "Je t'aime. Je veux venir avec toi."
+                
+            "Je n'ai rien à faire avec toi":
+                e "Je suis un militaire. J'ai voyagé à travers tous les continents et rencontré plus de femmes que tu ne peux l'imaginer."
+                e "Tu ne m'interesse pas. Je n'ai rien à faire avec une paysanne écossaise, aussi belle soit-elle."
+                e "Tu trouveras sans doute quelqu'un de plus... adapté à ta vie."
+                e "Au revoir."
+                call good_ending_14 pass (rejete = True) from _call_good_ending_14
 
-            "Une question de survie":
-                e "Un peu d'air !"
-
-            "Je suis désolé mais je ressens rien pour toi !":
-                e "Je suis désolé mais je ressens rien pour toi !"
-                e "Je me suis juste servi de toi pour m'enfuir la à moindre occasion"
+            "Je me suis servi de toi":
+                e "Au risque de te faire de la peine, je ne ressentais et ne ressens toujours rien pour toi."
+                e "Lorsque j'ai compris que tu m'offrais une opportunité de m'enfuir, j'ai saisi l'occasion."
+                e "Je me suis juste servi de toi."
                 m "..."
                 call good_ending_14 pass (rejete = True) from _call_good_ending_14
 

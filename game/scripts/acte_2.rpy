@@ -30,7 +30,7 @@ label interieur_maison_village_1:
             m "Vous vous rappelez de moi ?"
             e "Oui. Tu étais à Perth."
             show moira debout_determine_mid at right
-            m "Ne me tutoyez pas, s'il vous plaît. J'étais bien à Perth quand vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
+            m "Ne me tutoyez pas, s'il vous plaît. Je m'appelle Moira. J'étais bien à Perth quand vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
             jump menu_rencontre_moira_blesse
 
         "Qui es-tu ?":
@@ -719,6 +719,8 @@ label village_3:
     scene bg village2_crepuscule with dissolve
 
     $ einar_raler = False
+    
+    "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
 
     show einar debout_normal_mid at left with dissolve
     show moira debout_normal_mid at right with dissolve
@@ -969,9 +971,8 @@ label sentier_foret_1:
     play ambiance wood
 
     scene bg sentier_jour with dissolve
-    "..."
+    "Chemin faisant, Einar tente de remettre en perspective les événements récents et leurs implications..."
     show einar debout_normal_close with dissolve
-    e "(Ce qu'il fait chaud... Je ne me serais jamais attendu à avoir un temps pareil dans les Highlands !)"
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
     menu :
@@ -987,7 +988,7 @@ label sentier_foret_1:
 
 label foret_5:
     scene bg forest_night with dissolve
-    "..."
+    "Sans y prêter attention, Einar se rapproche peu à peu de Dunbar, toujours absorbé par ses pensées."
     show einar debout_normal_close with dissolve
     "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
@@ -999,7 +1000,6 @@ label foret_5:
         "Ce n'était qu'une amourette":
             e "(J'ai bien profité d'elle. Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
 
-    e "(Quelle chaleur... C'est insoutenable... Je n'y comprend rien...)"
     hide einar with dissolve
     jump cote_1
 
@@ -1009,9 +1009,8 @@ label cote_1:
     play ambiance coast
 
     scene bg plaine_cotière_matin with dissolve
-    "..."
+    "A quelques heures de marche de Dunbar..."
     show einar debout_determine_close with dissolve
-    e "(Ma fièvre ne fait qu'empirer... Je discerne à peine la fraîcheur de l'air marin...)"
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
     menu :
@@ -1024,16 +1023,5 @@ label cote_1:
         "Je dois abandonner les écossais, pour ma propre survie":
             e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera-t-il à Moira ?)"
 
-    "Alors qu'il s'apprête à manger les dernières provisions qui lui ont été confiées au village, Einar remarque une lettre glissée dans le tissu."
-    "{i}Einar, je regrette d'avoir dû en arriver là mais je n'avais pas le choix.{/i}"
-    "{i}Je devais m'assurer que tu tiendrais ta promesse, pour protéger les miens et vaincre le roi.{/i}"
-    "{i}Toute la nourriture que tu as mangé ces trois derniers jours contenait un poison lent.{/i}"
-    "{i}Je suis le seul à posséder l'antidote. Tu mourras dans deux jours si tu ne remplis pas ta part du marché.{/i}"
-    "{i}N'en tiens rigueur à personne d'autre que moi, je suis le seul responsable. - Ogma Le Hurleur{/i}"
-
-    show einar debout_furieux_close
-    e "Pourriture ! Il m'a empoisonné !"
-    e "Koff koff !"
-    "En toussant, Einar sent un liquide tiède couler le long de son menton : un filet de sang épais mêlé à sa salive."
     hide einar with dissolve
     jump cote_2
