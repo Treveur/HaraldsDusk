@@ -38,8 +38,7 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
-            hide logan
-            with dissolve
+            hide logan with dissolve
 
             show einar debout_normal_mid at left with dissolve
             show harald debout_normal_mid at right with moveinright
@@ -125,13 +124,10 @@ label intro:
                     e "..."
 
         "Tu n'as pas l'air bien, Logan":
-            hide einar
-            hide logan
-            hide harald
-            with dissolve
+            hide harald with dissolve
 
-            show einar debout_normal_mid at left with dissolve
-            show logan debout_contrarie_mid at right with dissolve
+            show einar debout_normal_mid at left
+            show logan debout_contrarie_mid at right
 
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
@@ -249,7 +245,7 @@ label plaine_1 :
 
     h "Donne-moi ça..."
 
-    hide gv
+    hide gv with dissolve
 
     "Harald lit rapidement le rapport."
 
@@ -447,6 +443,7 @@ label plaine_2:
 
     hide einar
     hide logan
+    hide gv
     with dissolve
 
     jump foret_1
@@ -481,9 +478,9 @@ label foret_1:
             gv "J'aimerais retrouver la Suède. Je n'ai aucunes nouvelles de ma famille depuis notre campagne d'Egypte."
 
             gv "Je n'ai pas de nouvelles non plus. Mon vieux père pourrait bien être mort sans que je n'en sache rien !"
-            show logan debout_normal_mid at center with dissolve
+            show logan debout_normal_mid at center
             l "Harald doit ressentir la même chose. Il n'a pas vu sa femme ni ses enfants depuis aussi longtemps que nous."
-            show gv debout_normaux_mid at right with dissolve
+            show gv debout_normaux_mid at right
             gv "Qu'est-ce que tu en sais, Logan ? C'est nous ta seule famille !"
             show logan debout_contrarie_mid at center
 
@@ -549,8 +546,9 @@ label foret_1:
             show einar debout_souriant_mid at left
 
             e "Toujours pas envie de parler, Logan ? Trop occupé à rêver du corps d'une de ces magnifiques brebis écossaises ?"
-
-            show logan debout_contrarie_mid at right with dissolve
+            hide gv
+            show logan debout_contrarie_mid at right
+            with dissolve
 
             l "..."
             show gv debout_rire_mid at center with dissolve
@@ -652,7 +650,7 @@ label village_1:
     e "Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard..."
-
+    show ve debout_craintifs_mid at halfsize, right zorder 1 with dissolve
     ve "Bonjour, étrangers. Nous pouvons vous aider ?"
 
     e "Je veux que tout le village se rassemble sur la place, maintenant !"
@@ -665,10 +663,7 @@ label village_1:
     "Il n'y a que très peu d'hommes parmi la cinquantaine de villageois."
 
     ve "Nous... Nous sommes tous là."
-
-    hide gv debout_normaux_mid with dissolve
     show gv debout_normaux_mid at halfsize, left zorder 1 with dissolve
-    show ve debout_craintifs_mid at halfsize, right zorder 1 with dissolve
 
     menu menu_fouille_village:
 
