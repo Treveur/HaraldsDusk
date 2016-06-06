@@ -38,6 +38,7 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
+
             hide logan with dissolve
 
             show einar debout_normal_mid at left with dissolve

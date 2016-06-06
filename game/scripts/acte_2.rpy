@@ -200,7 +200,7 @@ label interieur_maison_village_1:
                 m "La votre, dans un premier temps."
                 e "Et ?"
                 m "Et celle de Kennocha, ma mère."
-    
+
     show moira debout_normal_mid at right
     m "J'imagine que si le roi est venu en Ecosse, c'est pour punir ceux qui ont tué son intendant ?"
     show einar debout_normal_mid at left
@@ -251,7 +251,7 @@ label interieur_maison_village_1:
 label interieur_maison_village_2:
     scene bg house2_night with dissolve
     "Quelques jours plus tard..."
-    
+
     show moira debout_souriant_mid at right
     m "Bonjour ! Je viens changer vos bandages."
     show einar debout_normal_mid at left
@@ -400,11 +400,11 @@ label interieur_maison_village_3:
     hide einar
     hide moira
     with dissolve
-    show ve debout_effrayes_mid at left with dissolve
+    show ve debout_effrayes_mid at right with dissolve
     ve "Ogma !"
     show ogma debout_contrarie_mid at center
     o "Fenella ? Quelque chose ne va pas ?"
-    show ve debout_craintifs_mid at left
+    show ve debout_craintifs_mid at right
     ve "Dunfermline a brûlé ce matin !"
     show ogma debout_attriste_mid at center
     o "Le roi... Je ne suis pas surpris."
@@ -534,7 +534,7 @@ label interieur_maison_village_4:
         "Vous n'avez pas peur que je m'échappe ?":
             show einar debout_normal_close at left
             e "Ton père ne se méfie pas ? Je pourrais m'échapper..."
-    
+
     show moira debout_normal_close at right
     m "Mon père a choisi de te faire confiance. Tu pourras aller dehors, mais tu ne sortiras pas du village à moins de recevoir une autorisation directe. Et tu devras être accompagné en permanence !"
     show moira debout_souriant_close at right
@@ -643,7 +643,7 @@ label village_2:
 
     scene bg village with dissolve
 
-    show ve debout_normaux at center with dissolve
+    show ve debout_normaux_mid at center with dissolve
 
     ve "... et il faudra que tu penses à rentrer les bêtes plus tôt !"
     ve "Mamie ! J'ai trouvé un caillou qui brille !"
@@ -689,7 +689,7 @@ label village_2:
             m "Je ne sais pas vraiment... Je crois qu'il est parti rencontrer les gens de Kircaldy."
             show einar debout_determine_mid at left
             e "Mmmh..."
-    
+
     show moira debout_normal_mid at right
     show einar debout_normal_mid at left
     m "..."
@@ -700,9 +700,6 @@ label village_2:
     m "Ha ha, oui ! Et je crois bien que tu lui plaît beaucoup ! Elle a perdu son mari il y a quelques années. Il te ressemblait un peu, je crois."
     show einar debout_contrarie_mid at left
     e "La journée va être longue..."
-    hide moira
-    hide einar
-    with dissolve
 
     jump village_3
 
@@ -712,9 +709,9 @@ label village_3:
 
     $ einar_raler = False
 
-    show einar debout_normal_mid at left with dissolve
-    show moira debout_normal_mid at right with dissolve
-    
+    show einar debout_normal_mid at left
+    show moira debout_normal_mid at right
+
     m "Alors ? Qu'as-tu pensé de cette première sortie ? Tu as apprécié ?"
 
     menu :
@@ -1022,7 +1019,7 @@ label cote_1:
     "{i}Toute la nourriture que tu as mangé ces trois derniers jours contenait un poison lent.{/i}"
     "{i}Je suis le seul à posséder l'antidote. Tu mourras dans deux jours si tu ne remplis pas ta part du marché.{/i}"
     "{i}N'en tiens rigueur à personne d'autre que moi, je suis le seul responsable. - Ogma Le Hurleur{/i}"
-    
+
     show einar debout_furieux_close
     e "Pourriture ! Il m'a empoisonné !"
     e "Koff koff !"

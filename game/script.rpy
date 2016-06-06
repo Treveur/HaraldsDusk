@@ -477,8 +477,8 @@ image bg chateau_porte_interieur_crepuscule = "scenes/chateauDunbar_ext_crepuscu
 image bg chateau_rempart_crepuscule = "scenes/chateauDunbar_ext_crepuscule_remparts.jpg"
 image bg chateau_rempart_jour = "scenes/chateauDunbar_ext_jour_remparts.jpg"
 #cour chateau
-image bg cour_chateau = "scenes/chateauDunbar_ext_jour_cour.jpg"
-image bg cour_chateau_crepuscule = "scenes/chateauDunbar_ext_crepuscule_cour.jpg"
+image bg cour_chateau = "scenes/chateauDunbar_ext_jour_cour.png"
+image bg cour_chateau_crepuscule = "scenes/chateauDunbar_ext_crepuscule_cour.png"
 #couloirs
 image bg chateau_couloir_crepuscule = "scenes/chateauDunbar_int_crepuscule_couloir.jpg"
 #chambre Harald
