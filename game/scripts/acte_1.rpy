@@ -1318,7 +1318,7 @@ label massacre_foret_2(lieu = ""):
     show einar debout_normal_close at left
     show logan debout_normal_close at right
     with dissolve
-    e "Du favoritisme pour les écossais, Logan ? En temps ordinaire, tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
+    e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
 
     e "J'ai bien remarqué ton comportement à Perth. Tu n'as tué personne. Tu as à peine incendié une grange."
 
@@ -1328,7 +1328,7 @@ label massacre_foret_2(lieu = ""):
 
     l "Des écossais rebelles, oui. Pas des innocents."
 
-    e "Ne remets pas mes ordres en question. Tu te ramollis, mon vieux Logan."
+    e "Ne remet pas mes ordres en question. Tu te ramollis, mon vieux Logan."
 
     menu:
         "Ne relâchez pas votre attention":
@@ -1355,7 +1355,7 @@ label attaque_massacre_foret_2(message = ""):
 
         e "Et les hommes, abruti ? Il n'y en avait presque aucun à Perth."
 
-        gv "Les hommes ? Il n'y a que des fermiers dans le coin !"
+        gv "Les hommes ? Il n'y a que des fermiers, dans le coin !"
 
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
 
@@ -1546,7 +1546,7 @@ label e_reveil_village_2:
 
     e "Qui... Aarrgh... êtes vous ?"
 
-    o "Nous sommes ceux que toi et les tiens cherchiez. Toutes mes félicitations, vous nous avez trouvés."
+    o "Nous sommes ceux que toi et les tiens cherchiez. Toutes mes félicitations, vous nous avez trouvé."
     show einar debout_blesse_mid at left
     e "Les rebelles ?"
 
@@ -1619,7 +1619,7 @@ label o_explication_vie_village_2:
         "Quel est ton but ?":
             $ choix_ogma_1 = "incomprehension"
         "Ne rien dire":
-            $ choix_ogma_1 = "silence"
+            $ choix_ogma_1 = "silcence"
         "Vous n'obtiendrez rien de moi !":
             $ choix_ogma_1 = "insulter"
 
@@ -1693,7 +1693,7 @@ label refuser_trahir_village_2:
             show ogma debout_souriant_mid at right
             o "Parfait !"
             jump accepter_trahir_village_2
-            e "Je ne trahirai personne !":
+        "Je ne trahirai personne !":
             jump bad_ending_2
 
 
