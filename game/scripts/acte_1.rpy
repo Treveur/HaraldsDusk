@@ -1223,7 +1223,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     l "Sur la gauche ! Des torches !"
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
-    "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+    "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
     show einar combat_determine at left
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide gv with dissolve
@@ -1410,7 +1410,7 @@ label attaque_massacre_foret_2(message = ""):
     l "Sur la gauche ! Des torches !"
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
-    "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+    "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
     show einar combat_determine_mid at left with dissolve
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide gv with dissolve
