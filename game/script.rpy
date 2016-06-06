@@ -73,6 +73,8 @@ image einar combat_hache_determine_close = "einar/combat_hache/einar_combat_hach
 
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
+image einar general_determine_mid = "einar/general/einar_general_determine_mid.png"
+image einar general_determine_close = "einar/general/einar_general_determine_close.png"
 
 
 ##Logan
@@ -347,7 +349,15 @@ image moira nue_effraye_close = "moira/nue/moira_nue_effraye_close.png"
 
 #Attache
 image moira attache_determine = "moira/buchet/moira_attache_determine.png"
-image moira attache_furieus = "moira/buchet/moira_attache_furieuse.png"
+image moira attache_furieuse = "moira/buchet/moira_attache_furieuse.png"
+
+#mid
+image moira attache_determine_mid = "moira/buchet/moira_attache_determine_mid.png"
+image moira attache_furieuse_mid = "moira/buchet/moira_attache_furieuse_mid.png"
+
+#close
+image moira attache_determine_close = "moira/buchet/moira_attache_determine_close.png"
+image moira attache_furieuse_close = "moira/buchet/moira_attache_furieuse_close.png"
 
 ##Rebelles ecossais
 define ge = Character('rebelles écossais', color="#f39c12")
@@ -407,6 +417,12 @@ image ve debout_effrayes_close = "villageois_ecossais/debout/ve_debout_effrayes_
 #Buchet
 image ve buchet_normaux = "villageois_ecossais/buchet/ve_buchet_effrayes.png"
 image ve buchet_pleurent = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
+
+image ve buchet_normaux_mid = "villageois_ecossais/buchet/ve_buchet_effrayes_mid.png"
+image ve buchet_pleurent_mid = "villageois_ecossais/buchet/ve_buchet_pleurent_mid.png"
+
+image ve buchet_normaux_close = "villageois_ecossais/buchet/ve_buchet_effrayes_close.png"
+image ve buchet_pleurent_close = "villageois_ecossais/buchet/ve_buchet_pleurent_close.png"
 
 ##Patrick
 define p = Character("Patrick")
