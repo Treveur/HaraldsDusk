@@ -715,7 +715,7 @@ label e_demander_information_village_1:
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
 
-    show logan debout_souriant_mid at center with dissolve
+    show logan debout_souriant_flip_mid at center with dissolve
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
@@ -777,13 +777,13 @@ label e_fouiller_village_1(einarFouille = False):
     play ambiance home
 
     show moira debout_normal_mid at center with dissolve
-    show einar debout_normal_mid at left with dissolve
     menu menu_maison_1:
 
         "Qui es-tu ?":
 
+            show einar debout_normal_mid at left with dissolve
             e "Qui es-tu ?"
-            show moira debout_determine_mid at center
+            show moira debout_determine_mid at right with moveinright
             ve "Ne m'adressez pas la parole !"
             show einar debout_determine_mid at left
             e "Je me suis montré courtois, mais ça pourrait vite changer. Réponds !"
@@ -795,7 +795,7 @@ label e_fouiller_village_1(einarFouille = False):
             jump menu_maison_1
 
         "Pourquoi être cachée ?":
-
+            show einar debout_normal_mid at left with dissolve
             e "Pourquoi te cacher ?"
             if moira_name_know:
                 m "Parce que je connais les porcs dans votre genre."
@@ -809,7 +809,7 @@ label e_fouiller_village_1(einarFouille = False):
             jump menu_maison_1
 
         "Où sont les rebelles ?":
-
+            show einar debout_normal_mid at left with dissolve
             e "Que sais-tu des rebelles ?"
             if moira_name_know:
                 m "Rien."
@@ -824,7 +824,7 @@ label e_fouiller_village_1(einarFouille = False):
 
         #Si Einar à déjà parlé une fois à Moira
         "Rejoins les autres !" if already_talk:
-
+            show einar debout_normal_mid at left with dissolve
             show einar debout_determine_mid at left
 
             e "Sors d'ici et rejoint les autres."
@@ -838,6 +838,7 @@ label e_fouiller_village_1(einarFouille = False):
             jump choix_retour_village_1
 
         "Je n'aime pas qu'on ne suive pas mes instructions (la tuer)" if already_talk:
+            show einar debout_normal_mid at left with dissolve
             jump e_tuer_moira_maison_1
 
     hide moira

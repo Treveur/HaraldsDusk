@@ -17,8 +17,16 @@ label interieur_maison_village_1:
     show moira debout_normal_mid at right with dissolve
 
     menu menu_rencontre_moira_blesse:
-        "Toi ?" if moira_met:
-            e "Toi ? ... Moira ?"
+        "Moira ?" if moira_met and moira_name_know:
+            e "... Moira ?"
+            m "Vous vous rappelez de moi ?"
+            e "Oui. Tu étais à Perth."
+            show moira debout_determine_mid at right
+            m "Ne me tutoyez pas, s'il vous plaît. J'étais bien à Perth quand vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
+            jump menu_rencontre_moira_blesse
+
+        "Toi ?" if moira_met and moira_name_know:
+            e "Toi ?"
             m "Vous vous rappelez de moi ?"
             e "Oui. Tu étais à Perth."
             show moira debout_determine_mid at right
