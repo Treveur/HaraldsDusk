@@ -67,7 +67,7 @@ label intro:
 
                     jump menu_harald_choice_foret
 
-                "Qu'y a t'il à savoir sur la région ?" if region_choice:
+                "Qu'y a-t-il à savoir sur la région ?" if region_choice:
 
                     e "Qu'indiquent les cartes à propos de la région, sire ? Je n'ai pas eu le loisir de les consulter."
 
@@ -88,7 +88,7 @@ label intro:
 
                     e "Sire, il me tarde de massacrer quelques paysans !"
 
-                    h "Ha ha ! Ne sois pas si hatif, il ne s'agit pas de tuer tout ce qui bouge. Pas pour le moment ! "
+                    h "Ha ha ! Ne sois pas si hatif, il ne s'agit pas de tuer tout ce qui bouge. Pas pour le moment !"
 
                     e "Sauf votre respect, Sire, votre Hache nous a privé de nombreuses batailles. D'habitude, vos ennemis se rendent dès qu'ils la voient !"
 
@@ -158,7 +158,7 @@ label intro:
 
                     l "Remarque, ça fait un moment que je ne t'ai pas vu avec une fille. Pas une captive, rien ! Monsieur cherche le grand amour ? A moins qu'il ne soit plus du genre à embrasser les garçons ?"
 
-                    e "Ferme la, sale porc. Quand je passe du bon temps, j'aime que la fille ne sois pas entrain de se débattre."
+                    e "Ferme la, sale porc. Quand je passe du bon temps, j'aime que la fille ne sois pas en train de se débattre."
 
                     l "Chacun son truc !"
 
@@ -307,7 +307,7 @@ label plaine_1 :
 
             h "Il n'y a aucun danger. Ce n'est qu'une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings, tu es un huscarl. Rien ne va te résister !"
 
-            h "Mais surtout, tu n'es pas sensé te battre contre eux ! Il s'agit d'une mission de reconnaissance, n'engage le combat que si c'est une nécessité absolue !"
+            h "Mais surtout, tu n'es pas censé te battre contre eux ! Il s'agit d'une mission de reconnaissance, n'engage le combat que si c'est une nécessité absolue !"
 
             jump menu_harald_eclaireur_foret_1
 
@@ -324,7 +324,7 @@ label plaine_1 :
 
             l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
 
-            h "Ne vous inquiétez pas, vous aurez tout les deux de quoi boire et manger une fois revenus ! Ha ha !"
+            h "Ne vous inquiétez pas, vous aurez tous les deux de quoi boire et manger une fois revenus ! Ha ha !"
 
 
         "Je regrette, mais non.":
@@ -410,7 +410,7 @@ label plaine_2:
 
                 e "Je n'en suis plus à mon coup d'essai, bordel !"
 
-        "Un problème, Logan ?(chambrer)" :
+        "Un problème, Logan ? (chambrer)" :
             show einar debout_souriant_mid at left
 
             e "Tu ne parles pas beaucoup, Logan... Tu as un problème, ou bien tu attends une autorisation du roi pour l'ouvrir ?"
@@ -507,7 +507,7 @@ label foret_1:
                 "Assez de niaiseries pour aujourd'hui":
                     show einar debout_normal_mid at left
 
-                    e "Taisez-vous maintenant. La route est encore longue et j'en ai déjà assez d'écouter vos histoires de bonnefemmes."
+                    e "Taisez-vous maintenant. La route est encore longue et j'en ai déjà assez d'écouter vos histoires de bonnes femmes."
 
                     e "Perth n'est plus très loin, restez silencieux."
 
@@ -569,7 +569,7 @@ label foret_1:
                 "Pourquoi as-tu décidé de m'accompagner ?":
                     show einar debout_normal_mid at left
 
-                    e "Pourquoi avoir choisi de m'accompagner ? "
+                    e "Pourquoi avoir choisi de m'accompagner ?"
 
                     l "Même sans être natif du coin, je connais la région mieux qu'aucun d'entre vous."
 
@@ -674,7 +674,7 @@ label village_1:
 
         "Où sont les rebelles ?":
             jump e_demander_information_village_1
-        "Fouillez le village!":
+        "Fouillez le village !":
             jump e_fouiller_village_1
         "Je vais voir moi-même ce que vous cachez ! (fouiller)":
             call e_fouiller_village_1 pass (einarFouille = True) from _call_e_fouiller_village_1
