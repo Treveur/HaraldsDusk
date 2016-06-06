@@ -454,10 +454,10 @@ image bg sentier_jour = "scenes/foretWestruther_ext_matin_sentier.jpg"
 image bg village = "scenes/perth_ext_jour_village.png"
 image bg village2_crepuscule = "scenes/perth_ext_jour_village.png"
 #ogma house
-image bg house = "scenes/perth_int_jour_maison.jpg"
-image bg house2_jour = "scenes/perth_int_jour_maison.jpg"
-image bg house2_night = "scenes/perth_int_nuit_maison.jpg"
-image bg house2_aube = "scenes/perth_int_jour_maison.jpg"
+image bg house = "scenes/perth_int_jour_maison.png"
+image bg house2_jour = "scenes/perth_int_jour_maison.png"
+image bg house2_night = "scenes/perth_int_nuit_maison.png"
+image bg house2_aube = "scenes/perth_int_jour_maison.png"
 
 ##Plaine cotière
 image bg plaine_cotière_matin = "scenes/plaine_ext_matin_plaineCotiere.jpg"
@@ -470,9 +470,9 @@ image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.jpg"
 #pont-levis
 image bg pont_levis = "scenes/pont_levis.jpg"
 #porte chateau
-image bg chateau_porte = "scenes/chateauDunbar_ext_jour_porte.jpg"
-image bg chateau_porte_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.jpg"
-image bg chateau_porte_interieur_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.jpg"
+image bg chateau_porte = "scenes/chateauDunbar_ext_jour_porte.png"
+image bg chateau_porte_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.png"
+image bg chateau_porte_interieur_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.png"
 #remparts
 image bg chateau_rempart_crepuscule = "scenes/chateauDunbar_ext_crepuscule_remparts.jpg"
 image bg chateau_rempart_jour = "scenes/chateauDunbar_ext_jour_remparts.jpg"
@@ -482,7 +482,7 @@ image bg cour_chateau_crepuscule = "scenes/chateauDunbar_ext_crepuscule_cour.jpg
 #couloirs
 image bg chateau_couloir_crepuscule = "scenes/chateauDunbar_int_crepuscule_couloir.jpg"
 #chambre Harald
-image bg chateau_chambre_nuit = "scenes/chateauDunbar_int_nuit_chambreHarald.jpg"
+image bg chateau_chambre_nuit = "scenes/chateauDunbar_int_nuit_chambreHarald.png"
 #Salle banquet
 image bg chateau_banquet = "scenes/chateauDunbar_int_salleBanque.jpg"
 
