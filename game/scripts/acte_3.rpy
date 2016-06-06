@@ -416,7 +416,7 @@ label cour_chateau_2:
     gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
     show harald debout_furieux_mid at left with dissolve
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
-    image harald combat_determine_mid = "harald/combat/harald_combat_determine.png"
+    show harald combat_determine_mid at left
     h "Tous à vos postes de combat ! Huscarls, préparez-vous à défendre la porte ! Je veux vingt archers sur les remparts !"
     "Une fois ses ordres donnés, Harald disparaît dans le donjon."
 
