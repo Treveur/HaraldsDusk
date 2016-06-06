@@ -307,11 +307,13 @@ label plaine_1 :
 
             jump menu_harald_eclaireur_foret_1
 
-        "Combien de rebelles ?" if menu_choice_2:
+
+        "Qu'indique le rapport, précisément ?" if menu_choice_2:
+
 
             e "Sur combien de rebelles risquons-nous de tomber ? A quoi dois-je m'attendre ?"
 
-            h "Le rapport n'indique que peu de détails. Ils n'étaient que quelques dizaines, cinquante, tout au plus."
+            h "Le rapport ne donne que peu de détails. Ils n'étaient que quelques dizaines, cinquante, tout au plus."
 
             e "Cinquante ? Et nous ne partons qu'à onze ?"
 
@@ -354,6 +356,12 @@ label plaine_1 :
     l "J'ai déjà planifié notre voyage."
     l "Nous passerons Stirling avant la nuit. Demain, nous atteindrons Perth. C'est le premier village douteux sur notre passage. Puis nous nous dirigerons vers Dundee, Forfar..."
     h "Parfait ! Il ne vous reste plus qu'à partir, les hommes vous attendent."
+    h "J'insiste sur un point, Einar. Il s'agit d'une mission de reconnaissance !"
+    h "Tu ne dois recourir à la violence qu'en ultime recours !"
+    h "La moindre démonstration de force risquerait de provoquer un soulèvement populaire et de rendre populaire la rébellion."
+    h "Me suis-je bien fait comprendre ?"
+    e "Parfaitement, sire."
+    h "Fabuleux. Je ne vous retiens pas, partez au plus vite."
 
     hide logan
     hide einar
@@ -369,7 +377,7 @@ label plaine_2:
 
     scene bg plaine_cotière_matin with dissolve
 
-    "Le lendemain..."
+    "Le lendemain, le groupe d'Einar et Logan se fraie un chemin à travers les landes en direction du nord."
 
     show gv debout_normaux_mid at center with dissolve
 
@@ -471,7 +479,8 @@ label foret_1:
 
     scene bg forest with dissolve
 
-    "Un jour plus tard..."
+    "Un jour plus tard, Einar mène ses hommes à travers la forêt écossaise."
+    "La lassitude mine le moral des vikings : ils n'ont pas cessé de marcher depuis leur débarquement il y a une semaine."
 
     show einar debout_normal_mid at left with dissolve
     show logan debout_normal_mid at center with dissolve
@@ -756,7 +765,7 @@ label e_demander_information_village_1:
     menu:
         "Vous voulez vraiment vous opposer à des guerriers d'élite ?":
             jump e_intimider_villageois_village_1
-        "Parlez, ou je tue l'un de vos vieux !":
+        "Parlez, ou je tue l'un des vôtres !":
             jump e_tuer_villageois_village_1
 
 label e_fouiller_village_1(einarFouille = False):
@@ -799,13 +808,14 @@ label e_fouiller_village_1(einarFouille = False):
     play ambiance home
 
     show moira debout_normal_mid at center with dissolve
+    "..."
+    show moira debout_determine_mid at right with moveinright
+    show einar debout_normal_mid at left with dissolve
     menu menu_maison_1:
 
         "Qui es-tu ?" if menu_choice_1:
 
-            show einar debout_normal_mid at left with dissolve
             e "Qui es-tu ?"
-            show moira debout_determine_mid at right with moveinright
             ve "Ne m'adressez pas la parole !"
             show einar debout_determine_mid at left
             e "Je me suis montré courtois, mais ça pourrait vite changer. Réponds !"
@@ -818,7 +828,7 @@ label e_fouiller_village_1(einarFouille = False):
             jump menu_maison_1
 
         "Pourquoi être cachée ?" if menu_choice_2:
-            show einar debout_normal_mid at left with dissolve
+
             e "Pourquoi te cacher ?"
             if moira_name_know:
                 m "Parce que je connais les porcs dans votre genre."
@@ -833,7 +843,7 @@ label e_fouiller_village_1(einarFouille = False):
             jump menu_maison_1
 
         "Où sont les rebelles ?" if menu_choice_3:
-            show einar debout_normal_mid at left with dissolve
+
             e "Que sais-tu des rebelles ?"
             if moira_name_know:
                 m "Rien."
@@ -849,9 +859,8 @@ label e_fouiller_village_1(einarFouille = False):
 
         #Si Einar à déjà parlé une fois à Moira
         "Rejoins les autres !" if already_talk:
-            show einar debout_normal_mid at left with dissolve
-            show einar debout_determine_mid at left
 
+            show einar debout_determine_mid at left
             e "Sors d'ici et rejoint les autres."
             if moira_name_know:
                 m "..."
@@ -863,7 +872,9 @@ label e_fouiller_village_1(einarFouille = False):
             jump choix_retour_village_1
 
         "Je n'aime pas qu'on ne suive pas mes instructions (la tuer)" if already_talk:
-            show einar debout_normal_mid at left with dissolve
+
+            show einar debout_furieux_mid at left
+            e "Je ne tolère pas ce genre d'écarts ! Quand je donne des ordres, on les applique !"
             jump e_tuer_moira_maison_1
 
     hide moira
@@ -875,7 +886,7 @@ label e_tuer_villageois_village_1:
     show ve debout_normaux_mid
     show einar debout_furieux_mid at left
 
-    e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un de vos vieux !"
+    e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un des vôtres !"
 
     show logan debout_determine_mid at center
 
@@ -1095,7 +1106,7 @@ label choix_retour_village_1(massacre = False):
     else:
         show logan debout_determine_mid at right with dissolve
         l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
-        show einar debout_normal_mid at left with dissolve
+        show einar debout_normal_mid at left
 
         e "J'espère pour toi que tu as raison, Logan."
 
@@ -1149,7 +1160,7 @@ label foret_2(lieu = ""):
 
     scene bg forest_night with dissolve
     hide einar with dissolve
-    "..."
+    "Le soir, la troupe discute des exploits passés..."
     show gv debout_normaux_mid at halfsize, center with dissolve
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
 
@@ -1345,7 +1356,7 @@ label massacre_foret_2(lieu = ""):
 
     play ambiance wood_night
 
-    "..."
+    "Le soir, la troupe discute des exploits passés..."
     show gv debout_enthousiastes_mid at halfsize, center with dissolve
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
 
@@ -1721,6 +1732,10 @@ label refuser_trahir_village_2:
 
     o "Jouer les fortes têtes ne te servira à rien ici. Tout ça est bien plus éprouvant pour toi que pour moi."
 
+    o "Tu penses être spécial ? Rien ne m'empêche de tuer ici et d'attendre le moment opportun pour capturer un autre huscar."
+
+    o "Je n'aurais aucun scrupule à t'égorger ici et maintenant."
+
     e "ARRÊTEZ ! ARRÊTAAAARGH !"
     show ogma debout_normal_mid at right
     "Ogma retire ses doigts de la plaie."
@@ -1744,7 +1759,7 @@ label accepter_trahir_village_2:
     o "Tu as fait le bon choix."
     e "Quand dois-je partir ?"
     show ogma debout_souriant_mid at right
-    o "Ha ha ! Pas d'enthousiasme excessif ! Si je te laissais partir maintenant, tu mourrais aussitôt ! Nous allons soigner tes blessures."
+    o "Ha ha ! Si je te laissais partir maintenant, tu mourrais aussitôt ! Nous allons soigner tes blessures."
     o "Je vais te laisser. Nous nous retrouverons bientôt."
 
     jump interieur_maison_village_1

@@ -26,7 +26,7 @@ label bad_ending_3:
 
 label bad_ending_4:
     show ogma combat_furieux_mid at right
-    "La furie sanguinaire d'Ogma est incontrôlable. Affaibli par le poison, Einar est massacré sur place."
+    "La furie sanguinaire d'Ogma est incontrôlable. Einar est massacré sur place."
     hide einar with dissolve
     "Alors que les rebelles continuent d'affluer dans l'enceinte, Ogma tombe à genoux devant le cadavre d'Einar."
     o "Grrr..."
@@ -160,7 +160,7 @@ label good_ending_15(marier = True):
 
 label bad_ending_16:
     "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol."
-    "Le roi quitte la pièce en marchant."
+    "Le roi quitte la pièce en sifflotant."
     jump credits
 
 label bad_ending_17:
