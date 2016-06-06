@@ -1399,8 +1399,8 @@ label attaque_massacre_foret_2(message = ""):
     hide gv
     with dissolve
 
-    "Un cor retentit dans les bois, très proche."
     play sound war_horn
+    "Un cor retentit dans les bois, très proche."
 
     show einar debout_determine_mid at left with dissolve
     e "En position de combat, tous !"
