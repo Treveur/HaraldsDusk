@@ -916,7 +916,7 @@ label e_nom_villageoise_maison_1:
     ve "Ne m'adressez pas la parole !"
     show einar debout_determine_mid at left
 
-    e "Je me suis montré courtois, mais ça pourrait vite changer. Répond !"
+    e "Je me suis montré courtois, mais ça pourrait vite changer. Réponds !"
 
     m "Moira."
 
@@ -982,7 +982,7 @@ label e_tuer_moira_maison_1:
             hide moira
             show logan debout_attriste_mid at center
 
-            l "Cette fille était sans défenses !"
+            l "Cette fille était sans défense !"
 
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
