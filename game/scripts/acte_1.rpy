@@ -986,7 +986,7 @@ label e_tuer_moira_maison_1:
 
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
-            show ve debout_effrayes_mid at right
+            show ve debout_effrayes_mid at right zorder 1
 
             ve "Monstres ! Ils ont tué Moira !"
 
@@ -1002,7 +1002,7 @@ label e_tuer_moira_maison_1:
             gv "Vengeance !"
 
             e "Je..."
-            show logan debout_determine_mid at right
+            show logan debout_determine_mid at right zorder 2
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
@@ -1042,6 +1042,7 @@ label e_tuer_moira_maison_1:
 
 label choix_retour_village_1(massacre = False):
 
+    hide ve with dissolve
     if massacre:
         show einar debout_normal_mid at left with dissolve
         e "Empilez les cadavres avant le départ."
@@ -1410,16 +1411,16 @@ label attaque_massacre_foret_2(message = ""):
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
-    show einar combat_determine at left with dissolve
+    show einar combat_determine_mid at left with dissolve
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide gv with dissolve
-    show ogma combat_determine at halfsize, center with dissolve
+    show ogma combat_determine_mid at halfsize, center with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide ogma
     hide logan
     with dissolve
-    show re combat_furieux at halfsize, right with dissolve
+    show re combat_furieux_mid at halfsize, right with dissolve
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     e "Approchez, charognes ! Je..."
@@ -1432,20 +1433,20 @@ label attaque_massacre_foret_2(message = ""):
     e "Que..."
 
     "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
-    show einar combat_blesse at left with dissolve
+    show einar combat_blesse_mid at left with dissolve
     e "Aaarrggh ! Logan, aide-moi !"
 
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-    show ogma combat_normal at right zorder 1 with dissolve
+    show ogma combat_normal_mid at right zorder 1 with dissolve
     hide logan with dissolve
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-    show re combat_normaux at halfsize, center with dissolve
+    show re combat_normaux_mid at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
     hide re with dissolve
 
