@@ -5,9 +5,9 @@ label bad_ending_1:
     jump credits
 
 label bad_ending_2:
-    show einar debout_furieux at left
+    show einar debout_furieux_mid at left
     e "Je n'ai qu'une parole. Vous pouvez aller vous faire foutre !"
-    show ogma debout_contrarie at right
+    show ogma debout_contrarie_mid at right
     o "C'est décevant... Tu crois être unique ? Si ce n'est pas toi, un autre fera le travail à ta place."
     "Ogma égorge Einar alors qu'il est entravé."
     e "Grrblbhh..."
@@ -16,16 +16,16 @@ label bad_ending_2:
     jump credits
 
 label bad_ending_3:
-    show einar debout_determine at left
+    show einar debout_determine_mid at left
     "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
-    show einar debout_blesse at left
+    show einar debout_blesse_mid at left
     "Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers."
     "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
     hide einar with dissolve
     jump credits
 
 label bad_ending_4:
-    show ogma combat_furieux at right
+    show ogma combat_furieux_mid at right
     "La furie sanguinaire d'Ogma est incontrôlable. Affaibli par le poison, Einar est massacré sur place."
     hide einar with dissolve
     "Alors que les rebelles continuent d'affluer dans l'enceinte, Ogma tombe à genoux devant le cadavre d'Einar."
@@ -34,35 +34,35 @@ label bad_ending_4:
     jump credits
 
 label bad_ending_5:
-    show huscarls combat_normaux at right
-    show einar combat_blesse at left
+    show huscarls combat_normaux_mid at right
+    show einar combat_blesse_mid at left
     "Les forces coordonnées des huscarls surpassent le talent d'Einar, qui est jeté au sol."
-    show huscarls combat_furieux at right
+    show huscarls combat_furieux_mid at right
     "Les huscarls le transforment en une pulpe sanglante sous une pluie de coups furieux."
     hide einar with dissolve
     jump credits
 
 label bad_ending_6:
-    show harald combat_hache_furieux at right
+    show harald combat_hache_furieux_mid at right
     "Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de répliquer."
     hide einar with dissolve
-    show harald combat_hache_determine at right
+    show harald combat_hache_determine_mid at right
     h "Et maintenant, au tour des écossais..."
     jump credits
 
 label good_ending_7:
-    show einar combat_hache_normal at left
-    show ogma debout_determine at right
+    show einar combat_hache_normal_mid at left
+    show ogma debout_determine_mid at right
     e "Voici la Hache."
-    show einar debout_normal at left
+    show einar debout_normal_mid at left
     o "Merci beaucoup. Combien auraient cédé à l'appel du pouvoir ?"
-    show ogma debout_souriant at right
+    show ogma debout_souriant_mid at right
     o "Peu d'hommes auraient eu ta droiture et ton humilité !"
     e "Vous allez détruire la Hache ?"
-    show ogma debout_determine at right
+    show ogma debout_determine_mid at right
     o "Oui. Je la ferai fondre en une arme nouvelle, une claymore."
     o "Elle sera destinée à ma famille, le clan Wallace. Elle symbolisera la fin de l'oppression et l'émergence de la Liberté !"
-    show re debout_enthousiastes at center
+    show re debout_enthousiastes_mid at center
     ge "HOURRAAA !"
 
     jump credits

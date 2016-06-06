@@ -61,8 +61,20 @@ image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
 image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
 
+#mid
+image einar combat_hache_normal_mid = "einar/combat_hache/einar_combat_hache_normal_mid.png"
+image einar combat_hache_furieux_mid = "einar/combat_hache/einar_combat_hache_furieux_mid.png"
+image einar combat_hache_determine_mid = "einar/combat_hache/einar_combat_hache_determine_mid.png"
+
+#close
+image einar combat_hache_normal_close = "einar/combat_hache/einar_combat_hache_normal_close.png"
+image einar combat_hache_furieux_close = "einar/combat_hache/einar_combat_hache_furieux_close.png"
+image einar combat_hache_determine_close = "einar/combat_hache/einar_combat_hache_determine_close.png"
+
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
+image einar general_determine_mid = "einar/general/einar_general_determine_mid.png"
+image einar general_determine_close = "einar/general/einar_general_determine_close.png"
 
 
 ##Logan
@@ -126,6 +138,18 @@ image harald combat_hache_normal = "harald/combat_hache/harald_combat_hache_norm
 image harald combat_hache_furieux = "harald/combat_hache/harald_combat_hache_furieux.png"
 #image harald combat_hache_contrarie = "harald/combat_hache/harald_combat_hache_contrarie.png"
 image harald combat_hache_determine = "harald/combat_hache/harald_combat_hache_determine.png"
+
+#mid
+image harald combat_hache_normal_mid = "harald/combat_hache/harald_combat_hache_normal_mid.png"
+image harald combat_hache_furieux_mid = "harald/combat_hache/harald_combat_hache_furieux_mid.png"
+#image harald combat_hache_contrarie_mid = "harald/combat_hache/harald_combat_hache_contrarie_mid.png"
+image harald combat_hache_determine_mid = "harald/combat_hache/harald_combat_hache_determine_mid.png"
+
+#close
+image harald combat_hache_normal_close = "harald/combat_hache/harald_combat_hache_normal_close.png"
+image harald combat_hache_furieux_close = "harald/combat_hache/harald_combat_hache_furieux_close.png"
+#image harald combat_hache_contrarie_close = "harald/combat_hache/harald_combat_hache_contrarie_close.png"
+image harald combat_hache_determine_close = "harald/combat_hache/harald_combat_hache_determine_close.png"
 
 #Combat
 image harald combat_normal = "harald/combat/harald_combat_normal.png"
@@ -274,6 +298,14 @@ image ogma combat_determine_close = "ogma/combat/ogma_combat_determine_close.png
 image ogma combat_hache_brandir = "ogma/combat_hache/ogma_combat_hache_brandir.png"
 image ogma combat_hache_determine = "ogma/combat_hache/ogma_combat_hache_determine.png"
 
+#mid
+image ogma combat_hache_brandir_mid = "ogma/combat_hache/ogma_combat_hache_brandir_mid.png"
+image ogma combat_hache_determine_mid = "ogma/combat_hache/ogma_combat_hache_determine_mid.png"
+
+#close
+image ogma combat_hache_brandir_close = "ogma/combat_hache/ogma_combat_hache_brandir_close.png"
+image ogma combat_hache_determine_close = "ogma/combat_hache/ogma_combat_hache_determine_close.png"
+
 ##Moira
 define m = Character("Moira", color = "#f00")
 
@@ -317,7 +349,15 @@ image moira nue_effraye_close = "moira/nue/moira_nue_effraye_close.png"
 
 #Attache
 image moira attache_determine = "moira/buchet/moira_attache_determine.png"
-image moira attache_furieus = "moira/buchet/moira_attache_furieuse.png"
+image moira attache_furieuse = "moira/buchet/moira_attache_furieuse.png"
+
+#mid
+image moira attache_determine_mid = "moira/buchet/moira_attache_determine_mid.png"
+image moira attache_furieuse_mid = "moira/buchet/moira_attache_furieuse_mid.png"
+
+#close
+image moira attache_determine_close = "moira/buchet/moira_attache_determine_close.png"
+image moira attache_furieuse_close = "moira/buchet/moira_attache_furieuse_close.png"
 
 ##Rebelles ecossais
 define ge = Character('rebelles écossais', color="#f39c12")
@@ -377,6 +417,12 @@ image ve debout_effrayes_close = "villageois_ecossais/debout/ve_debout_effrayes_
 #Buchet
 image ve buchet_normaux = "villageois_ecossais/buchet/ve_buchet_effrayes.png"
 image ve buchet_pleurent = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
+
+image ve buchet_normaux_mid = "villageois_ecossais/buchet/ve_buchet_effrayes_mid.png"
+image ve buchet_pleurent_mid = "villageois_ecossais/buchet/ve_buchet_pleurent_mid.png"
+
+image ve buchet_normaux_close = "villageois_ecossais/buchet/ve_buchet_effrayes_close.png"
+image ve buchet_pleurent_close = "villageois_ecossais/buchet/ve_buchet_pleurent_close.png"
 
 ##Patrick
 define p = Character("Patrick")
