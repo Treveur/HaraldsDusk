@@ -61,6 +61,16 @@ image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
 image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
 
+#mid
+image einar combat_hache_normal_mid = "einar/combat_hache/einar_combat_hache_normal_mid.png"
+image einar combat_hache_furieux_mid = "einar/combat_hache/einar_combat_hache_furieux_mid.png"
+image einar combat_hache_determine_mid = "einar/combat_hache/einar_combat_hache_determine_mid.png"
+
+#close
+image einar combat_hache_normal_close = "einar/combat_hache/einar_combat_hache_normal_close.png"
+image einar combat_hache_furieux_close = "einar/combat_hache/einar_combat_hache_furieux_close.png"
+image einar combat_hache_determine_close = "einar/combat_hache/einar_combat_hache_determine_close.png"
+
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
 
@@ -126,6 +136,18 @@ image harald combat_hache_normal = "harald/combat_hache/harald_combat_hache_norm
 image harald combat_hache_furieux = "harald/combat_hache/harald_combat_hache_furieux.png"
 #image harald combat_hache_contrarie = "harald/combat_hache/harald_combat_hache_contrarie.png"
 image harald combat_hache_determine = "harald/combat_hache/harald_combat_hache_determine.png"
+
+#mid
+image harald combat_hache_normal_mid = "harald/combat_hache/harald_combat_hache_normal_mid.png"
+image harald combat_hache_furieux_mid = "harald/combat_hache/harald_combat_hache_furieux_mid.png"
+#image harald combat_hache_contrarie_mid = "harald/combat_hache/harald_combat_hache_contrarie_mid.png"
+image harald combat_hache_determine_mid = "harald/combat_hache/harald_combat_hache_determine_mid.png"
+
+#close
+image harald combat_hache_normal_close = "harald/combat_hache/harald_combat_hache_normal_close.png"
+image harald combat_hache_furieux_close = "harald/combat_hache/harald_combat_hache_furieux_close.png"
+#image harald combat_hache_contrarie_close = "harald/combat_hache/harald_combat_hache_contrarie_close.png"
+image harald combat_hache_determine_close = "harald/combat_hache/harald_combat_hache_determine_close.png"
 
 #Combat
 image harald combat_normal = "harald/combat/harald_combat_normal.png"
@@ -273,6 +295,14 @@ image ogma combat_determine_close = "ogma/combat/ogma_combat_determine_close.png
 #Combat Hache
 image ogma combat_hache_brandir = "ogma/combat_hache/ogma_combat_hache_brandir.png"
 image ogma combat_hache_determine = "ogma/combat_hache/ogma_combat_hache_determine.png"
+
+#mid
+image ogma combat_hache_brandir_mid = "ogma/combat_hache/ogma_combat_hache_brandir_mid.png"
+image ogma combat_hache_determine_mid = "ogma/combat_hache/ogma_combat_hache_determine_mid.png"
+
+#close
+image ogma combat_hache_brandir_close = "ogma/combat_hache/ogma_combat_hache_brandir_close.png"
+image ogma combat_hache_determine_close = "ogma/combat_hache/ogma_combat_hache_determine_close.png"
 
 ##Moira
 define m = Character("Moira", color = "#f00")
