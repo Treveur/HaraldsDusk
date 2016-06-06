@@ -714,7 +714,7 @@ label e_demander_information_village_1:
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
 
-    show logan debout_souriant_mid at center with dissolve
+    show logan debout_souriant_flip_mid at center with dissolve
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
@@ -779,7 +779,7 @@ label e_fouiller_village_1(einarFouille = False):
     menu menu_maison_1:
 
         "Qui es-tu ?":
-            
+
             show einar debout_normal_mid at left with dissolve
             e "Qui es-tu ?"
             show moira debout_determine_mid at right with moveinright
