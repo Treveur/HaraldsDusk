@@ -1212,7 +1212,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     with dissolve
 
     #Remplacer pas simple horn
-    play sound double_horn
+    play sound war_horn
     "Un cor retentit dans les bois, très proche."
 
     show einar debout_determine_mid at left with dissolve
@@ -1400,7 +1400,7 @@ label attaque_massacre_foret_2(message = ""):
     with dissolve
 
     "Un cor retentit dans les bois, très proche."
-    play sound double_horn
+    play sound war_horn
 
     show einar debout_determine_mid at left with dissolve
     e "En position de combat, tous !"

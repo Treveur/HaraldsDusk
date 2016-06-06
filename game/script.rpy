@@ -501,6 +501,7 @@ define audio.slaughter = "sounds/musics/music_drama_slaughter.mp3"
 #SFX
 define audio.blade_1 = "sounds/sfx/SFX_Blade1.mp3"
 define audio.blade_2 = "sounds/sfx/SFX_Blade2.mp3"
+define audio.war_horn = "sounds/sfx/SFX_WarHorn.mp3"
 define audio.double_horn = "sounds/sfx/SFX_Double_WarHorn.mp3"
 define audio.drawbrigde = "sounds/sfx/SFX_Drawbridge_Down.mp3"
 define audio.hurt_man_1 = "sounds/sfx/SFX_Hurt_Man.mp3"
