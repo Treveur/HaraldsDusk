@@ -244,8 +244,8 @@ label cour_chateau_1:
         show einar debout_souriant_close at right
         e "Bien mon Roi."
 
-        hide einar
-        hide harald
+    hide einar
+    hide harald
 
 
     #play ambiance buchet
@@ -504,8 +504,8 @@ label pont_levis_baisse:
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    show re debout_enthousiastes_mid
-    show gv debout_determines_mid
+    show re debout_enthousiastes_mid at left
+    show gv debout_determines_mid at right
     with dissolve
     #Ajouter un shake camera
     ge "HAAAAA !"
