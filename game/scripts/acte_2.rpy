@@ -17,8 +17,16 @@ label interieur_maison_village_1:
     show moira debout_normal_mid at right with dissolve
 
     menu menu_rencontre_moira_blesse:
-        "Toi ?" if moira_met:
-            e "Toi ? ... Moira ?"
+        "Moira ?" if moira_met and moira_name_know:
+            e "... Moira ?"
+            m "Vous vous rappelez de moi ?"
+            e "Oui. Tu étais à Perth."
+            show moira debout_determine_mid at right
+            m "Ne me tutoyez pas, s'il vous plaît. J'étais bien à Perth quand vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
+            jump menu_rencontre_moira_blesse
+
+        "Toi ?" if moira_met and moira_name_know:
+            e "Toi ?"
             m "Vous vous rappelez de moi ?"
             e "Oui. Tu étais à Perth."
             show moira debout_determine_mid at right
@@ -200,7 +208,7 @@ label interieur_maison_village_1:
                 m "La votre, dans un premier temps."
                 e "Et ?"
                 m "Et celle de Kennocha, ma mère."
-    
+
     show moira debout_normal_mid at right
     m "J'imagine que si le roi est venu en Ecosse, c'est pour punir ceux qui ont tué son intendant ?"
     show einar debout_normal_mid at left
@@ -251,7 +259,7 @@ label interieur_maison_village_1:
 label interieur_maison_village_2:
     scene bg house2_night with dissolve
     "Quelques jours plus tard..."
-    
+
     show moira debout_souriant_mid at right
     m "Bonjour ! Je viens changer vos bandages."
     show einar debout_normal_mid at left
@@ -534,7 +542,7 @@ label interieur_maison_village_4:
         "Vous n'avez pas peur que je m'échappe ?":
             show einar debout_normal_close at left
             e "Ton père ne se méfie pas ? Je pourrais m'échapper..."
-    
+
     show moira debout_normal_close at right
     m "Mon père a choisi de te faire confiance. Tu pourras aller dehors, mais tu ne sortiras pas du village à moins de recevoir une autorisation directe. Et tu devras être accompagné en permanence !"
     show moira debout_souriant_close at right
@@ -689,7 +697,7 @@ label village_2:
             m "Je ne sais pas vraiment... Je crois qu'il est parti rencontrer les gens de Kircaldy."
             show einar debout_determine_mid at left
             e "Mmmh..."
-    
+
     show moira debout_normal_mid at right
     show einar debout_normal_mid at left
     m "..."
@@ -714,7 +722,7 @@ label village_3:
 
     show einar debout_normal_mid at left with dissolve
     show moira debout_normal_mid at right with dissolve
-    
+
     m "Alors ? Qu'as-tu pensé de cette première sortie ? Tu as apprécié ?"
 
     menu :
@@ -1022,7 +1030,7 @@ label cote_1:
     "{i}Toute la nourriture que tu as mangé ces trois derniers jours contenait un poison lent.{/i}"
     "{i}Je suis le seul à posséder l'antidote. Tu mourras dans deux jours si tu ne remplis pas ta part du marché.{/i}"
     "{i}N'en tiens rigueur à personne d'autre que moi, je suis le seul responsable. - Ogma Le Hurleur{/i}"
-    
+
     show einar debout_furieux_close
     e "Pourriture ! Il m'a empoisonné !"
     e "Koff koff !"

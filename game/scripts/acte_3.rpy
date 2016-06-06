@@ -1350,8 +1350,10 @@ label foret_4:
             "Une question de survie":
                 e "Un peu d'air !"
 
-            "RAB DE TA FACE DE SANS AME":
-                e "Tu pues de la shnek"
+            "Je suis désolé mais je ressens rien pour toi !":
+                e "Je suis désolé mais je ressens rien pour toi !"
+                e "Je me suis juste servi de toi pour m'enfuir la à moindre occasion"
+                m "..."
                 call good_ending_14 pass (rejete = True) from _call_good_ending_14
 
     menu menu_reponse_moira_suivre_einar:
