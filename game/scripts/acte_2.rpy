@@ -164,7 +164,9 @@ label interieur_maison_village_1:
 
         menu :
             "Ne rien dire":
+                show einar debout_normal_mid at left
                 e "..."
+                show moira debout_normal_mid at right
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
                 m "La votre, dans un premier temps."
@@ -172,44 +174,66 @@ label interieur_maison_village_1:
                 m "Et celle de Kennocha, ma mère."
 
             "Je vous demande pardon":
+                show einar debout_contrarie_mid at left
                 e "Excusez-moi."
+                show moira debout_normal_mid at right
                 m "N'en parlons plus."
+                show einar debout_normal_mid at left
                 e "..."
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
                 m "La votre, dans un premier temps."
                 e "Et ?"
+                show moira debout_determine_mid at right
                 m "Et celle de Kennocha, ma mère."
 
             "Vous n'avez pas d'ordres à me donner":
+                show einar debout_determine_mid at left
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
+                show moira debout_furieux_mid at right
                 " Moira gifle Einar à nouveau, sur l'autre joue."
                 m "J'ai omis de préciser que vous me deviez aussi le respect."
+                show einar debout_determine_mid at left
+                show moira debout_determine_mid at right
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
                 m "La votre, dans un premier temps."
                 e "Et ?"
                 m "Et celle de Kennocha, ma mère."
-
+    
+    show moira debout_normal_mid at right
     m "J'imagine que si le roi est venu en Ecosse, c'est pour punir ceux qui ont tué son intendant ?"
+    show einar debout_normal_mid at left
     e "Oui."
     m "Savez vous seulement pourquoi nous l'avons tué ? Je suis certaine que la question ne vous a même pas effleuré."
     e "Le roi nous a demandé de mater la rébellion et de venger l'intendant Montgomery. Le reste ne nous regarde pas."
+    show moira debout_furieux_mid at right
     m "Montgomery méritait de mourir !"
+    show einar debout_determine_mid at left
     e "Qu'est-ce qui vous a donné le droit de le tuer ?"
+    show moira debout_attriste_mid at right
     m "Il a tué ma mère, Kennocha."
     e "..."
+    show moira debout_determine_mid at right
     m "Clyde Montgomery n'était pas intendant. C'était un porc, doublé d'un tortionnaire ! Il saignait l'Ecosse à blanc ! Il exigeait de nous plus que ce que nous avions !"
     e "Quel rapport avec votre mère ?"
+    show moira debout_normal_mid at right
     m "Un matin, l'intendant est arrivé accompagné de ses sous-fifres. Il a exigé qu'on lui donne immédiatement l'impôt ainsi que de la nourriture pour ses hommes."
     m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
     m "Montgomery n'était pas satisfait, et il a demandé à ses gardes de fouiller nos maisons."
-    m "Ils ont découvert une réserve de nourriture que ma mère avait dissimulé. Sans rien dire, Montgomery s'est approché de ma mère et l'a tuée devant tout le village, sur la place."
-    m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été tabassés, personne n'a pu faire quoi que ce soit."
+    m "Ils ont découvert une réserve de nourriture que ma mère avait dissimulé."
+    show moira debout_attriste_mid at right
+    m "Sans rien dire, Montgomery s'est approché de ma mère et l'a tuée devant tout le village, sur la place."
+    show einar debout_normal_mid at left
+    m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été passés à tabac, personne n'a pu faire quoi que ce soit."
+    show einar debout_determine_mid at left
     e "Où étiez-vous ? Où était votre père ?"
+    show moira debout_determine_mid at right
     m "J'étais parmi ceux que les gardes ont frappé. Quand j'ai vu ma mère tomber, j'ai voulu me jeter sur l'intendant. Je n'ai même pas pu passer ses gardes."
     m "Quand mon père est revenu, il a franchi le cercle que formaient les gens du village. Personne ne parlait. Il revenait de la rivière avec quelques prises du matin."
+    show moira debout_attriste_mid at right
     m "A ce moment là, Montgomery était déjà parti. Mon père a retrouvé ma mère allongée dans la boue et dans son sang, devant tout le monde."
+    show moira debout_determine_mid at right
     m "La suite, vous la connaissez."
     e "Alors c'est Ogma lui-même qui a assassiné l'intendant..."
     m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
@@ -217,6 +241,7 @@ label interieur_maison_village_1:
     m "Mon père n'est pas une mauvaise personne. Il a tué l'intendant de plein droit."
     e "..."
     e "Pourquoi toutes ces révélations ?"
+    show moira debout_normal_mid at right
     m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
     m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
 
@@ -226,49 +251,77 @@ label interieur_maison_village_1:
 label interieur_maison_village_2:
     scene bg house2_night with dissolve
     "Quelques jours plus tard..."
-
+    
+    show moira debout_souriant_mid at right
     m "Bonjour ! Je viens changer vos bandages."
+    show einar debout_normal_mid at left
     e "Bonjour."
 
     menu:
 
         "Appelle moi Einar":
-            e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger. Appelez moi-Einar"
-            m "Alors parle moi comme si j'étais ton amie."
+            e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger. Appelez moi-Einar."
+            show moira debout_normal_mid at right
+            m "Alors parle moi comme à une bonne connaissance."
+            show moira debout_normal_close at right with dissolve
+            show einar debout_souriant_close at left with dissolve
             e "Très bien, Moira."
+            show moira debout_souriant_close at right
 
         "Merci pour tout":
             e "Merci."
+            show moira debout_normal_mid at right
             m "Pour ?"
             e "Les soins, les bandages, tout."
+            show moira debout_souriant_mid at right
             m "Vous n'allez pas me remercier à chaque fois que je viens m'occuper de vous ! "
             e "Je vous suis redevable !"
+            show moira debout_determine_mid at right
             m "..."
             e "Oui ?"
             m "Je suis lasse de devoir m'adresser à vous comme à un prisonnier."
             e "Alors appelez moi Einar."
-            m "Parlez-moi comme vous le feriez à une amie."
+            show moira debout_normal_mid at right
+            m "Adressez-vous à moi comme à une bonne connaissance."
+            show einar debout_souriant_close at left with dissolve
+            show moira debout_normal_close at right with dissolve
             e "Très bien ! Alors voilà : je te remercie pour tes soins, Moira !"
+            show moira debout_normal_mid at right
             m "C'est mieux comme ça..."
+            show einar debout_determine_close at left
             e "Quelque chose ne va pas ?"
+            show moira debout_souriant_close at right
             m "Non, tout va très bien, au contraire !"
             e "Tu en es certaine ?"
+            show moira debout_normal_close at right
             m "Oui ! Ça va te sembler bizarre, mais j'apprécie ces moments."
+            show einar debout_normal_close at left
             e "De quoi tu parles ?"
             m "Les moments où je te soigne. Pendant ce temps, je ne pense pas au reste. Ça me change les idées !"
+            show einar debout_souriant_close at left
             e "Tu te distrais en changeant les bandages souillés d'un prisonnier de guerre ?"
+            show moira debout_souriant_close at right
             m "Je préfère encore ça plutôt que de m'occuper des bêtes, bien que ce ne soit pas si différent !"
+            show moira debout_normal_close at right
+            show einar debout_normal_close at left
 
         "Ce n'est pas la peine d'insister, je ne suis toujours pas interessé ":
+            show einar debout_souriant_mid at left
             e "Pas la peine d'insister : je ne suis toujours pas interessé !"
-            m "Ne soit pas idiot !" #Elle sourit discrètement
+            show moira debout_souriant_mid at right
+            m "Ne soit pas idiot !"
+            show moira debout_normal_close at right with dissolve
+            show einar debout_normal_close at left with dissolve
             e "Tiens ? On se tutoie maintenant ?"
             m "Oui. J'en ai assez de devoir te parler comme à un étranger."
+            show einar debout_souriant_close at left with dissolve
             e "Ça me va !"
 
     " Les bandages d'Einar sont remplacés."
     m "Je vais te laisser, c'est tout pour aujourd'hui."
+    show einar debout_souriant_close at left
     e "A demain ?"
+    show moira debout_normal_close at right with dissolve
     m "A demain."
     hide einar
     hide moira
@@ -278,8 +331,8 @@ label interieur_maison_village_2:
 #Sequence 3
 label interieur_maison_village_3:
     scene bg house2_jour with dissolve
-    show ogma debout_normal_mid at center with dissolve
-    show moira debout_normal_mid at right with dissolve
+    show ogma debout_souriant_mid at center with dissolve
+    show moira debout_souriant_mid at right with dissolve
     "Quelques semaines plus tard..."
     o "... je la voyait se débattre comme jamais une truite ne s'était débattue ! Je tire sur la ligne en essayant de la remonter, mais ce foutu poisson passe derrière un rocher : la ligne casse !"
     m "A ce moment là je saute dans la rivière depuis la berge !"
@@ -288,13 +341,15 @@ label interieur_maison_village_3:
     o "On ne voyait plus que tes cheveux hors de l'eau ! Tu as dérivé sur une vingtaine de mètres, et puis tu as levé tes bras hors de l'eau !"
     m "Je tenais la truite au-dessus de moi ! Elle était énorme !"
     o "Pas si grosse que ça, mais tu étais à peine plus grande qu'elle, ha ha !"
+    show ogma debout_normal_mid at center
     o "Ensuite ta mère t'a sortie de l'eau. Tu étais toute bleue, mais tu ne voulais pas lâcher le poisson ! On t'a ramenée à la maison et tu n'as lâché la truite qu'une fois rentrée !"
+    show moira debout_attriste_mid at right
     m "J'aimerais retourner pêcher..."
     o "Pas pour le moment. Nous avons des choses à régler d'abord..."
-    show einar debout_normal_mid at left with dissolve
-    hide moira with dissolve
+    show einar debout_attriste_mid at left with dissolve
     e "Logan aussi était un bon pêcheur..."
     o "D'où venait-il ?"
+    show einar debout_determine_mid at left
     e "D'Aberdeen, loin au nord."
     o "Je n'y suis jamais allé... Et vous Einar, vous n'avez rien à raconter ? D'où venez-vous ?"
 
@@ -302,73 +357,103 @@ label interieur_maison_village_3:
 
     menu :
         "Ça ne vous regarde pas !":
+            show einar debout_contrarie_mid at left
             e "Ça ne vous regarde pas, salopard. Vous avez tué mes hommes et Logan."
+            show moira debout_furieux_mid at right
             m "Einar !"
             "Moira lève la main et s'apprête à gifler Einar. Ogma l'interromp en saisissant son bras au vol."
+            show ogma debout_contrarie_mid at center
             o "Non... Laisse-le dire. Il n'a pas tort. J'ai tué ses amis."
             m "Mais il t'a insulté !"
             o "Il n'est pas responsable de grand chose dans cette histoire. Il a suivi les ordres de son roi."
+            show moira debout_contrarie_mid at right
             m "..."
             e "..."
-            "Moira s'emporte et s'apprête à gifler Einar. Ogma l'interromp, et explique que le viking n'a pas totalement tort."
-            "Il n'est pour rien dans cette histoire et n'a fait que suivre son roi."
 
         "Je viens de Norvège...":
+            show einar debout_attriste_mid at left
             e "Je viens de Norvège. Le pays me manque..."
+            show moira debout_normal_mid at right
             m "A quoi ça ressemble, la Norvège ?"
+            show einar debout_normal_mid at left
             e "Ce n'est pas si différent de l'Ecosse. Nous avons le même climat, peut être un peu plus froid. Et il y a de grands fjords."
+            show ogma debout_normal_mid at center
             o "Des fjords ?"
+            show einar debout_souriant_mid at left
             e "Des rivières et des fleuves encaissés dans des vallées. C'est très beau."
             m "J'imagine..."
             e "Lorsqu'on va loin au nord, la nuit, on peut voir de grandes lumières vertes ou rouges dans le ciel. Certains disent que sont des hommages divins pour les héros morts au combat."
             m "J'aimerais beaucoup voir ça, un jour..."
+            show moira debout_souriant_mid at right
             m "Tu as une femme, là-bas ? Une famille ?"
+            show einar debout_normal_mid at left
             e "Non. Je n'ai plus personne."
 
         "Je ne veux pas en parler":
+            show einar debout_contrarie_mid at left
             e "Je ne souhaite pas en parler."
+            show ogma debout_normal_mid at center
             o "Je comprends."
+            show moira debout_normal_mid at right
             m "..."
 
     hide einar
     hide moira
     with dissolve
-    show ve debout_normaux at left with dissolve
+    show ve debout_effrayes_mid at left with dissolve
     ve "Ogma !"
+    show ogma debout_contrarie_mid at center
     o "Fenella ? Quelque chose ne va pas ?"
+    show ve debout_craintifs_mid at left
     ve "Dunfermline a brûlé ce matin !"
+    show ogma debout_attriste_mid at center
     o "Le roi... Je ne suis pas surpris."
     hide ve with dissolve
     show einar debout_normal_mid at left with dissolve
-    e "Vous n'avez pas l'air affecté par la nouvelle !"
-    show moira debout_normal_mid at right with dissolve
+    e "Vous n'avez pas vraiment l'air affecté par la nouvelle."
+    show moira debout_attriste_mid at right with dissolve
     m "Stirling et Falkirk ont déjà été rasée il y a quelques jours. Le roi est en marche."
+    show ogma debout_determine_mid at center
     o "Depuis que vous avez été capturé, Harald n'a pas cessé de vous chercher. Nous avons déjà eu la visite d'un émissaire."
 
     menu :
         "Je suis désolé pour les innocents":
+            show einar debout_attriste_mid at left
             e "Je regrette. Ces gens étaient innocents. Harald avait pourtant dit qu'il ne voulait pas lancer d'attaques au hasard..."
+            show ogma debout_normal_mid at center
             o "Merci. Je ne pense pas qu'il s'agisse d'attaques aveugles. Le roi a décidé de tuer des innocents pour nous faire sortir de nos cachettes et provoquer le rejet du peuple."
+            show moira debout_normal_mid at right
             m "Le roi aurait trahi sa parole, Einar ?"
+            show einar debout_contrarie_mid at left
             e "Ce n'est pas dans ses habitudes. Mais il y a peut-être été poussé. Ces massacres ne devraient pas avoir lieu. Je regrette sincèrement d'avoir amené la mort dans mon sillage."
             m "..."
+            show ogma debout_normal_mid at center
             o "Vous êtes quelqu'un de juste, Einar. Vous n'êtes pas responsable de ce qui se produit."
 
         "Ne rien dire":
             e "..."
+            show ogma debout_normal_mid at center
             o "Votre silence vous honore. Je comprends que vous ne vouliez pas prendre parti, votre position est délicate."
 
         "Je serai bientôt libre !":
+            show einar debout_souriant_mid at left
             e "Harald est à ma recherche. Bientôt, je serai libre. Ces massacres ne sont que les signes annonciateurs de ma libération."
+            show ogma debout_contrarie_mid at center
             o "J'ai cru que vous étiez quelqu'un de juste. Je me trompais probablement. Vous me dégoûtez."
 
+    show moira debout_determine_mid at right
     m "Le roi ne risque pas d'arriver ici sous peu ?"
+    show einar debout_normal_mid at left
+    show ogma debout_determine_mid at center
     o "Non, tout a été prévu. Hier, j'ai demandé à mes hommes d'accomplir deux choses : la première était de tenter d'assassiner l'ami du roi dans son propre château, l'évêque Patrick d'Edimbourg."
     o "La seconde était de brûler les navires par lesquelles les troupes vikings sont arrivées."
     o "L'assassinat aura lieu ce soir. Quant à l'incendie des navires, il aura eu lieu d'ici deux jours. Les délais sont très courts, mais cela devrait obliger Harald à reculer pour quelques temps."
+    show einar debout_determine_mid at left
     e "Il va vouloir consolider ses forces au château. Votre assaut n'en sera que plus difficile."
     o "Je n'avais pas le choix ! Sans ces décisions, les troupes du roi seraient arrivées ici après-demain au plus tard."
+    show ogma debout_normal_mid at center
     o "Nous allons vous laisser. Reposez-vous."
+    show moira debout_normal_mid at right
     m "..."
 
     hide einar
@@ -388,8 +473,8 @@ label interieur_maison_village_4:
     "Deux semaines plus tard..."
 
     "Moira arrive dans la chambre, un couteau à la main."
-    show moira debout_normal_mid at right with dissolve
-    show einar debout_normal_mid at left with dissolve
+    show moira debout_normal_close at right with dissolve
+    show einar debout_normal_close at left with dissolve
     m "Bonjour, Einar."
 
     menu menu_moira_couteau:
@@ -398,67 +483,97 @@ label interieur_maison_village_4:
 
         "Je suis libre ?" if libre_ask == False:
             e "Tu vas me libérer ?"
+            show moira debout_determine_close at right
             m "Non. Je vais accomplir ce que mon père aurait dû faire depuis longtemps..."
+            show einar debout_effraye_close at left
             e "Au secours ! A moi !"
             $ libre_ask = True
 
         "Au secours !":
+            show einar debout_effraye_close at left
             e "À l'aide ! Elle va me saigner !"
+            show moira debout_souriant_close at right
             m "Mais non ! Calme toi. Je n'ai pas prévu de saigner qui que ce soit aujourd'hui !"
 
         "Mmmh... J'aime ce genre d'accessoires":
+            show einar debout_souriant_close at left
             e "Mmmh... Notre relation manquait un peu de piment. Des accessoires ne seront pas de trop..."
+            show moira debout_souriant_close at right
             m "Ne dis pas de choses pareilles ! " #elle sourit
 
         "Pourquoi me tuer maintenant ?":
+            show einar debout_attriste_close at left
             e "Alors c'est la fin ? Pourquoi aujourd'hui ? Pourquoi m'avoir soigné pendant toutes ces semaines ?"
             e "Ça n'a pas de sens !"
+            $ libre_ask = True
 
     if libre_ask:
+        show moira debout_souriant_close at right
         m "Ha ha ha, je viens bien te libérer, idiot ! Je n'ai aucune intention de te faire mal. Pour le moment !"
 
+    show moira debout_normal_close at right
     m "Mon père a demandé à ce qu'on te rende ta liberté de mouvement. Il a dit que tu devais te dégourdir un peu les jambes : il ne faudrait pas que tu sois affaibli pour les combats à venir."
+    show einar debout_contrarie_close at left
     e "Je n'ai pas vu l'extérieur depuis un mois..."
+    show moira debout_souriant_close at right
     m "Sortir te fera du bien ! Tu es encore plus pâle qu'au moment où tu es arrivé ici."
 
     menu:
         "Il y a un piège ?":
+            show einar debout_contrarie_close at left
             e "Où est le piège ? Ça me semble trop beau..."
+            show moira debout_souriant_close at right
             m "Il n'y a pas de piège !"
 
         "Tu ne veux pas me torturer un peu ?":
+            show einar debout_souriant_close at left
             e "Je suis déçu qu'il ne s'agisse pas d'un \"jeu\"... Tu ne veux pas me torturer un peu ?"
+            show moira debout_souriant_close at right
             m "Arrête, ça devient gênant !" #elle sourit
 
         "Vous n'avez pas peur que je m'échappe ?":
+            show einar debout_normal_close at left
             e "Ton père ne se méfie pas ? Je pourrais m'échapper..."
-
+    
+    show moira debout_normal_close at right
     m "Mon père a choisi de te faire confiance. Tu pourras aller dehors, mais tu ne sortiras pas du village à moins de recevoir une autorisation directe. Et tu devras être accompagné en permanence !"
+    show moira debout_souriant_close at right
     m "Je suis heureuse de voir que ton état s'est bien amélioré. Je ne te cache pas que j'ai eu des doutes au début !"
+    show einar debout_normal_close at left
     e "C'est rassurant..."
     m "D'ici peu de temps, tu seras complètement remis."
 
     menu :
 
         "Et je devrai trahir Harald...":
+            show einar debout_contrarie_close at left
             e "Et je serai tenu de trahir mon roi à ce moment là..."
+            show moira debout_contrarie_close at right
             m "Oui... Tu as fait une promesse Einar. Nous comptons tous sur toi."
             e "..."
+            show moira debout_normal_close at right
             m "Je me demande... Que comptes-tu faire après avoir tenu ta promesse ? Après avoir trahi Harald ?"
             $ trahir_talk = True
 
         "Grâce à toi":
+            show einar debout_souriant_close at left
             e "Grâce à toi, Moira !"
+            show moira debout_souriant_close at right
             m "..." # elle sourit
             m "Je n'ai fait qu'une partie du travail. Tu es solide ! Ton corps à largement participé à l'efficacité de mes soins."
 
         "Ne rien dire":
+            show einar debout_determine_close at left
             e "..."
+            show moira debout_souriant_close at right
             m "C'est tout ? Je m'attendais à des remerciements, à de l'enthousiasme ! Tu n'as pas envie d'aller dehors ?"
+            show einar debout_normal_close at left
             e "Si, si..."
 
         "Je peux sortir ?":
+            show einar debout_normal_close at left
             e "On peut sortir maintenant ? La lumière du jour me manque."
+            show moira debout_souriant_close at right
             m "Bien sûr ! Reste près de moi." # elle sourit
 
 
@@ -466,43 +581,53 @@ label interieur_maison_village_4:
         menu:
 
             "J'arrêterai d'être soldat":
-
+                show einar debout_normal_close at left
                 e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres."
                 e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié ! Passé un certain temps, la gloire ne suffit plus."
 
                 $ decevoir_moira = "partir"
 
             "J'irai dans une région plus chaude":
+                show einar debout_normal_close at left
                 e "Je partirai dans une région plus chaude. La méditerranée, peut-être. Je n'ai plus ma place auprès du roi, et je ne veux pas rester ici."
                 e "L'éloignement est sûrement ma seule option : autant aller sous de meilleures latitudes."
                 $ decevoir_moira = "partir"
 
             "Je resterai ici":
+                show einar debout_normal_close at left
                 e "Je vais rester ici. Je n'ai plus ma place en Norvège ni ailleurs. Harald me traquera partout où il le pourra. Je suppose que mon seul abri sera l'Ecosse."
+                show moira debout_souriant_close at right
                 m "Si tu réussis, nous serons heureux de te compter parmi nous. Allez, il est temps de sortir !"
 
             "Je ne sais pas":
+                show einar debout_normal_close at left
                 e "Je ne sais pas. J'ai besoin de temps pour y réfléchir..."
                 m "Je comprends."
                 $ decevoir_moira = "rien"
 
         if decevoir_moira == "partir":
+            show moira debout_normal_close at right
             m "Oh... Tu pourrais rester ici ? Je pense que les gens accepteraient ta présence si tu participais à la vie du village."
+            show einar debout_normal_close at left
             e "Je ne sais pas..."
-            "Moira est visiblement déçue."
+            show moira debout_attriste_close at right
             m "Suis-moi, je vais te montrer l'extérieur."
 
         elif decevoir_moira == "rien":
+            show moira debout_normal_close at right
             m "J'espère que tu trouveras vite la réponse. Une fois que tu seras parti pour le château, tu seras au pied du mur..."
+            show einar debout_normal_close at left
             e "Qu'est-ce que tu voudrais, toi ?"
+            show moira debout_normal_close at right
             m "Ce n'est pas à moi de te dire ce que tu dois faire. J'aimerais juste savoir que tu es en sécurité. Le roi voudra se venger de toi."
             e "Où pourrais-je aller ? Harald domine le monde."
             m "Tu pourrais rester ici. Tu vivrais avec nous..."
             e "..."
-            m "Je en veux pas te gêner, excuse-moi. Allez, il est temps de sortir !"
+            show moira debout_souriant_close at right
+            m "Je ne veux pas te gêner, excuse-moi. Allez, il est temps de sortir !"
 
         else:
-            "Le visage de Moira s'illumine et elle se fend d'un sourire discret"
+            show moira debout_souriant_close at right
 
     m "Viens !"
     hide einar
@@ -531,34 +656,49 @@ label village_2:
 
     menu :
         "Pas d'ovation populaire ?":
+            show einar debout_souriant_mid at left
             e "Pas d'applaudissements ? Pas d'ovation populaire ? C'est ainsi que le bon peuple accueille le héros qui doit le libérer du joug du terrible roi-empereur ?"
+            show moira debout_souriant_mid at right
             m "Ha ha ha ! Ne soit pas trop exigeant ! Tu auras un accueil princier une fois que tu auras fait partir Harald !"
             e "Des encouragements auraient été enthousiasmants."
 
         "Ne rien dire":
+            show einar debout_normal_mid at left
             e "..."
+            show moira debout_normal_mid at right
             m "On dirait que voir l'extérieur et le village ne te fait pas plus d'effet que ça... J'imagine que tu ne réalises pas vraiment que tu as recouvré une partie de ta liberté."
             e "C'est sûrement ça..."
 
         "Ces paysans puent toujours autant":
+            show einar debout_determine_mid at left
             e "Les paysans n'ont pas changé depuis la dernière fois. Mêmes odeurs, mêmes têtes d'abrutis consanguins."
+            show moira debout_determine_mid at right
             m "Ces gens sont ma famille et mes amis. Un peu de reconnaissance pour ceux qui t'ont soigné, nourri et abrité pendant tout ce temps ne serait pas de trop."
+            show einar debout_normal_mid at left
             e "Je n'ai vu qu'une seule personne me soigner, et c'était toi."
             m "Peut-être. Mais ta nourriture venait bien de ces gens. Et les herbes et remèdes que je t'ai administré m'ont été conseillés par le vieux Murray."
             m "Tu dois quelque chose à chacune de ces personnes."
             e "Tu salueras le vieux Murray de ma part, alors..."
 
         "Où est Ogma ?":
+            show einar debout_normal_mid at left
             e "Ogma n'est pas ici ?"
+            show moira debout_normal_mid at right
             m "Non, mon père est parti hier soir du village."
             e "Pourquoi ?"
             m "Je ne sais pas vraiment... Je crois qu'il est parti rencontrer les gens de Kircaldy."
+            show einar debout_determine_mid at left
             e "Mmmh..."
-
+    
+    show moira debout_normal_mid at right
+    show einar debout_normal_mid at left
     m "..."
     m "Je vais te faire visiter Perth. Nous allons d'abord voir Fenella, elle a hâte de te rencontrer depuis qu'elle t'a vu l'autre jour."
+    show einar debout_effraye_mid at left
     e "Fenella ? La dernière fois, c'était une grosse femme rougeaude qui sentait l'ail. Il s'agit de cette Fenella ?"
+    show moira debout_souriant_mid at right
     m "Ha ha, oui ! Et je crois bien que tu lui plaît beaucoup ! Elle a perdu son mari il y a quelques années. Il te ressemblait un peu, je crois."
+    show einar debout_contrarie_mid at left
     e "La journée va être longue..."
     hide moira
     hide einar
@@ -574,21 +714,26 @@ label village_3:
 
     show einar debout_normal_mid at left with dissolve
     show moira debout_normal_mid at right with dissolve
-
+    
     m "Alors ? Qu'as-tu pensé de cette première sortie ? Tu as apprécié ?"
 
     menu :
 
         "J'avais besoin de bouger":
+            show einar debout_souriant_mid at left
             e "Oui. Je commençais à être sérieusement engourdi ! Le sensation de l'herbe sous mes pieds... Ça me manquait !"
+            show moira debout_souriant_mid at right
             m "J'imagine ! Des tas de choses ont dû te manquer pendant que tu étais enfermé ici..."
 
         "Oui, surtout en si bonne compagnie":
+            show einar debout_souriant_mid at left
             e "Oui. Cette sortie est agréable, surtout aussi bien accompagné."
+            show moira debout_souriant_mid at right
             m "..." #elle sourit
             m "Moi aussi, j'ai apprécié de passer du temps avec toi."
 
         "Non. Je déteste l'Ecosse !":
+            show einar debout_contrarie_mid at left
             e "Pas vraiment. Je n'aimais déjà pas l'Ecosse quand j'y ai accosté, et mon opinion n'a toujours pas changé."
             e "D'ailleurs, je crois que personne n'était heureux de venir ici à part Logan."
             e "Et quand je dis heureux, c'est exagéré."
@@ -597,6 +742,7 @@ label village_3:
             $ einar_raler = True
 
         "J'ai mal, le repas était mauvais, Fenella pue...":
+            show einar debout_contrarie_mid at left
             e "Non. Mes blessures me lancent. Et le repas chez Fenella était un enfer."
             m "Tu n'as pas aimé les oatcakes ?"
             e "Non. Cette saloperie était plus sèche que l'Anatolie ! J'ai cru m'étouffer !"
@@ -605,20 +751,29 @@ label village_3:
             m "Pourtant, quand je t'en ai donné alors que tu étais attaché, tu avais l'air d'adorer ça."
             e "Tu les préparais mieux."
             m "Ils étaient préparés par Fenella."
+            show einar debout_determine_mid at left
+            show moira debout_souriant_mid at right
             e "..."
+            show einar debout_normal_mid at left
             e "A vrai dire, la seule chose que j'ai apprécié était cette eau de vie que le vieux Murray m'a fait goûter."
+            show moira debout_normal_mid at right
             m "Ah ? C'est drôle, c'est la seule chose que je déteste ! L'odeur, le goût..."
             e "Avec quoi a-t-il dit que c'était fabriqué ?"
             m "De l'eau de source et des céréales, de l'orge je crois. C'est son vieux cousin Campbell qui lui en a donné un tonnelet."
+            show einar debout_souriant_mid at left
             e "Une fois toute cette histoire terminée, j'irai chercher ce fameux cousin ! J'aimerais lui acheter un peu de sa production."
+            show moira debout_souriant_mid at right
             m "Finalement, cette journée était plutôt agréable !"
+            show einar debout_determine_mid at left
             e "Non, je persiste. J'ai detesté le..."
 
             $ einar_raler = True
 
     if einar_raler:
+        show moira debout_souriant_mid at right
         m "Arrête de râler ! Tu auras beau dire ce que tu veux, j'ai bien vu que tu avais apprécié ce que je t'ai montré. "
 
+    show moira debout_souriant_mid at right
     m "Avant de te ramener à la maison, j'aimerais te montrer une dernière chose. C'est un endroit que j'aime beaucoup."
     "Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village."
     hide einar
@@ -645,9 +800,11 @@ label foret_3:
             e "Et les instructions de ton père ? Je croyais que je n'avais pas le droit de sortir, sauf autorisation spéciale."
 
         "Ça me rappelle vaguement une embuscade...":
+            show einar debout_determine_mid at left
             e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt et..."
 
-    "Moira demande à EInar de se taire, en mettant un doigt sur sa bouche."
+    "Moira demande à Einar de se taire, en mettant un doigt sur sa bouche."
+    show moira debout_souriant_mid at right
     m "Chuuut..."
 
     hide einar
@@ -681,7 +838,7 @@ label paradis_foret_1:
         "C'est magnifique":
             e "C'est un très bel endroit. Est-ce que..."
 
-
+    show moira debout_souriant_mid at right
     "Moira pousse doucement Einar contre un arbre."
     "Elle recule de quelques pas, puis se retourne."
     hide moira with dissolve
@@ -742,37 +899,54 @@ label village_4:
     show ogma debout_normal_mid at right with dissolve
     o "Vous voilà prêt à partir, Einar."
     show einar debout_normal_mid at left with dissolve
-    e "Je pense être prêt, oui. Retrouver mes affaires me fait du bien."
+    e "Je pense être prêt, oui. Mon matériel m'avait manqué !"
+    show ogma debout_determine_mid at right
     o "Avant de vous souhaiter bonne route, je veux vous rappeler quelque chose. Vous nous avez fait une promesse."
     o "Nous vous avons soigné, nous nous sommes occupé de vous. Vous nous êtes redevable. Remplissez votre part du marché."
-    o "Lorsque l'assaut aura commencé, je mènerai mes hommes au combat. Lorsque vous entendra deux coups de cor successifs, vous ouvrirez le pont-levis du château."
+    o "Lorsque l'assaut aura commencé, je mènerai mes hommes au combat. Lorsque vous entendrez deux coups de cor successifs, vous ouvrirez le pont-levis du château."
 
     menu:
 
         "Je tiendrai ma promesse":
+            show einar debout_normal_mid at left
             e "Je sais ce que j'ai à faire. Je ne pense qu'à ça depuis plus d'un mois."
 
         "Je n'ai pas le choix : je vais faire ce que vous voulez":
+            show einar debout_determine_mid at left
             e "Je vous suis reconnaissant pour tout ce que vous avez fait. J'accomplirai ma promesse, même si ce n'est pas de gaieté de coeur."
 
         "Oui.":
+            show einar debout_determine_mid at left
             e "Très bien."
     hide ogma with dissolve
     show moira debout_normal_mid at right with dissolve
-    m "Tu as donné ta parole à mon père. Je considère que tu m'as également donné ta parole. S'il te plaît, ne me déçois pas..."
+    m "Tu as donné ta parole à mon père. S'il te plaît, ne me déçois pas..."
     "Moira s'approche d'Einar."
 
     menu :
 
         "(L'embrasser)":
+            hide einar
+            hide ogma
+            hide moira
+            show einar debout_souriant_close at left with dissolve
+            show moira debout_souriant_close at right with dissolve
             "Einar embrasse doucement Moira en caressant son visage"
 
         "Je reviendrai, ne t'inquiète pas":
+            hide einar
+            hide ogma
+            hide moira
+            show einar debout_souriant_close at left with dissolve
+            show moira debout_souriant_close at right with dissolve
             "Einar saisit Moira par les hanches et l'attire contre lui, puis l'enlace."
             e "Ne t'inquiète pas. Je reviendrai."
 
         "(L'ignorer)":
+            hide ogma with dissolve
+            hide moira with dissolve
             "Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
+            hide einar with dissolve
 
 
     hide moira
@@ -787,8 +961,8 @@ label sentier_foret_1:
     play ambiance wood
 
     scene bg sentier_jour with dissolve
-    show einar debout_normal_mid with dissolve
     "..."
+    show einar debout_normal_close with dissolve
     e "(Ce qu'il fait chaud... Je ne me serais jamais attendu à avoir un temps pareil dans les Highlands !)"
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
@@ -805,8 +979,8 @@ label sentier_foret_1:
 
 label foret_5:
     scene bg forest_night with dissolve
-    show einar debout_normal_mid with dissolve
     "..."
+    show einar debout_normal_close with dissolve
     "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
     menu:
@@ -827,8 +1001,8 @@ label cote_1:
     play ambiance coast
 
     scene bg plaine_cotière_matin with dissolve
-    show einar debout_normal_mid with dissolve
     "..."
+    show einar debout_determine_close with dissolve
     e "(Ma fièvre ne fait qu'empirer... Je discerne à peine la fraîcheur de l'air marin...)"
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
@@ -848,7 +1022,8 @@ label cote_1:
     "{i}Toute la nourriture que tu as mangé ces trois derniers jours contenait un poison lent.{/i}"
     "{i}Je suis le seul à posséder l'antidote. Tu mourras dans deux jours si tu ne remplis pas ta part du marché.{/i}"
     "{i}N'en tiens rigueur à personne d'autre que moi, je suis le seul responsable. - Ogma Le Hurleur{/i}"
-
+    
+    show einar debout_furieux_close
     e "Pourriture ! Il m'a empoisonné !"
     e "Koff koff !"
     "En toussant, Einar sent un liquide tiède couler le long de son menton : un filet de sang épais mêlé à sa salive."
