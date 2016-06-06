@@ -801,7 +801,7 @@ label e_fouiller_village_1(einarFouille = False):
     show moira debout_normal_mid at center with dissolve
     menu menu_maison_1:
 
-        "Qui es-tu ?":
+        "Qui es-tu ?" if menu_choice_1:
 
             show einar debout_normal_mid at left with dissolve
             e "Qui es-tu ?"
@@ -813,10 +813,11 @@ label e_fouiller_village_1(einarFouille = False):
 
             $ already_talk = True
             $ moira_name_know = True
+            $ menu_choice_1 = False
 
             jump menu_maison_1
 
-        "Pourquoi être cachée ?":
+        "Pourquoi être cachée ?" if menu_choice_2:
             show einar debout_normal_mid at left with dissolve
             e "Pourquoi te cacher ?"
             if moira_name_know:
@@ -827,10 +828,11 @@ label e_fouiller_village_1(einarFouille = False):
             e "Mmmh."
 
             $ already_talk = True
+            $ menu_choice_2 = False
 
             jump menu_maison_1
 
-        "Où sont les rebelles ?":
+        "Où sont les rebelles ?" if menu_choice_3:
             show einar debout_normal_mid at left with dissolve
             e "Que sais-tu des rebelles ?"
             if moira_name_know:
@@ -841,6 +843,7 @@ label e_fouiller_village_1(einarFouille = False):
             show einar debout_determine_mid at left
             e "Tu es aussi belle que décevante."
             $ already_talk = True
+            $ menu_choice_3 = False
 
             jump menu_maison_1
 
