@@ -986,7 +986,7 @@ label e_tuer_moira_maison_1:
 
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
-            show ve debout_effrayes_mid at right
+            show ve debout_effrayes_mid at right zorder 1
 
             ve "Monstres ! Ils ont tué Moira !"
 
@@ -1002,7 +1002,7 @@ label e_tuer_moira_maison_1:
             gv "Vengeance !"
 
             e "Je..."
-            show logan debout_determine_mid at right
+            show logan debout_determine_mid at right zorder 2
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
@@ -1042,6 +1042,7 @@ label e_tuer_moira_maison_1:
 
 label choix_retour_village_1(massacre = False):
 
+    hide ve with dissolve
     if massacre:
         show einar debout_normal_mid at left with dissolve
         e "Empilez les cadavres avant le départ."

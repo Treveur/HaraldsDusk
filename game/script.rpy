@@ -44,6 +44,18 @@ image einar combat_furieux = "einar/combat/einar_combat_furieux.png"
 image einar combat_blesse = "einar/combat/einar_combat_blesse.png"
 image einar combat_determine = "einar/combat/einar_combat_determine.png"
 
+#mid
+image einar combat_normal_mid = "einar/combat/einar_combat_normal_mid.png"
+image einar combat_furieux_mid = "einar/combat/einar_combat_furieux_mid.png"
+image einar combat_blesse_mid = "einar/combat/einar_combat_blesse_mid.png"
+image einar combat_determine_mid = "einar/combat/einar_combat_determine_mid.png"
+
+#close
+image einar combat_normal_close = "einar/combat/einar_combat_normal_close.png"
+image einar combat_furieux_close = "einar/combat/einar_combat_furieux_close.png"
+image einar combat_blesse_close = "einar/combat/einar_combat_blesse_close.png"
+image einar combat_determine_close = "einar/combat/einar_combat_determine_close.png"
+
 #Combat
 image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.png"
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
@@ -80,6 +92,16 @@ image logan combat_normal = "logan/combat/logan_combat_normal.png"
 image logan combat_blesse = "logan/combat/logan_combat_blesse.png"
 image logan combat_determine = "logan/combat/logan_combat_determine.png"
 
+#mid
+image logan combat_normal_mid = "logan/combat/logan_combat_normal_mid.png"
+image logan combat_blesse_mid = "logan/combat/logan_combat_blesse_mid.png"
+image logan combat_determine_mid = "logan/combat/logan_combat_determine_mid.png"
+
+#close
+image logan combat_normal_close = "logan/combat/logan_combat_normal_close.png"
+image logan combat_blesse_close = "logan/combat/logan_combat_blesse_close.png"
+image logan combat_determine_close = "logan/combat/logan_combat_determine_close.png"
+
 ##Harald
 define h = Character('Harald', color="#3498db")
 
@@ -112,6 +134,20 @@ image harald combat_blesse = "harald/combat/harald_combat_blesse.png"
 #image harald combat_contrarie = "harald/combat/harald_combat_contrarie.png"
 image harald combat_determine = "harald/combat/harald_combat_determine.png"
 
+#mid
+image harald combat_normal_mid = "harald/combat/harald_combat_normal_mid.png"
+image harald combat_furieux_mid = "harald/combat/harald_combat_furieux_mid.png"
+image harald combat_blesse_mid = "harald/combat/harald_combat_blesse_mid.png"
+#image harald combat_contrarie_mid = "harald/combat/harald_combat_contrarie_mid.png"
+image harald combat_determine_mid = "harald/combat/harald_combat_determine_mid.png"
+
+#close
+image harald combat_normal_close = "harald/combat/harald_combat_normal_close.png"
+image harald combat_furieux_close = "harald/combat/harald_combat_furieux_close.png"
+image harald combat_blesse_close = "harald/combat/harald_combat_blesse_close.png"
+#image harald combat_contrarie_close = "harald/combat/harald_combat_contrarie_close.png"
+image harald combat_determine_close = "harald/combat/harald_combat_determine_close.png"
+
 ##Huscarls
 define hu = Character("Huscarls")
 #Debout
@@ -129,6 +165,18 @@ image huscarls combat_normaux = "huscarls/combat/huscarls_combat_normaux.png"
 image huscarls combat_enthousiaste = "huscarls/combat/huscarls_combat_enthousiaste.png"
 image huscarls combat_furieux = "huscarls/combat/huscarls_combat_furieux.png"
 image huscarls combat_inquiets = "huscarls/combat/huscarls_combat_inquiets.png"
+
+#mid
+image huscarls combat_normaux_mid = "huscarls/combat/huscarls_combat_normaux_mid.png"
+image huscarls combat_enthousiaste_mid = "huscarls/combat/huscarls_combat_enthousiaste_mid.png"
+image huscarls combat_furieux_mid = "huscarls/combat/huscarls_combat_furieux_mid.png"
+image huscarls combat_inquiets_mid = "huscarls/combat/huscarls_combat_inquiets_mid.png"
+
+#close
+image huscarls combat_normaux_close = "huscarls/combat/huscarls_combat_normaux_close.png"
+image huscarls combat_enthousiaste_close = "huscarls/combat/huscarls_combat_enthousiaste_close.png"
+image huscarls combat_furieux_close = "huscarls/combat/huscarls_combat_furieux_close.png"
+image huscarls combat_inquiets_close = "huscarls/combat/huscarls_combat_inquiets_close.png"
 
 ##Garde / Guerriers Vikings / Jeune Guerrier Viking
 define gv = Character('Guerriers Vikings', color="#e67e22")
@@ -160,6 +208,14 @@ image gv debout_determines_close = "guerriers_vikings/debout/gv_debout_determine
 #Combat
 image gv combat_normaux = "guerriers_vikings/combat/gv_combat_normaux.png"
 image gv combat_blesses = "guerriers_vikings/combat/gv_combat_blesses.png"
+
+#mid
+image gv combat_normaux_mid = "guerriers_vikings/combat/gv_combat_normaux_mid.png"
+image gv combat_blesses_mid = "guerriers_vikings/combat/gv_combat_blesses_mid.png"
+
+#close
+image gv combat_normaux_close = "guerriers_vikings/combat/gv_combat_normaux_close.png"
+image gv combat_blesses_close = "guerriers_vikings/combat/gv_combat_blesses_close.png"
 
 #Jeune Guerrier Viking
 image jgv debout_normal = "jeune_viking/debout/jgv_debout_normal.png"
@@ -201,6 +257,18 @@ image ogma combat_normal = "ogma/combat/ogma_combat_normal.png"
 image ogma combat_furieux = "ogma/combat/ogma_combat_furieux.png"
 image ogma combat_contrarie = "ogma/combat/ogma_combat_contrarie.png"
 image ogma combat_determine = "ogma/combat/ogma_combat_determine.png"
+
+#mid
+image ogma combat_normal_mid = "ogma/combat/ogma_combat_normal_mid.png"
+image ogma combat_furieux_mid = "ogma/combat/ogma_combat_furieux_mid.png"
+image ogma combat_contrarie_mid = "ogma/combat/ogma_combat_contrarie_mid.png"
+image ogma combat_determine_mid = "ogma/combat/ogma_combat_determine_mid.png"
+
+#close
+image ogma combat_normal_close = "ogma/combat/ogma_combat_normal_close.png"
+image ogma combat_furieux_close = "ogma/combat/ogma_combat_furieux_close.png"
+image ogma combat_contrarie_close = "ogma/combat/ogma_combat_contrarie_close.png"
+image ogma combat_determine_close = "ogma/combat/ogma_combat_determine_close.png"
 
 #Combat Hache
 image ogma combat_hache_brandir = "ogma/combat_hache/ogma_combat_hache_brandir.png"
@@ -274,6 +342,16 @@ image re debout_rire_close = "rebelles_ecossais/debout/re_debout_rire_close.png"
 image re combat_normaux = "rebelles_ecossais/combat/re_combat_normaux.png"
 image re combat_blesse = "rebelles_ecossais/combat/re_combat_blesses.png"
 image re combat_furieux = "rebelles_ecossais/combat/re_combat_furieux.png"
+
+#mid
+image re combat_normaux_mid = "rebelles_ecossais/combat/re_combat_normaux_mid.png"
+image re combat_blesse_mid = "rebelles_ecossais/combat/re_combat_blesses_mid.png"
+image re combat_furieux_mid = "rebelles_ecossais/combat/re_combat_furieux_mid.png"
+
+#close
+image re combat_normaux_close = "rebelles_ecossais/combat/re_combat_normaux_close.png"
+image re combat_blesse_close = "rebelles_ecossais/combat/re_combat_blesses_close.png"
+image re combat_furieux_close = "rebelles_ecossais/combat/re_combat_furieux_close.png"
 
 
 ##Villageois / prisonniers
