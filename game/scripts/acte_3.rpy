@@ -5,7 +5,7 @@ label cote_2:
 
     play ambiance coast
 
-    scene bg mer with dissolve
+    scene bg plaine_chateau_matin with dissolve
 
     show einar debout_normal_mid at center with dissolve
 

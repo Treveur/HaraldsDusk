@@ -234,7 +234,7 @@ label plaine_1 :
 
     play ambiance coast
 
-    scene bg mer with dissolve
+    scene bg plaine_chateau_matin with dissolve
 
     "Une heure plus tard, à proximité du château de Dunbar."
 
@@ -355,7 +355,7 @@ label plaine_2:
 
     play ambiance coast
 
-    scene bg cote1 with dissolve
+    scene bg plaine_cotière_matin with dissolve
 
     "Le lendemain..."
 

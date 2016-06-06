@@ -820,7 +820,7 @@ label cote_1:
 
     play ambiance coast
 
-    scene bg cote1 with dissolve
+    scene bg plaine_cotière_matin with dissolve
     show einar debout_normal_mid with dissolve
     "..."
     e "(Ma fièvre ne fait qu'empirer... Je discerne à peine la fraîcheur de l'air marin...)"

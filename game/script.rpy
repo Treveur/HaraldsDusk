@@ -307,26 +307,52 @@ image patrick debout_furieux_close = "patrick/debout/patrick_debout_furieux_clos
 #image ga combat_agressifs = "ga_combat_agressifs.png"
 
 #Scene
+
+##Forest
+#forest
 image bg forest = "scenes/foretWestruther_ext_jour_foret.jpg"
 image bg forest_night = "scenes/foretWestruther_ext_nuit_foret.jpg"
 image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.jpg"
 image bg little_heaven = "scenes/foretWestruther_ext_matin_paradis.png"
+#sentier
 image bg sentier_jour = "scenes/foretWestruther_ext_matin_sentier.jpg"
+
+#Village
+#interior
 image bg village = "scenes/perth_ext_jour_village.png"
 image bg village2_crepuscule = "scenes/perth_ext_jour_village.png"
+#ogma house
 image bg house = "scenes/perth_int_jour_maison.jpg"
 image bg house2_jour = "scenes/perth_int_jour_maison.jpg"
 image bg house2_night = "scenes/perth_int_nuit_maison.jpg"
 image bg house2_aube = "scenes/perth_int_jour_maison.jpg"
-image bg mer = "scenes/plaine_ext_matin_plaineChateau"
+
+##Plaine cotière
+image bg plaine_cotière_matin = "scenes/plaine_ext_matin_plaineCotiere.jpg"
+image bg plaine_chateau_matin = "scenes/plaine_ext_matin_plaineChateau"
+
+#plaine
+image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.jpg"
+
+##Chateau
+#pont-levis
 image bg pont_levis = "scenes/pont_levis.jpg"
+#porte chateau
 image bg chateau_porte = "scenes/chateauDunbar_ext_jour_porte.jpg"
 image bg chateau_porte_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.jpg"
+image bg chateau_porte_interieur_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.jpg"
+#remparts
+image bg chateau_rempart_crepuscule = "scenes/chateauDunbar_ext_crepuscule_remparts.jpg"
+image bg chateau_rempart_jour = "scenes/chateauDunbar_ext_jour_remparts.jpg"
+#cour chateau
 image bg cour_chateau = "scenes/chateauDunbar_ext_jour_cour.jpg"
 image bg cour_chateau_crepuscule = "scenes/chateauDunbar_ext_crepuscule_cour.jpg"
-image bg chateau_porte_interieur_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.jpg"
-image bg cote1 = "scenes/plaine_ext_matin_plaineCotiere.jpg"
-
+#couloirs
+image bg chateau_couloir_crepuscule = "scenes/chateauDunbar_int_crepuscule_couloir.jpg"
+#chambre Harald
+image bg chateau_chambre_nuit = "scenes/chateauDunbar_int_nuit_chambreHarald.jpg"
+#Salle banquet
+image bg chateau_banquet = "scenes/chateauDunbar_int_salleBanque.jpg"
 
 #Fond uni
 image bg black = "#000"
