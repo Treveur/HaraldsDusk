@@ -461,7 +461,7 @@ image bg house2_aube = "scenes/perth_int_jour_maison.png"
 
 ##Plaine cotière
 image bg plaine_cotière_matin = "scenes/plaine_ext_matin_plaineCotiere.jpg"
-image bg plaine_chateau_matin = "scenes/plaine_ext_matin_plaineChateau"
+image bg plaine_chateau_matin = "scenes/plaine_ext_matin_plaineChateau.jpg"
 
 #plaine
 image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.jpg"

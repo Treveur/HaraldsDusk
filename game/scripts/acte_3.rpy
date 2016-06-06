@@ -17,6 +17,9 @@ label cote_2:
 #Sequence 2
 label exterieur_chateau_1:
 
+    stop ambiance
+    #play ambiance castle
+
     scene bg chateau_porte with dissolve
 
     show einar debout_normal_mid at left with moveinleft
@@ -55,7 +58,7 @@ label exterieur_chateau_1:
 #Sequence 3
 label cour_chateau_1:
 
-    stop ambiance
+    #Augmenter le son progressivement
     #play ambiance castle
 
     scene bg cour_chateau with dissolve
@@ -245,6 +248,8 @@ label cour_chateau_1:
         hide einar
         hide harald
 
+
+    #play ambiance buchet
     "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."
 
     show patrick debout_normal_mid at center with dissolve
@@ -399,6 +404,7 @@ label cour_chateau_1:
 
 #Sequence 4
 label cour_chateau_2:
+
     #toujours ambiance chateau
     show bg cour_chateau_crepuscule with dissolve
 
@@ -461,7 +467,7 @@ label interieur_grande_porte_chateau_1:
 label pont_levis_baisse:
 
     #???
-
+    #Ambiance bruit cliqueti boucliers et épée
     show gv combat_normaux_mid at center with dissolve
 
     gv "Attendez... Attendez..."
