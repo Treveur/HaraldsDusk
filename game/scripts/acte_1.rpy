@@ -727,7 +727,7 @@ label e_demander_information_village_1:
     hide logan with dissolve
 
     e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
-    show einar debout_furieux_mid at center with dissolve
+    show einar debout_furieux_mid at left
 
     e "Votre attitude ressemble à un aveu de trahison !"
     show logan debout_normal_mid at center with dissolve
@@ -1219,42 +1219,42 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silouhettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
-    show einar combat_determine at left
+    show einar combat_determine_mid at left
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide gv with dissolve
-    show ogma combat_determine at halfsize, center with dissolve
+    show ogma combat_determine_mid at halfsize, center with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide ogma
     hide logan
     with dissolve
-    show re combat_furieux at halfsize, right with dissolve
+    show re combat_furieux_mid at halfsize, right with dissolve
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     e "Approchez, charognes ! Je..."
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
     hide re with dissolve
-    show logan combat_normal at right zorder 2 with dissolve
+    show logan combat_normal_mid at right zorder 2 with dissolve
     l "Einar ! Derrière toi !"
 
     e "Que..."
 
     "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
-    show einar combat_blesse at left with dissolve
+    show einar combat_blesse_mid at left with dissolve
     e "Aaarrggh ! Logan, aide-moi !"
 
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-    show ogma combat_normal at right zorder 1 with dissolve
+    show ogma combat_normal_mid at right zorder 1 with dissolve
     hide logan with dissolve
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
 
     "Le meneur fixe Einar."
-    show re combat_normaux at halfsize, center with dissolve
+    show re combat_normaux_mid at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
     hide re with dissolve
 
@@ -1455,10 +1455,8 @@ label attaque_massacre_foret_2(message = ""):
             call e_menace_foret_2 pass (bad_ending = True) from _call_e_menace_foret_2
 
 label e_demande_nom_foret_2(bad_ending = False):
-    hide einar
     hide logan
     hide gv
-    hide ogma
     show einar debout_blesse_mid at left with dissolve
     show ogma debout_normal_mid at right with dissolve
     e "Qui es-tu, lâche ?"
@@ -1475,10 +1473,8 @@ label e_demande_nom_foret_2(bad_ending = False):
         jump e_reveil_village_2
 
 label e_implore_pitie_foret_2(bad_ending = False):
-    hide einar
     hide logan
     hide gv
-    hide ogma
     show einar debout_normal_mid at left with dissolve
     show re debout_normaux_mid at right with dissolve
     show ogma debout_normal_mid at center with dissolve
@@ -1495,7 +1491,6 @@ label e_implore_pitie_foret_2(bad_ending = False):
         jump e_reveil_village_2
 
 label e_menace_foret_2(bad_ending = False):
-    hide einar
     hide logan
     hide gv
     hide ogma
