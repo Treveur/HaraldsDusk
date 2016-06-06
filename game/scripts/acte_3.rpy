@@ -63,12 +63,12 @@ label cour_chateau_1:
     #Augmenter le son progressivement
     #play ambiance castle
 
-    scene bg cour_chateau with dissolve
-
     $ retour_silence_1 = False
     $ soupcon_harald_1 = False
     $ mentir_harald_1 = False
     $ interpose_bucher = False
+
+    scene bg cour_chateau with dissolve
 
     "Harald est en grande discussion avec un huscarl au milieu de la cour"
 
@@ -233,7 +233,7 @@ label cour_chateau_1:
 
     else:
         show harald debout_contrarie_close at right
-        show harald debout_normal_close at left
+        show einar debout_normal_close at left
         h "Si ces salopards comptent attaquer prochainement,il faut impérativement préparer nos défenses !"
         e "Le château n'est pas suffisant ?"
         h "Si, mais uniquement si les hommes qui le défendent sont à leurs postes !"
@@ -359,24 +359,24 @@ label cour_chateau_1:
     menu :
 
         "Une bande de porcs qui rôtissent !":
-            show einar debout_souriant_mid at right
+            show einar debout_souriant_close at left
             e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
             $ reponse_reconfort = "pleurer"
 
         "Ne pleure pas ces parasites":
             e "Ne pleure pas ces parasites, ils ne le méritent pas."
-            show einar debout_determine_mid at right
+            show einar debout_determine_close at left
             e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
             e "Alors réjouis-toi, gamin ! En voilà trois de moins !"
             $ reponse_reconfort = "pleurer"
 
         "Nous n'y pouvons rien":
-            show einar debout_attriste_mid at right
+            show einar debout_attriste_close at left
             e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
             $ reponse_reconfort = "larme_aux_yeux"
 
         "Ne rien dire":
-            show einar debout_attriste_mid at right
+            show einar debout_attriste_close at left
             e "..."
             $ reponse_reconfort = "larme_aux_yeux"
 
@@ -385,10 +385,10 @@ label cour_chateau_1:
             $ reponse_reconfort = "rassure"
 
     if reponse_reconfort == "pleurer":
-        show jgv debout_pleurant_mid at right
+        show jgv debout_pleurant_close at right
         "Le jeune soldat pleure sans se cacher."
     elif reponse_reconfort == "larme_aux_yeux":
-        show jgv debout_pleurant_mid at right
+        show jgv debout_pleurant_close at right
         "Le jeune soldat semble toujours aussi bouleversé."
     else:
         "Le jeune soldat semble rassuré."
@@ -406,13 +406,14 @@ label cour_chateau_2:
 
     "Au crépuscule..."
     show gv debout_normaux_mid at left with dissolve
-    show harald debout_normal_mid at left with dissolve
+    show harald debout_normal_mid at right with dissolve
     gv "Sire ! Sire !"
     h "Qu'y a-t-il ? Parle !"
     gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
-    show harald debout_furieux_mid at left with dissolve
+    show harald debout_furieux_mid at right
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
-    image harald combat_determine_mid = "harald/combat/harald_combat_determine.png"
+    show harald combat_determine_mid at right
+
     h "Tous à vos postes de combat ! Huscarls, préparez-vous à défendre la porte ! Je veux vingt archers sur les remparts !"
     "Une fois ses ordres donnés, Harald disparaît dans le donjon."
 
@@ -1862,7 +1863,7 @@ label soupcon_harald_defendre_porte:
             e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
             show einar debout_contrarie_mid at left
             e "Vous vous moquez de moi, sire !"
-            show gv debout_contraries at right with dissolve
+            show gv debout_contraries_mid at center with dissolve
             gv "Sire !"
             show harald debout_contrarie_mid at right
             h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."

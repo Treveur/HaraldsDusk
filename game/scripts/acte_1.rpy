@@ -5,6 +5,8 @@ label intro:
 
     #Stop music s'il y en a une en cours
     stop music
+    $ renpy.music.set_volume(0.2, 0, channel='music')
+    play music nature
 
 
 
@@ -13,11 +15,11 @@ label intro:
     $ eclaireur_dial = False
 
     #Variable menu
-    $ plan_choice = True
-    $ region_choice = True
-    $ enthousiaste_choice = True
-    $ confiance_choice = True
-    $ tuer_choice = True
+    $ menu_choice_1 = True
+    $ menu_choice_2 = True
+    $ menu_choice_3 = True
+    $ menu_choice_4 = True
+    $ menu_choice_5 = True
 
     play ambiance wood
 
@@ -38,6 +40,7 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
+
             hide logan with dissolve
 
             show einar debout_normal_mid at left with dissolve
@@ -48,7 +51,7 @@ label intro:
             h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
 
             menu menu_harald_choice_foret:
-                "Quel est le plan ?" if plan_choice:
+                "Quel est le plan ?" if menu_choice_1:
 
                     e "Quelles sont les instructions, sire ? A quoi devons-nous nous préparer ?"
 
@@ -62,11 +65,11 @@ label intro:
 
                     h "J'aviserai. Mais ces foutus écossais n'apprécieront pas ce qui va leur arriver, tu peux me croire !"
 
-                    $ plan_choice = False
+                    $ menu_choice_1 = False
 
                     jump menu_harald_choice_foret
 
-                "Qu'y a-t-il à savoir sur la région ?" if region_choice:
+                "Qu'y a-t-il à savoir sur la région ?" if menu_choice_2:
 
                     e "Qu'indiquent les cartes à propos de la région, sire ? Je n'ai pas eu le loisir de les consulter."
 
@@ -78,11 +81,11 @@ label intro:
 
                     e "La région a l'air inhospitalière..."
 
-                    $ region_choice = False
+                    $ menu_choice_2 = False
 
                     jump menu_harald_choice_foret
 
-                "J'ai hâte de me battre !" if enthousiaste_choice:
+                "J'ai hâte de me battre !" if menu_choice_3:
                     show einar debout_souriant_mid at left
 
                     e "Sire, il me tarde de massacrer quelques paysans !"
@@ -95,11 +98,11 @@ label intro:
 
                     h "Ton enthousiasme fait plaisir à voir !"
 
-                    $ enthousiaste_choice = False
+                    $ menu_choice_3 = False
 
                     jump menu_harald_choice_foret
 
-                "Je crains pour votre vie" if confiance_choice:
+                "Je crains pour votre vie" if menu_choice_4:
                     show einar debout_contrarie_mid at left
 
                     e "Sire, votre présence ici m'intrigue... Pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
@@ -116,7 +119,7 @@ label intro:
 
                     h "Accompagner les miens sur le champ de bataille me paraît important. Et je ne voudrais pas passer à côté d'une belle bataille ! Ha ha !"
 
-                    $ confiance_choice = False
+                    $ menu_choice_4 = False
 
                     jump menu_harald_choice_foret
 
@@ -140,7 +143,7 @@ label intro:
             l "Non, merci, je n'y tiens pas."
 
             menu menu_logan_choice_foret:
-                "Tu te souviens de cette bataille ?" if plan_choice:
+                "Tu te souviens de cette bataille ?" if menu_choice_1:
                     show einar debout_souriant_mid at left
 
                     e "Tu te souviens de la bataille de Wertheim ?"
@@ -158,11 +161,11 @@ label intro:
 
                     l "Chacun son truc !"
 
-                    $ plan_choice = False
+                    $ menu_choice_1 = False
 
                     jump menu_logan_choice_foret
 
-                "Tu reconnais le coin ?" if region_choice:
+                "Tu reconnais le coin ?" if menu_choice_2:
                     show logan debout_normal_mid at right
 
                     e "Tu reconnais la région ?"
@@ -171,11 +174,11 @@ label intro:
 
                     l "Cela dit, je ne suis pas dépaysé..."
 
-                    $ region_choice = False
+                    $ menu_choice_2 = False
 
                     jump menu_logan_choice_foret
 
-                "J'ai hâte de me battre !" if enthousiaste_choice:
+                "J'ai hâte de me battre !" if menu_choice_3:
                     show einar debout_souriant_mid at left
 
                     e "Ma hache me démange. Je fracasserais bien quelques crânes !"
@@ -188,11 +191,11 @@ label intro:
 
                     l "Je n'aurai pas plus de problèmes que toi. Ces gens ont tué l'un des vassaux du roi. C'est une motivation amplement suffisante pour trancher la tête de quelques compatriotes."
 
-                    $ enthousiaste_choice = False
+                    $ menu_choice_3 = False
 
                     jump menu_logan_choice_foret
 
-                "Le roi me paraît sûr de lui !" if confiance_choice:
+                "Le roi me paraît sûr de lui !" if menu_choice_4:
                     show logan debout_normal_mid at right
 
                     e "Le roi me paraît bien confiant."
@@ -206,7 +209,7 @@ label intro:
 
                     l "S'il y a bien une personne sur cette terre qui peut avoir confiance en lui-même, c'est notre roi !"
 
-                    $ confiance_choice = False
+                    $ menu_choice_4 = False
 
                     jump menu_logan_choice_foret
 
@@ -216,7 +219,7 @@ label intro:
         "Ne rien dire":
             e "..."
 
-
+    stop music
 
     hide einar
     hide logan
@@ -227,6 +230,15 @@ label intro:
 
 #Sequence 2
 label plaine_1 :
+
+#Variable menu
+    $ menu_choice_1 = True
+    $ menu_choice_2 = True
+    $ menu_choice_3 = True
+    $ menu_choice_4 = True
+    $ menu_choice_5 = True
+
+    # reset_menu_choice(5)
 
     play ambiance coast
 
@@ -279,7 +291,7 @@ label plaine_1 :
 
             h "Les rapports manquent de détails, mais Logan m'a parlé de plusieurs petits villages qui pourraient abriter la rébellion."
 
-        "Pourquoi moi ?":
+        "Pourquoi moi ?" if menu_choice_1:
 
             e "Pourquoi dois-je mener ce groupe de reconnaissance ?"
 
@@ -291,9 +303,13 @@ label plaine_1 :
 
             h "Parce que je veux éviter que la situation ne s'envenime ! Il ne s'agit pas de faciliter la tâche des rebelles en provoquant un soulèvement populaire !"
 
+            $ menu_choice_1 = False
+
             jump menu_harald_eclaireur_foret_1
 
-        "Qu'indique le rapport, précisément ?":
+
+        "Qu'indique le rapport, précisément ?" if menu_choice_2:
+
 
             e "Sur combien de rebelles risquons-nous de tomber ? A quoi dois-je m'attendre ?"
 
@@ -304,6 +320,8 @@ label plaine_1 :
             h "Il n'y a aucun danger. Ce n'est qu'une bande de villageois chétifs. Tu mènes un groupe de guerriers vikings, tu es un huscarl. Rien ne va te résister !"
 
             h "Mais surtout, tu n'es pas censé te battre contre eux ! Il s'agit d'une mission de reconnaissance, n'engage le combat que si c'est une nécessité absolue !"
+
+            $ menu_choice_2 = False
 
             jump menu_harald_eclaireur_foret_1
 
@@ -639,7 +657,8 @@ label foret_1:
 #Scene 1
 label village_1:
 
-    play ambiance village
+    # play ambiance village
+    play music weird_village
 
     $ moira_met = False
 
@@ -721,7 +740,7 @@ label e_demander_information_village_1:
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
 
-    show logan debout_souriant_mid at center with dissolve
+    show logan debout_souriant_flip_mid at center with dissolve
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
@@ -750,6 +769,12 @@ label e_demander_information_village_1:
             jump e_tuer_villageois_village_1
 
 label e_fouiller_village_1(einarFouille = False):
+
+    $ menu_choice_1 = True
+    $ menu_choice_2 = True
+    $ menu_choice_3 = True
+    $ menu_choice_4 = True
+    $ menu_choice_5 = True
 
     $ moira_name_know = False
     $ moira_met = True
@@ -789,8 +814,8 @@ label e_fouiller_village_1(einarFouille = False):
     menu menu_maison_1:
 
         "Qui es-tu ?":
-            
             show einar debout_normal_mid at left
+
             e "Qui es-tu ?"
             ve "Ne m'adressez pas la parole !"
             show einar debout_determine_mid at left
@@ -1104,6 +1129,8 @@ label choix_retour_village_1(massacre = False):
 #Sequence 7
 label foret_2(lieu = ""):
 
+    stop music
+
     play ambiance wood
 
     scene bg forest with dissolve
@@ -1229,7 +1256,6 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     hide gv
     with dissolve
 
-    #Remplacer pas simple horn
     play sound war_horn
     "Un cor retentit dans les bois, très proche."
 
@@ -1239,6 +1265,9 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     gv "Ça venait d'où ?"
     show logan debout_determine_mid at right with dissolve
     l "Sur la gauche ! Des torches !"
+
+    stop ambiance
+    play music slaughter
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
@@ -1293,6 +1322,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 #Fin alternative n°1
 label massacre_foret_2(lieu = ""):
 
+    stop music
     play ambiance wood
 
     show bg forest with dissolve
@@ -1430,6 +1460,10 @@ label attaque_massacre_foret_2(message = ""):
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+
+    stop ambiance
+    play music slaughter
+
     show einar combat_determine_mid at left with dissolve
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide gv with dissolve
@@ -1536,10 +1570,13 @@ label e_menace_foret_2(bad_ending = False):
 #Sequence 8
 label e_reveil_village_2:
 
+    stop music
     play ambiance village
     #play ambiance home
 
-    scene bg house with dissolve
+    #ajouter blur image
+    scene bg black
+    scene bg village with fade
 
     $ already_talk = False
 
