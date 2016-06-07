@@ -7,7 +7,7 @@
 ##Einar
 define e = Character('Einar', color="#e74c3c", image="einar")
 
-image side einar = "einar/general/einar_portrait.png"
+image side einar = "einar/einar_portrait.png"
 
 #Debout
 image einar debout_normal = "einar/debout/einar_debout_normal.png"
@@ -120,7 +120,9 @@ image logan combat_blesse_close = "logan/combat/logan_combat_blesse_close.png"
 image logan combat_determine_close = "logan/combat/logan_combat_determine_close.png"
 
 ##Harald
-define h = Character('Harald', color="#3498db")
+define h = Character('Harald', color="#3498db", image="harald")
+
+image side harald = "harald/harald_portrait.png"
 
 image harald debout_normal = "harald/debout/harald_debout_normal.png"
 image harald debout_furieux = "harald/debout/harald_debout_furieux.png"
