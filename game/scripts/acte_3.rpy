@@ -883,8 +883,6 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         "Le combat s'engage entre le roi et son huscarl"
         # "Phase combat WIP"
 
-        #Phase combat
-
         $ time = 5
         $ timer_range = 5
         $ timer_jump = 'game_over_combat'
@@ -1882,23 +1880,56 @@ label soupcon_harald_defendre_porte:
         "Un combat s'engage entre Ogma et Einar !"
         "Mini jeu combat WIP"
 
-        "Gagner":
-            show ogma combat_normal_mid at right
-            "Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves."
-            "Terrorisés, les rebelles prennent la fuite."
-            hide ogma with dissolve
+        #Phase combat
 
-            show harald combat_normal_mid at right with dissolve
-            h "Ha ha ! Ils fuient, les lâches !"
-            show harald combat_determine_mid at right
-            h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
-
-            "*Harald s'élance à la poursuite des fuyards, le rire aux lèvres.*"
-            "*Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares.*"
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
 
 
-        "Perdre":
-            jump bad_ending_17
+        "Ogma furieux de la trahison de Einar se jette sur lui"
+        "L'épée brandie, Ogma s'aprête à frapper de tout ses forces."
+
+        show screen countdown
+        menu:
+
+            "Esquiver":
+                hide screen countdown
+                "Abattant son épée sur le sol, Einar réussi à éviter in extrmis"
+
+            "Se jeter sur Ogma":
+                hide screen countdown
+                "En se jetant sur Ogma, Einar se fait couper de par en par"
+                jump game_over_combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+        "Une fois son esquive effectuée, Attaque de nouveau"
+
+        show screen countdown
+
+        menu :
+            "Gagner":
+                hide screen countdown
+
+                show ogma combat_normal_mid at right
+                "Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves."
+                "Terrorisés, les rebelles prennent la fuite."
+                hide ogma with dissolve
+
+                show harald combat_normal_mid at right with dissolve
+                h "Ha ha ! Ils fuient, les lâches !"
+                show harald combat_determine_mid at right
+                h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
+
+                "Harald s'élance à la poursuite des fuyards, le rire aux lèvres."
+                "Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares."
+
+            "Perdre":
+                hide screen countdown
+                jump bad_ending_17
 
     hide einar
     hide harald
