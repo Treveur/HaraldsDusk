@@ -525,6 +525,420 @@ define audio.wood = "sounds/ambiances/ambiance_woods.mp3"
 transform halfsize :
     zoom 0.5
 
+$ bright-test = -0.4
+
+##Einar
+#Debout
+image einar debout_normal_b = im.MatrixColor("einar/debout/einar_debout_normal.png", im.matrix.brightness(bright-test))
+image einar debout_souriant_b = im.MatrixColor("einar/debout/einar_debout_souriant.png", im.matrix.brightness(bright-test))
+image einar debout_furieux_b = im.MatrixColor("einar/debout/einar_debout_furieux.png", im.matrix.brightness(bright-test))
+image einar debout_attriste_b = im.MatrixColor("einar/debout/einar_debout_attriste.png", im.matrix.brightness(bright-test))
+image einar debout_blesse_b = im.MatrixColor("einar/debout/einar_debout_blesse.png", im.matrix.brightness(bright-test))
+image einar debout_contrarie_b = im.MatrixColor("einar/debout/einar_debout_contrarie.png", im.matrix.brightness(bright-test))
+image einar debout_effraye_b = im.MatrixColor("einar/debout/einar_debout_effraye.png", im.matrix.brightness(bright-test))
+image einar debout_determine_b = im.MatrixColor("einar/debout/einar_debout_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image einar debout_normal_mid_b = im.MatrixColor("einar/debout/einar_debout_normal_mid.png", im.matrix.brightness(bright-test))
+image einar debout_souriant_mid_b = im.MatrixColor("einar/debout/einar_debout_souriant_mid.png", im.matrix.brightness(bright-test))
+image einar debout_furieux_mid_b = im.MatrixColor("einar/debout/einar_debout_furieux_mid.png", im.matrix.brightness(bright-test))
+image einar debout_attriste_mid_b = im.MatrixColor("einar/debout/einar_debout_attriste_mid.png", im.matrix.brightness(bright-test))
+image einar debout_blesse_mid_b = im.MatrixColor("einar/debout/einar_debout_blesse_mid.png", im.matrix.brightness(bright-test))
+image einar debout_contrarie_mid_b = im.MatrixColor("einar/debout/einar_debout_contrarie_mid.png", im.matrix.brightness(bright-test))
+image einar debout_effraye_mid_b = im.MatrixColor("einar/debout/einar_debout_effraye_mid.png", im.matrix.brightness(bright-test))
+image einar debout_determine_mid_b = im.MatrixColor("einar/debout/einar_debout_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image einar debout_normal_close_b = im.MatrixColor("einar/debout/einar_debout_normal_close.png", im.matrix.brightness(bright-test))
+image einar debout_souriant_close_b = im.MatrixColor("einar/debout/einar_debout_souriant_close.png", im.matrix.brightness(bright-test))
+image einar debout_furieux_close_b = im.MatrixColor("einar/debout/einar_debout_furieux_close.png", im.matrix.brightness(bright-test))
+image einar debout_attriste_close_b = im.MatrixColor("einar/debout/einar_debout_attriste_close.png", im.matrix.brightness(bright-test))
+image einar debout_blesse_close_b = im.MatrixColor("einar/debout/einar_debout_blesse_close.png", im.matrix.brightness(bright-test))
+image einar debout_contrarie_close_b = im.MatrixColor("einar/debout/einar_debout_contrarie_close.png", im.matrix.brightness(bright-test))
+image einar debout_effraye_close_b = im.MatrixColor("einar/debout/einar_debout_effraye_close.png", im.matrix.brightness(bright-test))
+image einar debout_determine_close_b = im.MatrixColor("einar/debout/einar_debout_determine_close.png", im.matrix.brightness(bright-test))
+
+
+#Combat
+image einar combat_normal_b = im.MatrixColor("einar/combat/einar_combat_normal.png", im.matrix.brightness(bright-test))
+image einar combat_furieux_b = im.MatrixColor("einar/combat/einar_combat_furieux.png", im.matrix.brightness(bright-test))
+image einar combat_blesse_b = im.MatrixColor("einar/combat/einar_combat_blesse.png", im.matrix.brightness(bright-test))
+image einar combat_determine_b = im.MatrixColor("einar/combat/einar_combat_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image einar combat_normal_mid_b = im.MatrixColor("einar/combat/einar_combat_normal_mid.png", im.matrix.brightness(bright-test))
+image einar combat_furieux_mid_b = im.MatrixColor("einar/combat/einar_combat_furieux_mid.png", im.matrix.brightness(bright-test))
+image einar combat_blesse_mid_b = im.MatrixColor("einar/combat/einar_combat_blesse_mid.png", im.matrix.brightness(bright-test))
+image einar combat_determine_mid_b = im.MatrixColor("einar/combat/einar_combat_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image einar combat_normal_close_b = im.MatrixColor("einar/combat/einar_combat_normal_close.png", im.matrix.brightness(bright-test))
+image einar combat_furieux_close_b = im.MatrixColor("einar/combat/einar_combat_furieux_close.png", im.matrix.brightness(bright-test))
+image einar combat_blesse_close_b = im.MatrixColor("einar/combat/einar_combat_blesse_close.png", im.matrix.brightness(bright-test))
+image einar combat_determine_close_b = im.MatrixColor("einar/combat/einar_combat_determine_close.png", im.matrix.brightness(bright-test))
+
+#Combat
+image einar combat_hache_normal_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_normal.png", im.matrix.brightness(bright-test))
+image einar combat_hache_furieux_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_furieux.png", im.matrix.brightness(bright-test))
+image einar combat_hache_determine_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image einar combat_hache_normal_mid_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_normal_mid.png", im.matrix.brightness(bright-test))
+image einar combat_hache_furieux_mid_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_furieux_mid.png", im.matrix.brightness(bright-test))
+image einar combat_hache_determine_mid_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image einar combat_hache_normal_close_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_normal_close.png", im.matrix.brightness(bright-test))
+image einar combat_hache_furieux_close_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_furieux_close.png", im.matrix.brightness(bright-test))
+image einar combat_hache_determine_close_b = im.MatrixColor("einar/combat_hache/einar_combat_hache_determine_close.png", im.matrix.brightness(bright-test))
+
+#Général
+image einar general_determine_b = im.MatrixColor("einar/general/einar_general_determine.png", im.matrix.brightness(bright-test))
+image einar general_determine_mid_b = im.MatrixColor("einar/general/einar_general_determine_mid.png", im.matrix.brightness(bright-test))
+image einar general_determine_close_b = im.MatrixColor("einar/general/einar_general_determine_close.png", im.matrix.brightness(bright-test))
+
+
+##Logan
+#Debout
+image logan debout_normal_b = im.MatrixColor("logan/debout/logan_debout_normal.png", im.matrix.brightness(bright-test))
+image logan debout_souriant_b = im.MatrixColor("logan/debout/logan_debout_souriant.png", im.matrix.brightness(bright-test))
+image logan debout_attriste_b = im.MatrixColor("logan/debout/logan_debout_attriste.png", im.matrix.brightness(bright-test))
+image logan debout_contrarie_b = im.MatrixColor("logan/debout/logan_debout_contrarie.png", im.matrix.brightness(bright-test))
+image logan debout_determine_b = im.MatrixColor("logan/debout/logan_debout_determine.png", im.matrix.brightness(bright-test))
+
+image logan debout_normal_mid_b = im.MatrixColor("logan/debout/logan_debout_normal_mid.png", im.matrix.brightness(bright-test))
+image logan debout_souriant_mid_b = im.MatrixColor("logan/debout/logan_debout_souriant_mid.png", im.matrix.brightness(bright-test))
+image logan debout_attriste_mid_b = im.MatrixColor("logan/debout/logan_debout_attriste_mid.png", im.matrix.brightness(bright-test))
+image logan debout_contrarie_mid_b = im.MatrixColor("logan/debout/logan_debout_contrarie_mid.png", im.matrix.brightness(bright-test))
+image logan debout_determine_mid_b = im.MatrixColor("logan/debout/logan_debout_determine_mid.png", im.matrix.brightness(bright-test))
+
+image logan debout_normal_close_b = im.MatrixColor("logan/debout/logan_debout_normal_close.png", im.matrix.brightness(bright-test))
+image logan debout_souriant_close_b = im.MatrixColor("logan/debout/logan_debout_souriant_close.png", im.matrix.brightness(bright-test))
+image logan debout_contrarie_close_b = im.MatrixColor("logan/debout/logan_debout_contrarie_close.png", im.matrix.brightness(bright-test))
+image logan debout_attriste_close_b = im.MatrixColor("logan/debout/logan_debout_attriste_close.png", im.matrix.brightness(bright-test))
+image logan debout_determine_close_b = im.MatrixColor("logan/debout/logan_debout_determine_close.png", im.matrix.brightness(bright-test))
+
+#Flip
+image logan debout_souriant_flip_mid_b = im.MatrixColor(im.Flip("logan/debout/logan_debout_souriant_mid.png", horizontal_b = im.MatrixColor(True)
+
+#Combat
+image logan combat_normal_b = im.MatrixColor("logan/combat/logan_combat_normal.png", im.matrix.brightness(bright-test))
+image logan combat_blesse_b = im.MatrixColor("logan/combat/logan_combat_blesse.png", im.matrix.brightness(bright-test))
+image logan combat_determine_b = im.MatrixColor("logan/combat/logan_combat_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image logan combat_normal_mid_b = im.MatrixColor("logan/combat/logan_combat_normal_mid.png", im.matrix.brightness(bright-test))
+image logan combat_blesse_mid_b = im.MatrixColor("logan/combat/logan_combat_blesse_mid.png", im.matrix.brightness(bright-test))
+image logan combat_determine_mid_b = im.MatrixColor("logan/combat/logan_combat_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image logan combat_normal_close_b = im.MatrixColor("logan/combat/logan_combat_normal_close.png", im.matrix.brightness(bright-test))
+image logan combat_blesse_close_b = im.MatrixColor("logan/combat/logan_combat_blesse_close.png", im.matrix.brightness(bright-test))
+image logan combat_determine_close_b = im.MatrixColor("logan/combat/logan_combat_determine_close.png", im.matrix.brightness(bright-test))
+
+##Harald
+#Debout
+image harald debout_normal_b = im.MatrixColor("harald/debout/harald_debout_normal.png", im.matrix.brightness(bright-test))
+image harald debout_furieux_b = im.MatrixColor("harald/debout/harald_debout_furieux.png", im.matrix.brightness(bright-test))
+#image harald debout_blesse_b = im.MatrixColor("harald/noraml/harald_debout_blesse.png", im.matrix.brightness(bright-test))
+image harald debout_contrarie_b = im.MatrixColor("harald/debout/harald_debout_contrarie.png", im.matrix.brightness(bright-test))
+image harald debout_determine_b = im.MatrixColor("harald/debout/harald_debout_determine.png", im.matrix.brightness(bright-test))
+
+image harald debout_normal_mid_b = im.MatrixColor("harald/debout/harald_debout_normal_mid.png", im.matrix.brightness(bright-test))
+image harald debout_furieux_mid_b = im.MatrixColor("harald/debout/harald_debout_furieux_mid.png", im.matrix.brightness(bright-test))
+image harald debout_contrarie_mid_b = im.MatrixColor("harald/debout/harald_debout_contrarie_mid.png", im.matrix.brightness(bright-test))
+image harald debout_determine_mid_b = im.MatrixColor("harald/debout/harald_debout_determine_mid.png", im.matrix.brightness(bright-test))
+
+image harald debout_normal_close_b = im.MatrixColor("harald/debout/harald_debout_normal_close.png", im.matrix.brightness(bright-test))
+image harald debout_furieux_close_b = im.MatrixColor("harald/debout/harald_debout_furieux_close.png", im.matrix.brightness(bright-test))
+image harald debout_contrarie_close_b = im.MatrixColor("harald/debout/harald_debout_contrarie_close.png", im.matrix.brightness(bright-test))
+image harald debout_determine_close_b = im.MatrixColor("harald/debout/harald_debout_determine_close.png", im.matrix.brightness(bright-test))
+
+#Combat Hache
+image harald combat_hache_normal_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_normal.png", im.matrix.brightness(bright-test))
+image harald combat_hache_furieux_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_furieux.png", im.matrix.brightness(bright-test))
+#image harald combat_hache_contrarie_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_contrarie.png", im.matrix.brightness(bright-test))
+image harald combat_hache_determine_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image harald combat_hache_normal_mid_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_normal_mid.png", im.matrix.brightness(bright-test))
+image harald combat_hache_furieux_mid_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_furieux_mid.png", im.matrix.brightness(bright-test))
+#image harald combat_hache_contrarie_mid_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_contrarie_mid.png", im.matrix.brightness(bright-test))
+image harald combat_hache_determine_mid_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image harald combat_hache_normal_close_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_normal_close.png", im.matrix.brightness(bright-test))
+image harald combat_hache_furieux_close_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_furieux_close.png", im.matrix.brightness(bright-test))
+#image harald combat_hache_contrarie_close_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_contrarie_close.png", im.matrix.brightness(bright-test))
+image harald combat_hache_determine_close_b = im.MatrixColor("harald/combat_hache/harald_combat_hache_determine_close.png", im.matrix.brightness(bright-test))
+
+#Combat
+image harald combat_normal_b = im.MatrixColor("harald/combat/harald_combat_normal.png", im.matrix.brightness(bright-test))
+image harald combat_furieux_b = im.MatrixColor("harald/combat/harald_combat_furieux.png", im.matrix.brightness(bright-test))
+image harald combat_blesse_b = im.MatrixColor("harald/combat/harald_combat_blesse.png", im.matrix.brightness(bright-test))
+#image harald combat_contrarie_b = im.MatrixColor("harald/combat/harald_combat_contrarie.png", im.matrix.brightness(bright-test))
+image harald combat_determine_b = im.MatrixColor("harald/combat/harald_combat_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image harald combat_normal_mid_b = im.MatrixColor("harald/combat/harald_combat_normal_mid.png", im.matrix.brightness(bright-test))
+image harald combat_furieux_mid_b = im.MatrixColor("harald/combat/harald_combat_furieux_mid.png", im.matrix.brightness(bright-test))
+image harald combat_blesse_mid_b = im.MatrixColor("harald/combat/harald_combat_blesse_mid.png", im.matrix.brightness(bright-test))
+#image harald combat_contrarie_mid_b = im.MatrixColor("harald/combat/harald_combat_contrarie_mid.png", im.matrix.brightness(bright-test))
+image harald combat_determine_mid_b = im.MatrixColor("harald/combat/harald_combat_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image harald combat_normal_close_b = im.MatrixColor("harald/combat/harald_combat_normal_close.png", im.matrix.brightness(bright-test))
+image harald combat_furieux_close_b = im.MatrixColor("harald/combat/harald_combat_furieux_close.png", im.matrix.brightness(bright-test))
+image harald combat_blesse_close_b = im.MatrixColor("harald/combat/harald_combat_blesse_close.png", im.matrix.brightness(bright-test))
+#image harald combat_contrarie_close_b = im.MatrixColor("harald/combat/harald_combat_contrarie_close.png", im.matrix.brightness(bright-test))
+image harald combat_determine_close_b = im.MatrixColor("harald/combat/harald_combat_determine_close.png", im.matrix.brightness(bright-test))
+
+##Huscarls
+#Debout
+image huscarls debout_normal_b = im.MatrixColor("huscarls/debout/huscarls_debout_normaux.png", im.matrix.brightness(bright-test))
+image huscarls debout_rire_b = im.MatrixColor("huscarls/debout/huscarls_debout_rire.png", im.matrix.brightness(bright-test))
+
+image huscarls debout_normal_mid_b = im.MatrixColor("huscarls/debout/huscarls_debout_normaux_mid.png", im.matrix.brightness(bright-test))
+image huscarls debout_rire_mid_b = im.MatrixColor("huscarls/debout/huscarls_debout_rire_mid.png", im.matrix.brightness(bright-test))
+
+image huscarls debout_normal_close_b = im.MatrixColor("huscarls/debout/huscarls_debout_normaux_close.png", im.matrix.brightness(bright-test))
+image huscarls debout_rire_close_b = im.MatrixColor("huscarls/debout/huscarls_debout_rire_close.png", im.matrix.brightness(bright-test))
+
+#Combat
+image huscarls combat_normaux_b = im.MatrixColor("huscarls/combat/huscarls_combat_normaux.png", im.matrix.brightness(bright-test))
+image huscarls combat_enthousiaste_b = im.MatrixColor("huscarls/combat/huscarls_combat_enthousiaste.png", im.matrix.brightness(bright-test))
+image huscarls combat_furieux_b = im.MatrixColor("huscarls/combat/huscarls_combat_furieux.png", im.matrix.brightness(bright-test))
+image huscarls combat_inquiets_b = im.MatrixColor("huscarls/combat/huscarls_combat_inquiets.png", im.matrix.brightness(bright-test))
+
+#mid
+image huscarls combat_normaux_mid_b = im.MatrixColor("huscarls/combat/huscarls_combat_normaux_mid.png", im.matrix.brightness(bright-test))
+image huscarls combat_enthousiaste_mid_b = im.MatrixColor("huscarls/combat/huscarls_combat_enthousiaste_mid.png", im.matrix.brightness(bright-test))
+image huscarls combat_furieux_mid_b = im.MatrixColor("huscarls/combat/huscarls_combat_furieux_mid.png", im.matrix.brightness(bright-test))
+image huscarls combat_inquiets_mid_b = im.MatrixColor("huscarls/combat/huscarls_combat_inquiets_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image huscarls combat_normaux_close_b = im.MatrixColor("huscarls/combat/huscarls_combat_normaux_close.png", im.matrix.brightness(bright-test))
+image huscarls combat_enthousiaste_close_b = im.MatrixColor("huscarls/combat/huscarls_combat_enthousiaste_close.png", im.matrix.brightness(bright-test))
+image huscarls combat_furieux_close_b = im.MatrixColor("huscarls/combat/huscarls_combat_furieux_close.png", im.matrix.brightness(bright-test))
+image huscarls combat_inquiets_close_b = im.MatrixColor("huscarls/combat/huscarls_combat_inquiets_close.png", im.matrix.brightness(bright-test))
+
+##Garde / Guerriers Vikings / Jeune Guerrier Viking
+#Debout
+image gv debout_normaux_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_normaux.png", im.matrix.brightness(bright-test))
+image gv debout_enthousiastes_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_enthousiastes.png", im.matrix.brightness(bright-test))
+image gv debout_furieux_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_furieux.png", im.matrix.brightness(bright-test))
+image gv debout_rire_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_rire.png", im.matrix.brightness(bright-test))
+image gv debout_contraries_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_contraries.png", im.matrix.brightness(bright-test))
+image gv debout_determines_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_determines.png", im.matrix.brightness(bright-test))
+
+image gv debout_normaux_mid_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_normaux_mid.png", im.matrix.brightness(bright-test))
+image gv debout_enthousiastes_mid_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_enthousiastes_mid.png", im.matrix.brightness(bright-test))
+image gv debout_furieux_mid_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_furieux_mid.png", im.matrix.brightness(bright-test))
+image gv debout_rire_mid_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_rire_mid.png", im.matrix.brightness(bright-test))
+image gv debout_contraries_mid_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_contraries_mid.png", im.matrix.brightness(bright-test))
+image gv debout_determines_mid_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_determines_mid.png", im.matrix.brightness(bright-test))
+
+image gv debout_normaux_close_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_normaux_close.png", im.matrix.brightness(bright-test))
+image gv debout_enthousiastes_close_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_enthousiastes_close.png", im.matrix.brightness(bright-test))
+image gv debout_furieux_close_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_furieux_close.png", im.matrix.brightness(bright-test))
+image gv debout_rire_close_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_rire_close.png", im.matrix.brightness(bright-test))
+image gv debout_contraries_close_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_contraries_close.png", im.matrix.brightness(bright-test))
+image gv debout_determines_close_b = im.MatrixColor("guerriers_vikings/debout/gv_debout_determines_close.png", im.matrix.brightness(bright-test))
+
+#Combat
+image gv combat_normaux_b = im.MatrixColor("guerriers_vikings/combat/gv_combat_normaux.png", im.matrix.brightness(bright-test))
+image gv combat_blesses_b = im.MatrixColor("guerriers_vikings/combat/gv_combat_blesses.png", im.matrix.brightness(bright-test))
+
+#mid
+image gv combat_normaux_mid_b = im.MatrixColor("guerriers_vikings/combat/gv_combat_normaux_mid.png", im.matrix.brightness(bright-test))
+image gv combat_blesses_mid_b = im.MatrixColor("guerriers_vikings/combat/gv_combat_blesses_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image gv combat_normaux_close_b = im.MatrixColor("guerriers_vikings/combat/gv_combat_normaux_close.png", im.matrix.brightness(bright-test))
+image gv combat_blesses_close_b = im.MatrixColor("guerriers_vikings/combat/gv_combat_blesses_close.png", im.matrix.brightness(bright-test))
+
+#Jeune Guerrier Viking
+image jgv debout_normal_b = im.MatrixColor("jeune_viking/debout/jgv_debout_normal.png", im.matrix.brightness(bright-test))
+image jgv debout_pleurant_b = im.MatrixColor("jeune_viking/debout/jgv_debout_pleurant.png", im.matrix.brightness(bright-test))
+
+image jgv debout_normal_mid_b = im.MatrixColor("jeune_viking/debout/jgv_debout_normal_mid.png", im.matrix.brightness(bright-test))
+image jgv debout_pleurant_mid_b = im.MatrixColor("jeune_viking/debout/jgv_debout_pleurant_mid.png", im.matrix.brightness(bright-test))
+
+image jgv debout_normal_close_b = im.MatrixColor("jeune_viking/debout/jgv_debout_normal_close.png", im.matrix.brightness(bright-test))
+image jgv debout_pleurant_close_b = im.MatrixColor("jeune_viking/debout/jgv_debout_pleurant_close.png", im.matrix.brightness(bright-test))
+
+##Ogma
+#Debout
+image ogma debout_normal_b = im.MatrixColor("ogma/debout/ogma_debout_normal.png", im.matrix.brightness(bright-test))
+image ogma debout_souriant_b = im.MatrixColor("ogma/debout/ogma_debout_souriant.png", im.matrix.brightness(bright-test))
+image ogma debout_furieux_b = im.MatrixColor("ogma/debout/ogma_debout_furieux.png", im.matrix.brightness(bright-test))
+image ogma debout_attriste_b = im.MatrixColor("ogma/debout/ogma_debout_attriste.png", im.matrix.brightness(bright-test))
+image ogma debout_contrarie_b = im.MatrixColor("ogma/debout/ogma_debout_contrarie.png", im.matrix.brightness(bright-test))
+image ogma debout_determine_b = im.MatrixColor("ogma/debout/ogma_debout_determine.png", im.matrix.brightness(bright-test))
+
+image ogma debout_normal_mid_b = im.MatrixColor("ogma/debout/ogma_debout_normal_mid.png", im.matrix.brightness(bright-test))
+image ogma debout_souriant_mid_b = im.MatrixColor("ogma/debout/ogma_debout_souriant_mid.png", im.matrix.brightness(bright-test))
+image ogma debout_furieux_mid_b = im.MatrixColor("ogma/debout/ogma_debout_furieux_mid.png", im.matrix.brightness(bright-test))
+image ogma debout_attriste_mid_b = im.MatrixColor("ogma/debout/ogma_debout_attriste_mid.png", im.matrix.brightness(bright-test))
+image ogma debout_contrarie_mid_b = im.MatrixColor("ogma/debout/ogma_debout_contrarie_mid.png", im.matrix.brightness(bright-test))
+image ogma debout_determine_mid_b = im.MatrixColor("ogma/debout/ogma_debout_determine_mid.png", im.matrix.brightness(bright-test))
+
+image ogma debout_normal_close_b = im.MatrixColor("ogma/debout/ogma_debout_normal_close.png", im.matrix.brightness(bright-test))
+image ogma debout_souriant_close_b = im.MatrixColor("ogma/debout/ogma_debout_souriant_close.png", im.matrix.brightness(bright-test))
+image ogma debout_furieux_close_b = im.MatrixColor("ogma/debout/ogma_debout_furieux_close.png", im.matrix.brightness(bright-test))
+image ogma debout_attriste_close_b = im.MatrixColor("ogma/debout/ogma_debout_attriste_close.png", im.matrix.brightness(bright-test))
+image ogma debout_contrarie_close_b = im.MatrixColor("ogma/debout/ogma_debout_contrarie_close.png", im.matrix.brightness(bright-test))
+image ogma debout_determine_close_b = im.MatrixColor("ogma/debout/ogma_debout_determine_close.png", im.matrix.brightness(bright-test))
+
+#Combat
+image ogma combat_normal_b = im.MatrixColor("ogma/combat/ogma_combat_normal.png", im.matrix.brightness(bright-test))
+image ogma combat_furieux_b = im.MatrixColor("ogma/combat/ogma_combat_furieux.png", im.matrix.brightness(bright-test))
+image ogma combat_contrarie_b = im.MatrixColor("ogma/combat/ogma_combat_contrarie.png", im.matrix.brightness(bright-test))
+image ogma combat_determine_b = im.MatrixColor("ogma/combat/ogma_combat_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image ogma combat_normal_mid_b = im.MatrixColor("ogma/combat/ogma_combat_normal_mid.png", im.matrix.brightness(bright-test))
+image ogma combat_furieux_mid_b = im.MatrixColor("ogma/combat/ogma_combat_furieux_mid.png", im.matrix.brightness(bright-test))
+image ogma combat_contrarie_mid_b = im.MatrixColor("ogma/combat/ogma_combat_contrarie_mid.png", im.matrix.brightness(bright-test))
+image ogma combat_determine_mid_b = im.MatrixColor("ogma/combat/ogma_combat_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image ogma combat_normal_close_b = im.MatrixColor("ogma/combat/ogma_combat_normal_close.png", im.matrix.brightness(bright-test))
+image ogma combat_furieux_close_b = im.MatrixColor("ogma/combat/ogma_combat_furieux_close.png", im.matrix.brightness(bright-test))
+image ogma combat_contrarie_close_b = im.MatrixColor("ogma/combat/ogma_combat_contrarie_close.png", im.matrix.brightness(bright-test))
+image ogma combat_determine_close_b = im.MatrixColor("ogma/combat/ogma_combat_determine_close.png", im.matrix.brightness(bright-test))
+
+#Combat Hache
+image ogma combat_hache_brandir_b = im.MatrixColor("ogma/combat_hache/ogma_combat_hache_brandir.png", im.matrix.brightness(bright-test))
+image ogma combat_hache_determine_b = im.MatrixColor("ogma/combat_hache/ogma_combat_hache_determine.png", im.matrix.brightness(bright-test))
+
+#mid
+image ogma combat_hache_brandir_mid_b = im.MatrixColor("ogma/combat_hache/ogma_combat_hache_brandir_mid.png", im.matrix.brightness(bright-test))
+image ogma combat_hache_determine_mid_b = im.MatrixColor("ogma/combat_hache/ogma_combat_hache_determine_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image ogma combat_hache_brandir_close_b = im.MatrixColor("ogma/combat_hache/ogma_combat_hache_brandir_close.png", im.matrix.brightness(bright-test))
+image ogma combat_hache_determine_close_b = im.MatrixColor("ogma/combat_hache/ogma_combat_hache_determine_close.png", im.matrix.brightness(bright-test))
+
+##Moira
+#Debout
+image moira debout_normal_b = im.MatrixColor("moira/debout/moira_debout_normal.png", im.matrix.brightness(bright-test))
+image moira debout_souriant_b = im.MatrixColor("moira/debout/moira_debout_souriant.png", im.matrix.brightness(bright-test))
+image moira debout_furieux_b = im.MatrixColor("moira/debout/moira_debout_furieux.png", im.matrix.brightness(bright-test))
+image moira debout_attriste_b = im.MatrixColor("moira/debout/moira_debout_attriste.png", im.matrix.brightness(bright-test))
+image moira debout_contrarie_b = im.MatrixColor("moira/debout/moira_debout_contrarie.png", im.matrix.brightness(bright-test))
+image moira debout_effraye_b = im.MatrixColor("moira/debout/moira_debout_effraye.png", im.matrix.brightness(bright-test))
+image moira debout_determine_b = im.MatrixColor("moira/debout/moira_debout_determine.png", im.matrix.brightness(bright-test))
+
+image moira debout_normal_mid_b = im.MatrixColor("moira/debout/moira_debout_normal_mid.png", im.matrix.brightness(bright-test))
+image moira debout_souriant_mid_b = im.MatrixColor("moira/debout/moira_debout_souriant_mid.png", im.matrix.brightness(bright-test))
+image moira debout_furieux_mid_b = im.MatrixColor("moira/debout/moira_debout_furieux_mid.png", im.matrix.brightness(bright-test))
+image moira debout_attriste_mid_b = im.MatrixColor("moira/debout/moira_debout_attriste_mid.png", im.matrix.brightness(bright-test))
+image moira debout_contrarie_mid_b = im.MatrixColor("moira/debout/moira_debout_contrarie_mid.png", im.matrix.brightness(bright-test))
+image moira debout_effraye_mid_b = im.MatrixColor("moira/debout/moira_debout_effraye_mid.png", im.matrix.brightness(bright-test))
+image moira debout_determine_mid_b = im.MatrixColor("moira/debout/moira_debout_determine_mid.png", im.matrix.brightness(bright-test))
+
+image moira debout_normal_close_b = im.MatrixColor("moira/debout/moira_debout_normal_close.png", im.matrix.brightness(bright-test))
+image moira debout_souriant_close_b = im.MatrixColor("moira/debout/moira_debout_souriant_close.png", im.matrix.brightness(bright-test))
+image moira debout_furieux_close_b = im.MatrixColor("moira/debout/moira_debout_furieux_close.png", im.matrix.brightness(bright-test))
+image moira debout_attriste_close_b = im.MatrixColor("moira/debout/moira_debout_attriste_close.png", im.matrix.brightness(bright-test))
+image moira debout_contrarie_close_b = im.MatrixColor("moira/debout/moira_debout_contrarie_close.png", im.matrix.brightness(bright-test))
+image moira debout_effraye_close_b = im.MatrixColor("moira/debout/moira_debout_effraye_close.png", im.matrix.brightness(bright-test))
+image moira debout_determine_close_b = im.MatrixColor("moira/debout/moira_debout_determine_close.png", im.matrix.brightness(bright-test))
+
+#nude
+image moira nue_normal_b = im.MatrixColor("moira/nue/moira_nue_normale.png", im.matrix.brightness(bright-test))
+image moira nue_souriant_b = im.MatrixColor("moira/nue/moira_nue_souriante.png", im.matrix.brightness(bright-test))
+image moira nue_effraye_b = im.MatrixColor("moira/nue/moira_nue_effrayee.png", im.matrix.brightness(bright-test))
+
+image moira nue_normal_mid_b = im.MatrixColor("moira/nue/moira_nue_normale_mid.png", im.matrix.brightness(bright-test))
+image moira nue_souriant_mid_b = im.MatrixColor("moira/nue/moira_nue_souriant_mid.png", im.matrix.brightness(bright-test))
+image moira nue_effraye_mid_b = im.MatrixColor("moira/nue/moira_nue_effraye_mid.png", im.matrix.brightness(bright-test))
+
+image moira nue_normal_close_b = im.MatrixColor("moira/nue/moira_nue_normale_close.png", im.matrix.brightness(bright-test))
+image moira nue_souriant_close_b = im.MatrixColor("moira/nue/moira_nue_souriant_close.png", im.matrix.brightness(bright-test))
+image moira nue_effraye_close_b = im.MatrixColor("moira/nue/moira_nue_effraye_close.png", im.matrix.brightness(bright-test))
+
+#Attache
+image moira attache_determine_b = im.MatrixColor("moira/buchet/moira_attache_determine.png", im.matrix.brightness(bright-test))
+image moira attache_furieuse_b = im.MatrixColor("moira/buchet/moira_attache_furieuse.png", im.matrix.brightness(bright-test))
+
+#mid
+image moira attache_determine_mid_b = im.MatrixColor("moira/buchet/moira_attache_determine_mid.png", im.matrix.brightness(bright-test))
+image moira attache_furieuse_mid_b = im.MatrixColor("moira/buchet/moira_attache_furieuse_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image moira attache_determine_close_b = im.MatrixColor("moira/buchet/moira_attache_determine_close.png", im.matrix.brightness(bright-test))
+image moira attache_furieuse_close_b = im.MatrixColor("moira/buchet/moira_attache_furieuse_close.png", im.matrix.brightness(bright-test))
+
+##Rebelles ecossais
+#Debout
+image re debout_normaux_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_normaux.png", im.matrix.brightness(bright-test))
+image re debout_enthousiastes_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_enthousiastes.png", im.matrix.brightness(bright-test))
+image re debout_inquiets_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_inquiets.png", im.matrix.brightness(bright-test))
+image re debout_rire_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_rire.png", im.matrix.brightness(bright-test))
+
+image re debout_normaux_mid_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_normaux_mid.png", im.matrix.brightness(bright-test))
+image re debout_enthousiastes_mid_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_enthousiastes_mid.png", im.matrix.brightness(bright-test))
+image re debout_inquiets_mid_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_inquiets_mid.png", im.matrix.brightness(bright-test))
+image re debout_rire_mid_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_rire_mid.png", im.matrix.brightness(bright-test))
+
+image re debout_normaux_close_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_normaux_close.png", im.matrix.brightness(bright-test))
+image re debout_enthousiastes_close_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_enthousiastes_close.png", im.matrix.brightness(bright-test))
+image re debout_inquiets_close_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_inquiets_close.png", im.matrix.brightness(bright-test))
+image re debout_rire_close_b = im.MatrixColor("rebelles_ecossais/debout/re_debout_rire_close.png", im.matrix.brightness(bright-test))
+
+#Combat
+image re combat_normaux_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_normaux.png", im.matrix.brightness(bright-test))
+image re combat_blesse_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_blesses.png", im.matrix.brightness(bright-test))
+image re combat_furieux_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_furieux.png", im.matrix.brightness(bright-test))
+
+#mid
+image re combat_normaux_mid_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_normaux_mid.png", im.matrix.brightness(bright-test))
+image re combat_blesse_mid_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_blesses_mid.png", im.matrix.brightness(bright-test))
+image re combat_furieux_mid_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_furieux_mid.png", im.matrix.brightness(bright-test))
+
+#close
+image re combat_normaux_close_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_normaux_close.png", im.matrix.brightness(bright-test))
+image re combat_blesse_close_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_blesses_close.png", im.matrix.brightness(bright-test))
+image re combat_furieux_close_b = im.MatrixColor("rebelles_ecossais/combat/re_combat_furieux_close.png", im.matrix.brightness(bright-test))
+
+
+##Villageois / prisonniers
+#Debout
+image ve debout_normaux_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_normaux.png", im.matrix.brightness(bright-test))
+image ve debout_craintifs_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_craintifs.png", im.matrix.brightness(bright-test))
+image ve debout_effrayes_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_effrayes.png", im.matrix.brightness(bright-test))
+
+image ve debout_normaux_mid_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_normaux_mid.png", im.matrix.brightness(bright-test))
+image ve debout_craintifs_mid_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_craintifs_mid.png", im.matrix.brightness(bright-test))
+image ve debout_effrayes_mid_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_effrayes_mid.png", im.matrix.brightness(bright-test))
+
+image ve debout_normaux_close_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_normaux_close.png", im.matrix.brightness(bright-test))
+image ve debout_craintifs_close_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_craintifs_close.png", im.matrix.brightness(bright-test))
+image ve debout_effrayes_close_b = im.MatrixColor("villageois_ecossais/debout/ve_debout_effrayes_close.png", im.matrix.brightness(bright-test))
+
+#Buchet
+image ve buchet_normaux_b = im.MatrixColor("villageois_ecossais/buchet/ve_buchet_effrayes.png", im.matrix.brightness(bright-test))
+image ve buchet_pleurent_b = im.MatrixColor("villageois_ecossais/buchet/ve_buchet_pleurent.png", im.matrix.brightness(bright-test))
+
+image ve buchet_normaux_mid_b = im.MatrixColor("villageois_ecossais/buchet/ve_buchet_effrayes_mid.png", im.matrix.brightness(bright-test))
+image ve buchet_pleurent_mid_b = im.MatrixColor("villageois_ecossais/buchet/ve_buchet_pleurent_mid.png", im.matrix.brightness(bright-test))
+
+image ve buchet_normaux_close_b = im.MatrixColor("villageois_ecossais/buchet/ve_buchet_effrayes_close.png", im.matrix.brightness(bright-test))
+image ve buchet_pleurent_close_b = im.MatrixColor("villageois_ecossais/buchet/ve_buchet_pleurent_close.png", im.matrix.brightness(bright-test))
+
+##Patrick
+image patrick debout_normal_b = im.MatrixColor("patrick/debout/patrick_debout_normal.png", im.matrix.brightness(bright-test))
+image patrick debout_furieux_b = im.MatrixColor("patrick/debout/patrick_debout_furieux.png", im.matrix.brightness(bright-test))
+
+image patrick debout_normal_mid_b = im.MatrixColor("patrick/debout/patrick_debout_normal_mid.png", im.matrix.brightness(bright-test))
+image patrick debout_furieux_mid_b = im.MatrixColor("patrick/debout/patrick_debout_furieux_mid.png", im.matrix.brightness(bright-test))
+
+image patrick debout_normal_close_b = im.MatrixColor("patrick/debout/patrick_debout_normal_close.png", im.matrix.brightness(bright-test))
+image patrick debout_furieux_close_b = im.MatrixColor("patrick/debout/patrick_debout_furieux_close.png", im.matrix.brightness(bright-test))
+
+
 # Le jeu commence ici
 
 label start:
