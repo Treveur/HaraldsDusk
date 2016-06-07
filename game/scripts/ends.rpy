@@ -200,7 +200,7 @@ label bad_ending_22:
     "Lorsque après de longues minutes il cesse d'abattre la Hache, il ne reste plus qu'une bouillie informe et rouge au milieu de la plaine."
     jump credits
 
-label game_over_combat
+label game_over_combat:
 
     "Game over"
     return
