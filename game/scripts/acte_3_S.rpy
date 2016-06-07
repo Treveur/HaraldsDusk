@@ -1942,7 +1942,7 @@ label harald_defendre_porteS:
             e "Tuez-le, sire !"
             jump e_laisse_ogma_mort_defendre_porteS
         "Ne le tuez pas ! (s'interposer)":
-            show einar debout_furieux_mid at centerS
+            show einar debout_furieux_mid at center
             e "Non ! Ne l'achevez pas !"
             jump e_sauve_ogma_defendre_porteS
 
