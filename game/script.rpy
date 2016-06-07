@@ -579,19 +579,6 @@ screen countdown:
 
 label start_s:
 
-    # $ time = 5
-    # $ timer_range = 5
-    # $ timer_jump = 'bad_ending_16'
-    # show screen countdown
-    # menu:
-    #     "Sauter":
-    #         hide screen countdown
-    #         e "You chose 'Choice 1'"
-    #         jump intro
-    #     "finir":
-    #         hide screen countdown
-    #         e "You chose 'Choice 2'"
-    #         $ renpy.full_restart()
     scene bg black
 
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
@@ -605,24 +592,11 @@ label start_s:
     centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
 
     jump introS
-            
+
 label start_l:
 
-    # $ time = 5
-    # $ timer_range = 5
-    # $ timer_jump = 'bad_ending_16'
-    # show screen countdown
-    # menu:
-    #     "Sauter":
-    #         hide screen countdown
-    #         e "You chose 'Choice 1'"
-    #         jump intro
-    #     "finir":
-    #         hide screen countdown
-    #         e "You chose 'Choice 2'"
-    #         $ renpy.full_restart()
     scene bg black
-    
+
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
 
     centered "Les Clous donnent à Harald la force et l'immortalité. Le viking, convaincu d'être un élu divin, décide d'orner sa hache des Clous. Il créé ainsi une nouvelle relique : la Hache Sainte."

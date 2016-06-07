@@ -199,6 +199,20 @@ label bad_ending_22:
     "Lorsque après de longues minutes il cesse d'abattre la Hache, il ne reste plus qu'une bouillie informe et rouge au milieu de la plaine."
     jump credits
 
+label game_over_combat:
+
+    scene black
+    centered "Game over \n
+    Checkpoint a venir \n
+    Pensez à sauvegarder :)"
+
+    # if label_name != "":
+    #     menu:
+    #         "Retry":
+    #             $ renpy.Jump (label_name)
+
+    $ renpy.full_restart()
+
 label credits:
     scene bg black with dissolve
     centered "HARALD'S DUSK"

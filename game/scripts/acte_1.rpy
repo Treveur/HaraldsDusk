@@ -21,10 +21,6 @@ label intro:
     $ menu_choice_4 = True
     $ menu_choice_5 = True
 
-    python:
-
-        reset_menu_choice()
-
     play ambiance wood
 
     scene bg forest with dissolve
