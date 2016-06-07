@@ -555,35 +555,55 @@ label pont_levis_baisse:
         $ timer_range = 5
         $ timer_jump = 'game_over_combat'
 
-        "Harald se jette sur Einar en brandissant sa hache"
+        "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
 
         show screen countdown
         menu :
 
             "Esquiver":
                 hide screen countdown
-                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+                "Abattant son épée sur le sol, Ogma manque Einar de justesse."
 
-            "Se jeter sur Ogma":
+            "Attaquer":
                 hide screen countdown
-                "En se jeter sur Harald, Einar se fait couper de par en par"
+                "Ogma détourne le coup d'Einar et le frappe au flanc."
                 jump game_over_combat
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 2.5
+        $ timer_range = 2.5
         $ timer_jump = 'game_over_combat'
 
-        "Fou de rage, Ogma attaque une fois de plus vers la droite"
+        "Fou de rage, Ogma attaque une fois de plus vers la droite, d'un coup de taille."
 
         show screen countdown
 
         menu :
-            "Faire une parade":
+            "Parer":
                 hide screen countdown
-                "Einar parre l'attaque mais ogma est bien trop puissant"
-            "Faire une roulade de côté":
+                "Einar parvient à bloquer l'attaque, mais Ogma profite du contrecoup pour asséner au viking un violent coup de pied à l'estomac."
+                "Ogma enchaîne immédiatement, d'un geste fulgurant !"
+            
+            "Esquiver":
                 hide screen countdown
-                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide"
+                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide et furieux : il lance immédiatement une seconde attaque !"
+                
+        $ time = 0.5
+        $ timer_range = 0.5
+        $ timer_jump = 'game_over_combat'
+
+        "Dans un hurlement bestial, Ogma prend Einar à contre-pied et tente un nouveau coup de taille. Il y a une ouverture dans sa garde !"
+
+        show screen countdown
+
+        menu :
+            "Attaquer":
+                hide screen countdown
+                "Einar plonge dans la garde ouverte d'Ogma. Mais c'était une ruse !"
+                "Ogma tourne sur lui-même et empale le viking sur son épée."
+            
+            "Esquiver":
+                hide screen countdown
+                "Le coup est bien trop rapide pour être esquivé, et les appuis d'Einar sont faibles : le ventre du viking s'ouvre, déversant un torrent de viscères sur le sol."
 
 
         hide einar
@@ -612,7 +632,7 @@ label pont_levis_baisse:
         $ timer_jump = 'game_over_combat'
 
 
-        "Les huscarls encerclent Einar pour ne lui laisser aucune chance"
+        "Les huscarls encerclent Einar pour ne lui laisser aucune chance."
 
         show screen countdown
         menu:
