@@ -4,6 +4,45 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
 
+init -1500 python:
+
+    class StartL(Action, DictEquality):
+        """
+         :doc: menu_action
+
+         Causes Ren'Py to jump out of the menu context to the named
+         label. The main use of this is to start a new game from the
+         main menu. Common uses are:
+
+         * Start() - Start at the start label.
+         * Start("foo") - Start at the "foo" label.
+         """
+
+        def __init__(self, label="start_l"):
+            self.label = label
+
+        def __call__(self):
+            renpy.jump_out_of_context(self.label)
+
+    class StartS(Action, DictEquality):
+        """
+         :doc: menu_action
+
+         Causes Ren'Py to jump out of the menu context to the named
+         label. The main use of this is to start a new game from the
+         main menu. Common uses are:
+
+         * Start() - Start at the start label.
+         * Start("foo") - Start at the "foo" label.
+         """
+
+        def __init__(self, label="start_s"):
+            self.label = label
+
+        def __call__(self):
+            renpy.jump_out_of_context(self.label)
+
+
 ##Einar
 define e = Character('Einar', color="#e74c3c")
 
@@ -538,7 +577,7 @@ screen countdown:
     bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 at alpha_dissolve
 # Le jeu commence ici
 
-label start:
+label start_s:
 
     # $ time = 5
     # $ timer_range = 5
@@ -553,7 +592,6 @@ label start:
     #         hide screen countdown
     #         e "You chose 'Choice 2'"
     #         $ renpy.full_restart()
-
     scene bg black
 
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
@@ -567,3 +605,32 @@ label start:
     centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
 
     jump introS
+            
+label start_l:
+
+    # $ time = 5
+    # $ timer_range = 5
+    # $ timer_jump = 'bad_ending_16'
+    # show screen countdown
+    # menu:
+    #     "Sauter":
+    #         hide screen countdown
+    #         e "You chose 'Choice 1'"
+    #         jump intro
+    #     "finir":
+    #         hide screen countdown
+    #         e "You chose 'Choice 2'"
+    #         $ renpy.full_restart()
+    scene bg black
+    
+    centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
+
+    centered "Les Clous donnent à Harald la force et l'immortalité. Le viking, convaincu d'être un élu divin, décide d'orner sa hache des Clous. Il créé ainsi une nouvelle relique : la Hache Sainte."
+
+    centered "Revenu triomphalement en Norvège, il est couronné roi et entame de grandes campagnes militaires visant à christianiser le monde ainsi qu'à asseoir sa suprématie."
+
+    centered "Armé de la Hache Sainte, Harald prend le contrôle de l'Europe, du Moyen-Orient et d'une partie de l'Asie et de l'Afrique. En 1080, Harald est devenu l'équivalent d'Alexandre le Grand : un roi-empereur, une légende vivante, un demi-dieu."
+
+    centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
+
+    jump intro
