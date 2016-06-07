@@ -550,16 +550,15 @@ label pont_levis_baisse:
         show ogma combat_determine_mid at right
         o "Tout s'achève, ici et maintenant !"
 
-        #Phase combat impossible à gagner
+        #Phase combat impossible à gagner WIP
         $ time = 5
         $ timer_range = 5
         $ timer_jump = 'game_over_combat'
 
-
         "Harald se jette sur Einar en brandissant sa hache"
 
         show screen countdown
-        menu:
+        menu :
 
             "Esquiver":
                 hide screen countdown
@@ -1891,7 +1890,7 @@ label soupcon_harald_defendre_porte:
     "L'épée brandie, Ogma s'aprête à frapper de tout ses forces."
 
     show screen countdown
-    menu:
+    menu :
 
         "Esquiver":
             hide screen countdown
