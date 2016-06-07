@@ -540,20 +540,6 @@ screen countdown:
 
 label start:
 
-    # $ time = 5
-    # $ timer_range = 5
-    # $ timer_jump = 'bad_ending_16'
-    # show screen countdown
-    # menu:
-    #     "Sauter":
-    #         hide screen countdown
-    #         e "You chose 'Choice 1'"
-    #         jump intro
-    #     "finir":
-    #         hide screen countdown
-    #         e "You chose 'Choice 2'"
-    #         $ renpy.full_restart()
-
     scene bg black
 
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."

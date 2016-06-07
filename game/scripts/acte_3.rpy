@@ -6,7 +6,7 @@ label cote_2:
     play ambiance coast
 
     scene bg plaine_chateau_matin with dissolve
-    
+
     "Et après trois jours de marche depuis Perth..."
 
     show einar debout_normal_mid at center with dissolve
@@ -549,7 +549,43 @@ label pont_levis_baisse:
 
         show ogma combat_determine_mid at right
         o "Tout s'achève, ici et maintenant !"
-        "Phase de combat, impossible à gagner WIP"
+
+        #Phase combat impossible à gagner
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+
+        "Harald se jette sur Einar en brandissant sa hache"
+
+        show screen countdown
+        menu:
+
+            "Esquiver":
+                hide screen countdown
+                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+
+            "Se jeter sur Ogma":
+                hide screen countdown
+                "En se jeter sur Harald, Einar se fait couper de par en par"
+                jump game_over_combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+        "Fou de rage, Ogma attaque une fois de plus vers la droite"
+
+        show screen countdown
+
+        menu :
+            "Faire une parade":
+                hide screen countdown
+                "Einar parre l'attaque mais ogma est bien trop puissant"
+            "Faire une roulade de côté":
+                hide screen countdown
+                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide"
+
 
         hide einar
         hide ogma
@@ -571,7 +607,43 @@ label pont_levis_baisse:
         hu "Ha, il a du tomber sur un beau garçon de ferme !"
         hu "Défend-toi, traître !"
 
-        "Affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
+        #"Affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
+        #Phase combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+
+        "Les huscarls encerclent Einar pour ne lui laisser aucune chance"
+
+        show screen countdown
+        menu:
+
+            "Esquiver":
+                hide screen countdown
+                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+
+            "Se jeter sur Ogma":
+                hide screen countdown
+                "En se jeter sur Harald, Einar se fait couper de par en par"
+                jump game_over_combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+        "Fou de rage, Ogma attaque une fois de plus vers la droite"
+
+        show screen countdown
+
+        menu :
+            "Faire une parade":
+                hide screen countdown
+                "Einar parre l'attaque mais ogma est bien trop puissant"
+            "Faire une roulade de côté":
+                hide screen countdown
+                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide"
 
         if loose_battle:
 
@@ -1328,7 +1400,7 @@ label foret_4:
                 m "Oui, et j'en ai été profondément déçue, et humiliée."
                 m "Mais malgré tout, je comprends ce qui a pu te pousser à agir ainsi."
                 m "Je t'aime. Je veux venir avec toi."
-                
+
             "Je n'ai rien à faire avec toi":
                 e "Je suis un militaire. J'ai voyagé à travers tous les continents et rencontré plus de femmes que tu ne peux l'imaginer."
                 e "Tu ne m'interesse pas. Je n'ai rien à faire avec une paysanne écossaise, aussi belle soit-elle."
