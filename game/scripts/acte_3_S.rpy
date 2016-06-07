@@ -1,12 +1,12 @@
 #Acte 3
 
 #Sequence 1
-label cote_2:
+label cote_2S:
 
     play ambiance coast
 
     scene bg plaine_chateau_matin with dissolve
-
+    
     "Et après trois jours de marche depuis Perth..."
 
     show einar debout_normal_mid at center with dissolve
@@ -14,10 +14,10 @@ label cote_2:
     e "Dunbar. Déjà..."
     e "..."
 
-    jump exterieur_chateau_1
+    jump exterieur_chateau_1S
 
 #Sequence 2
-label exterieur_chateau_1:
+label exterieur_chateau_1S:
 
     stop ambiance
     #play ambiance castle
@@ -55,10 +55,10 @@ label exterieur_chateau_1:
     hide gv with dissolve
     hide einar with dissolve
 
-    jump cour_chateau_1
+    jump cour_chateau_1S
 
 #Sequence 3
-label cour_chateau_1:
+label cour_chateau_1S:
 
     #Augmenter le son progressivement
     #play ambiance castle
@@ -110,7 +110,7 @@ label cour_chateau_1:
             h "Un fossé ?"
             e "Oui, au détour d'un sentier en pleine forêt."
             h "Et tes blessures ? Comment les as-tu soignées ?"
-            jump menu_assome_cour_chateau
+            jump menu_assome_cour_chateauS
 
         "Nous sommes tombés dans une embuscade":
         #modifaction pour indiquer le lieu par la suite
@@ -123,7 +123,7 @@ label cour_chateau_1:
             e "Ensuite, le meneur s'est approché de moi. Il a égorgé Logan sous mes yeux puis m'a assommé."
             h "Qui t'a soigné ? Tu devais être blessé... Je te connais, rien ne t'arrête jamais quand il s'agit de combattre !"
 
-            jump menu_embuscade_ou_silence_cour_chateau
+            jump menu_embuscade_ou_silence_cour_chateauS
 
         "Ne rien dire":
             show einar debout_attriste_mid at left
@@ -133,10 +133,10 @@ label cour_chateau_1:
 
             $ retour_silence_1 = True
 
-            jump menu_embuscade_ou_silence_cour_chateau
+            jump menu_embuscade_ou_silence_cour_chateauS
 
 
-    menu menu_assome_cour_chateau:
+    menu menu_assome_cour_chateauS:
 
         "Je me suis débrouillé (mentir)":
             show einar debout_normal_mid at left
@@ -156,7 +156,7 @@ label cour_chateau_1:
             e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
             h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
 
-    menu menu_embuscade_ou_silence_cour_chateau:
+    menu menu_embuscade_ou_silence_cour_chateauS:
 
         "Je me suis retrouvé dans un village, des gens m'ont aidé":
             show einar debout_normal_mid at left
@@ -249,157 +249,157 @@ label cour_chateau_1:
 
 
     #play ambiance buchet
-    "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."
+#    "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."
 
-    show patrick debout_normal_mid at center with dissolve
+#    show patrick debout_normal_mid at center with dissolve
 
-    p "Que Dieu, ait pitié de vous ! Les flammes purificatrices vont laver tous vos pêchés."
-    p "Deus propitius tibi!"
+#    p "Que Dieu, ait pitié de vous ! Les flammes purificatrices vont laver tous vos pêchés."
+#    p "Deus propitius tibi!"
 
-    show patrick debout_normal_mid at left
-    show ve buchet_normaux_mid at right with dissolve
+#    show patrick debout_normal_mid at left
+#    show ve buchet_normaux_mid at right with dissolve
 
-    pe3 "Arrêtez ! Je suis enceinte !"
-    show patrick debout_furieux_mid at left
-    p "Je n'ai que faire de tes mensonges, femme !"
-    p "Tes ruses perfides n'obscurciront pas mon jugement !"
+#    pe3 "Arrêtez ! Je suis enceinte !"
+#    show patrick debout_furieux_mid at left
+#    p "Je n'ai que faire de tes mensonges, femme !"
+#    p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
-    hide ve
-    show einar debout_normal_mid at left with dissolve
-    show patrick debout_normal_mid at right
+#    hide ve
+#    show einar debout_normal_mid at left with dissolve
+#    show patrick debout_normal_mid at right
 
-    menu:
-        "Arrêtez le massacre !":
-            show einar debout_furieux_mid at left
-            e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
-            show patrick debout_normal_mid at right
-            p "Einar ? Tu étais porté disparu depuis un mois !"
-            show patrick debout_furieux_mid at right
-            p "Et te voilà sorti de nul part, prêt à défendre ces hérétiques !"
-            p "Ces gens ne sont pas innocents ! Ils ont été capturés alors qu'ils menacaient de m'assassiner !"
-            show einar debout_attriste_mid at left
-            e "Une femme enceinte ? Y croyez-vous vraiment, Excellence ?"
-            p "Elle était avec eux lorsque nous les avons capturés. Elle ne peut être innocente : elle a avoué !"
-            show einar debout_furieux_mid at left
-            e "Sous la torture ? Vous auriez pu lui faire avouer n'importe quoi !"
-            p "Comment peux-tu savoir que ces gens sont innocents ? As-tu des révélations à nous faire ?"
+#    menu:
+#        "Arrêtez le massacre !":
+#            show einar debout_furieux_mid at left
+#            e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
+#            show patrick debout_normal_mid at right
+#            p "Einar ? Tu étais porté disparu depuis un mois !"
+#            show patrick debout_furieux_mid at right
+#            p "Et te voilà sorti de nul part, prêt à défendre ces hérétiques !"
+#            p "Ces gens ne sont pas innocents ! Ils ont été capturés alors qu'ils menacaient de m'assassiner !"
+#            show einar debout_attriste_mid at left
+#            e "Une femme enceinte ? Y croyez-vous vraiment, Excellence ?"
+#            p "Elle était avec eux lorsque nous les avons capturés. Elle ne peut être innocente : elle a avoué !"
+#            show einar debout_furieux_mid at left
+#            e "Sous la torture ? Vous auriez pu lui faire avouer n'importe quoi !"
+#            p "Comment peux-tu savoir que ces gens sont innocents ? As-tu des révélations à nous faire ?"
 
-            $ interpose_bucher = True
+#            $ interpose_bucher = True
 
-            jump menu_sauver_rebelle_cour_chateau
+#            jump menu_sauver_rebelle_cour_chateau
 
-        "Ne rien dire":
-            show einar debout_attriste_mid at left
-            e "..."
+#        "Ne rien dire":
+#            show einar debout_attriste_mid at left
+#            e "..."
 
-        "Brûlez-les":
-            show einar debout_determine_mid at left
-            e "Vous avez raison, Excellence !"
-            e "Brûlez-les !"
+#        "Brûlez-les":
+#            show einar debout_determine_mid at left
+#            e "Vous avez raison, Excellence !"
+#            e "Brûlez-les !"
 
-    if interpose_bucher:
+#    if interpose_bucher:
 
-        menu menu_sauver_rebelle_cour_chateau:
-            "Je ne les ai pas vus à Perth":
-                show einar debout_normal_mid at left
-                e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
-                e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
-                show patrick debout_furieux_mid at right
-                p "Mensonge ! Ils ont tenté de m'assassiner ! Ils ont tout avoué !"
-                p "Ils se sont opposés à un homme de Dieu et ont agi à l'encontre du porteur de la Hache Sainte !"
+#        menu menu_sauver_rebelle_cour_chateau:
+#            "Je ne les ai pas vus à Perth":
+#                show einar debout_normal_mid at left
+#                e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
+#                e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
+#                show patrick debout_furieux_mid at right
+#                p "Mensonge ! Ils ont tenté de m'assassiner ! Ils ont tout avoué !"
+#                p "Ils se sont opposés à un homme de Dieu et ont agi à l'encontre du porteur de la Hache Sainte !"
 
-                if mentir_harald_1 == False and soupcon_harald_1 == False:
-                    $ soupcon_harald_1 = True
+#                if mentir_harald_1 == False and soupcon_harald_1 == False:
+#                    $ soupcon_harald_1 = True
 
-            "Ils ont l'air innoffensifs":
-                show einar debout_normal_mid at left
-                e "Je ne sais rien d'eux, mais croyez-vous vraiment que ces trois paysans soient responsables d''une tentative d'assassinat ?"
-                e "Une mère ne mettrait pas la vie de son enfant en danger !"
+#            "Ils ont l'air innoffensifs":
+#                show einar debout_normal_mid at left
+#                e "Je ne sais rien d'eux, mais croyez-vous vraiment que ces trois paysans soient responsables d''une tentative d'assassinat ?"
+#                e "Une mère ne mettrait pas la vie de son enfant en danger !"
 
-        show patrick debout_normal_mid at right
-        p "Ne t'interpose pas avec la volonté de Dieu !"
-        p "Je pourrais croire que tu cherches à leur épargner le châtiment qu'ils méritent..."
-        p "Et tu vois toi-même le sort réservé aux traîtres !"
+#        show patrick debout_normal_mid at right
+#        p "Ne t'interpose pas avec la volonté de Dieu !"
+#        p "Je pourrais croire que tu cherches à leur épargner le châtiment qu'ils méritent..."
+#        p "Et tu vois toi-même le sort réservé aux traîtres !"
 
-    show patrick debout_normal_mid at right
-    p "Amenez les torches, et que brûlent les hérétiques !"
+#    show patrick debout_normal_mid at right
+#    p "Amenez les torches, et que brûlent les hérétiques !"
 
-    show patrick debout_furieux_mid at left
-    show ve buchet_pleurent at right
+#    show patrick debout_furieux_mid at left
+#    show ve buchet_pleurent at right
 
-    #A intégrer plus tards
+#    #A intégrer plus tards
 
-    pe1 "Pitié ! Epargnez ma femme !"
-    pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
-    pe2 "Laissez partir les autres ! Je suis responsable de tout !"
+#    pe1 "Pitié ! Epargnez ma femme !"
+#    pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
+#    pe2 "Laissez partir les autres ! Je suis responsable de tout !"
 
-    show patrick debout_furieux_mid at left
-    p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
+#    show patrick debout_furieux_mid at left
+#    p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
 
-    hide patrick
-    hide ve
-    with dissolve
+#    hide patrick
+#    hide ve
+#    with dissolve
 
-    "Un homme apporte une torche. Un par un, il allume les bûchers."
+#    "Un homme apporte une torche. Un par un, il allume les bûchers."
 
-    show gv debout_rire with dissolve
+#    show gv debout_rire with dissolve
 
-    gv "Regardez-les s'agiter comme des vers, ha ha !"
-    hide gv with dissolve
+#    gv "Regardez-les s'agiter comme des vers, ha ha !"
+#    hide gv with dissolve
 
-    show einar debout_normal_mid at left with dissolve
-    show jgv debout_normal_mid at right with dissolve
+#    show einar debout_normal_mid at left with dissolve
+#    show jgv debout_normal_mid at right with dissolve
 
-    "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
-    "Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui."
+#    "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
+#    "Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui."
 
-    #Variable
-    $ reponse_reconfort = ""
+#    #Variable
+#    $ reponse_reconfort = ""
 
-    menu :
+#    menu :
 
-        "Une bande de porcs qui rôtissent !":
-            show einar debout_souriant_close at left
-            e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
-            $ reponse_reconfort = "pleurer"
+#        "Une bande de porcs qui rôtissent !":
+#            show einar debout_souriant_close at left
+#            e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
+#            $ reponse_reconfort = "pleurer"
 
-        "Ne pleure pas ces parasites":
-            e "Ne pleure pas ces parasites, ils ne le méritent pas."
-            show einar debout_determine_close at left
-            e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
-            e "Alors réjouis-toi, gamin ! En voilà trois de moins !"
-            $ reponse_reconfort = "pleurer"
+#        "Ne pleure pas ces parasites":
+#            e "Ne pleure pas ces parasites, ils ne le méritent pas."
+#            show einar debout_determine_close at left
+#            e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
+#            e "Alors réjouis-toi, gamin ! En voilà trois de moins !"
+#            $ reponse_reconfort = "pleurer"
 
-        "Nous n'y pouvons rien":
-            show einar debout_attriste_close at left
-            e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
-            $ reponse_reconfort = "larme_aux_yeux"
+#        "Nous n'y pouvons rien":
+#            show einar debout_attriste_close at left
+#            e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
+#            $ reponse_reconfort = "larme_aux_yeux"
 
-        "Ne rien dire":
-            show einar debout_attriste_close at left
-            e "..."
-            $ reponse_reconfort = "larme_aux_yeux"
+#        "Ne rien dire":
+#            show einar debout_attriste_close at left
+#            e "..."
+#            $ reponse_reconfort = "larme_aux_yeux"
 
-        "L'évêque peut se tromper, mais pas Dieu":
-            e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient justes, les condamnés iront au paradis."
-            $ reponse_reconfort = "rassure"
+#        "L'évêque peut se tromper, mais pas Dieu":
+#            e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient justes, les condamnés iront au paradis."
+#            $ reponse_reconfort = "rassure"
 
-    if reponse_reconfort == "pleurer":
-        show jgv debout_pleurant_close at right
-        "Le jeune soldat pleure sans se cacher."
-    elif reponse_reconfort == "larme_aux_yeux":
-        show jgv debout_pleurant_close at right
-        "Le jeune soldat semble toujours aussi bouleversé."
-    else:
-        "Le jeune soldat semble rassuré."
+#    if reponse_reconfort == "pleurer":
+#        show jgv debout_pleurant_close at right
+#        "Le jeune soldat pleure sans se cacher."
+#    elif reponse_reconfort == "larme_aux_yeux":
+#        show jgv debout_pleurant_close at right
+#        "Le jeune soldat semble toujours aussi bouleversé."
+#    else:
+#        "Le jeune soldat semble rassuré."
 
-    hide einar
-    hide jgv
+#    hide einar
+#    hide jgv
 
-    jump cour_chateau_2
+#    jump cour_chateau_2
 
 #Sequence 4
-label cour_chateau_2:
+label cour_chateau_2S:
 
     #toujours ambiance chateau
     show bg cour_chateau_crepuscule with dissolve
@@ -420,10 +420,10 @@ label cour_chateau_2:
     hide harald
     hide gv
 
-    jump interieur_grande_porte_chateau_1
+    jump interieur_grande_porte_chateau_1S
 
 #Sequence 5
-label interieur_grande_porte_chateau_1:
+label interieur_grande_porte_chateau_1S:
 
     #interieur chateau
     #play ambiance interieur_castle
@@ -450,18 +450,18 @@ label interieur_grande_porte_chateau_1:
             if soupcon_harald_1:
                 jump bad_ending_3
             else:
-                jump pont_levis_baisse
+                jump pont_levis_baisseS
 
         "Laisser fermé":
             hide einar
             if soupcon_harald_1:
-                jump soupcon_harald_defendre_porte
+                jump soupcon_harald_defendre_porteS
             else:
-                jump harald_defendre_porte
+                jump harald_defendre_porteS
 
 
 #Baisser pont-levis
-label pont_levis_baisse:
+label pont_levis_baisseS:
 
     #???
     #Ambiance bruit cliqueti boucliers et épée
@@ -598,7 +598,7 @@ label pont_levis_baisse:
                     hide ogma
                     with dissolve
 
-                    jump e_bruler_donjon_desobeir_donjon
+                    jump e_bruler_donjon_desobeir_donjonS
 
                 "J'y vais !":
                     show einar combat_determine_mid at left
@@ -606,9 +606,9 @@ label pont_levis_baisse:
                     hide einar
                     hide ogma
                     with dissolve
-                    jump e_bruler_donjon_obeir_donjon
+                    jump e_bruler_donjon_obeir_donjonS
 
-label e_bruler_donjon_desobeir_donjon:
+label e_bruler_donjon_desobeir_donjonS:
 
     "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
 
@@ -670,7 +670,7 @@ label e_bruler_donjon_desobeir_donjon:
 
     jump bad_ending_6
 
-label e_bruler_donjon_obeir_donjon:
+label e_bruler_donjon_obeir_donjonS:
 
     $ prendre_hache = False
 
@@ -690,19 +690,19 @@ label e_bruler_donjon_obeir_donjon:
             show harald combat_normal_mid at right with dissolve
             e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
             $ prendre_hache = True
-            jump e_confrontation_harald_pont_baisse_donjon
+            jump e_confrontation_harald_pont_baisse_donjonS
 
         "Se débarrasser de la Hache":
             show einar debout_determine_mid at center
             "Einar jette la Hache à la mer à travers une meurtrière."
-            call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
+            call e_confrontation_harald_pont_baisse_donjonS pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjonS
 
         "Ignorer la Hache":
             show einar debout_normal_mid at center
             e "..."
-            jump e_confrontation_harald_pont_axe_laissee_baisse_donjon
+            jump e_confrontation_harald_pont_axe_laissee_baisse_donjonS
 
-label e_confrontation_harald_pont_baisse_donjon(jetee = False):
+label e_confrontation_harald_pont_baisse_donjonS(jetee = False):
 
     $ epargner_harld_donjon = False
 
@@ -817,7 +817,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
         menu:
             "Gagner":
-                jump win_battle_harald_no_axe_pont_baisse_donjon
+                jump win_battle_harald_no_axe_pont_baisse_donjonS
             "Perdre":
                 jump bad_ending_12
 
@@ -836,7 +836,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show einar combat_hache_determine_mid at left
                 e "Vous tuer ici ne servirait à rien. Partez !"
                 "Harald s'enfuit sans demander son reste"
-                jump fuite_harald_pont_baisse_donjon
+                jump fuite_harald_pont_baisse_donjonS
 
             "Ogma veut vous rencontrer...":
                 e "Le Hurleur sera heureux de vous rencontrer, j'en suis sûr..."
@@ -882,9 +882,9 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "La voilà.":
                 jump good_ending_7
             "Elle est à moi !":
-                jump e_garder_hache_pont_baisse_donjon
+                jump e_garder_hache_pont_baisse_donjonS
 
-label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
+label e_confrontation_harald_pont_axe_laissee_baisse_donjonS:
     "Einar continue son oeuvre, incendiant le mobilier et tout ce qui peut l'être. Les flammes sont de plus en plus importantes et dévorent la structure du donjon."
 
     show einar combat_normal_mid at left
@@ -972,7 +972,7 @@ label e_confrontation_harald_pont_axe_laissee_baisse_donjon:
 
     jump bad_ending_16
 
-label win_battle_harald_no_axe_pont_baisse_donjon:
+label win_battle_harald_no_axe_pont_baisse_donjonS:
 
     $ epargner_harld__no_axe_donjon = False
 
@@ -980,7 +980,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     show harald combat_furieux_mid at right
 
     "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
-    show harald combat_blesse_mid_b
+    show harald combat_blesse_mid
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, s'il-te-plaît."
@@ -1022,11 +1022,11 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
 
 
     if epargner_harld__no_axe_donjon:
-        jump e_epargne_harald_no_axe_donjon
+        jump e_epargne_harald_no_axe_donjonS
     else:
-        call lieu_encore_inconnu_1 pass (axe = False) from _call_lieu_encore_inconnu_1
+        call lieu_encore_inconnu_1S pass (axe = False) from _call_lieu_encore_inconnu_1S
 
-label e_epargne_harald_no_axe_donjon:
+label e_epargne_harald_no_axe_donjonS:
 
     $ harald_echape_no_axe = True
 
@@ -1091,7 +1091,7 @@ label e_epargne_harald_no_axe_donjon:
         show ogma debout_souriant_mid at right
         o "L'empire va s'effondrer grace à nous. Privé de la Hache Sainte, Harald n'est plus rien."
 
-        jump village_5
+        jump village_5S
 
     else:
         "Un peu plus tard, alors que les combats ont cessé..."
@@ -1112,9 +1112,9 @@ label e_epargne_harald_no_axe_donjon:
         hide ogma
         hide harald
         with dissolve
-        jump village_6
+        jump village_6S
 
-label village_5:
+label village_5S:
 
     play ambiance village
 
@@ -1155,9 +1155,9 @@ label village_5:
     hide ogma
     with dissolve
 
-    jump foret_4
+    jump foret_4S
 
-label village_6:
+label village_6S:
 
     play ambiance village
 
@@ -1279,11 +1279,11 @@ label village_6:
                 hide einar
                 with dissolve
 
-        call good_ending_15 pass (marier = False) from _call_good_ending_15
+        call good_ending_15S pass (marier = False) from _call_good_ending_15S
     else:
         jump good_ending_15
 
-label foret_4:
+label foret_4S:
 
     play ambiance village
 
@@ -1328,22 +1328,22 @@ label foret_4:
                 m "Oui, et j'en ai été profondément déçue, et humiliée."
                 m "Mais malgré tout, je comprends ce qui a pu te pousser à agir ainsi."
                 m "Je t'aime. Je veux venir avec toi."
-
+                
             "Je n'ai rien à faire avec toi":
                 e "Je suis un militaire. J'ai voyagé à travers tous les continents et rencontré plus de femmes que tu ne peux l'imaginer."
                 e "Tu ne m'interesse pas. Je n'ai rien à faire avec une paysanne écossaise, aussi belle soit-elle."
                 e "Tu trouveras sans doute quelqu'un de plus... adapté à ta vie."
                 e "Au revoir."
-                call good_ending_14 pass (rejete = True) from _call_good_ending_14
+                call good_ending_14S pass (rejete = True) from _call_good_ending_14S
 
             "Je me suis servi de toi":
                 e "Au risque de te faire de la peine, je ne ressentais et ne ressens toujours rien pour toi."
                 e "Lorsque j'ai compris que tu m'offrais une opportunité de m'enfuir, j'ai saisi l'occasion."
                 e "Je me suis juste servi de toi."
                 m "..."
-                call good_ending_14 pass (rejete = True) from _call_good_ending_14
+                call good_ending_14S pass (rejete = True) from _call_good_ending_14S
 
-    menu menu_reponse_moira_suivre_einar:
+    menu menu_reponse_moira_suivre_einarS:
 
         "Tu n'as pas de raison de me suivre":
             show einar debout_attriste_mid at left
@@ -1409,11 +1409,12 @@ label foret_4:
     with dissolve
 
     if rejeter_moira_foret_4:
-        call good_ending_14 pass (rejete = True) from _call_good_ending_14
+        call good_ending_14S pass (rejete = True) from _call_good_ending_14S
     else:
         jump good_ending_14
 
-label fuite_harald_pont_baisse_donjon:
+label fuite_harald_pont_baisse_donjonS:
+
     show harald debout_furieux_mid at left with dissolve
 
     h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
@@ -1452,8 +1453,8 @@ label fuite_harald_pont_baisse_donjon:
 
     menu:
         "Elle est à moi !":
-            show einar combat_hache_determine_mid_b
-            jump e_garder_hache_pont_baisse_donjon
+            show einar combat_hache_determine_mid
+            jump e_garder_hache_pont_baisse_donjonS
 
         "La voilà":
             hide einar
@@ -1462,7 +1463,7 @@ label fuite_harald_pont_baisse_donjon:
 
             jump normal_ending_10
 
-label e_garder_hache_pont_baisse_donjon:
+label e_garder_hache_pont_baisse_donjonS:
 
     show ogma debout_contrarie_mid at right
     o "Ne sois pas idiot ! Nous devons la détruire sans tarder !"
@@ -1493,7 +1494,7 @@ label e_garder_hache_pont_baisse_donjon:
             o "Tu ne me fais pas confiance ?"
             e "Ce n'est pas le problème. Je veux simplement être absolument certain que personne n'en profitera plus jamais."
             hide einar with dissolve
-            jump lieu_encore_inconnu_1
+            jump lieu_encore_inconnu_1S
 
         "Je la garde !":
             show einar combat_hache_determine_mid at left
@@ -1509,7 +1510,7 @@ label e_garder_hache_pont_baisse_donjon:
             jump good_ending_9
 
 
-label lieu_encore_inconnu_1(axe = True):
+label lieu_encore_inconnu_1S(axe = True):
 
     play ambiance village
 
@@ -1601,7 +1602,7 @@ label lieu_encore_inconnu_1(axe = True):
 
 
     if demander_main_moira:
-        menu menu_demande_main_moira_lieu_encore_inconnu_1:
+        menu menu_demande_main_moira_lieu_encore_inconnu_1S:
 
             "Je comprends":
                 show einar debout_attriste_mid at left
@@ -1637,7 +1638,7 @@ label lieu_encore_inconnu_1(axe = True):
         o "Et maintenant, que vas-tu faire ?"
 
 
-    menu plan_futur_lieu_encore_inconnu_1:
+    menu plan_futur_lieu_encore_inconnu_1S:
 
         "Je vais me payer des femmes et des jeux !" if refuser_or == False:
             show einar debout_souriant_mid at left
@@ -1689,7 +1690,7 @@ label lieu_encore_inconnu_1(axe = True):
         jump good_ending_13
 
 #Défendre porte
-label soupcon_harald_defendre_porte:
+label soupcon_harald_defendre_porteS:
 
     show re combat_normaux_mid at left
     show gv combat_normaux_mid at right
@@ -1830,7 +1831,6 @@ label soupcon_harald_defendre_porte:
 
     show harald debout_normal_mid at right
     show harald debout_normal_mid at right
-
     h "J'ai décidé de récompenser ta valeur."
     h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
     h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
@@ -1874,7 +1874,7 @@ label soupcon_harald_defendre_porte:
 
     jump normal_ending_18
 
-label harald_defendre_porte:
+label harald_defendre_porteS:
 
     #Animation rebelles
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
@@ -1940,14 +1940,14 @@ label harald_defendre_porte:
         "Tuez-le !":
             show einar debout_furieux_mid at center
             e "Tuez-le, sire !"
-            jump e_laisse_ogma_mort_defendre_porte
+            jump e_laisse_ogma_mort_defendre_porteS
         "Ne le tuez pas ! (s'interposer)":
-            show einar debout_furieux_mid at center
+            show einar debout_furieux_mid at centerS
             e "Non ! Ne l'achevez pas !"
-            jump e_sauve_ogma_defendre_porte
+            jump e_sauve_ogma_defendre_porteS
 
 
-label e_laisse_ogma_mort_defendre_porte:
+label e_laisse_ogma_mort_defendre_porteS:
 
     show ogma combat_normal_mid at left
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
@@ -1985,9 +1985,9 @@ label e_laisse_ogma_mort_defendre_porte:
     hide harald
     with dissolve
 
-    jump cour_chateau_ogma_mort_defendre_porte
+    jump cour_chateau_ogma_mort_defendre_porteS
 
-label cour_chateau_ogma_mort_defendre_porte:
+label cour_chateau_ogma_mort_defendre_porteS:
 
     "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
@@ -2031,7 +2031,7 @@ label cour_chateau_ogma_mort_defendre_porte:
             show einar debout_determine_mid at left
             jump bad_ending_20
 
-label e_sauve_ogma_defendre_porte:
+label e_sauve_ogma_defendre_porteS:
 
     show einar combat_normal_mid at center
     show harald combat_hache_furieux_mid at left

@@ -1,9 +1,9 @@
 init python :
+    renpy.music.register_channel("ambiance", mixer=None, loop=True, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True)
 
-  renpy.music.register_channel("ambiance", mixer=None, loop=True, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True)
+    def reset_menu_choice():
 
-# def reset_menu_choice(i):
-
-    # while i >= 1:
-    #     $ menu_choice_+i = True
-    #     i-= 1
+        list = [menu_choice_1, menu_choice_2, menu_choice_3, menu_choice_4, menu_choice_5]
+        for index in list:
+            index = True
+        #return list

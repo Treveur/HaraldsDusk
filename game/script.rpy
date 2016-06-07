@@ -527,9 +527,34 @@ define audio.wood = "sounds/ambiances/ambiance_woods.mp3"
 transform halfsize :
     zoom 0.5
 
+
+#Déclaration timer
+transform alpha_dissolve:
+    alpha 0.0
+    linear 0.5 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0
+
+screen countdown:
+    timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
+    bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 at alpha_dissolve
 # Le jeu commence ici
 
 label start:
+
+    # $ time = 5
+    # $ timer_range = 5
+    # $ timer_jump = 'bad_ending_16'
+    # show screen countdown
+    # menu:
+    #     "Sauter":
+    #         hide screen countdown
+    #         e "You chose 'Choice 1'"
+    #         jump intro
+    #     "finir":
+    #         hide screen countdown
+    #         e "You chose 'Choice 2'"
+    #         $ renpy.full_restart()
 
     scene bg black
 
@@ -543,4 +568,4 @@ label start:
 
     centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
 
-    jump intro
+    jump introS

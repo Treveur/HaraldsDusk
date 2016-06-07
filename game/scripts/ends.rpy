@@ -105,7 +105,6 @@ label normal_ending_10:
     jump credits
 
 label good_ending_11:
-    "Revenus au village, Ogma félicite Einar et annonce publiquement qu'il lui donne la main de sa fille."
     o "Aujourd'hui et au nom du peuple d'Ecosse, je te remercie, Einar !"
     o "Nous te sommes tous redevables !"
     ge "HOURRAAA !"
