@@ -21,10 +21,6 @@ label intro:
     $ menu_choice_4 = True
     $ menu_choice_5 = True
 
-    python:
-
-        reset_menu_choice()
-
     play ambiance wood
 
     scene bg forest with dissolve
@@ -906,9 +902,10 @@ label e_tuer_villageois_village_1:
     menu:
 
         "Votre détermination fait plaisir à voir":
-            show einar debout_determine_mid at left
+            show einar debout_souriant_mid at left
 
             e "Vous seriez prêt à laisser mourir l'un des votres pour couvrir votre rébellion ? Votre détermination fait plaisir à voir !"
+            show einar debout_determine_mid at left
 
             e "Vous n'avez aucun avenir en trahissant l'empire ! Le roi Harald saura se montrer clément avec ceux qui ont coopéré !"
 

@@ -6,7 +6,7 @@ label cote_2S:
     play ambiance coast
 
     scene bg plaine_chateau_matin with dissolve
-    
+
     "Et après trois jours de marche depuis Perth..."
 
     show einar debout_normal_mid at center with dissolve
@@ -241,7 +241,7 @@ label cour_chateau_1S:
         show harald debout_determine_close at right
         h "Pendant que je vais planifier la défense du château, tu devrais aller à la rencontre des autres soldats. Ils seront heureux de te retrouver."
         h "Les morts ne reviennent pas tous les jours !"
-        show einar debout_souriant_close at right
+        show einar debout_souriant_close at left
         e "Bien mon Roi."
 
     hide einar
@@ -549,7 +549,42 @@ label pont_levis_baisseS:
 
         show ogma combat_determine_mid at right
         o "Tout s'achève, ici et maintenant !"
-        "Phase de combat, impossible à gagner WIP"
+
+        #Phase combat impossible à gagner WIP
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+        "Harald se jette sur Einar en brandissant sa hache"
+
+        show screen countdown
+        menu :
+
+            "Esquiver":
+                hide screen countdown
+                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+
+            "Se jeter sur Ogma":
+                hide screen countdown
+                "En se jeter sur Harald, Einar se fait couper de par en par"
+                jump game_over_combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+        "Fou de rage, Ogma attaque une fois de plus vers la droite"
+
+        show screen countdown
+
+        menu :
+            "Faire une parade":
+                hide screen countdown
+                "Einar parre l'attaque mais ogma est bien trop puissant"
+            "Faire une roulade de côté":
+                hide screen countdown
+                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide"
+
 
         hide einar
         hide ogma
@@ -558,8 +593,6 @@ label pont_levis_baisseS:
         jump bad_ending_4
 
     else:
-
-        $ loose_battle = False
 
         "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls."
 
@@ -571,42 +604,75 @@ label pont_levis_baisseS:
         hu "Ha, il a du tomber sur un beau garçon de ferme !"
         hu "Défend-toi, traître !"
 
-        "Affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
+        #"Affronter ses anciens confrères huscarls. WIP"
+        #Phase combat
 
-        if loose_battle:
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
 
-            jump bad_ending_5
 
-        else:
-            "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
-            show einar combat_normal_mid at left
-            show ogma combat_normal_mid at right
-            with dissolve
-            o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
-            e "Le donjon ? Pourquoi ?"
-            o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
-            show ogma combat_determine_mid at right
-            o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
+        "Les huscarls encerclent Einar pour ne lui laisser aucune chance"
 
-            menu :
+        show screen countdown
+        menu:
 
-                "Ne me donne pas d'ordres":
-                    show einar combat_normal_mid at left
-                    e "Je n'ai pas d'ordres à recevoir !"
+            "Esquiver":
+                hide screen countdown
+                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
 
-                    hide einar
-                    hide ogma
-                    with dissolve
+            "Se jeter sur les huscarls":
+                hide screen countdown
+                "En se jetant sur les huscarls, Einar se fait couper de par en par"
+                jump game_over_combat
 
-                    jump e_bruler_donjon_desobeir_donjonS
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
 
-                "J'y vais !":
-                    show einar combat_determine_mid at left
-                    e "J'y vais!"
-                    hide einar
-                    hide ogma
-                    with dissolve
-                    jump e_bruler_donjon_obeir_donjonS
+        "Une fois son esquive effectuée, les huscarls l'encercle de nouveau"
+
+        show screen countdown
+
+        menu :
+            "Faire attaque tournoyante":
+                hide screen countdown
+                "Einar réussi à les eloigner suffisament les uns des autres pour sauter sur l'un les huscarl"
+                "Et lui assigner un coup fatal dans la nuque"
+
+            "Bugler pour les effrayer":
+                hide screen countdown
+                jump bad_ending_5
+
+        "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
+        show einar combat_normal_mid at left
+        show ogma combat_normal_mid at right
+        with dissolve
+        o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
+        e "Le donjon ? Pourquoi ?"
+        o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
+        show ogma combat_determine_mid at right
+        o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
+
+        menu :
+
+            "Ne me donne pas d'ordres":
+                show einar combat_normal_mid at left
+                e "Je n'ai pas d'ordres à recevoir !"
+
+                hide einar
+                hide ogma
+                with dissolve
+
+                jump e_bruler_donjon_desobeir_donjonS
+
+            "J'y vais !":
+                show einar combat_determine_mid at left
+                e "J'y vais!"
+                hide einar
+                hide ogma
+                with dissolve
+                jump e_bruler_donjon_obeir_donjonS
 
 label e_bruler_donjon_desobeir_donjonS:
 
@@ -813,12 +879,45 @@ label e_confrontation_harald_pont_baisse_donjonS(jetee = False):
                 $ epargner_harld_donjon = True
     else:
         "Le combat s'engage entre le roi et son huscarl"
-        "Phase combat WIP"
 
+        # "Phase combat WIP"
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+
+        "Harald se jete sur Einar et tente de la frapper à l'aide de ses poings"
+
+        show screen countdown
         menu:
-            "Gagner":
-                jump win_battle_harald_no_axe_pont_baisse_donjonS
-            "Perdre":
+
+            "Esquiver":
+                hide screen countdown
+                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+
+            "Se jeter Harald":
+                hide screen countdown
+                "En se jetant sur les huscarls, Einar se fait couper de par en par"
+                jump game_over_combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+        "Une fois son esquive effectuée, enchaine directement avec un crocher du droit"
+
+        show screen countdown
+
+        menu :
+            "Faire attaque tournoyante":
+                hide screen countdown
+                "Einar réussi à les eloigner suffisament Harald et poursuit par une nouvelle attaque directement"
+                "Et lui assigner un coup fatal dans la nuque"
+                jump win_battle_harald_no_axe_pont_baisse_donjon
+
+            "Bugler pour l'effrayer":
+                hide screen countdown
                 jump bad_ending_12
 
     if epargner_harld_donjon:
@@ -1328,7 +1427,7 @@ label foret_4S:
                 m "Oui, et j'en ai été profondément déçue, et humiliée."
                 m "Mais malgré tout, je comprends ce qui a pu te pousser à agir ainsi."
                 m "Je t'aime. Je veux venir avec toi."
-                
+
             "Je n'ai rien à faire avec toi":
                 e "Je suis un militaire. J'ai voyagé à travers tous les continents et rencontré plus de femmes que tu ne peux l'imaginer."
                 e "Tu ne m'interesse pas. Je n'ai rien à faire avec une paysanne écossaise, aussi belle soit-elle."
@@ -1773,11 +1872,43 @@ label soupcon_harald_defendre_porteS:
             show einar combat_furieux_mid at left
             e "J'en termine avec toi, et ensuite je retourne m'occuper de ta fille !"
 
-    menu :
-        "Un combat s'engage entre Ogma et Einar !"
-        "Mini jeu combat WIP"
+    "Un combat s'engage entre Ogma et Einar !"
+    #"Mini jeu combat WIP"
 
+    #Phase combat
+
+    $ time = 5
+    $ timer_range = 5
+    $ timer_jump = 'game_over_combat'
+
+
+    "Ogma furieux de la trahison de Einar se jette sur lui"
+    "L'épée brandie, Ogma s'aprête à frapper de tout ses forces."
+
+    show screen countdown
+    menu :
+
+        "Esquiver":
+            hide screen countdown
+            "Abattant son épée sur le sol, Einar réussi à éviter in extrmis"
+
+        "Se jeter sur Ogma":
+            hide screen countdown
+            "En se jetant sur Ogma, Einar se fait couper de par en par"
+            jump game_over_combat
+
+    $ time = 5
+    $ timer_range = 5
+    $ timer_jump = 'game_over_combat'
+
+    "Une fois son esquive effectuée, Attaque de nouveau"
+
+    show screen countdown
+
+    menu :
         "Gagner":
+            hide screen countdown
+
             show ogma combat_normal_mid at right
             "Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves."
             "Terrorisés, les rebelles prennent la fuite."
@@ -1788,11 +1919,11 @@ label soupcon_harald_defendre_porteS:
             show harald combat_determine_mid at right
             h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
 
-            "*Harald s'élance à la poursuite des fuyards, le rire aux lèvres.*"
-            "*Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares.*"
-
+            "Harald s'élance à la poursuite des fuyards, le rire aux lèvres."
+            "Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares."
 
         "Perdre":
+            hide screen countdown
             jump bad_ending_17
 
     hide einar
@@ -1942,7 +2073,7 @@ label harald_defendre_porteS:
             e "Tuez-le, sire !"
             jump e_laisse_ogma_mort_defendre_porteS
         "Ne le tuez pas ! (s'interposer)":
-            show einar debout_furieux_mid at centerS
+            show einar debout_furieux_mid at center
             e "Non ! Ne l'achevez pas !"
             jump e_sauve_ogma_defendre_porteS
 

@@ -163,7 +163,6 @@ label interieur_maison_village_1S:
             m "Estimez-vous heureux d'être en vie. Il voulait tous vous tuer."
             show einar debout_normal_mid at left
             e "Pourquoi cette colère contre nous ?"
-            jump interieur_maison_village_2S
 
         "Quel salopard !":
             show einar debout_furieux_mid at left

@@ -190,7 +190,7 @@ screen main_menu:
 
         has vbox
 
-        textbutton _("Start Game") action Start()
+        textbutton _("Start Game") action ShowMenu("choose_lenght")
         textbutton _("Load Game") action ShowMenu("load")
         textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Help") action Help()
@@ -304,6 +304,24 @@ screen file_picker:
 
                     key "save_delete" action FileDelete(i)
 
+screen choose_lenght:
+    tag menu
+    
+    # Le fond du menu principal
+    window:
+        style "mm_root"
+
+    # Les boutons du menu principal.
+    frame:
+        style_group "mm"
+        xalign .98
+        yalign .98
+
+        has vbox
+        
+        textbutton _("Version Courte") action StartS()
+        textbutton _("Version Longue") action StartL()
+        textbutton _("Return") action Return()
 
 screen save:
 
