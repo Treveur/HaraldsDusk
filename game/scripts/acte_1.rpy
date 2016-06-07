@@ -21,6 +21,10 @@ label intro:
     $ menu_choice_4 = True
     $ menu_choice_5 = True
 
+    python:
+
+        reset_menu_choice()
+
     play ambiance wood
 
     scene bg forest with dissolve
@@ -237,8 +241,6 @@ label plaine_1 :
     $ menu_choice_3 = True
     $ menu_choice_4 = True
     $ menu_choice_5 = True
-
-    # reset_menu_choice(5)
 
     play ambiance coast
 
@@ -775,6 +777,9 @@ label e_fouiller_village_1(einarFouille = False):
     $ menu_choice_3 = True
     $ menu_choice_4 = True
     $ menu_choice_5 = True
+
+    #reset_menu_choice()
+
 
     $ moira_name_know = False
     $ moira_met = True
