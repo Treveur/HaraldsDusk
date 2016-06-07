@@ -6,7 +6,7 @@ label cote_2:
     play ambiance coast
 
     scene bg plaine_chateau_matin with dissolve
-    
+
     "Et après trois jours de marche depuis Perth..."
 
     show einar debout_normal_mid at center with dissolve
@@ -980,7 +980,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     show harald combat_furieux_mid at right
 
     "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
-    show harald combat_blesse_mid
+    show harald combat_blesse_mid_b
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, s'il-te-plaît."
@@ -1328,7 +1328,7 @@ label foret_4:
                 m "Oui, et j'en ai été profondément déçue, et humiliée."
                 m "Mais malgré tout, je comprends ce qui a pu te pousser à agir ainsi."
                 m "Je t'aime. Je veux venir avec toi."
-                
+
             "Je n'ai rien à faire avec toi":
                 e "Je suis un militaire. J'ai voyagé à travers tous les continents et rencontré plus de femmes que tu ne peux l'imaginer."
                 e "Tu ne m'interesse pas. Je n'ai rien à faire avec une paysanne écossaise, aussi belle soit-elle."
@@ -1455,7 +1455,7 @@ label fuite_harald_pont_baisse_donjon:
 
     menu:
         "Elle est à moi !":
-            show einar combat_hache_determine_mid
+            show einar combat_hache_determine_mid_b
             jump e_garder_hache_pont_baisse_donjon
 
         "La voilà":

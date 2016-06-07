@@ -30,11 +30,9 @@ label intro:
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
     "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
-    show harald debout_normal_mid at dalpha, center with dissolve
     show logan debout_contrarie_mid at right with dissolve
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
     "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
-    show logan debout_contrarie_mid at dalpha, right with dissolve
     show einar debout_normal_mid at left with dissolve
     "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
     "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
@@ -47,10 +45,12 @@ label intro:
 
             show einar debout_normal_mid at left with dissolve
             show harald debout_normal_mid at right with moveinright
-
             e "Mon Roi, sommes-nous proches de Dunbar ?"
+            show einar debout_normal_mid at left
+            show harald debout_normal_mid at right
 
             h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
+            show einar debout_normal_mid at left
 
             menu menu_harald_choice_foret:
                 "Quel est le plan ?" if menu_choice_1:
@@ -885,7 +885,7 @@ label e_fouiller_village_1(einarFouille = False):
 
 
 label e_tuer_villageois_village_1:
-    show ve debout_normaux_mid
+    show ve debout_normaux_mid_b
     show einar debout_furieux_mid at left
 
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un des vôtres !"

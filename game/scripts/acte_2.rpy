@@ -716,7 +716,7 @@ label village_3:
     scene bg village2_crepuscule with dissolve
 
     $ einar_raler = False
-    
+
     "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
 
     show einar debout_normal_mid at left

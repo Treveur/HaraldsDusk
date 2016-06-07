@@ -5,7 +5,9 @@
 #Image représentant les personnages
 
 ##Einar
-define e = Character('Einar', color="#e74c3c", side_image="einar/general/einar_portrait.png")
+define e = Character('Einar', color="#e74c3c", image="einar")
+
+image side einar = "einar/general/einar_portrait.png"
 
 #Debout
 image einar debout_normal = "einar/debout/einar_debout_normal.png"
@@ -524,8 +526,6 @@ define audio.wood = "sounds/ambiances/ambiance_woods.mp3"
 #transform
 transform halfsize :
     zoom 0.5
-
-
 
 # Le jeu commence ici
 

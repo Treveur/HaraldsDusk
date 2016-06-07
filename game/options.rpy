@@ -101,18 +101,18 @@ init -1 python hide:
     ## La marge ('margin') est l'espace autour fenêtre, où
     ## le fond n'apparaît pas.
 
-    # style.window.left_margin = 6
-    # style.window.right_margin = 6
-    # style.window.top_margin = 6
-    # style.window.bottom_margin = 6
+    style.window.left_margin = 6
+    style.window.right_margin = 6
+    style.window.top_margin = 6
+    style.window.bottom_margin = 6
 
     ## Le 'rembourrage' ('padding') est la marge à l'intérieur de la,
     ## fenêtre, où le fond apparaît.
 
-    # style.window.left_padding = 6
-    # style.window.right_padding = 6
-    # style.window.top_padding = 6
-    # style.window.bottom_padding = 6
+    style.window.left_padding = 120
+    style.window.right_padding = 120
+    style.window.top_padding = 6
+    style.window.bottom_padding = 6
 
     ## Hauteur minimum de la fenêtre, incluant les marges (margin et padding).
 
