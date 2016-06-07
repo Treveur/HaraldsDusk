@@ -21,10 +21,6 @@ label intro:
     $ menu_choice_4 = True
     $ menu_choice_5 = True
 
-    python:
-
-        reset_menu_choice()
-
     play ambiance wood
 
     scene bg forest with dissolve
@@ -360,7 +356,7 @@ label plaine_1 :
     h "Parfait ! Il ne vous reste plus qu'à partir, les hommes vous attendent."
     h "J'insiste sur un point, Einar. Il s'agit d'une mission de reconnaissance !"
     h "Tu ne dois recourir à la violence qu'en ultime recours !"
-    h "La moindre démonstration de force risquerait de provoquer un soulèvement populaire et de rendre populaire la rébellion."
+    h "La moindre démonstration de force risquerait de provoquer un soulèvement populaire et de favoriser la rébellion."
     h "Me suis-je bien fait comprendre ?"
     e "Parfaitement, sire."
     h "Fabuleux. Je ne vous retiens pas, partez au plus vite."
@@ -1082,6 +1078,7 @@ label choix_retour_village_1(massacre = False):
 
     hide ve with dissolve
     if massacre:
+        "Après quelques minutes, l'affrontement touche à sa fin. Des dizaines de paysans gisent au sol. Pas un seul viking n'a été blessé."
         show einar debout_normal_mid at left with dissolve
         e "Empilez les cadavres avant le départ."
         show logan debout_attriste_mid at right with dissolve

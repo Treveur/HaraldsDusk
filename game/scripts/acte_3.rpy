@@ -241,7 +241,7 @@ label cour_chateau_1:
         show harald debout_determine_close at right
         h "Pendant que je vais planifier la défense du château, tu devrais aller à la rencontre des autres soldats. Ils seront heureux de te retrouver."
         h "Les morts ne reviennent pas tous les jours !"
-        show einar debout_souriant_close at right
+        show einar debout_souriant_close at left
         e "Bien mon Roi."
 
     hide einar
@@ -595,8 +595,6 @@ label pont_levis_baisse:
 
     else:
 
-        $ loose_battle = False
-
         "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls."
 
         show einar combat_normal_mid at left
@@ -607,7 +605,7 @@ label pont_levis_baisse:
         hu "Ha, il a du tomber sur un beau garçon de ferme !"
         hu "Défend-toi, traître !"
 
-        #"Affronter ses anciens confrères huscarls. (Mini-jeu combat) WIP"
+        #"Affronter ses anciens confrères huscarls. WIP"
         #Phase combat
 
         $ time = 5
@@ -624,61 +622,59 @@ label pont_levis_baisse:
                 hide screen countdown
                 "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
 
-            "Se jeter sur Ogma":
+            "Se jeter sur les huscarls":
                 hide screen countdown
-                "En se jeter sur Harald, Einar se fait couper de par en par"
+                "En se jetant sur les huscarls, Einar se fait couper de par en par"
                 jump game_over_combat
 
         $ time = 5
         $ timer_range = 5
         $ timer_jump = 'game_over_combat'
 
-        "Fou de rage, Ogma attaque une fois de plus vers la droite"
+        "Une fois son esquive effectuée, les huscarls l'encercle de nouveau"
 
         show screen countdown
 
         menu :
-            "Faire une parade":
+            "Faire attaque tournoyante":
                 hide screen countdown
-                "Einar parre l'attaque mais ogma est bien trop puissant"
-            "Faire une roulade de côté":
+                "Einar réussi à les eloigner suffisament les uns des autres pour sauter sur l'un les huscarl"
+                "Et lui assigner un coup fatal dans la nuque"
+
+            "Bugler pour les effrayer":
                 hide screen countdown
-                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide"
+                jump bad_ending_5
 
-        if loose_battle:
 
-            jump bad_ending_5
+        "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
+        show einar combat_normal_mid at left
+        show ogma combat_normal_mid at right
+        with dissolve
+        o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
+        e "Le donjon ? Pourquoi ?"
+        o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
+        show ogma combat_determine_mid at right
+        o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
 
-        else:
-            "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
-            show einar combat_normal_mid at left
-            show ogma combat_normal_mid at right
-            with dissolve
-            o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
-            e "Le donjon ? Pourquoi ?"
-            o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
-            show ogma combat_determine_mid at right
-            o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
+        menu :
 
-            menu :
+            "Ne me donne pas d'ordres":
+                show einar combat_normal_mid at left
+                e "Je n'ai pas d'ordres à recevoir !"
 
-                "Ne me donne pas d'ordres":
-                    show einar combat_normal_mid at left
-                    e "Je n'ai pas d'ordres à recevoir !"
+                hide einar
+                hide ogma
+                with dissolve
 
-                    hide einar
-                    hide ogma
-                    with dissolve
+                jump e_bruler_donjon_desobeir_donjon
 
-                    jump e_bruler_donjon_desobeir_donjon
-
-                "J'y vais !":
-                    show einar combat_determine_mid at left
-                    e "J'y vais!"
-                    hide einar
-                    hide ogma
-                    with dissolve
-                    jump e_bruler_donjon_obeir_donjon
+            "J'y vais !":
+                show einar combat_determine_mid at left
+                e "J'y vais!"
+                hide einar
+                hide ogma
+                with dissolve
+                jump e_bruler_donjon_obeir_donjon
 
 label e_bruler_donjon_desobeir_donjon:
 
@@ -885,12 +881,46 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 $ epargner_harld_donjon = True
     else:
         "Le combat s'engage entre le roi et son huscarl"
-        "Phase combat WIP"
+        # "Phase combat WIP"
 
+        #Phase combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+
+        "Harald se jete sur Einar et tente de la frapper à l'aide de ses poings"
+
+        show screen countdown
         menu:
-            "Gagner":
+
+            "Esquiver":
+                hide screen countdown
+                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+
+            "Se jeter Harald":
+                hide screen countdown
+                "En se jetant sur les huscarls, Einar se fait couper de par en par"
+                jump game_over_combat
+
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = 'game_over_combat'
+
+        "Une fois son esquive effectuée, enchaine directement avec un crocher du droit"
+
+        show screen countdown
+
+        menu :
+            "Faire attaque tournoyante":
+                hide screen countdown
+                "Einar réussi à les eloigner suffisament Harald et poursuit par une nouvelle attaque directement"
+                "Et lui assigner un coup fatal dans la nuque"
                 jump win_battle_harald_no_axe_pont_baisse_donjon
-            "Perdre":
+
+            "Bugler pour l'effrayer":
+                hide screen countdown
                 jump bad_ending_12
 
     if epargner_harld_donjon:
