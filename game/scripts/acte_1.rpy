@@ -994,16 +994,6 @@ label e_intimider_villageois_village_1:
 
     jump choix_retour_village_1
 
-#Scequence 6 (alternative)
-# label e_nom_villageoise_maison_1:
-# label e_cache_villageoise_maison_1:
-# label e_info_rebelle_maison_1:
-# label e_villagoise_partir_maison_1:
-
-
-
-
-
 label e_tuer_moira_maison_1:
     show einar debout_determine_mid at left
 
