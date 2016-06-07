@@ -103,14 +103,14 @@ init -1 python hide:
 
     style.window.left_margin = 6
     style.window.right_margin = 6
-    style.window.top_margin = 6
-    style.window.bottom_margin = 6
+    style.window.top_margin = 2
+    style.window.bottom_margin = 12
 
     ## Le 'rembourrage' ('padding') est la marge à l'intérieur de la,
     ## fenêtre, où le fond apparaît.
 
-    style.window.left_padding = 120
-    style.window.right_padding = 120
+    style.window.left_padding = 130
+    style.window.right_padding = 130
     style.window.top_padding = 6
     style.window.bottom_padding = 6
 
