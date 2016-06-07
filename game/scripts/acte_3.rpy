@@ -1414,9 +1414,6 @@ label foret_4:
         jump good_ending_14
 
 label fuite_harald_pont_baisse_donjon:
-
-    "Harald s'échappe sans demander son reste."
-
     show harald debout_furieux_mid at left with dissolve
 
     h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
@@ -1507,7 +1504,6 @@ label e_garder_hache_pont_baisse_donjon:
             e "Le monde se pliera devant moi !"
             e "A genoux, manants ! HA HA HA !"
             o "Tu es fou ! Nous ne te laisserons pas faire !"
-            o "Le poison aura raison de toi !"
             e "Idiots ! La Hache me rend immortel !"
             hide einar with dissolve
             jump good_ending_9
@@ -1834,10 +1830,7 @@ label soupcon_harald_defendre_porte:
 
     show harald debout_normal_mid at right
     show harald debout_normal_mid at right
-    h "L'Evêque Patrick a pu t'obtenir un antidote pour le poison qui te ronge."
-    h "Il a extorqué la recette à un vieillard de Perth d'une façon assez... Spectaculaire !"
-    e "Merci, Sire !"
-    "Einar boit le contenu de la petite fiole."
+
     h "J'ai décidé de récompenser ta valeur."
     h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
     h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
@@ -1996,8 +1989,6 @@ label e_laisse_ogma_mort_defendre_porte:
 
 label cour_chateau_ogma_mort_defendre_porte:
 
-
-    "Einar a été soigné du poison : l'évêque Patrick a soutiré la recette à un vieillard écossais."
     "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
