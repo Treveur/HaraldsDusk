@@ -5,6 +5,12 @@ label interieur_maison_village_1:
     hide ogma
     hide re
 
+    $ menu_choice_1 = True
+    $ menu_choice_2 = True
+    $ menu_choice_3 = True
+    $ menu_choice_4 = True
+    $ menu_choice_5 = True
+
     play ambiance home
 
     scene bg house2_jour with dissolve
@@ -17,38 +23,42 @@ label interieur_maison_village_1:
     show moira debout_normal_mid at right with dissolve
 
     menu menu_rencontre_moira_blesse:
-        "Moira ?" if moira_met and moira_name_know:
+        "Moira ?" if moira_met and moira_name_know and menu_choice_1:
             e "... Moira ?"
             m "Vous vous rappelez de moi ?"
             e "Oui. Tu étais à Perth."
             show moira debout_determine_mid at right
             m "Ne me tutoyez pas, s'il vous plaît. J'étais bien à Perth quand vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
+            $ menu_choice_1 = False
             jump menu_rencontre_moira_blesse
 
-        "Toi ?" if moira_met and moira_name_know:
+        "Toi ?" if moira_met and moira_name_know == False and menu_choice_1:
             e "Toi ?"
-            m "Vous vous rappelez de moi ?"
+            ve "Vous vous rappelez de moi ?"
             e "Oui. Tu étais à Perth."
             show moira debout_determine_mid at right
             m "Ne me tutoyez pas, s'il vous plaît. Je m'appelle Moira. J'étais bien à Perth quand vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
+            $ menu_choice_1 = False
             jump menu_rencontre_moira_blesse
 
-        "Qui es-tu ?":
+        "Qui es-tu ?" if menu_choice_2:
             e "Qui es-tu ? Je t'ai déjà rencontré ?"
             m "Je suis Moira, fille d'Ogma. Celui que l'on surnomme \"Le Hurleur\"."
             m "J'étais à Perth lorsque vous êtes arrivés pour menacer nos anciens et terroriser nos enfants."
             e "J'aurais probablement dû t'accorder plus d'attention..."
             show moira debout_determine_mid at right
             m "Ne me tutoyez pas."
+            $ menu_choice_2 = False
             jump menu_rencontre_moira_blesse
 
-        "Où sommes-nous ?":
+        "Où sommes-nous ?" if menu_choice_3:
             e "Où sommes-nous ?"
             m "Nous sommes à Perth. Cette maison appartient à mon père."
             show moira debout_determine_mid at right
             m "Vous devriez vous habituer. Vous allez passer un certain temps ici."
             e "Pourquoi ?"
             m "Vos blessures sont graves. Une infection a déjà commencé à attaquer votre cuisse. Il vous faudra plus d'un mois pour vous remettre."
+            $ menu_choice_3 = False
             jump menu_rencontre_moira_blesse
 
         "Arrière ! Laisse-moi !":
@@ -716,7 +726,7 @@ label village_3:
     scene bg village2_crepuscule with dissolve
 
     $ einar_raler = False
-    
+
     "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
 
     show einar debout_normal_mid at left
