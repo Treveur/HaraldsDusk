@@ -656,7 +656,7 @@ label plaine_1S :
 #Sequence 5
 #Scene 1
 label village_1S:
-
+    stop ambiance
     # play ambiance village
     play music weird_village
 
@@ -699,8 +699,8 @@ label village_1S:
             jump e_fouiller_village_1S
         "Je vais voir moi-même ce que vous cachez ! (fouiller)":
             call e_fouiller_village_1S pass (einarFouille = True) from _call_e_fouiller_village_1S
-        "Massacrez-les !":
-            jump e_massacre_village_1S
+#        "Massacrez-les !":
+#            jump e_massacre_village_1S
 
 #label e_massacre_village_1:
 

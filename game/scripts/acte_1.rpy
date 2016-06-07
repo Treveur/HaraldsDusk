@@ -658,7 +658,7 @@ label foret_1:
 #Sequence 5
 #Scene 1
 label village_1:
-
+    stop ambiance
     # play ambiance village
     play music weird_village
 
