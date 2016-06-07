@@ -204,8 +204,10 @@ label game_over_combat(label_name):
 
     "Game over"
 
-    if label_name = ""
-        Jump (label_name)
+    if label_name = "":
+        menu:
+            "Choice 1":
+                $ renpy.Jump (label_name)
 
     return
 
