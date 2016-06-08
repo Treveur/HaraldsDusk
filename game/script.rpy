@@ -122,7 +122,7 @@ define h = Character('Harald', color="#3498db")
 
 image harald debout_normal = "harald/debout/harald_debout_normal.png"
 image harald debout_furieux = "harald/debout/harald_debout_furieux.png"
-#image harald debout_blesse = "harald/noraml/harald_debout_blesse.png"
+#image harald debout_blesse = "harald/normal/harald_debout_blesse.png"
 image harald debout_contrarie = "harald/debout/harald_debout_contrarie.png"
 image harald debout_determine = "harald/debout/harald_debout_determine.png"
 

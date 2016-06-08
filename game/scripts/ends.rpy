@@ -136,22 +136,28 @@ label good_ending_13:
     "Moira."
     jump credits
 
-label good_ending_14(rejete = True):
+label good_ending_14(rejete):
     if rejete:
         "Einar dépasse Moira qui reste immobile au milieu du sentier, les poings serrés, fixant le sol."
     else:
+        show moira debout_souriant_close at right
+        show einar debout_souriant_close at left
+        with dissolve
+
         m "Où allons-nous ?"
         e "Loin d'ici !"
         e "Quand ton père aura compris que tu t'es enfuie pour m'accompagner, il se lancera à notre recherche."
+        show einar debout_attriste_close at left
         e "Et je n'ai aucune envie de me retrouver à nouveau enfermé dans une cahutte pendant un mois !"
         m "Ha ha ha !"
+        show einar debout_souriant_close at left
         e "Il y a un endroit en particulier que tu voudrais voir ?"
         m "Je ne sais pas... J'hésite entre la Norvège et la Méditerrannée."
         e "Alors nous irons voir la Méditerrannée ! Retourner en Norvège, ce serait du suicide..."
         "Les deux voyageurs disparaissent dans les bois, prenant la direction du sud..."
     jump credits
 
-label good_ending_15(marier = True):
+label good_ending_15(marier):
     if marier:
         "Une tornade rousse se précipite vers les deux hommes."
         "Moira se jette dans les bras d'Einar et l'embrasse."
@@ -217,11 +223,26 @@ label game_over_combat:
     $ renpy.full_restart()
 
 label credits:
+
+    stop ambiance
+
     scene bg black with dissolve
     centered "HARALD'S DUSK"
     with Pause(2.5)
-    centered "DESIGN ET PROGRAMMATION : Alexandre Allais - Benjamin Ramauge - Nicolas Duval"
-    centered "GRAPHISME : "
-    centered "SON : "
+    centered "DESIGN ET PROGRAMMATION :\n
+    Alexandre Allais\n
+    Benjamin Ramauge\n
+    Nicolas Duval"
+    centered "GRAPHISME :\n
+    Alexandre Rafael David\n
+    Céline Lascaux\n
+    Farah Merand\n
+    Raphaëlle Maniere\n
+    Samuel Amar\n
+    Sandy Chhun\n
+    Sarah-Cheyenne Laurence Gilbercovici"
+    centered "SON :\n
+    Julien Laguerre\n
+    Nicolas Lorion"
 
     $ renpy.full_restart()

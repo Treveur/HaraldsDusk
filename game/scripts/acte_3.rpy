@@ -813,7 +813,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Je l'ai jetée":
                 show einar combat_determine_mid at left
                 e "La Hache est perdue. Tout est terminé."
-                show harald combat_furieux_mid at left
+                show harald combat_furieux_mid at right
                 h "Tu es fou ? Tu mens !"
                 h "Où l'as-tu mise ? Tu veux la garder pour toi !"
                 e "Votre relique est dans la vase, sous l'eau."
@@ -1211,7 +1211,7 @@ label e_epargne_harald_no_axe_donjon:
         o "Pourquoi l'avoir laissé s'enfuir ?"
         o "Nous tenions celui qui a asservi le monde entier, privé de sa Hache..."
         o "Nous pouvions libérer le monde !"
-        show einar debout_attriste_mid at right
+        show einar debout_attriste_mid at left
         e "Je..."
         show ogma debout_contrarie_mid at right
         o "Ne répond pas à ma question, je préfère ne pas savoir."
@@ -1248,6 +1248,8 @@ label e_epargne_harald_no_axe_donjon:
 label village_5:
 
     play ambiance village
+
+    scene bg village
 
     "..."
 
@@ -1418,6 +1420,8 @@ label foret_4:
 
     play ambiance village
 
+    scene bg sentier_jour with dissolve
+
     $ rejeter_moira_foret_4 = False
 
     "..."
@@ -1536,7 +1540,7 @@ label foret_4:
     if rejeter_moira_foret_4:
         call good_ending_14 pass (rejete = True) from _call_good_ending_14
     else:
-        jump good_ending_14
+        call good_ending_14 pass (rejete = False)
 
 label fuite_harald_pont_baisse_donjon:
     show harald debout_furieux_mid at left with dissolve
