@@ -366,7 +366,10 @@ label plaine_1 :
     hide harald
     with dissolve
 
-    jump plaine_2
+    if short_version:
+        jump village_1
+    else:
+        jump plaine_2
 
 #Sequence 3
 label plaine_2:
@@ -654,6 +657,10 @@ label foret_1:
 #Sequence 5
 #Scene 1
 label village_1:
+
+    if short_version:
+        #Narration
+
     stop ambiance
     # play ambiance village
     play music weird_village
@@ -697,40 +704,6 @@ label village_1:
             jump e_fouiller_village_1
         "Je vais voir moi-même ce que vous cachez ! (fouiller)":
             call e_fouiller_village_1 pass (einarFouille = True) from _call_e_fouiller_village_1
-#        "Massacrez-les !":
-#            jump e_massacre_village_1
-
-#label e_massacre_village_1:
-
-#    e "Massa..."
-
-#    l "Einar, non ! Nous ne sommes sûrs de rien !"
-
-#    l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
-
-#    l "Nous risquons d'aggraver la situation en rasant Perth. Le roi sera furieux !"
-
-#    l "Et je ne parle même pas des écossais ! Nous ne pourrions pas revenir au château sans nous faire égorger sur le chemin !"
-
-#    menu:
-
-#        "Massacrez-les quand même":
-#            jump e_massacre_village_2
-#        "Tu as raison":
-#            jump menu_fouille_village
-
-#label e_massacre_village_2:
-
-#    "Je me fout de ton avis, Logan !"
-
-#    e "Massacrez-moi tout ça ! Et brûlez leurs cabanes !"
-
-#    gv "HAAAAA !"
-#    hide logan with dissolve
-#    ve "Sauvez les enfants ! Les enfants !"
-#    hide ve with moveoutright
-#    hide gv with moveoutright
-#    call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1
 
 
 label e_demander_information_village_1:

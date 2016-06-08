@@ -233,24 +233,30 @@ label interieur_maison_village_1:
     e "..."
     show moira debout_determine_mid at right
     m "Clyde Montgomery n'était pas intendant. C'était un porc, doublé d'un tortionnaire ! Il saignait l'Ecosse à blanc ! Il exigeait de nous plus que ce que nous avions !"
-    e "Quel rapport avec votre mère ?"
-    show moira debout_normal_mid at right
+
+    if short_version == False:
+        e "Quel rapport avec votre mère ?"
+        show moira debout_normal_mid at right
+
     m "Un matin, l'intendant est arrivé accompagné de ses sous-fifres. Il a exigé qu'on lui donne immédiatement l'impôt ainsi que de la nourriture pour ses hommes."
     m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
     m "Montgomery n'était pas satisfait, et il a demandé à ses gardes de fouiller nos maisons."
     m "Ils ont découvert une réserve de nourriture que ma mère avait dissimulé."
     show moira debout_attriste_mid at right
     m "Sans rien dire, Montgomery s'est approché de ma mère et l'a tuée devant tout le village, sur la place."
-    show einar debout_normal_mid at left
-    m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été passés à tabac, personne n'a pu faire quoi que ce soit."
-    show einar debout_determine_mid at left
-    e "Où étiez-vous ? Où était votre père ?"
-    show moira debout_determine_mid at right
-    m "J'étais parmi ceux que les gardes ont frappé. Quand j'ai vu ma mère tomber, j'ai voulu me jeter sur l'intendant. Je n'ai même pas pu passer ses gardes."
-    m "Quand mon père est revenu, il a franchi le cercle que formaient les gens du village. Personne ne parlait. Il revenait de la rivière avec quelques prises du matin."
-    show moira debout_attriste_mid at right
-    m "A ce moment là, Montgomery était déjà parti. Mon père a retrouvé ma mère allongée dans la boue et dans son sang, devant tout le monde."
-    show moira debout_determine_mid at right
+
+    if short_version == False:
+        show einar debout_normal_mid at left
+        m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été passés à tabac, personne n'a pu faire quoi que ce soit."
+        show einar debout_determine_mid at left
+        e "Où étiez-vous ? Où était votre père ?"
+        show moira debout_determine_mid at right
+        m "J'étais parmi ceux que les gardes ont frappé. Quand j'ai vu ma mère tomber, j'ai voulu me jeter sur l'intendant. Je n'ai même pas pu passer ses gardes."
+        m "Quand mon père est revenu, il a franchi le cercle que formaient les gens du village. Personne ne parlait. Il revenait de la rivière avec quelques prises du matin."
+        show moira debout_attriste_mid at right
+        m "A ce moment là, Montgomery était déjà parti. Mon père a retrouvé ma mère allongée dans la boue et dans son sang, devant tout le monde."
+        show moira debout_determine_mid at right
+
     m "La suite, vous la connaissez."
     e "Alors c'est Ogma lui-même qui a assassiné l'intendant..."
     m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
