@@ -239,7 +239,10 @@ label interieur_maison_village_1:
         show moira debout_normal_mid at right
 
     m "Un matin, l'intendant est arrivé accompagné de ses sous-fifres. Il a exigé qu'on lui donne immédiatement l'impôt ainsi que de la nourriture pour ses hommes."
-    m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
+
+    if short_version == False:
+        m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
+
     m "Montgomery n'était pas satisfait, et il a demandé à ses gardes de fouiller nos maisons."
     m "Ils ont découvert une réserve de nourriture que ma mère avait dissimulé."
     show moira debout_attriste_mid at right
@@ -259,8 +262,11 @@ label interieur_maison_village_1:
 
     m "La suite, vous la connaissez."
     e "Alors c'est Ogma lui-même qui a assassiné l'intendant..."
-    m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
-    e "..."
+
+    if short_version == False:
+        m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
+        e "..."
+
     m "Mon père n'est pas une mauvaise personne. Il a tué l'intendant de plein droit."
     e "..."
     e "Pourquoi toutes ces révélations ?"
@@ -268,7 +274,10 @@ label interieur_maison_village_1:
     m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
     m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
 
-    jump interieur_maison_village_2
+    if short_version:
+        jump interieur_maison_village_4
+    else:
+        jump interieur_maison_village_2
 
 #Sequence 2
 label interieur_maison_village_2:
@@ -487,7 +496,11 @@ label interieur_maison_village_3:
 
 #Sequence 4
 label interieur_maison_village_4:
+
     scene bg house2_jour with dissolve
+
+    if short_version:
+        #Narration
 
     $ libre_ask = False
     $ trahir_talk = False
@@ -657,7 +670,11 @@ label interieur_maison_village_4:
     hide moira
     with dissolve
     "Moira entraîne Einar a l'extérieur en lui tenant la main"
-    jump village_2
+
+    if short_version:
+        jump village_3
+    else:
+        jump village_2
 
 #Sequence 5
 label village_2:
@@ -728,7 +745,11 @@ label village_2:
 
 #Sequence 6
 label village_3:
+
     scene bg village2_crepuscule with dissolve
+
+    if short_version:
+        #Narration
 
     $ einar_raler = False
 
@@ -975,7 +996,10 @@ label village_4:
     hide einar
     with dissolve
 
-    jump sentier_foret_1
+    if short_version:
+        jump cote_2
+    else:
+        jump sentier_foret_1
 
 #Sequence 10
 label sentier_foret_1:

@@ -7,6 +7,9 @@ label cote_2:
 
     scene bg plaine_chateau_matin with dissolve
 
+    if short_version:
+        #Narration
+
     "Et après trois jours de marche depuis Perth..."
 
     show einar debout_normal_mid at center with dissolve
@@ -582,11 +585,11 @@ label pont_levis_baisse:
                 hide screen countdown
                 "Einar parvient à bloquer l'attaque, mais Ogma profite du contrecoup pour asséner au viking un violent coup de pied à l'estomac."
                 "Ogma enchaîne immédiatement, d'un geste fulgurant !"
-            
+
             "Esquiver":
                 hide screen countdown
                 "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide et furieux : il lance immédiatement une seconde attaque !"
-                
+
         $ time = 0.5
         $ timer_range = 0.5
         $ timer_jump = 'game_over_combat'
@@ -600,7 +603,7 @@ label pont_levis_baisse:
                 hide screen countdown
                 "Einar plonge dans la garde ouverte d'Ogma. Mais c'était une ruse !"
                 "Ogma tourne sur lui-même et empale le viking sur son épée."
-            
+
             "Esquiver":
                 hide screen countdown
                 "Le coup est bien trop rapide pour être esquivé, et les appuis d'Einar sont faibles : le ventre du viking s'ouvre, déversant un torrent de viscères sur le sol."
