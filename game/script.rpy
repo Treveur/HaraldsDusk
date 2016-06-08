@@ -56,7 +56,7 @@ image einar combat_furieux_close = "einar/combat/einar_combat_furieux_close.png"
 image einar combat_blesse_close = "einar/combat/einar_combat_blesse_close.png"
 image einar combat_determine_close = "einar/combat/einar_combat_determine_close.png"
 
-#Combat
+#Combat Hache
 image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.png"
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
 image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
@@ -265,6 +265,7 @@ image ogma debout_attriste = "ogma/debout/ogma_debout_attriste.png"
 image ogma debout_contrarie = "ogma/debout/ogma_debout_contrarie.png"
 image ogma debout_determine = "ogma/debout/ogma_debout_determine.png"
 
+#mid
 image ogma debout_normal_mid = "ogma/debout/ogma_debout_normal_mid.png"
 image ogma debout_souriant_mid = "ogma/debout/ogma_debout_souriant_mid.png"
 image ogma debout_furieux_mid = "ogma/debout/ogma_debout_furieux_mid.png"
@@ -272,12 +273,17 @@ image ogma debout_attriste_mid = "ogma/debout/ogma_debout_attriste_mid.png"
 image ogma debout_contrarie_mid = "ogma/debout/ogma_debout_contrarie_mid.png"
 image ogma debout_determine_mid = "ogma/debout/ogma_debout_determine_mid.png"
 
+#close
 image ogma debout_normal_close = "ogma/debout/ogma_debout_normal_close.png"
 image ogma debout_souriant_close = "ogma/debout/ogma_debout_souriant_close.png"
 image ogma debout_furieux_close = "ogma/debout/ogma_debout_furieux_close.png"
 image ogma debout_attriste_close = "ogma/debout/ogma_debout_attriste_close.png"
 image ogma debout_contrarie_close = "ogma/debout/ogma_debout_contrarie_close.png"
 image ogma debout_determine_close = "ogma/debout/ogma_debout_determine_close.png"
+
+#Flip
+image ogma debout_normal_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+
 
 #Combat
 image ogma combat_normal = "ogma/combat/ogma_combat_normal.png"
@@ -468,6 +474,7 @@ image bg plaine_chateau_matin = "scenes/plaine_ext_matin_plaineChateau.jpg"
 
 #plaine
 image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.jpg"
+image bg plaine_plaine_crepuscule = "scenes/plaine_ext_crepuscule_plaine.jpg"
 
 ##Chateau
 #pont-levis

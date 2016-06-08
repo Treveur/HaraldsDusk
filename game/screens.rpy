@@ -349,9 +349,7 @@ screen choose_lenght:
 
         has vbox
 
-        #textbutton _("Version Courte") action StartS()
         textbutton _("Version Courte") action [SetVariable("short_version",True), Start()]
-        # textbutton _("Version Longue") action StartL()
         textbutton _("Version Longue") action [SetVariable("short_version",False), Start()]
         textbutton _("Return") action Return()
 

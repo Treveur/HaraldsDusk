@@ -87,8 +87,11 @@ label good_ending_8:
     jump credits
 
 label good_ending_9:
+    scene bg plaine_plaine_crepuscule
     "Einar porte une tenue de général et mène une armée innombrable face à ce qui semble être une armée asiatique, dans un paysage exotique fait de montagnes et de cultures en étages."
+    show einar combat_hache_determine_mid at center
     e "Aujourd'hui, le dernier peuple dissident s'inclinera devant nous !"
+    show einar combat_hache_furieux_mid at center
     e "CHARGEEEEEEEEZ !"
     jump credits
 

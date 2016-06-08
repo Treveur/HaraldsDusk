@@ -658,16 +658,18 @@ label foret_1:
 #Scene 1
 label village_1:
 
-    if short_version:
-        "Narration"
+    $ moira_met = False
 
     stop ambiance
     # play ambiance village
     play music weird_village
 
-    $ moira_met = False
 
     scene bg village with dissolve
+
+    if short_version:
+        "Narration"
+
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
     show logan debout_normal_mid at right zorder 5 with dissolve
     l "Nous y sommes. Perth."
@@ -1266,8 +1268,9 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-    show ogma combat_normal_mid at right zorder 1 with dissolve
     hide logan with dissolve
+    show ogma combat_normal_mid at right with dissolve
+
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."
@@ -1458,8 +1461,9 @@ label attaque_massacre_foret_2(message = ""):
     l "Je suis là !"
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
-    show ogma combat_normal_mid at right zorder 1 with dissolve
     hide logan with dissolve
+    show ogma combat_normal_mid at right with dissolve
+
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     e "Crevure... Tu..."

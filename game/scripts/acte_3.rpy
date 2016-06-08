@@ -186,8 +186,9 @@ label cour_chateau_1:
             $ soupcon_harald_1 = True
 
     h "..."
-    show einar debout_normal_close at left with dissolve
-    show harald debout_determine_close at right with dissolve
+    show einar debout_normal_close at left
+    show harald debout_determine_close at right
+    with dissolve
     h "J'espère que tout ce que tu me dis là est vrai."
     h "Je ne tolère pas le mensonge, Einar. Ton histoire me paraît bien obscure. Je te fais confiance, mais si j'apprends que tu m'as menti..."
     h "Es-tu certain de m'avoir dit la vérité ? Si ce n'est pas le cas, je suis prêt à te pardonner pourvu que tu m'avoues ce qu'il s'est réellement passé."
@@ -250,9 +251,7 @@ label cour_chateau_1:
     hide einar
     hide harald
 
-    if short_version:
-        "Narration"
-    else:
+    if short_version == False:
         #play ambiance buchet
         "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."
 
@@ -409,6 +408,7 @@ label cour_chateau_2:
     #toujours ambiance chateau
     show bg cour_chateau_crepuscule with dissolve
 
+    "Narration"
     "Au crépuscule..."
     show gv debout_normaux_mid at left with dissolve
     show harald debout_normal_mid at right with dissolve
@@ -673,6 +673,7 @@ label pont_levis_baisse:
 
 
         "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
+        hide huscarls with dissolve
         show einar combat_normal_mid at left
         show ogma combat_normal_mid at right
         with dissolve
@@ -767,7 +768,7 @@ label e_bruler_donjon_desobeir_donjon:
 label e_bruler_donjon_obeir_donjon:
 
     $ prendre_hache = False
-
+    scene bg chateau_chambre_nuit with dissolve
     #Animation
     "Einar s'élance en direction du donjon, passant à l'arrière des affrontements."
     "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
@@ -776,7 +777,7 @@ label e_bruler_donjon_obeir_donjon:
     "Le roi est entrain de s'équiper de son armure."
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
 
-    show einar combat_normal_mid at center with dissolve
+    show einar combat_normal_mid at left with dissolve
 
     menu:
         "Prendre la Hache":
@@ -905,6 +906,10 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 e "Ce n'est pas le moment de discuter."
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
+
+        if epargner_harld_donjon == False:
+            "Narration"
+            hide harald with dissolve
     else:
         "Le combat s'engage entre le roi et son huscarl"
         # "Phase combat WIP"
@@ -1612,7 +1617,9 @@ label e_garder_hache_pont_baisse_donjon:
             e "Je la détruirai moi-même. C'est mon devoir."
             o "Tu ne me fais pas confiance ?"
             e "Ce n'est pas le problème. Je veux simplement être absolument certain que personne n'en profitera plus jamais."
-            hide einar with dissolve
+            hide einar
+            hide ogma
+            with dissolve
             jump lieu_encore_inconnu_1
 
         "Je la garde !":
@@ -1625,7 +1632,9 @@ label e_garder_hache_pont_baisse_donjon:
             e "A genoux, manants ! HA HA HA !"
             o "Tu es fou ! Nous ne te laisserons pas faire !"
             e "Idiots ! La Hache me rend immortel !"
-            hide einar with dissolve
+            hide einar
+            hide ogma
+            with dissolve
             jump good_ending_9
 
 

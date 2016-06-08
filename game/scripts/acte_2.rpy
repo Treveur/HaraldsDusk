@@ -138,7 +138,7 @@ label interieur_maison_village_1:
 
     "..."
     hide einar with dissolve
-    show ogma debout_normal_mid at center with dissolve
+    show ogma debout_normal_flip_mid at center with dissolve
     o "Alors ? Comment va le prisonnier ?"
     show moira debout_normal_mid at right
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
@@ -147,7 +147,9 @@ label interieur_maison_village_1:
     show einar debout_normal_mid at left with dissolve
     e "Je ..."
     show ogma debout_determine_mid at center
-    o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
+    o "Tais-toi !"
+    show ogma debout_normal_flip_mid at center
+    o "Moira, finis les soins et rejoins moi dehors."
     hide ogma with dissolve
 
 
@@ -916,6 +918,7 @@ label paradis_foret_1:
         "La regarder (Profiter du moment)":
             show moira nue_souriant_close at right
             show einar debout_normal_close at left
+            #Pas logique
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
             e "Tu..."
             m "Ne dis rien."
