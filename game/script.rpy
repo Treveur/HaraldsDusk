@@ -575,27 +575,18 @@ transform alpha_dissolve:
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
     bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 at alpha_dissolve
+    
 # Le jeu commence ici
 
-label start_s:
+label start:
 
     scene bg black
 
-    centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
+    if short_version:
+        centered "C'est la version courte"
+    else:
+        centered "C'est la version longue"
 
-    centered "Les Clous donnent à Harald la force et l'immortalité. Le viking, convaincu d'être un élu divin, décide d'orner sa hache des Clous. Il créé ainsi une nouvelle relique : la Hache Sainte."
-
-    centered "Revenu triomphalement en Norvège, il est couronné roi et entame de grandes campagnes militaires visant à christianiser le monde ainsi qu'à asseoir sa suprématie."
-
-    centered "Armé de la Hache Sainte, Harald prend le contrôle de l'Europe, du Moyen-Orient et d'une partie de l'Asie et de l'Afrique. En 1080, Harald est devenu l'équivalent d'Alexandre le Grand : un roi-empereur, une légende vivante, un demi-dieu."
-
-    centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
-
-    jump introS
-
-label start_l:
-
-    scene bg black
 
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
 

@@ -304,25 +304,6 @@ screen file_picker:
 
                     key "save_delete" action FileDelete(i)
 
-screen choose_lenght:
-    tag menu
-    
-    # Le fond du menu principal
-    window:
-        style "mm_root"
-
-    # Les boutons du menu principal.
-    frame:
-        style_group "mm"
-        xalign .98
-        yalign .98
-
-        has vbox
-        
-        textbutton _("Version Courte") action StartS()
-        textbutton _("Version Longue") action StartL()
-        textbutton _("Return") action Return()
-
 screen save:
 
     # Pour être sûr que tout autre menu est remplacé.
@@ -348,7 +329,34 @@ init -2 python:
     style.file_picker_button = Style(style.large_button)
     style.file_picker_text = Style(style.large_button_text)
 
+##############################################################################
+# Longueur histoire
+#
+# Écrans permettant à l'utilisateur de choisir la longueur de la VN
 
+screen choose_lenght:
+    tag menu
+
+    # Le fond du menu principal
+    window:
+        style "mm_root"
+
+    # Les boutons du menu principal.
+    frame:
+        style_group "mm"
+        xalign .98
+        yalign .98
+
+        has vbox
+
+        #textbutton _("Version Courte") action StartS()
+        textbutton _("Version Courte") action [SetVariable("short_version",True), Start()]
+        # textbutton _("Version Longue") action StartL()
+        textbutton _("Version Longue") action [SetVariable("short_version",False), Start()]
+        textbutton _("Return") action Return()
+
+init -2 python:
+    short_version = False
 
 ##############################################################################
 # Préférences
