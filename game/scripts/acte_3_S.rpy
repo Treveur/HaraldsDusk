@@ -627,41 +627,43 @@ label pont_levis_baisseS:
         #"Affronter ses anciens confrères huscarls. WIP"
         #Phase combat
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 3
+        $ timer_range = 3
         $ timer_jump = 'game_over_combat'
 
 
-        "Les huscarls encerclent Einar pour ne lui laisser aucune chance"
+        "Les huscarls encerclent Einar pour ne lui laisser aucune chance. Une pluie de haches s'abat sur Einar !"
 
         show screen countdown
         menu:
 
-            "Esquiver":
+            "Parer":
                 hide screen countdown
-                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+                "Uniquement armé de sa hache, Einar ne parvient pas à se protéger : les huscarls prennent le dessus."
 
-            "Se jeter sur les huscarls":
+            "Attaquer":
                 hide screen countdown
-                "En se jetant sur les huscarls, Einar se fait couper de par en par"
+                "Einar contre-attaque furieusement, faisant reculer la masse des guerriers d'élite."
                 jump game_over_combat
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 4
+        $ timer_range = 4
         $ timer_jump = 'game_over_combat'
 
-        "Une fois son esquive effectuée, les huscarls l'encercle de nouveau"
+        "Les huscarls tentent de consolider leur cercle et d'attaquer Einar sur ses arrières !"
 
         show screen countdown
 
         menu :
-            "Faire attaque tournoyante":
+            "Attaque ample":
                 hide screen countdown
-                "Einar réussi à les eloigner suffisament les uns des autres pour sauter sur l'un les huscarl"
-                "Et lui assigner un coup fatal dans la nuque"
+                "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
+                "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
 
-            "Bugler pour les effrayer":
+            "Attaque précise":
                 hide screen countdown
+                "Einar tranche la tête d'un huscarl, mais l'un des guerriers d'élite atteint Einar dans le dos."
+                "La colonne vertébrale brisée, Einar s'écroule."
                 jump bad_ending_5
 
         "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
