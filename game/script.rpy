@@ -4,45 +4,6 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
 
-init -1500 python:
-
-    class StartL(Action, DictEquality):
-        """
-         :doc: menu_action
-
-         Causes Ren'Py to jump out of the menu context to the named
-         label. The main use of this is to start a new game from the
-         main menu. Common uses are:
-
-         * Start() - Start at the start label.
-         * Start("foo") - Start at the "foo" label.
-         """
-
-        def __init__(self, label="start_l"):
-            self.label = label
-
-        def __call__(self):
-            renpy.jump_out_of_context(self.label)
-
-    class StartS(Action, DictEquality):
-        """
-         :doc: menu_action
-
-         Causes Ren'Py to jump out of the menu context to the named
-         label. The main use of this is to start a new game from the
-         main menu. Common uses are:
-
-         * Start() - Start at the start label.
-         * Start("foo") - Start at the "foo" label.
-         """
-
-        def __init__(self, label="start_s"):
-            self.label = label
-
-        def __call__(self):
-            renpy.jump_out_of_context(self.label)
-
-
 ##Einar
 define e = Character('Einar', color="#e74c3c")
 
@@ -575,7 +536,7 @@ transform alpha_dissolve:
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
     bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 at alpha_dissolve
-    
+
 # Le jeu commence ici
 
 label start:
