@@ -500,7 +500,7 @@ label interieur_maison_village_4:
     scene bg house2_jour with dissolve
 
     if short_version:
-        #Narration
+        "Narration"
 
     $ libre_ask = False
     $ trahir_talk = False
@@ -749,7 +749,7 @@ label village_3:
     scene bg village2_crepuscule with dissolve
 
     if short_version:
-        #Narration
+        "Narration"
 
     $ einar_raler = False
 

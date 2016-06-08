@@ -8,7 +8,7 @@ label cote_2:
     scene bg plaine_chateau_matin with dissolve
 
     if short_version:
-        #Narration
+        "Narration"
 
     "Et après trois jours de marche depuis Perth..."
 
@@ -251,7 +251,7 @@ label cour_chateau_1:
     hide harald
 
     if short_version:
-        #Narration
+        "Narration"
     else:
         #play ambiance buchet
         "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."

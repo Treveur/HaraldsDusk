@@ -659,7 +659,7 @@ label foret_1:
 label village_1:
 
     if short_version:
-        #Narration
+        "Narration"
 
     stop ambiance
     # play ambiance village
