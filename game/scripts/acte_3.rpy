@@ -250,154 +250,156 @@ label cour_chateau_1:
     hide einar
     hide harald
 
+    if short_version:
+        #Narration
+    else:
+        #play ambiance buchet
+        "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."
 
-    #play ambiance buchet
-    "Un grand nombre de vikings est massé autour de trois bûchers. Des écossais y sont attachés."
+        show patrick debout_normal_mid at center with dissolve
 
-    show patrick debout_normal_mid at center with dissolve
+        p "Que Dieu, ait pitié de vous ! Les flammes purificatrices vont laver tous vos pêchés."
+        p "Deus propitius tibi!"
 
-    p "Que Dieu, ait pitié de vous ! Les flammes purificatrices vont laver tous vos pêchés."
-    p "Deus propitius tibi!"
+        show patrick debout_normal_mid at left
+        show ve buchet_normaux_mid at right with dissolve
 
-    show patrick debout_normal_mid at left
-    show ve buchet_normaux_mid at right with dissolve
+        pe3 "Arrêtez ! Je suis enceinte !"
+        show patrick debout_furieux_mid at left
+        p "Je n'ai que faire de tes mensonges, femme !"
+        p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
-    pe3 "Arrêtez ! Je suis enceinte !"
-    show patrick debout_furieux_mid at left
-    p "Je n'ai que faire de tes mensonges, femme !"
-    p "Tes ruses perfides n'obscurciront pas mon jugement !"
+        hide ve
+        show einar debout_normal_mid at left with dissolve
+        show patrick debout_normal_mid at right
 
-    hide ve
-    show einar debout_normal_mid at left with dissolve
-    show patrick debout_normal_mid at right
-
-    menu:
-        "Arrêtez le massacre !":
-            show einar debout_furieux_mid at left
-            e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
-            show patrick debout_normal_mid at right
-            p "Einar ? Tu étais porté disparu depuis un mois !"
-            show patrick debout_furieux_mid at right
-            p "Et te voilà sorti de nul part, prêt à défendre ces hérétiques !"
-            p "Ces gens ne sont pas innocents ! Ils ont été capturés alors qu'ils menacaient de m'assassiner !"
-            show einar debout_attriste_mid at left
-            e "Une femme enceinte ? Y croyez-vous vraiment, Excellence ?"
-            p "Elle était avec eux lorsque nous les avons capturés. Elle ne peut être innocente : elle a avoué !"
-            show einar debout_furieux_mid at left
-            e "Sous la torture ? Vous auriez pu lui faire avouer n'importe quoi !"
-            p "Comment peux-tu savoir que ces gens sont innocents ? As-tu des révélations à nous faire ?"
-
-            $ interpose_bucher = True
-
-            jump menu_sauver_rebelle_cour_chateau
-
-        "Ne rien dire":
-            show einar debout_attriste_mid at left
-            e "..."
-
-        "Brûlez-les":
-            show einar debout_determine_mid at left
-            e "Vous avez raison, Excellence !"
-            e "Brûlez-les !"
-
-    if interpose_bucher:
-
-        menu menu_sauver_rebelle_cour_chateau:
-            "Je ne les ai pas vus à Perth":
-                show einar debout_normal_mid at left
-                e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
-                e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
+        menu:
+            "Arrêtez le massacre !":
+                show einar debout_furieux_mid at left
+                e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
+                show patrick debout_normal_mid at right
+                p "Einar ? Tu étais porté disparu depuis un mois !"
                 show patrick debout_furieux_mid at right
-                p "Mensonge ! Ils ont tenté de m'assassiner ! Ils ont tout avoué !"
-                p "Ils se sont opposés à un homme de Dieu et ont agi à l'encontre du porteur de la Hache Sainte !"
+                p "Et te voilà sorti de nul part, prêt à défendre ces hérétiques !"
+                p "Ces gens ne sont pas innocents ! Ils ont été capturés alors qu'ils menacaient de m'assassiner !"
+                show einar debout_attriste_mid at left
+                e "Une femme enceinte ? Y croyez-vous vraiment, Excellence ?"
+                p "Elle était avec eux lorsque nous les avons capturés. Elle ne peut être innocente : elle a avoué !"
+                show einar debout_furieux_mid at left
+                e "Sous la torture ? Vous auriez pu lui faire avouer n'importe quoi !"
+                p "Comment peux-tu savoir que ces gens sont innocents ? As-tu des révélations à nous faire ?"
 
-                if mentir_harald_1 == False and soupcon_harald_1 == False:
-                    $ soupcon_harald_1 = True
+                $ interpose_bucher = True
 
-            "Ils ont l'air innoffensifs":
-                show einar debout_normal_mid at left
-                e "Je ne sais rien d'eux, mais croyez-vous vraiment que ces trois paysans soient responsables d''une tentative d'assassinat ?"
-                e "Une mère ne mettrait pas la vie de son enfant en danger !"
+                jump menu_sauver_rebelle_cour_chateau
+
+            "Ne rien dire":
+                show einar debout_attriste_mid at left
+                e "..."
+
+            "Brûlez-les":
+                show einar debout_determine_mid at left
+                e "Vous avez raison, Excellence !"
+                e "Brûlez-les !"
+
+        if interpose_bucher:
+
+            menu menu_sauver_rebelle_cour_chateau:
+                "Je ne les ai pas vus à Perth":
+                    show einar debout_normal_mid at left
+                    e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
+                    e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
+                    show patrick debout_furieux_mid at right
+                    p "Mensonge ! Ils ont tenté de m'assassiner ! Ils ont tout avoué !"
+                    p "Ils se sont opposés à un homme de Dieu et ont agi à l'encontre du porteur de la Hache Sainte !"
+
+                    if mentir_harald_1 == False and soupcon_harald_1 == False:
+                        $ soupcon_harald_1 = True
+
+                "Ils ont l'air innoffensifs":
+                    show einar debout_normal_mid at left
+                    e "Je ne sais rien d'eux, mais croyez-vous vraiment que ces trois paysans soient responsables d''une tentative d'assassinat ?"
+                    e "Une mère ne mettrait pas la vie de son enfant en danger !"
+
+            show patrick debout_normal_mid at right
+            p "Ne t'interpose pas avec la volonté de Dieu !"
+            p "Je pourrais croire que tu cherches à leur épargner le châtiment qu'ils méritent..."
+            p "Et tu vois toi-même le sort réservé aux traîtres !"
 
         show patrick debout_normal_mid at right
-        p "Ne t'interpose pas avec la volonté de Dieu !"
-        p "Je pourrais croire que tu cherches à leur épargner le châtiment qu'ils méritent..."
-        p "Et tu vois toi-même le sort réservé aux traîtres !"
+        p "Amenez les torches, et que brûlent les hérétiques !"
 
-    show patrick debout_normal_mid at right
-    p "Amenez les torches, et que brûlent les hérétiques !"
+        show patrick debout_furieux_mid at left
+        show ve buchet_pleurent at right
 
-    show patrick debout_furieux_mid at left
-    show ve buchet_pleurent at right
+        #A intégrer plus tards
 
-    #A intégrer plus tards
+        pe1 "Pitié ! Epargnez ma femme !"
+        pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
+        pe2 "Laissez partir les autres ! Je suis responsable de tout !"
 
-    pe1 "Pitié ! Epargnez ma femme !"
-    pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
-    pe2 "Laissez partir les autres ! Je suis responsable de tout !"
+        show patrick debout_furieux_mid at left
+        p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
 
-    show patrick debout_furieux_mid at left
-    p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
+        hide patrick
+        hide ve
+        with dissolve
 
-    hide patrick
-    hide ve
-    with dissolve
+        "Un homme apporte une torche. Un par un, il allume les bûchers."
 
-    "Un homme apporte une torche. Un par un, il allume les bûchers."
+        show gv debout_rire with dissolve
 
-    show gv debout_rire with dissolve
+        gv "Regardez-les s'agiter comme des vers, ha ha !"
+        hide gv with dissolve
 
-    gv "Regardez-les s'agiter comme des vers, ha ha !"
-    hide gv with dissolve
+        show einar debout_normal_mid at left with dissolve
+        show jgv debout_normal_mid at right with dissolve
 
-    show einar debout_normal_mid at left with dissolve
-    show jgv debout_normal_mid at right with dissolve
+        "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
+        "Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui."
 
-    "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
-    "Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui."
+        #Variable
+        $ reponse_reconfort = ""
 
-    #Variable
-    $ reponse_reconfort = ""
+        menu :
 
-    menu :
+            "Une bande de porcs qui rôtissent !":
+                show einar debout_souriant_close at left
+                e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
+                $ reponse_reconfort = "pleurer"
 
-        "Une bande de porcs qui rôtissent !":
-            show einar debout_souriant_close at left
-            e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
-            $ reponse_reconfort = "pleurer"
+            "Ne pleure pas ces parasites":
+                e "Ne pleure pas ces parasites, ils ne le méritent pas."
+                show einar debout_determine_close at left
+                e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
+                e "Alors réjouis-toi, gamin ! En voilà trois de moins !"
+                $ reponse_reconfort = "pleurer"
 
-        "Ne pleure pas ces parasites":
-            e "Ne pleure pas ces parasites, ils ne le méritent pas."
-            show einar debout_determine_close at left
-            e "Le roi nous a fait venir ici précisément pour punir les traîtres et les infidèles. "
-            e "Alors réjouis-toi, gamin ! En voilà trois de moins !"
-            $ reponse_reconfort = "pleurer"
+            "Nous n'y pouvons rien":
+                show einar debout_attriste_close at left
+                e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
+                $ reponse_reconfort = "larme_aux_yeux"
 
-        "Nous n'y pouvons rien":
-            show einar debout_attriste_close at left
-            e "Tu n'aurais rien pu faire. L'évêque est un malade sanguinaire."
-            $ reponse_reconfort = "larme_aux_yeux"
+            "Ne rien dire":
+                show einar debout_attriste_close at left
+                e "..."
+                $ reponse_reconfort = "larme_aux_yeux"
 
-        "Ne rien dire":
-            show einar debout_attriste_close at left
-            e "..."
-            $ reponse_reconfort = "larme_aux_yeux"
+            "L'évêque peut se tromper, mais pas Dieu":
+                e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient justes, les condamnés iront au paradis."
+                $ reponse_reconfort = "rassure"
 
-        "L'évêque peut se tromper, mais pas Dieu":
-            e "L'évêque peut se tromper, mais pas le Seigneur. S'ils étaient justes, les condamnés iront au paradis."
-            $ reponse_reconfort = "rassure"
+        if reponse_reconfort == "pleurer":
+            show jgv debout_pleurant_close at right
+            "Le jeune soldat pleure sans se cacher."
+        elif reponse_reconfort == "larme_aux_yeux":
+            show jgv debout_pleurant_close at right
+            "Le jeune soldat semble toujours aussi bouleversé."
+        else:
+            "Le jeune soldat semble rassuré."
 
-    if reponse_reconfort == "pleurer":
-        show jgv debout_pleurant_close at right
-        "Le jeune soldat pleure sans se cacher."
-    elif reponse_reconfort == "larme_aux_yeux":
-        show jgv debout_pleurant_close at right
-        "Le jeune soldat semble toujours aussi bouleversé."
-    else:
-        "Le jeune soldat semble rassuré."
-
-    hide einar
-    hide jgv
+        hide einar
+        hide jgv
 
     jump cour_chateau_2
 
@@ -1521,12 +1523,6 @@ label foret_4:
             show moira debout_attriste_mid at right
             "La jeune femme se précipite vers le viking et l'étreint."
             "Einar et Moira passent quelques minutes à profiter de l'instant."
-
-        #"Autre choix refus" if premier_refus_moira:
-            #show einar debout_determine_mid at left
-            #e "Je me servi de toi pour quitter le village"
-            #show moira debout_attriste_mid at right
-            #$ rejeter_moira_foret_4 = True
 
     hide moira
     hide einar
