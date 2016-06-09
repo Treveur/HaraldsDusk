@@ -361,7 +361,7 @@ label cour_chateau_1:
         $ reponse_reconfort = ""
 
         menu :
-
+            
             "Une bande de porcs qui rôtissent !":
                 show einar debout_souriant_close at left
                 e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
@@ -1412,9 +1412,9 @@ label village_6:
                 hide einar
                 with dissolve
 
-        call good_ending_15 pass (marier = False) from _call_good_ending_15
+        call good_ending_15(False)
     else:
-        jump good_ending_15
+        call good_ending_15(True)
 
 label foret_4:
 
