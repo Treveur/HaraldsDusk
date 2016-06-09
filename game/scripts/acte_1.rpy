@@ -685,7 +685,6 @@ label village_1:
     e "Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard..."
-    show ve debout_craintifs_mid at halfsize, right zorder 1 with dissolve
     ve "Bonjour, étrangers. Nous pouvons vous aider ?"
 
     e "Je veux que tout le village se rassemble sur la place, maintenant !"
@@ -715,7 +714,9 @@ label e_demander_information_village_1:
 
     e "Que savez-vous des rebelles ? Où sont-ils ?"
 
-    show logan debout_souriant_flip_mid at center with dissolve
+    show logan debout_souriant_flip_mid at center #with moveinright
+    show ve debout_craintifs_mid at right
+    with moveinright
 
     l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
