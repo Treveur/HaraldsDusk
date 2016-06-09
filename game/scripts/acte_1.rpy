@@ -1075,7 +1075,7 @@ label choix_retour_village_1(massacre = False):
         l "J'espère que tu as raison..."
 
     else:
-        show logan debout_determine_mid at right with dissolve
+        show logan debout_determine_mid at right with moveinright
         l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
         show einar debout_normal_mid at left
 
