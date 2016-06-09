@@ -1165,7 +1165,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     if message == "attentif":
         hide logan with dissolve
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-        show gv debout_enthousiastes_mid at center with dissolve
+        show gv debout_enthousiastes_mid at right with dissolve
         gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
 
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
@@ -1232,10 +1232,14 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     show einar debout_determine_mid at left with dissolve
     e "En position de combat, tous !"
-    show gv debout_determines_mid at halfsize, center with dissolve
+    show gv debout_determines_mid at center with dissolve
     gv "Ça venait d'où ?"
-    show logan debout_determine_mid at right with dissolve
+    show gv debout_determines_mid at right with moveinright
+    show logan debout_determine_mid at center with dissolve
     l "Sur la gauche ! Des torches !"
+    hide gv with dissolve
+    show logan debout_determine_mid at right with moveinright
+    show einar debout_determine_mid_flip at center with move
 
     stop ambiance
     play music slaughter
@@ -1243,16 +1247,18 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
-    show einar combat_determine_mid at left
+    show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
-    hide gv with dissolve
-    show ogma combat_determine_mid at halfsize, center with dissolve
+
+    show ogma combat_determine_mid_flip at left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide ogma
     hide logan
     with dissolve
-    show re combat_furieux_mid at halfsize, right with dissolve
+
+    show einar combat_determine_mid_flip at right  with moveinright
+    show re combat_furieux_mid at left with moveinleft
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     e "Approchez, charognes ! Je..."
@@ -1371,7 +1377,7 @@ label attaque_massacre_foret_2(message = ""):
     if message == "attentif":
         show einar debout_normal_mid at left with dissolve
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-        show gv debout_enthousiastes_mid at center with dissolve
+        show gv debout_enthousiastes_mid at right with dissolve
         gv "Nous avons massacré le village ! Qui pourrait nous attaquer ?"
 
         e "Et les hommes, abruti ? Il n'y en avait presque aucun à Perth."
