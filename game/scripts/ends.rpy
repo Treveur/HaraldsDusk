@@ -13,7 +13,7 @@ label bad_ending_2:
     e "Grrblbhh..."
     hide einar with dissolve
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
-    jump credits
+    call game_over_combat('refuser_trahir_village_2')
 
 label bad_ending_3:
     show einar debout_determine_mid at left
@@ -22,7 +22,7 @@ label bad_ending_3:
     "Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers."
     "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
     hide einar with dissolve
-    jump credits
+    call game_over_combat('interieur_grande_porte_chateau_1')
 
 label bad_ending_4:
     show ogma combat_furieux_mid at right
@@ -208,19 +208,19 @@ label bad_ending_22:
     "Lorsque après de longues minutes il cesse d'abattre la Hache, il ne reste plus qu'une bouillie informe et rouge au milieu de la plaine."
     jump credits
 
-label game_over_combat:
+label game_over_combat(label_name):
 
     scene black
     centered "Game over \n
     Checkpoint a venir \n
     Pensez à sauvegarder :)"
 
-    # if label_name != "":
-    #     menu:
-    #         "Retry":
-    #             $ renpy.Jump (label_name)
-
-    $ renpy.full_restart()
+    if label_name != "":
+        menu:
+            "Réessayer":
+                $ renpy.jump (label_name)
+            "Quitter":
+                jump credits
 
 label credits:
 

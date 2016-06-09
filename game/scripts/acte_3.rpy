@@ -1824,6 +1824,8 @@ label lieu_encore_inconnu_1(axe = True):
 #Défendre porte
 label soupcon_harald_defendre_porte:
 
+    scene bg chateau_porte_crepuscule
+
     show re combat_normaux_mid at left
     show gv combat_normaux_mid at right
     with dissolve
@@ -1907,9 +1909,8 @@ label soupcon_harald_defendre_porte:
 
 
     "Un combat s'engage entre Ogma et Einar !"
-    "Mini jeu combat WIP"
 
-    #Phase combat
+    #Phase combat WIP
 
     $ time = 5
     $ timer_range = 5
@@ -1929,7 +1930,7 @@ label soupcon_harald_defendre_porte:
         "Se jeter sur Ogma":
             hide screen countdown
             "En se jetant sur Ogma, Einar se fait couper de par en par"
-            jump game_over_combat
+            call game_over_combat ("soupcon_harald_defendre_porte")
 
     $ time = 5
     $ timer_range = 5
@@ -1965,6 +1966,8 @@ label soupcon_harald_defendre_porte:
     with dissolve
 
     "Un peu plus tard..."
+
+    scene bg chateau_rempart_crepuscule
 
     show einar debout_normal_mid at left
     show harald debout_normal_mid at right

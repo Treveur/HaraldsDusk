@@ -1478,7 +1478,6 @@ label attaque_massacre_foret_2(message = ""):
     menu:
         "Qui es-tu ?":
             call e_demande_nom_foret_2 pass (bad_ending = True) from _call_e_demande_nom_foret_2
-            #jump e_demande_nom_foret_2 pass (bad_ending = True)
         "Non ne me tue pas, pitié!":
             call e_implore_pitie_foret_2 pass (bad_ending = True) from _call_e_implore_pitie_foret_2
         "Vous mourrez tous !":
@@ -1494,8 +1493,11 @@ label e_demande_nom_foret_2(bad_ending = False):
     if bad_ending:
         show ogma debout_contrarie_mid at right
         ge "..."
+        #A Supprimer si pas réussit à faire Checkpoint
+        "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
-        jump bad_ending_1
+        #jump bad_ending_1
+        call game_over_combat ('village_1')
     else:
         o "Ogma. Le Hurleur."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
@@ -1513,7 +1515,7 @@ label e_implore_pitie_foret_2(bad_ending = False):
     if bad_ending:
         ge "Lâche jusqu'au bout..."
         hide einar with dissolve
-        jump bad_ending_1
+        call game_over_combat ('village_1')
     else:
         ge "Nous allons voir ça..."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
@@ -1531,7 +1533,7 @@ label e_menace_foret_2(bad_ending = False):
     if bad_ending:
         ge "Je ne crains pas ton roi."
         hide einar with dissolve
-        jump bad_ending_1
+        call game_over_combat ('village_1')
     else:
         ge "Je ne crains pas ton roi."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
@@ -1689,6 +1691,9 @@ label o_explication_vie_village_2:
             jump refuser_trahir_village_2
 
 label refuser_trahir_village_2:
+
+    scene bg village
+
     show einar debout_furieux_mid at left
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
 
