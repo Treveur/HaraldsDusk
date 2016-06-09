@@ -555,35 +555,55 @@ label pont_levis_baisseS:
         $ timer_range = 5
         $ timer_jump = 'game_over_combat'
 
-        "Harald se jette sur Einar en brandissant sa hache"
+        "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
 
         show screen countdown
         menu :
 
             "Esquiver":
                 hide screen countdown
-                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+                "Abattant son épée sur le sol, Ogma manque Einar de justesse."
 
-            "Se jeter sur Ogma":
+            "Attaquer":
                 hide screen countdown
-                "En se jeter sur Harald, Einar se fait couper de par en par"
+                "Ogma détourne le coup d'Einar et le frappe au flanc."
                 jump game_over_combat
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 2.5
+        $ timer_range = 2.5
         $ timer_jump = 'game_over_combat'
 
-        "Fou de rage, Ogma attaque une fois de plus vers la droite"
+        "Fou de rage, Ogma attaque une fois de plus vers la droite, d'un coup de taille."
 
         show screen countdown
 
         menu :
-            "Faire une parade":
+            "Parer":
                 hide screen countdown
-                "Einar parre l'attaque mais ogma est bien trop puissant"
-            "Faire une roulade de côté":
+                "Einar parvient à bloquer l'attaque, mais Ogma profite du contrecoup pour asséner au viking un violent coup de pied à l'estomac."
+                "Ogma enchaîne immédiatement, d'un geste fulgurant !"
+
+            "Esquiver":
                 hide screen countdown
-                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide"
+                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide et furieux : il lance immédiatement une seconde attaque !"
+
+        $ time = 0.5
+        $ timer_range = 0.5
+        $ timer_jump = 'game_over_combat'
+
+        "Dans un hurlement bestial, Ogma prend Einar à contre-pied et tente un nouveau coup de taille. Il y a une ouverture dans sa garde !"
+
+        show screen countdown
+
+        menu :
+            "Attaquer":
+                hide screen countdown
+                "Einar plonge dans la garde ouverte d'Ogma. Mais c'était une ruse !"
+                "Ogma tourne sur lui-même et empale le viking sur son épée."
+
+            "Esquiver":
+                hide screen countdown
+                "Le coup est bien trop rapide pour être esquivé, et les appuis d'Einar sont faibles : le ventre du viking s'ouvre, déversant un torrent de viscères sur le sol."
 
 
         hide einar
@@ -607,41 +627,43 @@ label pont_levis_baisseS:
         #"Affronter ses anciens confrères huscarls. WIP"
         #Phase combat
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 3
+        $ timer_range = 3
         $ timer_jump = 'game_over_combat'
 
 
-        "Les huscarls encerclent Einar pour ne lui laisser aucune chance"
+        "Les huscarls encerclent Einar pour ne lui laisser aucune chance. Une pluie de haches s'abat sur Einar !"
 
         show screen countdown
         menu:
 
-            "Esquiver":
+            "Parer":
                 hide screen countdown
-                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+                "Uniquement armé de sa hache, Einar ne parvient pas à se protéger : les huscarls prennent le dessus."
 
-            "Se jeter sur les huscarls":
+            "Attaquer":
                 hide screen countdown
-                "En se jetant sur les huscarls, Einar se fait couper de par en par"
+                "Einar contre-attaque furieusement, faisant reculer la masse des guerriers d'élite."
                 jump game_over_combat
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 4
+        $ timer_range = 4
         $ timer_jump = 'game_over_combat'
 
-        "Une fois son esquive effectuée, les huscarls l'encercle de nouveau"
+        "Les huscarls tentent de consolider leur cercle et d'attaquer Einar sur ses arrières !"
 
         show screen countdown
 
         menu :
-            "Faire attaque tournoyante":
+            "Attaque ample":
                 hide screen countdown
-                "Einar réussi à les eloigner suffisament les uns des autres pour sauter sur l'un les huscarl"
-                "Et lui assigner un coup fatal dans la nuque"
+                "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
+                "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
 
-            "Bugler pour les effrayer":
+            "Attaque précise":
                 hide screen countdown
+                "Einar tranche la tête d'un huscarl, mais l'un des guerriers d'élite atteint Einar dans le dos."
+                "La colonne vertébrale brisée, Einar s'écroule."
                 jump bad_ending_5
 
         "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
