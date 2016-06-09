@@ -1111,6 +1111,7 @@ label foret_2(lieu = ""):
         "Sur le chemin du retour..."
         show gv debout_normaux_mid at center with dissolve
         gv "Pourquoi sommes-nous déjà sur le retour ?"
+        show gv debout_normaux_mid at right with moveinright
         show einar debout_normal_mid at left
         e "Parce que j'ai de sérieux doutes sur ce village. Les gens de Perth étaient bien trop louches, quoi qu'en dise Logan."
         hide gv with dissolve
@@ -1123,14 +1124,17 @@ label foret_2(lieu = ""):
         "En poursuivant vers le nord..."
         show gv debout_normaux_mid at center with dissolve
         gv "Pourquoi devons-nous poursuivre vers le nord ? Je croyais que nous avions trouvé les rebelles !"
+        show gv debout_normaux_mid at right with moveinright
         show einar debout_normal_mid at left
         e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
-        hide gv with dissolve
+        hide gv
+        hide einar
+        with dissolve
 
     play ambiance wood_night
 
     scene bg forest_night with dissolve
-    hide einar with dissolve
+
     "Le soir, la troupe discute des exploits passés..."
     show gv debout_normaux_mid at halfsize, center with dissolve
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
@@ -1261,20 +1265,28 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     show re combat_furieux_mid at left with moveinleft
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
+    show einar combat_determine_mid_flip at right, shake
     e "Approchez, charognes ! Je..."
 
+    show re combat_furieux_mid at left
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
     hide re with dissolve
-    show logan combat_normal_mid at right zorder 2 with dissolve
+
+    show einar combat_determine_mid at center with moveinleft
+    show logan combat_normal_mid at right with moveinright
     l "Einar ! Derrière toi !"
 
+    show einar combat_determine_mid_flip at center, shake
     e "Que..."
 
     "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
-    show einar combat_blesse_mid at left with dissolve
+    show einar combat_blesse_mid at left with moveinleft
     e "Aaarrggh ! Logan, aide-moi !"
 
+    #WIP
     l "Je suis là !"
+    show logan combat_normal_mid at center with MoveTransition(0.2)
+    show re combat_furieux_mid at right with moveinright
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
     hide logan with dissolve
