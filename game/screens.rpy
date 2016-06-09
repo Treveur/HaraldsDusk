@@ -52,7 +52,7 @@ screen say:
     if side_image:
         add side_image
     else:
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.007 yalign 0.98
 
     # Utilisation du menu rapide.
     use quick_menu

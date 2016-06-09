@@ -45,10 +45,12 @@ label intro:
 
             show einar debout_normal_mid at left with dissolve
             show harald debout_normal_mid at right with moveinright
-
             e "Mon Roi, sommes-nous proches de Dunbar ?"
+            show einar debout_normal_mid at left
+            show harald debout_normal_mid at right
 
             h "Nous n'en avons plus pour très longtemps. Une heure, tout au plus."
+            show einar debout_normal_mid at left
 
             menu menu_harald_choice_foret:
                 "Quel est le plan ?" if menu_choice_1:
@@ -884,7 +886,7 @@ label e_fouiller_village_1(einarFouille = False):
 
 
 label e_tuer_villageois_village_1:
-    show ve debout_normaux_mid
+    show ve debout_normaux_mid_b
     show einar debout_furieux_mid at left
 
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un des vôtres !"

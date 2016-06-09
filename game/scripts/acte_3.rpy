@@ -1101,7 +1101,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     show harald combat_furieux_mid at right
 
     "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
-    show harald combat_blesse_mid
+    show harald combat_blesse_mid_b
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, s'il-te-plaît."
@@ -1573,7 +1573,7 @@ label fuite_harald_pont_baisse_donjon:
 
     menu:
         "Elle est à moi !":
-            show einar combat_hache_determine_mid
+            show einar combat_hache_determine_mid_b
             jump e_garder_hache_pont_baisse_donjon
 
         "La voilà":
