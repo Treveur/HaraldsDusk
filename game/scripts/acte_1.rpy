@@ -714,30 +714,30 @@ label e_infos_hommes_village_1:
     show einar debout_normal_mid at left
 
     e "Il y a bien peu d'hommes parmi vous... Où sont-ils ?"
-    
+
     ve "La plupart d'entre eux ont descendu la rivière jusqu'à Dundee, pour y échanger du bétail."
-    
+
     e "La plupart ? Où sont les autres ?"
-    
+
     ve "Ils sont ici, devant vous !"
-    
+
     e "Vous plaisantez ?"
-    
+
     ve "J'ai bien peur que non ! Vous cherchez quelqu'un en particulier ?"
-    
+
     e "(Il se moque de moi ?)"
-    
-        menu :
-            "Où sont les rebelles ?":
-                e "Vous n'êtes pas sans savoir que l'intendant Clyde Montgomery a été assassiné par une bande de rebelles..."
-                ve "Les rebelles ? Nous n'en savons rien !"
-                ve "Croyez bien que si ce genre de personnes venait à s'approcher d'ici, nous ne tarderions pas à les dénoncer."
-                ve "Comme vous le voyez, nous ne vivons pas dans l'opulence des villes plus au sud... Nous ne voulons pas être mêlés à ce genre d'histoires !"
-                ve "Vivre ici n'est pas de tout repos, nous n'avons aucunement besoin de nous acoquiner avec des rebelles !"
+
+    menu :
+        "Où sont les rebelles ?":
+            e "Vous n'êtes pas sans savoir que l'intendant Clyde Montgomery a été assassiné par une bande de rebelles..."
+            ve "Les rebelles ? Nous n'en savons rien !"
+            ve "Croyez bien que si ce genre de personnes venait à s'approcher d'ici, nous ne tarderions pas à les dénoncer."
+            ve "Comme vous le voyez, nous ne vivons pas dans l'opulence des villes plus au sud... Nous ne voulons pas être mêlés à ce genre d'histoires !"
+            ve "Vivre ici n'est pas de tout repos, nous n'avons aucunement besoin de nous acoquiner avec des rebelles !"
 
 
     hide logan with dissolve
-    
+
 label e_demander_information_village_1:
     show einar debout_determine_mid at left
 
