@@ -701,7 +701,7 @@ label village_1:
 
     menu menu_fouille_village:
 
-        "Il n'y a pas plus d'hommes parmi vous ?":
+        "Où sont les autres hommes ?":
             jump e_infos_hommes_village_1
         "Où sont les rebelles ?":
             jump e_demander_information_village_1
@@ -725,15 +725,34 @@ label e_infos_hommes_village_1:
 
     ve "J'ai bien peur que non ! Vous cherchez quelqu'un en particulier ?"
 
-    e "(Il se moque de moi ?)"
-
     menu :
         "Où sont les rebelles ?":
             e "Vous n'êtes pas sans savoir que l'intendant Clyde Montgomery a été assassiné par une bande de rebelles..."
             ve "Les rebelles ? Nous n'en savons rien !"
             ve "Croyez bien que si ce genre de personnes venait à s'approcher d'ici, nous ne tarderions pas à les dénoncer."
-            ve "Comme vous le voyez, nous ne vivons pas dans l'opulence des villes plus au sud... Nous ne voulons pas être mêlés à ce genre d'histoires !"
-            ve "Vivre ici n'est pas de tout repos, nous n'avons aucunement besoin de nous acoquiner avec des rebelles !"
+            ve "Comme vous le voyez, nous ne vivons pas dans l'opulence des villes du sud... Nous ne voulons pas être mêlés à ce genre d'histoires !"
+            ve "Vivre ici n'est pas de tout repos, nous n'avons pas besoin de nous acoquiner avec des rebelles !"
+            
+        "Vous vous moquez de moi ?":
+            e "Je vais perdre patience, vieillard."
+            e "Vous savez pourquoi nous sommes ici. Vous ne me ferez pas croire que l'assassinat de l'intendant est passé inaperçu !"
+            e "L'absence de vos hommes est plus que suspecte !"
+            ve "Vous nous accusez de rébellion ? D'avoir tué Montgomery ?"
+            
+            menu :
+                "Parfaitement.":
+                    e "Tout juste."
+                    
+                "Non":
+                    e "Pas du tout. Pourquoi vous offusquer aussi vite ?"
+                    e "Je prend simplement note de l'absence de vos hommes."
+                    ve "Dans ce cas, prenez soin de bien choisir vos mots. Vous ne trouverez ici que d'honnêtes gens."
+                    ve "Nous vivons des fruits de notre travail et n'avons ni le temps ni l'envie de nous mêler d'affaires politiques, ou d'histoires de meurtres sordides."
+                    e "Très bien. J'espère que vous dites la vérité. Le roi est prêt à tout pour punir ceux qui l'ont offensé."
+                    e "Nous partons."
+            
+            
+        
 
 
     hide logan with dissolve
