@@ -361,7 +361,7 @@ label cour_chateau_1:
         $ reponse_reconfort = ""
 
         menu :
-            
+
             "Une bande de porcs qui rôtissent !":
                 show einar debout_souriant_close at left
                 e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
@@ -449,7 +449,8 @@ label interieur_grande_porte_chateau_1:
         "Ouvrir le pont-levis":
 
             play sound drawbrigde
-            pause (3)
+            pause (4)
+            show bg chateau_porte_interieur_crepuscule with vpunch
 
             hide einar
             if soupcon_harald_1:
