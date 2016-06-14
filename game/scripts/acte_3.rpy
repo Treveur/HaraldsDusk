@@ -449,7 +449,8 @@ label interieur_grande_porte_chateau_1:
         "Ouvrir le pont-levis":
 
             play sound drawbrigde
-            pause (3)
+            pause (4)
+            show bg chateau_porte_interieur_crepuscule with vpunch
 
             hide einar
             if soupcon_harald_1:
