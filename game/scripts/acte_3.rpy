@@ -361,7 +361,7 @@ label cour_chateau_1:
         $ reponse_reconfort = ""
 
         menu :
-            
+
             "Une bande de porcs qui rôtissent !":
                 show einar debout_souriant_close at left
                 e "Ha, souris un peu, gamin ! Ecoute leur graisse bouillir, à ces porcs !"
