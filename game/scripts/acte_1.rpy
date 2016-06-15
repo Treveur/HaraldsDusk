@@ -26,14 +26,14 @@ label intro:
     scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
-    show harald debout_normal_mid at center with dissolve
+    show harald debout_normal_mid at center with moveinright
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
     "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
-    show logan debout_contrarie_mid at right with dissolve
+    show logan debout_contrarie_mid at right with moveinright
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
     "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
-    show einar debout_normal_mid at left with dissolve
+    show einar debout_normal_mid at left with moveinleft
     "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
     "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
 
@@ -246,7 +246,7 @@ label plaine_1 :
 
     "Une heure plus tard, à proximité du château de Dunbar."
 
-    show harald debout_normal_mid at right with dissolve
+    show harald debout_normal_mid at right with moveinright
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
 
@@ -263,7 +263,7 @@ label plaine_1 :
 
     h "Mmmh..."
 
-    show einar debout_normal_mid at left with dissolve
+    show einar debout_normal_mid at left with moveinleft
 
     e "Dois-je envoyer un émissaire annoncer notre arrivée ?"
 
@@ -327,7 +327,7 @@ label plaine_1 :
 
 
 
-    show logan debout_souriant_mid at center
+    show logan debout_souriant_mid at center with moveinright
     l "Je vais t'accompagner, Einar."
 
     menu:
@@ -675,11 +675,11 @@ label village_1:
         "Narration"
 
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
-    show logan debout_normal_mid at right zorder 5 with dissolve
+    show logan debout_normal_mid at right with moveinright
     l "Nous y sommes. Perth."
 
     "Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive."
-    show einar debout_normal_mid at left zorder 5 with dissolve
+    show einar debout_normal_mid at left with moveinleft
     e "Ça me semble bien calme."
     show gv debout_normaux_mid at center with dissolve
     gv "On dirait qu'il n'y a pas grand monde..."
@@ -699,104 +699,100 @@ label village_1:
     "Il n'y a que très peu d'hommes parmi la cinquantaine de villageois."
 
     ve "Nous... Nous sommes tous là."
-    show gv debout_normaux_mid at halfsize, left zorder 1 with dissolve
+    hide gv
+    hide logan
+    with dissolve
+
+    show ve debout_craintifs_mid at right with moveinright
 
     menu menu_fouille_village:
 
         "Où sont les autres hommes ?" if accuser_rebellion == False:
-            jump e_infos_hommes_village_1
+            show einar debout_normal_mid at left
+
+            e "Il y a bien peu d'hommes parmi vous... Où sont-ils ?"
+
+            ve "La plupart d'entre eux ont descendu la rivière jusqu'à Dundee, pour y échanger du bétail."
+
+            e "La plupart ? Où sont les autres ?"
+
+            ve "Ils sont ici, devant vous !"
+
+            show einar debout_furieux_mid at left
+            e "Vous plaisantez ?"
+
+            ve "J'ai bien peur que non ! Vous cherchez quelqu'un en particulier ?"
+
+            menu :
+                "Où sont les rebelles ?":
+                    e "Vous n'êtes pas sans savoir que l'intendant Clyde Montgomery a été assassiné par une bande de rebelles..."
+                    ve "Les rebelles ? Nous n'en savons rien !"
+                    ve "Croyez bien que si ce genre de personnes venait à s'approcher d'ici, nous ne tarderions pas à les dénoncer."
+                    ve "Comme vous le voyez, nous ne vivons pas dans l'opulence des villes du sud... Nous ne voulons pas être mêlés à ce genre d'histoires !"
+                    ve "Vivre ici n'est pas de tout repos, nous n'avons pas besoin de nous acoquiner avec des rebelles !"
+
+                "Vous vous moquez de moi ?":
+                    e "Je vais perdre patience, vieillard."
+                    e "Vous savez pourquoi nous sommes ici. Vous ne me ferez pas croire que l'assassinat de l'intendant est passé inaperçu !"
+                    e "L'absence de vos hommes est plus que suspecte !"
+                    ve "Vous nous accusez de rébellion ? D'avoir tué Montgomery ?"
+
+                    menu :
+                        "Parfaitement.":
+                            e "Tout juste."
+                            $ accuser_rebellion = True
+                            jump menu_fouille_village
+
+                        "Non":
+                            e "Pas du tout. Pourquoi vous offusquer aussi vite ?"
+                            e "Je prend simplement note de l'absence de vos hommes."
+                            ve "Dans ce cas, prenez soin de bien choisir vos mots. Vous ne trouverez ici que d'honnêtes gens."
+                            ve "Nous vivons des fruits de notre travail et n'avons ni le temps ni l'envie de nous mêler d'affaires politiques, ou d'histoires de meurtres sordides."
+                            e "Très bien. J'espère que vous dites la vérité. Le roi est prêt à tout pour punir ceux qui l'ont offensé."
+                            e "Nous partons."
+                            $ suspecter_village = True
+                            jump choix_retour_village_1
+
         "Où sont les rebelles ?" if accuser_rebellion == False:
-            jump e_demander_information_village_1
+
+            show einar debout_determine_mid at left
+
+            e "Que savez-vous des rebelles ? Où sont-ils ?"
+
+            show logan debout_souriant_flip_mid at center #with moveinright
+            show ve debout_craintifs_mid at right
+            with moveinright
+
+            l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
+
+            ve "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens !"
+
+            "Le vieil homme crache sur le sol, devant les pieds de Logan."
+
+            e "Quel succès, Logan."
+
+            hide logan with dissolve
+
+            e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
+            show einar debout_furieux_mid at left
+
+            e "Votre attitude ressemble à un aveu de trahison !"
+            show logan debout_normal_mid at center with dissolve
+
+            l "Calme-toi Einar. Comment réagirais-tu si tu voyais une armée byzantine débarquer en Norvège ?"
+
+            e "..."
+
+            menu:
+                "Vous voulez vraiment vous opposer à des guerriers d'élite ?":
+                    jump e_intimider_villageois_village_1
+                "Parlez, ou je tue l'un des vôtres !":
+                    jump e_tuer_villageois_village_1
+
         "Fouillez le village !":
             jump e_fouiller_village_1
         "Je vais voir moi-même ce que vous cachez ! (fouiller)" if accuser_rebellion:
             call e_fouiller_village_1 pass (einarFouille = True) from _call_e_fouiller_village_1
-
-label e_infos_hommes_village_1:
-    show einar debout_normal_mid at left
-
-    e "Il y a bien peu d'hommes parmi vous... Où sont-ils ?"
-
-    ve "La plupart d'entre eux ont descendu la rivière jusqu'à Dundee, pour y échanger du bétail."
-
-    e "La plupart ? Où sont les autres ?"
-
-    ve "Ils sont ici, devant vous !"
-
-    e "Vous plaisantez ?"
-
-    ve "J'ai bien peur que non ! Vous cherchez quelqu'un en particulier ?"
-
-    menu :
-        "Où sont les rebelles ?":
-            e "Vous n'êtes pas sans savoir que l'intendant Clyde Montgomery a été assassiné par une bande de rebelles..."
-            ve "Les rebelles ? Nous n'en savons rien !"
-            ve "Croyez bien que si ce genre de personnes venait à s'approcher d'ici, nous ne tarderions pas à les dénoncer."
-            ve "Comme vous le voyez, nous ne vivons pas dans l'opulence des villes du sud... Nous ne voulons pas être mêlés à ce genre d'histoires !"
-            ve "Vivre ici n'est pas de tout repos, nous n'avons pas besoin de nous acoquiner avec des rebelles !"
-
-        "Vous vous moquez de moi ?":
-            e "Je vais perdre patience, vieillard."
-            e "Vous savez pourquoi nous sommes ici. Vous ne me ferez pas croire que l'assassinat de l'intendant est passé inaperçu !"
-            e "L'absence de vos hommes est plus que suspecte !"
-            ve "Vous nous accusez de rébellion ? D'avoir tué Montgomery ?"
-
-            menu :
-                "Parfaitement.":
-                    e "Tout juste."
-                    $ accuser_rebellion = True
-                    jump menu_fouille_village
-
-                "Non":
-                    e "Pas du tout. Pourquoi vous offusquer aussi vite ?"
-                    e "Je prend simplement note de l'absence de vos hommes."
-                    ve "Dans ce cas, prenez soin de bien choisir vos mots. Vous ne trouverez ici que d'honnêtes gens."
-                    ve "Nous vivons des fruits de notre travail et n'avons ni le temps ni l'envie de nous mêler d'affaires politiques, ou d'histoires de meurtres sordides."
-                    e "Très bien. J'espère que vous dites la vérité. Le roi est prêt à tout pour punir ceux qui l'ont offensé."
-                    e "Nous partons."
-                    $ suspecter_village = True
-                    jump choix_retour_village_1
-
-
-
-
-
-    hide logan with dissolve
-
-label e_demander_information_village_1:
-    show einar debout_determine_mid at left
-
-    e "Que savez-vous des rebelles ? Où sont-ils ?"
-
-    show logan debout_souriant_flip_mid at center #with moveinright
-    show ve debout_craintifs_mid at right
-    with moveinright
-
-    l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
-
-    ve "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens !"
-
-    "Le vieil homme crache sur le sol, devant les pieds de Logan."
-
-    e "Quel succès, Logan."
-
-    hide logan with dissolve
-
-    e "Qui traitez-vous d'envahisseurs ? Ces terres appartiennent au roi-empereur Harald Sigurdsson de Norvège, porteur de le Hache Sainte."
-    show einar debout_furieux_mid at left
-
-    e "Votre attitude ressemble à un aveu de trahison !"
-    show logan debout_normal_mid at center with dissolve
-
-    l "Calme-toi Einar. Comment réagirais-tu si tu voyais une armée byzantine débarquer en Norvège ?"
-
-    e "..."
-
-    menu:
-        "Vous voulez vraiment vous opposer à des guerriers d'élite ?":
-            jump e_intimider_villageois_village_1
-        "Parlez, ou je tue l'un des vôtres !":
-            jump e_tuer_villageois_village_1
 
 label e_fouiller_village_1(einarFouille = False):
 
@@ -805,9 +801,6 @@ label e_fouiller_village_1(einarFouille = False):
     $ menu_choice_3 = True
     $ menu_choice_4 = True
     $ menu_choice_5 = True
-
-    #reset_menu_choice()
-
 
     $ moira_name_know = False
     $ moira_met = True
