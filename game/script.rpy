@@ -4,45 +4,6 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
 
-init -1500 python:
-
-    class StartL(Action, DictEquality):
-        """
-         :doc: menu_action
-
-         Causes Ren'Py to jump out of the menu context to the named
-         label. The main use of this is to start a new game from the
-         main menu. Common uses are:
-
-         * Start() - Start at the start label.
-         * Start("foo") - Start at the "foo" label.
-         """
-
-        def __init__(self, label="start_l"):
-            self.label = label
-
-        def __call__(self):
-            renpy.jump_out_of_context(self.label)
-
-    class StartS(Action, DictEquality):
-        """
-         :doc: menu_action
-
-         Causes Ren'Py to jump out of the menu context to the named
-         label. The main use of this is to start a new game from the
-         main menu. Common uses are:
-
-         * Start() - Start at the start label.
-         * Start("foo") - Start at the "foo" label.
-         """
-
-        def __init__(self, label="start_s"):
-            self.label = label
-
-        def __call__(self):
-            renpy.jump_out_of_context(self.label)
-
-
 ##Einar
 define e = Character('Einar', color="#e74c3c", image="einar")
 
@@ -78,6 +39,8 @@ image einar debout_contrarie_close = "einar/debout/einar_debout_contrarie_close.
 image einar debout_effraye_close = "einar/debout/einar_debout_effraye_close.png"
 image einar debout_determine_close = "einar/debout/einar_debout_determine_close.png"
 
+#flip
+image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
 
 #Combat
 image einar combat_normal = "einar/combat/einar_combat_normal.png"
@@ -97,7 +60,10 @@ image einar combat_furieux_close = "einar/combat/einar_combat_furieux_close.png"
 image einar combat_blesse_close = "einar/combat/einar_combat_blesse_close.png"
 image einar combat_determine_close = "einar/combat/einar_combat_determine_close.png"
 
-#Combat
+#flip
+image einar combat_determine_mid_flip = im.Flip("einar/combat/einar_combat_determine_mid.png", horizontal = True)
+
+#Combat Hache
 image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.png"
 image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
 image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
@@ -165,7 +131,7 @@ image side harald = "harald/harald_portrait.png"
 
 image harald debout_normal = "harald/debout/harald_debout_normal.png"
 image harald debout_furieux = "harald/debout/harald_debout_furieux.png"
-#image harald debout_blesse = "harald/noraml/harald_debout_blesse.png"
+#image harald debout_blesse = "harald/normal/harald_debout_blesse.png"
 image harald debout_contrarie = "harald/debout/harald_debout_contrarie.png"
 image harald debout_determine = "harald/debout/harald_debout_determine.png"
 
@@ -308,6 +274,7 @@ image ogma debout_attriste = "ogma/debout/ogma_debout_attriste.png"
 image ogma debout_contrarie = "ogma/debout/ogma_debout_contrarie.png"
 image ogma debout_determine = "ogma/debout/ogma_debout_determine.png"
 
+#mid
 image ogma debout_normal_mid = "ogma/debout/ogma_debout_normal_mid.png"
 image ogma debout_souriant_mid = "ogma/debout/ogma_debout_souriant_mid.png"
 image ogma debout_furieux_mid = "ogma/debout/ogma_debout_furieux_mid.png"
@@ -315,12 +282,17 @@ image ogma debout_attriste_mid = "ogma/debout/ogma_debout_attriste_mid.png"
 image ogma debout_contrarie_mid = "ogma/debout/ogma_debout_contrarie_mid.png"
 image ogma debout_determine_mid = "ogma/debout/ogma_debout_determine_mid.png"
 
+#close
 image ogma debout_normal_close = "ogma/debout/ogma_debout_normal_close.png"
 image ogma debout_souriant_close = "ogma/debout/ogma_debout_souriant_close.png"
 image ogma debout_furieux_close = "ogma/debout/ogma_debout_furieux_close.png"
 image ogma debout_attriste_close = "ogma/debout/ogma_debout_attriste_close.png"
 image ogma debout_contrarie_close = "ogma/debout/ogma_debout_contrarie_close.png"
 image ogma debout_determine_close = "ogma/debout/ogma_debout_determine_close.png"
+
+#Flip
+image ogma debout_normal_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+
 
 #Combat
 image ogma combat_normal = "ogma/combat/ogma_combat_normal.png"
@@ -339,6 +311,9 @@ image ogma combat_normal_close = "ogma/combat/ogma_combat_normal_close.png"
 image ogma combat_furieux_close = "ogma/combat/ogma_combat_furieux_close.png"
 image ogma combat_contrarie_close = "ogma/combat/ogma_combat_contrarie_close.png"
 image ogma combat_determine_close = "ogma/combat/ogma_combat_determine_close.png"
+
+#flip
+image ogma combat_determine_mid_flip = im.Flip("ogma/combat/ogma_combat_determine_mid.png", horizontal = True)
 
 #Combat Hache
 image ogma combat_hache_brandir = "ogma/combat_hache/ogma_combat_hache_brandir.png"
@@ -511,6 +486,7 @@ image bg plaine_chateau_matin = "scenes/plaine_ext_matin_plaineChateau.jpg"
 
 #plaine
 image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.jpg"
+image bg plaine_plaine_crepuscule = "scenes/plaine_ext_crepuscule_plaine.jpg"
 
 ##Chateau
 #pont-levis
@@ -568,6 +544,21 @@ define audio.wood = "sounds/ambiances/ambiance_woods.mp3"
 transform halfsize :
     zoom 0.5
 
+transform shake:
+        ease .06 yoffset 24
+        ease .06 yoffset -24
+        ease .05 yoffset 20
+        ease .05 yoffset -20
+        ease .04 yoffset 16
+        ease .04 yoffset -16
+        ease .03 yoffset 12
+        ease .03 yoffset -12
+        ease .02 yoffset 8
+        ease .02 yoffset -8
+        ease .01 yoffset 4
+        ease .01 yoffset -4
+        ease .01 yoffset 0
+
 
 #Déclaration timer
 transform alpha_dissolve:
@@ -579,27 +570,18 @@ transform alpha_dissolve:
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
     bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 at alpha_dissolve
+
 # Le jeu commence ici
 
-label start_s:
+label start:
 
     scene bg black
 
-    centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
+    if short_version:
+        centered "C'est la version courte"
+    else:
+        centered "C'est la version longue"
 
-    centered "Les Clous donnent à Harald la force et l'immortalité. Le viking, convaincu d'être un élu divin, décide d'orner sa hache des Clous. Il créé ainsi une nouvelle relique : la Hache Sainte."
-
-    centered "Revenu triomphalement en Norvège, il est couronné roi et entame de grandes campagnes militaires visant à christianiser le monde ainsi qu'à asseoir sa suprématie."
-
-    centered "Armé de la Hache Sainte, Harald prend le contrôle de l'Europe, du Moyen-Orient et d'une partie de l'Asie et de l'Afrique. En 1080, Harald est devenu l'équivalent d'Alexandre le Grand : un roi-empereur, une légende vivante, un demi-dieu."
-
-    centered "Nous sommes en 1082. Des paysans écossais ont tué Clyde Montgomery, l'intendant que Harald avait placé à la tête de l'Ecosse. Le roi-empereur a décidé de revenir mater cette petite rébellion et d’en faire un exemple."
-
-    jump introS
-
-label start_l:
-
-    scene bg black
 
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
 

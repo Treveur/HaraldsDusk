@@ -138,7 +138,7 @@ label interieur_maison_village_1:
 
     "..."
     hide einar with dissolve
-    show ogma debout_normal_mid at center with dissolve
+    show ogma debout_normal_flip_mid at center with dissolve
     o "Alors ? Comment va le prisonnier ?"
     show moira debout_normal_mid at right
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
@@ -147,7 +147,9 @@ label interieur_maison_village_1:
     show einar debout_normal_mid at left with dissolve
     e "Je ..."
     show ogma debout_determine_mid at center
-    o "Tais-toi. Moira, finis les soins et rejoins moi dehors."
+    o "Tais-toi !"
+    show ogma debout_normal_flip_mid at center
+    o "Moira, finis les soins et rejoins moi dehors."
     hide ogma with dissolve
 
 
@@ -233,28 +235,40 @@ label interieur_maison_village_1:
     e "..."
     show moira debout_determine_mid at right
     m "Clyde Montgomery n'était pas intendant. C'était un porc, doublé d'un tortionnaire ! Il saignait l'Ecosse à blanc ! Il exigeait de nous plus que ce que nous avions !"
-    e "Quel rapport avec votre mère ?"
-    show moira debout_normal_mid at right
+
+    if short_version == False:
+        e "Quel rapport avec votre mère ?"
+        show moira debout_normal_mid at right
+
     m "Un matin, l'intendant est arrivé accompagné de ses sous-fifres. Il a exigé qu'on lui donne immédiatement l'impôt ainsi que de la nourriture pour ses hommes."
-    m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
+
+    if short_version == False:
+        m "Nous avons rassemblé tout ce que nous pouvions et le leur avons donné. Il ne nous restait presque rien."
+
     m "Montgomery n'était pas satisfait, et il a demandé à ses gardes de fouiller nos maisons."
     m "Ils ont découvert une réserve de nourriture que ma mère avait dissimulé."
     show moira debout_attriste_mid at right
     m "Sans rien dire, Montgomery s'est approché de ma mère et l'a tuée devant tout le village, sur la place."
-    show einar debout_normal_mid at left
-    m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été passés à tabac, personne n'a pu faire quoi que ce soit."
-    show einar debout_determine_mid at left
-    e "Où étiez-vous ? Où était votre père ?"
-    show moira debout_determine_mid at right
-    m "J'étais parmi ceux que les gardes ont frappé. Quand j'ai vu ma mère tomber, j'ai voulu me jeter sur l'intendant. Je n'ai même pas pu passer ses gardes."
-    m "Quand mon père est revenu, il a franchi le cercle que formaient les gens du village. Personne ne parlait. Il revenait de la rivière avec quelques prises du matin."
-    show moira debout_attriste_mid at right
-    m "A ce moment là, Montgomery était déjà parti. Mon père a retrouvé ma mère allongée dans la boue et dans son sang, devant tout le monde."
-    show moira debout_determine_mid at right
+
+    if short_version == False:
+        show einar debout_normal_mid at left
+        m "\"Ne me cachez rien, jamais.\" J'entends encore sa voix. Tous ceux qui ont essayé de sauver ma mère ont été passés à tabac, personne n'a pu faire quoi que ce soit."
+        show einar debout_determine_mid at left
+        e "Où étiez-vous ? Où était votre père ?"
+        show moira debout_determine_mid at right
+        m "J'étais parmi ceux que les gardes ont frappé. Quand j'ai vu ma mère tomber, j'ai voulu me jeter sur l'intendant. Je n'ai même pas pu passer ses gardes."
+        m "Quand mon père est revenu, il a franchi le cercle que formaient les gens du village. Personne ne parlait. Il revenait de la rivière avec quelques prises du matin."
+        show moira debout_attriste_mid at right
+        m "A ce moment là, Montgomery était déjà parti. Mon père a retrouvé ma mère allongée dans la boue et dans son sang, devant tout le monde."
+        show moira debout_determine_mid at right
+
     m "La suite, vous la connaissez."
     e "Alors c'est Ogma lui-même qui a assassiné l'intendant..."
-    m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
-    e "..."
+
+    if short_version == False:
+        m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
+        e "..."
+
     m "Mon père n'est pas une mauvaise personne. Il a tué l'intendant de plein droit."
     e "..."
     e "Pourquoi toutes ces révélations ?"
@@ -262,7 +276,10 @@ label interieur_maison_village_1:
     m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
     m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
 
-    jump interieur_maison_village_2
+    if short_version:
+        jump interieur_maison_village_4
+    else:
+        jump interieur_maison_village_2
 
 #Sequence 2
 label interieur_maison_village_2:
@@ -481,7 +498,11 @@ label interieur_maison_village_3:
 
 #Sequence 4
 label interieur_maison_village_4:
+
     scene bg house2_jour with dissolve
+
+    if short_version:
+        "Narration"
 
     $ libre_ask = False
     $ trahir_talk = False
@@ -651,7 +672,11 @@ label interieur_maison_village_4:
     hide moira
     with dissolve
     "Moira entraîne Einar a l'extérieur en lui tenant la main"
-    jump village_2
+
+    if short_version:
+        jump village_3
+    else:
+        jump village_2
 
 #Sequence 5
 label village_2:
@@ -722,7 +747,11 @@ label village_2:
 
 #Sequence 6
 label village_3:
+
     scene bg village2_crepuscule with dissolve
+
+    if short_version:
+        "Narration"
 
     $ einar_raler = False
 
@@ -889,6 +918,7 @@ label paradis_foret_1:
         "La regarder (Profiter du moment)":
             show moira nue_souriant_close at right
             show einar debout_normal_close at left
+            #Pas logique
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
             e "Tu..."
             m "Ne dis rien."
@@ -969,7 +999,10 @@ label village_4:
     hide einar
     with dissolve
 
-    jump sentier_foret_1
+    if short_version:
+        jump cote_2
+    else:
+        jump sentier_foret_1
 
 #Sequence 10
 label sentier_foret_1:

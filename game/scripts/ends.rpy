@@ -13,7 +13,7 @@ label bad_ending_2:
     e "Grrblbhh..."
     hide einar with dissolve
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
-    jump credits
+    call game_over_combat('refuser_trahir_village_2')
 
 label bad_ending_3:
     show einar debout_determine_mid at left
@@ -22,7 +22,7 @@ label bad_ending_3:
     "Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers."
     "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
     hide einar with dissolve
-    jump credits
+    call game_over_combat('interieur_grande_porte_chateau_1')
 
 label bad_ending_4:
     show ogma combat_furieux_mid at right
@@ -87,8 +87,11 @@ label good_ending_8:
     jump credits
 
 label good_ending_9:
+    scene bg plaine_plaine_crepuscule
     "Einar porte une tenue de général et mène une armée innombrable face à ce qui semble être une armée asiatique, dans un paysage exotique fait de montagnes et de cultures en étages."
+    show einar combat_hache_determine_mid at center
     e "Aujourd'hui, le dernier peuple dissident s'inclinera devant nous !"
+    show einar combat_hache_furieux_mid at center
     e "CHARGEEEEEEEEZ !"
     jump credits
 
@@ -133,22 +136,28 @@ label good_ending_13:
     "Moira."
     jump credits
 
-label good_ending_14(rejete = True):
+label good_ending_14(rejete):
     if rejete:
         "Einar dépasse Moira qui reste immobile au milieu du sentier, les poings serrés, fixant le sol."
     else:
+        show moira debout_souriant_close at right
+        show einar debout_souriant_close at left
+        with dissolve
+
         m "Où allons-nous ?"
         e "Loin d'ici !"
         e "Quand ton père aura compris que tu t'es enfuie pour m'accompagner, il se lancera à notre recherche."
+        show einar debout_attriste_close at left
         e "Et je n'ai aucune envie de me retrouver à nouveau enfermé dans une cahutte pendant un mois !"
         m "Ha ha ha !"
+        show einar debout_souriant_close at left
         e "Il y a un endroit en particulier que tu voudrais voir ?"
         m "Je ne sais pas... J'hésite entre la Norvège et la Méditerrannée."
         e "Alors nous irons voir la Méditerrannée ! Retourner en Norvège, ce serait du suicide..."
         "Les deux voyageurs disparaissent dans les bois, prenant la direction du sud..."
     jump credits
 
-label good_ending_15(marier = True):
+label good_ending_15(marier):
     if marier:
         "Une tornade rousse se précipite vers les deux hommes."
         "Moira se jette dans les bras d'Einar et l'embrasse."
@@ -199,26 +208,41 @@ label bad_ending_22:
     "Lorsque après de longues minutes il cesse d'abattre la Hache, il ne reste plus qu'une bouillie informe et rouge au milieu de la plaine."
     jump credits
 
-label game_over_combat:
+label game_over_combat(label_name):
 
     scene black
     centered "Game over \n
     Checkpoint a venir \n
     Pensez à sauvegarder :)"
 
-    # if label_name != "":
-    #     menu:
-    #         "Retry":
-    #             $ renpy.Jump (label_name)
-
-    $ renpy.full_restart()
+    if label_name != "":
+        menu:
+            "Réessayer":
+                $ renpy.jump (label_name)
+            "Quitter":
+                jump credits
 
 label credits:
+
+    stop ambiance
+
     scene bg black with dissolve
     centered "HARALD'S DUSK"
     with Pause(2.5)
-    centered "DESIGN ET PROGRAMMATION : Alexandre Allais - Benjamin Ramauge - Nicolas Duval"
-    centered "GRAPHISME : "
-    centered "SON : "
+    centered "DESIGN ET PROGRAMMATION :\n
+    Alexandre Allais\n
+    Benjamin Ramauge\n
+    Nicolas Duval"
+    centered "GRAPHISME :\n
+    Alexandre Rafael David\n
+    Céline Lascaux\n
+    Farah Merand\n
+    Raphaëlle Maniere\n
+    Samuel Amar\n
+    Sandy Chhun\n
+    Sarah-Cheyenne Laurence Gilbercovici"
+    centered "SON :\n
+    Julien Laguerre\n
+    Nicolas Lorion"
 
     $ renpy.full_restart()
