@@ -94,12 +94,13 @@ label intro:
 
                     h "Ha ha ! Ne sois pas si hatif, il ne s'agit pas de tuer tout ce qui bouge. Pas pour le moment !"
 
+                    show einar debout_contrarie_mid at left
                     e "Sauf votre respect, Sire, votre Hache nous a privé de nombreuses batailles. D'habitude, vos ennemis se rendent dès qu'ils la voient !"
-
+                    show einar debout_determine_mid at left
                     e "Un soulèvement paysan, c'est une chance inespérée !"
 
                     h "Ton enthousiasme fait plaisir à voir !"
-
+                    show einar debout_normal_mid at left
                     $ menu_choice_3 = False
 
                     jump menu_harald_choice_foret
@@ -109,17 +110,24 @@ label intro:
 
                     e "Sire, votre présence ici m'intrigue... Pourquoi risquer votre vie dans une expedition de moindre importance ? Vous pourriez recevoir une flèche !"
 
+                    show harald debout_determine_mid at right
+
                     h "Je suis l'élu divin, je porte une relique du Christ !"
 
                     h "La Hache me rend immortel. Une flèche me ferait rire, rien de plus."
 
                     h "Harald Sigurdsson, roi-empereur des vikings, abattu par une flèche de paysan rebelle ! Ha ha !"
 
+                    show einar debout_souriant_mid at left
+
                     e "Ha ! Les dirigeants du monde entier craindraient les écossais !"
 
                     h "Si j'ai décidé de venir, c'est pour montrer au reste du monde que je ne suis pas l'un de ces anciens rois, mous et immobiles."
 
                     h "Accompagner les miens sur le champ de bataille me paraît important. Et je ne voudrais pas passer à côté d'une belle bataille ! Ha ha !"
+
+                    show harald debout_normal_mid at right
+                    show einar debout_normal_mid at left
 
                     $ menu_choice_4 = False
 
@@ -136,11 +144,15 @@ label intro:
 
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
+            show logan debout_attriste_mid at right
+
             l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
             l "Je me demande si Aberdeen a beaucoup changé."
 
             e "La nostalgie de la maison, hein ? Une fois tout ça terminé, tu auras peut-être l'occasion d'y retourner."
+
+            show logan debout_contrarie_mid at right
 
             l "Non, merci, je n'y tiens pas."
 
@@ -159,15 +171,20 @@ label intro:
 
                     l "Remarque, ça fait un moment que je ne t'ai pas vu avec une fille. Pas une captive, rien ! Monsieur cherche le grand amour ? A moins qu'il ne soit plus du genre à embrasser les garçons ?"
 
+                    show einar debout_furieux_mid at left
+
                     e "Ferme la, sale porc. Quand je passe du bon temps, j'aime que la fille ne sois pas en train de se débattre."
 
                     l "Chacun son truc !"
+
+                    show einar debout_contrarie_mid at left
 
                     $ menu_choice_1 = False
 
                     jump menu_logan_choice_foret
 
                 "Tu reconnais le coin ?" if menu_choice_2:
+                    show einar debout_normal_mid at left
                     show logan debout_normal_mid at right
 
                     e "Tu reconnais la région ?"
@@ -198,6 +215,7 @@ label intro:
                     jump menu_logan_choice_foret
 
                 "Le roi me paraît sûr de lui !" if menu_choice_4:
+                    show einar debout_normal_mid at left
                     show logan debout_normal_mid at right
 
                     e "Le roi me paraît bien confiant."
@@ -335,6 +353,8 @@ label plaine_1 :
             show einar debout_souriant_mid at left
 
             e "Merci beaucoup Logan, tu ne seras pas de trop !"
+
+            show logan debout_souriant_mid at center
 
             l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
 
@@ -687,6 +707,13 @@ label village_1:
     e "Uniquement des vieillards, des femmes et des enfants."
 
     gv "Ça sent le traquenard..."
+
+    hide logan
+    hide gv
+    with dissolve
+
+    show ve debout_craintifs_mid at right with moveinright
+
     ve "Bonjour, étrangers. Nous pouvons vous aider ?"
 
     e "Je veux que tout le village se rassemble sur la place, maintenant !"
@@ -725,6 +752,7 @@ label village_1:
 
             menu :
                 "Où sont les rebelles ?":
+                    show einar debout_normal_mid at left
                     e "Vous n'êtes pas sans savoir que l'intendant Clyde Montgomery a été assassiné par une bande de rebelles..."
                     ve "Les rebelles ? Nous n'en savons rien !"
                     ve "Croyez bien que si ce genre de personnes venait à s'approcher d'ici, nous ne tarderions pas à les dénoncer."
@@ -744,6 +772,7 @@ label village_1:
                             jump menu_fouille_village
 
                         "Non":
+                            show einar debout_normal_mid at left
                             e "Pas du tout. Pourquoi vous offusquer aussi vite ?"
                             e "Je prend simplement note de l'absence de vos hommes."
                             ve "Dans ce cas, prenez soin de bien choisir vos mots. Vous ne trouverez ici que d'honnêtes gens."
@@ -893,7 +922,7 @@ label e_fouiller_village_1(einarFouille = False):
             else:
                 ve "..."
 
-            hide moira
+            hide moira with dissolve
 
             jump choix_retour_village_1
 
@@ -909,7 +938,7 @@ label e_fouiller_village_1(einarFouille = False):
 
 
 label e_tuer_villageois_village_1:
-    show ve debout_normaux_mid_b
+    show ve debout_normaux_mid
     show einar debout_furieux_mid at left
 
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un des vôtres !"
@@ -1026,11 +1055,14 @@ label e_tuer_moira_maison_1:
 
     "Einar tire la jeune femme par les cheveux sur la place, aux yeux de tous."
     scene bg village with dissolve
+
+    show einar debout_normal_mid at left
     show moira debout_furieux_mid at center
+    with moveinright
 
     ve "Lâchez-moi ! Salaud !"
 
-    show logan debout_determine_mid at center
+    show logan debout_determine_mid at right with moveinright
 
     l "Einar ! Non ! Cette pauvre fille n'a rien fait de mal ! Tu vas compromettre toute la mission ! Souviens-toi des instructions du roi !"
 
@@ -1062,7 +1094,7 @@ label e_tuer_moira_maison_1:
             gv "Vengeance !"
 
             e "Je..."
-            show logan debout_determine_mid at right zorder 2
+            show logan debout_determine_mid at right
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
@@ -1078,7 +1110,13 @@ label e_tuer_moira_maison_1:
 
             e "Tu as raison. Elle ne mérite pas que j'émousse ma hache sur elle."
 
+            hide moira with dissolve
+
             e "J'ai déjà retenu ma main une fois. Parlez maintenant ! Je ne renoncerai pas deux fois de suite !"
+
+            show logan debout_determine_mid at center with move
+
+            show ve debout_effrayes at right with moveinright
 
             ve "Nous ne savons rien ! Absolument rien !"
 
@@ -1088,7 +1126,9 @@ label e_tuer_moira_maison_1:
             show einar debout_furieux_mid at left
 
             e "Foutus mensonges !"
-            show logan debout_determine_mid at center
+
+            hide ve with dissolve
+            show logan debout_determine_mid at right with moveinright
 
             l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
             show einar debout_normal_mid at left
@@ -1101,6 +1141,8 @@ label e_tuer_moira_maison_1:
 #fin Scequence 6
 
 label choix_retour_village_1(massacre = False):
+
+    scene bg village with dissolve
 
     hide ve with dissolve
     if massacre:
@@ -1129,7 +1171,7 @@ label choix_retour_village_1(massacre = False):
 
         e "J'espère pour toi que tu as raison, Logan."
 
-    show gv debout_normaux_mid at halfsize, center with dissolve
+    show gv debout_normaux_mid at center with dissolve
     gv "Où allons-nous ?"
     hide gv with dissolve
     if massacre:
@@ -1144,6 +1186,101 @@ label choix_retour_village_1(massacre = False):
                 call foret_2 pass (lieu = "chateau") from _call_foret_2
             "Nous poursuivons vers le nord":
                 call foret_2 pass (lieu = "nord") from _call_foret_2_1
+
+#Sequence 7 remaniement
+
+label foret_2_r(lieu, massacre):
+
+    stop music
+
+    play ambiance wood
+
+    scene bg forest with dissolve
+
+    if lieu == "chateau":
+
+        "Sur le chemin du retour..."
+        show gv debout_normaux_mid at center with dissolve
+        gv "Pourquoi sommes-nous déjà sur le retour ?"
+        show gv debout_normaux_mid at right with moveinright
+        show einar debout_normal_mid at left
+
+        if massacre:
+            e "Parce que nous avons massacré les rebelles. Mission accomplie, nous rentrons chez nous."
+        else:
+            e "Parce que j'ai de sérieux doutes sur ce village. Les gens de Perth étaient bien trop louches, quoi qu'en dise Logan."
+
+        hide gv with dissolve
+        show logan debout_normal_mid at right
+
+        l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
+
+        if massacre:
+            show einar debout_souriant_mid at left
+            e "Bien sûr ! Leur manque de coopération était plus qu'évident. Ils étaient les rebelles. Harald sera satisfait !"
+        else:
+            e "Je ne suis sûr de rien."
+
+    else:
+        "En poursuivant vers le nord..."
+        show gv debout_normaux_mid at center with dissolve
+
+        if massacre:
+            gv "Pourquoi devons-nous poursuivre vers le nord ? Nous ne venons pas de massacrer les rebelles ?"
+        else:
+            gv "Pourquoi devons-nous poursuivre vers le nord ? Je croyais que nous avions trouvé les rebelles !"
+
+        show gv debout_normaux_mid at right with moveinright
+        show einar debout_normal_mid at left
+
+        if massacre:
+            e "Si, probablement. Mais j'ai tout de même un doute. Autant s'assurer d'avoir fait ce qu'il fallait !"
+
+            e "Une visite des villages plus au nord s'impose. Et nous reproduirons les mêmes actions si nous rencontrons la moindre résistance !"
+
+            show gv debout_enthousiastes_mid at center
+            gv "Voilà qui fait plaisir à entendre !"
+            hide gv with dissolve
+
+        else:
+            e "Rien ne permet d'affirmer ça. J'ai beau avoir des doutes sur Perth, je pense qu'une visite des villages plus au nord sera bénéfique."
+
+        hide gv
+        hide einar
+        with dissolve
+
+    play ambiance wood_night
+
+    scene bg forest_night with dissolve
+
+    "Le soir, la troupe discute des exploits passés..."
+    show gv debout_normaux_mid at halfsize, center with dissolve
+    gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
+
+    gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
+    show gv debout_rire_mid at halfsize, center
+    gv "Ha Ha Ha !"
+    show einar debout_normal_mid at left with dissolve
+    e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
+    show logan debout_normal_mid at right
+    l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
+    hide gv with dissolve
+    e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
+
+    l "Des écossais rebelles, oui. Pas des innocents."
+    show einar debout_souriant_mid at left
+    e "Tu te ramollis, mon vieux Logan..."
+    show einar debout_normal_mid at left
+
+    menu:
+        "Ne relâchez pas votre attention":
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2
+        "La mission est décevante":
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "deception") from _call_attaque_massacre_einar_sauf_foret_2_1
+        "Les villageois avaient une attitude suspecte":
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude") from _call_attaque_massacre_einar_sauf_foret_2_2
+        "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
+            call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_einar_sauf_foret_2_3
 
 #Sequence 7
 label foret_2(lieu = ""):
