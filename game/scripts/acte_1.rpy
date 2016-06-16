@@ -1856,17 +1856,18 @@ label e_reveil_village_2:
 
     $ already_talk = False
 
-    show einar debout_blesse_mid at left with dissolve
+    show einar prisonnier_blesse_mid at left with dissolve
     e "Huugh..."
-    show re debout_normaux_mid at halfsize, center with dissolve
+    show re debout_normaux_mid at center with dissolve
     ge "Ogma ! Il se réveille !"
-    show ogma debout_souriant_mid at right with dissolve
+    show ogma debout_determine_mid at right with moveinright
     o "Ah ! La belle endormie. "
+    show re debout_normaux_mid at right with moveinright
     hide re with dissolve
     e "Arrgh... Mon épaule..."
 
     o "La tête de la flèche est toujours à sa place."
-    show einar debout_furieux_mid at left
+    show einar prisonnier_furieux_mid at left
     e "Enfoiré ! Vous les avez tous tués !"
 
     o "..."
@@ -1874,11 +1875,11 @@ label e_reveil_village_2:
     e "Qui... Aarrgh... êtes vous ?"
 
     o "Nous sommes ceux que toi et les tiens cherchiez. Toutes mes félicitations, vous nous avez trouvé."
-    show einar debout_blesse_mid at left
+    show einar prisonnier_blesse_mid at left
     e "Les rebelles ?"
 
     o "..."
-    show einar debout_furieux_mid at left
+    show einar prisonnier_furieux_mid at left
     e "Où sont les autres ? Où sont mes compagnons ?"
 
     e "Ordure ! Je me rappelle ! C'est toi qui a tué Logan !"
@@ -1889,7 +1890,7 @@ label e_reveil_village_2:
     show ogma debout_attriste_mid at right
     o "Alors j'imagine que sa mort est regrettable."
     show ogma debout_normal_mid at right
-    show einar debout_blesse_mid at left
+    show einar prisonnier_blesse_mid at left
 
     menu reveil_einar_village_2:
         "Pourquoi m'avoir laissé en vie ?":
@@ -1900,24 +1901,31 @@ label e_reveil_village_2:
 
             jump o_explication_vie_village_2
 
-        "Il y a un rapport avec Perth ?":
+        "Tout ceci à un rapport avec Perth ?":
 
             e "Est-ce qu'il y a un rapport avec le village d'hier ?"
 
             o "Perth. Et la réponse est oui. Nos éclaireurs avaient vu votre groupe et nous l'avaient signalé."
 
             o "Nous avons quitté le village peu avant votre arrivée, et nous avons observé la scène, avec la ferme intention de vous tendre une embuscade ensuite."
+            show ogma debout_souriant_mid at right
 
             o "Ce que, comme tu as pu le voir, nous avons fait."
+            show ogma debout_normal_mid at right
 
             jump o_explication_vie_village_2
         "Crevure !" if already_talk == False:
+            show einar prisonnier_furieux_mid at left
 
             e "Salopards ! J'aurais du enfermer vos truies de femmes et leurs gamins dans vos cahutes merdeuses avant d'y foutre le feu !"
+            show ogma debout_furieux_mid at right
 
             "Ogma frappe Einar sur son épaule blessée"
+            show einar prisonnier_furieux_mid at left, shake
 
             e "AAARGH !"
+            show einar prisonnier_blesse_mid at left
+            show ogma debout_determine_mid at right
 
             o "Les insultes et les menaces n'ont que peu de poids venant de la part d'un soldat blessé, attaché et seul."
 
@@ -1937,8 +1945,10 @@ label o_explication_vie_village_2:
     $ choix_ogma_1 = ""
 
     o "Tu n'es vivant que pour deux raisons."
+    show ogma debout_normal_mid at right
     o "D'abord, tu t'es montré clément envers les miens. En tant que meneur, cette décision n'appartenait qu'à toi. Je te remercie."
     o "Ensuite, je sais que tu es proche de Harald. Ta tenue, la façon dont tu parlais à tes hommes : tu es un huscarl."
+    show einar prisonnier_blesse_mid at left
     e "Vous m'avez épargné pour m'utiliser contre mon roi ?"
     o "Oui."
 
@@ -1956,21 +1966,24 @@ label o_explication_vie_village_2:
         e "Vous allez devoir m'en dire plus."
 
     elif choix_ogma_1 == "insulter":
-        show einar debout_furieux_mid at left with dissolve
+        show einar prisonnier_furieux_mid at left with dissolve
         e "Vous allez être déçus ! Vous n'obtiendrez rien de moi, charognes ! Vous ne me ferez pas trahir mon allégeance !"
 
         o "Calme toi. Les termes de mon offre suffiront à te faire changer d'avis, j'en suis sûr."
     else:
         "..."
-    show einar debout_normal_mid at left
+    show einar prisonnier_normal_mid at left
     o "Je ne veux que peu de choses. En échange de la trahison du roi, je t'offre le droit de survivre, de reprendre ta liberté et de partir avec ce que tu pourras porter d'or."
     e "Ma vie et de l'or contre la trahison du souverain le plus puissant ayant jamais existé ?"
     o "Exactement."
     o "Une fois que je t'aurai relâché, tu retourneras au château de Dunbar. Au signal que je te donnerai, tu abaisseras le pont-levis."
+    show einar prisonnier_determine_mid at left
     e "C'est tout ? Harald ne me laissera jamais faire !"
     o "Peu importe la méthode. Tout ce que je demande, c'est que la porte soit ouverte quand mes troupes arriveront au château pour le roi."
+    show einar prisonnier_souriant_mid at left
     e "Les troupes ? Vos vingt fermiers ? Et que comptez-vous faire, une fois à l'intérieur ? Tuer le roi ? Ha ha ! Il pourrait vous affronter à lui tout seul !"
     o "Je ne veux pas le tuer. Pas nécessairement. Je veux uniquement l'obliger à quitter l'Ecosse. Je veux montrer au reste du monde que l'élu divin peut reculer face à des hommes déterminés."
+    show einar prisonnier_normal_mid at left
     e "Et en admettant que j'accepte votre offre, quelles sont mes garanties de survie ensuite ? Le roi me fera chercher sur tout les continents."
     o "Tu pourras rester en Ecosse ou aller où tu veux. Ce n'est pas mon problème."
     o "Alors, quelle est ta décision ?"
@@ -1979,10 +1992,12 @@ label o_explication_vie_village_2:
         "J'accepte":
             jump accepter_trahir_village_2
         "Vous me faites confiance ?" if already_talk == False:
-
+            show einar prisonnier_determine_mid at left
             e "Qui vous dit que je tiendrai parole une fois remis en liberté ?"
+            show ogma debout_contrarie_mid at right
             o "... Je compte sur ta gratitude."
             e "Vous vous moquez de moi ?"
+            show ogma debout_normal_mid at right
             o "Tu vas passer un certain temps ici. Nous allons te nourrir et te soigner, et tu verras que nous ne méritons pas le sort que nous réserve le roi."
             o "Alors ?"
 
@@ -1996,26 +2011,30 @@ label refuser_trahir_village_2:
 
     scene bg village
 
-    show einar debout_furieux_mid at left
+    show einar prisonnier_determine_mid at left
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
+    show ogma debout_determine_mid at right
 
     o "Mauvaise réponse."
 
     "Ogma enfonce deux doigts dans la plaie de l'épaule d'Einar, pressant la pointe de flèche."
-    show einar debout_blesse_mid at left
+    show einar prisonnier_blesse_mid at left, shake
     e "AAAAARRRGH !"
     show ogma debout_souriant_mid at right
     o "Tiens, on dirait que la pointe est coincée dans une articulation !"
 
     e "AAAHH ! STOP !"
+    show ogma debout_normal_mid at right
 
     o "Jouer les fortes têtes ne te servira à rien ici. Tout ça est bien plus éprouvant pour toi que pour moi."
 
-    o "Tu penses être spécial ? Rien ne m'empêche de tuer ici et d'attendre le moment opportun pour capturer un autre huscar."
+    o "Tu penses être spécial ? Rien ne m'empêche de te tuer ici et d'attendre le moment opportun pour capturer un autre huscarl."
+    show ogma debout_determine_mid at right
 
     o "Je n'aurais aucun scrupule à t'égorger ici et maintenant."
 
     e "ARRÊTEZ ! ARRÊTAAAARGH !"
+    show einar prisonnier_blesse_mid at left, shake
     show ogma debout_normal_mid at right
     "Ogma retire ses doigts de la plaie."
 
@@ -2038,7 +2057,8 @@ label accepter_trahir_village_2:
     o "Tu as fait le bon choix."
     e "Quand dois-je partir ?"
     show ogma debout_souriant_mid at right
-    o "Ha ha ! Si je te laissais partir maintenant, tu mourrais aussitôt ! Nous allons soigner tes blessures."
+    o "Ha ! Si je te laissais partir maintenant, tu mourrais aussitôt ! Nous allons d'abord soigner tes blessures."
+    show ogma debout_normal_mid at right
     o "Je vais te laisser. Nous nous retrouverons bientôt."
 
     jump interieur_maison_village_1
