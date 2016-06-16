@@ -2010,32 +2010,32 @@ label o_explication_vie_village_2:
 label refuser_trahir_village_2:
 
     scene bg village
-
+    show ogma debout_determine_mid at right
     show einar prisonnier_determine_mid at left
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
-    show ogma debout_determine_mid at right
+    show ogma debout_determine_mid at center with moveinright
 
     o "Mauvaise réponse."
 
     "Ogma enfonce deux doigts dans la plaie de l'épaule d'Einar, pressant la pointe de flèche."
     show einar prisonnier_blesse_mid at left, shake
     e "AAAAARRRGH !"
-    show ogma debout_souriant_mid at right
+    show ogma debout_souriant_mid at center
     o "Tiens, on dirait que la pointe est coincée dans une articulation !"
 
     e "AAAHH ! STOP !"
-    show ogma debout_normal_mid at right
+    show ogma debout_normal_mid at center
 
     o "Jouer les fortes têtes ne te servira à rien ici. Tout ça est bien plus éprouvant pour toi que pour moi."
 
     o "Tu penses être spécial ? Rien ne m'empêche de te tuer ici et d'attendre le moment opportun pour capturer un autre huscarl."
-    show ogma debout_determine_mid at right
+    show ogma debout_determine_mid at center
 
     o "Je n'aurais aucun scrupule à t'égorger ici et maintenant."
 
     e "ARRÊTEZ ! ARRÊTAAAARGH !"
     show einar prisonnier_blesse_mid at left, shake
-    show ogma debout_normal_mid at right
+    show ogma debout_normal_mid at center
     "Ogma retire ses doigts de la plaie."
 
     o "Tu as changé d'avis sur la question ?"
@@ -2043,7 +2043,7 @@ label refuser_trahir_village_2:
     menu:
         "J'accepte":
             e "Très bien... Hhhggh... J'accepte..."
-            show ogma debout_souriant_mid at right
+            show ogma debout_souriant_mid at right with moveinright
             o "Parfait !"
             jump accepter_trahir_village_2
         "Je ne trahirai personne !":

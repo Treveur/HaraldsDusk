@@ -5,11 +5,12 @@ label bad_ending_1:
     jump credits
 
 label bad_ending_2:
-    show einar debout_furieux_mid at left
+    show einar prisonnier_furieux_mid at left
     e "Je n'ai qu'une parole. Vous pouvez aller vous faire foutre !"
-    show ogma debout_contrarie_mid at right
+    show ogma debout_contrarie_mid at center
     o "C'est décevant... Tu crois être unique ? Si ce n'est pas toi, un autre fera le travail à ta place."
     "Ogma égorge Einar alors qu'il est entravé."
+    show einar prisonnier_blesse_mid at left
     e "Grrblbhh..."
     hide einar with dissolve
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
