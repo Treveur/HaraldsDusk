@@ -1269,29 +1269,32 @@ label foret_2_r(lieu, massacre):
 
     scene bg forest_night with dissolve
 
-    "Le soir, la troupe discute des exploits passés..."
-    show gv debout_normaux_mid at halfsize, center with dissolve
+    "Le soir, la troupe discute des exploits passés lors des anciennes campagnes..."
+    show gv debout_normaux_mid at center with dissolve
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
 
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
     show gv debout_rire_mid at halfsize, center
     gv "Ha Ha Ha !"
 
-    show einar debout_normal_mid at left with dissolve
+    show einar debout_normal_mid at left with moveinleft
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
-    show logan debout_normal_mid at right
+    show logan debout_normal_mid at right with moveinright
 
     if massacre:
-
+        
         e "J'ai bien remarqué ton comportement à Perth. Tu n'as tué personne. Tu as à peine incendié une grange."
+        show logan debout_contrarie_mid at right
 
         l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
-
+        show einar debout_determine_mid at left with moveinleft
         e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
 
         l "Des écossais rebelles, oui. Pas des innocents."
 
         e "Ne remet pas mes ordres en question. Tu te ramollis, mon vieux Logan."
+        show einar debout_normal_mid at left
+        
 
         menu:
             "Ne relâchez pas votre attention":
@@ -1304,7 +1307,7 @@ label foret_2_r(lieu, massacre):
                 call attaque_massacre_fore
 
     else:
-
+        show logan debout_contrarie_mid at right
         l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
         hide gv with dissolve
         e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
@@ -1313,6 +1316,7 @@ label foret_2_r(lieu, massacre):
         show einar debout_souriant_mid at left
         e "Tu te ramollis, mon vieux Logan..."
         show einar debout_normal_mid at left
+        show logan debout_souriant_mid at right
 
         menu:
             "Ne relâchez pas votre attention":
@@ -1367,7 +1371,7 @@ label foret_2(lieu = ""):
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
 
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
-    show gv debout_rire_mid at halfsize, center
+    show gv debout_rire_mid at center
     gv "Ha Ha Ha !"
     show einar debout_normal_mid at left with dissolve
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
@@ -1396,7 +1400,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     if message == "attentif":
         hide logan with dissolve
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-        show gv debout_enthousiastes_mid at right with dissolve
+        show gv debout_enthousiastes_mid at right with moveinright
         gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
 
         e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
@@ -1424,6 +1428,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
                 jump menu_avertissement_villageois
 
             "Ils ont dû être effrayés":
+                show einar debout_souriant_mid at left
                 e "La vue de douze guerriers à dû les effrayer. Ils n'avaient probablement jamais vu autant d'armes à la fois !"
                 l "Ils ont dû croire que nous étions là pour raser leur village. Ils sont forcément au courant du meurtre de Montgomery, ils auront fait le rapprochement en nous voyant arriver."
                 e "A juste titre ! Je regrette presque de ne pas les avoir massa..."
@@ -1433,15 +1438,15 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
                 e "Ils ont dû être impressionnés par notre présence. C'était une bande d'abrutis congénitaux, ils n'avaient jamais vu d'hommes armés !"
                 e "Isolés qu'ils sont dans leur village d'arriérés, à élever leurs chiards et leurs mout..."
 
-        menu menu_avertissement_villageois:
-            "Ne relâchez pas votre attention":
-                call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
-            "Nous ne craignons pas les paysans !":
-                hide logan with dissolve
-                e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
-                show gv debout_normaux_mid at center with dissolve
-                gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
-                gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher la tro..."
+                menu menu_avertissement_villageois:
+                    "Ne relâchez pas votre attention":
+                        call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
+                    "Nous ne craignons pas les paysans !":
+                        hide logan with dissolve
+                        e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
+                        show gv debout_normaux_mid at center with dissolve
+                        gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
+                        gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher la tro..."
 
 
     else:
