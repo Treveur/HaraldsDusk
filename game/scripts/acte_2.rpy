@@ -18,7 +18,7 @@ label interieur_maison_village_1:
     $ critique_ogma = False
 
     "Einar émerge du sommeil..."
-    show einar debout_normal_mid at left with dissolve
+    show einar prisonnier_normal_mid at left with dissolve
     e "Je suis entravé ? Huuugh..."
     show moira debout_normal_mid at right with dissolve
 
@@ -62,14 +62,14 @@ label interieur_maison_village_1:
             jump menu_rencontre_moira_blesse
 
         "Arrière ! Laisse-moi !":
-            show einar debout_effraye_mid at left
+            show einar prisonnier_effraye_mid at left
             e "Laisse-moi tranquille ! Où est Ogma ? Je veux sortir d'ici !"
             m "Du calme, du calme."
             m "Je n'ai aucune intention de vous faire du mal."
-            show einar debout_normal_mid at left
+            show einar prisonnier_normal_mid at left
 
         "La situation est assez... plaisante !":
-            show einar debout_souriant_mid at left
+            show einar prisonnier_souriant_mid at left
             e "La situation est assez... satisfaisante. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme ..."
             show moira debout_furieux_mid at right
             " Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse se défendre."
@@ -94,15 +94,15 @@ label interieur_maison_village_1:
             show moira debout_determine_mid at right
             m "J'imagine que vous ne dites rien par fierté ? Ne soyez pas idiot. Vous vous doutez que ce que je prépare vous est destiné !"
             show moira debout_normal_mid at right
-            show einar debout_normal_mid at left
+            show einar prisonnier_normal_mid at left
             e "Qu'est-ce que c'est ?"
 
         "J'ai encore toutes mes dents, merci":
-            show einar debout_souriant_mid at left
+            show einar prisonnier_souriant_mid at left
             e "J'ai encore mes dents, je n'ai pas besoin que l'on broie ma nourriture."
             show moira debout_souriant_mid at right
             m "Ce n'est pas de la nourriture !"
-            show einar debout_normal_mid at left
+            show einar prisonnier_normal_mid at left
 
         "Je n'ai pas faim":
             e "Je n'ai pas faim, merci."
@@ -117,19 +117,19 @@ label interieur_maison_village_1:
 
     menu :
         "Merci":
-            show einar debout_souriant_mid at left
+            show einar prisonnier_souriant_mid at left
             e "Merci. Je ne m'attendais pas à être soigné ici."
             show moira debout_normal_mid at right
             m "Ce n'est pas moi que vous devez remercier, je ne fais que suivre les instructions de mon père."
 
         "Ne rien dire":
-            show einar debout_determine_mid at left
+            show einar prisonnier_determine_mid at left
             e "..."
             show moira debout_determine_mid at right
             m "..."
 
         "Je n'ai pas besoin des soins d'une rebelle !":
-            show einar debout_contrarie_mid at left
+            show einar prisonnier_contrarie_mid at left
             e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné !"
             show moira debout_determine_mid at right
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
@@ -144,7 +144,7 @@ label interieur_maison_village_1:
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
     m "La cicatrisation commence à peine, la blessure était profonde. Le vieux m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
-    show einar debout_normal_mid at left with dissolve
+    show einar prisonnier_normal_mid at left with dissolve
     e "Je ..."
     show ogma debout_determine_mid at center
     o "Tais-toi !"
@@ -155,24 +155,24 @@ label interieur_maison_village_1:
 
     menu :
         "Il a un problème avec moi ?":
-            show einar debout_normal_mid at left
+            show einar prisonnier_normal_mid at left
             e "Il a une dent contre moi ?"
             m "Pas contre vous en particulier, non."
 
         "J'aurais dû mourir...":
-            show einar debout_attriste_mid at left
+            show einar prisonnier_attriste_mid at left
             e "J'aurais mieux fait de mourir avec les autres."
             m "Estimez-vous heureux d'être en vie. Il voulait tous vous tuer."
-            show einar debout_normal_mid at left
+            show einar prisonnier_normal_mid at left
             e "Pourquoi cette colère contre nous ?"
 
         "Quel salopard !":
-            show einar debout_furieux_mid at left
+            show einar prisonnier_furieux_mid at left
             e "Quel enfoiré ! Il ne m'a même pas adressé la parole !"
             $ critique_ogma = True
 
         "Il doit avoir honte de s'adresser au survivant d'un assassinat lâche !":
-            show einar debout_determine_mid at left
+            show einar prisonnier_determine_mid at left
             e "A sa place, moi aussi j'aurais honte de m'adresser au chef d'une troupe assassinée lâchement au détour d'un sentier obscur. Bandits de grands chemins !"
             $ critique_ogma = True
 
@@ -183,7 +183,7 @@ label interieur_maison_village_1:
 
         menu :
             "Ne rien dire":
-                show einar debout_normal_mid at left
+                show einar prisonnier_normal_mid at left
                 e "..."
                 show moira debout_normal_mid at right
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
@@ -193,11 +193,11 @@ label interieur_maison_village_1:
                 m "Et celle de Kennocha, ma mère."
 
             "Je vous demande pardon":
-                show einar debout_contrarie_mid at left
+                show einar prisonnier_contrarie_mid at left
                 e "Excusez-moi."
                 show moira debout_normal_mid at right
                 m "N'en parlons plus."
-                show einar debout_normal_mid at left
+                show einar prisonnier_normal_mid at left
                 e "..."
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
@@ -207,12 +207,12 @@ label interieur_maison_village_1:
                 m "Et celle de Kennocha, ma mère."
 
             "Vous n'avez pas d'ordres à me donner":
-                show einar debout_determine_mid at left
+                show einar prisonnier_determine_mid at left
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
                 show moira debout_furieux_mid at right
                 " Moira gifle Einar à nouveau, sur l'autre joue."
                 m "J'ai omis de préciser que vous me deviez aussi le respect."
-                show einar debout_determine_mid at left
+                show einar prisonnier_determine_mid at left
                 show moira debout_determine_mid at right
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
