@@ -1399,6 +1399,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
 
     if message == "attentif":
         hide logan with dissolve
+        show einar debout_determine_mid at left
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
         show gv debout_enthousiastes_mid at right with moveinright
         gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
@@ -1411,12 +1412,13 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
 
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-        show gv debout_contraries_mid at halfsize, center with dissolve
+        show gv debout_contraries_mid at center with dissolve
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
 
         e "..."
 
     elif message == "attitude":
+        show einar debout_determine_mid at left
         e "Ces villageois avaient l'air étranges..."
 
         l "Etranges ?"
@@ -1430,12 +1432,16 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
             "Ils ont dû être effrayés":
                 show einar debout_souriant_mid at left
                 e "La vue de douze guerriers à dû les effrayer. Ils n'avaient probablement jamais vu autant d'armes à la fois !"
+                show logan debout_normal_mid at right
                 l "Ils ont dû croire que nous étions là pour raser leur village. Ils sont forcément au courant du meurtre de Montgomery, ils auront fait le rapprochement en nous voyant arriver."
                 e "A juste titre ! Je regrette presque de ne pas les avoir massa..."
 
             "C'était une bande d'abrutis !":
+                show logan debout_normal_mid at right
                 l "Ils étaient effrayés, c'est évident."
+                show einar debout_determine_mid at left
                 e "Ils ont dû être impressionnés par notre présence. C'était une bande d'abrutis congénitaux, ils n'avaient jamais vu d'hommes armés !"
+                show einar debout_souriant_mid at left
                 e "Isolés qu'ils sont dans leur village d'arriérés, à élever leurs chiards et leurs mout..."
 
                 menu menu_avertissement_villageois:
@@ -1443,8 +1449,9 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
                         call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
                     "Nous ne craignons pas les paysans !":
                         hide logan with dissolve
+                        show einar debout_souriant_mid at left
                         e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
-                        show gv debout_normaux_mid at center with dissolve
+                        show gv debout_rire_mid at center with dissolve
                         gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
                         gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher la tro..."
 
@@ -1452,11 +1459,13 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     else:
         show einar debout_souriant_mid at left with dissolve
         e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
-        show gv debout_rire_mid at halfsize, center with dissolve
+        show gv debout_rire_mid at center with dissolve
         gv "Ha ha !"
+        show logan debout_normal_mid at right
         l "..."
         e "Ne sois pas si déçu ! La prochaine fois que nous voyons un bélier, je te l'offre ! Je sais que tu les aime beaux et vigoureux !"
         gv "Ha ha ha !"
+        show logan debout_contrarie_mid at right
         l "Ferme la Ein..."
     hide einar
     hide logan
@@ -1471,7 +1480,7 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     show gv debout_determines_mid at center with dissolve
     gv "Ça venait d'où ?"
     show gv debout_determines_mid at right with moveinright
-    show logan debout_determine_mid at center with dissolve
+    show logan debout_determine_mid at center zorder 1 with dissolve
     l "Sur la gauche ! Des torches !"
     hide gv with dissolve
     show logan debout_determine_mid at right with moveinright
@@ -1481,28 +1490,38 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     play music slaughter
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
+    show re combat_furieux_mid at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
     show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
+    show gv debout_determines_mid at right zorder 0 with moveinright
 
     show ogma combat_determine_mid_flip at left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
+    menu :
+        "Attaquez le chef !":
+            e "Tuez leur chef !"
+            
+        "Restez en formation !":
+            e "Ne vous dispersez pas ! Restez serrés !"
+            
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
-    hide ogma
+    hide gv
+    
     hide logan
     with dissolve
 
     show einar combat_determine_mid_flip at right  with moveinright
-    show re combat_furieux_mid at left with moveinleft
+    show ogma combat_furieux_mid_flip at left 
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
-    show einar combat_determine_mid_flip at right, shake
+    show einar combat_determine_mid_flip at right
     e "Approchez, charognes ! Je..."
+    show einar combat_determine_mid_flip at right, shake
 
-    show re combat_furieux_mid at left
+    
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
-    hide re with dissolve
 
     show einar combat_determine_mid at center with moveinleft
     show logan combat_normal_mid at right with moveinright
@@ -1511,27 +1530,30 @@ label attaque_massacre_einar_sauf_foret_2(message = ""):
     show einar combat_determine_mid_flip at center, shake
     e "Que..."
 
-    "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
-    show einar combat_blesse_mid at left with moveinleft
+    "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, l'obligeant à mettre le genou à terre."
+    show einar combat_blesse_mid at center with moveinleft
     e "Aaarrggh ! Logan, aide-moi !"
 
     #WIP
     l "Je suis là !"
-    show logan combat_normal_mid at center with MoveTransition(0.2)
-    show re combat_furieux_mid at right with moveinright
+    show logan combat_determine_mid at right, shake
+    #show logan combat_determine_mid at center with MoveTransition(0.2)
+    #show re combat_furieux_mid at right with moveinright
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
     hide logan with dissolve
-    show ogma combat_normal_mid at right with dissolve
+    show ogma combat_determine_mid at right with moveinright
 
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
+    
+    hide ogma with dissolve
 
     e "Crevure... Tu..."
+    
+    show ogma combat_determine_mid at right with dissolve
 
     "Le meneur fixe Einar."
-    show re combat_normaux_mid at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
-    hide re with dissolve
 
     menu:
         "Qui es-tu ?":
@@ -1675,56 +1697,83 @@ label attaque_massacre_foret_2(message = ""):
 
     show einar debout_determine_mid at left with dissolve
     e "En position de combat, tous !"
-    show gv debout_determines_mid at halfsize, center with dissolve
+    show gv debout_determines_mid at center with dissolve
     gv "Ça venait d'où ?"
-    show logan debout_determine_mid at right with dissolve
+    show gv debout_determines_mid at right with moveinright
+    show logan debout_determine_mid at center zorder 1 with dissolve
     l "Sur la gauche ! Des torches !"
-
-    "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
-    "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+    hide gv with dissolve
+    show logan debout_determine_mid at right with moveinright
+    show einar debout_determine_mid_flip at center with move
 
     stop ambiance
     play music slaughter
 
-    show einar combat_determine_mid at left with dissolve
+    "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
+    show re combat_furieux_mid at left with moveinleft
+    "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+
+    show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
-    hide gv with dissolve
-    show ogma combat_determine_mid at halfsize, center with dissolve
+    show gv debout_determines_mid at right zorder 0 with moveinright
+
+    show ogma combat_determine_mid_flip at left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
+    menu :
+        "Attaquez le chef !":
+            e "Tuez leur chef !"
+            
+        "Restez en formation !":
+            e "Ne vous dispersez pas ! Restez serrés !"
+            
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
-    hide ogma
+    hide gv
+    
     hide logan
     with dissolve
-    show re combat_furieux_mid at halfsize, right with dissolve
+
+    show einar combat_determine_mid_flip at right  with moveinright
+    show ogma combat_furieux_mid_flip at left 
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
+    show einar combat_determine_mid_flip at right
     e "Approchez, charognes ! Je..."
+    show einar combat_determine_mid_flip at right, shake
 
+    
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
-    hide re with dissolve
-    show logan combat_normal_mid at right zorder 2 with dissolve
+
+    show einar combat_determine_mid at center with moveinleft
+    show logan combat_normal_mid at right with moveinright
     l "Einar ! Derrière toi !"
 
+    show einar combat_determine_mid_flip at center, shake
     e "Que..."
 
-    "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, le faisant tomber au sol."
-    show einar combat_blesse_mid at left with dissolve
+    "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, l'obligeant à mettre le genou à terre."
+    show einar combat_blesse_mid at center with moveinleft
     e "Aaarrggh ! Logan, aide-moi !"
 
+    #WIP
     l "Je suis là !"
+    show logan combat_determine_mid at right, shake
+    #show logan combat_determine_mid at center with MoveTransition(0.2)
+    #show re combat_furieux_mid at right with moveinright
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
     hide logan with dissolve
-    show ogma combat_normal_mid at right with dissolve
+    show ogma combat_determine_mid at right with moveinright
 
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
+    
+    hide ogma with dissolve
 
     e "Crevure... Tu..."
+    
+    show ogma combat_determine_mid at right with dissolve
 
     "Le meneur fixe Einar."
-    show re combat_normaux_mid at halfsize, center with dissolve
     ge "Les chiens du roi-empereur ont échoué."
-    hide re with dissolve
 
     menu:
         "Qui es-tu ?":
@@ -1737,12 +1786,12 @@ label attaque_massacre_foret_2(message = ""):
 label e_demande_nom_foret_2(bad_ending = False):
     hide logan
     hide gv
-    show einar debout_blesse_mid at left with dissolve
-    show ogma debout_normal_mid at right with dissolve
+    show einar combat_blesse_mid at center
+    show ogma combat_determine_mid at right
     e "Qui es-tu, lâche ?"
 
     if bad_ending:
-        show ogma debout_contrarie_mid at right
+        show ogma combat_contrarie_mid at right
         ge "..."
         #A Supprimer si pas réussit à faire Checkpoint
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
@@ -1750,6 +1799,7 @@ label e_demande_nom_foret_2(bad_ending = False):
         #jump bad_ending_1
         call game_over_combat ('village_1')
     else:
+        show ogma combat_determine_mid at right
         o "Ogma. Le Hurleur."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         hide einar with dissolve
@@ -1758,13 +1808,14 @@ label e_demande_nom_foret_2(bad_ending = False):
 label e_implore_pitie_foret_2(bad_ending = False):
     hide logan
     hide gv
-    show einar debout_normal_mid at left with dissolve
-    show re debout_normaux_mid at right with dissolve
-    show ogma debout_normal_mid at center with dissolve
+    show einar debout_blesse_mid at center
+    show ogma debout_determine_mid at right
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
 
     if bad_ending:
+        show ogma debout_determine_mid at right
         ge "Lâche jusqu'au bout..."
+        "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
         call game_over_combat ('village_1')
     else:
@@ -1776,13 +1827,13 @@ label e_implore_pitie_foret_2(bad_ending = False):
 label e_menace_foret_2(bad_ending = False):
     hide logan
     hide gv
-    hide ogma
-    show einar debout_normal_mid at left with dissolve
-    show re debout_normaux_mid at right with dissolve
+    show einar debout_blesse_mid at center
+    show ogma debout_determine_mid at right
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
     if bad_ending:
         ge "Je ne crains pas ton roi."
+        "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
         call game_over_combat ('village_1')
     else:
