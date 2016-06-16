@@ -1260,27 +1260,53 @@ label foret_2_r(lieu, massacre):
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
     show gv debout_rire_mid at halfsize, center
     gv "Ha Ha Ha !"
+
     show einar debout_normal_mid at left with dissolve
     e "Du favoritisme pour les écossais, Logan ? En temps ordinaires tu ne te serais pas privé de tuer quelques personnes et de profiter d'une jolie fille !"
     show logan debout_normal_mid at right
-    l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
-    hide gv with dissolve
-    e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
 
-    l "Des écossais rebelles, oui. Pas des innocents."
-    show einar debout_souriant_mid at left
-    e "Tu te ramollis, mon vieux Logan..."
-    show einar debout_normal_mid at left
+    if massacre:
 
-    menu:
-        "Ne relâchez pas votre attention":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2
-        "La mission est décevante":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "deception") from _call_attaque_massacre_einar_sauf_foret_2_1
-        "Les villageois avaient une attitude suspecte":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude") from _call_attaque_massacre_einar_sauf_foret_2_2
-        "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
-            call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_einar_sauf_foret_2_3
+        e "J'ai bien remarqué ton comportement à Perth. Tu n'as tué personne. Tu as à peine incendié une grange."
+
+        l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
+
+        e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
+
+        l "Des écossais rebelles, oui. Pas des innocents."
+
+        e "Ne remet pas mes ordres en question. Tu te ramollis, mon vieux Logan."
+
+        menu:
+            "Ne relâchez pas votre attention":
+                call attaque_massacre_foret_2 pass (message = "attentif") from _call_attaque_massacre_foret_2
+            "La mission est décevante":
+                call attaque_massacre_foret_2 pass (message = "deception") from _call_attaque_massacre_foret_2_1
+            "Les villageois étaient pitoyables !":
+                call attaque_massacre_foret_2 pass (message = "moquerie") from _call_attaque_massacre_foret_2_2
+            "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
+                call attaque_massacre_fore
+
+    else:
+
+        l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
+        hide gv with dissolve
+        e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
+
+        l "Des écossais rebelles, oui. Pas des innocents."
+        show einar debout_souriant_mid at left
+        e "Tu te ramollis, mon vieux Logan..."
+        show einar debout_normal_mid at left
+
+        menu:
+            "Ne relâchez pas votre attention":
+                call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2
+            "La mission est décevante":
+                call attaque_massacre_einar_sauf_foret_2 pass (message = "deception") from _call_attaque_massacre_einar_sauf_foret_2_1
+            "Les villageois avaient une attitude suspecte":
+                call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude") from _call_attaque_massacre_einar_sauf_foret_2_2
+            "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
+                call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_einar_sauf_foret_2_3
 
 #Sequence 7
 label foret_2(lieu = ""):
