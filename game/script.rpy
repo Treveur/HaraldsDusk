@@ -107,7 +107,11 @@ image logan debout_attriste_close = "logan/debout/logan_debout_attriste_close.pn
 image logan debout_determine_close = "logan/debout/logan_debout_determine_close.png"
 
 #Flip
+image logan debout_normal_flip_mid = im.Flip("logan/debout/logan_debout_normal_mid.png", horizontal = True)
 image logan debout_souriant_flip_mid = im.Flip("logan/debout/logan_debout_souriant_mid.png", horizontal = True)
+image logan debout_attriste_flip_mid = im.Flip("logan/debout/logan_debout_attriste_mid.png", horizontal = True)
+image logan debout_contrarie_flip_mid = im.Flip("logan/debout/logan_debout_contrarie_mid.png", horizontal = True)
+image logan debout_determine_flip_mid = im.Flip("logan/debout/logan_debout_determine_mid.png", horizontal = True)
 
 #Combat
 image logan combat_normal = "logan/combat/logan_combat_normal.png"

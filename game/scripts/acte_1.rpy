@@ -692,16 +692,18 @@ label village_1:
     scene bg village with dissolve
 
     if short_version:
-        "Narration"
+        "Cela fait désormais deux jours que la troupe d'Einar progresse vers le nord."
 
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
-    show logan debout_normal_mid at right with moveinright
+    show ve debout_normal_mid at right with dissolve
+    show logan debout_normal_flip_mid at center with moveinleft
     l "Nous y sommes. Perth."
 
     "Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive."
-    show einar debout_normal_mid at left with moveinleft
+    show ve debout_craintifs_mid at right
+    show einar debout_normal_mid at left zorder 1 with moveinleft
     e "Ça me semble bien calme."
-    show gv debout_normaux_mid at center with dissolve
+    show gv debout_normaux_mid at left zorder 0 with moveinleft 
     gv "On dirait qu'il n'y a pas grand monde..."
 
     e "Uniquement des vieillards, des femmes et des enfants."
@@ -712,15 +714,17 @@ label village_1:
     hide gv
     with dissolve
 
-    show ve debout_craintifs_mid at right with moveinright
+    
 
     ve "Bonjour, étrangers. Nous pouvons vous aider ?"
+    show einar debout_determine_mid at left
 
     e "Je veux que tout le village se rassemble sur la place, maintenant !"
 
     e "Toute désobeissance sera punie !"
 
     ve "Très bien, restez calme."
+    show einar debout_normal_mid at left
 
     "Des villageois sortent de leurs maisons et abandonnent leurs activités pour se rassembler."
     "Il n'y a que très peu d'hommes parmi la cinquantaine de villageois."
@@ -745,7 +749,7 @@ label village_1:
 
             ve "Ils sont ici, devant vous !"
 
-            show einar debout_furieux_mid at left
+            show einar debout_determine_mid at left
             e "Vous plaisantez ?"
 
             ve "J'ai bien peur que non ! Vous cherchez quelqu'un en particulier ?"
@@ -758,21 +762,25 @@ label village_1:
                     ve "Croyez bien que si ce genre de personnes venait à s'approcher d'ici, nous ne tarderions pas à les dénoncer."
                     ve "Comme vous le voyez, nous ne vivons pas dans l'opulence des villes du sud... Nous ne voulons pas être mêlés à ce genre d'histoires !"
                     ve "Vivre ici n'est pas de tout repos, nous n'avons pas besoin de nous acoquiner avec des rebelles !"
+                    $ accuser_rebellion = True
+                    jump menu_fouille_village
 
                 "Vous vous moquez de moi ?":
                     e "Je vais perdre patience, vieillard."
+                    show einar debout_furieux_mid at left
                     e "Vous savez pourquoi nous sommes ici. Vous ne me ferez pas croire que l'assassinat de l'intendant est passé inaperçu !"
                     e "L'absence de vos hommes est plus que suspecte !"
                     ve "Vous nous accusez de rébellion ? D'avoir tué Montgomery ?"
 
                     menu :
                         "Parfaitement.":
+                            show einar debout_determine_mid at left
                             e "Tout juste."
                             $ accuser_rebellion = True
                             jump menu_fouille_village
 
                         "Non":
-                            show einar debout_normal_mid at left
+                            show einar debout_determine_mid at left
                             e "Pas du tout. Pourquoi vous offusquer aussi vite ?"
                             e "Je prend simplement note de l'absence de vos hommes."
                             ve "Dans ce cas, prenez soin de bien choisir vos mots. Vous ne trouverez ici que d'honnêtes gens."
@@ -822,6 +830,14 @@ label village_1:
             jump e_fouiller_village_1
         "Je vais voir moi-même ce que vous cachez ! (fouiller)" if accuser_rebellion:
             call e_fouiller_village_1 pass (einarFouille = True) from _call_e_fouiller_village_1
+        "Nous partons" if accuser_rebellion == True:
+            show einar debout_normal_mid at left
+            e "Nous n'allons pas rester ici plus longtemps. Il est temps de partir."
+            show logan debout_normal_mid at center with dissolve
+            l "Quoi ? Déjà ? Nous n'avons pas déc..."
+            show einar debout_determine_mid at left
+            e "Ne discute pas mes ordres."
+            jump choix_retour_village_1
 
 label e_fouiller_village_1(einarFouille = False):
 
