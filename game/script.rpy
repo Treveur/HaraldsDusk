@@ -78,6 +78,16 @@ image einar combat_hache_normal_close = "einar/combat_hache/einar_combat_hache_n
 image einar combat_hache_furieux_close = "einar/combat_hache/einar_combat_hache_furieux_close.png"
 image einar combat_hache_determine_close = "einar/combat_hache/einar_combat_hache_determine_close.png"
 
+#Prisonnier
+image einar prisonnier_attriste_mid = "einar/prisonnier/einar_prisonnier_attriste.png"
+image einar prisonnier_blesse_mid = "einar/prisonnier/einar_prisonnier_blesse.png"
+image einar prisonnier_contrarie_mid = "einar/prisonnier/einar_prisonnier_contrarie.png"
+image einar prisonnier_determine_mid = "einar/prisonnier/einar_prisonnier_determine.png"
+image einar prisonnier_effraye_mid = "einar/prisonnier/einar_prisonnier_effraye.png"
+image einar prisonnier_furieux_mid = "einar/prisonnier/einar_prisonnier_furieux.png"
+image einar prisonnier_normal_mid = "einar/prisonnier/einar_prisonnier_normal.png"
+image einar prisonnier_souriant_mid = "einar/prisonnier/einar_prisonnier_souriant.png"
+
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
 image einar general_determine_mid = "einar/general/einar_general_determine_mid.png"

@@ -1194,21 +1194,16 @@ label choix_retour_village_1(massacre = False):
         menu:
             "Nous retournons à Dunbar":
                 call foret_2_r("chateau", True)
-                # call massacre_foret_2 pass (lieu = "chateau") from _call_massacre_foret_2
             "Nous poursuivons vers le nord":
                 call foret_2_r("nord", True)
-                # call massacre_foret_2 pass (lieu = "nord") from _call_massacre_foret_2_1
     else:
         menu:
             "Nous retournons à Dunbar":
                 call foret_2_r("chateau", False)
-                # call foret_2 pass (lieu = "chateau") from _call_foret_2
             "Nous poursuivons vers le nord":
                 call foret_2_r("nord", False)
-                # call foret_2 pass (lieu = "nord") from _call_foret_2_1
 
-                ##############################  WIP  ##############################
-#Sequence 7 remaniement
+#Sequence 7
 label foret_2_r(lieu, massacre_village):
 
     stop music
@@ -1303,16 +1298,12 @@ label foret_2_r(lieu, massacre_village):
         menu:
             "Ne relâchez pas votre attention":
                 call massacre_foret_2 ("attentif", True)
-                # call attaque_massacre_foret_2 pass (message = "attentif") from _call_attaque_massacre_foret_2
             "La mission est décevante":
                 call massacre_foret_2 ("deception", True)
-                # call attaque_massacre_foret_2 pass (message = "deception") from _call_attaque_massacre_foret_2_1
             "Les villageois étaient pitoyables !":
                 call massacre_foret_2 ("moquerie", True)
-                # call attaque_massacre_foret_2 pass (message = "moquerie") from _call_attaque_massacre_foret_2_2
             "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
                 call massacre_foret_2 ("chambre_logan", True)
-                # call attaque_massacre_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_foret_2_3
     else:
         l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
         e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
@@ -1325,16 +1316,12 @@ label foret_2_r(lieu, massacre_village):
         menu:
             "Ne relâchez pas votre attention":
                 call massacre_foret_2 ("attentif", False)
-                # call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2
             "La mission est décevante":
                 call massacre_foret_2 ("deception", False)
-                # call attaque_massacre_einar_sauf_foret_2 pass (message = "deception") from _call_attaque_massacre_einar_sauf_foret_2_1
             "Les villageois avaient une attitude suspecte":
                 call massacre_foret_2 ("attitude", False)
-                # call attaque_massacre_einar_sauf_foret_2 pass (message = "attitude") from _call_attaque_massacre_einar_sauf_foret_2_2
             "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
                 call massacre_foret_2 ("chambre_logan", False)
-                # call attaque_massacre_einar_sauf_foret_2 pass (message = "chambre_logan") from _call_attaque_massacre_einar_sauf_foret_2_3
 
 label massacre_foret_2 (message, massacre_village):
 
@@ -1539,7 +1526,6 @@ label massacre_foret_2 (message, massacre_village):
                 call e_implore_pitie_foret_2(False)
             "Vous mourrez tous !":
                 call e_menace_foret_2(False)
-##############################  WIP  ##############################
 
 label e_demande_nom_foret_2(bad_ending):
     hide logan
