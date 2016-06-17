@@ -106,7 +106,9 @@ image einar general_determine_close = "einar/general/einar_general_determine_clo
 
 
 ##Logan
-define l = Character('Logan', color="#f1c40f")
+define l = Character('Logan', color="#f1c40f", image="logan")
+
+image side logan = "logan/logan_portrait.png"
 
 #Debout
 image logan debout_normal = "logan/debout/logan_debout_normal.png"
@@ -211,6 +213,7 @@ image harald combat_determine_close = "harald/combat/harald_combat_determine_clo
 
 ##Huscarls
 define hu = Character("Huscarls")
+
 #Debout
 image huscarls debout_normal = "huscarls/debout/huscarls_debout_normaux.png"
 image huscarls debout_rire = "huscarls/debout/huscarls_debout_rire.png"
@@ -239,10 +242,53 @@ image huscarls combat_enthousiaste_close = "huscarls/combat/huscarls_combat_enth
 image huscarls combat_furieux_close = "huscarls/combat/huscarls_combat_furieux_close.png"
 image huscarls combat_inquiets_close = "huscarls/combat/huscarls_combat_inquiets_close.png"
 
+##moira
+define m = Character("moira", image="moira")
+
+image side moira = "moira/moira_portrait.png"
+
+#Debout
+image moira debout_normal = "moira/debout/moira_debout_normaux.png"
+image moira debout_rire = "moira/debout/moira_debout_rire.png"
+
+image moira debout_normal_mid = "moira/debout/moira_debout_normaux_mid.png"
+image moira debout_rire_mid = "moira/debout/moira_debout_rire_mid.png"
+
+image moira debout_normal_close = "moira/debout/moira_debout_normaux_close.png"
+image moira debout_rire_close = "moira/debout/moira_debout_rire_close.png"
+
+#Combat
+image moira combat_normaux = "moira/combat/moira_combat_normaux.png"
+image moira combat_enthousiaste = "moira/combat/moira_combat_enthousiaste.png"
+image moira combat_furieux = "moira/combat/moira_combat_furieux.png"
+image moira combat_inquiets = "moira/combat/moira_combat_inquiets.png"
+
+#mid
+image moira combat_normaux_mid = "moira/combat/moira_combat_normaux_mid.png"
+image moira combat_enthousiaste_mid = "moira/combat/moira_combat_enthousiaste_mid.png"
+image moira combat_furieux_mid = "moira/combat/moira_combat_furieux_mid.png"
+image moira combat_inquiets_mid = "moira/combat/moira_combat_inquiets_mid.png"
+
+#close
+image moira combat_normaux_close = "moira/combat/moira_combat_normaux_close.png"
+image moira combat_enthousiaste_close = "moira/combat/moira_combat_enthousiaste_close.png"
+image moira combat_furieux_close = "moira/combat/moira_combat_furieux_close.png"
+image moira combat_inquiets_close = "moira/combat/moira_combat_inquiets_close.png"
+
 ##Garde / Guerriers Vikings / Jeune Guerrier Viking
-define gv = Character('Guerriers Vikings', color="#e67e22")
-define gc = Character("Garde du Château")
-define jgv = Character("Jeune Guerrier Viking")
+define gv = Character('Guerriers Vikings', color="#e67e22", image="guerriers_vikings")
+
+image side guerriers_vikings = "guerriers_vikings/guerriers_vikings_portrait.png"
+
+
+define gc = Character("Garde du Château", image="guerriers_vikings")
+
+image side guerriers_vikings = "guerriers_vikings/guerriers_vikings_portrait.png"
+
+
+define jgv = Character("Jeune Guerrier Viking", image="jeune_viking")
+
+image side guerriers_vikings = "jeune_viking/jeune_viking_portrait.png"
 
 #Debout
 image gv debout_normaux = "guerriers_vikings/debout/gv_debout_normaux.png"
@@ -289,7 +335,9 @@ image jgv debout_normal_close = "jeune_viking/debout/jgv_debout_normal_close.png
 image jgv debout_pleurant_close = "jeune_viking/debout/jgv_debout_pleurant_close.png"
 
 ##Ogma
-define o = Character('Ogma', color="#d35400")
+define o = Character('Ogma', color="#d35400", image="ogma")
+
+image side ogma = "ogma/ogma_portrait.png"
 
 #Debout
 image ogma debout_normal = "ogma/debout/ogma_debout_normal.png"
@@ -361,7 +409,9 @@ image ogma combat_hache_brandir_close = "ogma/combat_hache/ogma_combat_hache_bra
 image ogma combat_hache_determine_close = "ogma/combat_hache/ogma_combat_hache_determine_close.png"
 
 ##Moira
-define m = Character("Moira", color = "#f00")
+define m = Character("Moira", color = "#f00", image="moira")
+
+image side moira = "moira/moira_portrait.png"
 
 #Debout
 image moira debout_normal = "moira/debout/moira_debout_normal.png"
@@ -387,6 +437,32 @@ image moira debout_attriste_close = "moira/debout/moira_debout_attriste_close.pn
 image moira debout_contrarie_close = "moira/debout/moira_debout_contrarie_close.png"
 image moira debout_effraye_close = "moira/debout/moira_debout_effraye_close.png"
 image moira debout_determine_close = "moira/debout/moira_debout_determine_close.png"
+
+#Flip
+image moira debout_normal_mid_flip = im.Flip("moira/debout/moira_debout_normal_mid.png", horizontal = True)
+image moira debout_souriant_mid_flip = im.Flip("moira/debout/moira_debout_souriant_mid.png", horizontal = True)
+image moira debout_furieux_mid_flip = im.Flip("moira/debout/moira_debout_furieux_mid.png", horizontal = True)
+image moira debout_attriste_mid_flip = im.Flip("moira/debout/moira_debout_attriste_mid.png", horizontal = True)
+image moira debout_contrarie_mid_flip = im.Flip("moira/debout/moira_debout_contrarie_mid.png", horizontal = True)
+image moira debout_effraye_mid_flip = im.Flip("moira/debout/moira_debout_effraye_mid.png", horizontal = True)
+image moira debout_determine_mid_flip = im.Flip("moira/debout/moira_debout_determine_mid.png", horizontal = True)
+
+image moira debout_normal_close_flip = im.Flip("moira/debout/moira_debout_normal_close.png", horizontal = True)
+image moira debout_souriant_close_flip = im.Flip("moira/debout/moira_debout_souriant_close.png", horizontal = True)
+image moira debout_furieux_close_flip = im.Flip("moira/debout/moira_debout_furieux_close.png", horizontal = True)
+image moira debout_attriste_close_flip = im.Flip("moira/debout/moira_debout_attriste_close.png", horizontal = True)
+image moira debout_contrarie_close_flip = im.Flip("moira/debout/moira_debout_contrarie_close.png", horizontal = True)
+image moira debout_effraye_close_flip = im.Flip("moira/debout/moira_debout_effraye_close.png", horizontal = True)
+image moira debout_determine_close_flip = im.Flip("moira/debout/moira_debout_determine_close.png", horizontal = True)
+
+image moira nue_normal_mid_flip = im.Flip("moira/nue/moira_nue_normale_mid.png", horizontal = True)
+image moira nue_souriant_mid_flip = im.Flip("moira/nue/moira_nue_souriant_mid.png", horizontal = True)
+image moira nue_effraye_mid_flip = im.Flip("moira/nue/moira_nue_effraye_mid.png", horizontal = True)
+
+image moira nue_normal_close_flip = im.Flip("moira/nue/moira_nue_normale_close.png", horizontal = True)
+image moira nue_souriant_close_flip = im.Flip("moira/nue/moira_nue_souriant_close.png", horizontal = True)
+image moira nue_effraye_close_flip = im.Flip("moira/nue/moira_nue_effraye_close.png", horizontal = True)
+
 
 #nude
 image moira nue_normal = "moira/nue/moira_nue_normale.png"
@@ -414,7 +490,9 @@ image moira attache_determine_close = "moira/buchet/moira_attache_determine_clos
 image moira attache_furieuse_close = "moira/buchet/moira_attache_furieuse_close.png"
 
 ##Rebelles ecossais
-define ge = Character('rebelles écossais', color="#f39c12")
+define ge = Character('rebelles écossais', color="#f39c12", image="rebelles_ecossais")
+
+image side rebelles_ecossais = "rebelles_ecossais/rebelles_ecossais_portrait.png"
 
 #Debout
 image re debout_normaux = "rebelles_ecossais/debout/re_debout_normaux.png"
@@ -449,11 +527,15 @@ image re combat_furieux_close = "rebelles_ecossais/combat/re_combat_furieux_clos
 
 
 ##Villageois / prisonniers
-define ve = Character('Villageois', color="#3498db")
+define ve = Character('Villageois', color="#3498db", image="villageois")
 
-define pe1 = Character("Prisonnier écossais 1")
-define pe2 = Character("Prisonnier écossais 2")
-define pe3 = Character("Prisonnière écossaise 1")
+image side villageois = "villageois/villageois_portrait.png"
+
+define pe1 = Character("Prisonnier écossais 1", image="villageois_ecossais")
+define pe2 = Character("Prisonnier écossais 2", image="villageois_ecossais")
+define pe3 = Character("Prisonnière écossaise 1", image="villageois_ecossais")
+
+image side villageois_ecossais = "villageois_ecossais/villageois_ecossais_portrait.png"
 
 #Debout
 image ve debout_normaux = "villageois_ecossais/debout/ve_debout_normaux.png"
@@ -479,7 +561,10 @@ image ve buchet_normaux_close = "villageois_ecossais/buchet/ve_buchet_effrayes_c
 image ve buchet_pleurent_close = "villageois_ecossais/buchet/ve_buchet_pleurent_close.png"
 
 ##Patrick
-define p = Character("Patrick")
+define p = Character("Patrick", image="patrick")
+
+image side patrick = "patrick/patrick_portrait.png"
+
 image patrick debout_normal = "patrick/debout/patrick_debout_normal.png"
 image patrick debout_furieux = "patrick/debout/patrick_debout_furieux.png"
 
