@@ -477,9 +477,11 @@ image re combat_furieux_close = "rebelles_ecossais/combat/re_combat_furieux_clos
 ##Villageois / prisonniers
 define ve = Character('Villageois', color="#3498db")
 
-define pe1 = Character("Prisonnier écossais 1")
-define pe2 = Character("Prisonnier écossais 2")
-define pe3 = Character("Prisonnière écossaise 1")
+define pe1 = Character("Prisonnier écossais 1", image="villageois_ecossais")
+define pe2 = Character("Prisonnier écossais 2", image="villageois_ecossais")
+define pe3 = Character("Prisonnière écossaise 1", image="villageois_ecossais")
+
+image side villageois_ecossais = "villageois_ecossais/villageois_ecossais_portrait.png"
 
 #Debout
 image ve debout_normaux = "villageois_ecossais/debout/ve_debout_normaux.png"
