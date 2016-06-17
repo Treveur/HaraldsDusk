@@ -71,13 +71,15 @@ label interieur_maison_village_1:
         "La situation est assez... plaisante !":
             show einar prisonnier_souriant_mid at left
             e "La situation est assez... satisfaisante. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme ..."
-            show moira debout_furieux_mid at right
+            show moira debout_furieux_mid at center with moveinleft
             " Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse se défendre."
+            show einar prisonnier_furieux_mid at left, shake
             e "Aaargh !"
+            show einar prisonnier_determine_mid at left
             m "A l'avenir, vous éviterez ce genre de... choses. Soyez correct avec moi et je serai correcte avec vous."
-            show moira debout_normal_mid at right
+            show moira debout_normal_mid at right with moveinright
 
-    "Moira broie quelque chose avec un pilon"
+    "Moira broie quelque chose avec un pilon."
 
     menu:
 
@@ -133,23 +135,25 @@ label interieur_maison_village_1:
             e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné !"
             show moira debout_determine_mid at right
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
-            m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais, vous n'en avez pas le droit et vous êtes entravé."
+            m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais ! vous n'en avez pas le droit et vous êtes entravé."
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
 
     "..."
+    "Ogma entre dans la pièce sans adresser un regard à Einar."
     hide einar with dissolve
-    show ogma debout_normal_flip_mid at center with dissolve
+    show ogma debout_normal_flip_mid at center with moveinleft
     o "Alors ? Comment va le prisonnier ?"
     show moira debout_normal_mid at right
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
     o "Et l'épaule ?"
-    m "La cicatrisation commence à peine, la blessure était profonde. Le vieux m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
+    m "La cicatrisation commence à peine, la blessure était profonde. Le vieux Murray m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
     show einar prisonnier_normal_mid at left with dissolve
     e "Je ..."
     show ogma debout_determine_mid at center
     o "Tais-toi !"
     show ogma debout_normal_flip_mid at center
     o "Moira, finis les soins et rejoins moi dehors."
+    show ogma debout_normal_mid at left with moveinleft
     hide ogma with dissolve
 
 
@@ -177,15 +181,17 @@ label interieur_maison_village_1:
             $ critique_ogma = True
 
     if critique_ogma:
-        show moira debout_furieux_mid at right
-        "Moira gifle Einar"
+        show moira debout_furieux_mid at center with moveinleft
+        "Moira gifle Einar."
+        show einar prisonnier_contrarie_mid at left, shake
         m "C'est la dernière fois que vous manquez de respect à mon père. Ou bien vous irez vous faire voir dans l'enclos des boucs."
+        show einar prisonnier_normal_mid at left
 
         menu :
             "Ne rien dire":
                 show einar prisonnier_normal_mid at left
                 e "..."
-                show moira debout_normal_mid at right
+                show moira debout_normal_mid at right with moveinright
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
                 m "La votre, dans un premier temps."
@@ -195,7 +201,7 @@ label interieur_maison_village_1:
             "Je vous demande pardon":
                 show einar prisonnier_contrarie_mid at left
                 e "Excusez-moi."
-                show moira debout_normal_mid at right
+                show moira debout_normal_mid at right with moveinright
                 m "N'en parlons plus."
                 show einar prisonnier_normal_mid at left
                 e "..."
@@ -209,7 +215,7 @@ label interieur_maison_village_1:
             "Vous n'avez pas d'ordres à me donner":
                 show einar prisonnier_determine_mid at left
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
-                show moira debout_furieux_mid at right
+                show moira debout_furieux_mid at right with moveinright
                 " Moira gifle Einar à nouveau, sur l'autre joue."
                 m "J'ai omis de préciser que vous me deviez aussi le respect."
                 show einar prisonnier_determine_mid at left
@@ -266,7 +272,7 @@ label interieur_maison_village_1:
     e "Alors c'est Ogma lui-même qui a assassiné l'intendant..."
 
     if short_version == False:
-        m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il pleurait."
+        m "Oui. Et je l'y ai aidé. Le garde qui m'avait frappé, je lui ai tranché la gorge. Il n'a même pas compris ce qu'il lui arrivait !"
         e "..."
 
     m "Mon père n'est pas une mauvaise personne. Il a tué l'intendant de plein droit."
@@ -275,6 +281,8 @@ label interieur_maison_village_1:
     show moira debout_normal_mid at right
     m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
     m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
+    
+    hide moira with dissolve
 
     if short_version:
         jump interieur_maison_village_4
@@ -434,7 +442,7 @@ label interieur_maison_village_3:
     hide einar
     hide moira
     with dissolve
-    show ve debout_effrayes_mid at right with dissolve
+    show ve debout_effrayes_mid at right with moveinleft
     ve "Ogma !"
     show ogma debout_contrarie_mid at center
     o "Fenella ? Quelque chose ne va pas ?"
@@ -487,12 +495,14 @@ label interieur_maison_village_3:
     o "Je n'avais pas le choix ! Sans ces décisions, les troupes du roi seraient arrivées ici après-demain au plus tard."
     show ogma debout_normal_mid at center
     o "Nous allons vous laisser. Reposez-vous."
-    show moira debout_normal_mid at right
+    show ogma debout_normal_mid at left with moveinleft
+    hide ogma with dissolve
+    show moira debout_normal_mid at left with moveinleft
+    hide moira with dissolve
     m "..."
 
     hide einar
     hide moira
-    hide ogma
     with dissolve
     jump interieur_maison_village_4
 
@@ -502,16 +512,17 @@ label interieur_maison_village_4:
     scene bg house2_jour with dissolve
 
     if short_version:
-        "Narration"
+        "Au fil des semaines, Einar et Moira apprennent à se connaître, tandis qu'Ogma se montre plus chaleureux. Einar est presque remis de ses blessures."
 
     $ libre_ask = False
     $ trahir_talk = False
     $ decevoir_moira = ""
-
+    
+    #if short_version = False:
     "Deux semaines plus tard..."
 
     "Moira arrive dans la chambre, un couteau à la main."
-    show moira debout_normal_close at right with dissolve
+    show moira debout_normal_close at right with moveinleft
     show einar debout_normal_close at left with dissolve
     m "Bonjour, Einar."
 
@@ -668,10 +679,11 @@ label interieur_maison_village_4:
             show moira debout_souriant_close at right
 
     m "Viens !"
-    hide einar
-    hide moira
-    with dissolve
-    "Moira entraîne Einar a l'extérieur en lui tenant la main"
+    show moira debout_souriant_close at left with moveinleft
+    hide moira with dissolve
+    hide einar with dissolve
+    
+    "Moira entraîne Einar a l'extérieur en lui tenant la main."
 
     if short_version:
         jump village_3
@@ -693,8 +705,8 @@ label village_2:
     "Les villageois remarquent à peine la présence d'Einar."
     hide ve with dissolve
 
-    show einar debout_normal_mid at left with dissolve
-    show moira debout_normal_mid at right with dissolve
+    show einar debout_normal_mid at left with moveinleft
+    show moira debout_normal_mid at right with moveinleft
 
     menu :
         "Pas d'ovation populaire ?":
@@ -742,6 +754,10 @@ label village_2:
     m "Ha ha, oui ! Et je crois bien que tu lui plaît beaucoup ! Elle a perdu son mari il y a quelques années. Il te ressemblait un peu, je crois."
     show einar debout_contrarie_mid at left
     e "La journée va être longue..."
+    
+    hide einar
+    hide moira
+    with dissolve
 
     jump village_3
 
@@ -751,14 +767,14 @@ label village_3:
     scene bg village2_crepuscule with dissolve
 
     if short_version:
-        "Narration"
+        "Tout au long de la journée, Moira fait découvrir Perth et ses habitants à Einar. Les villageois se montrent agréables et accueillants avec le viking."
 
     $ einar_raler = False
 
     "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
 
-    show einar debout_normal_mid at left
-    show moira debout_normal_mid at right
+    show einar debout_normal_mid at left with dissolve
+    show moira debout_normal_mid at right with dissolve
 
     m "Alors ? Qu'as-tu pensé de cette première sortie ? Tu as apprécié ?"
 
@@ -821,9 +837,10 @@ label village_3:
     show moira debout_souriant_mid at right
     m "Avant de te ramener à la maison, j'aimerais te montrer une dernière chose. C'est un endroit que j'aime beaucoup."
     "Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village."
-    hide einar
-    hide moira
-    with dissolve
+    show moira debout_souriant_mid_flip at right
+    hide moira with dissolve
+    show einar debout_determine_mid at right with moveinright
+    hide einar with dissolve 
 
     jump foret_3
 
@@ -833,9 +850,10 @@ label foret_3:
     play ambiance wood
 
     scene bg forest_crepuscule with dissolve
-
-    show einar debout_normal_mid at left with dissolve
-    show moira debout_normal_mid at right with dissolve
+    
+    show moira debout_normal_mid_flip at center with moveinleft
+    show einar debout_normal_mid at left with moveinleft
+    
 
     menu :
         "Où allons-nous ?":
@@ -848,14 +866,14 @@ label foret_3:
             show einar debout_determine_mid at left
             e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt et..."
 
-    "Moira demande à Einar de se taire, en mettant un doigt sur sa bouche."
-    show moira debout_souriant_mid at right
+    show moira debout_souriant_mid at center
     m "Chuuut..."
-
-    hide einar
-    hide moira
-    with dissolve
-
+    
+    show moira debout_normal_mid_flip at right with moveinright
+    hide moira with dissolve
+    show einar debout_normal_mid at right with moveinright
+    hide einar with dissolve
+    
     jump paradis_foret_1
 
 #Sequence 8
@@ -866,9 +884,8 @@ label paradis_foret_1:
 
     scene bg little_heaven with dissolve
 
-    show einar debout_normal_mid at left
-    show moira debout_normal_mid at right
-    with dissolve
+    show moira debout_normal_mid_flip at center with moveinleft
+    show einar debout_normal_mid at left with moveinleft
 
     $ moira_dead = False
     $ premier_refus_moira_foret_4 = False
@@ -883,40 +900,21 @@ label paradis_foret_1:
         "C'est magnifique":
             e "C'est un très bel endroit. Est-ce que..."
 
-    show moira debout_souriant_mid at right
+    show moira debout_souriant_mid at center
     "Moira pousse doucement Einar contre un arbre."
     "Elle recule de quelques pas, puis se retourne."
+    show moira debout_souriant_mid at right with moveinright
+    "..."
+    show moira debout_souriant_mid_flip at right
+    "..."
     hide moira with dissolve
     "Elle se dénude lentement devant Einar, sans le regarder."
-    show moira nue_normal_mid at right with dissolve
+    show moira nue_normal_mid_flip at right with dissolve
 
     menu :
-
-        "C'est l'occasion de me débarrasser d'elle et de foutre le camp ! (Tuer Moira)":
-            stop music
-            e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
-            "Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme."
-            show einar debout_determine_close at left
-            show moira nue_effraye_close at right
-            "Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante."
-            "Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte."
-            hide moira with dissolve
-            show einar debout_souriant_close at left
-            e "Il est temps pour moi de retrouver les miens."
-            $ moira_dead = True
-            jump cote_2
-
-        "C'est une occasion en or de s'enfuir (Fuir)":
-            "Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons."
-            hide einar with dissolve
-            "..."
-            show moira nue_normal_mid at right
-            m "Einar ? Einar ?"
-            $ premier_refus_moira_foret_4 = True
-            jump cote_2
-
+        
         "La regarder (Profiter du moment)":
-            show moira nue_souriant_close at right
+            show moira nue_souriant_close at center with moveinleft
             show einar debout_normal_close at left
             #Pas logique
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
@@ -926,8 +924,35 @@ label paradis_foret_1:
             "Elle embrasse doucement Einar et commence à l'enlacer."
             "Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite."
             "..."
-            stop music
             jump village_4
+
+        "C'est une occasion en or de s'enfuir (Fuir)":
+            "Sans faire craquer la moindre brindille, Einar abandonne Moira au milieu de la forêt, s'éclipsant rapidement sous les frondaisons."
+            hide einar with dissolve
+            "..."
+            show moira nue_normal_mid at right
+            m "Einar ?"
+            show moira nue_normal_mid at center with moveinleft
+            m "Einar ?"
+            $ premier_refus_moira_foret_4 = True
+            jump cote_2
+            
+        "C'est l'occasion de me débarrasser d'elle et de foutre le camp ! (Tuer Moira)":
+            stop music
+            e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"
+            "Einar approche silencieusement dans le dos de Moira, puis plaque ses mains autour du cou de la jeune femme."
+            show einar debout_determine_mid at center with moveinright
+            show moira nue_effraye_mid_flip at right
+            "Elle se débat, comprenant qu'elle vient d'être trahie. Sa respiration devient de plus en plus sifflante."
+            show einar debout_determine_close at center
+            show moira nue_effraye_close_flip at right
+            "Son visage devient violacé et elle se convulse, avant de tomber au sol, inerte."
+            hide moira with dissolve
+            show einar debout_souriant_close at center
+            e "Il est temps pour moi de retrouver les miens."
+            $ moira_dead = True
+            stop music
+            jump cote_2
 
     hide moira
     hide einar
@@ -967,7 +992,7 @@ label village_4:
     hide ogma with dissolve
     show moira debout_normal_mid at right with dissolve
     m "Tu as donné ta parole à mon père. S'il te plaît, ne me déçois pas..."
-    "Moira s'approche d'Einar."
+    show moira debout_normal_mid at center with moveinleft
 
     menu :
 
@@ -976,7 +1001,7 @@ label village_4:
             hide ogma
             hide moira
             show einar debout_souriant_close at left with dissolve
-            show moira debout_souriant_close at right with dissolve
+            show moira debout_souriant_close at center with dissolve
             "Einar embrasse doucement Moira en caressant son visage"
 
         "Je reviendrai, ne t'inquiète pas":
@@ -984,7 +1009,7 @@ label village_4:
             hide ogma
             hide moira
             show einar debout_souriant_close at left with dissolve
-            show moira debout_souriant_close at right with dissolve
+            show moira debout_souriant_close at center with dissolve
             "Einar saisit Moira par les hanches et l'attire contre lui, puis l'enlace."
             e "Ne t'inquiète pas. Je reviendrai."
 
@@ -992,6 +1017,7 @@ label village_4:
             hide ogma with dissolve
             hide moira with dissolve
             "Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
+            show einar debout_determine_close_flip at left
             hide einar with dissolve
 
 
@@ -1011,7 +1037,7 @@ label sentier_foret_1:
 
     scene bg sentier_jour with dissolve
     "Chemin faisant, Einar tente de remettre en perspective les événements récents et leurs implications..."
-    show einar debout_normal_close with dissolve
+    show einar debout_normal_close at center with moveinleft
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
     menu :
@@ -1022,13 +1048,14 @@ label sentier_foret_1:
         "L'oppression des écossais est révoltante":
             e "(Ces gens vivent dans la pauvreté et n'ont fait que se défendre face à un oppresseur. Ils m'ont sauvé. Mais le meurtre lâche de mes hommes et de Logan...)"
             e "(Tout ceci n'a été qu'un enchaînement malheureux d'événements qui n'arrangent personne. Le seul vrai coupable, c'était l'intendant Clyde Montgomery. Et il est mort.)"
+    show einar debout_normal_close at right with moveinright
     hide einar with dissolve
     jump foret_5
 
 label foret_5:
     scene bg forest_night with dissolve
     "Sans y prêter attention, Einar se rapproche peu à peu de Dunbar, toujours absorbé par ses pensées."
-    show einar debout_normal_close with dissolve
+    show einar debout_normal_close at center with moveinleft
     "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
     menu:
@@ -1038,7 +1065,7 @@ label foret_5:
             e "(Elle ne s'est occupée de moi que parce que son père le lui avait demandé. Je me demande si notre petite escapade en forêt était aussi une idée de son père...)"
         "Ce n'était qu'une amourette":
             e "(J'ai bien profité d'elle. Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
-
+    show einar debout_normal_close at right with moveinright
     hide einar with dissolve
     jump cote_1
 
@@ -1049,7 +1076,7 @@ label cote_1:
 
     scene bg plaine_cotière_matin with dissolve
     "A quelques heures de marche de Dunbar..."
-    show einar debout_determine_close with dissolve
+    show einar debout_normal_close at center with moveinleft
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
     menu :
@@ -1061,6 +1088,6 @@ label cote_1:
             e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps... Pourvu qu'Ogma respecte sa parole, lui !)"
         "Je dois abandonner les écossais, pour ma propre survie":
             e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera-t-il à Moira ?)"
-
+    show einar debout_normal_close at right with moveinright
     hide einar with dissolve
     jump cote_2

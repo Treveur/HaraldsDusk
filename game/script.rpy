@@ -388,6 +388,32 @@ image moira debout_contrarie_close = "moira/debout/moira_debout_contrarie_close.
 image moira debout_effraye_close = "moira/debout/moira_debout_effraye_close.png"
 image moira debout_determine_close = "moira/debout/moira_debout_determine_close.png"
 
+#Flip
+image moira debout_normal_mid_flip = im.Flip("moira/debout/moira_debout_normal_mid.png", horizontal = True)
+image moira debout_souriant_mid_flip = im.Flip("moira/debout/moira_debout_souriant_mid.png", horizontal = True)
+image moira debout_furieux_mid_flip = im.Flip("moira/debout/moira_debout_furieux_mid.png", horizontal = True)
+image moira debout_attriste_mid_flip = im.Flip("moira/debout/moira_debout_attriste_mid.png", horizontal = True)
+image moira debout_contrarie_mid_flip = im.Flip("moira/debout/moira_debout_contrarie_mid.png", horizontal = True)
+image moira debout_effraye_mid_flip = im.Flip("moira/debout/moira_debout_effraye_mid.png", horizontal = True)
+image moira debout_determine_mid_flip = im.Flip("moira/debout/moira_debout_determine_mid.png", horizontal = True)
+
+image moira debout_normal_close_flip = im.Flip("moira/debout/moira_debout_normal_close.png", horizontal = True)
+image moira debout_souriant_close_flip = im.Flip("moira/debout/moira_debout_souriant_close.png", horizontal = True)
+image moira debout_furieux_close_flip = im.Flip("moira/debout/moira_debout_furieux_close.png", horizontal = True)
+image moira debout_attriste_close_flip = im.Flip("moira/debout/moira_debout_attriste_close.png", horizontal = True)
+image moira debout_contrarie_close_flip = im.Flip("moira/debout/moira_debout_contrarie_close.png", horizontal = True)
+image moira debout_effraye_close_flip = im.Flip("moira/debout/moira_debout_effraye_close.png", horizontal = True)
+image moira debout_determine_close_flip = im.Flip("moira/debout/moira_debout_determine_close.png", horizontal = True)
+
+image moira nue_normal_mid_flip = im.Flip("moira/nue/moira_nue_normale_mid.png", horizontal = True)
+image moira nue_souriant_mid_flip = im.Flip("moira/nue/moira_nue_souriant_mid.png", horizontal = True)
+image moira nue_effraye_mid_flip = im.Flip("moira/nue/moira_nue_effraye_mid.png", horizontal = True)
+
+image moira nue_normal_close_flip = im.Flip("moira/nue/moira_nue_normale_close.png", horizontal = True)
+image moira nue_souriant_close_flip = im.Flip("moira/nue/moira_nue_souriant_close.png", horizontal = True)
+image moira nue_effraye_close_flip = im.Flip("moira/nue/moira_nue_effraye_close.png", horizontal = True)
+
+
 #nude
 image moira nue_normal = "moira/nue/moira_nue_normale.png"
 image moira nue_souriant = "moira/nue/moira_nue_souriante.png"
