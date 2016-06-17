@@ -500,8 +500,9 @@ image bg forest = "scenes/foretWestruther_ext_jour_foret.jpg"
 image bg forest_night = "scenes/foretWestruther_ext_nuit_foret.jpg"
 image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.jpg"
 image bg little_heaven = "scenes/foretWestruther_ext_matin_paradis.png"
+
 #sentier
-image bg sentier_jour = "scenes/foretWestruther_ext_matin_sentier.jpg"
+image bg sentier_jour = "scenes/foretWestruther_ext_matin_sentier.png"
 
 #Village
 #exterior
