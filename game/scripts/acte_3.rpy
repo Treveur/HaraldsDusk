@@ -471,6 +471,7 @@ label pont_levis_baisse:
 
     #???
     #Ambiance bruit cliqueti boucliers et épée
+    scene bg pont_levis
     show gv combat_normaux_mid at center with dissolve
 
     gv "Attendez... Attendez..."
@@ -573,7 +574,7 @@ label pont_levis_baisse:
             "Attaquer":
                 hide screen countdown
                 "Ogma détourne le coup d'Einar et le frappe au flanc."
-                jump game_over_combat
+                call game_over_combat('pont_levis_baisse')
 
         $ time = 2.5
         $ timer_range = 2.5
@@ -650,7 +651,7 @@ label pont_levis_baisse:
             "Attaquer":
                 hide screen countdown
                 "Einar contre-attaque furieusement, faisant reculer la masse des guerriers d'élite."
-                jump game_over_combat
+                call game_over_combat("pont_levis_baisse")
 
         $ time = 4
         $ timer_range = 4
@@ -802,6 +803,8 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     $ epargner_harld_donjon = False
 
+    scene bg pont_levis
+
     show einar combat_normal_mid at left
     show harald combat_normal_mid at right
     with dissolve
@@ -923,7 +926,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         "Harald se jete sur Einar et tente de la frapper à l'aide de ses poings"
 
         show screen countdown
-        menu:
+        menu combat_harald:
 
             "Esquiver":
                 hide screen countdown
@@ -932,7 +935,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Se jeter Harald":
                 hide screen countdown
                 "En se jetant sur les huscarls, Einar se fait couper de par en par"
-                jump game_over_combat
+                call game_over_combat('combat_harald')
 
         $ time = 5
         $ timer_range = 5
