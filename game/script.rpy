@@ -61,7 +61,10 @@ image einar combat_blesse_close = "einar/combat/einar_combat_blesse_close.png"
 image einar combat_determine_close = "einar/combat/einar_combat_determine_close.png"
 
 #flip
+image einar combat_normal_mid_flip = im.Flip("einar/combat/einar_combat_normal_mid.png", horizontal = True)
 image einar combat_determine_mid_flip = im.Flip("einar/combat/einar_combat_determine_mid.png", horizontal = True)
+image einar combat_furieux_mid_flip = im.Flip("einar/combat/einar_combat_furieux_mid.png", horizontal = True)
+image einar combat_blesse_mid_flip = im.Flip("einar/combat/einar_combat_blesse_mid.png", horizontal = True)
 
 #Combat Hache
 image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.png"
