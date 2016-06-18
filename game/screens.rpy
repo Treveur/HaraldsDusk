@@ -466,6 +466,13 @@ screen preferences:
                         action Play("sound", config.sample_sound)
                         style "soundtest_button"
 
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Volume de l'ambiance sonore")
+                bar value MixerValue("ambiance")
+
             if config.has_voice:
                 frame:
                     style_group "pref"
