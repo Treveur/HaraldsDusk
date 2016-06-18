@@ -7,12 +7,9 @@ label cote_2:
 
     scene bg plaine_chateau_matin with dissolve
 
-    if short_version:
-        "Narration"
-
     "Et après trois jours de marche depuis Perth..."
 
-    show einar debout_normal_mid at center with dissolve
+    show einar debout_normal_mid at left with moveinleft
 
     e "Dunbar. Déjà..."
     e "..."
@@ -27,8 +24,9 @@ label exterieur_chateau_1:
 
     scene bg chateau_porte with dissolve
 
+    show gv debout_normaux_mid at center with dissolve
     show einar debout_normal_mid at left with moveinleft
-    show gv debout_normaux_mid at right with dissolve
+    
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
 
@@ -43,20 +41,27 @@ label exterieur_chateau_1:
             show einar debout_determine_mid at left
             e "Écarte-toi, Geir! Je dois parler au roi sans tarder !"
             gc "Bien sûr, excuse-moi."
+            show gv debout_normaux_mid at right with moveinright
+            show einar debout_determine_mid at center with moveinright
 
         "Pas mal de choses...":
             e "Il m'est arrivé toutes sorte de chose que je n'ai ni le temps ni l'envie de te raconter. Les autres sont tous morts et j'ai bien failli y passer aussi."
             e "Maintenant, laisse-moi passer."
             gc "Bien sûr, excuse-moi."
+            show gv debout_normaux_mid at right with moveinright
+            show einar debout_determine_mid at center with moveinright
 
         "Ne me barre pas la route !":
             show einar debout_determine_mid at left
             e "Laisse-moi passer, andouille. On ne barre pas la route à un huscarl ! Je dois voir le roi au plus vite !"
             gc "Bien sûr, excuse-moi."
-
-
-    hide gv with dissolve
+            show gv debout_normaux_mid at right with moveinright
+            show einar debout_determine_mid at center with moveinright
+    
+    
     hide einar with dissolve
+    hide gv with dissolve
+    
 
     jump cour_chateau_1
 
@@ -73,12 +78,14 @@ label cour_chateau_1:
 
     scene bg cour_chateau with dissolve
 
-    "Harald est en grande discussion avec un huscarl au milieu de la cour"
+    "Harald est en grande discussion avec un huscarl au milieu de la cour."
+    show harald debout_normal_mid_flip at right with dissolve
 
-    show einar debout_normal_mid at left with dissolve
+    show einar debout_normal_mid at left with moveinleft
     e "Sire ! Sire !"
-    show harald debout_normal_mid at right with dissolve
+    
     h "... doit nous faire venir de nouveaux navires de guerre, et..."
+    show harald debout_normal_mid at right
     h "Einar ? Que... D'où viens-tu ? Où as-tu passé tout ce temps ? Où sont tes compagnons ? J'ai beaucoup de questions à te poser !"
 
     menu:
@@ -269,7 +276,7 @@ label cour_chateau_1:
         p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
         hide ve
-        show einar debout_normal_mid at left with dissolve
+        show einar debout_normal_mid at left with moveinleft
         show patrick debout_normal_mid at right
 
         menu:
@@ -407,12 +414,10 @@ label cour_chateau_2:
 
     #toujours ambiance chateau
     show bg cour_chateau_crepuscule with dissolve
-
-    "Narration"
     "Au crépuscule..."
-    show gv debout_normaux_mid at left with dissolve
-    show harald debout_normal_mid at right with dissolve
+    show gv debout_normaux_mid at left with moveinleft
     gv "Sire ! Sire !"
+    show harald debout_normal_mid at right with moveinright
     h "Qu'y a-t-il ? Parle !"
     gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
     show harald debout_furieux_mid at right
@@ -424,6 +429,7 @@ label cour_chateau_2:
 
     hide harald
     hide gv
+    with dissolve
 
     jump interieur_grande_porte_chateau_1
 
@@ -447,10 +453,6 @@ label interieur_grande_porte_chateau_1:
 
     menu:
         "Ouvrir le pont-levis":
-
-            play sound drawbrigde
-            pause (4)
-            show bg chateau_porte_interieur_crepuscule with vpunch
 
             hide einar
             if soupcon_harald_1:
@@ -476,6 +478,9 @@ label pont_levis_baisse:
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
     "Une volée de flèches abat une partie des rebelles qui foncent vers le château."
+    play sound drawbrigde
+    pause (4)
+    show bg chateau_porte_interieur_crepuscule with vpunch
     "Le pont s'abaisse brutalement, laissant le champ libre."
     gv "Trahison ! Bloquez le passage, vite !"
     "..."
@@ -500,18 +505,27 @@ label pont_levis_baisse:
             e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur !"
 
         "Ne rien dire":
-            show einar debout_furieux_mid at left
+            show einar debout_determine_mid at left
             e "..."
 
     hide gv
     hide einar
     with dissolve
-
+    
+    show bg plaine_plaine_crepuscule with dissolve
+    show re debout_furieux_mid at center with dissolve
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
+    hide re
+    show bg chateau_porte_interieur_crepuscule with dissolve
+    show re debout_furieux_mid at right with dissolve
+    show re debout_furieux_mid at center with moveinleft
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
+    hide re
+    show bg cour_chateau_crepuscule with dissolve
+    show gv debout_determines_mid at center
+    show einar combat_determine_mid at left
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    show re debout_enthousiastes_mid at left
-    show gv debout_determines_mid at right
+    show re debout_furieux_mid at right with moveinright
     with dissolve
     #Ajouter un shake camera
     ge "HAAAAA !"
@@ -627,7 +641,7 @@ label pont_levis_baisse:
         with dissolve
 
         hu "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
-        hu "Ha, il a du tomber sur un beau garçon de ferme !"
+        hu "Ha, il a dû tomber sur un beau garçon de ferme !"
         hu "Défend-toi, traître !"
 
         #"Affronter ses anciens confrères huscarls. WIP"
@@ -646,11 +660,12 @@ label pont_levis_baisse:
             "Parer":
                 hide screen countdown
                 "Uniquement armé de sa hache, Einar ne parvient pas à se protéger : les huscarls prennent le dessus."
+                jump game_over_combat
 
             "Attaquer":
                 hide screen countdown
                 "Einar contre-attaque furieusement, faisant reculer la masse des guerriers d'élite."
-                jump game_over_combat
+                
 
         $ time = 4
         $ timer_range = 4
@@ -685,6 +700,14 @@ label pont_levis_baisse:
         o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
 
         menu :
+            
+            "J'y vais !":
+                show einar combat_determine_mid at left
+                e "J'y vais!"
+                hide einar
+                hide ogma
+                with dissolve
+                jump e_bruler_donjon_obeir_donjon
 
             "Ne me donne pas d'ordres":
                 show einar combat_normal_mid at left
@@ -695,14 +718,7 @@ label pont_levis_baisse:
                 with dissolve
 
                 jump e_bruler_donjon_desobeir_donjon
-
-            "J'y vais !":
-                show einar combat_determine_mid at left
-                e "J'y vais!"
-                hide einar
-                hide ogma
-                with dissolve
-                jump e_bruler_donjon_obeir_donjon
+            
 
 label e_bruler_donjon_desobeir_donjon:
 

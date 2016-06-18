@@ -172,6 +172,16 @@ image harald debout_furieux_close = "harald/debout/harald_debout_furieux_close.p
 image harald debout_contrarie_close = "harald/debout/harald_debout_contrarie_close.png"
 image harald debout_determine_close = "harald/debout/harald_debout_determine_close.png"
 
+image harald debout_normal_mid_flip = im.Flip("harald/debout/harald_debout_normal_mid.png", horizontal = True)
+image harald debout_furieux_mid_flip = im.Flip("harald/debout/harald_debout_furieux_mid.png", horizontal = True)
+image harald debout_contrarie_mid_flip = im.Flip("harald/debout/harald_debout_contrarie_mid.png", horizontal = True)
+image harald debout_determine_mid_flip = im.Flip("harald/debout/harald_debout_determine_mid.png", horizontal = True)
+
+image harald debout_normal_close_flip = im.Flip("harald/debout/harald_debout_normal_close.png", horizontal = True)
+image harald debout_furieux_close_flip = im.Flip("harald/debout/harald_debout_furieux_close.png", horizontal = True)
+image harald debout_contrarie_close_flip = im.Flip("harald/debout/harald_debout_contrarie_close.png", horizontal = True)
+image harald debout_determine_close_flip = im.Flip("harald/debout/harald_debout_determine_close.png", horizontal = True)
+
 #Combat Hache
 image harald combat_hache_normal = "harald/combat_hache/harald_combat_hache_normal.png"
 image harald combat_hache_furieux = "harald/combat_hache/harald_combat_hache_furieux.png"
@@ -604,8 +614,8 @@ image bg plaine_cotière_matin = "scenes/plaine_ext_matin_plaineCotiere.png"
 image bg plaine_chateau_matin = "scenes/plaine_ext_matin_plaineChateau.png"
 
 #plaine
-image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.jpg"
-image bg plaine_plaine_crepuscule = "scenes/plaine_ext_crepuscule_plaine.jpg"
+image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.png"
+image bg plaine_plaine_crepuscule = "scenes/plaine_ext_crepuscule_plaine.png"
 
 ##Chateau
 #pont-levis
