@@ -223,6 +223,7 @@ screen navigation:
         has vbox
 
         textbutton _("Return") action Return()
+        textbutton 'Text History' action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
         textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Save Game") action ShowMenu("save")
         textbutton _("Load Game") action ShowMenu("load")
