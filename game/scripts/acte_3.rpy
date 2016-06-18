@@ -2250,6 +2250,8 @@ label e_sauve_ogma_defendre_porte:
     "Pris au coeur de la mêlée, Einar est piétiné et laissé pour mort."
 
     "..."
+
+    scene bg chateau_rempart_crepuscule
     show ogma combat_hache_brandir at right
     "Lorsqu'il reprend ses esprits, Einar voit Ogma sur les remparts, brandissant la Hache Sainte. Derrière lui, le château brûle."
     "Depuis les remparts, Ogma semble remarquer le mouvement d'Einar au milieu des cadavres."

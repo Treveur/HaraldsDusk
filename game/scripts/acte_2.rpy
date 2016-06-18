@@ -281,7 +281,7 @@ label interieur_maison_village_1:
     show moira debout_normal_mid at right
     m "J'estime que vous avez le droit de savoir pourquoi vos hommes sont morts, et pourquoi vous allez trahir le roi."
     m "Je vais vous laisser. Je reviendrai demain changer vos bandages."
-    
+
     hide moira with dissolve
 
     if short_version:
@@ -517,7 +517,7 @@ label interieur_maison_village_4:
     $ libre_ask = False
     $ trahir_talk = False
     $ decevoir_moira = ""
-    
+
     #if short_version = False:
     "Deux semaines plus tard..."
 
@@ -682,7 +682,7 @@ label interieur_maison_village_4:
     show moira debout_souriant_close at left with moveinleft
     hide moira with dissolve
     hide einar with dissolve
-    
+
     "Moira entraîne Einar a l'extérieur en lui tenant la main."
 
     if short_version:
@@ -754,7 +754,7 @@ label village_2:
     m "Ha ha, oui ! Et je crois bien que tu lui plaît beaucoup ! Elle a perdu son mari il y a quelques années. Il te ressemblait un peu, je crois."
     show einar debout_contrarie_mid at left
     e "La journée va être longue..."
-    
+
     hide einar
     hide moira
     with dissolve
@@ -764,13 +764,14 @@ label village_2:
 #Sequence 6
 label village_3:
 
-    scene bg village2_crepuscule with dissolve
+    scene bg village with dissolve
 
     if short_version:
         "Tout au long de la journée, Moira fait découvrir Perth et ses habitants à Einar. Les villageois se montrent agréables et accueillants avec le viking."
 
     $ einar_raler = False
 
+    scene bg village_crepuscule with fade
     "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
 
     show einar debout_normal_mid at left with dissolve
@@ -840,7 +841,7 @@ label village_3:
     show moira debout_souriant_mid_flip at right
     hide moira with dissolve
     show einar debout_determine_mid at right with moveinright
-    hide einar with dissolve 
+    hide einar with dissolve
 
     jump foret_3
 
@@ -850,10 +851,10 @@ label foret_3:
     play ambiance wood
 
     scene bg forest_crepuscule with dissolve
-    
+
     show moira debout_normal_mid_flip at center with moveinleft
     show einar debout_normal_mid at left with moveinleft
-    
+
 
     menu :
         "Où allons-nous ?":
@@ -868,12 +869,12 @@ label foret_3:
 
     show moira debout_souriant_mid at center
     m "Chuuut..."
-    
+
     show moira debout_normal_mid_flip at right with moveinright
     hide moira with dissolve
     show einar debout_normal_mid at right with moveinright
     hide einar with dissolve
-    
+
     jump paradis_foret_1
 
 #Sequence 8
@@ -912,7 +913,7 @@ label paradis_foret_1:
     show moira nue_normal_mid_flip at right with dissolve
 
     menu :
-        
+
         "La regarder (Profiter du moment)":
             show moira nue_souriant_close at center with moveinleft
             show einar debout_normal_close at left
@@ -936,7 +937,7 @@ label paradis_foret_1:
             m "Einar ?"
             $ premier_refus_moira_foret_4 = True
             jump cote_2
-            
+
         "C'est l'occasion de me débarrasser d'elle et de foutre le camp ! (Tuer Moira)":
             stop music
             e "(Je n'aurai pas deux occasions comme celle là. Je dois rentrer au château et assurer mes arrières.)"

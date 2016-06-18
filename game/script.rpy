@@ -605,7 +605,7 @@ image bg sentier_jour = "scenes/foretWestruther_ext_matin_sentier.png"
 #Village
 #exterior
 image bg village = "scenes/perth_ext_jour_village.png"
-image bg village2_crepuscule = "scenes/perth_ext_jour_village.png"
+image bg village_crepuscule = "scenes/perth_ext_crepuscule_village.png"
 #ogma house
 image bg house = "scenes/perth_int_jour_maison.png"
 image bg house2_jour = "scenes/perth_int_jour_maison.png"
@@ -638,7 +638,7 @@ image bg chateau_couloir_crepuscule = "scenes/chateauDunbar_int_crepuscule_coulo
 #chambre Harald
 image bg chateau_chambre_nuit = "scenes/chateauDunbar_int_nuit_chambreHarald.png"
 #Salle banquet
-image bg chateau_banquet = "scenes/chateauDunbar_int_salleBanque.jpg"
+image bg chateau_banquet = "scenes/chateauDunbar_int_salleBanque.png"
 
 #Fond uni
 image bg black = "#000"
