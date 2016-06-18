@@ -57,6 +57,9 @@ screen say:
     # Utilisation du menu rapide.
     use quick_menu
 
+    #Utilisation du menu ingame
+    use ingame_menu
+
 
 ##############################################################################
 # Choix
@@ -87,6 +90,9 @@ screen choice:
 
                 else:
                     text caption style "menu_caption"
+
+    #Utilisation du menu ingame
+    use ingame_menu
 
 init -2 python:
     config.narrator_menu = True
@@ -345,8 +351,8 @@ screen choose_lenght:
     # Les boutons du menu principal.
     frame:
         style_group "mm"
-        xalign .98
-        yalign .98
+        xalign .5
+        yalign .5
 
         has vbox
 
@@ -571,3 +577,12 @@ init -2 python:
     style.quick_button_text.selected_idle_color = "#cc08"
     style.quick_button_text.selected_hover_color = "#cc0"
     style.quick_button_text.insensitive_color = "#4448"
+
+##############################################################################
+# In-game UI
+screen ingame_menu:
+
+        vbox xalign 0.03 yalign 0.03:
+            imagebutton auto "interface/buttons/log/log_%s.jpg" action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
+        vbox xalign 0.97 yalign 0.03:
+            imagebutton auto "interface/buttons/pause/pause_%s.jpg" action ShowMenu("save")

@@ -71,7 +71,7 @@ init -1 python hide:
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
         #mm_root = "#dcebff",
-        mm_root = "menu/menu.jpg",
+        mm_root = "interface/menu/menu.jpg",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
