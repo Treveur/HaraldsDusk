@@ -1269,7 +1269,7 @@ label foret_2_r(lieu, massacre_village):
     scene bg forest_night with dissolve
 
     "Le soir, la troupe discute des exploits passés..."
-    show gv debout_normaux_mid at halfsize, center with dissolve
+    show gv debout_normaux_mid at center with dissolve
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
 
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"

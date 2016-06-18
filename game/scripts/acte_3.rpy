@@ -687,13 +687,18 @@ label pont_levis_baisse:
         menu :
             "Attaque ample":
                 hide screen countdown
+                show einar combat_blesse_mid at center
                 "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
                 show huscarls combat_furieux_mid at right ,shake
                 "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
-                show re debout_furieux_mid at right with dissolve
+                show re debout_furieux_mid at right with moveinright
+                "Les huscarls sont vaincus en l'espace de quelques secondes, broyés par la masse des rebelles."
+                hide huscarls with dissolve
+                
 
             "Attaque précise":
                 hide screen countdown
+                show einar combat_blesse_mid at center
                 show huscarls combat_furieux_mid at right ,shake
                 "Einar tranche la tête d'un huscarl, mais l'un des guerriers d'élite atteint Einar dans le dos."
                 show einar combat_blesse_mid at left ,shake
@@ -703,13 +708,13 @@ label pont_levis_baisse:
 
         "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
         hide huscarls with dissolve
-        show einar combat_normal_mid at left
-        show ogma combat_normal_mid at right
+        show einar combat_normal_mid at left with moveinleft
+        show ogma combat_normal_mid at center with moveinright
         with dissolve
         o "Einar ! Ne reste pas ici ! Tu dois incendier le donjon, vite !"
         e "Le donjon ? Pourquoi ?"
         o "Si Harald n'est pas encore entrain de se battre, c'est parce qu'il n'a pas encore fini de s'équiper !"
-        show ogma combat_determine_mid at right
+        show ogma combat_determine_mid at center
         o "Nous pouvons le prendre au piège ! Le donjon doit brûler !"
 
         menu :
@@ -717,8 +722,10 @@ label pont_levis_baisse:
             "J'y vais !":
                 show einar combat_determine_mid at left
                 e "J'y vais!"
+                show einar combat_determine_mid_flip at left
                 hide einar
                 hide ogma
+                hide re
                 with dissolve
                 jump e_bruler_donjon_obeir_donjon
 
@@ -728,6 +735,7 @@ label pont_levis_baisse:
 
                 hide einar
                 hide ogma
+                hide re
                 with dissolve
 
                 jump e_bruler_donjon_desobeir_donjon
@@ -735,11 +743,14 @@ label pont_levis_baisse:
 
 label e_bruler_donjon_desobeir_donjon:
 
-    "Le jeune soldat qui pleurait lors du jugement survient face à Einar. Il a l'air terrorisé mais résolu, et tue un rebelle."
-
-    show einar combat_normal_mid at left
-    show jgv debout_normal_mid at right
-    with dissolve
+    "Le jeune soldat qui pleurait lors du jugement survient face à Einar."
+    show jgv debout_normal_mid at center with dissolve
+    show re debout_furieux_mid at right with dissolve
+    "Il a l'air terrorisé mais résolu, et tue un rebelle."
+    show re debout_furieux_mid at right, shake
+    hide re with dissolve
+    
+    show einar combat_normal_mid at left with moveinleft
 
     menu :
 
@@ -747,50 +758,66 @@ label e_bruler_donjon_desobeir_donjon:
             show einar combat_determine_mid at left
             e "Désolé, petit. Nous ne sommes plus dans le même camp."
             "Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément."
+            hide jgv with dissolve
 
         "Saisi ta chance (l'assommer)":
             show einar combat_determine_mid at left
             e "Je t'offre l'occasion de refaire ta vie, saisi-la."
             "Du plat de sa hache, Einar frappe le soldat à la tempe. Il s'écroule à terre, inconscient"
+            hide jgv with dissolve
 
         "L'ignorer":
             #animation einar sortir
             e "(Je n'ai pas le temps de m'occuper de lui.)"
-
+            hide jgv with dissolve
+    
+    hide einar with dissolve
+    
     "Harald jaillit du donjon, protégé par son armure et portant la terrible Hache Sainte."
-
-    show harald combat_hache_determine_mid at center
-    show huscarls combat_enthousiaste_mid at right
+    
+    show re debout_furieux_mid at right with dissolve
+    show harald combat_hache_determine_mid_flip at center with moveinleft
+    show huscarls combat_enthousiaste_mid at left with moveinleft
+    
 
     h "A moi, huscarls ! Suivez votre roi !"
     hu "HAAAAAA !"
+    show harald combat_hache_determine_mid_flip at right with moveinright
+    show re debout_furieux_mid at right, shake
+    hide re with dissolve
+    show huscarls combat_enthousiaste_mid at center with moveinright
+    
+    hide harald
+    show huscarls combat_enthousiaste_mid at right with moveinright
+    hide re
+    hide huscarls
+    with dissolve
+    
     "Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles."
 
-    hide huscarls with dissolve
-    show einar combat_normal_mid at left with dissolve
-
-    "Harald arrive devant Einar, couvert du sang de ses victimes."
-
-
-    show harald combat_hache_normal_mid at right
+    "Le roi arrive devant Einar, couvert du sang de ses victimes."
+    
+    show einar combat_normal_mid_flip at right with dissolve
+    show harald combat_hache_normal_mid_flip at center with moveinleft
+    show huscarls combat_enthousiaste_mid at left with moveinleft
     h "Je te libère de ton allégeance. Je n'ai plus besoin de tes services."
 
     menu:
         "Sans regrets !":
-            show einar combat_determine_mid at left with dissolve
+            show einar combat_determine_mid_flip at right with dissolve
             e "Je ne regrette rien."
 
         "Pardon":
-            show einar debout_attriste_mid at left with dissolve
+            show einar debout_attriste_mid_flip at right with dissolve
             e "Je regrette tout et vous demande pardon, Sire."
 
         "Je ne vois aucun roi !":
-            show einar combat_normal_mid at left with dissolve
+            show einar combat_normal_mid_flip at right with dissolve
             e "Je ne vois aucun souverain ici..."
-            show einar combat_furieux_mid at left
+            show einar combat_furieux_mid_flip at right
             e "Il n'y a personne pour me libérer d'une allégeance quelconque !"
 
-    show harald combat_hache_furieux_mid at right
+    show harald combat_hache_furieux_mid_flip at center
     h "Garde ta langue de traître derrière tes dents !"
 
     jump bad_ending_6
@@ -798,19 +825,21 @@ label e_bruler_donjon_desobeir_donjon:
 label e_bruler_donjon_obeir_donjon:
 
     $ prendre_hache = False
-    scene bg chateau_chambre_nuit with dissolve
+    scene bg chateau_couloir_crepuscule with dissolve
     #Animation
     "Einar s'élance en direction du donjon, passant à l'arrière des affrontements."
+    show einar debout_normal_mid_flip at right with moveinright
     "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
+    show einar debout_determine_mid_flip at center with moveinright
     "..."
+    show einar debout_determine_mid_flip at left with moveinright
     "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
     "Le roi est entrain de s'équiper de son armure."
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
 
-    show einar combat_normal_mid at left with dissolve
-
     menu:
         "Prendre la Hache":
+            scene bg chateau_chambre_nuit with dissolve
             show einar combat_hache_normal_mid at left
             show harald combat_normal_mid at right with dissolve
             e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
