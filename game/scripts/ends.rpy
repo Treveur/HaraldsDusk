@@ -49,10 +49,10 @@ label bad_ending_5:
     jump credits
 
 label bad_ending_6:
-    show harald combat_hache_furieux_mid at right
+    show harald combat_hache_furieux_mid_flip at center
     "Harald décapite Einar d'un coup unique et ample, sans lui laisser le temps de répliquer."
     hide einar with dissolve
-    show harald combat_hache_determine_mid at right
+    show harald combat_hache_determine_mid_flip at center
     h "Et maintenant, au tour des écossais..."
     "Fin 06/22"
     jump credits
