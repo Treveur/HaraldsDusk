@@ -632,7 +632,7 @@ label pont_levis_baisse:
         jump bad_ending_4
 
     else:
-        
+
         "Pris entre les deux forces, Einar est immobilisé."
         show gv debout_determines_mid at left
         show einar combat_determine_mid_flip at center
@@ -641,7 +641,7 @@ label pont_levis_baisse:
         hide gv
         hide re
         with dissolve
-        
+
         show huscarls combat_normaux_mid at left with moveinleft
         with dissolve
 
@@ -688,15 +688,15 @@ label pont_levis_baisse:
             "Attaque ample":
                 hide screen countdown
                 "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
-                show huscarls combat_furieux_mid at right with shake
+                show huscarls combat_furieux_mid at right, shake
                 "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
                 show re debout_furieux_mid at right with dissolve
 
             "Attaque précise":
                 hide screen countdown
-                show huscarls combat_furieux_mid at right with shake
+                show huscarls combat_furieux_mid at right, shake
                 "Einar tranche la tête d'un huscarl, mais l'un des guerriers d'élite atteint Einar dans le dos."
-                show einar combat_blesse_mid at left with shake
+                show einar combat_blesse_mid at left; shake
                 "La colonne vertébrale brisée, Einar s'écroule."
                 jump bad_ending_5
 
