@@ -590,6 +590,6 @@ init -2 python:
 screen ingame_menu:
 
         vbox xalign 0.03 yalign 0.03:
-            imagebutton auto "interface/buttons/log/log_%s.jpg" action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
+            imagebutton auto "interface/buttons/log/log_%s.png" action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
         vbox xalign 0.97 yalign 0.03:
-            imagebutton auto "interface/buttons/pause/pause_%s.jpg" action ShowMenu("save")
+            imagebutton auto "interface/buttons/pause/pause_%s.png" action ShowMenu("save")
