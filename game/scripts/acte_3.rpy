@@ -439,7 +439,7 @@ label interieur_grande_porte_chateau_1:
     #interieur chateau
     #play ambiance interieur_castle
 
-    show bg chateau_porte_interieur_crepuscule with dissolve
+    show bg cour_chateau_crepuscule with dissolve
 
     show gv debout_enthousiastes_mid with dissolve
     gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
@@ -473,7 +473,7 @@ label pont_levis_baisse:
 
     #???
     #Ambiance bruit cliqueti boucliers et épée
-    scene bg pont_levis
+    scene bg cour_chateau_crepuscule
     show gv combat_normaux_mid at center with dissolve
 
     gv "Attendez... Attendez..."
@@ -481,32 +481,32 @@ label pont_levis_baisse:
     "Une volée de flèches abat une partie des rebelles qui foncent vers le château."
     play sound drawbrigde
     pause (4)
-    show bg chateau_porte_interieur_crepuscule with vpunch
+    show bg cour_chateau_crepuscule with vpunch
     "Le pont s'abaisse brutalement, laissant le champ libre."
     gv "Trahison ! Bloquez le passage, vite !"
     "..."
 
     "Les soldats proches se tournent vers Einar."
 
-    show gv combat_normaux_mid at right
-    show einar debout_normal_mid at left with dissolve
+    show gv combat_normaux_mid at center
+    show einar combat_normal_mid_flip at right with dissolve
 
     menu:
 
         "Reculez !":
-            show einar combat_determine_mid at left
+            show einar combat_determine_mid_flip at right
             e "Arrière ! Je vous ferai rendre gorge !"
 
         "C'est une tactique du roi":
-            show einar combat_normal_mid at left
+            show einar combat_normal_mid_flip at right
             e "C'était une tactique imaginée par notre roi !"
 
         "Venez, je vous attends !":
-            show einar combat_furieux_mid at left
+            show einar combat_furieux_mid_flip at right
             e "Tuez-moi, chiens. Mieux vaut être un traître qu'un oppresseur !"
 
         "Ne rien dire":
-            show einar debout_determine_mid at left
+            show einar combat_determine_mid_flip at right
             e "..."
 
     hide gv
@@ -524,8 +524,10 @@ label pont_levis_baisse:
     hide re
     show bg cour_chateau_crepuscule with dissolve
     show gv debout_determines_mid at center
-    show einar combat_determine_mid at left
+    show einar combat_determine_mid_flip at right
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
+    show gv debout_determines_mid at left with moveinleft
+    show einar combat_determine_mid_flip at center with moveinleft
     show re debout_furieux_mid at right with moveinright
     with dissolve
     #Ajouter un shake camera
@@ -533,10 +535,6 @@ label pont_levis_baisse:
     gv "En formation ! Dressez les boucliers ! Aucun rebelle ne foutra un pied dans cette enceinte !"
 
     play ambiance fight
-
-    hide gv
-    hide re
-    with dissolve
 
     if moira_dead:
 
@@ -634,11 +632,17 @@ label pont_levis_baisse:
         jump bad_ending_4
 
     else:
-
-        "Pris entre les deux forces, Einar se retrouve face à ses anciens confrères huscarls."
-
-        show einar combat_normal_mid at left
-        show huscarls combat_normaux_mid at right
+        
+        "Pris entre les deux forces, Einar est immobilisé."
+        show gv debout_determines_mid at left
+        show einar combat_determine_mid_flip at center
+        show re debout_furieux_mid at right
+        "Au même moment, ses anciens confrères huscarls le chargent."
+        hide gv
+        hide re
+        with dissolve
+        
+        show huscarls combat_normaux_mid at left with moveinleft
         with dissolve
 
         hu "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
@@ -654,6 +658,7 @@ label pont_levis_baisse:
 
 
         "Les huscarls encerclent Einar pour ne lui laisser aucune chance. Une pluie de haches s'abat sur Einar !"
+        show huscarls combat_furieux_mid at left
 
         show screen countdown
         menu:
@@ -661,17 +666,21 @@ label pont_levis_baisse:
             "Parer":
                 hide screen countdown
                 "Uniquement armé de sa hache, Einar ne parvient pas à se protéger : les huscarls prennent le dessus."
+                show einar combat_blesse_mid_flip at center, shake
+                pause (0.3)
                 call game_over_combat("pont_levis_baisse")
 
             "Attaquer":
                 hide screen countdown
                 "Einar contre-attaque furieusement, faisant reculer la masse des guerriers d'élite."
+                show huscarls combat_furieux_mid at left, shake
 
         $ time = 4
         $ timer_range = 4
         $ timer_jump = 'game_over_combat'
 
         "Les huscarls tentent de consolider leur cercle et d'attaquer Einar sur ses arrières !"
+        show huscarls combat_furieux_mid at right with moveinright
 
         show screen countdown
 
@@ -679,11 +688,15 @@ label pont_levis_baisse:
             "Attaque ample":
                 hide screen countdown
                 "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
+                show huscarls combat_furieux_mid at right with shake
                 "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
+                show re debout_furieux_mid at right with dissolve
 
             "Attaque précise":
                 hide screen countdown
+                show huscarls combat_furieux_mid at right with shake
                 "Einar tranche la tête d'un huscarl, mais l'un des guerriers d'élite atteint Einar dans le dos."
+                show einar combat_blesse_mid at left with shake
                 "La colonne vertébrale brisée, Einar s'écroule."
                 jump bad_ending_5
 
