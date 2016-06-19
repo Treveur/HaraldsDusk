@@ -840,19 +840,19 @@ label e_bruler_donjon_obeir_donjon:
     menu:
         "Prendre la Hache":
             scene bg chateau_chambre_nuit with dissolve
-            show einar combat_hache_normal_mid at left
-            show harald combat_normal_mid at right with dissolve
+            show einar combat_hache_normal_mid_flip at right with moveinright
             e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
             $ prendre_hache = True
             jump e_confrontation_harald_pont_baisse_donjon
 
         "Se débarrasser de la Hache":
-            show einar debout_determine_mid at center
+            scene bg chateau_chambre_nuit with dissolve
+            show einar debout_determine_mid_flip at left
             "Einar jette la Hache à la mer à travers une meurtrière."
             call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
 
         "Ignorer la Hache":
-            show einar debout_normal_mid at center
+            show einar debout_normal_mid at center with moveinright
             e "..."
             jump e_confrontation_harald_pont_axe_laissee_baisse_donjon
 
@@ -860,11 +860,10 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     $ epargner_harld_donjon = False
 
-    scene bg pont_levis
+    scene bg chateau_chambre_nuit with dissolve
 
-    show einar combat_normal_mid at left
-    show harald combat_normal_mid at right
-    with dissolve
+    show einar combat_normal_mid at left with moveinright
+    show harald combat_normal_mid at right with moveinright
 
     if jetee:
         menu :
@@ -893,8 +892,8 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     else:
 
-        show einar combat_hache_normal_mid at left
-        show harald combat_normal_mid at right
+        show einar combat_normal_mid at left with moveinright
+        show harald combat_normal_mid at right with moveinright
 
         menu:
             "Einar ? Que fais-tu avec ma Hache ?"
@@ -972,45 +971,54 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Narration"
             hide harald with dissolve
     else:
-        "Le combat s'engage entre le roi et son huscarl"
+        "Le combat s'engage entre le roi et son huscarl."
         # "Phase combat WIP"
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 3
+        $ timer_range = 3
         $ timer_jump = 'game_over_combat'
 
 
-        "Harald se jete sur Einar et tente de la frapper à l'aide de ses poings"
+        "Harald se jete sur Einar et tente de le frapper de ses poings massifs !"
+        show harald combat_furieux_mid at center with moveinleft
 
         show screen countdown
         menu combat_harald:
 
             "Esquiver":
                 hide screen countdown
-                "Abattant son épée sur le sol sur le sol, Einar réussi à éviter in extrmis"
+                show einar combat_determine_mid_flip at right with moveinright
+                "Einar esquive sans peine les poings du roi : Harald est ralenti par sa propre masse musculaire."
 
-            "Se jeter Harald":
+            "Se jeter sur Harald":
                 hide screen countdown
-                "En se jetant sur les huscarls, Einar se fait couper de par en par"
+                "Einar se lance dans le corps-à-corps, faisant fi de la supériorité physique de son adversaire."
+                show einar combat_furieux_mid at left, shake
+                "Harald est immense, puissant, et il possède l'expérience de centaines de batailles. Il broie son huscarl, lui faisant éclater des os à chaque coup."
+                show einar combat_furieux_mid at left, shake
+                "Finalement, Einar glisse au sol après que son crâne ait été défoncé sur un mur."
                 call game_over_combat('combat_harald')
 
-        $ time = 5
-        $ timer_range = 5
+        $ time = 3
+        $ timer_range = 3
         $ timer_jump = 'game_over_combat'
 
-        "Une fois son esquive effectuée, enchaine directement avec un crocher du droit"
+        "Une ouverture dans la garde du roi !"
 
         show screen countdown
 
         menu :
-            "Faire attaque tournoyante":
+            "Frapper derrière ses genoux":
                 hide screen countdown
                 "Einar réussi à les eloigner suffisament Harald et poursuit par une nouvelle attaque directement"
                 "Et lui assigner un coup fatal dans la nuque"
                 jump win_battle_harald_no_axe_pont_baisse_donjon
 
-            "Bugler pour l'effrayer":
+            "Tenter de le renverser":
                 hide screen countdown
+                "Einar tente de renverser le roi, mais il est bien trop lourd, et ses appuis sont trop fermes."
+                show harald combat_furieux_mid_flip at center
+                "Harald saisit Einar et le projette à l'autre bout de la pièce."
                 jump bad_ending_12
 
     if epargner_harld_donjon:
