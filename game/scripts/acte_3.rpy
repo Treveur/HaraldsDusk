@@ -1070,12 +1070,12 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
 
         o "Félicitations, Einar !"
-        show re debout_rire at center
+        show re debout_normaux_mid at center
         ge "HOURRAAA !"
         hide re
         show ogma debout_souriant_mid at right
         o "Tu as libéré l'Ecosse ! Tu as libéré le reste du monde !"
-        show re debout_rire at center
+        show re debout_normaux_mid at center
         ge "HOURRAAA !"
         hide re
         o "Pour que la victoire soit complète, nous devons détruire la Hache."
@@ -2155,7 +2155,7 @@ label harald_defendre_porte:
     hide einar
     with dissolve
 
-    show re combat_blesse_mid at right
+    show re debout_normaux_mid at right
     show ogma combat_normal_mid_flip at left
     with dissolve
 

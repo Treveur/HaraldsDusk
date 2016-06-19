@@ -69,7 +69,7 @@ label good_ending_7:
     show ogma debout_determine_mid at right
     o "Oui. Je la ferai fondre en une arme nouvelle, une claymore."
     o "Elle sera destinée à ma famille, le clan Wallace. Elle symbolisera la fin de l'oppression et l'émergence de la Liberté !"
-    show re debout_enthousiastes_mid at center
+    show re debout_normaux_mid at center
     ge "HOURRAAA !"
     "Fin 07/22"
     jump credits
