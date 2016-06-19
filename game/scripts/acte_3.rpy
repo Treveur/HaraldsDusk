@@ -1051,12 +1051,14 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Quelques minutes plus tard, alors que les combats sont terminés..."
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
                 show einar combat_hache_normal_mid at left
+                show harald debout_normal_mid_flip at center
                 show ogma combat_determine_mid at right
                 o "Voyez ! La liberté a vaincu le tyran !"
                 o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
                 show ogma combat_furieux_mid at right
                 o "Le règne du roi-empereur est terminé !"
                 "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
+                hide harald
                 show ogma combat_determine_mid at right
                 o "VOUS ÊTES LIBRES !"
                 "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."

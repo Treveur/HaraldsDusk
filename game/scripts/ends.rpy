@@ -126,15 +126,23 @@ label normal_ending_10:
     jump credits
 
 label good_ending_11:
+    show ogma debout_souriant_mid at right
     o "Aujourd'hui et au nom du peuple d'Ecosse, je te remercie, Einar !"
     o "Nous te sommes tous redevables !"
+    show re debout_normaux_mid at center
     ge "HOURRAAA !"
+    hide re
     o "Tu as agit pour le bien du plus grand nombre, ne l'oublie jamais."
     o "Comme promis, tu es désormais libre d'aller où bon te semble. Un cheval harnaché avec des fontes remplies d'or t'attends."
+    show einar debout_souriant_mid at left
     e "Merci."
+    show ogma debout_normal_mid at right
     o "Nous avons organisé un grand repas pour fêter la victoire, nous aimerions que tu te joignes à nous."
+    show einar debout_normal_mid at left
     e "Je ne suis pas sûr..."
+    show ogma debout_souriant_mid at right
     o "A vrai dire, il y a quelqu'un en particulier qui tient énormément à ta présence."
+    show einar debout_souriant_mid at left
     e "Ah ?"
     o "Je sais que Moira et toi êtes devenus très proches..."
     o "Aussi, j'ai décidé de t'offrir la main de ma fille !"
