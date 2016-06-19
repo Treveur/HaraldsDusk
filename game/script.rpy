@@ -39,9 +39,6 @@ image einar debout_contrarie_close = "einar/debout/einar_debout_contrarie_close.
 image einar debout_effraye_close = "einar/debout/einar_debout_effraye_close.png"
 image einar debout_determine_close = "einar/debout/einar_debout_determine_close.png"
 
-#flip
-image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
-
 #Combat
 image einar combat_normal = "einar/combat/einar_combat_normal.png"
 image einar combat_furieux = "einar/combat/einar_combat_furieux.png"
@@ -60,11 +57,6 @@ image einar combat_furieux_close = "einar/combat/einar_combat_furieux_close.png"
 image einar combat_blesse_close = "einar/combat/einar_combat_blesse_close.png"
 image einar combat_determine_close = "einar/combat/einar_combat_determine_close.png"
 
-#flip
-image einar combat_normal_mid_flip = im.Flip("einar/combat/einar_combat_normal_mid.png", horizontal = True)
-image einar combat_determine_mid_flip = im.Flip("einar/combat/einar_combat_determine_mid.png", horizontal = True)
-image einar combat_furieux_mid_flip = im.Flip("einar/combat/einar_combat_furieux_mid.png", horizontal = True)
-image einar combat_blesse_mid_flip = im.Flip("einar/combat/einar_combat_blesse_mid.png", horizontal = True)
 
 #Combat Hache
 image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.png"
@@ -80,6 +72,21 @@ image einar combat_hache_determine_mid = "einar/combat_hache/einar_combat_hache_
 image einar combat_hache_normal_close = "einar/combat_hache/einar_combat_hache_normal_close.png"
 image einar combat_hache_furieux_close = "einar/combat_hache/einar_combat_hache_furieux_close.png"
 image einar combat_hache_determine_close = "einar/combat_hache/einar_combat_hache_determine_close.png"
+
+#flip
+image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
+image einar debout_determine_close_flip = im.Flip("einar/debout/einar_debout_determine_close.png", horizontal = True)
+image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attriste_mid.png", horizontal = True)
+image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
+
+#combat
+image einar combat_normal_mid_flip = im.Flip("einar/combat/einar_combat_normal_mid.png", horizontal = True)
+image einar combat_determine_mid_flip = im.Flip("einar/combat/einar_combat_determine_mid.png", horizontal = True)
+image einar combat_furieux_mid_flip = im.Flip("einar/combat/einar_combat_furieux_mid.png", horizontal = True)
+image einar combat_blesse_mid_flip = im.Flip("einar/combat/einar_combat_blesse_mid.png", horizontal = True)
+
+#combat hache
+image einar combat_hache_normal_mid_flip = im.Flip("einar/combat_hache/einar_combat_hache_normal_mid.png", horizontal = True)
 
 #Prisonnier
 #mid
@@ -159,12 +166,6 @@ define h = Character('Harald', color="#3498db", image="harald")
 
 image side harald = "harald/harald_portrait.png"
 
-image harald debout_normal = "harald/debout/harald_debout_normal.png"
-image harald debout_furieux = "harald/debout/harald_debout_furieux.png"
-#image harald debout_blesse = "harald/normal/harald_debout_blesse.png"
-image harald debout_contrarie = "harald/debout/harald_debout_contrarie.png"
-image harald debout_determine = "harald/debout/harald_debout_determine.png"
-
 image harald debout_normal_mid = "harald/debout/harald_debout_normal_mid.png"
 image harald debout_furieux_mid = "harald/debout/harald_debout_furieux_mid.png"
 image harald debout_contrarie_mid = "harald/debout/harald_debout_contrarie_mid.png"
@@ -175,6 +176,35 @@ image harald debout_furieux_close = "harald/debout/harald_debout_furieux_close.p
 image harald debout_contrarie_close = "harald/debout/harald_debout_contrarie_close.png"
 image harald debout_determine_close = "harald/debout/harald_debout_determine_close.png"
 
+
+
+#Combat Hache
+
+#mid
+image harald combat_hache_normal_mid = "harald/combat_hache/harald_combat_hache_normal_mid.png"
+image harald combat_hache_furieux_mid = "harald/combat_hache/harald_combat_hache_furieux_mid.png"
+image harald combat_hache_determine_mid = "harald/combat_hache/harald_combat_hache_determine_mid.png"
+
+#close
+image harald combat_hache_normal_close = "harald/combat_hache/harald_combat_hache_normal_close.png"
+image harald combat_hache_furieux_close = "harald/combat_hache/harald_combat_hache_furieux_close.png"
+image harald combat_hache_determine_close = "harald/combat_hache/harald_combat_hache_determine_close.png"
+
+#Combat
+
+#mid
+image harald combat_normal_mid = "harald/combat/harald_combat_normal_mid.png"
+image harald combat_furieux_mid = "harald/combat/harald_combat_furieux_mid.png"
+image harald combat_blesse_mid = "harald/combat/harald_combat_blesse_mid.png"
+image harald combat_determine_mid = "harald/combat/harald_combat_determine_mid.png"
+
+#close
+image harald combat_normal_close = "harald/combat/harald_combat_normal_close.png"
+image harald combat_furieux_close = "harald/combat/harald_combat_furieux_close.png"
+image harald combat_blesse_close = "harald/combat/harald_combat_blesse_close.png"
+image harald combat_determine_close = "harald/combat/harald_combat_determine_close.png"
+
+#Flip
 image harald debout_normal_mid_flip = im.Flip("harald/debout/harald_debout_normal_mid.png", horizontal = True)
 image harald debout_furieux_mid_flip = im.Flip("harald/debout/harald_debout_furieux_mid.png", horizontal = True)
 image harald debout_contrarie_mid_flip = im.Flip("harald/debout/harald_debout_contrarie_mid.png", horizontal = True)
@@ -185,44 +215,29 @@ image harald debout_furieux_close_flip = im.Flip("harald/debout/harald_debout_fu
 image harald debout_contrarie_close_flip = im.Flip("harald/debout/harald_debout_contrarie_close.png", horizontal = True)
 image harald debout_determine_close_flip = im.Flip("harald/debout/harald_debout_determine_close.png", horizontal = True)
 
-#Combat Hache
-image harald combat_hache_normal = "harald/combat_hache/harald_combat_hache_normal.png"
-image harald combat_hache_furieux = "harald/combat_hache/harald_combat_hache_furieux.png"
-#image harald combat_hache_contrarie = "harald/combat_hache/harald_combat_hache_contrarie.png"
-image harald combat_hache_determine = "harald/combat_hache/harald_combat_hache_determine.png"
-
+#combat hache
 #mid
-image harald combat_hache_normal_mid = "harald/combat_hache/harald_combat_hache_normal_mid.png"
-image harald combat_hache_furieux_mid = "harald/combat_hache/harald_combat_hache_furieux_mid.png"
-#image harald combat_hache_contrarie_mid = "harald/combat_hache/harald_combat_hache_contrarie_mid.png"
-image harald combat_hache_determine_mid = "harald/combat_hache/harald_combat_hache_determine_mid.png"
+image harald combat_hache_normal_mid_flip = im.Flip("harald/combat_hache/harald_combat_hache_normal_mid.png", horizontal = True)
+image harald combat_hache_furieux_mid_flip = im.Flip("harald/combat_hache/harald_combat_hache_furieux_mid.png", horizontal = True)
+image harald combat_hache_determine_mid_flip = im.Flip("harald/combat_hache/harald_combat_hache_determine_mid.png", horizontal = True)
 
 #close
-image harald combat_hache_normal_close = "harald/combat_hache/harald_combat_hache_normal_close.png"
-image harald combat_hache_furieux_close = "harald/combat_hache/harald_combat_hache_furieux_close.png"
-#image harald combat_hache_contrarie_close = "harald/combat_hache/harald_combat_hache_contrarie_close.png"
-image harald combat_hache_determine_close = "harald/combat_hache/harald_combat_hache_determine_close.png"
+image harald combat_hache_normal_close_flip = im.Flip("harald/combat_hache/harald_combat_hache_normal_close.png", horizontal = True)
+image harald combat_hache_furieux_close_flip = im.Flip("harald/combat_hache/harald_combat_hache_furieux_close.png", horizontal = True)
+image harald combat_hache_determine_close_flip = im.Flip("harald/combat_hache/harald_combat_hache_determine_close.png", horizontal = True)
 
-#Combat
-image harald combat_normal = "harald/combat/harald_combat_normal.png"
-image harald combat_furieux = "harald/combat/harald_combat_furieux.png"
-image harald combat_blesse = "harald/combat/harald_combat_blesse.png"
-#image harald combat_contrarie = "harald/combat/harald_combat_contrarie.png"
-image harald combat_determine = "harald/combat/harald_combat_determine.png"
-
+#combat
 #mid
-image harald combat_normal_mid = "harald/combat/harald_combat_normal_mid.png"
-image harald combat_furieux_mid = "harald/combat/harald_combat_furieux_mid.png"
-image harald combat_blesse_mid = "harald/combat/harald_combat_blesse_mid.png"
-#image harald combat_contrarie_mid = "harald/combat/harald_combat_contrarie_mid.png"
-image harald combat_determine_mid = "harald/combat/harald_combat_determine_mid.png"
+image harald combat_normal_mid_flip = im.Flip("harald/combat/harald_combat_normal_mid.png", horizontal = True)
+image harald combat_furieux_mid_flip = im.Flip("harald/combat/harald_combat_furieux_mid.png", horizontal = True)
+image harald combat_blesse_mid_flip = im.Flip("harald/combat/harald_combat_blesse_mid.png", horizontal = True)
+image harald combat_determine_mid_flip = im.Flip("harald/combat/harald_combat_determine_mid.png", horizontal = True)
 
 #close
-image harald combat_normal_close = "harald/combat/harald_combat_normal_close.png"
-image harald combat_furieux_close = "harald/combat/harald_combat_furieux_close.png"
-image harald combat_blesse_close = "harald/combat/harald_combat_blesse_close.png"
-#image harald combat_contrarie_close = "harald/combat/harald_combat_contrarie_close.png"
-image harald combat_determine_close = "harald/combat/harald_combat_determine_close.png"
+image harald combat_normal_close_flip = im.Flip("harald/combat/harald_combat_normal_close.png", horizontal = True)
+image harald combat_furieux_close_flip = im.Flip("harald/combat/harald_combat_furieux_close.png", horizontal = True)
+image harald combat_blesse_close_flip = im.Flip("harald/combat/harald_combat_blesse_close.png", horizontal = True)
+image harald combat_determine_close_flip = im.Flip("harald/combat/harald_combat_determine_close.png", horizontal = True)
 
 ##Huscarls
 define hu = Character("Huscarls")
@@ -261,32 +276,15 @@ define m = Character("moira", image="moira")
 # image side moira = "moira/moira_portrait.png"
 
 #Debout
-image moira debout_normal = "moira/debout/moira_debout_normaux.png"
-image moira debout_rire = "moira/debout/moira_debout_rire.png"
-
-image moira debout_normal_mid = "moira/debout/moira_debout_normaux_mid.png"
-image moira debout_rire_mid = "moira/debout/moira_debout_rire_mid.png"
-
-image moira debout_normal_close = "moira/debout/moira_debout_normaux_close.png"
-image moira debout_rire_close = "moira/debout/moira_debout_rire_close.png"
-
-#Combat
-image moira combat_normaux = "moira/combat/moira_combat_normaux.png"
-image moira combat_enthousiaste = "moira/combat/moira_combat_enthousiaste.png"
-image moira combat_furieux = "moira/combat/moira_combat_furieux.png"
-image moira combat_inquiets = "moira/combat/moira_combat_inquiets.png"
-
-#mid
-image moira combat_normaux_mid = "moira/combat/moira_combat_normaux_mid.png"
-image moira combat_enthousiaste_mid = "moira/combat/moira_combat_enthousiaste_mid.png"
-image moira combat_furieux_mid = "moira/combat/moira_combat_furieux_mid.png"
-image moira combat_inquiets_mid = "moira/combat/moira_combat_inquiets_mid.png"
-
-#close
-image moira combat_normaux_close = "moira/combat/moira_combat_normaux_close.png"
-image moira combat_enthousiaste_close = "moira/combat/moira_combat_enthousiaste_close.png"
-image moira combat_furieux_close = "moira/combat/moira_combat_furieux_close.png"
-image moira combat_inquiets_close = "moira/combat/moira_combat_inquiets_close.png"
+# image moira debout_normal = "moira/debout/moira_debout_normaux.png"
+# image moira debout_rire = "moira/debout/moira_debout_rire.png"
+#
+# image moira debout_normal_mid = "moira/debout/moira_debout_normaux_mid.png"
+# image moira debout_rire_mid = "moira/debout/moira_debout_rire_mid.png"
+#
+# image moira debout_normal_close = "moira/debout/moira_debout_normaux_close.png"
+# image moira debout_rire_close = "moira/debout/moira_debout_rire_close.png"
+#
 
 ##Garde / Guerriers Vikings / Jeune Guerrier Viking
 define gv = Character('Guerriers Vikings', color="#e67e22", image="guerriers_vikings")
@@ -353,12 +351,6 @@ define o = Character('Ogma', color="#d35400", image="ogma")
 # image side ogma = "ogma/ogma_portrait.png"
 
 #Debout
-image ogma debout_normal = "ogma/debout/ogma_debout_normal.png"
-image ogma debout_souriant = "ogma/debout/ogma_debout_souriant.png"
-image ogma debout_furieux = "ogma/debout/ogma_debout_furieux.png"
-image ogma debout_attriste = "ogma/debout/ogma_debout_attriste.png"
-image ogma debout_contrarie = "ogma/debout/ogma_debout_contrarie.png"
-image ogma debout_determine = "ogma/debout/ogma_debout_determine.png"
 
 #mid
 image ogma debout_normal_mid = "ogma/debout/ogma_debout_normal_mid.png"
@@ -508,34 +500,17 @@ define ge = Character('rebelles écossais', color="#f39c12", image="rebelles_eco
 # image side rebelles_ecossais = "rebelles_ecossais/rebelles_ecossais_portrait.png"
 
 #Debout
-image re debout_normaux = "rebelles_ecossais/debout/re_debout_normaux.png"
-image re debout_enthousiastes = "rebelles_ecossais/debout/re_debout_enthousiastes.png"
-image re debout_inquiets = "rebelles_ecossais/debout/re_debout_inquiets.png"
-image re debout_rire = "rebelles_ecossais/debout/re_debout_rire.png"
-
 image re debout_normaux_mid = "rebelles_ecossais/debout/re_debout_normaux_mid.png"
-image re debout_enthousiastes_mid = "rebelles_ecossais/debout/re_debout_enthousiastes_mid.png"
-image re debout_inquiets_mid = "rebelles_ecossais/debout/re_debout_inquiets_mid.png"
-image re debout_rire_mid = "rebelles_ecossais/debout/re_debout_rire_mid.png"
 
 image re debout_normaux_close = "rebelles_ecossais/debout/re_debout_normaux_close.png"
-image re debout_enthousiastes_close = "rebelles_ecossais/debout/re_debout_enthousiastes_close.png"
-image re debout_inquiets_close = "rebelles_ecossais/debout/re_debout_inquiets_close.png"
-image re debout_rire_close = "rebelles_ecossais/debout/re_debout_rire_close.png"
 
 #Combat
-image re combat_normaux = "rebelles_ecossais/combat/re_combat_normaux.png"
-image re combat_blesse = "rebelles_ecossais/combat/re_combat_blesses.png"
-image re combat_furieux = "rebelles_ecossais/combat/re_combat_furieux.png"
-
 #mid
 image re combat_normaux_mid = "rebelles_ecossais/combat/re_combat_normaux_mid.png"
-image re combat_blesse_mid = "rebelles_ecossais/combat/re_combat_blesses_mid.png"
 image re combat_furieux_mid = "rebelles_ecossais/combat/re_combat_furieux_mid.png"
 
 #close
 image re combat_normaux_close = "rebelles_ecossais/combat/re_combat_normaux_close.png"
-image re combat_blesse_close = "rebelles_ecossais/combat/re_combat_blesses_close.png"
 image re combat_furieux_close = "rebelles_ecossais/combat/re_combat_furieux_close.png"
 
 
@@ -616,7 +591,9 @@ image bg house2_aube = "scenes/perth_int_jour_maison.png"
 
 ##Plaine cotière
 image bg plaine_cotière_matin = "scenes/plaine_ext_matin_plaineCotiere.png"
+image bg plaine_cotiere_crepuscule = "scenes/plaine_ext_crepuscule_plaineCotiere.png."
 image bg plaine_chateau_matin = "scenes/plaine_ext_matin_plaineChateau.png"
+image bg plaine_chateau_crepuscule = "scenes/plaine_ext_crepuscule_plaineCotiereChateau.png"
 
 #plaine
 image bg plaine_plaine_matin = "scenes/plaine_ext_matin_plaine.png"

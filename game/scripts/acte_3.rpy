@@ -271,7 +271,7 @@ label cour_chateau_1:
         show ve buchet_normaux_mid at right with dissolve
 
         pe3 "Arrêtez ! Je suis enceinte !"
-        show patrick debout_furieux_mid at left
+        show patrick debout_normal_mid at left
         p "Je n'ai que faire de tes mensonges, femme !"
         p "Tes ruses perfides n'obscurciront pas mon jugement !"
 
@@ -285,7 +285,7 @@ label cour_chateau_1:
                 e "Stop! Arrêtez-tout, ce ne sont que de simples paysans !"
                 show patrick debout_normal_mid at right
                 p "Einar ? Tu étais porté disparu depuis un mois !"
-                show patrick debout_furieux_mid at right
+                show patrick debout_normal_mid at right
                 p "Et te voilà sorti de nul part, prêt à défendre ces hérétiques !"
                 p "Ces gens ne sont pas innocents ! Ils ont été capturés alors qu'ils menacaient de m'assassiner !"
                 show einar debout_attriste_mid at left
@@ -315,7 +315,7 @@ label cour_chateau_1:
                     show einar debout_normal_mid at left
                     e "Je ne les ai pas vus lorsque j'étais parmi les rebelles de Perth."
                     e "Ils ne peuvent donc pas être avec les rebelles que nous recherchons !"
-                    show patrick debout_furieux_mid at right
+                    show patrick debout_normal_mid at right
                     p "Mensonge ! Ils ont tenté de m'assassiner ! Ils ont tout avoué !"
                     p "Ils se sont opposés à un homme de Dieu et ont agi à l'encontre du porteur de la Hache Sainte !"
 
@@ -335,7 +335,7 @@ label cour_chateau_1:
         show patrick debout_normal_mid at right
         p "Amenez les torches, et que brûlent les hérétiques !"
 
-        show patrick debout_furieux_mid at left
+        show patrick debout_normal_mid at left
         show ve buchet_pleurent at right
 
         #A intégrer plus tards
@@ -344,7 +344,7 @@ label cour_chateau_1:
         pe3 "Je porte un enfant ! Vous ne pouvez pas faire ça !"
         pe2 "Laissez partir les autres ! Je suis responsable de tout !"
 
-        show patrick debout_furieux_mid at left
+        show patrick debout_normal_mid at left
         p "Plus rien ne vous sauvera, misérables ! Que s'accomplisse le châtiment !"
 
         hide patrick
@@ -691,9 +691,9 @@ label pont_levis_baisse:
                 "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
                 show huscarls combat_furieux_mid at right ,shake
                 "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
+                hide huscarls with dissolve
                 show re debout_furieux_mid at right with moveinright
                 "Les huscarls sont vaincus en l'espace de quelques secondes, broyés par la masse des rebelles."
-                hide huscarls with dissolve
 
 
             "Attaque précise":
@@ -836,12 +836,15 @@ label e_bruler_donjon_obeir_donjon:
     show einar debout_determine_mid_flip at left with moveinright
     "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
     "Le roi est entrain de s'équiper de son armure."
+    scene bg chateau_chambre_nuit with dissolve
+    show einar debout_determine_mid_flip at left with moveinright
+    show einar debout_determine_mid at left
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
 
     menu:
         "Prendre la Hache":
-            scene bg chateau_chambre_nuit with dissolve
-            show einar combat_hache_normal_mid_flip at right with moveinright
+
+            show einar combat_hache_normal_mid
             e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
             $ prendre_hache = True
             jump e_confrontation_harald_pont_baisse_donjon
@@ -863,7 +866,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     scene bg chateau_chambre_nuit with dissolve
 
-    show einar combat_normal_mid at left with moveinright
+    show einar combat_normal_mid at left
     show harald combat_normal_mid at right with moveinright
 
     if jetee:
@@ -969,8 +972,11 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 $ epargner_harld_donjon = True
 
         if epargner_harld_donjon == False:
+            show einar combat_hache_furieux_mid at center zorder 1 with move
             "Narration"
-            hide harald with dissolve
+            hide harald
+            hide einar
+            with dissolve
     else:
         "Le combat s'engage entre le roi et son huscarl."
         # "Phase combat WIP"
@@ -1034,7 +1040,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 e "Vous êtes vaincu et vous n'avez plus votre Hache."
                 e "Le règne du roi-empereur Harald Sigurdsson est terminé !"
                 e "La nouvelle de votre défaite va se répandre à travers le monde. L'empire que vous avez bâti va s'écrouler."
-                show einar combat_hache_determine_mid at left
+                show einar combat_hache_furieux_mid at left
                 e "Vous tuer ici ne servirait à rien. Partez !"
                 "Harald s'enfuit sans demander son reste"
                 jump fuite_harald_pont_baisse_donjon
@@ -1058,8 +1064,10 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 jump good_ending_11
 
     else:
-        show einar combat_hache_normal_mid at left
-        show ogma combat_determine_mid at right
+        scene bg chateau_rempart_crepuscule with fade
+        show einar combat_hache_normal_mid at left with moveinleft
+        show ogma combat_determine_mid at right with moveinright
+
 
         o "Félicitations, Einar !"
         show re debout_rire at center
@@ -1181,7 +1189,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     show harald combat_furieux_mid at right
 
     "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
-    show harald combat_blesse_mid_b
+    show harald combat_blesse_mid_flip
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, s'il-te-plaît."
@@ -1613,11 +1621,14 @@ label foret_4:
         call good_ending_14 pass (rejete = False)
 
 label fuite_harald_pont_baisse_donjon:
-    show harald debout_furieux_mid at left with dissolve
+    show harald debout_furieux_mid at right with dissolve
 
     h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
     h "JE ME VENGERAI !"
     "..."
+
+    scene bg plaine_chateau_crepuscule
+    show harald debout_furieux_mid at left with moveinright
     "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
     "Harald s'échappe par la mer, seul sur sa barque."
 
@@ -1626,14 +1637,15 @@ label fuite_harald_pont_baisse_donjon:
     with dissolve
 
     #Retour à l'extérieur
+    show bg chateau_rempart_crepuscule with dissolve
+    show ogma debout_determine_mid at center with dissolve
     "La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol."
     "Sur les remparts, la silouhette d'Ogma se découpe sur le ciel."
     "Le Hurleur semble observer la mer."
     "..."
 
-    show ogma debout_normal_mid at right
-    show einar debout_normal_mid at left
-    with dissolve
+    show ogma debout_normal_mid at right with moveinright
+    show einar debout_normal_mid at left with moveinleft
 
     o "Bravo Einar, la réussite est totale ! Mais pourquoi avoir laissé partir le roi ?"
     show einar debout_attriste_mid at left
@@ -1651,7 +1663,7 @@ label fuite_harald_pont_baisse_donjon:
 
     menu:
         "Elle est à moi !":
-            show einar combat_hache_determine_mid_b
+            show einar combat_hache_normal_mid
             jump e_garder_hache_pont_baisse_donjon
 
         "La voilà":
@@ -1672,10 +1684,10 @@ label e_garder_hache_pont_baisse_donjon:
 
     menu :
         "Reculez !":
-            show einar combat_hache_determine_mid at left
+            show einar combat_hache_furieux_mid at left
             e "Reculez ! Je suis le possesseur de la Hache, vous ne pouvez rien contre moi !"
         "Je la mérite":
-            show einar combat_hache_determine_mid at left
+            show einar combat_hache_furieux_mid at left
             e "J'ai pris cette Hache des mains du roi-empereur. Je suis le seul à la mériter !"
             e "Vous n'avez aucun moyen de m'en priver !"
 
@@ -1697,13 +1709,14 @@ label e_garder_hache_pont_baisse_donjon:
             jump lieu_encore_inconnu_1
 
         "Je la garde !":
-            show einar combat_hache_determine_mid at left
+            show einar combat_hache_normal_mid at left
             e "Je l'ai prise, elle m'appartient."
             e "J'ai bien mieux à faire que de détruire une telle merveille. Le monde m'appartient !"
             e "Harald n'était qu'un mou, il a cessé ses conquêtes bien trop tôt !"
-            show einar combat_hache_determine_mid at left
+            show einar combat_hache_furieux_mid at left
             e "Le monde se pliera devant moi !"
             e "A genoux, manants ! HA HA HA !"
+            show ogma combat_furieux_mid at right
             o "Tu es fou ! Nous ne te laisserons pas faire !"
             e "Idiots ! La Hache me rend immortel !"
             hide einar

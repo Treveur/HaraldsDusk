@@ -95,25 +95,33 @@ label good_ending_8:
     jump credits
 
 label good_ending_9:
-    scene bg plaine_plaine_crepuscule
+    scene bg plaine_cotiere_crepuscule
     "Einar porte une tenue de général et mène une armée innombrable face à ce qui semble être une armée asiatique, dans un paysage exotique fait de montagnes et de cultures en étages."
-    show einar combat_hache_determine_mid at center
-    e "Aujourd'hui, le dernier peuple dissident s'inclinera devant nous !"
     show einar combat_hache_furieux_mid at center
+    e "Aujourd'hui, le dernier peuple dissident s'inclinera devant nous !"
     e "CHARGEEEEEEEEZ !"
     "Fin 09/22"
     jump credits
 
 label normal_ending_10:
+    show ogma debout_souriant_mid at right
     o "Merci..."
+    hide einar with dissolve
     "Ogma s'empare de la Hache et la brandit aux yeux de tous."
+    show ogma debout_determine_mid at center with moveinleft
     o "Aujourd'hui, nous nous sommes libérés de nos chaînes !"
     o "L'Ecosse est libre ! Et désormais, un écossais porte la relique ! La Hache Sainte !"
+    show ogma debout_souriant_mid at center
+    show re debout_normaux_mid at left
     ge "Gloire à Ogma !"
+    hide re
+    show ogma debout_determine_mid at center
     o "Nous ne nous arrêterons pas en si bon chemin... Car Dieu est avec nous !"
     o "Il est temps de libérer le reste de la Grande-Bretagne ! Libérer l'Europe ! Libérer le monde !"
     o "Le monde mérite un empereur écossais !"
+    show re debout_normaux_mid at left
     ge "HOURRAAAA !"
+    hide re
     "Fin 10/22"
     jump credits
 
