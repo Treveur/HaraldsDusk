@@ -1443,6 +1443,9 @@ label massacre_foret_2 (message, massacre_village):
     hide gv with dissolve
     show logan debout_determine_mid at right with moveinright
     show einar debout_determine_mid_flip at center with move
+    show vfx flame at burn:
+        xalign 0.2
+        yalign 0.5
 
     stop ambiance
     play music slaughter

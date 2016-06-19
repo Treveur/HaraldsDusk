@@ -643,6 +643,10 @@ image bg chateau_banquet = "scenes/chateauDunbar_int_salleBanque.png"
 #Fond uni
 image bg black = "#000"
 
+#VFX
+
+image vfx flame = "vfx/flame.png"
+
 # sounds
 
 #musics
@@ -690,6 +694,14 @@ transform shake:
         ease .01 yoffset 4
         ease .01 yoffset -4
         ease .01 yoffset 0
+
+transform burn:
+    ease 0.5 alpha 0.5
+    ease 0.3 alpha 0.4
+    ease 0.5 alpha 0.7
+
+    repeat
+
 
 
 #Déclaration timer
