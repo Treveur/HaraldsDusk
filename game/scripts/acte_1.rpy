@@ -1393,7 +1393,8 @@ label massacre_foret_2 (message, massacre_village):
 
                 menu menu_avertissement_villageois:
                     "Ne relâchez pas votre attention":
-                        call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
+                        call massacre_foret_2 ("attentif", massacre_foret)
+                        # call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
                     "Nous ne craignons pas les paysans !":
                         hide logan with dissolve
                         show einar debout_souriant_mid at left

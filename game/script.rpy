@@ -634,7 +634,7 @@ image bg chateau_rempart_jour = "scenes/chateauDunbar_ext_jour_remparts.jpg"
 image bg cour_chateau = "scenes/chateauDunbar_ext_jour_cour.png"
 image bg cour_chateau_crepuscule = "scenes/chateauDunbar_ext_crepuscule_cour.png"
 #couloirs
-image bg chateau_couloir_crepuscule = "scenes/chateauDunbar_int_crepuscule_couloir.jpg"
+image bg chateau_couloir_crepuscule = "scenes/chateauDunbar_int_crepuscule_couloir.png"
 #chambre Harald
 image bg chateau_chambre_nuit = "scenes/chateauDunbar_int_nuit_chambreHarald.png"
 #Salle banquet

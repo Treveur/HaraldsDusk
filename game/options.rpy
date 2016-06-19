@@ -25,8 +25,8 @@ init -1 python hide:
 
     ## Contrôle le nom et la version du jeu; qui apparaîtront dans les
     ## fichiers de débogage.
-    config.name = "Harald's Dusk pre-beta"
-    config.version = "0.5"
+    config.name = "Harald's Dusk pre-gold"
+    config.version = "0.1"
 
     #########################################
     ## Thèmes
