@@ -578,14 +578,16 @@ define p = Character("Patrick", image="patrick")
 
 # image side patrick = "patrick/patrick_portrait.png"
 
-image patrick debout_normal = "patrick/debout/patrick_debout_normal.png"
-image patrick debout_furieux = "patrick/debout/patrick_debout_furieux.png"
-
 image patrick debout_normal_mid = "patrick/debout/patrick_debout_normal_mid.png"
-image patrick debout_furieux_mid = "patrick/debout/patrick_debout_furieux_mid.png"
 
 image patrick debout_normal_close = "patrick/debout/patrick_debout_normal_close.png"
-image patrick debout_furieux_close = "patrick/debout/patrick_debout_furieux_close.png"
+
+#Flip
+image patrick debout_normal_mid_flip = im.Flip("patrick/debout/patrick_debout_normal_mid.png", horizontal = True)
+
+image patrick debout_normal_close_flip = im.Flip("patrick/debout/patrick_debout_normal_close.png", horizontal = True)
+
+
 
 #Guerriers Asiatiques
 #image ga combat_agressifs = "ga_combat_agressifs.png"
