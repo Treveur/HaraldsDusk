@@ -743,35 +743,36 @@ label pont_levis_baisse:
 
 label e_bruler_donjon_desobeir_donjon:
 
-    "Le jeune soldat qui pleurait lors du jugement survient face à Einar."
-    show jgv debout_normal_mid at center with dissolve
-    show re debout_furieux_mid at right with dissolve
-    "Il a l'air terrorisé mais résolu, et tue un rebelle."
-    show re debout_furieux_mid at right, shake
-    hide re with dissolve
+    if short_version == False:
+        "Le jeune soldat qui pleurait lors du jugement survient face à Einar."
+        show jgv debout_normal_mid at center with dissolve
+        show re debout_furieux_mid at right with dissolve
+        "Il a l'air terrorisé mais résolu, et tue un rebelle."
+        show re debout_furieux_mid at right, shake
+        hide re with dissolve
 
-    show einar combat_normal_mid at left with moveinleft
+        show einar combat_normal_mid at left with moveinleft
 
-    menu :
+        menu :
 
-        "Désolé (le tuer)":
-            show einar combat_determine_mid at left
-            e "Désolé, petit. Nous ne sommes plus dans le même camp."
-            "Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément."
-            hide jgv with dissolve
+            "Désolé (le tuer)":
+                show einar combat_determine_mid at left
+                e "Désolé, petit. Nous ne sommes plus dans le même camp."
+                "Einar fend l'épaule du soldat jusqu'à atteindre son coeur, le tuant instantanément."
+                hide jgv with dissolve
 
-        "Saisi ta chance (l'assommer)":
-            show einar combat_determine_mid at left
-            e "Je t'offre l'occasion de refaire ta vie, saisi-la."
-            "Du plat de sa hache, Einar frappe le soldat à la tempe. Il s'écroule à terre, inconscient"
-            hide jgv with dissolve
+            "Saisi ta chance (l'assommer)":
+                show einar combat_determine_mid at left
+                e "Je t'offre l'occasion de refaire ta vie, saisi-la."
+                "Du plat de sa hache, Einar frappe le soldat à la tempe. Il s'écroule à terre, inconscient"
+                hide jgv with dissolve
 
-        "L'ignorer":
-            #animation einar sortir
-            e "(Je n'ai pas le temps de m'occuper de lui.)"
-            hide jgv with dissolve
+            "L'ignorer":
+                #animation einar sortir
+                e "(Je n'ai pas le temps de m'occuper de lui.)"
+                hide jgv with dissolve
 
-    hide einar with dissolve
+                hide einar with dissolve
 
     "Harald jaillit du donjon, protégé par son armure et portant la terrible Hache Sainte."
 
@@ -2227,6 +2228,8 @@ label e_laisse_ogma_mort_defendre_porte:
 
 label cour_chateau_ogma_mort_defendre_porte:
 
+    scene bg cour_chateau_crepuscule
+
     "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
@@ -2236,22 +2239,24 @@ label cour_chateau_ogma_mort_defendre_porte:
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
     gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
     hide gv with dissolve
+    show moira debout_normal_mid at right with dissolve
     show einar debout_attriste_mid at left
     e "..."
-    show moira debout_normal_mid at right with dissolve
-    "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
     show moira debout_furieux_mid at right
-    show patrick debout_normal_mid_flip at center with dissolve
+    "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
+    show patrick debout_normal_mid_flip at center zorder 1 with dissolve
     p "Vous avez défié l'élu divin, porteur de la Hache Sainte !"
-    show patrick debout_furieux_mid at right
     p "Pour vos blasphèmes, votre hérésie et votre félonie, il n'est d'autre jugement que la mort !"
-    hide moira with dissolve
-    show harald debout_determine_mid at left with dissolve
+    hide einar with dissolve
+    #hide moira with dissolve
+    show harald debout_determine_mid_flip at left zorder 0 with dissolve
     h "Hâtez-vous, Patrick ! Il me tarde de les voir se tortiller sur leurs poteaux !"
-    show patrick debout_normal_mid at right
-    p "Bien, bien. Que Dieu ait pitié de vos âmes !"
+    show patrick debout_normal_mid at center
+    p "Bien, bien."
+    show patrick debout_normal_mid_flip at center
+    p "Que Dieu ait pitié de vos âmes !"
     "Deux hommes amènent des torches et commencent à embraser les bûchers."
-    show harald debout_normal_mid at left
+    show harald debout_normal_mid_flip at left
     h "Ha ha ! Le Seigneur nous offre un beau spectacle à travers son jugement !"
     "Les porteurs de torches s'approchent du bûcher de Moira."
 
@@ -2259,7 +2264,8 @@ label cour_chateau_ogma_mort_defendre_porte:
     hide patrick
     with dissolve
 
-    show moira debout_attriste_mid at left with dissolve
+    show einar debout_attriste_mid at left with dissolve
+    show moira debout_attriste_mid at right
 
     menu :
         "Qu'elle brûle comme les autres":

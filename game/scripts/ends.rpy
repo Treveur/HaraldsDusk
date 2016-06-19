@@ -90,7 +90,7 @@ label good_ending_8:
             e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
             e "(Il est temps de la récupérer ! Ce genre de choses ne devrait pas rester à traîner dans la nature...)"
             e "(Et ensuite, à moi le pouvoir !)"
-    
+
     "Fin 08/22"
     jump credits
 
@@ -207,10 +207,13 @@ label bad_ending_19:
     jump credits
 
 label bad_ending_20:
+    show einar debout_determine_mid at center with move
     "Einar fend la foule, s'élance vers le bûcher et tente de détacher Moira."
     "Lorsqu'il parvient à trancher ses liens, un archer lui décoche une flèche dans l'abdomen."
+    show einar debout_blesse_mid at center
     e "Argh... Cours ! Va t'en !"
     "Moira n'essaie même pas de bouger."
+    show moira debout_furieux_mid at right
     "Elle arrache la hachette de la ceinture d'Einar et lui en assène un coup violent en travers de la gorge."
     "Alors qu'Einar s'effondre, il ne voit rien d'autre que les yeux larmoyants de haine de Moira."
     "Fin 20/22"
