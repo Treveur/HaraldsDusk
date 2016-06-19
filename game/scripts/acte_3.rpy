@@ -694,7 +694,7 @@ label pont_levis_baisse:
                 show re debout_furieux_mid at right with moveinright
                 "Les huscarls sont vaincus en l'espace de quelques secondes, broyés par la masse des rebelles."
                 hide huscarls with dissolve
-                
+
 
             "Attaque précise":
                 hide screen countdown
@@ -749,7 +749,7 @@ label e_bruler_donjon_desobeir_donjon:
     "Il a l'air terrorisé mais résolu, et tue un rebelle."
     show re debout_furieux_mid at right, shake
     hide re with dissolve
-    
+
     show einar combat_normal_mid at left with moveinleft
 
     menu :
@@ -770,15 +770,15 @@ label e_bruler_donjon_desobeir_donjon:
             #animation einar sortir
             e "(Je n'ai pas le temps de m'occuper de lui.)"
             hide jgv with dissolve
-    
+
     hide einar with dissolve
-    
+
     "Harald jaillit du donjon, protégé par son armure et portant la terrible Hache Sainte."
-    
+
     show re debout_furieux_mid at right with dissolve
     show harald combat_hache_determine_mid_flip at center with moveinleft
     show huscarls combat_enthousiaste_mid at left with moveinleft
-    
+
 
     h "A moi, huscarls ! Suivez votre roi !"
     hu "HAAAAAA !"
@@ -786,17 +786,17 @@ label e_bruler_donjon_desobeir_donjon:
     show re debout_furieux_mid at right, shake
     hide re with dissolve
     show huscarls combat_enthousiaste_mid at center with moveinright
-    
+
     hide harald
     show huscarls combat_enthousiaste_mid at right with moveinright
     hide re
     hide huscarls
     with dissolve
-    
+
     "Harald se jette dans les combats et taille un chemin sanglant jusqu'à la porte. Ragaillardis par la présence du roi-empereur, les vikings repoussent les rebelles."
 
     "Le roi arrive devant Einar, couvert du sang de ses victimes."
-    
+
     show einar combat_normal_mid_flip at right with dissolve
     show harald combat_hache_normal_mid_flip at center with moveinleft
     show huscarls combat_enthousiaste_mid at left with moveinleft
@@ -2134,20 +2134,20 @@ label harald_defendre_porte:
     with dissolve
 
     show re combat_blesse_mid at right
-    show ogma combat_normal_mid at left
+    show ogma combat_normal_mid_flip at left
     with dissolve
 
     "Le roi lance une grande contre-offensive à la tête de son armée."
     "Désorganisés, les rebelles sont séparés en deux groupes. Certains rompent les rangs."
     ge "Tout est perdu ! Fuyez !"
     "Les combats sont déportés dans la plaine devant le château."
-    show ogma combat_furieux_mid at left
+    show ogma combat_furieux_mid_flip at left
     o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
     hide re with dissolve
     "Harald parvient au contact d'Ogma et un duel s'engage."
     show harald combat_normal_mid at right with dissolve
     h "Ha ! Tu es celui qui a assassiné mon intendant ?"
-    show ogma combat_determine_mid at left
+    show ogma combat_determine_mid_flip at left
     o "Oui, et je suis prêt à réitérer l'exploit avec un roi !"
     show harald combat_furieux_mid at right
     h "Pourriture ! Tu vas rendre gorge !"
@@ -2156,7 +2156,7 @@ label harald_defendre_porte:
     "Harald prend l'avantage petit à petit : la Hache le rend invincible."
     show harald combat_normal_mid at right
     h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
-    show ogma combat_normal_mid at left
+    show ogma combat_normal_mid_flip at left
     o "Jamais !"
     show harald combat_furieux_mid at right
     h "Meurs, chien maigre !"
@@ -2179,12 +2179,12 @@ label harald_defendre_porte:
 
 label e_laisse_ogma_mort_defendre_porte:
 
-    show ogma combat_normal_mid at left
+    show ogma combat_normal_mid_flip at left
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
     hide ogma with dissolve
     "Immédiatement, les rebelles se dispersent, traumatisés de voir leur héros vaincu par le roi viking."
 
-    show einar combat_normal_mid at left
+    show einar combat_normal_mid at left with moveinleft
 
     menu :
         "Joli !":
@@ -2230,10 +2230,10 @@ label cour_chateau_ogma_mort_defendre_porte:
     hide gv with dissolve
     show einar debout_attriste_mid at left
     e "..."
-    show moira debout_normal_mid at left with dissolve
+    show moira debout_normal_mid at right with dissolve
     "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
     show moira debout_furieux_mid at right
-    show patrick debout_normal_mid at right with dissolve
+    show patrick debout_normal_mid_flip at center with dissolve
     p "Vous avez défié l'élu divin, porteur de la Hache Sainte !"
     show patrick debout_furieux_mid at right
     p "Pour vos blasphèmes, votre hérésie et votre félonie, il n'est d'autre jugement que la mort !"

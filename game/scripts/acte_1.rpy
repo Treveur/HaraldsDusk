@@ -1460,7 +1460,10 @@ label massacre_foret_2 (message, massacre_village):
     stop ambiance
     play music slaughter
 
-    # hide
+    hide vfx_flame_1
+    hide vfx_flame_2
+    hide vfx_flame_3
+    with dissolve
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     show re combat_furieux_mid at left with moveinleft
