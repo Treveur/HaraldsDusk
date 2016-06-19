@@ -645,7 +645,9 @@ image bg black = "#000"
 
 #VFX
 
-image vfx flame = "vfx/flame.png"
+image vfx_flame_1 flame = "vfx/flame.png"
+image vfx_flame_2 flame = "vfx/flame.png"
+image vfx_flame_3 flame = "vfx/flame.png"
 
 # sounds
 
@@ -696,9 +698,12 @@ transform shake:
         ease .01 yoffset 0
 
 transform burn:
+    ease 0.5 alpha 0.4
+    ease 0.3 alpha 0.2
     ease 0.5 alpha 0.5
-    ease 0.3 alpha 0.4
-    ease 0.5 alpha 0.7
+    ease 0.1 alpha 0.6
+    ease 0.5 alpha 0.4
+    ease 0.5 alpha 0.5
 
     repeat
 

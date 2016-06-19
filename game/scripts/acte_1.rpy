@@ -1444,12 +1444,23 @@ label massacre_foret_2 (message, massacre_village):
     hide gv with dissolve
     show logan debout_determine_mid at right with moveinright
     show einar debout_determine_mid_flip at center with move
-    show vfx flame at burn:
+
+    show vfx_flame_1 flame at burn:
         xalign 0.2
+        yalign 0.5
+
+    show vfx_flame_2 flame at burn:
+        xalign 0.1
+        yalign 0.6
+
+    show vfx_flame_3 flame at burn:
+        xalign 0.3
         yalign 0.5
 
     stop ambiance
     play music slaughter
+
+    # hide
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     show re combat_furieux_mid at left with moveinleft
