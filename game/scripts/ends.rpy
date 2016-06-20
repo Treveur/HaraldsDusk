@@ -259,8 +259,11 @@ label bad_ending_16:
     jump credits
 
 label bad_ending_17:
-    "En plein combat, une flèche vient frapper Einar à l'épaule."
+    "Il est de plus en plus difficile de résister à la force d'Ogma, et Einar perd peu à peu sa concentration alors qu'il est absorbé par l'effort."
+    "Le viking ne remarque pas l'archer qui le vise de l'autre côté du pont-levis ; une flèche vient frapper Einar à l'épaule."
+    show einar combat_furieux_close at left, shake
     "Ogma profite de cette ouverture pour transperçer le viking de sa lame, et laisse tomber son cadavre dans les douves."
+    show einar combat_furieux_close at left, shake
     "Fin 17/22"
     jump credits
 
