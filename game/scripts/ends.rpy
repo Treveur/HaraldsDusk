@@ -141,7 +141,7 @@ label good_ending_11:
     o "Tu as l'air contrarié... Savoure ta victoire !"
     menu:
         "Tout va bien, merci":
-        show einar debout_souriant_mid at left
+            show einar debout_souriant_mid at left
             e "Excuse-moi, j'étais dans mes pensées !"
             o "Ah, j'aime mieux ça !"
             
