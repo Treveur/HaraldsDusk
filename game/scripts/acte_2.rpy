@@ -215,11 +215,11 @@ label interieur_maison_village_1:
             "Vous n'avez pas d'ordres à me donner":
                 show einar prisonnier_determine_mid at left
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
-                show moira debout_furieux_mid at right with moveinright
-                " Moira gifle Einar à nouveau, sur l'autre joue."
+                show einar prisonnier_determine_mid at left, shake
+                "Moira gifle Einar à nouveau, sur l'autre joue."
                 m "J'ai omis de préciser que vous me deviez aussi le respect."
                 show einar prisonnier_determine_mid at left
-                show moira debout_determine_mid at right
+                show moira debout_normal_mid at right with moveinright
                 m "Je n'agis pas par caprice, si c'est ce que vous pensez. Vous nous devez plusieurs vies."
                 e "Plusieurs vies ?"
                 m "La votre, dans un premier temps."
@@ -684,7 +684,7 @@ label interieur_maison_village_4:
     show einar prisonnier_normal_close at right with moveinright
     hide einar with dissolve
 
-    "Moira entraîne Einar a l'extérieur en lui tenant la main."
+    "Moira entraîne Einar a l'extérieur."
 
     if short_version:
         jump village_3
@@ -920,7 +920,10 @@ label paradis_foret_1:
             show einar prisonnier_normal_close at left
             #Pas logique
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
-            e "Tu..."
+            e "Pourquoi ?"
+            m "Je n'ai jamais été aussi proche d'un homme."
+            m "Tu me plais. Bientôt, tu seras reparti. Je veux simplement profiter de cet instant avec toi."
+            e "Mais..."
             m "Ne dis rien."
             show einar prisonnier_souriant_close at left
             "Elle embrasse doucement Einar et commence à l'enlacer."
