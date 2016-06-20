@@ -2111,15 +2111,17 @@ label soupcon_harald_defendre_porte:
 
             show ogma combat_normal_close at right with moveinright
             "Einar assène un coup de pied à l'entrejambe d'Ogma, qui lâche son épée et recule."
+            hide ogma with dissolve
             "Au même moment, un huscarl survient et fracasse le crâne de l'écossais avec sa hache."
             "Ogma tombe dans les douves, son sang se répandant dans l'eau boueuse."
             "Terrorisés, les rebelles prennent la fuite."
-            hide ogma with dissolve
-
-            show harald combat_normal_close at right with dissolve
+            
+            show einar combat_determine_mid at left
+            show harald combat_normal_mid_flip at right with dissolve
             h "Ha ha ! Ils fuient, les lâches !"
-            show harald combat_determine_close at right
+            show harald combat_furieux_mid_flip at right
             h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
+            hide harald with dissolve
 
             "Harald s'élance à la poursuite des fuyards, le rire aux lèvres."
             "Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares."
