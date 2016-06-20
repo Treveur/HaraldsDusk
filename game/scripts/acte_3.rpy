@@ -1966,7 +1966,7 @@ label soupcon_harald_defendre_porte:
     show gv combat_normal_mid at center
     gv "Crevez, salopards ! Ha ha !"
     hide gv
-    hide ge
+    hide re
     with dissolve
     scene bg cour_chateau_crepuscule with dissolve
     show gv combat_normal_mid at right with dissolve
@@ -2115,7 +2115,7 @@ label soupcon_harald_defendre_porte:
             "Au même moment, un huscarl survient et fracasse le crâne de l'écossais avec sa hache."
             "Ogma tombe dans les douves, son sang se répandant dans l'eau boueuse."
             "Terrorisés, les rebelles prennent la fuite."
-            
+
             show einar combat_determine_mid at left
             show harald combat_normal_mid_flip at right with dissolve
             h "Ha ha ! Ils fuient, les lâches !"
