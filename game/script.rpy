@@ -13,14 +13,6 @@ define e = Character('Einar', color="#e74c3c", image="einar")
 image side einar = "einar/einar_portrait.png"
 
 #Debout
-image einar debout_normal = "einar/debout/einar_debout_normal.png"
-image einar debout_souriant = "einar/debout/einar_debout_souriant.png"
-image einar debout_furieux = "einar/debout/einar_debout_furieux.png"
-image einar debout_attriste = "einar/debout/einar_debout_attriste.png"
-image einar debout_blesse = "einar/debout/einar_debout_blesse.png"
-image einar debout_contrarie = "einar/debout/einar_debout_contrarie.png"
-image einar debout_effraye = "einar/debout/einar_debout_effraye.png"
-image einar debout_determine = "einar/debout/einar_debout_determine.png"
 
 #mid
 image einar debout_normal_mid = "einar/debout/einar_debout_normal_mid.png"
@@ -43,10 +35,6 @@ image einar debout_effraye_close = "einar/debout/einar_debout_effraye_close.png"
 image einar debout_determine_close = "einar/debout/einar_debout_determine_close.png"
 
 #Combat
-image einar combat_normal = "einar/combat/einar_combat_normal.png"
-image einar combat_furieux = "einar/combat/einar_combat_furieux.png"
-image einar combat_blesse = "einar/combat/einar_combat_blesse.png"
-image einar combat_determine = "einar/combat/einar_combat_determine.png"
 
 #mid
 image einar combat_normal_mid = "einar/combat/einar_combat_normal_mid.png"
@@ -62,9 +50,6 @@ image einar combat_determine_close = "einar/combat/einar_combat_determine_close.
 
 
 #Combat Hache
-image einar combat_hache_normal = "einar/combat_hache/einar_combat_hache_normal.png"
-image einar combat_hache_furieux = "einar/combat_hache/einar_combat_hache_furieux.png"
-image einar combat_hache_determine = "einar/combat_hache/einar_combat_hache_determine.png"
 
 #mid
 image einar combat_hache_normal_mid = "einar/combat_hache/einar_combat_hache_normal_mid.png"
@@ -134,11 +119,6 @@ define l = Character('Logan', color="#f1c40f", image="logan")
 image side logan = "logan/logan_portrait.png"
 
 #Debout
-image logan debout_normal = "logan/debout/logan_debout_normal.png"
-image logan debout_souriant = "logan/debout/logan_debout_souriant.png"
-image logan debout_attriste = "logan/debout/logan_debout_attriste.png"
-image logan debout_contrarie = "logan/debout/logan_debout_contrarie.png"
-image logan debout_determine = "logan/debout/logan_debout_determine.png"
 
 image logan debout_normal_mid = "logan/debout/logan_debout_normal_mid.png"
 image logan debout_souriant_mid = "logan/debout/logan_debout_souriant_mid.png"
@@ -168,9 +148,6 @@ image logan debout_attriste_close_flip = im.Flip("logan/debout/logan_debout_attr
 image logan debout_determine_close_flip = im.Flip("logan/debout/logan_debout_determine_close.png", horizontal = True)
 
 #Combat
-image logan combat_normal = "logan/combat/logan_combat_normal.png"
-image logan combat_blesse = "logan/combat/logan_combat_blesse.png"
-image logan combat_determine = "logan/combat/logan_combat_determine.png"
 
 #mid
 image logan combat_normal_mid = "logan/combat/logan_combat_normal_mid.png"
@@ -209,8 +186,6 @@ image harald debout_furieux_close = "harald/debout/harald_debout_furieux_close.p
 image harald debout_contrarie_close = "harald/debout/harald_debout_contrarie_close.png"
 image harald debout_determine_close = "harald/debout/harald_debout_determine_close.png"
 image harald debout_sceptique_close = "harald/debout/harald_debout_sceptique_close.png"
-
-
 
 #Combat Hache
 
@@ -277,8 +252,6 @@ image harald combat_determine_close_flip = im.Flip("harald/combat/harald_combat_
 define hu = Character("Huscarls")
 
 #Debout
-image huscarls debout_normal = "huscarls/debout/huscarls_debout_normaux.png"
-image huscarls debout_rire = "huscarls/debout/huscarls_debout_rire.png"
 
 image huscarls debout_normal_mid = "huscarls/debout/huscarls_debout_normaux_mid.png"
 image huscarls debout_rire_mid = "huscarls/debout/huscarls_debout_rire_mid.png"
@@ -287,10 +260,6 @@ image huscarls debout_normal_close = "huscarls/debout/huscarls_debout_normaux_cl
 image huscarls debout_rire_close = "huscarls/debout/huscarls_debout_rire_close.png"
 
 #Combat
-image huscarls combat_normal = "huscarls/combat/huscarls_combat_normaux.png"
-image huscarls combat_enthousiaste = "huscarls/combat/huscarls_combat_enthousiaste.png"
-image huscarls combat_furieux = "huscarls/combat/huscarls_combat_furieux.png"
-image huscarls combat_inquiet = "huscarls/combat/huscarls_combat_inquiets.png"
 
 #mid
 image huscarls combat_normal_mid = "huscarls/combat/huscarls_combat_normaux_mid.png"
@@ -336,12 +305,6 @@ define jgv = Character("Jeune Guerrier Viking", image="jeune_viking")
 # image side guerriers_vikings = "jeune_viking/jeune_viking_portrait.png"
 
 #Debout
-image gv debout_normaux = "guerriers_vikings/debout/gv_debout_normaux.png"
-image gv debout_enthousiaste = "guerriers_vikings/debout/gv_debout_enthousiastes.png"
-image gv debout_furieux = "guerriers_vikings/debout/gv_debout_furieux.png"
-image gv debout_rire = "guerriers_vikings/debout/gv_debout_rire.png"
-image gv debout_contrarie = "guerriers_vikings/debout/gv_debout_contraries.png"
-image gv debout_determines = "guerriers_vikings/debout/gv_debout_determines.png"
 
 image gv debout_normaux_mid = "guerriers_vikings/debout/gv_debout_normaux_mid.png"
 image gv debout_enthousiaste_mid = "guerriers_vikings/debout/gv_debout_enthousiastes_mid.png"
@@ -358,8 +321,6 @@ image gv debout_contrarie_close = "guerriers_vikings/debout/gv_debout_contraries
 image gv debout_determines_close = "guerriers_vikings/debout/gv_debout_determines_close.png"
 
 #Combat
-image gv combat_normal = "guerriers_vikings/combat/gv_combat_normaux.png"
-image gv combat_blesses = "guerriers_vikings/combat/gv_combat_blesses.png"
 
 #mid
 image gv combat_normal_mid = "guerriers_vikings/combat/gv_combat_normaux_mid.png"
@@ -370,8 +331,6 @@ image gv combat_normal_close = "guerriers_vikings/combat/gv_combat_normaux_close
 image gv combat_blesses_close = "guerriers_vikings/combat/gv_combat_blesses_close.png"
 
 #Jeune Guerrier Viking
-image jgv debout_normal = "jeune_viking/debout/jgv_debout_normal.png"
-image jgv debout_pleurant = "jeune_viking/debout/jgv_debout_pleurant.png"
 
 image jgv debout_normal_mid = "jeune_viking/debout/jgv_debout_normal_mid.png"
 image jgv debout_pleurant_mid = "jeune_viking/debout/jgv_debout_pleurant_mid.png"
@@ -412,10 +371,6 @@ image ogma debout_determine_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_m
 
 
 #Combat
-image ogma combat_normal = "ogma/combat/ogma_combat_normal.png"
-image ogma combat_furieux = "ogma/combat/ogma_combat_furieux.png"
-image ogma combat_contrarie = "ogma/combat/ogma_combat_contrarie.png"
-image ogma combat_determine = "ogma/combat/ogma_combat_determine.png"
 
 #mid
 image ogma combat_normal_mid = "ogma/combat/ogma_combat_normal_mid.png"
@@ -436,8 +391,6 @@ image ogma combat_furieux_mid_flip = im.Flip("ogma/combat/ogma_combat_furieux_mi
 image ogma combat_contrarie_mid_flip = im.Flip("ogma/combat/ogma_combat_contrarie_mid.png", horizontal = True)
 
 #Combat Hache
-image ogma combat_hache_brandir = "ogma/combat_hache/ogma_combat_hache_brandir.png"
-image ogma combat_hache_determine = "ogma/combat_hache/ogma_combat_hache_determine.png"
 
 #mid
 image ogma combat_hache_brandir_mid = "ogma/combat_hache/ogma_combat_hache_brandir_mid.png"
@@ -453,13 +406,6 @@ define m = Character("Moira", color = "#f00", image="moira")
 # image side moira = "moira/moira_portrait.png"
 
 #Debout
-image moira debout_normal = "moira/debout/moira_debout_normal.png"
-image moira debout_souriant = "moira/debout/moira_debout_souriant.png"
-image moira debout_furieux = "moira/debout/moira_debout_furieux.png"
-image moira debout_attriste = "moira/debout/moira_debout_attriste.png"
-image moira debout_contrarie = "moira/debout/moira_debout_contrarie.png"
-image moira debout_effraye = "moira/debout/moira_debout_effraye.png"
-image moira debout_determine = "moira/debout/moira_debout_determine.png"
 
 image moira debout_normal_mid = "moira/debout/moira_debout_normal_mid.png"
 image moira debout_souriant_mid = "moira/debout/moira_debout_souriant_mid.png"
@@ -504,9 +450,6 @@ image moira nue_effraye_close_flip = im.Flip("moira/nue/moira_nue_effraye_close.
 
 
 #nude
-image moira nue_normal = "moira/nue/moira_nue_normale.png"
-image moira nue_souriant = "moira/nue/moira_nue_souriante.png"
-image moira nue_effraye = "moira/nue/moira_nue_effrayee.png"
 
 image moira nue_normal_mid = "moira/nue/moira_nue_normale_mid.png"
 image moira nue_souriant_mid = "moira/nue/moira_nue_souriant_mid.png"
@@ -517,8 +460,6 @@ image moira nue_souriant_close = "moira/nue/moira_nue_souriant_close.png"
 image moira nue_effraye_close = "moira/nue/moira_nue_effraye_close.png"
 
 #Attache
-image moira attache_determine = "moira/buchet/moira_attache_determine.png"
-image moira attache_furieuse = "moira/buchet/moira_attache_furieuse.png"
 
 #mid
 image moira attache_determine_mid = "moira/buchet/moira_attache_determine_mid.png"
@@ -572,9 +513,6 @@ define pe3 = Character("Prisonnière écossaise 1", image="villageois_ecossais")
 # image side villageois_ecossais = "villageois_ecossais/villageois_ecossais_portrait.png"
 
 #Debout
-image ve debout_normaux = "villageois_ecossais/debout/ve_debout_normaux.png"
-image ve debout_craintifs = "villageois_ecossais/debout/ve_debout_craintifs.png"
-image ve debout_effrayes = "villageois_ecossais/debout/ve_debout_effrayes.png"
 
 image ve debout_normaux_mid = "villageois_ecossais/debout/ve_debout_normaux_mid.png"
 image ve debout_craintifs_mid = "villageois_ecossais/debout/ve_debout_craintifs_mid.png"
@@ -585,9 +523,6 @@ image ve debout_craintifs_close = "villageois_ecossais/debout/ve_debout_craintif
 image ve debout_effrayes_close = "villageois_ecossais/debout/ve_debout_effrayes_close.png"
 
 #Buchet
-image ve buchet_normaux = "villageois_ecossais/buchet/ve_buchet_effrayes.png"
-image ve buchet_pleurent = "villageois_ecossais/buchet/ve_buchet_pleurent.png"
-
 image ve buchet_normaux_mid = "villageois_ecossais/buchet/ve_buchet_effrayes_mid.png"
 image ve buchet_pleurent_mid = "villageois_ecossais/buchet/ve_buchet_pleurent_mid.png"
 
@@ -607,11 +542,6 @@ image patrick debout_normal_close = "patrick/debout/patrick_debout_normal_close.
 image patrick debout_normal_mid_flip = im.Flip("patrick/debout/patrick_debout_normal_mid.png", horizontal = True)
 
 image patrick debout_normal_close_flip = im.Flip("patrick/debout/patrick_debout_normal_close.png", horizontal = True)
-
-
-
-#Guerriers Asiatiques
-#image ga combat_agressifs = "ga_combat_agressifs.png"
 
 #Scene
 
@@ -731,7 +661,8 @@ transform burn:
     ease 0.5 alpha 0.5
     repeat
 
-
+transform ve_pos:
+    xoffset 590
 
 #Déclaration timer
 transform alpha_dissolve:
