@@ -939,21 +939,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         e "J'ai la Hache. Vous ne pouvez rien contre moi !"
 
         menu:
-            "Fin de votre règne (le tuer)":
-                show einar combat_hache_normal_mid at left
-                e "Votre règne s'achève ici et maintenant. Vous allez mourir."
-                show harald combat_blesse_mid at right
-                h "Je m'avoue vaincu ! Ne me tue pas !"
-                show einar combat_hache_determine_mid at left
-                e "Pardon ?"
-                h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
-
-            "Pas de répit pour vous (le tuer)":
-                show einar combat_hache_normal_mid at left
-                e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
-                show harald combat_furieux_mid at right
-                h "Tu es fou !"
-
+            
             "Vous avez déjà perdu (épargner)":
                 show einar combat_hache_normal_mid at left
                 e "Vous avez déjà perdu. Je vais vous épargner."
@@ -974,6 +960,23 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 e "Ce n'est pas le moment de discuter."
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
+            
+            "Fin de votre règne (le tuer)":
+                show einar combat_hache_normal_mid at left
+                e "Votre règne s'achève ici et maintenant. Vous allez mourir."
+                show harald combat_blesse_mid at right
+                h "Je m'avoue vaincu ! Ne me tue pas !"
+                show einar combat_hache_determine_mid at left
+                e "Pardon ?"
+                h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
+
+            "Pas de répit pour vous (le tuer)":
+                show einar combat_hache_normal_mid at left
+                e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
+                show harald combat_furieux_mid at right
+                h "Tu es fou !"
+
+            
 
         if epargner_harld_donjon == False:
             show einar combat_hache_furieux_mid at center zorder 1 with move

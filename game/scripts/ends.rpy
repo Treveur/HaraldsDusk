@@ -128,26 +128,71 @@ label normal_ending_10:
     jump credits
 
 label good_ending_11:
-    show ogma debout_souriant_mid at right
+    show ogma debout_souriant_mid at center
     o "Aujourd'hui et au nom du peuple d'Ecosse, je te remercie, Einar !"
     o "Nous te sommes tous redevables !"
-    show re debout_normaux_mid at center
+    show re debout_normaux_mid at right
     ge "HOURRAAA !"
     hide re
     o "Tu as agit pour le bien du plus grand nombre, ne l'oublie jamais."
     o "Comme promis, tu es désormais libre d'aller où bon te semble. Un cheval harnaché avec des fontes remplies d'or t'attends."
-    show einar debout_souriant_mid at left
+    show einar debout_normal_mid at left
     e "Merci."
-    show ogma debout_normal_mid at right
+    o "Tu as l'air contrarié... Savoure ta victoire !"
+        menu:
+            "Tout va bien, merci":
+            show einar debout_souriant_mid at left
+                e "Excuse-moi, j'étais dans mes pensées !"
+                o "Ah, j'aime mieux ça !"
+                
+            "Vous avez trahi votre parole en tuant Harald":
+                e "Une victoire, certes... Mais une victoire amère."
+                o "Pourquoi ça ?"
+                e "Vous n'avez pas été fidèles à notre marché. Vous avez tué le roi."
+                o "Je comprends ta rancoeur. Mais je ne pouvais pas te dire la vérité."
+                o "Aurais-tu accepté de nous aider si je t'avais dit que le but était de tuer le roi ?"
+                e "Je ne sais pas."
+                o "Peu importe ! Tu as libéré notre peuple, et nous t'avons offert tout ce que nous t'avions promis. Et même plus !"
+                
+    show ogma debout_normal_mid at center
     o "Nous avons organisé un grand repas pour fêter la victoire, nous aimerions que tu te joignes à nous."
     show einar debout_normal_mid at left
     e "Je ne suis pas sûr..."
-    show ogma debout_souriant_mid at right
+    show ogma debout_souriant_mid at center
     o "A vrai dire, il y a quelqu'un en particulier qui tient énormément à ta présence."
     show einar debout_souriant_mid at left
     e "Ah ?"
     o "Je sais que Moira et toi êtes devenus très proches..."
     o "Aussi, j'ai décidé de t'offrir la main de ma fille !"
+    o "N'est-ce pas la plus belle récompense ?"
+    menu :
+        "Oui !":
+            e "Et comment ! Je n'aurais pû espérer mieux !"
+            o "Merveilleux !"
+            "..."
+            hide einar
+            hide ogma
+            with dissolve
+            "Le soir venu, lors du festin organisé en l'honneur d'Einar, Ogma annonce les noces sous une ovation tonitruante."
+            "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
+            "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
+            "Einar le Libérateur."
+            
+        "Non...":
+            show einar debout_normal_mid at left
+            e "Votre m'honore, mais je ne peux accepter."
+            show ogma debout_attriste_mid at center
+            o "Pourquoi ?"
+            e "Je ne souhaite pas me marier à Moira ; vous exposer mes raisons ne changerait rien à l'affaire."
+            o "Je ne comprend pas ta réaction... Elle sera profondément blessée."
+            hide einar
+            hide ogma
+            with dissolve
+            "Le soir venu, lors du festin organisé en l'honneur d'Einar, on remarque le visage fermé et la froideur de Moira."
+            "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
+            "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
+            "Einar le Libérateur."
+    
     "Fin 11/22"
     jump credits
 
