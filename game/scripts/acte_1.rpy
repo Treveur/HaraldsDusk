@@ -695,12 +695,12 @@ label village_1:
         "Cela fait désormais deux jours que la troupe d'Einar progresse vers le nord."
 
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
-    show ve debout_normaux_mid at right with dissolve
+    show ve debout_normaux_mid at right, ve_pos with dissolve:
     show logan debout_normal_mid at center with moveinleft
     l "Nous y sommes. Perth."
 
     "Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive."
-    show ve debout_craintifs_mid at right
+    show ve debout_craintifs_mid at right, ve_pos
     show einar debout_normal_mid at left zorder 1 with moveinleft
     e "Ça me semble bien calme."
     show gv debout_normaux_mid at left zorder 0 with moveinleft
@@ -734,7 +734,7 @@ label village_1:
     hide logan
     with dissolve
 
-    show ve debout_craintifs_mid at right with moveinright
+    show ve debout_craintifs_mid at right, ve_pos with moveinright
 
     menu menu_fouille_village:
 
@@ -796,15 +796,17 @@ label village_1:
 
             e "Que savez-vous des rebelles ? Où sont-ils ?"
 
-            show logan debout_souriant_mid at center #with moveinright
-            show ve debout_craintifs_mid at right
-            with moveinright
+            show logan debout_souriant_mid at center with moveinleft
+
+            show ve debout_craintifs_mid at right with moveinright
 
             l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
             ve "Ecossais ? Traître à ta terre et à ton sang ! Tu mènes des envahisseurs parmi les tiens !"
 
             "Le vieil homme crache sur le sol, devant les pieds de Logan."
+
+            show einar debout_determine_mid at left zorder 2
 
             e "Quel succès, Logan."
 
@@ -1054,6 +1056,7 @@ label e_tuer_villageois_village_1:
 
 
         "Vous l'aurez voulu ! (tuer un villageois)":
+            hide logan with dissolve
             show einar debout_determine_mid at left
 
             e "Vous l'avez cherché !"
@@ -1078,6 +1081,8 @@ label e_tuer_villageois_village_1:
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
+
+            hide ve with dissolve
 
             show gv debout_furieux_mid at center
 
@@ -1188,7 +1193,7 @@ label e_tuer_moira_maison_1:
 
             show logan debout_determine_mid_flip at center with move
 
-            show ve debout_effrayes at right with moveinright
+            show ve debout_effrayes_mid at right with moveinright
 
             ve "Nous ne savons rien ! Absolument rien !"
 
