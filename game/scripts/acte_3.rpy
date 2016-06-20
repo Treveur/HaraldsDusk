@@ -1929,26 +1929,44 @@ label lieu_encore_inconnu_1(axe = True):
 #Défendre porte
 label soupcon_harald_defendre_porte:
 
-    scene bg chateau_porte_crepuscule
+    scene bg chateau_porte_crepuscule with dissolve
 
-    show re combat_normal_mid at left
-    show gv combat_normal_mid at right
+    show re combat_normal_mid at right with moveinright
     with dissolve
 
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     ge "L'échelle ! Apportez l'échelle !"
     gv "Les rebelles dressent une échelle par-dessus les douves !"
+    show gv combat_normal_mid at left with moveinleft
     "Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles."
+    show gv combat_normal_mid at center with moveinright
     "Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
-    show gv combat_normal_mid at right
+    show gv combat_normal_mid at center
     gv "Crevez, salopards ! Ha ha !"
-    show harald combat_determine_mid at center with dissolve
+    hide gv
+    hide ge
+    with dissolve
+    scene bg cour_chateau_crepuscule with dissolve
+    show gv combat_normal_mid at right with dissolve
+    show harald combat_determine_mid_flip at center with dissolve
     h "Consolidez les rangs !"
     hide harald with dissolve
+    
+    scene bg chateau_porte_crepuscule with dissolve
+    show re combat_normal_mid at right with dissolve
+    show gv combat_normal_mid at center with dissolve
     "Les rebelles sont contraints de reculer et restent à distance des remparts."
+    hide re with dissolve
+    show gv combat_normal_mid at right with moveinright
+    
+    
+    scene bg cour_chateau_crepuscule with dissolve
+    show gv combat_normal_mid at right with dissolve
+    show harald combat_determine_mid_flip at center with dissolve
     "Alors que les vikings se réjouissent de leur supériorité, un cri retentit sur leurs arrières."
     gv "Par la mer ! Ils arrivent par la mer !"
     "Profitant des combats, un groupe conséquent d'écossais a pénétré l'enceinte par la mer pour débarquer discrètement derrière les vikings."
+    show re combat_normal_mid_flip at left with moveinleft
     "Ils lancent un deuxième assaut sur l'arrière des vikings, dans l'enceinte."
     "A l'extérieur, les rebelles lancent un nouvel assaut et après avoir tendu des planches en travers des douves, commencent à détruire le tablier du pont à coup de haches."
     gv "Ça va céder !"
@@ -1959,29 +1977,33 @@ label soupcon_harald_defendre_porte:
     hide re
     with dissolve
 
-    show einar combat_normal_mid at left
-    show huscarls combat_normal_mid at right
+    show einar combat_normal_mid at center
+    show huscarls combat_normal_mid at left
     with dissolve
 
     menu:
         "Suivez-moi !":
-            show einar combat_determine_mid at left
+            show einar combat_determine_mid at center
             e "A moi, huscarls !"
             e "Suivez-moi et ne me lâchez pas !"
-            show huscarls combat_enthousiaste_mid at right
+            show huscarls combat_enthousiaste_mid at left
 
         "Dressez vos boucliers":
-            show einar combat_determine_mid at left
+            show einar combat_determine_mid at center
             e "Je veux une ligne parfaite ! Dressez vos boucliers !"
             e "Vous avez déjà affronté bien pire que des paysans ! Souvenez-vous des éléphants de guerre !"
-            show huscarls combat_enthousiaste_mid at right
+            show huscarls combat_enthousiaste_mid at left
 
-        "Ils ne passseront pas ! ":
-            show einar combat_furieux_mid at left
+        "Ils ne passeront pas ! ":
+            show einar combat_furieux_mid at center
             e "Ces raclures ne passeront pas la porte !"
             e "Vengeance ! Pour le roi, pour Logan et pour tous les autres !"
-            show huscarls combat_furieux_mid at right
-
+            show huscarls combat_furieux_mid at left
+    
+    show einar combat_furieux_mid at right with moveinright
+    hide einar with dissolve
+    show huscarls combat_furieux_mid at right with moveinright
+    hide einar with dissolve
     "Alors que la porte menace de céder, les vikings l'ouvrent et prennent de court les rebelles."
     "Immédiatement, les rebelles tentent de s'engouffrer dans l'ouverture, face à Einar et aux huscarls."
     "Une silouhette familière émerge des rebelles."
