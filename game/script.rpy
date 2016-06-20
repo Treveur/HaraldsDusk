@@ -714,7 +714,6 @@ transform burn:
     ease 0.1 alpha 0.6
     ease 0.5 alpha 0.4
     ease 0.5 alpha 0.5
-
     repeat
 
 

@@ -1440,7 +1440,7 @@ label massacre_foret_2 (message, massacre_village):
     gv "Ça venait d'où ?"
     show gv debout_determines_mid at right with moveinright
     show logan debout_determine_mid_flip at center zorder 1 with dissolve
-    l "Sur la gauche ! Des torches !"
+
     hide gv with dissolve
     show logan debout_determine_mid_flip at right with moveinright
     show einar debout_determine_mid_flip at center with move
@@ -1457,15 +1457,20 @@ label massacre_foret_2 (message, massacre_village):
         xalign 0.3
         yalign 0.5
 
+    l "Sur la gauche ! Des torches !"
+
     stop ambiance
     play music slaughter
+
+
+
+    "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
 
     hide vfx_flame_1
     hide vfx_flame_2
     hide vfx_flame_3
     with dissolve
 
-    "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
     show re debout_normaux_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
