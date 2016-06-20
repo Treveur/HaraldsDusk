@@ -1224,7 +1224,7 @@ label foret_2_r(lieu, massacre_village):
 
             e "Parce que nous avons massacré les rebelles. Mission accomplie, nous rentrons chez nous."
             hide gv with dissolve
-            show logan debout_contrarie_mid at right with dissolve
+            show logan debout_contrarie_mid_flip at right with dissolve
             l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
             show einar debout_souriant_mid at left
             e "Bien sûr ! Leur manque de coopération était plus qu'évident. Ils étaient les rebelles. Harald sera satisfait !"
@@ -1233,7 +1233,7 @@ label foret_2_r(lieu, massacre_village):
 
             e "Parce que j'ai de sérieux doutes sur ce village. Les gens de Perth étaient bien trop louches, quoi qu'en dise Logan."
             hide gv with dissolve
-            show logan debout_normal_mid at right
+            show logan debout_normal_flip_mid at right
             l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
 
             e "Je ne suis sûr de rien."
@@ -1294,6 +1294,7 @@ label foret_2_r(lieu, massacre_village):
         l "Des écossais rebelles, oui. Pas des innocents."
 
         e "Ne remet pas mes ordres en question. Tu te ramollis, mon vieux Logan."
+        hide logan with dissolve
 
         menu:
             "Ne relâchez pas votre attention":
@@ -1312,6 +1313,7 @@ label foret_2_r(lieu, massacre_village):
         show einar debout_souriant_mid at left
         e "Tu te ramollis, mon vieux Logan..."
         show einar debout_normal_mid at left
+        hide logan with dissolve
 
         menu:
             "Ne relâchez pas votre attention":
@@ -1325,9 +1327,7 @@ label foret_2_r(lieu, massacre_village):
 
 label massacre_foret_2 (message, massacre_village):
 
-
     if message == "attentif":
-        hide logan with dissolve
         show einar debout_determine_mid at left
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
         show gv debout_enthousiastes_mid at right with moveinright
@@ -1466,7 +1466,7 @@ label massacre_foret_2 (message, massacre_village):
     with dissolve
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
-    show re combat_furieux_mid at left with moveinleft
+    show re debout_normaux_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
     show einar combat_determine_mid_flip at center

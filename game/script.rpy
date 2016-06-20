@@ -501,7 +501,6 @@ define ge = Character('rebelles écossais', color="#f39c12", image="rebelles_eco
 
 #Debout
 image re debout_normaux_mid = "rebelles_ecossais/debout/re_debout_normaux_mid.png"
-
 image re debout_normaux_close = "rebelles_ecossais/debout/re_debout_normaux_close.png"
 
 #Combat
@@ -512,6 +511,19 @@ image re combat_furieux_mid = "rebelles_ecossais/combat/re_combat_furieux_mid.pn
 #close
 image re combat_normaux_close = "rebelles_ecossais/combat/re_combat_normaux_close.png"
 image re combat_furieux_close = "rebelles_ecossais/combat/re_combat_furieux_close.png"
+
+#Flip
+image re debout_normaux_mid_flip = im.Flip("rebelles_ecossais/debout/re_debout_normaux_mid.png", horizontal = True)
+image re debout_normaux_close_flip = im.Flip("rebelles_ecossais/debout/re_debout_normaux_close.png", horizontal = True)
+
+#Combat
+#mid
+image re combat_normaux_mid_flip= im.Flip("rebelles_ecossais/combat/re_combat_normaux_mid.png", horizontal = True)
+image re combat_furieux_mid_flip = im.Flip("rebelles_ecossais/combat/re_combat_furieux_mid.png", horizontal = True)
+
+#close
+image re combat_normaux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_normaux_close.png", horizontal = True)
+image re combat_furieux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_furieux_close.png", horizontal = True)
 
 
 ##Villageois / prisonniers
