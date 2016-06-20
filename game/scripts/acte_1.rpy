@@ -278,12 +278,16 @@ label plaine_1 :
     hide gv with dissolve
 
     "Harald lit rapidement le rapport."
+    
+    show harald debout_sceptique_mid at right
 
     h "Mmmh..."
 
     show einar debout_normal_mid at left with moveinleft
 
     e "Dois-je envoyer un émissaire annoncer notre arrivée ?"
+    
+    show harald debout_normal_mid at right
 
     h "Non, je compte sur toi pour autre chose."
 

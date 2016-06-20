@@ -194,7 +194,7 @@ label cour_chateau_1:
 
     h "..."
     show einar debout_normal_close at left
-    show harald debout_determine_close at right
+    show harald debout_sceptique_close at right
     with dissolve
     h "J'espère que tout ce que tu me dis là est vrai."
     h "Je ne tolère pas le mensonge, Einar. Ton histoire me paraît bien obscure. Je te fais confiance, mais si j'apprends que tu m'as menti..."
@@ -234,6 +234,7 @@ label cour_chateau_1:
             $ mentir_harald_1 = True
 
     if mentir_harald_1:
+        show harald debout_normal_close at right
         show einar debout_normal_close at left
         h "Je te remercie pour ta sincérité, Einar."
         show harald debout_determine_close at right
