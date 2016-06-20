@@ -2250,81 +2250,85 @@ label harald_defendre_porte:
     
     scene bg plaine_plaine_crepuscule with dissolve
     show re debout_normaux_mid at right
-    show ogma combat_normal_mid_flip at left
+    show ogma combat_normal_mid at center
     with dissolve
 
     "Le roi lance une grande contre-offensive à la tête de son armée."
     "Désorganisés, les rebelles sont séparés en deux groupes. Certains rompent les rangs."
     ge "Tout est perdu ! Fuyez !"
-    "Les combats sont déportés dans la plaine devant le château."
-    show ogma combat_furieux_mid_flip at left
-    o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
     hide re with dissolve
-    "Harald parvient au contact d'Ogma et un duel s'engage."
-    show harald combat_normal_mid at right with dissolve
+    show ogma combat_furieux_mid at center
+    o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
+    show harald combat_normal_mid_flip at left with moveinleft
+    show ogma combat_normal_mid at right with moveinright
     h "Ha ! Tu es celui qui a assassiné mon intendant ?"
-    show ogma combat_determine_mid_flip at left
+    show ogma combat_determine_mid at right
     o "Oui, et je suis prêt à réitérer l'exploit avec un roi !"
-    show harald combat_furieux_mid at right
+    show harald combat_furieux_mid_flip at left
     h "Pourriture ! Tu vas rendre gorge !"
+    show harald combat_furieux_mid_flip at center with moveinright
+    show ogma combat_furieux_mid at right, shake
+    show harald combat_furieux_mid_flip at center, shake
+    
     "La force et la technique de Harald s'opposent à la vitesse et à la ruse d'Ogma."
     "D'une feinte, l'écossais parvient à atteindre le roi au ventre ; pas une goutte de sang ne coule."
     "Harald prend l'avantage petit à petit : la Hache le rend invincible."
-    show harald combat_normal_mid at right
+    show ogma combat_furieux_mid at right, shake
+    show harald combat_normal_mid_flip at center
     h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
-    show ogma combat_normal_mid_flip at left
+    show ogma combat_normal_mid at right
     o "Jamais !"
-    show harald combat_furieux_mid at right
+    show harald combat_furieux_mid_flip at center
     h "Meurs, chien maigre !"
+    show ogma combat_furieux_mid at right, shake
     "Du plat de sa hache, Harald frappe Ogma au torse, lui brisant les côtes et le jetant à terre."
     "Le roi s'apprête à achever le chef rebelle."
 
-    show einar debout_normal_mid at center with dissolve
+    show einar debout_determine_mid at left with moveinleft
 
     menu :
 
         "Tuez-le !":
-            show einar debout_furieux_mid at center
+            show einar debout_furieux_mid at left
             e "Tuez-le, sire !"
             jump e_laisse_ogma_mort_defendre_porte
         "Ne le tuez pas ! (s'interposer)":
-            show einar debout_furieux_mid at center
+            show einar debout_furieux_mid at left
             e "Non ! Ne l'achevez pas !"
             jump e_sauve_ogma_defendre_porte
 
 
 label e_laisse_ogma_mort_defendre_porte:
 
-    show ogma combat_normal_mid_flip at left
+    show ogma combat_normal_mid at right
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
     hide ogma with dissolve
-    "Immédiatement, les rebelles se dispersent, traumatisés de voir leur héros vaincu par le roi viking."
-
-    show einar combat_normal_mid at left with moveinleft
+    show harald combat_normal_mid_flip at center
+    "Immédiatement, les derniers rebelles se dispersent, traumatisés de voir leur héros vaincu par le roi viking."
 
     menu :
         "Joli !":
             show einar debout_souriant_mid at left
             e "Beau coup, sire !"
-            show harald debout_normal_mid at right
+            show harald debout_normal_mid at center
             h "Ha ha ! Le compliment me va droit au coeur !"
             h "Regarde ses yeux ! Je suis sûr qu'il est encore conscient !"
             "Un huscarl s'approche pour achever l'écossais."
-            show harald debout_normal_mid at right
+            show harald debout_normal_mid at center
             h "Non ! Laisse-le comme ça ! Je veux qu'il pourrisse ici !"
 
         "Regardez les fuir !":
             show einar debout_souriant_mid at left
             e "Regardez-les détaler comme des lapins !"
-            show harald debout_normal_mid at right
+            show harald debout_normal_mid at center
             h "Ha ha ! Fabuleux !"
-            show harald debout_determine_mid at right
-            h "Rattrappez-les, vous autres !"
+            show harald debout_determine_mid at center
+            h "Rattrapez-les, vous autres !"
 
         "J'aurais dû faire ça moi-même":
             show einar debout_normal_mid at left
             e "Si je n'ai qu'un regret, c'est de ne pas l'avoir tué moi-même !"
-            show harald debout_normal_mid at right
+            show harald debout_normal_mid at center
             h "Ha ha ! Tu pourras passer tes nerfs sur les prisonniers que nous allons faire !"
 
     hide einar
