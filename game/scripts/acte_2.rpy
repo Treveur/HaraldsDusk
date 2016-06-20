@@ -141,7 +141,7 @@ label interieur_maison_village_1:
     "..."
     "Ogma entre dans la pièce sans adresser un regard à Einar."
     hide einar with dissolve
-    show ogma debout_normal_flip_mid at center with moveinleft
+    show ogma debout_normal_mid_flip at center with moveinleft
     o "Alors ? Comment va le prisonnier ?"
     show moira debout_normal_mid at right
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
@@ -151,7 +151,7 @@ label interieur_maison_village_1:
     e "Je ..."
     show ogma debout_determine_mid at center
     o "Tais-toi !"
-    show ogma debout_normal_flip_mid at center
+    show ogma debout_normal_mid_flip at center
     o "Moira, finis les soins et rejoins moi dehors."
     show ogma debout_normal_mid at left with moveinleft
     hide ogma with dissolve

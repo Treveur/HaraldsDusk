@@ -30,7 +30,7 @@ label intro:
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
     "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
     "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
-    show logan debout_contrarie_mid at right with moveinright
+    show logan debout_contrarie_mid_flip at right with moveinright
     "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
     "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
     show einar debout_normal_mid at left with moveinleft
@@ -140,11 +140,11 @@ label intro:
             hide harald with dissolve
 
             show einar debout_normal_mid at left
-            show logan debout_contrarie_mid at right
+            show logan debout_contrarie_mid_flip at right
 
             e "Ça va, Logan ? Tu n'as pas desserré les dents depuis Newcastle. "
 
-            show logan debout_attriste_mid at right
+            show logan debout_attriste_mid_flip at right
 
             l "... Je n'ai pas revu l'Ecosse depuis plus de dix ans."
 
@@ -696,7 +696,7 @@ label village_1:
 
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
     show ve debout_normaux_mid at right with dissolve
-    show logan debout_normal_flip_mid at center with moveinleft
+    show logan debout_normal_mid_flip at center with moveinleft
     l "Nous y sommes. Perth."
 
     "Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive."
@@ -796,7 +796,7 @@ label village_1:
 
             e "Que savez-vous des rebelles ? Où sont-ils ?"
 
-            show logan debout_souriant_flip_mid at center #with moveinright
+            show logan debout_souriant_mid_flip at center #with moveinright
             show ve debout_craintifs_mid at right
             with moveinright
 
@@ -1233,7 +1233,7 @@ label foret_2_r(lieu, massacre_village):
 
             e "Parce que j'ai de sérieux doutes sur ce village. Les gens de Perth étaient bien trop louches, quoi qu'en dise Logan."
             hide gv with dissolve
-            show logan debout_normal_flip_mid at right
+            show logan debout_normal_mid_flip at right
             l "Tu penses avoir trouvé le village des rebelles ? Si facilement ?"
 
             e "Je ne suis sûr de rien."
@@ -1250,7 +1250,7 @@ label foret_2_r(lieu, massacre_village):
             e "Si, probablement. Mais j'ai tout de même un doute. Autant s'assurer d'avoir fait ce qu'il fallait !"
 
             e "Une visite des villages plus au nord s'impose. Et nous reproduirons les mêmes actions si nous rencontrons la moindre résistance !"
-            show gv debout_enthousiastes_mid at center
+            show gv debout_enthousiaste_mid at center
             gv "Voilà qui fait plaisir à entendre !"
             hide gv with dissolve
 
@@ -1330,7 +1330,7 @@ label massacre_foret_2 (message, massacre_village):
     if message == "attentif":
         show einar debout_determine_mid at left
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-        show gv debout_enthousiastes_mid at right with moveinright
+        show gv debout_enthousiaste_mid at right with moveinright
 
         if massacre_village:
 

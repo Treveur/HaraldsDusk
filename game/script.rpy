@@ -140,11 +140,11 @@ image logan debout_attriste_close = "logan/debout/logan_debout_attriste_close.pn
 image logan debout_determine_close = "logan/debout/logan_debout_determine_close.png"
 
 #Flip
-image logan debout_normal_flip_mid = im.Flip("logan/debout/logan_debout_normal_mid.png", horizontal = True)
-image logan debout_souriant_flip_mid = im.Flip("logan/debout/logan_debout_souriant_mid.png", horizontal = True)
-image logan debout_attriste_flip_mid = im.Flip("logan/debout/logan_debout_attriste_mid.png", horizontal = True)
-image logan debout_contrarie_flip_mid = im.Flip("logan/debout/logan_debout_contrarie_mid.png", horizontal = True)
-image logan debout_determine_flip_mid = im.Flip("logan/debout/logan_debout_determine_mid.png", horizontal = True)
+image logan debout_normal_mid_flip = im.Flip("logan/debout/logan_debout_normal_mid.png", horizontal = True)
+image logan debout_souriant_mid_flip = im.Flip("logan/debout/logan_debout_souriant_mid.png", horizontal = True)
+image logan debout_attriste_mid_flip = im.Flip("logan/debout/logan_debout_attriste_mid.png", horizontal = True)
+image logan debout_contrarie_mid_flip = im.Flip("logan/debout/logan_debout_contrarie_mid.png", horizontal = True)
+image logan debout_determine_mid_flip = im.Flip("logan/debout/logan_debout_determine_mid.png", horizontal = True)
 
 #Combat
 image logan combat_normal = "logan/combat/logan_combat_normal.png"
@@ -253,22 +253,22 @@ image huscarls debout_normal_close = "huscarls/debout/huscarls_debout_normaux_cl
 image huscarls debout_rire_close = "huscarls/debout/huscarls_debout_rire_close.png"
 
 #Combat
-image huscarls combat_normaux = "huscarls/combat/huscarls_combat_normaux.png"
+image huscarls combat_normal = "huscarls/combat/huscarls_combat_normal.png"
 image huscarls combat_enthousiaste = "huscarls/combat/huscarls_combat_enthousiaste.png"
 image huscarls combat_furieux = "huscarls/combat/huscarls_combat_furieux.png"
-image huscarls combat_inquiets = "huscarls/combat/huscarls_combat_inquiets.png"
+image huscarls combat_inquiet = "huscarls/combat/huscarls_combat_inquiet.png"
 
 #mid
-image huscarls combat_normaux_mid = "huscarls/combat/huscarls_combat_normaux_mid.png"
+image huscarls combat_normal_mid = "huscarls/combat/huscarls_combat_normal_mid.png"
 image huscarls combat_enthousiaste_mid = "huscarls/combat/huscarls_combat_enthousiaste_mid.png"
 image huscarls combat_furieux_mid = "huscarls/combat/huscarls_combat_furieux_mid.png"
-image huscarls combat_inquiets_mid = "huscarls/combat/huscarls_combat_inquiets_mid.png"
+image huscarls combat_inquiet_mid = "huscarls/combat/huscarls_combat_inquiet_mid.png"
 
 #close
-image huscarls combat_normaux_close = "huscarls/combat/huscarls_combat_normaux_close.png"
+image huscarls combat_normal_close = "huscarls/combat/huscarls_combat_normal_close.png"
 image huscarls combat_enthousiaste_close = "huscarls/combat/huscarls_combat_enthousiaste_close.png"
 image huscarls combat_furieux_close = "huscarls/combat/huscarls_combat_furieux_close.png"
-image huscarls combat_inquiets_close = "huscarls/combat/huscarls_combat_inquiets_close.png"
+image huscarls combat_inquiet_close = "huscarls/combat/huscarls_combat_inquiet_close.png"
 
 ##moira
 define m = Character("moira", image="moira")
@@ -303,36 +303,36 @@ define jgv = Character("Jeune Guerrier Viking", image="jeune_viking")
 
 #Debout
 image gv debout_normaux = "guerriers_vikings/debout/gv_debout_normaux.png"
-image gv debout_enthousiastes = "guerriers_vikings/debout/gv_debout_enthousiastes.png"
+image gv debout_enthousiaste = "guerriers_vikings/debout/gv_debout_enthousiaste.png"
 image gv debout_furieux = "guerriers_vikings/debout/gv_debout_furieux.png"
 image gv debout_rire = "guerriers_vikings/debout/gv_debout_rire.png"
 image gv debout_contraries = "guerriers_vikings/debout/gv_debout_contraries.png"
 image gv debout_determines = "guerriers_vikings/debout/gv_debout_determines.png"
 
 image gv debout_normaux_mid = "guerriers_vikings/debout/gv_debout_normaux_mid.png"
-image gv debout_enthousiastes_mid = "guerriers_vikings/debout/gv_debout_enthousiastes_mid.png"
+image gv debout_enthousiaste_mid = "guerriers_vikings/debout/gv_debout_enthousiaste_mid.png"
 image gv debout_furieux_mid = "guerriers_vikings/debout/gv_debout_furieux_mid.png"
 image gv debout_rire_mid = "guerriers_vikings/debout/gv_debout_rire_mid.png"
 image gv debout_contraries_mid = "guerriers_vikings/debout/gv_debout_contraries_mid.png"
 image gv debout_determines_mid = "guerriers_vikings/debout/gv_debout_determines_mid.png"
 
 image gv debout_normaux_close = "guerriers_vikings/debout/gv_debout_normaux_close.png"
-image gv debout_enthousiastes_close = "guerriers_vikings/debout/gv_debout_enthousiastes_close.png"
+image gv debout_enthousiaste_close = "guerriers_vikings/debout/gv_debout_enthousiaste_close.png"
 image gv debout_furieux_close = "guerriers_vikings/debout/gv_debout_furieux_close.png"
 image gv debout_rire_close = "guerriers_vikings/debout/gv_debout_rire_close.png"
 image gv debout_contraries_close = "guerriers_vikings/debout/gv_debout_contraries_close.png"
 image gv debout_determines_close = "guerriers_vikings/debout/gv_debout_determines_close.png"
 
 #Combat
-image gv combat_normaux = "guerriers_vikings/combat/gv_combat_normaux.png"
+image gv combat_normal = "guerriers_vikings/combat/gv_combat_normal.png"
 image gv combat_blesses = "guerriers_vikings/combat/gv_combat_blesses.png"
 
 #mid
-image gv combat_normaux_mid = "guerriers_vikings/combat/gv_combat_normaux_mid.png"
+image gv combat_normal_mid = "guerriers_vikings/combat/gv_combat_normal_mid.png"
 image gv combat_blesses_mid = "guerriers_vikings/combat/gv_combat_blesses_mid.png"
 
 #close
-image gv combat_normaux_close = "guerriers_vikings/combat/gv_combat_normaux_close.png"
+image gv combat_normal_close = "guerriers_vikings/combat/gv_combat_normal_close.png"
 image gv combat_blesses_close = "guerriers_vikings/combat/gv_combat_blesses_close.png"
 
 #Jeune Guerrier Viking
@@ -369,12 +369,12 @@ image ogma debout_contrarie_close = "ogma/debout/ogma_debout_contrarie_close.png
 image ogma debout_determine_close = "ogma/debout/ogma_debout_determine_close.png"
 
 #Flip
-image ogma debout_normal_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_souriant_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_furieux_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_attriste_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_contrarie_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_determine_flip_mid = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+image ogma debout_normal_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+image ogma debout_souriant_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+image ogma debout_furieux_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+image ogma debout_attriste_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+image ogma debout_contrarie_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+image ogma debout_determine_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
 
 
 #Combat
@@ -505,11 +505,11 @@ image re debout_normaux_close = "rebelles_ecossais/debout/re_debout_normaux_clos
 
 #Combat
 #mid
-image re combat_normaux_mid = "rebelles_ecossais/combat/re_combat_normaux_mid.png"
+image re combat_normal_mid = "rebelles_ecossais/combat/re_combat_normal_mid.png"
 image re combat_furieux_mid = "rebelles_ecossais/combat/re_combat_furieux_mid.png"
 
 #close
-image re combat_normaux_close = "rebelles_ecossais/combat/re_combat_normaux_close.png"
+image re combat_normal_close = "rebelles_ecossais/combat/re_combat_normal_close.png"
 image re combat_furieux_close = "rebelles_ecossais/combat/re_combat_furieux_close.png"
 
 #Flip
@@ -518,11 +518,11 @@ image re debout_normaux_close_flip = im.Flip("rebelles_ecossais/debout/re_debout
 
 #Combat
 #mid
-image re combat_normaux_mid_flip= im.Flip("rebelles_ecossais/combat/re_combat_normaux_mid.png", horizontal = True)
+image re combat_normal_mid_flip= im.Flip("rebelles_ecossais/combat/re_combat_normal_mid.png", horizontal = True)
 image re combat_furieux_mid_flip = im.Flip("rebelles_ecossais/combat/re_combat_furieux_mid.png", horizontal = True)
 
 #close
-image re combat_normaux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_normaux_close.png", horizontal = True)
+image re combat_normal_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_normal_close.png", horizontal = True)
 image re combat_furieux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_furieux_close.png", horizontal = True)
 
 

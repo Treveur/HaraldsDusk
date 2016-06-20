@@ -39,7 +39,7 @@ label bad_ending_4:
     jump credits
 
 label bad_ending_5:
-    show huscarls combat_normaux_mid at right
+    show huscarls combat_normal_mid at right
     show einar combat_blesse_mid at left
     "Les forces coordonnées des huscarls surpassent le talent d'Einar, qui est jeté au sol."
     show huscarls combat_furieux_mid at right

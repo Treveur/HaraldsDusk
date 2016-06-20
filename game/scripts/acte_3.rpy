@@ -441,7 +441,7 @@ label interieur_grande_porte_chateau_1:
 
     show bg cour_chateau_crepuscule with dissolve
 
-    show gv debout_enthousiastes_mid with dissolve
+    show gv debout_enthousiaste_mid with dissolve
     gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
     hide gv
     "La horde progresse en courant à travers la plaine."
@@ -474,7 +474,7 @@ label pont_levis_baisse:
     #???
     #Ambiance bruit cliqueti boucliers et épée
     scene bg cour_chateau_crepuscule
-    show gv combat_normaux_mid at center with dissolve
+    show gv combat_normal_mid at center with dissolve
 
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
@@ -488,7 +488,7 @@ label pont_levis_baisse:
 
     "Les soldats proches se tournent vers Einar."
 
-    show gv combat_normaux_mid at center
+    show gv combat_normal_mid at center
     show einar combat_normal_mid_flip at right with dissolve
 
     menu:
@@ -642,7 +642,7 @@ label pont_levis_baisse:
         hide re
         with dissolve
 
-        show huscarls combat_normaux_mid at left with moveinleft
+        show huscarls combat_normal_mid at left with moveinleft
         with dissolve
 
         hu "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
@@ -1911,8 +1911,8 @@ label soupcon_harald_defendre_porte:
 
     scene bg chateau_porte_crepuscule
 
-    show re combat_normaux_mid at left
-    show gv combat_normaux_mid at right
+    show re combat_normal_mid at left
+    show gv combat_normal_mid at right
     with dissolve
 
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
@@ -1920,7 +1920,7 @@ label soupcon_harald_defendre_porte:
     gv "Les rebelles dressent une échelle par-dessus les douves !"
     "Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles."
     "Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
-    show gv combat_normaux_mid at right
+    show gv combat_normal_mid at right
     gv "Crevez, salopards ! Ha ha !"
     show harald combat_determine_mid at center with dissolve
     h "Consolidez les rangs !"
@@ -1940,7 +1940,7 @@ label soupcon_harald_defendre_porte:
     with dissolve
 
     show einar combat_normal_mid at left
-    show huscarls combat_normaux_mid at right
+    show huscarls combat_normal_mid at right
     with dissolve
 
     menu:
