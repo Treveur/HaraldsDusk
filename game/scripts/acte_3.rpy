@@ -146,52 +146,60 @@ label cour_chateau_1:
             jump menu_embuscade_ou_silence_cour_chateau
 
 
-    menu menu_assome_cour_chateau:
+    label menu_assome_cour_chateau:
+        menu:
+            "Je me suis débrouillé (mentir)":
+                show einar debout_normal_mid at left
+                e "Je me suis remis, lentement mais sûrement, dans la nature."
+                show harald debout_sceptique_mid at right
+                h "Dans la nature ? J'ai du mal à te croire..."
+                e "J'ai trouvé des plantes et des baies qui m'ont permit de me soigner."
+                h "Mmmh..."
+                $ soupcon_harald_1 = True
+                jump poursuivre_dialog
 
-        "Je me suis débrouillé (mentir)":
-            show einar debout_normal_mid at left
-            e "Je me suis remis, lentement mais sûrement, dans la nature."
-            "Harald hausse les sourcils"
-            h "Dans la nature ? J'ai du mal à te croire..."
-            e "J'ai trouvé des plantes et des baies qui m'ont permit de me soigner."
-            h "Mmmh..."
-            $ soupcon_harald_1 = True
+            "J'ai reçu l'aide d'un autochtone (mentir)":
+                show einar debout_normal_mid at left
+                e "J'ai été soigné par un vieux paysan."
+                h "Un paysan ?"
+                e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
+                e "Il m'a gardé dans sa cabane pendant un mois entier, à me soigner et à me nourrir."
+                e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
+                h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
+                jump poursuivre_dialog
 
-        "J'ai reçu l'aide d'un autochtone (mentir)":
-            show einar debout_normal_mid at left
-            e "J'ai été soigné par un vieux paysan."
-            h "Un paysan ?"
-            e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
-            e "Il m'a gardé dans sa cabane pendant un mois entier, à me soigner et à me nourrir."
-            e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
-            h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
+    label menu_embuscade_ou_silence_cour_chateau:
+        menu:
 
-    menu menu_embuscade_ou_silence_cour_chateau:
+            "Je me suis retrouvé dans un village, des gens m'ont aidé":
+                show einar debout_normal_mid at left
+                e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
+                e "Un chasseur m'a trouvé alors qu'il allait relever des collets. Il m'a ramené à son village puis sa fille s'est occupée de moi. Elle s'appelait Moira."
+                e "Pendant un mois, cette jeune femme m'a prodigué les soins nécessaires. Lorsqu'enfin mon état s'est amélioré, j'ai pu repartir."
+                h "Il ne s'agissait donc pas des rebelles ?"
+                e "..."
+                jump poursuivre_dialog
 
-        "Je me suis retrouvé dans un village, des gens m'ont aidé":
-            show einar debout_normal_mid at left
-            e "J'ai été aidé par le village que nous avions visité un peu plus tôt, Perth."
-            e "Un chasseur m'a trouvé alors qu'il allait relever des collets. Il m'a ramené à son village puis sa fille s'est occupée de moi. Elle s'appelait Moira."
-            e "Pendant un mois, cette jeune femme m'a prodigué les soins nécessaires. Lorsqu'enfin mon état s'est amélioré, j'ai pu repartir."
-            h "Il ne s'agissait donc pas des rebelles ?"
-            e "..."
+            "J'ai reçu l'aide d'un autochtone (mentir)":
+                show einar debout_normal_mid at left
+                e "J'ai été soigné par un vieux paysan."
+                h "Un paysan ?"
+                e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
+                e "Il m'a gardé dans sa cabane pendant un mois entier, à me soigner et à me nourrir."
+                e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
+                h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
+                jump poursuivre_dialog
 
-        "J'ai reçu l'aide d'un autochtone (mentir)":
-            show einar debout_normal_mid at left
-            e "J'ai été soigné par un vieux paysan."
-            h "Un paysan ?"
-            e "Oui. Il s'appelait Murray. C'était un brave homme. Il m'a trouvé alors qu'il emmenait paître ses moutons. Lorsqu'il a vu mes blessures, il a eu pitié de moi."
-            e "Il m'a gardé dans sa cabane pendant un mois entier, à me soigner et à me nourrir."
-            e "Une fois remis sur pieds, il m'a laissé partir. Je lui ai promis de le dédommager quand je le pourrais, et il a refusé !"
-            h "Tu as eu bien de la chance de tomber sur un homme pareil. Certains t'auraient égorgé sur place."
-
-        "J'ai perdu la mémoire (mentir)" if retour_silence_1:
-            show einar debout_normal_mid at left
-            e "Je ne me rappelle de rien... Simplement de ce coup à la tête."
-            e "Après, il n'y a qu'un grand vide jusqu'à il y a trois jours, lorsque je me suis réveillé dans les bois."
-            e "Mes blessures étaient soignées et un repas était posé à côté de moi. Je l'ai mangé et ai prit la route pour revenir jusqu'ici."
-            $ soupcon_harald_1 = True
-
+            "J'ai perdu la mémoire (mentir)" if retour_silence_1:
+                show einar debout_normal_mid at left
+                e "Je ne me rappelle de rien... Simplement de ce coup à la tête."
+                e "Après, il n'y a qu'un grand vide jusqu'à il y a trois jours, lorsque je me suis réveillé dans les bois."
+                show harald debout_sceptique_close at right
+                e "Mes blessures étaient soignées et un repas était posé à côté de moi. Je l'ai mangé et ai prit la route pour revenir jusqu'ici."
+                $ soupcon_harald_1 = True
+                jump poursuivre_dialog
+    
+    label poursuivre_dialog:
     h "..."
     show einar debout_normal_close at left
     show harald debout_sceptique_close at right
