@@ -739,6 +739,7 @@ transform alpha_dissolve:
 
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
+    #timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Function(renpy.call, label = timer_jump, timer_param)])
     bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 at alpha_dissolve
 
 # Le jeu commence ici

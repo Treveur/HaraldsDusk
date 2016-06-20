@@ -959,13 +959,13 @@ label e_choix_final_village_1:
     show einar debout_normal_mid at left with dissolve
     l "Et maintenant ?"
     gv "On devrait raser tout ça, pour l'exemple !"
-    
+
     menu:
         "Nous partons":
             show einar debout_normal_mid at left
             e "Nous n'allons pas rester ici plus longtemps. Il est temps de partir."
             jump choix_retour_village_1
-                
+
         "Faites-vous plaisir ! (détruire le village)":
             e "Allez-y ! Brûlez tout ça, n'épargnez personne !"
 
@@ -986,7 +986,7 @@ label e_choix_final_village_1:
                     show einar debout_determine_mid at left
 
                     e "Mais sachez que nous n'allons pas relâcher notre attention ! Et s'il s'avère que vous abritez les rebelles..."
-                            
+
                     e "Nous reviendrons finir le travail !"
                     e "Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
@@ -1006,7 +1006,7 @@ label e_choix_final_village_1:
                     "Le combat s'engage. Rapidement, les vikings font place nette et réduisent à néant toute résistance."
 
                     call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1_1
-    
+
 
 
 label e_tuer_villageois_village_1:
@@ -1570,12 +1570,12 @@ label massacre_foret_2 (message, massacre_village):
     "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, l'obligeant à mettre le genou à terre."
     show einar prisonnier_blesse_mid at right
     e "Aaarrggh ! Logan, aide-moi !"
-    
+
     hide re with dissolve
     show ogma combat_furieux_mid_flip at left with moveinleft
     show einar prisonnier_blesse_mid at center with moveinleft
     show logan combat_determine_mid_flip at right with moveinright
-    
+
 
     l "Je suis là !"
     show logan combat_determine_mid_flip at right, shake
@@ -1676,7 +1676,7 @@ label e_menace_foret_2(bad_ending):
 label e_reveil_village_2:
 
     stop music
-    play ambiance village
+    play ambiance home
     #play ambiance home
 
     #ajouter blur image

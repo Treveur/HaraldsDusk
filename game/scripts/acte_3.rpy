@@ -575,7 +575,7 @@ label pont_levis_baisse:
         #Phase combat impossible à gagner WIP
         $ time = 5
         $ timer_range = 5
-        $ timer_jump = 'game_over_combat(\"pont_levis_baisse\")'
+        $ timer_jump = "game_over_combat"
 
         "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
         show ogma combat_furieux_mid at center with moveinright
@@ -681,6 +681,7 @@ label pont_levis_baisse:
         $ time = 4
         $ timer_range = 4
         $ timer_jump = 'game_over_combat'
+        $ timer_param =""
 
         "Les huscarls tentent de consolider leur cercle et d'attaquer Einar sur ses arrières !"
         show huscarls combat_furieux_mid at right with moveinright
@@ -869,14 +870,14 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     #scene bg chateau_chambre_nuit with dissolve
 
-    
+
 
     if jetee:
         show einar combat_normal_mid at left
         show harald combat_normal_mid at right with moveinright
-        
+
         h "Einar ? Que fais-tu ici ? Où est la Hache ?"
-        
+
         menu :
 
             "Je l'ai jetée":
