@@ -1065,7 +1065,11 @@ label e_tuer_villageois_village_1:
 
             ve "Moi ?"
 
+            show einar debout_furieux_mid at left
+
             e "Oui ! Dépêche toi !"
+
+            show einar combat_normal_mid at center with move
 
             ve "Monseigneur, je ..."
 
@@ -1074,25 +1078,39 @@ label e_tuer_villageois_village_1:
 
             ve "Pourritures ! Salauds !"
 
+            show einar debout_normal_mid at center
+
             e "Parfait. Maintenant, parlez."
 
             ve "Vous ne saurez rien !"
+
+            show einar debout_normal_mid at left with moveinleft
 
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
 
-            hide ve with dissolve
+            # hide ve with dissolve
 
-            show gv debout_furieux_mid at center
+            show gv debout_furieux_mid at center with moveinleft
+
+            show ve debout_effrayes_mid at right:
+                linear 1 xoffset 1500
 
             gv "Vengeance !"
+
+            show gv debout_furieux_mid at right with moveinright:
+                linear 2 xoffset 1500
+
+            show einar debout_attriste_mid at left with moveinleft
 
             e "Je..."
 
             show logan debout_determine_mid_flip at right
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
+
+            show einar combat_normal_mid
 
             e "Battez-vous ! Tuez-les tous !"
 
