@@ -139,21 +139,21 @@ label good_ending_11:
     show einar debout_normal_mid at left
     e "Merci."
     o "Tu as l'air contrarié... Savoure ta victoire !"
-        menu:
-            "Tout va bien, merci":
-            show einar debout_souriant_mid at left
-                e "Excuse-moi, j'étais dans mes pensées !"
-                o "Ah, j'aime mieux ça !"
-                
-            "Vous avez trahi votre parole en tuant Harald":
-                e "Une victoire, certes... Mais une victoire amère."
-                o "Pourquoi ça ?"
-                e "Vous n'avez pas été fidèles à notre marché. Vous avez tué le roi."
-                o "Je comprends ta rancoeur. Mais je ne pouvais pas te dire la vérité."
-                o "Aurais-tu accepté de nous aider si je t'avais dit que le but était de tuer le roi ?"
-                e "Je ne sais pas."
-                o "Peu importe ! Tu as libéré notre peuple, et nous t'avons offert tout ce que nous t'avions promis. Et même plus !"
-                
+    menu:
+        "Tout va bien, merci":
+        show einar debout_souriant_mid at left
+            e "Excuse-moi, j'étais dans mes pensées !"
+            o "Ah, j'aime mieux ça !"
+            
+        "Vous avez trahi votre parole en tuant Harald":
+            e "Une victoire, certes... Mais une victoire amère."
+            o "Pourquoi ça ?"
+            e "Vous n'avez pas été fidèles à notre marché. Vous avez tué le roi."
+            o "Je comprends ta rancoeur. Mais je ne pouvais pas te dire la vérité."
+            o "Aurais-tu accepté de nous aider si je t'avais dit que le but était de tuer le roi ?"
+            e "Je ne sais pas."
+            o "Peu importe ! Tu as libéré notre peuple, et nous t'avons offert tout ce que nous t'avions promis. Et même plus !"
+            
     show ogma debout_normal_mid at center
     o "Nous avons organisé un grand repas pour fêter la victoire, nous aimerions que tu te joignes à nous."
     show einar debout_normal_mid at left
