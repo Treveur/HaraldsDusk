@@ -1490,16 +1490,16 @@ label massacre_foret_2 (message, massacre_village):
     play sound war_horn
     "Un cor retentit dans les bois, très proche."
 
-    show einar debout_determine_mid at left with dissolve
+    show einar combat_determine_mid at left with dissolve
     e "En position de combat, tous !"
-    show gv debout_determines_mid at center with dissolve
+    show gv combat_normal_mid at center with dissolve
     gv "Ça venait d'où ?"
     show gv debout_determines_mid at right with moveinright
-    show logan debout_determine_mid_flip at center zorder 1 with dissolve
+    show logan combat_determine_mid_flip at center zorder 1 with dissolve
 
     hide gv with dissolve
-    show logan debout_determine_mid_flip at right with moveinright
-    show einar debout_determine_mid_flip at center with move
+    show logan combat_determine_mid_flip at right with moveinright
+    show einar combat_determine_mid_flip at center with move
 
     show vfx_flame_1 flame at burn:
         xalign 0.2
@@ -1532,7 +1532,8 @@ label massacre_foret_2 (message, massacre_village):
 
     show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
-    show gv debout_determines_mid at right zorder 0 with moveinright
+    hide logan with dissolve
+    show einar combat_determine_mid_flip at right with moveinright
 
     show ogma combat_determine_mid_flip at left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
@@ -1549,27 +1550,32 @@ label massacre_foret_2 (message, massacre_village):
     hide logan
     with dissolve
 
-    show einar combat_determine_mid_flip at right  with moveinright
-    show ogma combat_furieux_mid_flip at left
+    show einar combat_determine_mid_flip at right with moveinright
+    show ogma combat_furieux_mid_flip at center with moveinright
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
-    show einar combat_determine_mid_flip at right
+    show einar combat_furieux_mid_flip at right
     e "Approchez, charognes ! Je..."
     show einar combat_determine_mid_flip at right, shake
 
 
     "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
 
-    show einar combat_determine_mid at center with moveinleft
-    show logan combat_normal_mid_flip at right with moveinright
+    show einar prisonnier_determine_mid at right
     l "Einar ! Derrière toi !"
 
-    show einar combat_determine_mid_flip at center, shake
+    show einar prisonnier_determine_mid_flip at center, shake
     e "Que..."
 
     "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, l'obligeant à mettre le genou à terre."
-    show einar combat_blesse_mid at center with moveinleft
+    show einar prisonnier_blesse_mid at right
     e "Aaarrggh ! Logan, aide-moi !"
+    
+    hide re with dissolve
+    show ogma combat_furieux_mid_flip at left with moveinleft
+    show einar prisonnier_blesse_mid at center with moveinleft
+    show logan combat_determine_mid_flip at right with moveinright
+    
 
     l "Je suis là !"
     show logan combat_determine_mid_flip at right, shake
@@ -1650,7 +1656,7 @@ label e_implore_pitie_foret_2(bad_ending):
 label e_menace_foret_2(bad_ending):
     hide logan
     hide gv
-    show einar debout_blesse_mid at center
+    show einar prisonnier_blesse_mid at center
     show ogma debout_determine_mid at right
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
@@ -1675,17 +1681,16 @@ label e_reveil_village_2:
 
     #ajouter blur image
     scene bg black
-    scene bg village with fade
+    scene bg house2_night with fade
 
     $ already_talk = False
 
     show einar prisonnier_blesse_mid at left with dissolve
     e "Huugh..."
-    show re debout_normaux_mid at center with dissolve
+    show re debout_normaux_mid at right with dissolve
     ge "Ogma ! Il se réveille !"
-    show ogma debout_determine_mid at right with moveinright
+    show ogma debout_determine_mid at center with moveinright
     o "Ah ! La belle endormie. "
-    show re debout_normaux_mid at right with moveinright
     hide re with dissolve
     e "Arrgh... Mon épaule..."
 
@@ -1706,7 +1711,7 @@ label e_reveil_village_2:
     e "Où sont les autres ? Où sont mes compagnons ?"
 
     e "Ordure ! Je me rappelle ! C'est toi qui a tué Logan !"
-    show ogma debout_contrarie_mid at right
+    show ogma debout_contrarie_mid at right with moveinright
     o "C'était un traître."
 
     e "C'est lui qui m'a retenu de massacrer Perth ! C'est lui qui a sauvé la vie de vos vieux et de vos truies de femmes !"
