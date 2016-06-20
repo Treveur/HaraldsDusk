@@ -68,17 +68,17 @@ label bad_ending_6:
 
 label good_ending_7:
     show einar combat_hache_normal_mid at left
-    show ogma debout_determine_mid at right
+    show ogma debout_determine_mid at center
     e "Voici la Hache."
     show einar debout_normal_mid at left
     o "Merci beaucoup. Combien auraient cédé à l'appel du pouvoir ?"
-    show ogma debout_souriant_mid at right
+    show ogma debout_souriant_mid at center
     o "Peu d'hommes auraient eu ta droiture et ton humilité !"
     e "Vous allez détruire la Hache ?"
-    show ogma debout_determine_mid at right
+    show ogma debout_determine_mid at center
     o "Oui. Je la ferai fondre en une arme nouvelle, une claymore."
     o "Elle sera destinée à ma famille, le clan Wallace. Elle symbolisera la fin de l'oppression et l'émergence de la Liberté !"
-    show re debout_normaux_mid at center
+    show re debout_normaux_mid at right
     ge "HOURRAAA !"
     "Fin 07/22"
     jump credits
@@ -274,6 +274,8 @@ label bad_ending_17:
 
 label normal_ending_18:
     "Le repas se poursuit toute la nuit, célébrant les exploits d'Einar autant que l'éradication des rebelles..."
+    "Si l'Histoire ne se souviendra pas du nom d'Einar, la victoire retentissante du roi-empereur Harald Sigurdsson contre les rebelles restera gravée dans les mémoires."
+    "Car nul autre que Le Hurleur n'osera plus jamais s'élever contre le viking élu de Dieu."
     "Fin 18/22"
     jump credits
 
