@@ -90,24 +90,24 @@ image einar combat_hache_normal_mid_flip = im.Flip("einar/combat_hache/einar_com
 
 #Prisonnier
 #mid
-image einar prisonnier_attriste_mid = "einar/prisonnier/einar_prisonnier_attriste.png"
-image einar prisonnier_blesse_mid = "einar/prisonnier/einar_prisonnier_blesse.png"
-image einar prisonnier_contrarie_mid = "einar/prisonnier/einar_prisonnier_contrarie.png"
-image einar prisonnier_determine_mid = "einar/prisonnier/einar_prisonnier_determine.png"
-image einar prisonnier_effraye_mid = "einar/prisonnier/einar_prisonnier_effraye.png"
-image einar prisonnier_furieux_mid = "einar/prisonnier/einar_prisonnier_furieux.png"
-image einar prisonnier_normal_mid = "einar/prisonnier/einar_prisonnier_normal.png"
-image einar prisonnier_souriant_mid = "einar/prisonnier/einar_prisonnier_souriant.png"
+image einar prisonnier_attriste_mid = "einar/prisonnier/einar_prisonnier_attriste_mid.png"
+image einar prisonnier_blesse_mid = "einar/prisonnier/einar_prisonnier_blesse_mid.png"
+image einar prisonnier_contrarie_mid = "einar/prisonnier/einar_prisonnier_contrarie_mid.png"
+image einar prisonnier_determine_mid = "einar/prisonnier/einar_prisonnier_determine_mid.png"
+image einar prisonnier_effraye_mid = "einar/prisonnier/einar_prisonnier_effraye_mid.png"
+image einar prisonnier_furieux_mid = "einar/prisonnier/einar_prisonnier_furieux_mid.png"
+image einar prisonnier_normal_mid = "einar/prisonnier/einar_prisonnier_normal_mid.png"
+image einar prisonnier_souriant_mid = "einar/prisonnier/einar_prisonnier_souriant_mid.png"
 
 #close
-image einar prisonnier_attriste_close = "einar/prisonnier/einar_prisonnier_attriste.png"
-image einar prisonnier_blesse_close = "einar/prisonnier/einar_prisonnier_blesse.png"
-image einar prisonnier_contrarie_close = "einar/prisonnier/einar_prisonnier_contrarie.png"
-image einar prisonnier_determine_close = "einar/prisonnier/einar_prisonnier_determine.png"
-image einar prisonnier_effraye_close = "einar/prisonnier/einar_prisonnier_effraye.png"
-image einar prisonnier_furieux_close = "einar/prisonnier/einar_prisonnier_furieux.png"
-image einar prisonnier_normal_close = "einar/prisonnier/einar_prisonnier_normal.png"
-image einar prisonnier_souriant_close = "einar/prisonnier/einar_prisonnier_souriant.png"
+image einar prisonnier_attriste_close = "einar/prisonnier/einar_prisonnier_attriste_close.png"
+image einar prisonnier_blesse_close = "einar/prisonnier/einar_prisonnier_blesse_close.png"
+image einar prisonnier_contrarie_close = "einar/prisonnier/einar_prisonnier_contrarie_close.png"
+image einar prisonnier_determine_close = "einar/prisonnier/einar_prisonnier_determine_close.png"
+image einar prisonnier_effraye_close = "einar/prisonnier/einar_prisonnier_effraye_close.png"
+image einar prisonnier_furieux_close = "einar/prisonnier/einar_prisonnier_furieux_close.png"
+image einar prisonnier_normal_close = "einar/prisonnier/einar_prisonnier_normal_close.png"
+image einar prisonnier_souriant_close = "einar/prisonnier/einar_prisonnier_souriant_close.png"
 
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"

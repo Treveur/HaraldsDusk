@@ -1649,7 +1649,7 @@ label e_reveil_village_2:
     o "C'était un traître."
 
     e "C'est lui qui m'a retenu de massacrer Perth ! C'est lui qui a sauvé la vie de vos vieux et de vos truies de femmes !"
-    show ogma debout_attriste_mid at right
+    show ogma debout_normal_mid at right
     o "Alors j'imagine que sa mort est regrettable."
     show ogma debout_normal_mid at right
     show einar prisonnier_blesse_mid at left
@@ -1728,7 +1728,7 @@ label o_explication_vie_village_2:
         e "Vous allez devoir m'en dire plus."
 
     elif choix_ogma_1 == "insulter":
-        show einar prisonnier_furieux_mid at left with dissolve
+        show einar prisonnier_furieux_mid at left
         e "Vous allez être déçus ! Vous n'obtiendrez rien de moi, charognes ! Vous ne me ferez pas trahir mon allégeance !"
 
         o "Calme toi. Les termes de mon offre suffiront à te faire changer d'avis, j'en suis sûr."
