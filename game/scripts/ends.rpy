@@ -275,7 +275,7 @@ label credits:
     Benjamin Ramauge\n
     Nicolas Duval"
     centered "GRAPHISME :\n
-    Alexandre Rafael David\n
+    Rafael David\n
     Céline Lascaux\n
     Farah Merand\n
     Raphaëlle Maniere\n
