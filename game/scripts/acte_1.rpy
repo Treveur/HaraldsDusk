@@ -1247,9 +1247,12 @@ label choix_retour_village_1(massacre = False):
         show logan debout_attriste_mid_flip at right with dissolve
 
         l "Nous étions censés trouver le village rebelle, pas massacrer des paysans !"
-        show einar debout_determine_mid at left
+
+        show einar debout_souriant_mid
 
         e "Ta détermination flanche ? Harald sera sûrement satisfait de voir le travail accompli."
+
+        show einar debout_normal_mid
 
         e "Si c'était les rebelles, nous avons éliminé le problème. Si les gens de Perth étaient innocents, les villages alentours nous craindront."
         show einar debout_souriant_mid at left

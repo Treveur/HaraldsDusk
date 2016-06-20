@@ -2236,7 +2236,7 @@ label harald_defendre_porte:
     hide harald with dissolve
     show einar combat_furieux_mid at right with moveinright
     hide einar with dissolve
-    
+
     scene bg chateau_porte_crepuscule with dissolve
     show harald combat_furieux_mid_flip at right
     show einar combat_furieux_mid at center
@@ -2247,7 +2247,7 @@ label harald_defendre_porte:
     hide einar with dissolve
     show gv combat_normal_mid at right with moveinright
     hide gv with dissolve
-    
+
     scene bg plaine_plaine_crepuscule with dissolve
     show re debout_normaux_mid at right
     show ogma combat_normal_mid_flip at left
@@ -2331,7 +2331,10 @@ label e_laisse_ogma_mort_defendre_porte:
     hide harald
     with dissolve
 
-    jump cour_chateau_ogma_mort_defendre_porte
+    if moira_dead:
+        jump normal_ending_18
+    else:
+        jump cour_chateau_ogma_mort_defendre_porte
 
 label cour_chateau_ogma_mort_defendre_porte:
 
