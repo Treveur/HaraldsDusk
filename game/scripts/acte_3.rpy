@@ -345,7 +345,7 @@ label cour_chateau_1:
         p "Amenez les torches, et que brûlent les hérétiques !"
 
         show patrick debout_normal_mid at left
-        show ve buchet_pleurent at right
+        show ve buchet_pleurent_mid at right
 
         #A intégrer plus tards
 
@@ -362,7 +362,7 @@ label cour_chateau_1:
 
         "Un homme apporte une torche. Un par un, il allume les bûchers."
 
-        show gv debout_rire with dissolve
+        show gv debout_rire_mid with dissolve
 
         gv "Regardez-les s'agiter comme des vers, ha ha !"
         hide gv with dissolve
@@ -1348,9 +1348,7 @@ label e_epargne_harald_no_axe_donjon:
         "Un peu plus tard, alors que les combats ont cessé..."
         "..."
         show ogma combat_normal_mid at left
-        show einar debout_blesse at right
-        show ogma combat_normal_mid at left
-        show einar debout_blesse at right
+        show einar debout_blesse_mid at right
         "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
         show ogma combat_determine_mid at left
         o "Voyez ! La liberté a vaincu le tyran !"
@@ -2333,7 +2331,7 @@ label cour_chateau_ogma_mort_defendre_porte:
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
     show einar debout_normal_mid at left
-    show gv debout_rire at right
+    show gv debout_rire_mid at right
     with dissolve
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
     gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
@@ -2394,12 +2392,12 @@ label e_sauve_ogma_defendre_porte:
     "..."
 
     scene bg chateau_rempart_crepuscule
-    show ogma combat_hache_brandir at right
+    show ogma combat_hache_brandir_close at right
     "Lorsqu'il reprend ses esprits, Einar voit Ogma sur les remparts, brandissant la Hache Sainte. Derrière lui, le château brûle."
     "Depuis les remparts, Ogma semble remarquer le mouvement d'Einar au milieu des cadavres."
 
     #Rerpise
-    show einar debout_blesse at left with dissolve
+    show einar debout_blesse_mid at left with dissolve
     show ogma combat_hache_determine_mid at right
 
     if moira_dead:
@@ -2407,7 +2405,7 @@ label e_sauve_ogma_defendre_porte:
 
         menu :
             "En colère pour Moira ?":
-                show einar debout_blesse at right
+                show einar debout_blesse_mid at right
                 e "Tu es en colère à cause de ta fille, c'est ça ?"
                 e "Rien ne m'obligeait à la tuer, je l'ai fait parce que j'en avait envie !"
 
@@ -2430,7 +2428,7 @@ label e_sauve_ogma_defendre_porte:
     else:
 
         show ogma debout_normal_mid at right
-        show einar debout_blesse at left
+        show einar debout_blesse_mid at left
         "..."
         o "Je ne comprends pas tes actes."
         o "Je te suis malgré tout reconnaissant pour la victoire sur Harald, et pour m'avoir sauvé la vie alors que rien ne t'y obligeait."
