@@ -2110,7 +2110,7 @@ label soupcon_harald_defendre_porte:
             e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
             show einar debout_contrarie_mid at left
             e "Vous vous moquez de moi, sire !"
-            show gv debout_contraries_mid at center with dissolve
+            show gv debout_contrarie_mid at center with dissolve
             gv "Sire !"
             show harald debout_contrarie_mid at right
             h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."
