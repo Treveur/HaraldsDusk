@@ -16,7 +16,7 @@ label bad_ending_2:
     hide einar with dissolve
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."
     "Fin 02/22"
-    call game_over_combat('refuser_trahir_village_2')
+    call game_over_combat('refuser_trahir_village_2') from _call_game_over_combat
 
 label bad_ending_3:
     show einar debout_determine_mid at left
@@ -26,7 +26,7 @@ label bad_ending_3:
     "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
     hide einar with dissolve
     "Fin 03/22"
-    call game_over_combat('interieur_grande_porte_chateau_1')
+    call game_over_combat('interieur_grande_porte_chateau_1') from _call_game_over_combat_1
 
 label bad_ending_4:
     show ogma combat_furieux_mid at center

@@ -538,7 +538,7 @@ label pont_levis_baisse:
     play ambiance fight
 
     if moira_dead:
-        
+
         hide re
         hide gv
         with dissolve
@@ -575,7 +575,7 @@ label pont_levis_baisse:
         #Phase combat impossible à gagner WIP
         $ time = 5
         $ timer_range = 5
-        $ timer_jump = 'game_over_combat'
+        $ timer_jump = 'game_over_combat(\"pont_levis_baisse\")'
 
         "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
         show ogma combat_furieux_mid at center with moveinright
@@ -590,7 +590,7 @@ label pont_levis_baisse:
             "Attaquer":
                 hide screen countdown
                 "Ogma détourne le coup d'Einar et le frappe au flanc."
-                call game_over_combat('pont_levis_baisse')
+                call game_over_combat('pont_levis_baisse') from _call_game_over_combat_5
 
         $ time = 2.5
         $ timer_range = 2.5
@@ -627,7 +627,7 @@ label pont_levis_baisse:
             "Esquiver":
                 hide screen countdown
                 "Le coup est bien trop rapide pour être esquivé, et les appuis d'Einar sont faibles : le ventre du viking s'ouvre, déversant un torrent de viscères sur le sol."
-                
+
         "Alors qu'il se laisse tomber à terre, Einar réalise qu'il n'avait aucune chance face à la colère du père de Moira."
 
         hide einar with dissolve
@@ -671,7 +671,7 @@ label pont_levis_baisse:
                 "Uniquement armé de sa hache, Einar ne parvient pas à se protéger : les huscarls prennent le dessus."
                 show einar combat_blesse_mid_flip at center, shake
                 pause (0.3)
-                call game_over_combat("pont_levis_baisse")
+                call game_over_combat("pont_levis_baisse") from _call_game_over_combat_6
 
             "Attaquer":
                 hide screen countdown
@@ -1007,7 +1007,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Harald est immense, puissant, et il possède l'expérience de centaines de batailles. Il broie son huscarl, lui faisant éclater des os à chaque coup."
                 show einar combat_furieux_mid at left, shake
                 "Finalement, Einar glisse au sol après que son crâne ait été défoncé sur un mur."
-                call game_over_combat('combat_harald')
+                call game_over_combat('combat_harald') from _call_game_over_combat_7
 
         $ time = 3
         $ timer_range = 3
@@ -1494,9 +1494,9 @@ label village_6:
                 hide einar
                 with dissolve
 
-        call good_ending_15(False)
+        call good_ending_15(False) from _call_good_ending_15
     else:
-        call good_ending_15(True)
+        call good_ending_15(True) from _call_good_ending_15_1
 
 label foret_4:
 
@@ -1622,7 +1622,7 @@ label foret_4:
     if rejeter_moira_foret_4:
         call good_ending_14 pass (rejete = True) from _call_good_ending_14
     else:
-        call good_ending_14 pass (rejete = False)
+        call good_ending_14 pass (rejete = False) from _call_good_ending_14_1
 
 label fuite_harald_pont_baisse_donjon:
     show harald debout_furieux_mid at right with dissolve
@@ -2017,7 +2017,7 @@ label soupcon_harald_defendre_porte:
         "Se jeter sur Ogma":
             hide screen countdown
             "En se jetant sur Ogma, Einar se fait couper de par en par"
-            call game_over_combat ("soupcon_harald_defendre_porte")
+            call game_over_combat ("soupcon_harald_defendre_porte") from _call_game_over_combat_8
 
     $ time = 5
     $ timer_range = 5

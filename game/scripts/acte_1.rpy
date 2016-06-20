@@ -1249,15 +1249,15 @@ label choix_retour_village_1(massacre = False):
     if massacre:
         menu:
             "Nous retournons à Dunbar":
-                call foret_2_r("chateau", True)
+                call foret_2_r("chateau", True) from _call_foret_2_r
             "Nous poursuivons vers le nord":
-                call foret_2_r("nord", True)
+                call foret_2_r("nord", True) from _call_foret_2_r_1
     else:
         menu:
             "Nous retournons à Dunbar":
-                call foret_2_r("chateau", False)
+                call foret_2_r("chateau", False) from _call_foret_2_r_2
             "Nous poursuivons vers le nord":
-                call foret_2_r("nord", False)
+                call foret_2_r("nord", False) from _call_foret_2_r_3
 
 #Sequence 7
 label foret_2_r(lieu, massacre_village):
@@ -1354,13 +1354,13 @@ label foret_2_r(lieu, massacre_village):
 
         menu:
             "Ne relâchez pas votre attention":
-                call massacre_foret_2 ("attentif", True)
+                call massacre_foret_2 ("attentif", True) from _call_massacre_foret_2
             "La mission est décevante":
-                call massacre_foret_2 ("deception", True)
+                call massacre_foret_2 ("deception", True) from _call_massacre_foret_2_1
             "Les villageois étaient pitoyables !":
-                call massacre_foret_2 ("moquerie", True)
+                call massacre_foret_2 ("moquerie", True) from _call_massacre_foret_2_2
             "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
-                call massacre_foret_2 ("chambre_logan", True)
+                call massacre_foret_2 ("chambre_logan", True) from _call_massacre_foret_2_3
     else:
         l "J'ai eu pitié de ces gens. Ils me faisaient penser à Aberdeen."
         e "Je croyais que tu n'aurais aucun problème à tuer des écossais !"
@@ -1373,13 +1373,13 @@ label foret_2_r(lieu, massacre_village):
 
         menu:
             "Ne relâchez pas votre attention":
-                call massacre_foret_2 ("attentif", False)
+                call massacre_foret_2 ("attentif", False) from _call_massacre_foret_2_4
             "La mission est décevante":
-                call massacre_foret_2 ("deception", False)
+                call massacre_foret_2 ("deception", False) from _call_massacre_foret_2_5
             "Les villageois avaient une attitude suspecte":
-                call massacre_foret_2 ("attitude", False)
+                call massacre_foret_2 ("attitude", False) from _call_massacre_foret_2_6
             "J'ai vu une brebis qui te faisait de l'oeil, Logan !":
-                call massacre_foret_2 ("chambre_logan", False)
+                call massacre_foret_2 ("chambre_logan", False) from _call_massacre_foret_2_7
 
 label massacre_foret_2 (message, massacre_village):
 
@@ -1449,7 +1449,7 @@ label massacre_foret_2 (message, massacre_village):
 
                 menu menu_avertissement_villageois:
                     "Ne relâchez pas votre attention":
-                        call massacre_foret_2 ("attentif", massacre_foret)
+                        call massacre_foret_2 ("attentif", massacre_foret) from _call_massacre_foret_2_8
                         # call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
                     "Nous ne craignons pas les paysans !":
                         hide logan with dissolve
@@ -1592,19 +1592,19 @@ label massacre_foret_2 (message, massacre_village):
     if massacre_village:
         menu:
             "Qui es-tu ?":
-                call e_demande_nom_foret_2(True)
+                call e_demande_nom_foret_2(True) from _call_e_demande_nom_foret_2
             "Non ! Ne me tue pas, pitié !":
-                call e_implore_pitie_foret_2(True)
+                call e_implore_pitie_foret_2(True) from _call_e_implore_pitie_foret_2
             "Vous mourrez tous !":
-                call e_menace_foret_2(True)
+                call e_menace_foret_2(True) from _call_e_menace_foret_2
     else:
         menu:
             "Qui es-tu ?":
-                call e_demande_nom_foret_2(False)
+                call e_demande_nom_foret_2(False) from _call_e_demande_nom_foret_2_1
             "Non ! Ne me tue pas, pitié !":
-                call e_implore_pitie_foret_2(False)
+                call e_implore_pitie_foret_2(False) from _call_e_implore_pitie_foret_2_1
             "Vous mourrez tous !":
-                call e_menace_foret_2(False)
+                call e_menace_foret_2(False) from _call_e_menace_foret_2_1
 
 label e_demande_nom_foret_2(bad_ending):
     hide logan
@@ -1620,7 +1620,7 @@ label e_demande_nom_foret_2(bad_ending):
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
         #jump bad_ending_1
-        call game_over_combat ('village_1')
+        call game_over_combat ('village_1') from _call_game_over_combat_2
     else:
         show ogma combat_determine_mid at right
         o "Ogma. Le Hurleur."
@@ -1640,7 +1640,7 @@ label e_implore_pitie_foret_2(bad_ending):
         ge "Lâche jusqu'au bout..."
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
-        call game_over_combat ('village_1')
+        call game_over_combat ('village_1') from _call_game_over_combat_3
     else:
         ge "Nous allons voir ça..."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
@@ -1658,7 +1658,7 @@ label e_menace_foret_2(bad_ending):
         ge "Je ne crains pas ton roi."
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
-        call game_over_combat ('village_1')
+        call game_over_combat ('village_1') from _call_game_over_combat_4
     else:
         ge "Je ne crains pas ton roi."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
