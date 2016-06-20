@@ -1951,26 +1951,44 @@ label soupcon_harald_defendre_porte:
 
     $ checkpoint = "checkpoint_4"
 
-    scene bg chateau_porte_crepuscule
+    scene bg chateau_porte_crepuscule with dissolve
 
-    show re combat_normal_mid at left
-    show gv combat_normal_mid at right
+    show re combat_normal_mid at right with moveinright
     with dissolve
 
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     ge "L'échelle ! Apportez l'échelle !"
     gv "Les rebelles dressent une échelle par-dessus les douves !"
+    show gv combat_normal_mid at left with moveinleft
     "Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles."
+    show gv combat_normal_mid at center with moveinright
     "Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
-    show gv combat_normal_mid at right
+    show gv combat_normal_mid at center
     gv "Crevez, salopards ! Ha ha !"
-    show harald combat_determine_mid at center with dissolve
+    hide gv
+    hide ge
+    with dissolve
+    scene bg cour_chateau_crepuscule with dissolve
+    show gv combat_normal_mid at right with dissolve
+    show harald combat_determine_mid_flip at center with dissolve
     h "Consolidez les rangs !"
     hide harald with dissolve
+
+    scene bg chateau_porte_crepuscule with dissolve
+    show re combat_normal_mid at right with dissolve
+    show gv combat_normal_mid at center with dissolve
     "Les rebelles sont contraints de reculer et restent à distance des remparts."
+    hide re with dissolve
+    show gv combat_normal_mid at right with moveinright
+
+
+    scene bg cour_chateau_crepuscule with dissolve
+    show gv combat_normal_mid at right with dissolve
+    show harald combat_determine_mid_flip at center with dissolve
     "Alors que les vikings se réjouissent de leur supériorité, un cri retentit sur leurs arrières."
     gv "Par la mer ! Ils arrivent par la mer !"
     "Profitant des combats, un groupe conséquent d'écossais a pénétré l'enceinte par la mer pour débarquer discrètement derrière les vikings."
+    show re combat_normal_mid_flip at left with moveinleft
     "Ils lancent un deuxième assaut sur l'arrière des vikings, dans l'enceinte."
     "A l'extérieur, les rebelles lancent un nouvel assaut et après avoir tendu des planches en travers des douves, commencent à détruire le tablier du pont à coup de haches."
     gv "Ça va céder !"
@@ -1981,38 +1999,46 @@ label soupcon_harald_defendre_porte:
     hide re
     with dissolve
 
-    show einar combat_normal_mid at left
-    show huscarls combat_normal_mid at right
+    show einar combat_normal_mid at center
+    show huscarls combat_normal_mid at left
     with dissolve
 
     menu:
         "Suivez-moi !":
-            show einar combat_determine_mid at left
+            show einar combat_determine_mid at center
             e "A moi, huscarls !"
             e "Suivez-moi et ne me lâchez pas !"
-            show huscarls combat_enthousiaste_mid at right
+            show huscarls combat_enthousiaste_mid at left
 
         "Dressez vos boucliers":
-            show einar combat_determine_mid at left
+            show einar combat_determine_mid at center
             e "Je veux une ligne parfaite ! Dressez vos boucliers !"
             e "Vous avez déjà affronté bien pire que des paysans ! Souvenez-vous des éléphants de guerre !"
-            show huscarls combat_enthousiaste_mid at right
+            show huscarls combat_enthousiaste_mid at left
 
-        "Ils ne passseront pas ! ":
-            show einar combat_furieux_mid at left
+        "Ils ne passeront pas ! ":
+            show einar combat_furieux_mid at center
             e "Ces raclures ne passeront pas la porte !"
             e "Vengeance ! Pour le roi, pour Logan et pour tous les autres !"
-            show huscarls combat_furieux_mid at right
+            show huscarls combat_furieux_mid at left
 
+    show einar combat_furieux_mid at right with moveinright
+    hide einar with dissolve
+    show huscarls combat_furieux_mid at right with moveinright
+    hide huscarls with dissolve
+
+
+    scene bg chateau_porte_crepuscule with dissolve
     "Alors que la porte menace de céder, les vikings l'ouvrent et prennent de court les rebelles."
+    show re combat_normal_mid at right with moveinright
+    show einar combat_furieux_mid at center with dissolve
+    show huscarls combat_furieux_mid at left with dissolve
     "Immédiatement, les rebelles tentent de s'engouffrer dans l'ouverture, face à Einar et aux huscarls."
+    hide re with dissolve
+    hide huscarls with dissolve
+    show einar combat_normal_mid at left with moveinleft
+    show ogma combat_furieux_mid at right with moveinright
     "Une silouhette familière émerge des rebelles."
-
-    hide huscarls
-    show ogma combat_furieux_mid at right
-    with dissolve
-
-    show einar combat_normal_mid at left
 
     o "Traître ! Tu t'es joué de nous pour sauver ta vie de lâche !"
     o "Regarde combien d'hommes meurent aujourd'hui par ta faute !"
@@ -2046,47 +2072,59 @@ label soupcon_harald_defendre_porte:
     $ timer_jump = 'gameover'
 
 
-    "Ogma furieux de la trahison de Einar se jette sur lui"
-    "L'épée brandie, Ogma s'aprête à frapper de tout ses forces."
+    "Ogma, furieux de la trahison d'Einar, se jette sur lui."
+    show ogma combat_furieux_mid at center with moveinright
+    "L'épée brandie, Ogma s'aprête à frapper de toutes ses forces."
 
     show screen countdown
     menu :
 
-        "Esquiver":
+        "Monter à l'assaut":
             hide screen countdown
-            "Abattant son épée sur le sol, Einar réussi à éviter in extrmis"
+            show einar combat_furieux_mid at center with moveinleft
+            "Einar se lance à la rencontre de l'écossais !"
+            show einar combat_furieux_close at center, shake
+            show ogma combat_furieux_close at center, shake
+            "Dans un tintement d'acier, les lames s'entrechoquent et s'immobilisent alors que les deux combattants tentent de faire céder l'adversaire."
 
-        "Se jeter sur Ogma":
+        "Camper la position":
             hide screen countdown
-            "En se jetant sur Ogma, Einar se fait couper de par en par"
-            call game_over_combat ("soupcon_harald_defendre_porte") from _call_game_over_combat_8
+            show ogma combat_furieux_mid at left with moveinleft
+            "Einar assure sa position défensive, renforçant ses appuis pour anticiper le choc."
+            show einar combat_furieux_close at left, shake
+            show ogma combat_furieux_close at left, shake
+            "Dans un tintement d'acier, les lames s'entrechoquent et s'immobilisent alors que les deux combattants tentent de faire céder l'adversaire."
 
-    $ time = 5
-    $ timer_range = 5
+    $ time = 3
+    $ timer_range = 3
     $ timer_jump = 'gameover'
 
-    "Une fois son esquive effectuée, Attaque de nouveau"
+
+    "Ogma est plus grand qu'Einar et utilise son propre poids pour prendre l'avantage sur le duel."
+    "Centimètre par centimètre, Einar commence à lâcher prise !"
 
     show screen countdown
 
     menu :
-        "Gagner":
+        "Coup vicieux !":
             hide screen countdown
 
-            show ogma combat_normal_mid at right
-            "Einar frappe Ogma en travers du torse avec sa hachette, et le propulse dans les douves."
+            show ogma combat_normal_close at right with moveinright
+            "Einar assène un coup de pied à l'entrejambe d'Ogma, qui lâche son épée et recule."
+            "Au même moment, un huscarl survient et fracasse le crâne de l'écossais avec sa hache."
+            "Ogma tombe dans les douves, son sang se répandant dans l'eau boueuse."
             "Terrorisés, les rebelles prennent la fuite."
             hide ogma with dissolve
 
-            show harald combat_normal_mid at right with dissolve
+            show harald combat_normal_close at right with dissolve
             h "Ha ha ! Ils fuient, les lâches !"
-            show harald combat_determine_mid at right
+            show harald combat_determine_close at right
             h "Ventre à terre, huscarls ! Suivez-moi ! Donnons-leur la chasse !"
 
             "Harald s'élance à la poursuite des fuyards, le rire aux lèvres."
             "Les rebelles, déjà affaiblis et effrayés, se font massacrer par les vikings et Harald, hilares."
 
-        "Perdre":
+        "Résister !":
             hide screen countdown
             jump bad_ending_17
 
