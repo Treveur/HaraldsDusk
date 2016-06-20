@@ -118,7 +118,7 @@ image einar general_determine_close = "einar/general/einar_general_determine_clo
 ##Logan
 define l = Character('Logan', color="#f1c40f", image="logan")
 
-## image side logan = "logan/logan_portrait.png"
+image side logan = "logan/logan_portrait.png"
 
 #Debout
 image logan debout_normal = "logan/debout/logan_debout_normal.png"
@@ -348,7 +348,7 @@ image jgv debout_pleurant_close = "jeune_viking/debout/jgv_debout_pleurant_close
 ##Ogma
 define o = Character('Ogma', color="#d35400", image="ogma")
 
-# image side ogma = "ogma/ogma_portrait.png"
+image side ogma = "ogma/ogma_portrait.png"
 
 #Debout
 
