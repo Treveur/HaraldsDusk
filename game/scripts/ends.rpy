@@ -128,12 +128,13 @@ label normal_ending_10:
     jump credits
 
 label good_ending_11:
-    show ogma debout_souriant_mid at center
+    scene bg village
+    show ogma debout_souriant_mid at center zorder 0 with dissolve
     o "Aujourd'hui et au nom du peuple d'Ecosse, je te remercie, Einar !"
     o "Nous te sommes tous redevables !"
-    show re debout_normaux_mid at right
+    show re debout_normaux_mid at right zorder 1 with dissolve
     ge "HOURRAAA !"
-    hide re
+    hide re with dissolve
     o "Tu as agit pour le bien du plus grand nombre, ne l'oublie jamais."
     o "Comme promis, tu es désormais libre d'aller où bon te semble. Un cheval harnaché avec des fontes remplies d'or t'attends."
     show einar debout_normal_mid at left
@@ -146,11 +147,14 @@ label good_ending_11:
             o "Ah, j'aime mieux ça !"
             
         "Vous avez trahi votre parole en tuant Harald":
+            show einar debout_contrarie_mid at left
             e "Une victoire, certes... Mais une victoire amère."
+            show ogma debout_normal_mid at center
             o "Pourquoi ça ?"
             e "Vous n'avez pas été fidèles à notre marché. Vous avez tué le roi."
             o "Je comprends ta rancoeur. Mais je ne pouvais pas te dire la vérité."
             o "Aurais-tu accepté de nous aider si je t'avais dit que le but était de tuer le roi ?"
+            show einar debout_determine_mid at left
             e "Je ne sais pas."
             o "Peu importe ! Tu as libéré notre peuple, et nous t'avons offert tout ce que nous t'avions promis. Et même plus !"
             
@@ -173,6 +177,7 @@ label good_ending_11:
             hide einar
             hide ogma
             with dissolve
+            scene bg village_crepuscule with dissolve
             "Le soir venu, lors du festin organisé en l'honneur d'Einar, Ogma annonce les noces sous une ovation tonitruante."
             "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
             "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
@@ -180,7 +185,7 @@ label good_ending_11:
             
         "Non...":
             show einar debout_normal_mid at left
-            e "Votre m'honore, mais je ne peux accepter."
+            e "Votre offre m'honore, mais je ne peux accepter."
             show ogma debout_attriste_mid at center
             o "Pourquoi ?"
             e "Je ne souhaite pas me marier à Moira ; vous exposer mes raisons ne changerait rien à l'affaire."
@@ -188,6 +193,7 @@ label good_ending_11:
             hide einar
             hide ogma
             with dissolve
+            scene bg village_crepuscule with dissolve
             "Le soir venu, lors du festin organisé en l'honneur d'Einar, on remarque le visage fermé et la froideur de Moira."
             "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
             "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."

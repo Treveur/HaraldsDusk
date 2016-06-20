@@ -930,6 +930,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
     h "CETTE HACHE EST A MOI !"
 
     "Harald devient comme fou et se jette sur Einar."
+    show harald combat_furieux_mid at center with moveinleft
 
     if prendre_hache:
         "Harald place un coup de dague très rapide au flanc d'Einar."
@@ -1053,22 +1054,26 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
             "Ogma veut vous rencontrer...":
                 e "Le Hurleur sera heureux de vous rencontrer, j'en suis sûr..."
+                hide einar 
+                hide harald
+                with dissolve
+                
                 scene bg chateau_rempart_crepuscule with dissolve
                 "Quelques minutes plus tard, alors que les combats sont terminés..."
+                show harald debout_normal_mid at center with dissolve
+                show ogma debout_furieux_mid at right with dissolve
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
-                show einar combat_hache_normal_mid at left
-                show harald debout_normal_mid_flip at center
-                show ogma combat_determine_mid at right
                 o "Voyez ! La liberté a vaincu le tyran !"
                 o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
                 show ogma combat_furieux_mid at right
                 o "Le règne du roi-empereur est terminé !"
                 "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
-                hide harald
+                hide harald with dissolve
                 show ogma combat_determine_mid at right
                 o "VOUS ÊTES LIBRES !"
                 "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
                 "Dans la lumière du crépuscule, Dunbar continue de brûler."
+                hide ogma with dissolve
                 jump good_ending_11
 
     else:
