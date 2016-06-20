@@ -538,13 +538,15 @@ label pont_levis_baisse:
     play ambiance fight
 
     if moira_dead:
+        
+        hide re
+        hide gv
+        with dissolve
 
         "Ogma surgit au milieu de la mêlée, franchissant la Grande Porte. Il se rue sur Einar, un regard fou dans les yeux et la bave aux lèvres. Il hurle le nom de sa fille."
 
-        show einar debout_normal_mid at left
-        show ogma combat_furieux_mid at right
-        with dissolve
-
+        show einar combat_normal_mid at left with moveinleft
+        show ogma combat_furieux_mid at right with moveinright
 
         o "MOIRAAAAAAAA !"
         o "POURQUOI L'AVOIR TUÉE ?"
@@ -552,7 +554,7 @@ label pont_levis_baisse:
         menu:
 
             "J'avais juste envie":
-                show einar combat_normal_mid at left
+                show einar combat_furieux_mid at left
                 e "L'envie de voir de près un salopard d'écossais déborder de rage !"
 
             "Votre fille m'insupportait":
@@ -576,6 +578,7 @@ label pont_levis_baisse:
         $ timer_jump = 'game_over_combat'
 
         "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
+        show ogma combat_furieux_mid at center with moveinright
 
         show screen countdown
         menu :
@@ -627,10 +630,7 @@ label pont_levis_baisse:
                 
         "Alors qu'il se laisse tomber à terre, Einar réalise qu'il n'avait aucune chance face à la colère du père de Moira."
 
-
-        hide einar
-        hide ogma
-        with dissolve
+        hide einar with dissolve
 
         jump bad_ending_4
 

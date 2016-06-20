@@ -940,7 +940,7 @@ label e_fouiller_village_1(einarFouille = False):
 
             hide moira with dissolve
 
-            jump choix_retour_village_1
+            jump e_choix_final_village_1
 
         "Je n'aime pas qu'on ne suive pas mes instructions (la tuer)" if already_talk:
 
@@ -951,6 +951,62 @@ label e_fouiller_village_1(einarFouille = False):
     hide moira
     hide einar
     with dissolve
+
+label e_choix_final_village_1:
+    scene bg village with dissolve
+    show ve debout_normaux_mid at right with dissolve
+    show logan debout_determine_mid_flip at center with dissolve
+    show einar debout_normal_mid at left with dissolve
+    l "Et maintenant ?"
+    gv "On devrait raser tout ça, pour l'exemple !"
+    
+    menu:
+        "Nous partons":
+            show einar debout_normal_mid at left
+            e "Nous n'allons pas rester ici plus longtemps. Il est temps de partir."
+            jump choix_retour_village_1
+                
+        "Faites-vous plaisir ! (détruire le village)":
+            e "Allez-y ! Brûlez tout ça, n'épargnez personne !"
+
+            show logan debout_determine_mid_flip at center
+
+            l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
+
+            l "Nous risquons d'aggraver la situation en rasant Perth. Le roi sera furieux !"
+
+            ve "Nous avons fait tout ce que vous nous avez demandé ! Vous n'avez aucune raison de nous tuer !"
+
+            menu:
+
+                "C'est votre jour de chance":
+                    show einar debout_souriant_mid at left
+
+                    e "Très bien, j'ai changé d'avis. Nous n'allons tuer personne aujourd'hui."
+                    show einar debout_determine_mid at left
+
+                    e "Mais sachez que nous n'allons pas relâcher notre attention ! Et s'il s'avère que vous abritez les rebelles..."
+                            
+                    e "Nous reviendrons finir le travail !"
+                    e "Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
+
+                    jump choix_retour_village_1
+
+
+                "Silence Logan ! Mon choix est déjà fait ! (massacrer)":
+                    show einar debout_determine_mid at left
+
+                    e "Ferme-la, Logan !"
+
+                    e "Vous-autres, rasez-moi ce tas de boue !"
+
+                    gv "HAAAAAAA !"
+                    e "Battez-vous ! Tuez-les tous !"
+
+                    "Le combat s'engage. Rapidement, les vikings font place nette et réduisent à néant toute résistance."
+
+                    call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1_1
+    
 
 
 label e_tuer_villageois_village_1:
@@ -1471,7 +1527,7 @@ label massacre_foret_2 (message, massacre_village):
     hide vfx_flame_3
     with dissolve
 
-    show re debout_normaux_mid_flip at left with moveinleft
+    show re debout_normal_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
     show einar combat_determine_mid_flip at center

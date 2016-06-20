@@ -29,10 +29,12 @@ label bad_ending_3:
     call game_over_combat('interieur_grande_porte_chateau_1')
 
 label bad_ending_4:
-    show ogma combat_furieux_mid at right
+    show ogma combat_furieux_mid at center
     "La furie sanguinaire d'Ogma est incontrôlable. Einar est massacré sur place."
     hide einar with dissolve
+    show re combat_normal_mid at right with moveinright
     "Les rebelles continuent d'affluer dans l'enceinte, et Ogma tombe à genoux devant le cadavre d'Einar."
+    show ogma debout_attriste_mid at center
     o "Grrr..."
     "Il tire une dague et commence à poignarder et mutiler sans relâche les restes du viking..."
     "Fin 04/22"
