@@ -600,11 +600,11 @@ label pont_levis_baisse:
             "Parer":
                 hide screen countdown
                 "Einar parvient à bloquer l'attaque, mais Ogma profite du contrecoup pour asséner au viking un violent coup de pied à l'estomac."
-                "Ogma enchaîne immédiatement, d'un geste fulgurant !"
+                "L'écossais enchaîne immédiatement, d'un geste fulgurant !"
 
             "Esquiver":
                 hide screen countdown
-                "Einar effectue une roulage pour esquiver l'attaque mais Ogma est bien trop rapide et furieux : il lance immédiatement une seconde attaque !"
+                "Einar effectue une roulade pour esquiver l'attaque mais Ogma est bien trop rapide et furieux : il lance immédiatement une seconde attaque !"
 
         $ time = 0.5
         $ timer_range = 0.5
@@ -623,6 +623,8 @@ label pont_levis_baisse:
             "Esquiver":
                 hide screen countdown
                 "Le coup est bien trop rapide pour être esquivé, et les appuis d'Einar sont faibles : le ventre du viking s'ouvre, déversant un torrent de viscères sur le sol."
+                
+        "Alors qu'il se laisse tomber à terre, Einar réalise qu'il n'avait aucune chance face à la colère du père de Moira."
 
 
         hide einar
@@ -954,9 +956,9 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show einar combat_hache_normal_mid at left
                 e "Vous avez déjà perdu. Je vais vous épargner."
                 show harald combat_normal_mid at right
-                h "Merci ! J'ai toujours su que tu étais un homme bon !"
+                h "Je... Je ne comprends pas. Tu n'es pas là pour me tuer ?"
                 show einar combat_hache_determine_mid at left
-                e "Ne vous réjouissez pas trop vite."
+                e "Non."
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
 
@@ -1017,8 +1019,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         menu :
             "Frapper derrière ses genoux":
                 hide screen countdown
-                "Einar réussi à les eloigner suffisament Harald et poursuit par une nouvelle attaque directement"
-                "Et lui assigner un coup fatal dans la nuque"
+                "D'un geste précis, Einar tranche le tendon du genou de Harald, qui s'effondre."
                 jump win_battle_harald_no_axe_pont_baisse_donjon
 
             "Tenter de le renverser":
