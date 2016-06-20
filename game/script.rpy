@@ -109,6 +109,16 @@ image einar prisonnier_furieux_close = "einar/prisonnier/einar_prisonnier_furieu
 image einar prisonnier_normal_close = "einar/prisonnier/einar_prisonnier_normal_close.png"
 image einar prisonnier_souriant_close = "einar/prisonnier/einar_prisonnier_souriant_close.png"
 
+#flip
+image einar prisonnier_attriste_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_attriste_mid.png", horizontal = True)
+image einar prisonnier_blesse_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_blesse_mid.png", horizontal = True)
+image einar prisonnier_contrarie_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_contrarie_mid.png", horizontal = True)
+image einar prisonnier_determine_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_determine_mid.png", horizontal = True)
+image einar prisonnier_effraye_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_effraye_mid.png", horizontal = True)
+image einar prisonnier_furieux_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_furieux_mid.png", horizontal = True)
+image einar prisonnier_normal_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_normal_mid.png", horizontal = True)
+image einar prisonnier_souriant_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_souriant_mid.png", horizontal = True)
+
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
 image einar general_determine_mid = "einar/general/einar_general_determine_mid.png"

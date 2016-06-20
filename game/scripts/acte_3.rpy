@@ -690,7 +690,7 @@ label pont_levis_baisse:
         menu :
             "Attaque ample":
                 hide screen countdown
-                show einar combat_blesse_mid at center
+                show einar combat_furieux_mid at center
                 "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
                 show huscarls combat_furieux_mid at right ,shake
                 "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
@@ -701,7 +701,7 @@ label pont_levis_baisse:
 
             "Attaque précise":
                 hide screen countdown
-                show einar combat_blesse_mid at center
+                show einar combat_determine_mid at center
                 show huscarls combat_furieux_mid at right ,shake
                 "Einar tranche la tête d'un huscarl, mais l'un des guerriers d'élite atteint Einar dans le dos."
                 show einar combat_blesse_mid at left ,shake
@@ -847,7 +847,7 @@ label e_bruler_donjon_obeir_donjon:
     menu:
         "Prendre la Hache":
 
-            show einar combat_hache_normal_mid
+            show einar combat_hache_normal_mid at left
             e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
             $ prendre_hache = True
             jump e_confrontation_harald_pont_baisse_donjon
@@ -867,15 +867,17 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     $ epargner_harld_donjon = False
 
-    scene bg chateau_chambre_nuit with dissolve
+    #scene bg chateau_chambre_nuit with dissolve
 
-    show einar combat_normal_mid at left
-    show harald combat_normal_mid at right with moveinright
+    
 
     if jetee:
+        show einar combat_normal_mid at left
+        show harald combat_normal_mid at right with moveinright
+        
+        h "Einar ? Que fais-tu ici ? Où est la Hache ?"
+        
         menu :
-
-            "Einar ? Que fais-tu ici ? Où est la Hache ?"
 
             "Je l'ai jetée":
                 show einar combat_determine_mid at left
@@ -899,12 +901,11 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     else:
 
-        show einar combat_normal_mid at left with moveinright
+        show einar combat_hache_normal_mid at left
         show harald combat_normal_mid at right with moveinright
+        h "Einar ? Que fais-tu avec ma Hache ?"
 
         menu:
-            "Einar ? Que fais-tu avec ma Hache ?"
-
             "Vous n'êtes plus rien":
                 show einar combat_hache_normal_mid at left
                 e "Je l'ai prise, en même temps que le pouvoir. Vous n'êtes plus rien."
