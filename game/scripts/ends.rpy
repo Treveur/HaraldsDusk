@@ -19,11 +19,13 @@ label bad_ending_2:
     call game_over_combat('refuser_trahir_village_2') from _call_game_over_combat
 
 label bad_ending_3:
+    show bg chateau_rempart_crepuscule with dissolve
     show einar debout_determine_mid at left
     "Au moment où Einar s'apprête à actionner le mécanisme de la porte, une flèche est décochée dans son dos."
-    show einar debout_blesse_mid at left
+    show einar debout_blesse_mid at left, shake
     "Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers."
     "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
+    show einar debout_blesse_mid at left, shake
     hide einar with dissolve
     "Fin 03/22"
     call game_over_combat('interieur_grande_porte_chateau_1') from _call_game_over_combat_1
