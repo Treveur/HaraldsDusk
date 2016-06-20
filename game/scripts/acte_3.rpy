@@ -2214,7 +2214,7 @@ label harald_defendre_porte:
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
     "Harald jaillit du donjon, armé de pied en cap."
 
-    show harald combat_determine_mid at right
+    show harald combat_determine_mid_flip at right
     show einar combat_normal_mid at left
     with dissolve
 
@@ -2233,10 +2233,22 @@ label harald_defendre_porte:
         "Ne rien dire":
             e "..."
 
-    hide harald
-    hide einar
-    with dissolve
-
+    hide harald with dissolve
+    show einar combat_furieux_mid at right with moveinright
+    hide einar with dissolve
+    
+    scene bg chateau_porte_crepuscule with dissolve
+    show harald combat_furieux_mid_flip at right
+    show einar combat_furieux_mid at center
+    show gv combat_normal_mid at left
+    h "Nous les traquerons jusque dans leurs terriers ! Une semaine de solde pour celui qui me ramène le plus de têtes de ces damnés rebelles !"
+    hide harald with dissolve
+    show einar combat_furieux_mid at right with moveinright
+    hide einar with dissolve
+    show gv combat_normal_mid at right with moveinright
+    hide gv with dissolve
+    
+    scene bg plaine_plaine_crepuscule with dissolve
     show re debout_normaux_mid at right
     show ogma combat_normal_mid_flip at left
     with dissolve
