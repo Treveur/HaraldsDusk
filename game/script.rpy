@@ -1,5 +1,9 @@
 ﻿# Vous pouvez placer le script de votre jeu dans ce fichier.
 
+init :
+    $ checkpoint = ""
+
+
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
@@ -739,7 +743,6 @@ transform alpha_dissolve:
 
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
-    #timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Function(renpy.call, label = timer_jump, timer_param)])
     bar value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300 at alpha_dissolve
 
 # Le jeu commence ici

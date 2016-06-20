@@ -1,3 +1,8 @@
+#Checkpoint
+label gameover:
+    call game_over_combat(checkpoint)
+
+
 #Ending
 label bad_ending_1:
     "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
@@ -147,7 +152,7 @@ label good_ending_11:
             show einar debout_souriant_mid at left
             e "Excuse-moi, j'étais dans mes pensées !"
             o "Ah, j'aime mieux ça !"
-            
+
         "Vous avez trahi votre parole en tuant Harald":
             show einar debout_contrarie_mid at left
             e "Une victoire, certes... Mais une victoire amère."
@@ -159,7 +164,7 @@ label good_ending_11:
             show einar debout_determine_mid at left
             e "Je ne sais pas."
             o "Peu importe ! Tu as libéré notre peuple, et nous t'avons offert tout ce que nous t'avions promis. Et même plus !"
-            
+
     show ogma debout_normal_mid at center
     o "Nous avons organisé un grand repas pour fêter la victoire, nous aimerions que tu te joignes à nous."
     show einar debout_normal_mid at left
@@ -184,7 +189,7 @@ label good_ending_11:
             "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
             "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
             "Einar le Libérateur."
-            
+
         "Non...":
             show einar debout_normal_mid at left
             e "Votre offre m'honore, mais je ne peux accepter."
@@ -200,7 +205,7 @@ label good_ending_11:
             "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
             "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
             "Einar le Libérateur."
-    
+
     "Fin 11/22"
     jump credits
 

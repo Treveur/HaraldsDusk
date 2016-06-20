@@ -198,7 +198,7 @@ label cour_chateau_1:
                 e "Mes blessures étaient soignées et un repas était posé à côté de moi. Je l'ai mangé et ai prit la route pour revenir jusqu'ici."
                 $ soupcon_harald_1 = True
                 jump poursuivre_dialog
-    
+
     label poursuivre_dialog:
     h "..."
     show einar debout_normal_close at left
@@ -547,6 +547,8 @@ label pont_levis_baisse:
 
     if moira_dead:
 
+        $ checkpoint = "checkpoint_1"
+
         hide re
         hide gv
         with dissolve
@@ -577,13 +579,18 @@ label pont_levis_baisse:
                 show einar combat_determine_mid at left
                 e "Ferme la et bats-toi, raclure !"
 
+
+        label checkpoint_1:
+            scene bg cour_chateau_crepuscule
+
+
         show ogma combat_determine_mid at right
         o "Tout s'achève, ici et maintenant !"
 
         #Phase combat impossible à gagner WIP
         $ time = 5
         $ timer_range = 5
-        $ timer_jump = "game_over_combat"
+        $ timer_jump = "gameover"
 
         "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
         show ogma combat_furieux_mid at center with moveinright
@@ -602,7 +609,7 @@ label pont_levis_baisse:
 
         $ time = 2.5
         $ timer_range = 2.5
-        $ timer_jump = 'game_over_combat'
+        $ timer_jump = 'gameover'
 
         "Fou de rage, Ogma attaque une fois de plus vers la droite, d'un coup de taille."
 
@@ -620,7 +627,8 @@ label pont_levis_baisse:
 
         $ time = 0.5
         $ timer_range = 0.5
-        $ timer_jump = 'game_over_combat'
+        #WIP
+        $ timer_jump = 'gameover'
 
         "Dans un hurlement bestial, Ogma prend Einar à contre-pied et tente un nouveau coup de taille. Il y a une ouverture dans sa garde !"
 
@@ -644,6 +652,8 @@ label pont_levis_baisse:
 
     else:
 
+        $ checkpoint = "checkpoint_2"
+
         "Pris entre les deux forces, Einar est immobilisé."
         show gv debout_determines_mid at left
         show einar combat_determine_mid_flip at center
@@ -652,6 +662,10 @@ label pont_levis_baisse:
         hide gv
         hide re
         with dissolve
+
+        label checkpoint_2:
+            scene bg cour_chateau_crepuscule
+
 
         show huscarls combat_normal_mid at left with moveinleft
         with dissolve
@@ -665,7 +679,7 @@ label pont_levis_baisse:
 
         $ time = 3
         $ timer_range = 3
-        $ timer_jump = 'game_over_combat'
+        $ timer_jump = 'gameover'
 
 
         "Les huscarls encerclent Einar pour ne lui laisser aucune chance. Une pluie de haches s'abat sur Einar !"
@@ -688,8 +702,7 @@ label pont_levis_baisse:
 
         $ time = 4
         $ timer_range = 4
-        $ timer_jump = 'game_over_combat'
-        $ timer_param =""
+        $ timer_jump = 'gameover'
 
         "Les huscarls tentent de consolider leur cercle et d'attaquer Einar sur ses arrières !"
         show huscarls combat_furieux_mid at right with moveinright
@@ -949,7 +962,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         e "J'ai la Hache. Vous ne pouvez rien contre moi !"
 
         menu:
-            
+
             "Vous avez déjà perdu (épargner)":
                 show einar combat_hache_normal_mid at left
                 e "Vous avez déjà perdu. Je vais vous épargner."
@@ -970,7 +983,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 e "Ce n'est pas le moment de discuter."
                 h "Que vas-tu faire de moi?"
                 $ epargner_harld_donjon = True
-            
+
             "Fin de votre règne (le tuer)":
                 show einar combat_hache_normal_mid at left
                 e "Votre règne s'achève ici et maintenant. Vous allez mourir."
@@ -986,7 +999,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show harald combat_furieux_mid at right
                 h "Tu es fou !"
 
-            
+
 
         if epargner_harld_donjon == False:
             show einar combat_hache_furieux_mid at center zorder 1 with move
@@ -995,12 +1008,19 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             hide einar
             with dissolve
     else:
+
+        $ checkpoint = "checkpoint_3"
+
+        label checkpoint_3:
+            scene bg chateau_chambre_nuit with dissolve
+
+
         "Le combat s'engage entre le roi et son huscarl."
         # "Phase combat WIP"
 
         $ time = 3
         $ timer_range = 3
-        $ timer_jump = 'game_over_combat'
+        $ timer_jump = 'gameover'
 
 
         "Harald se jete sur Einar et tente de le frapper de ses poings massifs !"
@@ -1025,7 +1045,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
         $ time = 3
         $ timer_range = 3
-        $ timer_jump = 'game_over_combat'
+        $ timer_jump = 'gameover'
 
         "Une ouverture dans la garde du roi !"
 
@@ -1063,10 +1083,10 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
             "Ogma veut vous rencontrer...":
                 e "Le Hurleur sera heureux de vous rencontrer, j'en suis sûr..."
-                hide einar 
+                hide einar
                 hide harald
                 with dissolve
-                
+
                 scene bg chateau_rempart_crepuscule with dissolve
                 "Quelques minutes plus tard, alors que les combats sont terminés..."
                 show harald debout_normal_mid at center with dissolve
@@ -1929,6 +1949,8 @@ label lieu_encore_inconnu_1(axe = True):
 #Défendre porte
 label soupcon_harald_defendre_porte:
 
+    $ checkpoint = "checkpoint_4"
+
     scene bg chateau_porte_crepuscule
 
     show re combat_normal_mid at left
@@ -2012,6 +2034,8 @@ label soupcon_harald_defendre_porte:
             show einar combat_furieux_mid at left
             e "J'en termine avec toi, et ensuite je retourne m'occuper de ta fille !"
 
+    label checkpoint_4:
+        scene bg chateau_porte_crepuscule
 
     "Un combat s'engage entre Ogma et Einar !"
 
@@ -2019,7 +2043,7 @@ label soupcon_harald_defendre_porte:
 
     $ time = 5
     $ timer_range = 5
-    $ timer_jump = 'game_over_combat'
+    $ timer_jump = 'gameover'
 
 
     "Ogma furieux de la trahison de Einar se jette sur lui"
@@ -2039,7 +2063,7 @@ label soupcon_harald_defendre_porte:
 
     $ time = 5
     $ timer_range = 5
-    $ timer_jump = 'game_over_combat'
+    $ timer_jump = 'gameover'
 
     "Une fois son esquive effectuée, Attaque de nouveau"
 
