@@ -523,10 +523,10 @@ label pont_levis_baisse:
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
     hide re
     show bg cour_chateau_crepuscule with dissolve
-    show gv debout_determines_mid at center
+    show gv debout_determine_mid at center
     show einar combat_determine_mid_flip at right
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    show gv debout_determines_mid at left with moveinleft
+    show gv debout_determine_mid at left with moveinleft
     show einar combat_determine_mid_flip at center with moveinleft
     show re debout_furieux_mid at right with moveinright
     with dissolve
@@ -634,7 +634,7 @@ label pont_levis_baisse:
     else:
 
         "Pris entre les deux forces, Einar est immobilisé."
-        show gv debout_determines_mid at left
+        show gv debout_determine_mid at left
         show einar combat_determine_mid_flip at center
         show re debout_furieux_mid at right
         "Au même moment, ses anciens confrères huscarls le chargent."
@@ -2110,7 +2110,7 @@ label soupcon_harald_defendre_porte:
             e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
             show einar debout_contrarie_mid at left
             e "Vous vous moquez de moi, sire !"
-            show gv debout_contraries_mid at center with dissolve
+            show gv debout_contrarie_mid at center with dissolve
             gv "Sire !"
             show harald debout_contrarie_mid at right
             h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."

@@ -512,7 +512,7 @@ label foret_1:
     show gv debout_normaux_mid at right with dissolve
     gv "J'ai l'impression d'avoir déjà vu cette forêt... Tout se ressemble ici !"
     l "Nous progressons, rassure-toi."
-    show gv debout_contraries_mid at right
+    show gv debout_contrarie_mid at right
     gv "Pays de merde ! Le Danemark, ça ressemble quand même à autre chose !"
 
     menu:
@@ -1352,7 +1352,7 @@ label massacre_foret_2 (message, massacre_village):
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
         show logan debout_normal_mid at right with dissolve
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-        show gv debout_contraries_mid at center with dissolve
+        show gv debout_contrarie_mid at center with dissolve
         hide logan with dissolve
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
         show einar debout_normal_mid at left
@@ -1436,9 +1436,9 @@ label massacre_foret_2 (message, massacre_village):
 
     show einar debout_determine_mid at left with dissolve
     e "En position de combat, tous !"
-    show gv debout_determines_mid at center with dissolve
+    show gv debout_determine_mid at center with dissolve
     gv "Ça venait d'où ?"
-    show gv debout_determines_mid at right with moveinright
+    show gv debout_determine_mid at right with moveinright
     show logan debout_determine_mid at center zorder 1 with dissolve
     l "Sur la gauche ! Des torches !"
     hide gv with dissolve
@@ -1471,7 +1471,7 @@ label massacre_foret_2 (message, massacre_village):
 
     show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
-    show gv debout_determines_mid at right zorder 0 with moveinright
+    show gv debout_determine_mid at right zorder 0 with moveinright
 
     show ogma combat_determine_mid_flip at left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
