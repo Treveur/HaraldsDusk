@@ -189,11 +189,13 @@ image harald debout_normal_mid = "harald/debout/harald_debout_normal_mid.png"
 image harald debout_furieux_mid = "harald/debout/harald_debout_furieux_mid.png"
 image harald debout_contrarie_mid = "harald/debout/harald_debout_contrarie_mid.png"
 image harald debout_determine_mid = "harald/debout/harald_debout_determine_mid.png"
+image harald debout_sceptique_mid = "harald/debout/harald_debout_sceptique_mid.png"
 
 image harald debout_normal_close = "harald/debout/harald_debout_normal_close.png"
 image harald debout_furieux_close = "harald/debout/harald_debout_furieux_close.png"
 image harald debout_contrarie_close = "harald/debout/harald_debout_contrarie_close.png"
 image harald debout_determine_close = "harald/debout/harald_debout_determine_close.png"
+image harald debout_sceptique_close = "harald/debout/harald_debout_sceptique_close.png"
 
 
 

@@ -194,7 +194,7 @@ label cour_chateau_1:
 
     h "..."
     show einar debout_normal_close at left
-    show harald debout_determine_close at right
+    show harald debout_sceptique_close at right
     with dissolve
     h "J'espère que tout ce que tu me dis là est vrai."
     h "Je ne tolère pas le mensonge, Einar. Ton histoire me paraît bien obscure. Je te fais confiance, mais si j'apprends que tu m'as menti..."
@@ -235,6 +235,7 @@ label cour_chateau_1:
 
     if mentir_harald_1:
         show einar debout_normal_close at left
+        show harald debout_normal_close at right
         h "Je te remercie pour ta sincérité, Einar."
         show harald debout_determine_close at right
         h "Grâce à toi, nous allons profiter de toutes les informations que tu as pu glâner pendant ce mois dans les Highlands."
@@ -419,7 +420,7 @@ label cour_chateau_2:
     gv "Sire ! Sire !"
     show harald debout_normal_mid at right with moveinright
     h "Qu'y a-t-il ? Parle !"
-    gv "Hjalmar vient de repérer des centaines de torches sorties de la forêt ! Ils convergent tous vers le château !"
+    gv "Hjalmar vient de repérer des centaines de torches sortir de la forêt ! Ils convergent tous vers le château !"
     show harald debout_furieux_mid at right
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
     show harald combat_determine_mid at right
