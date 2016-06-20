@@ -1110,22 +1110,22 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         show einar combat_hache_normal_mid at left with moveinleft
         show ogma combat_determine_mid at right with moveinright
 
-
+        "..."
         o "Félicitations, Einar !"
-        show re debout_normaux_mid at center
+        show re debout_normaux_mid at right
         ge "HOURRAAA !"
         hide re
-        show ogma debout_souriant_mid at right
+        show ogma debout_souriant_mid at center
         o "Tu as libéré l'Ecosse ! Tu as libéré le reste du monde !"
-        show re debout_normaux_mid at center
+        show re debout_normaux_mid at right
         ge "HOURRAAA !"
         hide re
         o "Pour que la victoire soit complète, nous devons détruire la Hache."
         show einar combat_hache_determine_mid at left
         e "Pourquoi ?"
-        show ogma debout_contrarie_mid at right
+        show ogma debout_contrarie_mid at center
         o "Si la Hache tombe à nouveau dans les mains d'un conquérant, le monde sera à nouveau enchaîné."
-        show ogma debout_determine_mid at right
+        show ogma debout_determine_mid at center
         o "Nous devons nous assurer que la Hache soit détruite !"
         o "Donne la moi, s'il-te-plaît."
 
@@ -2136,38 +2136,37 @@ label soupcon_harald_defendre_porte:
 
     "Un peu plus tard..."
 
-    scene bg chateau_rempart_crepuscule
+    scene bg chateau_banquet with dissolve
 
-    show einar debout_normal_mid at left
-    show harald debout_normal_mid at right
+    show einar debout_normal_close at left
+    show harald debout_normal_close at right
     with dissolve
 
     h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
-    show harald debout_normal_mid at right
+    show harald debout_normal_close at right
     h "Il est le meilleur homme que j'ai eu sous mes ordres, et Dieu sait combien d'hommes valeureux j'ai eu à mon service !"
     h "Tu es du bois dont on fait les héros, Einar !"
-    show harald debout_normal_mid at right
+    show harald debout_normal_close at right
 
     menu:
 
         "Merci":
-            show einar debout_souriant_mid at left
+            show einar debout_souriant_close at left
             e "Merci, mon roi."
             h "Ne me remercie pas ! Tu nous a tous sauvés, c'est à nous de te remercier !"
 
         "Je suis resté fidèle":
-            show einar debout_attriste_mid at left
+            show einar debout_attriste_close at left
             e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
-            show harald debout_normal_mid at right
+            show harald debout_normal_close at right
             h "C'est vrai, mais ton mérite et ton honneur n'en sont pas amoindris ! Sans toi, nous étions perdus !"
 
         "Que l'on se souvienne de moi !":
-            show einar debout_determine_mid at left
+            show einar debout_determine_close at left
             e "J'ai mené l'assaut final et tué le chef rebelle, qu'on se souvienne longtemps de mes exploits !"
             h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
 
-    show harald debout_normal_mid at right
-    show harald debout_normal_mid at right
+    show harald debout_normal_close at right
 
     h "J'ai décidé de récompenser ta valeur."
     h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
@@ -2176,34 +2175,34 @@ label soupcon_harald_defendre_porte:
     menu :
 
         "Merci !":
-            show einar debout_souriant_mid at left
+            show einar debout_souriant_close at left
             e "... Merci, je n'en attendais pas tant !"
             h "Ton désinteressement s'ajoute à tes prouesses ! On ne pourrait rêver d'avoir un meilleur homme à son service !"
 
         "Quel honneur !":
-            show einar debout_souriant_mid at left
+            show einar debout_souriant_close at left
             e "Quel honneur ! Merci, mon roi !"
-            show harald debout_normal_mid at right
+            show harald debout_normal_close at right
             h "Depuis tout ce temps passé à mon service et toutes les promesses que je t'avais faites, te récompenser aujourd'hui me paraissait être une obligation !"
 
         #A vérifier
         "Des terres brûlées ?":
-            show einar debout_contrarie_mid at left
+            show einar debout_contrarie_close at left
             e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ? "
-            show einar debout_attriste_mid at left
+            show einar debout_attriste_close at left
             e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
-            show einar debout_contrarie_mid at left
+            show einar debout_contrarie_close at left
             e "Vous vous moquez de moi, sire !"
-            show gv debout_contrarie_mid at center with dissolve
+            show gv debout_contrarie_close at center with dissolve
             gv "Sire !"
-            show harald debout_contrarie_mid at right
+            show harald debout_contrarie_close at right
             h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."
             hide gv with dissolve
-            show harald debout_normal_mid at right
+            show harald debout_normal_close at right
             h "Tes exploits ne te dispensent pas de respecter ton roi et empereur, Einar."
             h "Ne t'adresse plus jamais à moi de cette façon, ou la sanction sera exemplaire."
             e "..."
-            show einar debout_attriste_mid at left
+            show einar debout_attriste_close at left
             e "Sire, pardonnez mon attitude..."
 
     hide harald
