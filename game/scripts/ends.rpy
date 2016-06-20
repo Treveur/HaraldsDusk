@@ -275,7 +275,7 @@ label bad_ending_17:
 label normal_ending_18:
     "Le repas se poursuit toute la nuit, célébrant les exploits d'Einar autant que l'éradication des rebelles..."
     "Si l'Histoire ne se souviendra pas du nom d'Einar, la victoire retentissante du roi-empereur Harald Sigurdsson contre les rebelles restera gravée dans les mémoires."
-    "Car nul autre que Le Hurleur n'osera plus jamais s'élever contre le viking élu de Dieu."
+    "Car nul n'osera plus jamais s'élever contre le viking élu de Dieu."
     "Fin 18/22"
     jump credits
 
