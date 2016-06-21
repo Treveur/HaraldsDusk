@@ -526,7 +526,7 @@ image re combat_furieux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat
 
 
 ##Villageois / prisonniers
-define ve = Character('Villageois', color="#3498db", image="villageois")
+define ve = Character('{color=#3498db}Villageois{/color}', color="#3498db", image="villageois")
 
 # image side villageois = "villageois/villageois_portrait.png"
 
