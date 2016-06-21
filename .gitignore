@@ -8,3 +8,4 @@ log.txt
 traceback.txt
 *.rpyc
 *bak
+sh.exe.stackdump
