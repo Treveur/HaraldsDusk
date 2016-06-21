@@ -26,6 +26,9 @@ label intro:
     scene bg forest with dissolve
 
     "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
+
+    scene bg forest_blur with dissolve
+
     show harald debout_normal_mid at center with moveinright
     "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
     "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
@@ -263,6 +266,8 @@ label plaine_1 :
 
     "Une heure plus tard, à proximité du château de Dunbar."
 
+    scene bg plaine_plaine_matin_blur with dissolve
+
     show harald debout_normal_mid at right with moveinright
 
     h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
@@ -400,6 +405,8 @@ label plaine_2:
     scene bg plaine_cotière_matin with dissolve
 
     "Le lendemain, le groupe d'Einar et Logan se fraie un chemin à travers les landes en direction du nord."
+
+    scene bg plaine_cotière_matin_blur with dissolve
 
     show gv debout_normaux_mid at center with dissolve
 
@@ -694,6 +701,7 @@ label village_1:
         "Cela fait désormais deux jours que la troupe d'Einar progresse vers le nord."
 
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
+
     show ve debout_normaux_mid at right, ve_pos with dissolve:
     show logan debout_normal_mid at center with moveinleft
     l "Nous y sommes. Perth."
