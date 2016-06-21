@@ -1460,7 +1460,7 @@ label village_6:
     show ogma debout_normal_mid at right
 
     show moira debout_souriant_mid at right
-    if moira_abuse == False
+    if moira_abuse == False :
         "A l'écart, Moira adresse un maigre sourire à Einar."
     else:
         "A l'écart, Moira regarde le sol et semble crispée."
