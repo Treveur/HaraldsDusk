@@ -339,7 +339,7 @@ label credits:
     stop ambiance
 
     scene bg black with dissolve
-    centered "{font=fonts/Celtknot.ttf}{size=+80}Harald'S Dusk{/size}{/font}"
+    centered "{font=fonts/Celtknot.ttf}{size=+80}Harald's Dusk{/size}{/font}"
     with Pause(2.5)
     centered "{font=fonts/Celtknot.ttf}{size=+20}Design et Programmation :{/size}{/font}\n
     Alexandre Allais\n
