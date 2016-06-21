@@ -39,11 +39,13 @@ image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_deter
 image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attriste_mid.png", horizontal = True)
 image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
 image einar debout_furieux_mid_flip = im.Flip("einar/debout/einar_debout_furieux_mid.png", horizontal = True)
+image einar debout_blesse_mid_flip = im.Flip("einar/debout/einar_debout_blesse_mid.png", horizontal = True)
 
 image einar debout_determine_close_flip = im.Flip("einar/debout/einar_debout_determine_close.png", horizontal = True)
 image einar debout_attriste_close_flip = im.Flip("einar/debout/einar_debout_attriste_close.png", horizontal = True)
 image einar debout_normal_close_flip = im.Flip("einar/debout/einar_debout_normal_close.png", horizontal = True)
 image einar debout_furieux_close_flip = im.Flip("einar/debout/einar_debout_furieux_close.png", horizontal = True)
+image einar debout_blesse_close_flip = im.Flip("einar/debout/einar_debout_blesse_close.png", horizontal = True)
 
 #Combat
 
@@ -384,11 +386,11 @@ image ogma debout_determine_close = "ogma/debout/ogma_debout_determine_close.png
 
 #Flip
 image ogma debout_normal_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_souriant_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_furieux_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_attriste_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_contrarie_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
-image ogma debout_determine_mid_flip = im.Flip("ogma/debout/ogma_debout_normal_mid.png", horizontal = True)
+image ogma debout_souriant_mid_flip = im.Flip("ogma/debout/ogma_debout_souriant_mid.png", horizontal = True)
+image ogma debout_furieux_mid_flip = im.Flip("ogma/debout/ogma_debout_furieux_mid.png", horizontal = True)
+image ogma debout_attriste_mid_flip = im.Flip("ogma/debout/ogma_debout_attriste_mid.png", horizontal = True)
+image ogma debout_contrarie_mid_flip = im.Flip("ogma/debout/ogma_debout_contrarie_mid.png", horizontal = True)
+image ogma debout_determine_mid_flip = im.Flip("ogma/debout/ogma_debout_determine_mid.png", horizontal = True)
 
 
 #Combat
@@ -423,6 +425,12 @@ image ogma combat_hache_determine_mid = "ogma/combat_hache/ogma_combat_hache_det
 #close
 image ogma combat_hache_brandir_close = "ogma/combat_hache/ogma_combat_hache_brandir_close.png"
 image ogma combat_hache_determine_close = "ogma/combat_hache/ogma_combat_hache_determine_close.png"
+
+#flip
+image ogma combat_hache_brandir_mid_flip = im.Flip("ogma/combat_hache/ogma_combat_hache_brandir_mid.png", horizontal = True)
+image ogma combat_hache_determine_mid_flip = im.Flip("ogma/combat_hache/ogma_combat_hache_determine_mid.png", horizontal = True)
+image ogma combat_hache_brandir_close_flip = im.Flip("ogma/combat_hache/ogma_combat_hache_brandir_close.png", horizontal = True)
+image ogma combat_hache_determine_close_flip = im.Flip("ogma/combat_hache/ogma_combat_hache_determine_close.png", horizontal = True)
 
 ##Moira
 define m = Character("Moira", color = "#f00", image="moira")
@@ -526,7 +534,7 @@ image re combat_furieux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat
 
 
 ##Villageois / prisonniers
-define ve = Character('Villageois', color="#3498db", image="villageois")
+define ve = Character('{color=#3498db}Villageois{/color}', color="#3498db", image="villageois")
 
 # image side villageois = "villageois/villageois_portrait.png"
 
