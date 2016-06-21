@@ -8,7 +8,7 @@ init :
 #Image représentant les personnages
 
 ##Einar
-define e = Character('Einar', color="#e74c3c", image="einar")
+define e = Character('{color=#e74c3c}Einar{/color}', color="#e74c3c", image="einar")
 
 image side einar = "einar/einar_portrait.png"
 
@@ -130,7 +130,7 @@ image einar general_determine_close = "einar/general/einar_general_determine_clo
 
 
 ##Logan
-define l = Character('Logan', color="#f1c40f", image="logan")
+define l = Character('{color=#f1c40f}Logan{/color}', color="#f1c40f", image="logan")
 
 image side logan = "logan/logan_portrait.png"
 
@@ -187,7 +187,7 @@ image logan combat_blesse_close_flip = im.Flip("logan/combat/logan_combat_blesse
 image logan combat_determine_close_flip = im.Flip("logan/combat/logan_combat_determine_close.png", horizontal = True)
 
 ##Harald
-define h = Character('Harald', color="#3498db", image="harald")
+define h = Character('{color=#3498db}Harald{/color}', color="#3498db", image="harald")
 
 image side harald = "harald/harald_portrait.png"
 
@@ -289,22 +289,6 @@ image huscarls combat_enthousiaste_close = "huscarls/combat/huscarls_combat_enth
 image huscarls combat_furieux_close = "huscarls/combat/huscarls_combat_furieux_close.png"
 image huscarls combat_inquiet_close = "huscarls/combat/huscarls_combat_inquiets_close.png"
 
-##moira
-define m = Character("moira", image="moira")
-
-# image side moira = "moira/moira_portrait.png"
-
-#Debout
-# image moira debout_normal = "moira/debout/moira_debout_normaux.png"
-# image moira debout_rire = "moira/debout/moira_debout_rire.png"
-#
-# image moira debout_normal_mid = "moira/debout/moira_debout_normaux_mid.png"
-# image moira debout_rire_mid = "moira/debout/moira_debout_rire_mid.png"
-#
-# image moira debout_normal_close = "moira/debout/moira_debout_normaux_close.png"
-# image moira debout_rire_close = "moira/debout/moira_debout_rire_close.png"
-#
-
 ##Garde / Guerriers Vikings / Jeune Guerrier Viking
 define gv = Character('Guerriers Vikings', color="#e67e22", image="guerriers_vikings")
 
@@ -362,7 +346,7 @@ image jgv debout_normal_close = "jeune_viking/debout/jgv_debout_normal_close.png
 image jgv debout_pleurant_close = "jeune_viking/debout/jgv_debout_pleurant_close.png"
 
 ##Ogma
-define o = Character('Ogma', color="#d35400", image="ogma")
+define o = Character('{color=#d35400}Ogma{/color}', color="#d35400", image="ogma")
 
 image side ogma = "ogma/ogma_portrait.png"
 
@@ -433,9 +417,9 @@ image ogma combat_hache_brandir_close_flip = im.Flip("ogma/combat_hache/ogma_com
 image ogma combat_hache_determine_close_flip = im.Flip("ogma/combat_hache/ogma_combat_hache_determine_close.png", horizontal = True)
 
 ##Moira
-define m = Character("Moira", color = "#f00", image="moira")
+define m = Character("{color=#f00}Moira{/color}", color="#f00", image="moira")
 
-# image side moira = "moira/moira_portrait.png"
+image side moira = "moira/moira_portrait.png"
 
 #Debout
 
@@ -502,9 +486,9 @@ image moira attache_determine_close = "moira/buchet/moira_attache_determine_clos
 image moira attache_furieuse_close = "moira/buchet/moira_attache_furieuse_close.png"
 
 ##Rebelles ecossais
-define ge = Character('rebelles écossais', color="#f39c12", image="rebelles_ecossais")
+define ge = Character('{color=#f39c12}Rebelles écossais{/color}', color="#f39c12", image="rebelles_ecossais")
 
-# image side rebelles_ecossais = "rebelles_ecossais/rebelles_ecossais_portrait.png"
+image side rebelles_ecossais = "rebelles_ecossais/re_portrait.png"
 
 #Debout
 image re debout_normaux_mid = "rebelles_ecossais/debout/re_debout_normaux_mid.png"
