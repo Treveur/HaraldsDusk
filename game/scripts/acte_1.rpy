@@ -960,10 +960,13 @@ label e_choix_final_village_1:
     scene bg village with dissolve
 
     show ve debout_normaux_mid at right, ve_pos with dissolve
-    show logan debout_determine_mid_flip at center with moveinleft
-    show einar debout_normal_mid at left with moveinleft
+    show logan debout_determine_mid_flip at center zorder 1 with moveinleft
+    show einar debout_normal_mid at left zorder 1 with moveinleft
 
     l "Et maintenant ?"
+
+    show gv combat_normal_mid at left zorder 0 with moveinleft
+
     gv "On devrait raser tout ça, pour l'exemple !"
 
     menu:
@@ -978,7 +981,7 @@ label e_choix_final_village_1:
 
             e "Allez-y ! Brûlez tout ça, n'épargnez personne !"
 
-            show logan debout_determine_mid_flip at center zorder 1
+            show logan debout_determine_mid_flip at center
 
             l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
 
@@ -1016,17 +1019,15 @@ label e_choix_final_village_1:
 
                     e "Vous-autres, rasez-moi ce tas de boue !"
 
-                    show ve debout_effrayes_mid at right:
-                        linear 1 xoffset 1500
-
-                    show gv combat_normal_mid at right zorder 0 with moveinleft
                     # show gv combat_normal_mid at right zorder 0 with MoveTransition(1.5, enter=None, leave=None, old=False, layers=['master'], time_warp=None, enter_time_warp=None, leave_time_warp=None)
 
                     gv "HAAAAAAA !"
 
                     show gv debout_furieux_mid:
-                        linear 2 xoffset 1500
+                        ease 1.5 xoffset 2000
 
+                    show ve debout_effrayes_mid at right:
+                        linear 1 xoffset 1500
                     e "Battez-vous ! Tuez-les tous !"
 
                     show logan combat_normal_mid:
