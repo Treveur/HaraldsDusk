@@ -2260,9 +2260,9 @@ label harald_defendre_porte:
     show ogma combat_furieux_mid at center
     o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
     show harald combat_normal_mid_flip at left with moveinleft
-    show ogma combat_normal_mid at ogma_pos_right with moveinright
+    show ogma combat_normal_mid at ogma_pos_right, ogma_pos_reset with moveinright
     h "Ha ! Tu es celui qui a assassiné mon intendant ?"
-    show ogma combat_determine_mid at ogma_pos_right
+    show ogma combat_determine_mid
     o "Oui, et je suis prêt à réitérer l'exploit avec un roi !"
     show harald combat_furieux_mid_flip at left
     h "Pourriture ! Tu vas rendre gorge !"
@@ -2276,7 +2276,7 @@ label harald_defendre_porte:
     show ogma combat_furieux_mid at ogma_pos_right, shake
     show harald combat_normal_mid_flip at center
     h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
-    show ogma combat_normal_mid at ogma_pos_right
+    show ogma combat_normal_mid
     o "Jamais !"
     show harald combat_furieux_mid_flip at center
     h "Meurs, chien maigre !"
@@ -2392,20 +2392,26 @@ label cour_chateau_ogma_mort_defendre_porte:
 
 label e_sauve_ogma_defendre_porte:
 
-    show einar combat_normal_mid at center
-    show harald combat_hache_furieux_mid at left
-    show ogma combat_furieux_mid at ogma_pos_right
-    with dissolve
+    show einar combat_normal_mid at left
+    show harald combat_furieux_mid_flip at center
+    show ogma combat_furieux_mid
 
     "Einar dévie le coup de hache du roi et sauve Ogma."
+    show ogma combat_surpris_mid
+    show harald combat_furieux_mid_flip at center, shake
     "Emporté par son élan et son propre poids, la Hache se fiche dans le sol, déstabilisant Harald."
+    show harald combat_normal_mid at center
+    h "Einar ?!"
+    show ogma combat_furieux_mid
     "Voyant que le roi a relâché son emprise sur la relique, Ogma en profite pour trancher les deux tendons d'achille du roi."
+    show harald combat_normal_mid at center, shake
     "Harald tombe aux côtés d'Ogma, qui l'achève en lui enfonçant son coutelas dans la gorge."
-    hide einar
-    hide harald
-    with dissolve
+    hide harald with dissolve
+    show ogma combat_normal_mid
     "Aussitôt la horde rebelle resserre son étau sur les vikings, investie par une nouvelle vigueur."
+    show re combat_furieux_mid at right with moveinright
     "Pris au coeur de la mêlée, Einar est piétiné et laissé pour mort."
+    hide einar with dissolve
 
     "..."
 
