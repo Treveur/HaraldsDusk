@@ -1505,7 +1505,8 @@ label massacre_foret_2 (message, massacre_village):
 
                 menu menu_avertissement_villageois:
                     "Ne relâchez pas votre attention":
-                        call massacre_foret_2 ("attentif", massacre_foret) from _call_massacre_foret_2_8
+                        hide logan with dissolve
+                        call massacre_foret_2 ("attentif", massacre_village) from _call_massacre_foret_2_8
                         # call attaque_massacre_einar_sauf_foret_2 pass (message = "attentif") from _call_attaque_massacre_einar_sauf_foret_2_4
                     "Nous ne craignons pas les paysans !":
                         hide logan with dissolve
