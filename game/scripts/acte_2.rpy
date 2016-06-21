@@ -1011,7 +1011,7 @@ label village_4:
             e "Très bien."
     hide ogma with dissolve
     show moira debout_normal_mid at right with dissolve
-    m "Tu as donné ta parole à mon père. S'il te plaît, ne me déçois pas..."
+    m "Tu dois tenir ta parole, Einar."
     show moira debout_normal_mid at center with moveinleft
 
     menu :
