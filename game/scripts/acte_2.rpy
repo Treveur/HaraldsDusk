@@ -72,9 +72,9 @@ label interieur_maison_village_1:
             m "Je n'ai aucune intention de vous faire du mal."
             show einar prisonnier_normal_mid at left
 
-        "La situation est assez... plaisante !":
+        "Je m'attendais à un geôlier moins agréable":
             show einar prisonnier_souriant_mid at left
-            e "La situation est assez... satisfaisante. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme ..."
+            e "Je m'attendais à pire. Je n'ai encore jamais été pris au piège par une jolie jeune fille comme..."
             show moira debout_furieux_mid at center with moveinleft
             " Moira s'approche et assène un violent coup de pied dans le genou d'Einar, sans qu'il ne puisse se défendre."
             show einar prisonnier_furieux_mid at left, shake
@@ -305,7 +305,7 @@ label interieur_maison_village_2:
 
     menu:
 
-        "Appelle moi Einar":
+        "Tu peux me tutoyer":
             e "Après ces quelques jours passés ensemble, plus la peine de me parler comme à un étranger. Appelez moi-Einar."
             show moira debout_normal_mid at right
             m "Alors parle moi comme à une bonne connaissance."
@@ -318,7 +318,7 @@ label interieur_maison_village_2:
             e "Merci."
             show moira debout_normal_mid at right
             m "Pour ?"
-            e "Les soins, les bandages, tout."
+            e "Les soins, la nourriture, tout."
             show moira debout_souriant_mid at right
             m "Vous n'allez pas me remercier à chaque fois que je viens m'occuper de vous ! "
             e "Je vous suis redevable !"
@@ -343,27 +343,24 @@ label interieur_maison_village_2:
             m "Oui ! Ça va te sembler bizarre, mais j'apprécie ces moments."
             show einar prisonnier_normal_close at left
             e "De quoi tu parles ?"
-            m "Les moments où je te soigne. Pendant ce temps, je ne pense pas au reste. Ça me change les idées !"
-            show einar prisonnier_souriant_close at left
-            e "Tu te distrais en changeant les bandages souillés d'un prisonnier de guerre ?"
             show moira debout_souriant_close at right
-            m "Je préfère encore ça plutôt que de m'occuper des bêtes, bien que ce ne soit pas si différent !"
+            m "Je préfère te soigner plutôt que de m'occuper des bêtes, bien que ce ne soit pas si différent !"
             show moira debout_normal_close at right
             show einar prisonnier_normal_close at left
-
-        "Ce n'est pas la peine d'insister, je ne suis toujours pas interessé ":
-            show einar prisonnier_souriant_mid at left
-            e "Pas la peine d'insister : je ne suis toujours pas interessé !"
+            
+        "Ne rien dire":
+            e "..."
+            show moira debout_normal_mid at right
+            m "Tu... Vous êtes bien silencieux."
+            e "Vous pouvez me parler librement, ne vous sentez pas obligée de me vouvoyer."
             show moira debout_souriant_mid at right
-            m "Ne soit pas idiot !"
-            show moira debout_normal_close at right with dissolve
-            show einar prisonnier_normal_close at left with dissolve
-            e "Tiens ? On se tutoie maintenant ?"
-            m "Oui. J'en ai assez de devoir te parler comme à un étranger."
-            show einar prisonnier_souriant_close at left with dissolve
-            e "Ça me va !"
+            m "Très bien ! Dans ce cas, fais la même chose pour moi !"
+            m "Se parler comme deux étrangers est ridicule."
+            show einar prisonnier_souriant_mid at left
+            e "D'accord."
+            
 
-    " Les bandages d'Einar sont remplacés."
+    "Les bandages d'Einar sont remplacés."
     m "Je vais te laisser, c'est tout pour aujourd'hui."
     show einar prisonnier_souriant_close at left
     e "A demain ?"
@@ -429,11 +426,6 @@ label interieur_maison_village_3:
             e "Des rivières et des fleuves encaissés dans des vallées. C'est très beau."
             m "J'imagine..."
             e "Lorsqu'on va loin au nord, la nuit, on peut voir de grandes lumières vertes ou rouges dans le ciel. Certains disent que sont des hommages divins pour les héros morts au combat."
-            m "J'aimerais beaucoup voir ça, un jour..."
-            show moira debout_souriant_mid at right
-            m "Tu as une femme, là-bas ? Une famille ?"
-            show einar prisonnier_normal_mid at left
-            e "Non. Je n'ai plus personne."
 
         "Je ne veux pas en parler":
             show einar prisonnier_contrarie_mid at left
@@ -548,12 +540,6 @@ label interieur_maison_village_4:
             show moira debout_souriant_close at right
             m "Mais non ! Calme toi. Je n'ai pas prévu de saigner qui que ce soit aujourd'hui !"
 
-        "Mmmh... J'aime ce genre d'accessoires":
-            show einar prisonnier_souriant_close at left
-            e "Mmmh... Notre relation manquait un peu de piment. Des accessoires ne seront pas de trop..."
-            show moira debout_souriant_close at right
-            m "Ne dis pas de choses pareilles ! " #elle sourit
-
         "Pourquoi me tuer maintenant ?":
             show einar prisonnier_attriste_close at left
             e "Alors c'est la fin ? Pourquoi aujourd'hui ? Pourquoi m'avoir soigné pendant toutes ces semaines ?"
@@ -577,12 +563,6 @@ label interieur_maison_village_4:
             e "Où est le piège ? Ça me semble trop beau..."
             show moira debout_souriant_close at right
             m "Il n'y a pas de piège !"
-
-        "Tu ne veux pas me torturer un peu ?":
-            show einar prisonnier_souriant_close at left
-            e "Je suis déçu qu'il ne s'agisse pas d'un \"jeu\"... Tu ne veux pas me torturer un peu ?"
-            show moira debout_souriant_close at right
-            m "Arrête, ça devient gênant !" #elle sourit
 
         "Vous n'avez pas peur que je m'échappe ?":
             show einar prisonnier_normal_close at left
@@ -613,7 +593,6 @@ label interieur_maison_village_4:
             e "Grâce à toi, Moira !"
             show moira debout_souriant_close at right
             m "..." # elle sourit
-            m "Je n'ai fait qu'une partie du travail. Tu es solide ! Ton corps à largement participé à l'efficacité de mes soins."
 
         "Ne rien dire":
             show einar prisonnier_determine_close at left
@@ -637,7 +616,6 @@ label interieur_maison_village_4:
                 show einar prisonnier_normal_close at left
                 e "J'abandonnerai la carrière militaire. Je rentrerai en Norvège. J'en ai assez de servir les autres."
                 e "On m'a promit des récompenses, des terres. Je n'ai rien eu de tout ça. Seulement la mort de mes compagnons. Et j'ai été estropié ! Passé un certain temps, la gloire ne suffit plus."
-
                 $ decevoir_moira = "partir"
 
             "J'irai dans une région plus chaude":
@@ -649,8 +627,6 @@ label interieur_maison_village_4:
             "Je resterai ici":
                 show einar prisonnier_normal_close at left
                 e "Je vais rester ici. Je n'ai plus ma place en Norvège ni ailleurs. Harald me traquera partout où il le pourra. Je suppose que mon seul abri sera l'Ecosse."
-                show moira debout_souriant_close at right
-                m "Si tu réussis, nous serons heureux de te compter parmi nous. Allez, il est temps de sortir !"
 
             "Je ne sais pas":
                 show einar prisonnier_normal_close at left
@@ -660,7 +636,7 @@ label interieur_maison_village_4:
 
         if decevoir_moira == "partir":
             show moira debout_normal_close at right
-            m "Oh... Tu pourrais rester ici ? Je pense que les gens accepteraient ta présence si tu participais à la vie du village."
+            m "Tu pourrais rester ici ? Je pense que les gens accepteraient ta présence si tu participais à la vie du village."
             show einar prisonnier_normal_close at left
             e "Je ne sais pas..."
             show moira debout_attriste_close at right
@@ -672,17 +648,17 @@ label interieur_maison_village_4:
             show einar prisonnier_normal_close at left
             e "Qu'est-ce que tu voudrais, toi ?"
             show moira debout_normal_close at right
-            m "Ce n'est pas à moi de te dire ce que tu dois faire. J'aimerais juste savoir que tu es en sécurité. Le roi voudra se venger de toi."
+            m "Ce n'est pas à moi de te dire ce que tu dois faire. Quoi qu'il en soit, le roi voudra se venger de toi."
             e "Où pourrais-je aller ? Harald domine le monde."
             m "Tu pourrais rester ici. Tu vivrais avec nous..."
             e "..."
             show moira debout_souriant_close at right
-            m "Je ne veux pas te gêner, excuse-moi. Allez, il est temps de sortir !"
+            m "Allez, il est temps de sortir !"
 
         else:
             show moira debout_souriant_close at right
 
-    m "Viens !"
+    m "Suis-moi !"
     show moira debout_souriant_close at right with moveinright
     hide moira with dissolve
     show einar prisonnier_normal_close at right with moveinright
@@ -797,7 +773,6 @@ label village_3:
             e "Oui. Cette sortie est agréable, surtout aussi bien accompagné."
             show moira debout_souriant_mid at right
             m "..." #elle sourit
-            m "Moi aussi, j'ai apprécié de passer du temps avec toi."
 
         "Non. Je déteste l'Ecosse !":
             show einar prisonnier_contrarie_mid at left
@@ -815,7 +790,7 @@ label village_3:
             e "Non. Cette saloperie était plus sèche que l'Anatolie ! J'ai cru m'étouffer !"
             m "Et le haggis ? Je suis sûre que tu as aimé !"
             e "Pas vraiment."
-            m "Pourtant, quand je t'en ai donné alors que tu étais attaché, tu avais l'air d'adorer ça."
+            m "Pourtant, quand je t'en ai donné alors que tu étais enfermé, tu avais l'air d'adorer ça."
             e "Tu les préparais mieux."
             m "Ils étaient préparés par Fenella."
             show einar prisonnier_determine_mid at left
@@ -840,10 +815,12 @@ label village_3:
         show moira debout_souriant_mid at right
         m "Arrête de râler ! Tu auras beau dire ce que tu veux, j'ai bien vu que tu avais apprécié ce que je t'ai montré. "
 
-    show moira debout_souriant_mid at right
-    m "Avant de te ramener à la maison, j'aimerais te montrer une dernière chose. C'est un endroit que j'aime beaucoup."
-    "Moira prend Einar par la main et l'entraîne derrière elle, sortant discrètement du village."
-    show moira debout_souriant_mid_flip at right
+    show moira debout_normal_mid at right
+    m "Avant de te ramener à la maison, j'aimerais te parler de quelque chose."
+    e "Oui ?"
+    m "Je préfererais que nous allions à l'écart."
+    "Moira invite Einar à la suivre, sortant discrètement du village."
+    show moira debout_normal_mid_flip at right
     hide moira with dissolve
     show einar prisonnier_determine_mid at right with moveinright
     hide einar with dissolve
@@ -873,7 +850,7 @@ label foret_3:
             e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt et..."
 
     show moira debout_souriant_mid at center
-    m "Chuuut..."
+    m "Tais-toi et suis moi."
 
     show moira debout_normal_mid_flip at right with moveinright
     hide moira with dissolve
@@ -906,31 +883,65 @@ label paradis_foret_1:
         "C'est magnifique":
             e "C'est un très bel endroit. Est-ce que..."
 
-    show moira debout_souriant_mid at center
-    "Moira pousse doucement Einar contre un arbre."
-    "Elle recule de quelques pas, puis se retourne."
-    show moira debout_souriant_mid at right with moveinright
+    show moira debout_normal_mid at center
+    "Moira semble préoccupée."
+    e "Ça ne va pas ?"
+    m "J'ai besoin de te parler de ce que t'a demandé mon père."
+    e "Je croyais que tu étais au courant."
+    e "Il m'a demandé de permettre à ses troupes d'entrer à Dunbar, et de priver le roi de sa Hache."
+    m "Oui, je sais. Ce que je ne sais pas, c'est comment il t'a convaincu de le faire."
+    e "Il m'a promit la liberté et de l'or."
+    m "Et tu comptes accomplir la mission qu'il t'a confié ? Tu comptes trahir ton roi ?"
+    m "Je n'y crois pas une seconde."
+    show moira debout_normal_mid at right with moveinright
     "..."
-    show moira debout_souriant_mid_flip at right
+    show moira debout_attriste_mid_flip at right
     "..."
     hide moira with dissolve
     "Elle se dénude lentement devant Einar, sans le regarder."
     show moira nue_normal_mid_flip at right with dissolve
+    e "Que... Qu'est-ce que tu fais ? Qu'est-ce qui te prend ?"
+    m "C'est ce que tu veux, n'est-ce pas ?"
+    e "De quoi tu parles ?"
+    m "Je... Je veux que tu tienne la promesse que tu as faite à mon père."
+    m "Alors je te repose la question : est-ce que c'est ce que tu veux ?"
 
     menu :
 
-        "La regarder (Profiter du moment)":
-            show moira nue_souriant_close at center with moveinleft
+        "Non. Rhabille-toi.":
+            e "Tu te trompe sur mes intentions."
+            show einar prisonnier_determine_mid at left
+            e "Rhabille-toi s'il-te-plaît."
+            m "..."
+            show moira nue_normal_mid at right
+            hide moira with dissolve
+            show moira debout_normal_mid at right with dissolve
+            show einar prisonnier_normal_mid at left
+            e "Tout ceci ne regarde que ton père et moi."
+            e "Il n'appartient qu'à moi de décider de tenir mes engagements ou pas. Utiliser ton corps ne me fera pas changer d'avis."
+            e "Et, d'autre part, il n'est pas dans mes habitude d'avoir ce genre de relations avec celles qui n'en ont pas réellement envie."
+            show moira debout_attriste_mid at right
+            m "... Excuse-moi."
+            e "Tu n'as pas à t'excuser. Je comprend pourquoi tu m'as fait cette... \"proposition\"."
+            e "Tu étais prête à te sacrifier pour les tiens, c'est un geste qui ne manque pas de noblesse."
+            show moira debout_normal_mid at right
+            show einar prisonnier_determine_mid at left
+            e "Nous devrions retourner au village maintenant. Si quelqu'un s'aperçoit que je n'y suis plus..."
+            m "Oui, très bien..."
+            show einar prisonnier_normal_mid at left
+            jump village_4
+            
+        "Oui. (Profiter d'elle)":
+            e "Tu as deviné juste."
+            e "Offre-toi à moi et ton peuple sera libéré."
+            show moira nue_normal_close at center with moveinleft
             show einar prisonnier_normal_close at left
             #Pas logique
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
-            e "Pourquoi ?"
-            m "Je n'ai jamais été aussi proche d'un homme."
-            m "Tu me plais. Bientôt, tu seras reparti. Je veux simplement profiter de cet instant avec toi."
-            e "Mais..."
-            m "Ne dis rien."
+            m "Tu me le promet ?"
+            e "Bien sûr. Je n'ai qu'une parole."
             show einar prisonnier_souriant_close at left
-            "Elle embrasse doucement Einar et commence à l'enlacer."
+            "Elle touche timidement Einar et semble apeurée."
             "Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite."
             "..."
             jump village_4

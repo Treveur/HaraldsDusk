@@ -1258,6 +1258,7 @@ label e_tuer_moira_maison_1:
             show einar combat_normal_close
 
             e "Battez-vous ! Tuez-les tous !"
+            play music slaughter
             play ambiance fight
             show logan combat_normal_close:
                 ease 1 xoffset 1500
@@ -1307,7 +1308,7 @@ label e_tuer_moira_maison_1:
 label choix_retour_village_1(massacre = False):
 
     scene bg village with dissolve
-
+    
     hide ve with dissolve
     if massacre:
         stop ambiance
