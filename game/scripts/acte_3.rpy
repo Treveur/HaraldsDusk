@@ -2377,16 +2377,16 @@ label cour_chateau_ogma_mort_defendre_porte:
     hide patrick
     with dissolve
 
-    show einar debout_attriste_mid at right with dissolve
-    show moira debout_attriste_mid at left
+    show einar debout_attriste_mid_flip at right with dissolve
+    show moira debout_normal_mid_flip at left
 
     menu :
         "Je dois sauver Moira !":
-            show einar debout_determine_mid at left
+            show einar debout_determine_mid_flip at right
             jump bad_ending_20
             
         "Qu'elle brûle comme les autres":
-            show einar debout_furieux_mid at left
+            show einar debout_furieux_mid_flip at right
             jump bad_ending_19
         
 

@@ -288,15 +288,21 @@ label bad_ending_19:
     jump credits
 
 label bad_ending_20:
-    show einar debout_determine_mid at center with move
+    show einar debout_determine_mid_flip at left with moveinleft
     "Einar fend la foule, s'élance vers le bûcher et tente de détacher Moira."
+    show moira debout_normal_close_flip at left
+    show einar debout_determine_close_flip at center
+    with dissolve
     "Lorsqu'il parvient à trancher ses liens, un archer lui décoche une flèche dans l'abdomen."
-    show einar debout_blesse_mid at center
+    show einar debout_attriste_close_flip at center, shake
     e "Argh... Cours ! Va t'en !"
     "Moira n'essaie même pas de bouger."
-    show moira debout_furieux_mid at right
+    show moira debout_furieux_close_flip at left
     "Elle arrache la hachette de la ceinture d'Einar et lui en assène un coup violent en travers de la gorge."
+    show einar prisonnier_attriste_close_flip at center, shake
+    hide einar with dissolve
     "Alors qu'Einar s'effondre, il ne voit rien d'autre que les yeux larmoyants de haine de Moira."
+    "Dans les hurlements des prisonniers, les flammes de la rébellion s'éteignent."
     "Fin 20/22"
     jump credits
 

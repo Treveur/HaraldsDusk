@@ -34,6 +34,17 @@ image einar debout_contrarie_close = "einar/debout/einar_debout_contrarie_close.
 image einar debout_effraye_close = "einar/debout/einar_debout_effraye_close.png"
 image einar debout_determine_close = "einar/debout/einar_debout_determine_close.png"
 
+#flip
+image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
+image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attriste_mid.png", horizontal = True)
+image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
+image einar debout_furieux_mid_flip = im.Flip("einar/debout/einar_debout_furieux_mid.png", horizontal = True)
+
+image einar debout_determine_close_flip = im.Flip("einar/debout/einar_debout_determine_close.png", horizontal = True)
+image einar debout_attriste_close_flip = im.Flip("einar/debout/einar_debout_attriste_close.png", horizontal = True)
+image einar debout_normal_close_flip = im.Flip("einar/debout/einar_debout_normal_close.png", horizontal = True)
+image einar debout_furieux_close_flip = im.Flip("einar/debout/einar_debout_furieux_close.png", horizontal = True)
+
 #Combat
 
 #mid
@@ -60,12 +71,6 @@ image einar combat_hache_determine_mid = "einar/combat_hache/einar_combat_hache_
 image einar combat_hache_normal_close = "einar/combat_hache/einar_combat_hache_normal_close.png"
 image einar combat_hache_furieux_close = "einar/combat_hache/einar_combat_hache_furieux_close.png"
 image einar combat_hache_determine_close = "einar/combat_hache/einar_combat_hache_determine_close.png"
-
-#flip
-image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
-image einar debout_determine_close_flip = im.Flip("einar/debout/einar_debout_determine_close.png", horizontal = True)
-image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attriste_mid.png", horizontal = True)
-image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
 
 #combat
 image einar combat_normal_mid_flip = im.Flip("einar/combat/einar_combat_normal_mid.png", horizontal = True)
@@ -106,6 +111,15 @@ image einar prisonnier_effraye_mid_flip = im.Flip("einar/prisonnier/einar_prison
 image einar prisonnier_furieux_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_furieux_mid.png", horizontal = True)
 image einar prisonnier_normal_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_normal_mid.png", horizontal = True)
 image einar prisonnier_souriant_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_souriant_mid.png", horizontal = True)
+
+image einar prisonnier_attriste_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_attriste_close.png", horizontal = True)
+image einar prisonnier_blesse_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_blesse_close.png", horizontal = True)
+image einar prisonnier_contrarie_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_contrarie_close.png", horizontal = True)
+image einar prisonnier_determine_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_determine_close.png", horizontal = True)
+image einar prisonnier_effraye_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_effraye_close.png", horizontal = True)
+image einar prisonnier_furieux_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_furieux_close.png", horizontal = True)
+image einar prisonnier_normal_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_normal_close.png", horizontal = True)
+image einar prisonnier_souriant_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_souriant_close.png", horizontal = True)
 
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
