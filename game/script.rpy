@@ -567,9 +567,9 @@ image patrick debout_normal_close_flip = im.Flip("patrick/debout/patrick_debout_
 
 ##Forest
 #forest
-image bg forest = "scenes/foretWestruther_ext_jour_foret.jpg"
-image bg forest_night = "scenes/foretWestruther_ext_nuit_foret.jpg"
-image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.jpg"
+image bg forest = "scenes/foretWestruther_ext_jour_foret.png"
+image bg forest_night = "scenes/foretWestruther_ext_nuit_foret.png"
+image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.png"
 image bg little_heaven = "scenes/foretWestruther_ext_matin_paradis.png"
 
 #sentier
