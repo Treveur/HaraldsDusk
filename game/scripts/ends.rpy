@@ -307,7 +307,11 @@ label bad_ending_20:
     jump credits
 
 label bad_ending_21:
+    scene bg plaine_chateau_crepuscule with dissolve
+    show einar debout_normal_close at center with moveinleft
     "Einar s'éloigne du château en enjambant sans distinction les cadavres écossais et vikings, tâchant ses vêtements dans la végétation imbibée de sang."
+    show einar debout_normal_close at right with moveinright
+    hide einar with dissolve
     "Derrière lui, Dunbar brûle."
     "Fin 21/22"
     jump credits

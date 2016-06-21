@@ -40,12 +40,14 @@ image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attris
 image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
 image einar debout_furieux_mid_flip = im.Flip("einar/debout/einar_debout_furieux_mid.png", horizontal = True)
 image einar debout_blesse_mid_flip = im.Flip("einar/debout/einar_debout_blesse_mid.png", horizontal = True)
+image einar debout_contrarie_mid_flip = im.Flip("einar/debout/einar_debout_contrarie_mid.png", horizontal = True)
 
 image einar debout_determine_close_flip = im.Flip("einar/debout/einar_debout_determine_close.png", horizontal = True)
 image einar debout_attriste_close_flip = im.Flip("einar/debout/einar_debout_attriste_close.png", horizontal = True)
 image einar debout_normal_close_flip = im.Flip("einar/debout/einar_debout_normal_close.png", horizontal = True)
 image einar debout_furieux_close_flip = im.Flip("einar/debout/einar_debout_furieux_close.png", horizontal = True)
 image einar debout_blesse_close_flip = im.Flip("einar/debout/einar_debout_blesse_close.png", horizontal = True)
+image einar debout_contrarie_close_flip = im.Flip("einar/debout/einar_debout_contrarie_close.png", horizontal = True)
 
 #Combat
 
