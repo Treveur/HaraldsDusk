@@ -479,19 +479,23 @@ label interieur_grande_porte_chateau_1:
 
 #Baisser pont-levis
 label pont_levis_baisse:
-
-    #???
     #Ambiance bruit cliqueti boucliers et épée
     scene bg cour_chateau_crepuscule
     show gv combat_normal_mid at center with dissolve
 
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
+    hide gv with dissolve
     "Une volée de flèches abat une partie des rebelles qui foncent vers le château."
     play sound drawbrigde
+    show bg chateau_porte_interieur_crepuscule
     pause (4)
-    show bg cour_chateau_crepuscule with vpunch
+    show bg chateau_porte_interieur_crepuscule with vpunch
     "Le pont s'abaisse brutalement, laissant le champ libre."
+
+    scene bg cour_chateau_crepuscule
+    show gv combat_normal_mid at center
+    with dissolve
     gv "Trahison ! Bloquez le passage, vite !"
     "..."
 
