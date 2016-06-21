@@ -60,7 +60,11 @@ label interieur_maison_village_1:
             m "Vos blessures sont graves. Une infection a déjà commencé à attaquer votre cuisse. Il vous faudra plus d'un mois pour vous remettre."
             $ menu_choice_3 = False
             jump menu_rencontre_moira_blesse
-
+        
+        "Qu'est-ce que vous me voulez ?":
+            e "Qu'est-ce que vous allez me faire ?"
+            m "Vous allez vite le savoir."
+        
         "Arrière ! Laisse-moi !":
             show einar prisonnier_effraye_mid at left
             e "Laisse-moi tranquille ! Où est Ogma ? Je veux sortir d'ici !"

@@ -334,6 +334,13 @@ image gv debout_rire_close = "guerriers_vikings/debout/gv_debout_rire_close.png"
 image gv debout_contrarie_close = "guerriers_vikings/debout/gv_debout_contraries_close.png"
 image gv debout_determines_close = "guerriers_vikings/debout/gv_debout_determines_close.png"
 
+image gv debout_normaux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_normaux_mid.png", horizontal = True)
+image gv debout_enthousiaste_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_enthousiastes_mid.png", horizontal = True)
+image gv debout_furieux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_furieux_mid.png", horizontal = True)
+image gv debout_rire_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_rire_mid.png", horizontal = True)
+image gv debout_contrarie_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_contraries_mid.png", horizontal = True)
+image gv debout_determines_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_determines_mid.png", horizontal = True)
+
 #Combat
 
 #mid
@@ -391,18 +398,21 @@ image ogma combat_normal_mid = "ogma/combat/ogma_combat_normal_mid.png"
 image ogma combat_furieux_mid = "ogma/combat/ogma_combat_furieux_mid.png"
 image ogma combat_contrarie_mid = "ogma/combat/ogma_combat_contrarie_mid.png"
 image ogma combat_determine_mid = "ogma/combat/ogma_combat_determine_mid.png"
+image ogma combat_surpris_mid = "ogma/combat/ogma_combat_surpris_mid.png"
 
 #close
 image ogma combat_normal_close = "ogma/combat/ogma_combat_normal_close.png"
 image ogma combat_furieux_close = "ogma/combat/ogma_combat_furieux_close.png"
 image ogma combat_contrarie_close = "ogma/combat/ogma_combat_contrarie_close.png"
 image ogma combat_determine_close = "ogma/combat/ogma_combat_determine_close.png"
+image ogma combat_surpris_close = "ogma/combat/ogma_combat_surpris_close.png"
 
 #flip
 image ogma combat_normal_mid_flip = im.Flip("ogma/combat/ogma_combat_normal_mid.png", horizontal = True)
 image ogma combat_determine_mid_flip = im.Flip("ogma/combat/ogma_combat_determine_mid.png", horizontal = True)
 image ogma combat_furieux_mid_flip = im.Flip("ogma/combat/ogma_combat_furieux_mid.png", horizontal = True)
 image ogma combat_contrarie_mid_flip = im.Flip("ogma/combat/ogma_combat_contrarie_mid.png", horizontal = True)
+image ogma combat_surpris_mid_flip = im.Flip("ogma/combat/ogma_combat_surpris_mid.png", horizontal = True)
 
 #Combat Hache
 
@@ -683,6 +693,9 @@ transform ogma_pos_left:
 
 transform ogma_pos_right:
     xoffset 850
+
+transform ogma_pos_reset:
+    xoffset - 300
 
 #Déclaration timer
 transform alpha_dissolve:
