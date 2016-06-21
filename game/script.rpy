@@ -419,7 +419,7 @@ image ogma combat_hache_determine_close_flip = im.Flip("ogma/combat_hache/ogma_c
 ##Moira
 define m = Character("{color=#f00}Moira{/color}", color="#f00", image="moira")
 
-# image side moira = "moira/moira_portrait.png"
+image side moira = "moira/moira_portrait.png"
 
 #Debout
 
@@ -488,7 +488,7 @@ image moira attache_furieuse_close = "moira/buchet/moira_attache_furieuse_close.
 ##Rebelles ecossais
 define ge = Character('{color=#f39c12}Rebelles écossais{/color}', color="#f39c12", image="rebelles_ecossais")
 
-# image side rebelles_ecossais = "rebelles_ecossais/rebelles_ecossais_portrait.png"
+image side rebelles_ecossais = "rebelles_ecossais/re_portrait.png"
 
 #Debout
 image re debout_normaux_mid = "rebelles_ecossais/debout/re_debout_normaux_mid.png"
