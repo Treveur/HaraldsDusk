@@ -133,10 +133,19 @@ init -1 python hide:
     ## comme le pourcentage de la taille de l'élément ou de l'écran.
 
     # style.mm_menu_frame.xpos = 0.5
-    # style.mm_menu_frame.xanchor = 0.5
+    #style.mm_menu_frame.xanchor = 0.5
     # style.mm_menu_frame.ypos = 0.75
-    # style.mm_menu_frame.yanchor = 0.5
+    #style.mm_menu_frame.yanchor = 0.5
+    style.mm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
+    style.mm_button.hover_background = Frame(im.MatrixColor("interface/buttons/mainmenu/mmbutton.png", im.matrix.brightness(-0.1)),0,0)
 
+    style.mm_button.yminimum = 66
+    style.mm_button.xminimum = 502
+
+    style.mm_button_text.xanchor = 0.5
+    style.mm_button_text.yanchor = 0.5
+    style.mm_button_text.xpos = 0.5
+    style.mm_button_text.ypos = 0.5
 
     #########################################
     ## Ici nous personnalisons la police utilisée par défaut pour le texte.
