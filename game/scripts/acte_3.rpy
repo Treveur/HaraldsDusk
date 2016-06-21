@@ -1234,7 +1234,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     show harald combat_blesse_mid_flip
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
-    h "... Laisse-moi vivre, s'il-te-plaît."
+    h "... Laisse-moi vivre, pitié."
 
 
     menu :
@@ -1454,13 +1454,16 @@ label village_6:
     e "..."
     o "Cela concerne Moira."
     show ogma debout_souriant_mid at right
-    o "Je crois savoir que vous vous portez une grande affection..."
+    o "Je crois savoir que vous vous portez une certaine affection..."
     o "Je serais heureux de compter le libérateur de mon peuple dans ma famille."
     o "J'ai l'honneur de t'offrir la main de ma fille, si tu l'acceptes."
     show ogma debout_normal_mid at right
 
     show moira debout_souriant_mid at right
-    "Bien qu'à l'écart, Moira fait un grand sourire à Einar."
+    if moira_abuse == False
+        "A l'écart, Moira adresse un maigre sourire à Einar."
+    else:
+        "A l'écart, Moira regarde le sol et semble crispée."
 
     menu:
 
@@ -1477,7 +1480,7 @@ label village_6:
             e "Je n'aurais pas pu espérer une plus belle récompense !"
 
         "Pas de sentiments pour Moira":
-            show einar debout_attriste_mid at left
+            show einar debout_normal_mid at left
             e "Ces sentiments ne sont pas partagés. Je préfère conserver ma liberté."
             show ogma debout_contrarie_mid at right
             show moira debout_attriste_mid at right
@@ -1489,11 +1492,11 @@ label village_6:
 
         #Animation moira part
         hide moira debout_attriste_mid with dissolve
-        "Moira s'en va."
+        "Moira s'en va. Elle a l'air soulagée."
         show ogma debout_attriste_mid at right
         o "A vrai dire, la déception de ma fille doit être encore plus grande..."
-        o "Elle était à l'origine de cette demande."
-        e "..."
+        show einar debout_normal_mid at left
+        e "Je n'en suis pas si sûr."
         show ogma debout_normal_mid at right
         o "Que comptes-tu faire désormais ?"
 
