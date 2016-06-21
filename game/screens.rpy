@@ -188,19 +188,32 @@ screen main_menu:
     window:
         style "mm_root"
 
-    # Les boutons du menu principal.
-    frame:
-        style_group "mm"
-        xalign .98
-        yalign .98
+    vbox:
+        spacing 20
+        xalign 0.5
+        yalign 0.7
 
-        has vbox
+        button:
+            style "mm_button"
+            text "Start Game" style "mm_button_text"
+            action ShowMenu("choose_lenght")
 
-        textbutton _("Start Game") action ShowMenu("choose_lenght")
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit(confirm=False)
+        button:
+            style "mm_button"
+            text "Charger" style "mm_button_text"
+            action ShowMenu("load")
+
+        button:
+            style "mm_button"
+            text "Options" style "mm_button_text"
+            action ShowMenu("preferences")
+
+        button:
+            style "mm_button"
+            text "Quit" style "mm_button_text"
+            action Quit(confirm=False)
+
+
 
 init -2 python:
 
@@ -348,17 +361,25 @@ screen choose_lenght:
     window:
         style "mm_root"
 
-    # Les boutons du menu principal.
-    frame:
-        style_group "mm"
-        xalign .5
-        yalign .5
+    vbox:
+        spacing 40
+        xalign 0.5
+        yalign 0.7
 
-        has vbox
+        button:
+            style "mm_button"
+            text "Version Courte" style "mm_button_text"
+            action [SetVariable("short_version",True), Start()]
 
-        textbutton _("Version Courte") action [SetVariable("short_version",True), Start()]
-        textbutton _("Version Longue") action [SetVariable("short_version",False), Start()]
-        textbutton _("Return") action Return()
+        button:
+            style "mm_button"
+            text "Version Longue" style "mm_button_text"
+            action [SetVariable("short_version",False), Start()]
+
+        button:
+            style "mm_button"
+            text "Return" style "mm_button_text"
+            action Return()
 
 init -2 python:
     short_version = False
