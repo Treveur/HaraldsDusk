@@ -233,23 +233,52 @@ screen navigation:
     window:
         style "gm_root"
 
-    # Boutons de navigation.
-    frame:
-        style_group "gm_nav"
-        xalign .98
-        yalign .98
+    vbox:
+        spacing 20
+        xalign 0.65
+        yalign 0.5
 
-        has vbox
+        button:
+            style "gm_button"
+            text "Return" style "mm_button_text"
+            action Return()
 
-        textbutton _("Return") action Return()
-        textbutton _("Text History") action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Save Game") action ShowMenu("save")
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Main Menu") action MainMenu()
-        textbutton _("Help") action Help()
-        #Enlever confirm=False pour la build final
-        textbutton _("Quit") action Quit(confirm=False)
+        button:
+            style "gm_button"
+            text "Options" style "mm_button_text"
+            action ShowMenu("preferences")
+
+        button:
+            style "gm_button"
+            text "Sauvegarder" style "mm_button_text"
+            action ShowMenu("save")
+
+        button:
+            style "gm_button"
+            text "Charger" style "mm_button_text"
+            action ShowMenu("load")
+
+        button:
+            style "gm_button"
+            text "Main Menu" style "mm_button_text"
+            action MainMenu()
+
+        button:
+            style "gm_button"
+            text "Quit" style "mm_button_text"
+            action Quit(confirm=False)
+
+        # has vbox
+        #
+        # textbutton _("Return") action Return()
+        # textbutton _("Text History") action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
+        # textbutton _("Preferences") action ShowMenu("preferences")
+        # textbutton _("Save Game") action ShowMenu("save")
+        # textbutton _("Load Game") action ShowMenu("load")
+        # textbutton _("Main Menu") action MainMenu()
+        # textbutton _("Help") action Help()
+        # #Enlever confirm=False pour la build final
+        # textbutton _("Quit") action Quit(confirm=False)
 
 init -2 python:
     style.gm_nav_button.size_group = "gm_nav"
@@ -268,61 +297,90 @@ init -2 python:
 
 screen file_picker:
 
-    frame:
-        style "file_picker_frame"
+    $ columns = 4
+    $ rows = 2
+    $ k = 0
 
-        has vbox
+    #Display a grid of file slots.
+    #grid columns rows:
+    vbox:
+        spacing 50
+        for j in range (1,5):
+            hbox:
+                xpos 150
+                ypos 40
 
-        # Les boutons en haut permettent à l'utilisateur
-        # de sélectionner une page de fichiers.
-        hbox:
-            style_group "file_picker_nav"
+                spacing 50
 
-            textbutton _("Previous"):
-                action FilePagePrevious()
+                # Display ten file slots, numbered 1 - 10.
+                for i in range (1,3):
+                    $ k = k + 1
+                    button:
+                        action FileAction(k)
 
-            textbutton _("Auto"):
-                action FilePage("auto")
+                        has vbox spacing 50
 
-            textbutton _("Quick"):
-                action FilePage("quick")
+                        add FileScreenshot(k) size(192,108) ypos 10
 
-            for i in range(1, 9):
-                textbutton str(i):
-                    action FilePage(i)
+                        $ file_name = FileSlotName(k, columns * rows)
+                        $ file_time = FileTime(k, empty=_("Empty Slot"))
+                        $ save_name = FileSaveName(k)
 
-            textbutton _("Next"):
-                action FilePageNext()
+                        text "[file_name]. [file_time!t]\n"
 
-        $ columns = 2
-        $ rows = 5
 
-        # Affiche une grille d'emplacements de sauvegarde
-        grid columns rows:
-            transpose True
-            xfill True
-            style_group "file_picker"
-
-            # Montre dix emplacements, numérotés de 1 à 10.
-            for i in range(1, columns * rows + 1):
-
-                # Chaque emplacement est un bouton.
-                button:
-                    action FileAction(i)
-                    xfill True
-
-                    has hbox
-
-                    # Ajoute un screenshot.
-                    add FileScreenshot(i)
-
-                    $ file_name = FileSlotName(i, columns * rows)
-                    $ file_time = FileTime(i, empty=_("Empty Slot."))
-                    $ save_name = FileSaveName(i)
-
-                    text "[file_name]. [file_time!t]\n[save_name!t]"
-
-                    key "save_delete" action FileDelete(i)
+    # frame:
+    #     style "file_picker_frame"
+    #
+    #     has vbox
+    #
+    #     # Les boutons en haut permettent à l'utilisateur
+    #     # de sélectionner une page de fichiers.
+    #     hbox:
+    #         style_group "file_picker_nav"
+    #
+    #         textbutton _("Previous"):
+    #             action FilePagePrevious()
+    #
+    #         textbutton _("Auto"):
+    #             action FilePage("auto")
+    #
+    #         for i in range(1, 3):
+    #             textbutton str(i):
+    #                 action FilePage(i)
+    #
+    #         textbutton _("Next"):
+    #             action FilePageNext()
+    #
+    #     $ columns = 1
+    #     $ rows = 3
+    #
+    #     # Affiche une grille d'emplacements de sauvegarde
+    #     grid columns rows:
+    #         transpose True
+    #         xfill True
+    #         style_group "file_picker"
+    #
+    #         # Montre dix emplacements, numérotés de 1 à 10.
+    #         for i in range(1, columns * rows + 1):
+    #
+    #             # Chaque emplacement est un bouton.
+    #             button:
+    #                 action FileAction(i)
+    #                 xfill True
+    #
+    #                 has hbox
+    #
+    #                 # Ajoute un screenshot.
+    #                 add FileScreenshot(i)
+    #
+    #                 $ file_name = FileSlotName(i, columns * rows)
+    #                 $ file_time = FileTime(i, empty=_("Empty Slot."))
+    #                 $ save_name = FileSaveName(i)
+    #
+    #                 text "[file_name]. [file_time!t]\n[save_name!t]"
+    #
+    #                 key "save_delete" action FileDelete(i)
 
 screen save:
 
