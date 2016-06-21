@@ -259,7 +259,7 @@ label plaine_1 :
 
     play ambiance coast
 
-    scene bg plaine_chateau_matin with dissolve
+    scene bg plaine_plaine_matin with dissolve
 
     "Une heure plus tard, à proximité du château de Dunbar."
 
@@ -355,7 +355,7 @@ label plaine_1 :
 
             show logan debout_souriant_mid_flip at center
 
-            l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
+            l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt ! Ha ha !"
 
             h "Ne vous inquiétez pas, vous aurez tous les deux de quoi boire et manger une fois revenus ! Ha ha !"
 
@@ -953,7 +953,9 @@ label e_fouiller_village_1(einarFouille = False):
     hide einar
     with dissolve
 
+
 label e_choix_final_village_1:
+    stop ambiance
     scene bg village with dissolve
     show ve debout_normaux_mid at right with dissolve
     show logan debout_determine_mid_flip at center with dissolve
