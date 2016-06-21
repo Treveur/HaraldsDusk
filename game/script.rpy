@@ -349,6 +349,7 @@ image jgv debout_pleurant_close = "jeune_viking/debout/jgv_debout_pleurant_close
 
 ##Ogma
 define o = Character('{color=#d35400}Ogma{/color}', color="#d35400", image="ogma")
+define chef = Character('{color=#d35400}???{/color}', color="#d35400", image="ogma")
 
 image side ogma = "ogma/ogma_portrait.png"
 

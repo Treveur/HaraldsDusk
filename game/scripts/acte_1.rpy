@@ -1690,7 +1690,7 @@ label massacre_foret_2 (message, massacre_village):
     show ogma combat_determine_mid at ogma_pos_right with dissolve
 
     "Le meneur fixe Einar."
-    ge "Les chiens du roi-empereur ont échoué."
+    chef "Les chiens du roi-empereur ont échoué."
 
     if massacre_village:
         menu:
@@ -1740,12 +1740,12 @@ label e_implore_pitie_foret_2(bad_ending):
 
     if bad_ending:
         show ogma debout_determine_mid at right
-        ge "Lâche jusqu'au bout..."
+        chef "Lâche jusqu'au bout..."
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
         call game_over_combat ('village_1') from _call_game_over_combat_3
     else:
-        ge "Nous allons voir ça..."
+        chef "Nous allons voir ça..."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         hide einar with dissolve
         jump e_reveil_village_2
@@ -1758,12 +1758,12 @@ label e_menace_foret_2(bad_ending):
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
     if bad_ending:
-        ge "Je ne crains pas ton roi."
+        chef "Je ne crains pas ton roi."
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
         call game_over_combat ('village_1') from _call_game_over_combat_4
     else:
-        ge "Je ne crains pas ton roi."
+        chef "Je ne crains pas ton roi."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         hide einar with dissolve
         jump e_reveil_village_2
