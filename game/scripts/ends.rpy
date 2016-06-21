@@ -326,10 +326,7 @@ label bad_ending_22:
 
 label game_over_combat(label_name):
 
-    scene black
-    centered "Game over \n
-    Checkpoint a venir \n
-    Pensez à sauvegarder :)"
+    scene bg game_over
 
     if label_name != "":
         menu:
@@ -350,7 +347,7 @@ label credits:
     Benjamin Ramauge\n
     Nicolas Duval"
     centered "{font=fonts/Celtknot.ttf}{size=+20}Graphisme :{/size}{/font} \n
-    Alexandre Rafael David\n
+    Rafael David\n
     Céline Lascaux\n
     Farah Merand\n
     Raphaëlle Maniere\n

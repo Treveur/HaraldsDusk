@@ -615,6 +615,9 @@ image bg chateau_chambre_nuit = "scenes/chateauDunbar_int_nuit_chambreHarald.png
 #Salle banquet
 image bg chateau_banquet = "scenes/chateauDunbar_int_salleBanque.png"
 
+#Game over
+image bg game_over = "interface/menu/bkg_go.jpg"
+
 #Fond uni
 image bg black = "#000"
 

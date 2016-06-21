@@ -1214,13 +1214,13 @@ label e_tuer_moira_maison_1:
 
             l "Cette fille était sans défense !"
 
-            show einar debout_normal_mid zorder 1
+            show einar debout_normal_mid zorder 2
 
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
-            show logan debout_normal_mid_flip at left zorder 0 with moveinleft:
+            show logan debout_normal_mid_flip at left zorder 1 with moveinleft:
                 xoffset 200
-            show logan debout_normal_mid
+            show logan debout_normal_mid zorder 1
 
             show ve debout_effrayes_mid at right, ve_pos with moveinright
 
@@ -1236,15 +1236,17 @@ label e_tuer_moira_maison_1:
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
 
-            show gv debout_furieux_mid at center with moveinleft
+            show gv debout_furieux_mid at center zorder 0 with moveinleft
 
             show ve debout_effrayes_mid at right:
                 linear 1 xoffset 1500
 
             gv "Vengeance !"
 
-            show gv debout_furieux_mid at right with moveinright:
-                linear 2 xoffset 1500
+            show gv debout_furieux_mid:
+                ease 1.5 xoffset 2000
+
+            pause 0.9
 
             show logan debout_determine_mid_flip at center with moveinright
             show einar debout_attriste_close
@@ -1308,7 +1310,7 @@ label e_tuer_moira_maison_1:
 label choix_retour_village_1(massacre = False):
 
     scene bg village with dissolve
-    
+
     hide ve with dissolve
     if massacre:
         stop ambiance
