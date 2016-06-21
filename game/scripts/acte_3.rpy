@@ -422,7 +422,7 @@ label cour_chateau_1:
 label cour_chateau_2:
 
     #toujours ambiance chateau
-    show bg cour_chateau_crepuscule with dissolve
+    show bg cour_chateau_crepuscule with fade
     "Au crépuscule..."
     show gv debout_normaux_mid at left with moveinleft
     gv "Sire ! Sire !"
@@ -605,7 +605,7 @@ label pont_levis_baisse:
             "Attaquer":
                 hide screen countdown
                 "Ogma détourne le coup d'Einar et le frappe au flanc."
-                call game_over_combat('pont_levis_baisse') from _call_game_over_combat_5
+                call game_over_combat('checkpoint_1') from _call_game_over_combat_5
 
         $ time = 2.5
         $ timer_range = 2.5
@@ -693,7 +693,7 @@ label pont_levis_baisse:
                 "Uniquement armé de sa hache, Einar ne parvient pas à se protéger : les huscarls prennent le dessus."
                 show einar combat_blesse_mid_flip at center, shake
                 pause (0.3)
-                call game_over_combat("pont_levis_baisse") from _call_game_over_combat_6
+                call game_over_combat("checkpoint_2") from _call_game_over_combat_6
 
             "Attaquer":
                 hide screen countdown
@@ -1041,7 +1041,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Harald est immense, puissant, et il possède l'expérience de centaines de batailles. Il broie son huscarl, lui faisant éclater des os à chaque coup."
                 show einar combat_furieux_mid at left, shake
                 "Finalement, Einar glisse au sol après que son crâne ait été défoncé sur un mur."
-                call game_over_combat('combat_harald') from _call_game_over_combat_7
+                call game_over_combat('checkpoint_3') from _call_game_over_combat_7
 
         $ time = 3
         $ timer_range = 3
@@ -2424,12 +2424,12 @@ label e_sauve_ogma_defendre_porte:
     "Depuis les remparts, Ogma semble remarquer le mouvement d'Einar au milieu des cadavres."
 
     #Rerpise
-    
+
 
     if moira_dead:
         show einar debout_blesse_mid at left with dissolve
         show ogma combat_hache_determine_mid at ogma_pos_left with moveinleft
-        
+
         scene bg chateau_rempart_crepuscule with dissolve
         "Ogma court vers Einar, la Hache levée."
 
@@ -2456,7 +2456,7 @@ label e_sauve_ogma_defendre_porte:
         jump bad_ending_22
 
     else:
-        
+
         scene bg cour_chateau_crepuscule with dissolve
         show ogma debout_normal_mid_flip at left with dissolve
         show einar debout_blesse_mid_flip at right with moveinright
@@ -2530,10 +2530,10 @@ label e_sauve_ogma_defendre_porte:
                 show ogma debout_contrarie_mid_flip at left
                 o "Je ne suis pas certain que l'humour soit opportun."
                 o "Va-t-en, avant que je ne te tue."
-        
+
         show einar debout_normal_mid at right
         hide einar with dissolve
         hide ogma with dissolve
-        
+
 
         jump bad_ending_21

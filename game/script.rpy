@@ -421,6 +421,7 @@ image ogma combat_hache_determine_close_flip = im.Flip("ogma/combat_hache/ogma_c
 
 ##Moira
 define m = Character("{color=#f00}Moira{/color}", color="#f00", image="moira")
+define Villageoise = Character("{color=#f00}Villageoise{/color}", color="#f00", image="moira")
 
 image side moira = "moira/moira_portrait.png"
 
@@ -568,7 +569,7 @@ image patrick debout_normal_close_flip = im.Flip("patrick/debout/patrick_debout_
 #forest
 image bg forest = "scenes/foretWestruther_ext_jour_foret.jpg"
 image bg forest_night = "scenes/foretWestruther_ext_nuit_foret.jpg"
-image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.png"
+image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.jpg"
 image bg little_heaven = "scenes/foretWestruther_ext_matin_paradis.png"
 
 #sentier

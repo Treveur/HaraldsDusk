@@ -888,7 +888,7 @@ label e_fouiller_village_1(einarFouille = False):
         "Qui es-tu ?" if menu_choice_1:
 
             e "Qui es-tu ?"
-            ve "Ne m'adressez pas la parole !"
+            Villageoise "Ne m'adressez pas la parole !"
             show einar debout_determine_mid at left
             e "Je me suis montré courtois, mais ça pourrait vite changer. Réponds !"
             m "Moira."
@@ -905,7 +905,7 @@ label e_fouiller_village_1(einarFouille = False):
             if moira_name_know:
                 m "Parce que je connais les porcs dans votre genre."
             else:
-                ve "Parce que je connais les porcs dans votre genre."
+                Villageoise "Parce que je connais les porcs dans votre genre."
             show einar debout_determine_mid at left
             e "Mmmh."
 
@@ -920,7 +920,7 @@ label e_fouiller_village_1(einarFouille = False):
             if moira_name_know:
                 m "Rien."
             else:
-                ve "Rien."
+                Villageoise "Rien."
 
             show einar debout_determine_mid at left
             e "Tu es aussi belle que décevante."
@@ -937,7 +937,7 @@ label e_fouiller_village_1(einarFouille = False):
             if moira_name_know:
                 m "..."
             else:
-                ve "..."
+                Villageoise "..."
 
             hide moira with dissolve
 
