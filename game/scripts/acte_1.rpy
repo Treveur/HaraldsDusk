@@ -1105,7 +1105,7 @@ label e_tuer_villageois_village_1:
 
             e "Je..."
 
-            show logan debout_determine_mid_flip at right
+            show logan debout_determine_mid_flip at right with dissolve
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
@@ -1175,16 +1175,19 @@ label e_tuer_moira_maison_1:
 
             l "Cette fille était sans défense !"
 
-            show einar debout_normal_mid
+            show einar debout_normal_mid zorder 1
 
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
-            show logan debout_normal_mid_flip  at left zorder 0 with moveinleft:
+            show logan debout_normal_mid_flip at left zorder 0 with moveinleft:
                 xoffset 200
+            show logan debout_normal_mid
 
             show ve debout_effrayes_mid at right, ve_pos with moveinright
 
             ve "Monstres ! Ils ont tué Moira !"
+
+            show einar debout_determine_mid
 
             e "Parfait. Maintenant, parlez."
 
@@ -1193,16 +1196,34 @@ label e_tuer_moira_maison_1:
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
-            show gv debout_furieux_mid at center
+
+            show gv debout_furieux_mid at center with moveinleft
+
+            show ve debout_effrayes_mid at right:
+                linear 1 xoffset 1500
 
             gv "Vengeance !"
 
+            show gv debout_furieux_mid at right with moveinright:
+                linear 2 xoffset 1500
+
+            show logan debout_determine_mid_flip at center with moveinright
+            show einar debout_attriste_close
+            show logan debout_determine_close_flip
+
             e "Je..."
-            show logan debout_determine_mid_flip at right
+
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
+            show einar combat_normal_close
+
             e "Battez-vous ! Tuez-les tous !"
+
+            show logan combat_normal_close:
+                ease 1 xoffset 1500
+            show einar combat_normal_close:
+                ease 1.5 xoffset 2000
 
             "Le combat s'engage. Rapidement, les vikings reprennent l'ascendant et réduisent à néant toute résistance."
 
