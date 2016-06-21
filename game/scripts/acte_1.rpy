@@ -954,10 +954,13 @@ label e_fouiller_village_1(einarFouille = False):
     with dissolve
 
 label e_choix_final_village_1:
+
     scene bg village with dissolve
-    show ve debout_normaux_mid at right with dissolve
-    show logan debout_determine_mid_flip at center with dissolve
-    show einar debout_normal_mid at left with dissolve
+
+    show ve debout_normaux_mid at right, ve_pos with dissolve
+    show logan debout_determine_mid_flip at center with moveinleft
+    show einar debout_normal_mid at left with moveinleft
+
     l "Et maintenant ?"
     gv "On devrait raser tout ça, pour l'exemple !"
 
@@ -968,11 +971,16 @@ label e_choix_final_village_1:
             jump choix_retour_village_1
 
         "Faites-vous plaisir ! (détruire le village)":
+
+            show einar debout_determine_mid
+
             e "Allez-y ! Brûlez tout ça, n'épargnez personne !"
 
-            show logan debout_determine_mid_flip at center
+            show logan debout_determine_mid_flip at center zorder 1
 
             l "Harald nous a envoyé en reconnaissance ! Nous ne sommes pas là pour tuer ces gens !"
+
+            show einar debout_normal_mid
 
             l "Nous risquons d'aggraver la situation en rasant Perth. Le roi sera furieux !"
 
@@ -984,25 +992,45 @@ label e_choix_final_village_1:
                     show einar debout_souriant_mid at left
 
                     e "Très bien, j'ai changé d'avis. Nous n'allons tuer personne aujourd'hui."
+
                     show einar debout_determine_mid at left
 
                     e "Mais sachez que nous n'allons pas relâcher notre attention ! Et s'il s'avère que vous abritez les rebelles..."
 
                     e "Nous reviendrons finir le travail !"
+
                     e "Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
 
                     jump choix_retour_village_1
 
 
                 "Silence Logan ! Mon choix est déjà fait ! (massacrer)":
-                    show einar debout_determine_mid at left
+
+                    show einar debout_furieux_mid
 
                     e "Ferme-la, Logan !"
 
+                    show einar combat_determine_mid zorder 1
+
                     e "Vous-autres, rasez-moi ce tas de boue !"
 
+                    show ve debout_effrayes_mid at right:
+                        linear 1 xoffset 1500
+
+                    show gv combat_normal_mid at right zorder 0 with moveinleft
+                    # show gv combat_normal_mid at right zorder 0 with MoveTransition(1.5, enter=None, leave=None, old=False, layers=['master'], time_warp=None, enter_time_warp=None, leave_time_warp=None)
+
                     gv "HAAAAAAA !"
+
+                    show gv debout_furieux_mid:
+                        linear 2 xoffset 1500
+
                     e "Battez-vous ! Tuez-les tous !"
+
+                    show logan combat_normal_mid:
+                        ease 1 xoffset 1500
+                    show einar combat_normal_mid:
+                        ease 1.5 xoffset 2000
 
                     "Le combat s'engage. Rapidement, les vikings font place nette et réduisent à néant toute résistance."
 
@@ -1064,11 +1092,11 @@ label e_tuer_villageois_village_1:
 
             ve "Moi ?"
 
-            show einar debout_furieux_mid at left
+            show einar debout_furieux_mid
 
             e "Oui ! Dépêche toi !"
 
-            show einar combat_normal_mid at center with move
+            show einar combat_normal_mid
 
             ve "Monseigneur, je ..."
 
@@ -1101,17 +1129,22 @@ label e_tuer_villageois_village_1:
             show gv debout_furieux_mid at right with moveinright:
                 linear 2 xoffset 1500
 
-            show einar debout_attriste_mid at left with moveinleft
+            show logan debout_determine_mid_flip at center with moveinright
+            show einar debout_attriste_close
+            show logan debout_determine_close_flip
 
             e "Je..."
 
-            show logan debout_determine_mid_flip at right with dissolve
-
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
-            show einar combat_normal_mid
+            show einar combat_normal_close
 
             e "Battez-vous ! Tuez-les tous !"
+
+            show logan combat_normal_close:
+                ease 1 xoffset 1500
+            show einar combat_normal_close:
+                ease 1.5 xoffset 2000
 
             "Le combat s'engage. Rapidement, les vikings reprennent l'ascendant et réduisent à néant toute résistance."
 
