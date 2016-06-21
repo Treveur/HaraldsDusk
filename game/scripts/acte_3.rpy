@@ -2498,8 +2498,6 @@ label e_sauve_ogma_defendre_porte:
 
         show ogma debout_attriste_mid_flip at left
         o "Quoi qu'il en soit... Je vais t'épargner. Crois bien que l'envie de te tuer est grande, mais je refuse de tuer une personne de plus aujourd'hui. Et je te dois la vie."
-        o "Prend cet antidote. Ce sera ta seule récompense."
-        "Einar boit le contenu de la petite fiole."
         show ogma debout_determine_mid_flip at left
         o "Cependant, je te banni d'Ecosse à tout jamais. Bien entendu, tu n'auras pas l'or promis."
         o "J'espère que tu nous considères comme quittes."
@@ -2507,34 +2505,35 @@ label e_sauve_ogma_defendre_porte:
 
         menu :
             "Adieu":
-                show einar debout_normal_mid at right
+                show einar debout_normal_mid_flip at right
                 e "Adieu."
                 o "..."
 
             "Et Moira ?":
-                show einar debout_normal_mid at right
+                show einar debout_normal_mid_flip at right
                 e "Et Moira ? Où est-elle ?"
-                show ogma debout_furieux_mid at left
+                show ogma debout_furieux_mid_flip at left
                 o "Ne prononce même pas son nom. Je ne veux plus que tu ais le moindre rapport avec elle. Elle ne le veut pas non plus."
-                show ogma debout_normal_mid at left
+                show ogma debout_normal_mid_flip at left
                 o "Pars, maintenant."
 
             "Je rentre en Norvège":
-                show einar debout_normal_mid at right
+                show einar debout_normal_mid_flip at right
                 e "Je ne comptais pas rester. Il est temps que je rentre en Norvège."
-                show ogma debout_normal_mid at left
+                show ogma debout_normal_mid_flip at left
                 o "Peu importe où tu vas, pourvu que tu quittes l'Ecosse."
 
             "Quel ingrat !":
-                show einar debout_contrarie_mid at right
+                show einar debout_contrarie_mid_flip at right
                 e "Quelle ingratitude ! Et dire que je vous trouvais sympathique !"
-                show einar debout_normal_mid at right
-                show ogma debout_contrarie_mid at left
+                show einar debout_normal_mid_flip at right
+                show ogma debout_contrarie_mid_flip at left
                 o "Je ne suis pas certain que l'humour soit opportun."
                 o "Va-t-en, avant que je ne te tue."
-
-        hide einar
-        hide ogma
-        with dissolve
+        
+        show einar debout_normal_mid at right
+        hide einar with dissolve
+        hide ogma with dissolve
+        
 
         jump bad_ending_21
