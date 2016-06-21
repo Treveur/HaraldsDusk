@@ -664,6 +664,12 @@ transform burn:
 transform ve_pos:
     xoffset 590
 
+transform ogma_pos_left:
+    xoffset -200
+
+transform ogma_pos_right:
+    xoffset 2000
+
 #Déclaration timer
 transform alpha_dissolve:
     alpha 0.0
