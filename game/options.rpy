@@ -118,6 +118,8 @@ init -1 python hide:
 
     ## Hauteur minimum de la fenêtre, incluant les marges (margin et padding).
 
+    style.window.background = Frame("interface/box/dial_box_85_83.png", 85, 83)
+
     # style.window.yminimum = 250
 
 
