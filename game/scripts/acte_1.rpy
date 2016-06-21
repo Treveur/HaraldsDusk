@@ -1149,6 +1149,10 @@ label e_tuer_moira_maison_1:
     e "Je n'aime pas qu'on se moque de moi. Mes instructions étaient claires ! Cette rencontre s'achève ici."
 
     "Einar tire la jeune femme par les cheveux sur la place, aux yeux de tous."
+
+    stop ambiance
+    play ambiance village
+
     scene bg village with dissolve
 
     show einar debout_normal_mid at left
@@ -1165,15 +1169,21 @@ label e_tuer_moira_maison_1:
 
         "Tais-toi ! (la tuer)":
 
+            show einar combat_normal_mid
             "Le viking abat sa hache sur la nuque de la femme, qui tombe au sol, inerte."
-            hide moira
-            show logan debout_attriste_mid_flip at center
+            hide moira with dissolve
+            show logan debout_attriste_mid_flip at center with moveinleft
 
             l "Cette fille était sans défense !"
 
+            show einar debout_normal_mid
+
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
-            show ve debout_effrayes_mid at right zorder 1
+            show logan debout_normal_mid_flip  at left zorder 0 with moveinleft:
+                xoffset 200
+
+            show ve debout_effrayes_mid at right, ve_pos with moveinright
 
             ve "Monstres ! Ils ont tué Moira !"
 
@@ -1703,7 +1713,6 @@ label e_reveil_village_2:
 
     stop music
     play ambiance home
-    #play ambiance home
 
     #ajouter blur image
     scene bg black
@@ -1863,7 +1872,7 @@ label o_explication_vie_village_2:
 
 label refuser_trahir_village_2:
 
-    scene bg village
+    scene bg house2_night
     show ogma debout_determine_mid at right
     show einar prisonnier_determine_mid at left
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
