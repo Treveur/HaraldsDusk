@@ -40,7 +40,6 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
-            jump test1
             hide logan with dissolve
 
             show einar debout_normal_mid at left with dissolve
@@ -1586,9 +1585,7 @@ label massacre_foret_2 (message, massacre_village):
     with dissolve
 
     show einar combat_determine_mid_flip at right with moveinright
-    label test1:
-
-        show ogma combat_furieux_mid_flip at center with moveinright
+    show ogma combat_furieux_mid_flip at center with moveinright
 
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
