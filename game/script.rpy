@@ -709,9 +709,9 @@ label start:
     scene bg black
 
     if short_version:
-        centered "C'est la version courte"
+        centered "Version courte"
     else:
-        centered "C'est la version longue"
+        centered "Version longue"
 
 
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."

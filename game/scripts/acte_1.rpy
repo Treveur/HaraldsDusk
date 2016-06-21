@@ -259,7 +259,7 @@ label plaine_1 :
 
     play ambiance coast
 
-    scene bg plaine_chateau_matin with dissolve
+    scene bg plaine_plaine_matin with dissolve
 
     "Une heure plus tard, à proximité du château de Dunbar."
 
@@ -355,7 +355,7 @@ label plaine_1 :
 
             show logan debout_souriant_mid_flip at center
 
-            l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt !"
+            l "J'aurais préféré manger à la table du roi ce soir, mais j'avais peur que tu te perdes en forêt ! Ha ha !"
 
             h "Ne vous inquiétez pas, vous aurez tous les deux de quoi boire et manger une fois revenus ! Ha ha !"
 
@@ -953,8 +953,10 @@ label e_fouiller_village_1(einarFouille = False):
     hide einar
     with dissolve
 
+
 label e_choix_final_village_1:
 
+    stop ambiance
     scene bg village with dissolve
 
     show ve debout_normaux_mid at right, ve_pos with dissolve
@@ -1031,6 +1033,8 @@ label e_choix_final_village_1:
                         ease 1 xoffset 1500
                     show einar combat_normal_mid:
                         ease 1.5 xoffset 2000
+
+                    play ambiance fight
 
                     "Le combat s'engage. Rapidement, les vikings font place nette et réduisent à néant toute résistance."
 
@@ -1140,6 +1144,7 @@ label e_tuer_villageois_village_1:
             show einar combat_normal_close
 
             e "Battez-vous ! Tuez-les tous !"
+            play ambiance fight
 
             show logan combat_normal_close:
                 ease 1 xoffset 1500
@@ -1252,7 +1257,7 @@ label e_tuer_moira_maison_1:
             show einar combat_normal_close
 
             e "Battez-vous ! Tuez-les tous !"
-
+            play ambiance fight
             show logan combat_normal_close:
                 ease 1 xoffset 1500
             show einar combat_normal_close:
@@ -1304,6 +1309,7 @@ label choix_retour_village_1(massacre = False):
 
     hide ve with dissolve
     if massacre:
+        stop ambiance
         "Après quelques minutes, l'affrontement touche à sa fin. Des dizaines de paysans gisent au sol. Pas un seul viking n'a été blessé."
         show einar debout_normal_mid at left with dissolve
         e "Empilez les cadavres avant le départ."

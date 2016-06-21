@@ -76,8 +76,8 @@ init -1 python hide:
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "#dcebff",
-        #gm_root = "interface/menu/menu.jpg",
+        #gm_root = "#dcebff",
+        gm_root = "interface/menu/bkg_menu.png",
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
@@ -115,6 +115,7 @@ init -1 python hide:
     style.window.top_padding = 6
     style.window.bottom_padding = 6
 
+
     ## Hauteur minimum de la fenêtre, incluant les marges (margin et padding).
 
     # style.window.yminimum = 250
@@ -146,6 +147,12 @@ init -1 python hide:
     style.mm_button_text.yanchor = 0.5
     style.mm_button_text.xpos = 0.5
     style.mm_button_text.ypos = 0.5
+
+    style.gm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
+    style.gm_button.hover_background = Frame(im.MatrixColor("interface/buttons/mainmenu/mmbutton.png", im.matrix.brightness(-0.1)),0,0)
+
+    style.gm_button.yminimum = 49
+    style.gm_button.xminimum = 376
 
     #########################################
     ## Ici nous personnalisons la police utilisée par défaut pour le texte.
