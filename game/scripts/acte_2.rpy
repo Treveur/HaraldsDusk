@@ -938,7 +938,7 @@ label paradis_foret_1:
             show einar prisonnier_normal_close at left
             #Pas logique
             "Moira s'approche sans bruit d'Einar, et commence à lui ôter ses vêtements."
-            m "Tu me le promet ?"
+            m "Tu me le promets ?"
             e "Bien sûr. Je n'ai qu'une parole."
             show einar prisonnier_souriant_close at left
             "Elle touche timidement Einar et semble apeurée."
