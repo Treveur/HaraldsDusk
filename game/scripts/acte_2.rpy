@@ -872,6 +872,7 @@ label paradis_foret_1:
 
     $ moira_dead = False
     $ premier_refus_moira_foret_4 = False
+    $ moira_abuse = False
 
     menu :
         "Quel est cet endroit ?":
@@ -944,6 +945,7 @@ label paradis_foret_1:
             "Elle touche timidement Einar et semble apeurée."
             "Les mains du guerrier parcourent le corps de la jeune femme et ressentent la douceur de sa peau, parfaite."
             "..."
+            $ moira_abuse = True
             jump village_4
 
         "C'est une occasion en or de s'enfuir (Fuir)":
@@ -997,7 +999,7 @@ label village_4:
     o "Lorsque l'assaut aura commencé, je mènerai mes hommes au combat. Lorsque vous entendrez deux coups de cor successifs, vous ouvrirez le pont-levis du château."
 
     menu:
-
+        
         "Je tiendrai ma promesse":
             show einar debout_normal_mid at left
             e "Je sais ce que j'ai à faire. Je ne pense qu'à ça depuis plus d'un mois."
@@ -1016,22 +1018,25 @@ label village_4:
 
     menu :
 
-        "(L'embrasser)":
+        "Je t'ai fais une promesse, je la tiendrai" if moira_abuse == True:
+            show einar prisonnier_souriant_mid at left
+            e "Tu m'as fait promettre d'une manière assez convaincante."
+            show einar prisonnier_normal_mid at left
+            e "Considère Perth comme étant désormais un village libre."
             hide einar
             hide ogma
             hide moira
-            show einar debout_souriant_close at left with dissolve
-            show moira debout_souriant_close at center with dissolve
-            "Einar embrasse doucement Moira en caressant son visage"
+            with dissolve
 
-        "Je reviendrai, ne t'inquiète pas":
+        "Ne t'inquiète pas":
+            show einar prisonnier_souriant_mid at left
+            e "Ne t'inquiète pas, j'y compte bien."
+            show einar prisonnier_normal_mid at left
+            e "Vous avez été bons avec moi, et je tiens toujours mes promesses."
             hide einar
             hide ogma
             hide moira
-            show einar debout_souriant_close at left with dissolve
-            show moira debout_souriant_close at center with dissolve
-            "Einar saisit Moira par les hanches et l'attire contre lui, puis l'enlace."
-            e "Ne t'inquiète pas. Je reviendrai."
+            e "Ne t'inquiète pas. Je reviendrai, et alors vous serez libres."
 
         "(L'ignorer)":
             hide ogma with dissolve
