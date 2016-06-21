@@ -34,6 +34,17 @@ image einar debout_contrarie_close = "einar/debout/einar_debout_contrarie_close.
 image einar debout_effraye_close = "einar/debout/einar_debout_effraye_close.png"
 image einar debout_determine_close = "einar/debout/einar_debout_determine_close.png"
 
+#flip
+image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
+image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attriste_mid.png", horizontal = True)
+image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
+image einar debout_furieux_mid_flip = im.Flip("einar/debout/einar_debout_furieux_mid.png", horizontal = True)
+
+image einar debout_determine_close_flip = im.Flip("einar/debout/einar_debout_determine_close.png", horizontal = True)
+image einar debout_attriste_close_flip = im.Flip("einar/debout/einar_debout_attriste_close.png", horizontal = True)
+image einar debout_normal_close_flip = im.Flip("einar/debout/einar_debout_normal_close.png", horizontal = True)
+image einar debout_furieux_close_flip = im.Flip("einar/debout/einar_debout_furieux_close.png", horizontal = True)
+
 #Combat
 
 #mid
@@ -60,12 +71,6 @@ image einar combat_hache_determine_mid = "einar/combat_hache/einar_combat_hache_
 image einar combat_hache_normal_close = "einar/combat_hache/einar_combat_hache_normal_close.png"
 image einar combat_hache_furieux_close = "einar/combat_hache/einar_combat_hache_furieux_close.png"
 image einar combat_hache_determine_close = "einar/combat_hache/einar_combat_hache_determine_close.png"
-
-#flip
-image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
-image einar debout_determine_close_flip = im.Flip("einar/debout/einar_debout_determine_close.png", horizontal = True)
-image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attriste_mid.png", horizontal = True)
-image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
 
 #combat
 image einar combat_normal_mid_flip = im.Flip("einar/combat/einar_combat_normal_mid.png", horizontal = True)
@@ -106,6 +111,15 @@ image einar prisonnier_effraye_mid_flip = im.Flip("einar/prisonnier/einar_prison
 image einar prisonnier_furieux_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_furieux_mid.png", horizontal = True)
 image einar prisonnier_normal_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_normal_mid.png", horizontal = True)
 image einar prisonnier_souriant_mid_flip = im.Flip("einar/prisonnier/einar_prisonnier_souriant_mid.png", horizontal = True)
+
+image einar prisonnier_attriste_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_attriste_close.png", horizontal = True)
+image einar prisonnier_blesse_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_blesse_close.png", horizontal = True)
+image einar prisonnier_contrarie_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_contrarie_close.png", horizontal = True)
+image einar prisonnier_determine_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_determine_close.png", horizontal = True)
+image einar prisonnier_effraye_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_effraye_close.png", horizontal = True)
+image einar prisonnier_furieux_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_furieux_close.png", horizontal = True)
+image einar prisonnier_normal_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_normal_close.png", horizontal = True)
+image einar prisonnier_souriant_close_flip = im.Flip("einar/prisonnier/einar_prisonnier_souriant_close.png", horizontal = True)
 
 #Général
 image einar general_determine = "einar/general/einar_general_determine.png"
@@ -320,6 +334,13 @@ image gv debout_rire_close = "guerriers_vikings/debout/gv_debout_rire_close.png"
 image gv debout_contrarie_close = "guerriers_vikings/debout/gv_debout_contraries_close.png"
 image gv debout_determines_close = "guerriers_vikings/debout/gv_debout_determines_close.png"
 
+image gv debout_normaux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_normaux_mid.png", horizontal = True)
+image gv debout_enthousiaste_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_enthousiastes_mid.png", horizontal = True)
+image gv debout_furieux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_furieux_mid.png", horizontal = True)
+image gv debout_rire_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_rire_mid.png", horizontal = True)
+image gv debout_contrarie_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_contraries_mid.png", horizontal = True)
+image gv debout_determines_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_determines_mid.png", horizontal = True)
+
 #Combat
 
 #mid
@@ -377,18 +398,21 @@ image ogma combat_normal_mid = "ogma/combat/ogma_combat_normal_mid.png"
 image ogma combat_furieux_mid = "ogma/combat/ogma_combat_furieux_mid.png"
 image ogma combat_contrarie_mid = "ogma/combat/ogma_combat_contrarie_mid.png"
 image ogma combat_determine_mid = "ogma/combat/ogma_combat_determine_mid.png"
+image ogma combat_surpris_mid = "ogma/combat/ogma_combat_surpris_mid.png"
 
 #close
 image ogma combat_normal_close = "ogma/combat/ogma_combat_normal_close.png"
 image ogma combat_furieux_close = "ogma/combat/ogma_combat_furieux_close.png"
 image ogma combat_contrarie_close = "ogma/combat/ogma_combat_contrarie_close.png"
 image ogma combat_determine_close = "ogma/combat/ogma_combat_determine_close.png"
+image ogma combat_surpris_close = "ogma/combat/ogma_combat_surpris_close.png"
 
 #flip
 image ogma combat_normal_mid_flip = im.Flip("ogma/combat/ogma_combat_normal_mid.png", horizontal = True)
 image ogma combat_determine_mid_flip = im.Flip("ogma/combat/ogma_combat_determine_mid.png", horizontal = True)
 image ogma combat_furieux_mid_flip = im.Flip("ogma/combat/ogma_combat_furieux_mid.png", horizontal = True)
 image ogma combat_contrarie_mid_flip = im.Flip("ogma/combat/ogma_combat_contrarie_mid.png", horizontal = True)
+image ogma combat_surpris_mid_flip = im.Flip("ogma/combat/ogma_combat_surpris_mid.png", horizontal = True)
 
 #Combat Hache
 
@@ -665,10 +689,13 @@ transform ve_pos:
     xoffset 590
 
 transform ogma_pos_left:
-    xoffset -200
+    xoffset -300
 
 transform ogma_pos_right:
-    xoffset 2000
+    xoffset 850
+
+transform ogma_pos_reset:
+    xoffset - 300
 
 #Déclaration timer
 transform alpha_dissolve:

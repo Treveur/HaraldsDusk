@@ -556,7 +556,7 @@ label pont_levis_baisse:
         "Ogma surgit au milieu de la mêlée, franchissant la Grande Porte. Il se rue sur Einar, un regard fou dans les yeux et la bave aux lèvres. Il hurle le nom de sa fille."
 
         show einar combat_normal_mid at left with moveinleft
-        show ogma combat_furieux_mid at right with moveinright
+        show ogma combat_furieux_mid at ogma_pos_right with moveinright
 
         o "MOIRAAAAAAAA !"
         o "POURQUOI L'AVOIR TUÉE ?"
@@ -584,7 +584,7 @@ label pont_levis_baisse:
             scene bg cour_chateau_crepuscule
 
 
-        show ogma combat_determine_mid at right
+        show ogma combat_determine_mid at ogma_pos_right
         o "Tout s'achève, ici et maintenant !"
 
         #Phase combat impossible à gagner WIP
@@ -1094,11 +1094,11 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
                 o "Voyez ! La liberté a vaincu le tyran !"
                 o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
-                show ogma combat_furieux_mid at right
+                show ogma combat_furieux_mid at ogma_pos_right
                 o "Le règne du roi-empereur est terminé !"
                 "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
                 hide harald with dissolve
-                show ogma combat_determine_mid at right
+                show ogma combat_determine_mid at ogma_pos_right
                 o "VOUS ÊTES LIBRES !"
                 "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
                 "Dans la lumière du crépuscule, Dunbar continue de brûler."
@@ -1108,7 +1108,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
     else:
         scene bg chateau_rempart_crepuscule with fade
         show einar combat_hache_normal_mid at left with moveinleft
-        show ogma combat_determine_mid at right with moveinright
+        show ogma combat_determine_mid at ogma_pos_right with moveinright
 
         "..."
         o "Félicitations, Einar !"
@@ -1347,10 +1347,10 @@ label e_epargne_harald_no_axe_donjon:
     else:
         "Un peu plus tard, alors que les combats ont cessé..."
         "..."
-        show ogma combat_normal_mid at left
+        show ogma combat_normal_mid at ogma_pos_left
         show einar debout_blesse_mid at right
         "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
-        show ogma combat_determine_mid at left
+        show ogma combat_determine_mid at ogma_pos_left
         o "Voyez ! La liberté a vaincu le tyran !"
         o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
         o "Le règne du roi-empereur est terminé !"
@@ -1756,7 +1756,7 @@ label e_garder_hache_pont_baisse_donjon:
             show einar combat_hache_furieux_mid at left
             e "Le monde se pliera devant moi !"
             e "A genoux, manants ! HA HA HA !"
-            show ogma combat_furieux_mid at right
+            show ogma combat_furieux_mid at ogma_pos_right
             o "Tu es fou ! Nous ne te laisserons pas faire !"
             e "Idiots ! La Hache me rend immortel !"
             hide einar
@@ -2035,7 +2035,7 @@ label soupcon_harald_defendre_porte:
     hide re with dissolve
     hide huscarls with dissolve
     show einar combat_normal_mid at left with moveinleft
-    show ogma combat_furieux_mid at right with moveinright
+    show ogma combat_furieux_mid at ogma_pos_right with moveinright
     "Une silouhette familière émerge des rebelles."
 
     o "Traître ! Tu t'es joué de nous pour sauver ta vie de lâche !"
@@ -2087,7 +2087,7 @@ label soupcon_harald_defendre_porte:
 
         "Camper la position":
             hide screen countdown
-            show ogma combat_furieux_mid at left with moveinleft
+            show ogma combat_furieux_mid at ogma_pos_left with moveinleft
             "Einar assure sa position défensive, renforçant ses appuis pour anticiper le choc."
             show einar combat_furieux_close at left, shake
             show ogma combat_furieux_close at left, shake
@@ -2260,27 +2260,27 @@ label harald_defendre_porte:
     show ogma combat_furieux_mid at center
     o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
     show harald combat_normal_mid_flip at left with moveinleft
-    show ogma combat_normal_mid at right with moveinright
+    show ogma combat_normal_mid at ogma_pos_right, ogma_pos_reset with moveinright
     h "Ha ! Tu es celui qui a assassiné mon intendant ?"
-    show ogma combat_determine_mid at right
+    show ogma combat_determine_mid
     o "Oui, et je suis prêt à réitérer l'exploit avec un roi !"
     show harald combat_furieux_mid_flip at left
     h "Pourriture ! Tu vas rendre gorge !"
     show harald combat_furieux_mid_flip at center with moveinright
-    show ogma combat_furieux_mid at right, shake
+    show ogma combat_furieux_mid at ogma_pos_right, shake
     show harald combat_furieux_mid_flip at center, shake
-    
+
     "La force et la technique de Harald s'opposent à la vitesse et à la ruse d'Ogma."
     "D'une feinte, l'écossais parvient à atteindre le roi au ventre ; pas une goutte de sang ne coule."
     "Harald prend l'avantage petit à petit : la Hache le rend invincible."
-    show ogma combat_furieux_mid at right, shake
+    show ogma combat_furieux_mid at ogma_pos_right, shake
     show harald combat_normal_mid_flip at center
     h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
-    show ogma combat_normal_mid at right
+    show ogma combat_normal_mid
     o "Jamais !"
     show harald combat_furieux_mid_flip at center
     h "Meurs, chien maigre !"
-    show ogma combat_furieux_mid at right, shake
+    show ogma combat_furieux_mid at ogma_pos_right, shake
     "Du plat de sa hache, Harald frappe Ogma au torse, lui brisant les côtes et le jetant à terre."
     "Le roi s'apprête à achever le chef rebelle."
 
@@ -2300,7 +2300,7 @@ label harald_defendre_porte:
 
 label e_laisse_ogma_mort_defendre_porte:
 
-    show ogma combat_normal_mid at right
+    show ogma combat_normal_mid at ogma_pos_right
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
     hide ogma with dissolve
     show harald combat_normal_mid_flip at center
@@ -2347,30 +2347,29 @@ label cour_chateau_ogma_mort_defendre_porte:
     "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
-    show einar debout_normal_mid at left
-    show gv debout_rire_mid at right
+    show einar debout_normal_mid_flip at right
+    show gv debout_rire_mid_flip at left
     with dissolve
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
     gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
     hide gv with dissolve
-    show moira debout_normal_mid at right with dissolve
-    show einar debout_attriste_mid at left
+    show einar debout_determine_mid_flip at right
     e "..."
-    show moira debout_furieux_mid at right
     "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
-    show patrick debout_normal_mid_flip at center zorder 1 with dissolve
-    p "Vous avez défié l'élu divin, porteur de la Hache Sainte !"
+    show patrick debout_normal_mid at center zorder 1 with moveinright
+    p "Vous avez défié l'élu divin, le porteur de la Hache Sainte !"
     p "Pour vos blasphèmes, votre hérésie et votre félonie, il n'est d'autre jugement que la mort !"
-    hide einar with dissolve
+    show patrick debout_normal_mid at left zorder 1 with moveinright
+    show einar debout_determine_mid_flip at center zorder 2 with moveinright
     #hide moira with dissolve
-    show harald debout_determine_mid_flip at left zorder 0 with dissolve
+    show harald debout_determine_mid at right zorder 0 with moveinright
     h "Hâtez-vous, Patrick ! Il me tarde de les voir se tortiller sur leurs poteaux !"
-    show patrick debout_normal_mid at center
+    show patrick debout_normal_mid at left
     p "Bien, bien."
-    show patrick debout_normal_mid_flip at center
+    show patrick debout_normal_mid at left
     p "Que Dieu ait pitié de vos âmes !"
     "Deux hommes amènent des torches et commencent à embraser les bûchers."
-    show harald debout_normal_mid_flip at left
+    show harald debout_normal_mid at right
     h "Ha ha ! Le Seigneur nous offre un beau spectacle à travers son jugement !"
     "Les porteurs de torches s'approchent du bûcher de Moira."
 
@@ -2378,33 +2377,41 @@ label cour_chateau_ogma_mort_defendre_porte:
     hide patrick
     with dissolve
 
-    show einar debout_attriste_mid at left with dissolve
-    show moira debout_attriste_mid at right
+    show einar debout_attriste_mid_flip at right with dissolve
+    show moira debout_normal_mid_flip at left
 
     menu :
-        "Qu'elle brûle comme les autres":
-            show einar debout_furieux_mid at left
-            jump bad_ending_19
         "Je dois sauver Moira !":
-            show einar debout_determine_mid at left
+            show einar debout_determine_mid_flip at right
             jump bad_ending_20
+
+        "Qu'elle brûle comme les autres":
+            show einar debout_furieux_mid_flip at right
+            jump bad_ending_19
+
 
 label e_sauve_ogma_defendre_porte:
 
-    show einar combat_normal_mid at center
-    show harald combat_hache_furieux_mid at left
-    show ogma combat_furieux_mid at right
-    with dissolve
+    show einar combat_normal_mid at left
+    show harald combat_furieux_mid_flip at center
+    show ogma combat_furieux_mid
 
     "Einar dévie le coup de hache du roi et sauve Ogma."
+    show ogma combat_surpris_mid
+    show harald combat_furieux_mid_flip at center, shake
     "Emporté par son élan et son propre poids, la Hache se fiche dans le sol, déstabilisant Harald."
+    show harald combat_normal_mid at center
+    h "Einar ?!"
+    show ogma combat_furieux_mid
     "Voyant que le roi a relâché son emprise sur la relique, Ogma en profite pour trancher les deux tendons d'achille du roi."
+    show harald combat_normal_mid at center, shake
     "Harald tombe aux côtés d'Ogma, qui l'achève en lui enfonçant son coutelas dans la gorge."
-    hide einar
-    hide harald
-    with dissolve
+    hide harald with dissolve
+    show ogma combat_normal_mid
     "Aussitôt la horde rebelle resserre son étau sur les vikings, investie par une nouvelle vigueur."
+    show re combat_furieux_mid at right with moveinright
     "Pris au coeur de la mêlée, Einar est piétiné et laissé pour mort."
+    hide einar with dissolve
 
     "..."
 
@@ -2415,7 +2422,7 @@ label e_sauve_ogma_defendre_porte:
 
     #Rerpise
     show einar debout_blesse_mid at left with dissolve
-    show ogma combat_hache_determine_mid at right
+    show ogma combat_hache_determine_mid at ogma_pos_right
 
     if moira_dead:
         "Ogma court vers Einar, la Hache levée."
@@ -2429,7 +2436,7 @@ label e_sauve_ogma_defendre_porte:
             "J'aurais voulu un combat plus équitable":
                 show einar combat_blesse_mid at right
                 e "J'aurais souhaité un combat honorable, un peu plus juste !"
-                show ogma combat_hache_determine_mid at right
+                show ogma combat_hache_determine_mid at ogma_pos_right
                 o "PAS D'HONNEUR !"
 
             "Elle était toute excitée !":

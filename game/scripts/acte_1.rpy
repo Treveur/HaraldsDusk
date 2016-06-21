@@ -40,7 +40,6 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
-
             hide logan with dissolve
 
             show einar debout_normal_mid at left with dissolve
@@ -1106,7 +1105,7 @@ label e_tuer_villageois_village_1:
 
             e "Je..."
 
-            show logan debout_determine_mid_flip at right
+            show logan debout_determine_mid_flip at right with dissolve
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
@@ -1149,6 +1148,10 @@ label e_tuer_moira_maison_1:
     e "Je n'aime pas qu'on se moque de moi. Mes instructions étaient claires ! Cette rencontre s'achève ici."
 
     "Einar tire la jeune femme par les cheveux sur la place, aux yeux de tous."
+
+    stop ambiance
+    play ambiance village
+
     scene bg village with dissolve
 
     show einar debout_normal_mid at left
@@ -1165,17 +1168,26 @@ label e_tuer_moira_maison_1:
 
         "Tais-toi ! (la tuer)":
 
+            show einar combat_normal_mid
             "Le viking abat sa hache sur la nuque de la femme, qui tombe au sol, inerte."
-            hide moira
-            show logan debout_attriste_mid_flip at center
+            hide moira with dissolve
+            show logan debout_attriste_mid_flip at center with moveinleft
 
             l "Cette fille était sans défense !"
 
+            show einar debout_normal_mid zorder 1
+
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
-            show ve debout_effrayes_mid at right zorder 1
+            show logan debout_normal_mid_flip at left zorder 0 with moveinleft:
+                xoffset 200
+            show logan debout_normal_mid
+
+            show ve debout_effrayes_mid at right, ve_pos with moveinright
 
             ve "Monstres ! Ils ont tué Moira !"
+
+            show einar debout_determine_mid
 
             e "Parfait. Maintenant, parlez."
 
@@ -1184,16 +1196,34 @@ label e_tuer_moira_maison_1:
             "Les villageois commencent à se montrer hostiles. Certains brandissent des fourches tandis que d'autres jettent des pierres. Peu à peu, les écossais encerclent le groupe de vikings."
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
-            show gv debout_furieux_mid at center
+
+            show gv debout_furieux_mid at center with moveinleft
+
+            show ve debout_effrayes_mid at right:
+                linear 1 xoffset 1500
 
             gv "Vengeance !"
 
+            show gv debout_furieux_mid at right with moveinright:
+                linear 2 xoffset 1500
+
+            show logan debout_determine_mid_flip at center with moveinright
+            show einar debout_attriste_close
+            show logan debout_determine_close_flip
+
             e "Je..."
-            show logan debout_determine_mid_flip at right
+
 
             l "Il est trop tard pour réfléchir ! Ils vont nous massacrer si nous ne réagissons pas !"
 
+            show einar combat_normal_close
+
             e "Battez-vous ! Tuez-les tous !"
+
+            show logan combat_normal_close:
+                ease 1 xoffset 1500
+            show einar combat_normal_close:
+                ease 1.5 xoffset 2000
 
             "Le combat s'engage. Rapidement, les vikings reprennent l'ascendant et réduisent à néant toute résistance."
 
@@ -1560,8 +1590,7 @@ label massacre_foret_2 (message, massacre_village):
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide logan with dissolve
     show einar combat_determine_mid_flip at right with moveinright
-
-    show ogma combat_determine_mid_flip at left with dissolve
+    show ogma combat_determine_mid_flip at ogma_pos_left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     menu :
         "Attaquez le chef !":
@@ -1578,6 +1607,7 @@ label massacre_foret_2 (message, massacre_village):
 
     show einar combat_determine_mid_flip at right with moveinright
     show ogma combat_furieux_mid_flip at center with moveinright
+
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     show einar combat_furieux_mid_flip at right
@@ -1598,7 +1628,7 @@ label massacre_foret_2 (message, massacre_village):
     e "Aaarrggh ! Logan, aide-moi !"
 
     hide re with dissolve
-    show ogma combat_furieux_mid_flip at left with moveinleft
+    show ogma combat_furieux_mid_flip at ogma_pos_left with moveinleft
     show einar prisonnier_blesse_mid at center with moveinleft
     show logan combat_determine_mid_flip at right with moveinright
 
@@ -1608,7 +1638,7 @@ label massacre_foret_2 (message, massacre_village):
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
     hide logan with dissolve
-    show ogma combat_determine_mid at right with moveinright
+    show ogma combat_determine_mid at ogma_pos_right with moveinright
 
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
@@ -1616,7 +1646,7 @@ label massacre_foret_2 (message, massacre_village):
 
     e "Crevure... Tu..."
 
-    show ogma combat_determine_mid at right with dissolve
+    show ogma combat_determine_mid at ogma_pos_right with dissolve
 
     "Le meneur fixe Einar."
     ge "Les chiens du roi-empereur ont échoué."
@@ -1642,11 +1672,11 @@ label e_demande_nom_foret_2(bad_ending):
     hide logan
     hide gv
     show einar combat_blesse_mid at center
-    show ogma combat_determine_mid at right
+    show ogma combat_determine_mid at ogma_pos_right
     e "Qui es-tu, lâche ?"
 
     if bad_ending:
-        show ogma combat_contrarie_mid at right
+        show ogma combat_contrarie_mid at ogma_pos_right
         ge "..."
         #A Supprimer si pas réussit à faire Checkpoint
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
@@ -1654,7 +1684,7 @@ label e_demande_nom_foret_2(bad_ending):
         #jump bad_ending_1
         call game_over_combat ('village_1') from _call_game_over_combat_2
     else:
-        show ogma combat_determine_mid at right
+        show ogma combat_determine_mid at ogma_pos_right
         o "Ogma. Le Hurleur."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         hide einar with dissolve
@@ -1703,7 +1733,6 @@ label e_reveil_village_2:
 
     stop music
     play ambiance home
-    #play ambiance home
 
     #ajouter blur image
     scene bg black
@@ -1863,7 +1892,7 @@ label o_explication_vie_village_2:
 
 label refuser_trahir_village_2:
 
-    scene bg village
+    scene bg house2_night
     show ogma debout_determine_mid at right
     show einar prisonnier_determine_mid at left
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
