@@ -333,13 +333,13 @@ label credits:
     stop ambiance
 
     scene bg black with dissolve
-    centered "{font=fonts/Celtknot.ttf}{size=+80}HARALD'S DUSK{/size}{/font}"
+    centered "{font=fonts/Celtknot.ttf}{size=+80}Harald'S Dusk{/size}{/font}"
     with Pause(2.5)
-    centered "{font=fonts/Celtknot.ttf}{size=+20}DESIGN ET PROGRAMMATION :{/size}{/font}\n
+    centered "{font=fonts/Celtknot.ttf}{size=+20}Design et Programmation :{/size}{/font}\n
     Alexandre Allais\n
     Benjamin Ramauge\n
     Nicolas Duval"
-    centered "{font=fonts/Celtknot.ttf}{size=+20}GRAPHISME :{/size}{/font} \n
+    centered "{font=fonts/Celtknot.ttf}{size=+20}Graphisme :{/size}{/font} \n
     Alexandre Rafael David\n
     Céline Lascaux\n
     Farah Merand\n
@@ -347,7 +347,7 @@ label credits:
     Samuel Amar\n
     Sandy Chhun\n
     Sarah-Cheyenne Laurence Gilbercovici"
-    centered "{font=fonts/Celtknot.ttf}{size=+20}SON :{/size}{/font} \n
+    centered "{font=fonts/Celtknot.ttf}{size=+20}Son :{/size}{/font} \n
     Julien Laguerre\n
     Nicolas Lorion"
 
