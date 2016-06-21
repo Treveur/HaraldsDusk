@@ -1085,11 +1085,11 @@ label foret_5:
 
     menu:
         "Je dois beaucoup à Moira":
-            e "(Elle s'est occupée de moi pendant plus d'un mois, sans jamais se montrer lasse ni désagréable. Je lui dois beaucoup. Elle s'est attachée à moi. La décevoir serait terrible. )"
+            e "(Elle s'est occupée de moi pendant plus d'un mois, sans jamais se montrer lasse ni désagréable. Je lui dois beaucoup.)"
         "Elle n'a agit que sur les ordres de son père":
             e "(Elle ne s'est occupée de moi que parce que son père le lui avait demandé. Je me demande si notre petite escapade en forêt était aussi une idée de son père...)"
-        "Ce n'était qu'une amourette":
-            e "(J'ai bien profité d'elle. Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
+        "J'ai profité d'elle":
+            e "(Elle a été attentionnée avec moi, bien que naïve. Mais ce n'est pas la première femme que je rencontre, ni la première dont je profite... Cette petite histoire ne représente que peu de choses face aux engagements d'un huscarl.)"
     show einar debout_normal_close at right with moveinright
     hide einar with dissolve
     jump cote_1
@@ -1112,7 +1112,7 @@ label cote_1:
         "En trahissant Harald, je serai coincé en Ecosse":
             e "(En trahissant Harald, je m'expose à des représailles incessantes. Je serai traqué partout dans l'Empire. Mon seul abri sera l'Ecosse. D'un autre côté, je serai enfin suffisament riche pour avoir la vie que mon roi m'a promise depuis déjà longtemps... Pourvu qu'Ogma respecte sa parole, lui !)"
         "Je dois abandonner les écossais, pour ma propre survie":
-            e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans. Mais qu'arrivera-t-il à Moira ?)"
+            e "(Je n'ai pas d'autre choix que de faillir à ma promesse envers les rebelles. Ma vie en dépend, ainsi que celle de beaucoup d'autres. Tant pis pour la liberté de quelques paysans.)"
     show einar debout_normal_close at right with moveinright
     hide einar with dissolve
     jump cote_2
