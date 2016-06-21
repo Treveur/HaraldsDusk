@@ -666,7 +666,7 @@ label pont_levis_baisse:
         label checkpoint_2:
             scene bg cour_chateau_crepuscule
 
-
+        show einar combat_determine_mid_flip at center
         show huscarls combat_normal_mid at left with moveinleft
         with dissolve
 
