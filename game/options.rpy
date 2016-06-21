@@ -97,7 +97,7 @@ init -1 python hide:
     ## correspondent respectivement à la taille des bords à droite/gauche
     ## et en haut/en bas.
 
-    # style.window.background = Frame("frame.png", 12, 12)
+    style.window.background = Frame("interface/box/dial_box_85_83.png", 85, 83)
 
     ## La marge ('margin') est l'espace autour fenêtre, où
     ## le fond n'apparaît pas.
@@ -112,13 +112,11 @@ init -1 python hide:
 
     style.window.left_padding = 130
     style.window.right_padding = 130
-    style.window.top_padding = 6
+    style.window.top_padding = 100
     style.window.bottom_padding = 6
 
 
     ## Hauteur minimum de la fenêtre, incluant les marges (margin et padding).
-
-    style.window.background = Frame("interface/box/dial_box_85_83.png", 85, 83)
 
     # style.window.yminimum = 250
 
