@@ -40,7 +40,7 @@ label intro:
 
     menu:
         "Sire, sommes-nous proches du château ?":
-
+            jump test1
             hide logan with dissolve
 
             show einar debout_normal_mid at left with dissolve
@@ -1570,8 +1570,7 @@ label massacre_foret_2 (message, massacre_village):
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
     hide logan with dissolve
     show einar combat_determine_mid_flip at right with moveinright
-
-    show ogma combat_determine_mid_flip at left with dissolve
+    show ogma combat_determine_mid_flip at ogma_pos_left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
     menu :
         "Attaquez le chef !":
@@ -1587,7 +1586,10 @@ label massacre_foret_2 (message, massacre_village):
     with dissolve
 
     show einar combat_determine_mid_flip at right with moveinright
-    show ogma combat_furieux_mid_flip at center with moveinright
+    label test1:
+
+        show ogma combat_furieux_mid_flip at center with moveinright
+
     ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     show einar combat_furieux_mid_flip at right
@@ -1608,7 +1610,7 @@ label massacre_foret_2 (message, massacre_village):
     e "Aaarrggh ! Logan, aide-moi !"
 
     hide re with dissolve
-    show ogma combat_furieux_mid_flip at left with moveinleft
+    show ogma combat_furieux_mid_flip at ogma_pos_left with moveinleft
     show einar prisonnier_blesse_mid at center with moveinleft
     show logan combat_determine_mid_flip at right with moveinright
 
@@ -1618,7 +1620,7 @@ label massacre_foret_2 (message, massacre_village):
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
     hide logan with dissolve
-    show ogma combat_determine_mid at right with moveinright
+    show ogma combat_determine_mid at ogma_pos_right with moveinright
 
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
@@ -1626,7 +1628,7 @@ label massacre_foret_2 (message, massacre_village):
 
     e "Crevure... Tu..."
 
-    show ogma combat_determine_mid at right with dissolve
+    show ogma combat_determine_mid at ogma_pos_right with dissolve
 
     "Le meneur fixe Einar."
     ge "Les chiens du roi-empereur ont échoué."
@@ -1652,11 +1654,11 @@ label e_demande_nom_foret_2(bad_ending):
     hide logan
     hide gv
     show einar combat_blesse_mid at center
-    show ogma combat_determine_mid at right
+    show ogma combat_determine_mid at ogma_pos_right
     e "Qui es-tu, lâche ?"
 
     if bad_ending:
-        show ogma combat_contrarie_mid at right
+        show ogma combat_contrarie_mid at ogma_pos_right
         ge "..."
         #A Supprimer si pas réussit à faire Checkpoint
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
@@ -1664,7 +1666,7 @@ label e_demande_nom_foret_2(bad_ending):
         #jump bad_ending_1
         call game_over_combat ('village_1') from _call_game_over_combat_2
     else:
-        show ogma combat_determine_mid at right
+        show ogma combat_determine_mid at ogma_pos_right
         o "Ogma. Le Hurleur."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         hide einar with dissolve

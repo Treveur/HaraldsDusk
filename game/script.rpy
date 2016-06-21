@@ -679,10 +679,10 @@ transform ve_pos:
     xoffset 590
 
 transform ogma_pos_left:
-    xoffset -200
+    xoffset -300
 
 transform ogma_pos_right:
-    xoffset 2000
+    xoffset 850
 
 #Déclaration timer
 transform alpha_dissolve:
