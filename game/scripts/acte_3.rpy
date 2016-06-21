@@ -2347,30 +2347,29 @@ label cour_chateau_ogma_mort_defendre_porte:
     "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
-    show einar debout_normal_mid at left
-    show gv debout_rire_mid at right
+    show einar debout_normal_mid_flip at right
+    show gv debout_rire_mid_flip at left
     with dissolve
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
     gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
     hide gv with dissolve
-    show moira debout_normal_mid at right with dissolve
-    show einar debout_attriste_mid at left
+    show einar debout_determine_mid_flip at right
     e "..."
-    show moira debout_furieux_mid at right
     "Lorsqu'elle remarque Einar dans la foule, Moira se crispe et son regard s'emplit de haine."
-    show patrick debout_normal_mid_flip at center zorder 1 with dissolve
-    p "Vous avez défié l'élu divin, porteur de la Hache Sainte !"
+    show patrick debout_normal_mid at center zorder 1 with moveinright
+    p "Vous avez défié l'élu divin, le porteur de la Hache Sainte !"
     p "Pour vos blasphèmes, votre hérésie et votre félonie, il n'est d'autre jugement que la mort !"
-    hide einar with dissolve
+    show patrick debout_normal_mid at left zorder 1 with moveinright
+    show einar debout_determine_mid_flip at center zorder 2 with moveinright
     #hide moira with dissolve
-    show harald debout_determine_mid_flip at left zorder 0 with dissolve
+    show harald debout_determine_mid at right zorder 0 with moveinright
     h "Hâtez-vous, Patrick ! Il me tarde de les voir se tortiller sur leurs poteaux !"
-    show patrick debout_normal_mid at center
+    show patrick debout_normal_mid at left
     p "Bien, bien."
-    show patrick debout_normal_mid_flip at center
+    show patrick debout_normal_mid at left
     p "Que Dieu ait pitié de vos âmes !"
     "Deux hommes amènent des torches et commencent à embraser les bûchers."
-    show harald debout_normal_mid_flip at left
+    show harald debout_normal_mid at right
     h "Ha ha ! Le Seigneur nous offre un beau spectacle à travers son jugement !"
     "Les porteurs de torches s'approchent du bûcher de Moira."
 
@@ -2378,16 +2377,18 @@ label cour_chateau_ogma_mort_defendre_porte:
     hide patrick
     with dissolve
 
-    show einar debout_attriste_mid at left with dissolve
-    show moira debout_attriste_mid at right
+    show einar debout_attriste_mid at right with dissolve
+    show moira debout_attriste_mid at left
 
     menu :
-        "Qu'elle brûle comme les autres":
-            show einar debout_furieux_mid at left
-            jump bad_ending_19
         "Je dois sauver Moira !":
             show einar debout_determine_mid at left
             jump bad_ending_20
+            
+        "Qu'elle brûle comme les autres":
+            show einar debout_furieux_mid at left
+            jump bad_ending_19
+        
 
 label e_sauve_ogma_defendre_porte:
 
