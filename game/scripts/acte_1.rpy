@@ -1775,10 +1775,10 @@ label e_implore_pitie_foret_2(bad_ending):
 
     show einar debout_blesse_mid at center
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
-    show ogma debout_furieux_mid at right
+    show ogma debout_determine_mid at right
 
     if bad_ending:
-        show ogma debout_furieux_mid at right
+        show ogma debout_determine_mid at right
         chef "Lâche jusqu'au bout..."
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
