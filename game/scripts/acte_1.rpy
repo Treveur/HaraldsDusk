@@ -702,15 +702,14 @@ label village_1:
 
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
 
-    show ve debout_normaux_mid at right, ve_pos with dissolve:
-    show logan debout_normal_mid at center with moveinleft
+    show logan debout_normal_mid at center zorder 1 with moveinleft
     l "Nous y sommes. Perth."
 
     "Les villageois vaquent à leurs occupations. Certains d'entre eux ont remarqué l'arrivée des guerriers vikings et affichent une expression craintive."
-    show ve debout_craintifs_mid at right, ve_pos
     show einar debout_normal_mid at left zorder 1 with moveinleft
     e "Ça me semble bien calme."
-    show gv debout_normaux_mid at left zorder 0 with moveinleft
+    show gv debout_normaux_mid_flip at right with moveinright:
+        xoffset 630
     gv "On dirait qu'il n'y a pas grand monde..."
 
     e "Uniquement des vieillards, des femmes et des enfants."
@@ -722,21 +721,24 @@ label village_1:
     with dissolve
 
 
+    show vieux debout_normal_mid at right with moveinright
 
-    ve "Bonjour, étrangers. Nous pouvons vous aider ?"
+    vh "Bonjour, étrangers. Nous pouvons vous aider ?"
+
     show einar debout_determine_mid at left
 
     e "Je veux que tout le village se rassemble sur la place, maintenant !"
 
     e "Toute désobeissance sera punie !"
 
-    ve "Très bien, restez calme."
+    vh "Très bien, restez calme."
+
     show einar debout_normal_mid at left
 
     "Des villageois sortent de leurs maisons et abandonnent leurs activités pour se rassembler."
     "Il n'y a que très peu d'hommes parmi la cinquantaine de villageois."
 
-    ve "Nous... Nous sommes tous là."
+    vh "Nous... Nous sommes tous là."
     hide gv
     hide logan
     with dissolve
@@ -1659,7 +1661,7 @@ label massacre_foret_2 (message, massacre_village):
             hide screen countdown
             e "Ne vous dispersez pas ! Restez serrés !"
             "Les vikings resserrent leur rang. Les premiers assaillants sont aisément repoussés, mais une nouvelle salve de flèches réduit à néant les efforts défensifs du groupe."
-            "Le nombre d'hommes encore debout s'amenuise à chaque seconde."            
+            "Le nombre d'hommes encore debout s'amenuise à chaque seconde."
 
     #Phase combat impossible à gagner WIP
     $ time = 5
@@ -1668,7 +1670,7 @@ label massacre_foret_2 (message, massacre_village):
 
     show screen countdown
     menu :
-    
+
         "Chargez !":
             hide screen countdown
             e "Tous avec moi !"

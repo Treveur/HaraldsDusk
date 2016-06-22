@@ -587,7 +587,9 @@ image ve buchet_pleurent_mid = "villageois_ecossais/buchet/ve_buchet_pleurent_mi
 image ve buchet_normaux_close = "villageois_ecossais/buchet/ve_buchet_effrayes_close.png"
 image ve buchet_pleurent_close = "villageois_ecossais/buchet/ve_buchet_pleurent_close.png"
 ############################################### Vieux ###############################################
-image vieux debout_normaux_mid = "villageois_ecossais/debout/vieux/ve_vieux_normal_mid.png"
+define vh = Character('{color=#3498db}Doyen{/color}', color="#3498db", image="villageois")
+
+image vieux debout_normal_mid = "villageois_ecossais/debout/vieux/ve_vieux_normal_mid.png"
 image vieux debout_normaux_close = "villageois_ecossais/debout/vieux/ve_vieux_normal_close.png"
 ############################################### Demoiselle ###############################################
 image femme debout_normaux_mid = "villageois_ecossais/debout/femme/ve_femme_normal_mid.png"
