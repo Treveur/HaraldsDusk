@@ -720,8 +720,10 @@ label village_1:
     hide gv
     with dissolve
 
+    #show ve debout_normaux_sans_doyen_mid at right, ve_pos
 
-    show vieux debout_normal_mid at right with moveinright
+    show vieux debout_normal_mid at right zorder 1 with moveinright:
+        xoffset -263
 
     vh "Bonjour, étrangers. Nous pouvons vous aider ?"
 
@@ -737,6 +739,8 @@ label village_1:
 
     "Des villageois sortent de leurs maisons et abandonnent leurs activités pour se rassembler."
     "Il n'y a que très peu d'hommes parmi la cinquantaine de villageois."
+
+    show ve debout_normaux_sans_doyen_mid at right, ve_pos zorder 0 with moveinright
 
     vh "Nous... Nous sommes tous là."
     hide gv
@@ -1055,7 +1059,7 @@ label e_choix_final_village_1:
 
 
 label e_tuer_villageois_village_1:
-    show ve debout_normaux_mid
+    show ve debout_normaux_sans_doyen_mid
     show einar debout_furieux_mid at left
 
     e "Répondez à mes questions ! Je n'hésiterai pas à tuer l'un des vôtres !"
@@ -1106,18 +1110,23 @@ label e_tuer_villageois_village_1:
 
             e "Toi. Approche."
 
-            ve "Moi ?"
+            vh "Moi ?"
 
             show einar debout_furieux_mid
 
             e "Oui ! Dépêche toi !"
 
+            show vieux debout_normal_mid at center with move:
+                xoffset 0
+
             show einar combat_normal_mid
 
-            ve "Monseigneur, je ..."
+            vh "Monseigneur, je ..."
+
+            hide vieux
 
             "Einar tranche la gorge du villageois d'un seul coup."
-            show ve debout_effrayes_mid at right
+            show ve debout_normaux_sans_doyen_mid
 
             ve "Pourritures ! Salauds !"
 
@@ -1347,14 +1356,14 @@ label choix_retour_village_1(massacre = False):
 
     elif suspecter_village:
 
-        show logan debout_determine_mid_flip at right with moveinright
+        show logan debout_determine_mid_flip at right zorder 1 with moveinright
         l "Ces gens ne savaient rien, j'en mettrais ma main à couper."
-        show einar debout_normal_mid at left
+        show einar debout_normal_mid at left with moveinleft
 
         e "J'espère pour toi que tu as raison, Logan."
-    show einar debout_normal_mid at left
-    show gv debout_normaux_mid_flip at right
-    with dissolve
+    show einar debout_normal_mid at left with moveinleft
+
+    show gv debout_normaux_mid_flip at right zorder 0 with moveinright
 
     gv "Où allons-nous ?"
     hide gv with dissolve

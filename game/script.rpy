@@ -575,6 +575,10 @@ define pe3 = Character("Prisonnière écossaise 1", image="villageois_ecossais")
 
 # image side villageois_ecossais = "villageois_ecossais/villageois_ecossais_portrait.png"
 
+#sans le vieux
+
+image ve debout_normaux_sans_doyen_mid = "villageois_ecossais/debout/ve_debout_normaux_less_mid.png"
+
 #Debout
 
 image ve debout_normaux_mid = "villageois_ecossais/debout/ve_debout_normaux_mid.png"
