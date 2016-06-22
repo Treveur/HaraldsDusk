@@ -1369,6 +1369,8 @@ label choix_retour_village_1(massacre = False):
 #Sequence 7
 label foret_2_r(lieu, massacre_village):
 
+    $ checkpoint = "checkpoint_5"
+
     stop music
 
     play ambiance wood
@@ -1626,7 +1628,11 @@ label massacre_foret_2 (message, massacre_village):
     stop ambiance
     play music slaughter
 
-
+    label checkpoint_5:
+        scene bg forest_night
+        show logan combat_determine_mid_flip at right
+        show einar combat_determine_mid_flip at center
+         with dissolve
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
 
@@ -1637,6 +1643,26 @@ label massacre_foret_2 (message, massacre_village):
 
     show re debout_normal_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+
+    #Phase combat impossible à gagner WIP
+    $ time = 5
+    $ timer_range = 5
+    $ timer_jump = "gameover"
+
+    "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
+    show ogma combat_furieux_mid at center with moveinright
+
+    show screen countdown
+    menu :
+
+        "Esquiver":
+            hide screen countdown
+            "Abattant son épée sur le sol, Ogma manque Einar de justesse."
+
+        "Attaquer":
+            hide screen countdown
+            "Ogma détourne le coup d'Einar et le frappe au flanc."
+            call game_over_combat('checkpoint_1') from _call_game_over_combat_5
 
     show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"

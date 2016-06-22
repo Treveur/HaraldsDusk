@@ -112,8 +112,8 @@ init -1 python hide:
 
     style.window.left_padding = 250
     style.window.right_padding = 130
-    style.window.top_padding = 100
-    style.window.bottom_padding = 6
+    style.window.top_padding = 44
+    style.window.bottom_padding = 50
 
 
     ## Hauteur minimum de la fenêtre, incluant les marges (margin et padding).
