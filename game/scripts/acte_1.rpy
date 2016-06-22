@@ -1668,7 +1668,7 @@ label massacre_foret_2 (message, massacre_village):
 
     show screen countdown
     menu :
-
+    
         "Chargez !":
             hide screen countdown
             e "Tous avec moi !"

@@ -30,6 +30,7 @@ label bad_ending_3:
     show einar debout_blesse_mid at left, shake
     "Lorsqu'il se retourne pour voir d'où provient le tir, il voit Harald le désigner depuis la cour en donnant des ordres à ses archers."
     "Une volée de flèches vient frapper Einar et le fait basculer par dessus les remparts."
+    "Les mauvais menteurs sont toujours punis."
     show einar debout_blesse_mid at left, shake
     hide einar with dissolve
     "Fin 03/22"
@@ -37,7 +38,7 @@ label bad_ending_3:
 
 label bad_ending_4:
     show ogma combat_furieux_mid at center
-    "La furie sanguinaire d'Ogma est incontrôlable. Einar est massacré sur place."
+    "La furie sanguinaire du Hurleur est incontrôlable."
     hide einar with dissolve
     show re combat_normal_mid at right with moveinright
     "Les rebelles continuent d'affluer dans l'enceinte, et Ogma tombe à genoux devant le cadavre d'Einar."
