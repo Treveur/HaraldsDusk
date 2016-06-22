@@ -468,78 +468,72 @@ screen preferences:
             has vbox
 
             label _("Display") style_group "pref"
-            textbutton _("Window") action Preference("display", "window")
-            textbutton _("Fullscreen") action Preference("display", "fullscreen")
+            hbox:
+                xpos 310
+                ypos -15
+                spacing 20
+                textbutton _("Window") action Preference("display", "window")
+                textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
         frame:
             style_group "pref"
             has vbox
 
             label _("Transitions") style_group "pref"
-            textbutton _("All") action Preference("transitions", "all")
-            textbutton _("None") action Preference("transitions", "none")
+            hbox:
+                xpos 310
+                ypos -15
+                spacing 20
+                textbutton _("All") action Preference("transitions", "all")
+                textbutton _("None") action Preference("transitions", "none")
 
         frame:
             style_group "pref"
-            has vbox
+            has hbox style_group "special"
 
             label _("Text Speed") style_group "pref"
             bar value Preference("text speed")
 
         frame:
             style_group "pref"
-            has vbox
+            has hbox style_group "special"
 
             label _("Auto-Forward Time") style_group "pref"
             bar value Preference("auto-forward time")
 
-            if config.has_voice:
-                textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
-
         frame:
             style_group "pref"
-            has vbox
+            has hbox style_group "special"
 
             label _("Music Volume") style_group "pref"
             bar value Preference("music volume")
 
         frame:
             style_group "pref"
-            has vbox
+            has hbox style_group "special"
 
             label _("Sound Volume") style_group "pref"
+            textbutton _("Test"):
+                action Play("sound", config.sample_sound)
+                style "soundtest_button"
             bar value Preference("sound volume")
 
-            if config.sample_sound:
-                textbutton _("Test"):
-                    action Play("sound", config.sample_sound)
-                    style "soundtest_button"
 
         frame:
             style_group "pref"
-            has vbox
+            has hbox style_group "special"
 
             label _("Volume de l'ambiance sonore") style_group "pref"
             bar value MixerValue("ambiance")
 
-        if config.has_voice:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Voice Volume") style_group "pref"
-                bar value Preference("voice volume")
-
-                textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
-                if config.sample_voice:
-                    textbutton _("Test"):
-                        action Play("voice", config.sample_voice)
-                        style "soundtest_button"
 
 init -2 python:
 
-    style.pref_frame.left_margin = 100
-    style.pref_frame.xpadding = 40
+    style.prefs_vbox.ypos = 0.5
+    style.prefs_vbox.yanchor = 0.5
+
+    style.pref_frame.left_margin = 110
+    style.pref_frame.xpadding = 30
     style.pref_frame.bottom_margin = -10
 
     style.pref_label_text.ypos = 40
@@ -547,14 +541,33 @@ init -2 python:
     style.pref_button.size_group = "pref"
     style.pref_button.xalign = 1.0
 
-    style.pref_slider.xmaximum = 192
+    style.pref_slider.xmaximum = 250
     style.pref_slider.xalign = 0.85
+    style.pref_slider.yalign = 0.5
 
     style.pref_frame.background = Frame("interface/box/save_box.png", 50, 50)
     style.pref_vbox.yminimum = 110
-    style.pref_vbox.xminimum = 650
+    style.pref_vbox.xminimum = 630
 
-    style.soundtest_button.xalign = 1.0
+    style.special_hbox.yminimum = 110
+    style.special_hbox.xminimum = 630
+
+    style.special_slider.xmaximum = 192
+    style.special_slider.xalign = 0.85
+    style.special_slider.yalign = 0.5
+
+    style.special_button.size_group = "pref"
+
+    style.soundtest_button.xpos = 80
+
+    style.soundtest_button.yalign = 0.5
+
+    style.special_slider.thumb = "interface/scrollbar/scrollh.png"
+    style.special_slider.left_bar = "interface/scrollbar/barh.png"
+    style.special_slider.right_bar = im.MatrixColor("interface/scrollbar/barh.png",im.matrix.brightness(-0.5))
+    style.special_slider.thumb_offset = 15
+
+
 
 
 ##############################################################################
