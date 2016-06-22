@@ -1595,37 +1595,23 @@ label foret_4:
 
     if premier_refus_moira_foret_4 == False:
         e "Qu'est-ce que tu fais là ?"
-        m "Je viens avec toi."
-        show einar debout_attriste_mid at left
-        e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
-        show moira debout_contrarie_mid at right
-        m "Mon père a été injuste. Tu as fait tout ce qu'il t'avait demandé et plus encore."
-        show moira debout_determine_mid at right
-        m "Je t'aime. Je veux venir avec toi."
+        m "Je voulais tirer certaines choses au clair avant que tu ne disparaisses."
+
     else:
         e "Qu'est-ce que tu fais là ?"
+        m "Je voulais tirer certaines choses au clair avant que tu ne disparaisses."
         show moira debout_furieux_mid at right
-        m "Pourquoi est-ce que tu es parti ? Pourquoi m'avoir abandonnée ?"
+        m "Pourquoi est-ce que tu t'es enfui lorsque nous étions dans la forêt ?"
 
         menu :
             "Excuse-moi":
                 e "Je regrette d'avoir fait ça..."
-                m "Pourquoi être parti ? Je pensais pouvoir te faire confiance."
-                e "Tu peux avoir confiance en moi !"
+                m "Pourquoi être parti ?"
+                e "Je ne sais pas."
                 e "Simplement... J'étais enfermé depuis si longtemps... J'ai vu une occasion de reprendre ma liberté, et je l'ai saisie."
                 e "Ce qui ne m'a pas empêché de tenir mes engagements envers ton père."
                 m "Je vois..."
-                e "..."
-                m "C'est idiot mais... Je veux partir avec toi."
-                show einar debout_attriste_mid at left
-                e "Pardon ? Tu n'as pas entendu ce qu'à dit ton père ?"
-                show moira debout_contrarie_mid at right
-                m "Mon père a été injuste. Tu as fait tout ce qu'il t'avait demandé et plus encore."
-                e "Mais je t'ai trahie ! Je t'ai laissé seule, nue, dans la forêt !"
-                show moira debout_determine_mid at right
-                m "Oui, et j'en ai été profondément déçue, et humiliée."
                 m "Mais malgré tout, je comprends ce qui a pu te pousser à agir ainsi."
-                m "Je t'aime. Je veux venir avec toi."
 
             "Je n'ai rien à faire avec toi":
                 e "Je suis un militaire. J'ai voyagé à travers tous les continents et rencontré plus de femmes que tu ne peux l'imaginer."
