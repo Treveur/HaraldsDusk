@@ -1606,30 +1606,63 @@ label foret_4:
         menu :
             "Excuse-moi":
                 e "Je regrette d'avoir fait ça..."
-                m "Pourquoi être parti ?"
+                m "Pourquoi être parti ? C'était humiliant."
                 e "Je ne sais pas."
                 e "Simplement... J'étais enfermé depuis si longtemps... J'ai vu une occasion de reprendre ma liberté, et je l'ai saisie."
                 e "Ce qui ne m'a pas empêché de tenir mes engagements envers ton père."
-                m "Je vois..."
-                m "Mais malgré tout, je comprends ce qui a pu te pousser à agir ainsi."
+                m "Je vois... J'aurais préféré que tu me parles directement au lieu de t'enfuir comme un lâche."
 
-            "Je n'ai rien à faire avec toi":
-                e "Je suis un militaire. J'ai voyagé à travers tous les continents et rencontré plus de femmes que tu ne peux l'imaginer."
-                e "Tu ne m'interesse pas. Je n'ai rien à faire avec une paysanne écossaise, aussi belle soit-elle."
-                e "Tu trouveras sans doute quelqu'un de plus... adapté à ta vie."
+            "Tu ne m'interesse pas":
+                e "Je ne sais pas ce que tu as cru, mais tu te trompe lourdement en ce qui me concerne."
+                e "Nous autres, vikings, ne sommes pas tous des violeurs. Nous avons d'autres passions que de brûler des villages et enlever toutes les femmes que nous trouvons."
+                e "Maintenant, si ça ne te dérange pas, j'aimerais partir."
                 e "Au revoir."
                 call good_ending_14 pass (rejete = True) from _call_good_ending_14
+    
+    
+    m "Attend !"
+    e "J'imagine que tu veux me parler l'offre que tu m'as faite dans la forêt..."
+    m "Oui."
+    
+    if moira_abuse == True:
+        "La jeune femme s'approche, le regard fuyant."
+        m "Je voudrais..."
+        e "Oui ?"
+        "La jeune femme se rapproche encore un peu plus, tremblante."
+        e "Hé bien, parle !"
+        m "TU VAS PAYER POUR CE QUE TU M'AS FAIT !"
+        
+        $ time = 1
+        $ timer_range = 1
+        $ timer_jump = "gameover"
 
-            "Je me suis servi de toi":
-                e "Au risque de te faire de la peine, je ne ressentais et ne ressens toujours rien pour toi."
-                e "Lorsque j'ai compris que tu m'offrais une opportunité de m'enfuir, j'ai saisi l'occasion."
-                e "Je me suis juste servi de toi."
-                m "..."
-                call good_ending_14 pass (rejete = True) from _call_good_ending_14
+        show screen countdown
+        menu :
 
+            "Non !":
+                hide screen countdown
+                "En un éclair d'acier, elle tente de poignarder Einar."
+                "Surpris, le viking n'a pas le temps de repousser l'attaque, et ne peut que la détourner."
+                "..."
+                "Une auréole sanglante s'étend sur la robe de Moira."
+                "Un soupir s'échappe de ses lèvres puis elle s'effondre sur le sentier."
+
+    
+    
     menu menu_reponse_moira_suivre_einar:
 
-        "Tu n'as pas de raison de me suivre":
+        
+            
+            
+            menu :
+                "Tu t'es sacrifiée pour sauver les tiens":
+                    e "Ton geste a assuré la liberté de Perth et du reste de l'Ecosse."
+                    e "Ce 
+            
+            
+            
+            
+        "Tu n'as pas de raison de me suivre"
             show einar debout_attriste_mid at left
 
             e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
