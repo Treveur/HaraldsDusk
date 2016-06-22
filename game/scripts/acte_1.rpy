@@ -1600,28 +1600,20 @@ label massacre_foret_2 (message, massacre_village):
     play sound war_horn
     "Un cor retentit dans les bois, très proche."
 
-    show einar combat_determine_mid at left with dissolve
+    show einar combat_determine_mid at left zorder 1 with dissolve
     e "En position de combat, tous !"
     show gv combat_normal_mid at center with dissolve
     gv "Ça venait d'où ?"
     show gv debout_determines_mid at right with moveinright
     show logan combat_determine_mid_flip at center zorder 1 with dissolve
 
-    hide gv with dissolve
+    hide gv
+    show vfx forest_night_torch at burn zorder 0
+    with dissolve
+
     show logan combat_determine_mid_flip at right with moveinright
     show einar combat_determine_mid_flip at center with move
 
-    show vfx_flame_1 flame at burn:
-        xalign 0.2
-        yalign 0.5
-
-    show vfx_flame_2 flame at burn:
-        xalign 0.1
-        yalign 0.6
-
-    show vfx_flame_3 flame at burn:
-        xalign 0.3
-        yalign 0.5
 
     l "Sur la gauche ! Des torches !"
 
@@ -1636,33 +1628,15 @@ label massacre_foret_2 (message, massacre_village):
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
 
-    hide vfx_flame_1
-    hide vfx_flame_2
-    hide vfx_flame_3
-    with dissolve
 
     show re debout_normal_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
 
-    #Phase combat impossible à gagner WIP
+################################### WIP ###########################################
     $ time = 5
     $ timer_range = 5
     $ timer_jump = "gameover"
 
-    "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
-    show ogma combat_furieux_mid at center with moveinright
-
-    show screen countdown
-    menu :
-
-        "Esquiver":
-            hide screen countdown
-            "Abattant son épée sur le sol, Ogma manque Einar de justesse."
-
-        "Attaquer":
-            hide screen countdown
-            "Ogma détourne le coup d'Einar et le frappe au flanc."
-            call game_over_combat('checkpoint_5')
 
     show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
@@ -1670,12 +1644,39 @@ label massacre_foret_2 (message, massacre_village):
     show einar combat_determine_mid_flip at right with moveinright
     show ogma combat_determine_mid_flip at ogma_pos_left with dissolve
     "Un meneur semble émerger du groupe des assaillants."
+
+    show screen countdown
     menu :
+
         "Attaquez le chef !":
+            hide screen countdown
             e "Tuez leur chef !"
 
+
         "Restez en formation !":
+            hide screen countdown
             e "Ne vous dispersez pas ! Restez serrés !"
+            call game_over_combat('checkpoint_5')
+
+    #Phase combat impossible à gagner WIP
+    $ time = 5
+    $ timer_range = 5
+    $ timer_jump = "gameover"
+
+    show screen countdown
+    menu :
+
+        "Je vais te tuer ordure!":
+            hide screen countdown
+            e "Tuez leur chef !"
+
+
+        "Regroupez-vous !":
+            hide screen countdown
+            e "Ne vous dispersez pas ! Restez serrés !"
+            call game_over_combat('checkpoint_5')
+
+################################### WIP ###########################################
 
     "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
     hide gv
@@ -1686,7 +1687,7 @@ label massacre_foret_2 (message, massacre_village):
     show einar combat_determine_mid_flip at right with moveinright
     show ogma combat_furieux_mid_flip at center with moveinright
 
-    ge "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
+    chef "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
     show einar combat_furieux_mid_flip at right
     e "Approchez, charognes ! Je..."
@@ -1716,7 +1717,7 @@ label massacre_foret_2 (message, massacre_village):
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
     hide logan with dissolve
-    show ogma combat_determine_mid at ogma_pos_right with moveinright
+    show ogma combat_determine_mid at ogma_pos_right_forest with moveinright
 
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
@@ -1755,7 +1756,7 @@ label e_demande_nom_foret_2(bad_ending):
 
     if bad_ending:
         show ogma combat_contrarie_mid at ogma_pos_right
-        ge "..."
+        chef "..."
         #A Supprimer si pas réussit à faire Checkpoint
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
@@ -1771,17 +1772,19 @@ label e_demande_nom_foret_2(bad_ending):
 label e_implore_pitie_foret_2(bad_ending):
     hide logan
     hide gv
+
     show einar debout_blesse_mid at center
-    show ogma debout_determine_mid at right
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
+    show ogma debout_furieux_mid at right
 
     if bad_ending:
-        show ogma debout_determine_mid at right
+        show ogma debout_furieux_mid at right
         chef "Lâche jusqu'au bout..."
         "Le meneur des assaillants tranche la gorge d'Einar, de la même manière que Logan. Après de longues minutes à se noyer dans son propre sang, Einar meurt."
         hide einar with dissolve
         call game_over_combat ('village_1') from _call_game_over_combat_3
     else:
+        show ogma debout_determine_mid at right
         chef "Nous allons voir ça..."
         "Einar reçoit un violent coup au crâne et sombre dans les ténèbres, inconscient."
         hide einar with dissolve

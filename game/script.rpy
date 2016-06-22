@@ -569,7 +569,7 @@ image patrick debout_normal_close_flip = im.Flip("patrick/debout/patrick_debout_
 #forest
 image bg forest = "scenes/foretWestruther_ext_jour_foret.png"
 image bg forest_night = "scenes/foretWestruther_ext_nuit_foret.png"
-image bg forest_night_torch = "scenes/foretWestruther_ext_nuit_foret.png"
+image vfx forest_night_torch = "scenes/foretWestruther_ext_nuit_foret_torche.png"
 image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.png"
 image bg little_heaven = "scenes/foretWestruther_ext_matin_paradis.png"
 
@@ -745,6 +745,9 @@ transform ogma_pos_left:
 
 transform ogma_pos_right:
     xoffset 850
+
+transform ogma_pos_right_forest:
+    xoffset 500
 
 transform ogma_pos_reset:
     xoffset - 300
