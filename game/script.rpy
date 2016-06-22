@@ -527,7 +527,7 @@ image moira attache_furieuse_mid = "moira/buchet/moira_attache_furieuse_mid.png"
 image moira attache_determine_close = "moira/buchet/moira_attache_determine_close.png"
 image moira attache_furieuse_close = "moira/buchet/moira_attache_furieuse_close.png"
 
-##Rebelles ecossais
+######################################## Rebelles ecossais #############################################
 define ge = Character('{color=#f39c12}Rebelles écossais{/color}', color="#f39c12", image="rebelles_ecossais")
 
 image side rebelles_ecossais = "rebelles_ecossais/re_portrait.png"
