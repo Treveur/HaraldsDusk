@@ -24,43 +24,43 @@ label exterieur_chateau_1:
 
     scene bg chateau_porte with dissolve
 
-    show gv debout_normaux_mid at center with dissolve
+    show garde_1 debout_normal_mid at center with dissolve
     show einar debout_normal_mid at left with moveinleft
 
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
 
-    gc "Einar ! C'est bien toi ?"
+    garde "Einar ! C'est bien toi ?"
     e "..."
-    gc "Tout le monde te croyait mort !"
-    gc "Qu'est-il arrivé aux autres ?"
+    garde "Tout le monde te croyait mort !"
+    garde "Qu'est-il arrivé aux autres ?"
 
     menu :
 
         "Pousse-toi":
             show einar debout_determine_mid at left
             e "Écarte-toi, Geir! Je dois parler au roi sans tarder !"
-            gc "Bien sûr, excuse-moi."
-            show gv debout_normaux_mid at right with moveinright
+            garde "Bien sûr, excuse-moi."
+            show garde_1 debout_normal_mid at right with moveinright
             show einar debout_determine_mid at center with moveinright
 
         "Pas mal de choses...":
             e "Il m'est arrivé toutes sorte de chose que je n'ai ni le temps ni l'envie de te raconter. Les autres sont tous morts et j'ai bien failli y passer aussi."
             e "Maintenant, laisse-moi passer."
-            gc "Bien sûr, excuse-moi."
-            show gv debout_normaux_mid at right with moveinright
+            garde "Bien sûr, excuse-moi."
+            show garde_1 debout_normal_mid at right with moveinright
             show einar debout_determine_mid at center with moveinright
 
         "Ne me barre pas la route !":
             show einar debout_determine_mid at left
             e "Laisse-moi passer, andouille. On ne barre pas la route à un huscarl ! Je dois voir le roi au plus vite !"
-            gc "Bien sûr, excuse-moi."
-            show gv debout_normaux_mid at right with moveinright
+            garde "Bien sûr, excuse-moi."
+            show garde_1 debout_normal_mid at right with moveinright
             show einar debout_determine_mid at center with moveinright
 
 
     hide einar with dissolve
-    hide gv with dissolve
+    hide garde_1 with dissolve
 
 
     jump cour_chateau_1

@@ -297,10 +297,7 @@ image huscarls combat_inquiet_close = "huscarls/combat/huscarls_combat_inquiets_
 ##Garde / Guerriers Vikings / Jeune Guerrier Viking
 define gv = Character('Guerriers Vikings', color="#e67e22", image="guerriers_vikings")
 
-# image side guerriers_vikings = "guerriers_vikings/guerriers_vikings_portrait.png"
-
-
-define gc = Character("Garde du Château", image="guerriers_vikings")
+image side guerriers_vikings = "guerriers_vikings/gv_portrait.png"
 
 # image side guerriers_vikings = "guerriers_vikings/guerriers_vikings_portrait.png"
 
@@ -341,6 +338,28 @@ image gv combat_blesses_mid = "guerriers_vikings/combat/gv_combat_blesses_mid.pn
 #close
 image gv combat_normal_close = "guerriers_vikings/combat/gv_combat_normaux_close.png"
 image gv combat_blesses_close = "guerriers_vikings/combat/gv_combat_blesses_close.png"
+
+#Solo
+define cavalier = Character('{color=#e67e22}Cavalier{/color}', color="#fff", image="guerriers_vikings")
+define Soldat = Character('{color=#e67e22}Soldat{/color}', color="#fff", image="guerriers_vikings")
+
+image solo_1 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_1/soldat_viking_1_debout_normal.png"
+image solo_1 debout_normal_close = "guerriers_vikings/solo/debout/soldat_1/soldat_viking_1_debout_normal.png"
+
+image solo_2 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
+image solo_2 debout_normal_close = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
+
+image solo_1 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
+image solo_1 debout_normal_close = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
+
+#Garde
+define garde = Character('{color=#e67e22}Garde{/color}', color="#fff", image="guerriers_vikings")
+
+image garde_1 debout_normal_mid = "guerriers_vikings/garde_viking/debout/garde_1/garde_viking_1_debout_normal.png"
+image garde_1 debout_normal_close = "guerriers_vikings/garde_viking/debout/garde_1/garde_viking_1_debout_normal.png"
+
+image garde_2 debout_normal_mid = "guerriers_vikings/garde_viking/debout/garde_2/garde_viking_1_debout_normal.png"
+image garde_2 debout_normal_close = "guerriers_vikings/garde_viking/debout/garde_2/garde_viking_1_debout_normal.png"
 
 #Jeune Guerrier Viking
 

@@ -273,13 +273,13 @@ label plaine_1 :
     h "Ha ! Dunbar, enfin. Un bon repas nous attend !"
 
     "Un cavalier arrive en trombe et descend de son cheval, avant de courir vers Harald."
-    show gv debout_normaux_mid at left with moveinleft
+    show solo_1 debout_normal_mid at left with moveinleft
 
-    gv "Sire ! Un rapport des éclaireurs !"
+    cavalier "Sire ! Un rapport des éclaireurs !"
 
     h "Donne-moi ça..."
 
-    hide gv with dissolve
+    hide solo_1 with dissolve
 
     "Harald lit rapidement le rapport."
 
