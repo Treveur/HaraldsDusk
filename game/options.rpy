@@ -140,8 +140,8 @@ init -1 python hide:
     # style.mm_menu_frame.ypos = 0.75
     #style.mm_menu_frame.yanchor = 0.5
 
-    style.mm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
-    style.mm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",0,0)
+    style.mm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",50,32)
+    style.mm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",95,32)
 
     style.mm_button.yminimum = 64
     style.mm_button.xminimum = 565
@@ -151,11 +151,11 @@ init -1 python hide:
     style.mm_button_text.xpos = 0.5
     style.mm_button_text.ypos = 0.5
 
-    style.gm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
-    style.gm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",0,0)
+    style.gm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",50,32)
+    style.gm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",95,32)
 
-    style.gm_button.yminimum = 43
-    style.gm_button.xminimum = 380
+    style.gm_button.yminimum = 64
+    style.gm_button.xminimum = 400
 
     style.sm_button.background = Frame("interface/box/save_box.png", 50, 50)
     style.sm_button.hover_background = Frame(im.MatrixColor("interface/box/save_box.png", im.matrix.brightness(-0.1)), 50, 50)
@@ -186,6 +186,13 @@ init -1 python hide:
 
     style.yn_button.left_padding = 95
     style.yn_button.right_padding = 95
+
+    style.th_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",50,32)
+    style.th_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",95,32)
+
+    style.th_button.yminimum = 64
+    style.th_button.xminimum = 300
+
 
 
     #########################################
