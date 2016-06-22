@@ -1941,9 +1941,10 @@ label o_explication_vie_village_2:
     e "Ma vie et de l'or contre la trahison du souverain le plus puissant ayant jamais existé ?"
     o "Exactement."
     o "Une fois que je t'aurai relâché, tu retourneras au château de Dunbar. Au signal que je te donnerai, tu abaisseras le pont-levis."
+    o "Il faudra aussi que tu te débrouilles pour priver Harald de la Hache Sainte. L'idéal serait de profiter de la confusion de l'assaut pour la lui soustraire alors qu'il n'est pas en sa possession."
     show einar prisonnier_determine_mid at left
     e "C'est tout ? Harald ne me laissera jamais faire !"
-    o "Peu importe la méthode. Tout ce que je demande, c'est que la porte soit ouverte quand mes troupes arriveront au château pour le roi."
+    o "Peu importe la méthode. Tout ce que je demande, c'est que la porte soit ouverte quand mes troupes arriveront au château pour le roi, et qu'il ne sois plus en possession de la Hache."
     show einar prisonnier_souriant_mid at left
     e "Les troupes ? Vos vingt fermiers ? Et que comptez-vous faire, une fois à l'intérieur ? Tuer le roi ? Ha ha ! Il pourrait vous affronter à lui tout seul !"
     o "Je ne veux pas le tuer. Pas nécessairement. Je veux uniquement l'obliger à quitter l'Ecosse. Je veux montrer au reste du monde que l'élu divin peut reculer face à des hommes déterminés."

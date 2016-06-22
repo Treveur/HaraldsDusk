@@ -997,6 +997,7 @@ label village_4:
     o "Avant de vous souhaiter bonne route, je veux vous rappeler quelque chose. Vous nous avez fait une promesse."
     o "Nous vous avons soigné, nous nous sommes occupé de vous. Vous nous êtes redevable. Remplissez votre part du marché."
     o "Lorsque l'assaut aura commencé, je mènerai mes hommes au combat. Lorsque vous entendrez deux coups de cor successifs, vous ouvrirez le pont-levis du château."
+    o "Et n'oubliez pas : Harald doit être privé de sa Hache, sans quoi tout ceci n'aura servi à rien."
 
     menu:
         
