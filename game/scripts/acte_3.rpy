@@ -1917,8 +1917,16 @@ label lieu_encore_inconnu_1(axe = True):
                 #Animation moira se rapprochant
                 "Elle se rapproche des deux hommes, comprenant de quoi il est question."
                 show moira debout_attriste_mid at right
-                m "Je... Je suis d'accord avec mon père."
-                "Les larmes lui montent aux yeux."
+                if moira_abuse == True:
+                    m "Jamais je ne partagerai la vie d'un porc immonde."
+                    "Elle crache aux pieds d'Einar."
+                    o "Moira !"
+                    "Elle s'éloigne sans rien ajouter, les poings serrés."
+                    o "Que s'est-il passé ? Je croyais que vous vous appréciez !"
+                    e "Visiblement l'affection n'est pas partagée."
+                    o "Si j'apprend que tu t'en es pris à ma fille..."
+                    e "Rassurez-vous, tout va bien."
+                    
 
             "Ce n'est pas à vous de décider":
                 show einar debout_determine_mid at left
