@@ -1,6 +1,6 @@
 #Checkpoint
 label gameover:
-    call game_over_combat(checkpoint)
+    call game_over_combat(checkpoint) from _call_game_over_combat_8
 
 
 #Ending

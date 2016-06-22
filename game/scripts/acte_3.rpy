@@ -480,7 +480,7 @@ label interieur_grande_porte_chateau_1:
 label pont_levis_baisse:
     #Ambiance bruit cliqueti boucliers et épée
     scene bg cour_chateau_crepuscule
-    show gv combat_normal_mid_flip at center with dissolve
+    show gv combat_normal_mid at center with dissolve
 
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
@@ -495,7 +495,7 @@ label pont_levis_baisse:
     scene bg cour_chateau_crepuscule
     show gv combat_normal_mid at center
     with dissolve
-    gv "Trahison ! Bloquez le passage, vite !"
+    soldat "Trahison ! Bloquez le passage, vite !"
     "..."
 
     "Les soldats proches se tournent vers Einar."

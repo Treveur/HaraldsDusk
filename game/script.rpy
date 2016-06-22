@@ -335,6 +335,9 @@ image gv debout_determines_mid_flip = im.Flip("guerriers_vikings/debout/gv_debou
 image gv combat_normal_mid = "guerriers_vikings/combat/gv_combat_normaux_mid.png"
 image gv combat_blesses_mid = "guerriers_vikings/combat/gv_combat_blesses_mid.png"
 
+image gv combat_normal_mid_flip = im.Flip("guerriers_vikings/combat/gv_combat_normaux_mid.png", horizontal = True)
+image gv combat_blesses_mid_flip = im.Flip("guerriers_vikings/combat/gv_combat_blesses_mid.png", horizontal = True)
+
 #close
 image gv combat_normal_close = "guerriers_vikings/combat/gv_combat_normaux_close.png"
 image gv combat_blesses_close = "guerriers_vikings/combat/gv_combat_blesses_close.png"

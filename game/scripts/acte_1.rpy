@@ -1656,7 +1656,7 @@ label massacre_foret_2 (message, massacre_village):
         "Restez en formation !":
             hide screen countdown
             e "Ne vous dispersez pas ! Restez serrés !"
-            call game_over_combat('checkpoint_5')
+            call game_over_combat('checkpoint_5') from _call_game_over_combat_9
 
     #Phase combat impossible à gagner WIP
     $ time = 5
@@ -1674,7 +1674,7 @@ label massacre_foret_2 (message, massacre_village):
         "Regroupez-vous !":
             hide screen countdown
             e "Ne vous dispersez pas ! Restez serrés !"
-            call game_over_combat('checkpoint_5')
+            call game_over_combat('checkpoint_5') from _call_game_over_combat_10
 
 ################################### WIP ###########################################
 
