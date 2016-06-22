@@ -1006,7 +1006,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
         if epargner_harld_donjon == False:
             show einar combat_hache_furieux_mid at center zorder 1 with move
-            "Narration"
+            "Einar laisse le corps du roi sur le sol et quitte la pièce sans un regard en arrière."
             hide harald
             hide einar
             with dissolve
