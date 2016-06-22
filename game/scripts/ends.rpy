@@ -88,7 +88,7 @@ label good_ending_8:
             e "(Me voilà débarrassé de tous mes engagements...)"
             e "(Maintenant que le monde est privé de la Hache, l'équilibre devrait revenir.)"
             e "(Enfin, j'espère...)"
-            "Le monde se souviendra d'Einar 
+            "Le monde se souviendra d'Einar"
 
         "(Allons récupérer la Hache !)":
             e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
@@ -205,7 +205,7 @@ label good_ending_11:
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
                 "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
                 "Einar le Libérateur."
-                
+
             else:
                 "Le soir venu, lors du festin organisé en l'honneur d'Einar, Moira reste ostensiblement à l'écart du viking."
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
