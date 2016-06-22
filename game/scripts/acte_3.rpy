@@ -766,15 +766,17 @@ label pont_levis_baisse:
             "Attaque précise":
                 hide screen countdown
                 show einar combat_determine_mid at center
-                show huscarls combat_furieux_mid at right ,shake
+                show solo_2 debout_normal_mid_flip at shake with moveinright:
+                    xoffset 0
                 "Einar tranche la tête d'un huscarl, mais l'un des guerriers d'élite atteint Einar dans le dos."
-                show einar combat_blesse_mid at left ,shake
+                hide solo_2
+                show einar combat_normal_mid at shake
                 "La colonne vertébrale brisée, Einar s'écroule."
+                hide einar
                 jump bad_ending_5
 
 
         "Ogma rejoint la mêlée et trouve Einar entrain d'achever un huscarl."
-        hide huscarls with dissolve
         show einar combat_normal_mid at left with moveinleft
         show ogma combat_normal_mid at center with moveinright
         with dissolve
@@ -903,7 +905,7 @@ label e_bruler_donjon_obeir_donjon:
     show einar debout_determine_mid_flip at left with moveinright
     "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
     "Le roi est entrain de s'équiper de son armure."
-    scene bg chateau_chambre_nuit with dissolve
+    scene bg chateau_couloir_crepuscule with dissolve
     show einar debout_determine_mid_flip at left with moveinright
     show einar debout_determine_mid at left
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
@@ -1054,7 +1056,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         $ checkpoint = "checkpoint_3"
 
         label checkpoint_3:
-            scene bg chateau_chambre_nuit with dissolve
+            scene bg chateau_couloir_crepuscule with dissolve
 
 
         "Le combat s'engage entre le roi et son huscarl."
