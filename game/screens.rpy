@@ -52,7 +52,7 @@ screen say:
     if side_image:
         add side_image
     else:
-        add SideImage() xalign 0.05 yalign 0.9615
+        add SideImage() xalign 0.065 yalign 0.9615
 
     # Utilisation du menu rapide.
     # use quick_menu
@@ -76,7 +76,7 @@ screen choice:
 
         vbox:
             style "menu"
-            spacing 2
+            spacing 5
 
             for caption, action, chosen in items:
 
@@ -84,9 +84,9 @@ screen choice:
 
                     button:
                         action action
-                        style "menu_choice_button"
+                        style "cm_button"
 
-                        text caption style "menu_choice"
+                        text caption style "cm_button_text"
 
                 else:
                     text caption style "menu_caption"
@@ -211,7 +211,7 @@ screen main_menu:
         button:
             style "mm_button"
             text "Quit" style "mm_button_text"
-            action Quit(confirm=False)
+            action Quit()
 
 
 
@@ -266,7 +266,7 @@ screen navigation:
         button:
             style "gm_button"
             text "Quit" style "mm_button_text"
-            action Quit(confirm=False)
+            action Quit()
 
         # has vbox
         #
@@ -316,18 +316,18 @@ screen file_picker:
                 for i in range (1,3):
                     $ k = k + 1
                     button:
+                        style "sm_button"
                         action FileAction(k)
 
                         has vbox spacing 50
 
-                        add FileScreenshot(k) size(192,108) ypos 10
+                        add FileScreenshot(k) size(192,108) ypos 20 xpos 37
 
                         $ file_name = FileSlotName(k, columns * rows)
                         $ file_time = FileTime(k, empty=_("Empty Slot"))
                         $ save_name = FileSaveName(k)
 
-                        text "[file_name]. [file_time!t]\n"
-
+                        text "[file_name]. [file_time!t]\n" xpos 37
 
     # frame:
     #     style "file_picker_frame"
@@ -595,29 +595,34 @@ screen yesno_prompt:
     window:
         style "gm_root"
 
-    frame:
-        style_group "yesno"
+    # frame:
+    #     style_group "yesno"
+    #
+    #     xfill True
+    #     xmargin .05
+    #     ypos .1
+    #     yanchor 0
+    #     ypadding .05
 
-        xfill True
-        xmargin .05
-        ypos .1
-        yanchor 0
-        ypadding .05
+    label _(message):
+        yalign 0.5
+        xalign 0.5
 
-        has vbox:
-            xalign .5
-            yalign .5
-            spacing 30
+    hbox:
+        yalign 0.6
+        xalign 0.5
+        spacing 100
 
-        label _(message):
-            xalign 0.5
+        button:
+            style "yn_button"
+            text "Yes" style "mm_button_text"
+            action yes_action
 
-        hbox:
-            xalign 0.5
-            spacing 100
+        button:
+            style "yn_button"
+            text "No" style "mm_button_text"
+            action no_action
 
-            textbutton _("Yes") action yes_action
-            textbutton _("No") action no_action
 
     # Clic droit ou échap pour "non"
     key "game_menu" action no_action
@@ -668,9 +673,9 @@ init -2 python:
 # In-game UI
 screen ingame_menu:
 
-        hbox xalign 0.99 yalign 0.80:
-            spacing 20
-            imagebutton auto "interface/buttons/log/log_%s.png" action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
+        vbox xalign 0.994 yalign 0.99:
+            spacing 10
             imagebutton auto "interface/buttons/pause/pause_%s.png" action ShowMenu("save")
+            imagebutton auto "interface/buttons/log/log_%s.png" action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
         # vbox xalign 0.97 yalign 0.03:
         #     imagebutton auto "interface/buttons/pause/pause_%s.png" action ShowMenu("save")
