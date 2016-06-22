@@ -88,12 +88,15 @@ label good_ending_8:
             e "(Me voilà débarrassé de tous mes engagements...)"
             e "(Maintenant que le monde est privé de la Hache, l'équilibre devrait revenir.)"
             e "(Enfin, j'espère...)"
-            "Le monde se souviendra d'Einar"
+            "Le monde se souviendra d'Einar, Libérateur de l'Ecosse ; mais une part d'ombre subsistera."
+            "Einar était-il plus qu'un homme ? Comment a-t-il pu détruire la Hache Sainte et vaincre son porteur, élu de Dieu ?"
 
         "(Allons récupérer la Hache !)":
             e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
             e "(Il est temps de la récupérer ! Ce genre de choses ne devrait pas rester à traîner dans la nature...)"
             e "(Et ensuite, à moi le pouvoir !)"
+            "L'Histoire ne se souviendra pas d'Einar comme d'un homme, mais comme d'un Dieu retors et rusé, traversant les âges armé de la Hache Sainte."
+            "Jusqu'où iront ses conquêtes ? A quel point s'étendront ses royaumes infinis ?"
 
     "Fin 08/22"
     jump credits
@@ -205,7 +208,7 @@ label good_ending_11:
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
                 "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
                 "Einar le Libérateur."
-
+                
             else:
                 "Le soir venu, lors du festin organisé en l'honneur d'Einar, Moira reste ostensiblement à l'écart du viking."
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."

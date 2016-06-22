@@ -194,7 +194,6 @@ init -1 python hide:
     style.th_button.xminimum = 300
 
 
-
     #########################################
     ## Ici nous personnalisons la police utilisée par défaut pour le texte.
 
@@ -415,3 +414,10 @@ init python:
 
     build.documentation('*.html')
     build.documentation('*.txt')
+
+init 5 python:
+    style.vscrollbar.xmaximum = 30
+    style.vscrollbar.xminimum = 30
+    style.vscrollbar.thumb = im.MatrixColor("interface/scrollbar/scroll.png",im.matrix.brightness(0.5))
+    style.vscrollbar.top_bar = im.MatrixColor("interface/scrollbar/bar.png",im.matrix.opacity(0.5))
+    style.vscrollbar.bottom_bar = im.MatrixColor("interface/scrollbar/bar.png",im.matrix.opacity(0.5))
