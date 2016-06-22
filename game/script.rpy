@@ -305,7 +305,7 @@ image side guerriers_vikings = "guerriers_vikings/gv_portrait.png"
 
 define jgv = Character("Jeune Guerrier Viking", image="jeune_viking")
 
-# image side guerriers_vikings = "jeune_viking/jeune_viking_portrait.png"
+image side guerriers_vikings = "jeune_viking/jv_portrait.png"
 
 #Debout
 
@@ -562,7 +562,7 @@ image re combat_furieux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat
 ############################################### Villageois / prisonniers ###############################################
 define ve = Character('{color=#3498db}Villageois{/color}', color="#3498db", image="villageois")
 
-# image side villageois = "villageois/villageois_portrait.png"
+image side villageois = "villageois_ecossais/vieux_portrait.png"
 
 define pe1 = Character("Prisonnier écossais 1", image="villageois_ecossais")
 define pe2 = Character("Prisonnier écossais 2", image="villageois_ecossais")
@@ -592,12 +592,16 @@ define vh = Character('{color=#3498db}Doyen{/color}', color="#3498db", image="vi
 image vieux debout_normal_mid = "villageois_ecossais/debout/vieux/ve_vieux_normal_mid.png"
 image vieux debout_normaux_close = "villageois_ecossais/debout/vieux/ve_vieux_normal_close.png"
 ############################################### Demoiselle ###############################################
+define femme = Character('{color=#3498db}Femme{/color}', color="#3498db", image="portrait_femme")
+
+image side portrait_femme = "villageois_ecossais/fille_portrait.png"
+
 image femme debout_normaux_mid = "villageois_ecossais/debout/femme/ve_femme_normal_mid.png"
 image femme debout_normaux_close = "villageois_ecossais/debout/femme/ve_femme_normal_close.png"
 ############################################### Patrick ###################################################
 define p = Character("Patrick", image="patrick")
 
-# image side patrick = "patrick/patrick_portrait.png"
+image side patrick = "patrick/patrick_portrait.png"
 
 image patrick debout_normal_mid = "patrick/debout/patrick_debout_normal_mid.png"
 
@@ -813,12 +817,6 @@ screen countdown:
 label start:
 
     scene bg black
-
-    if short_version:
-        centered "Version courte"
-    else:
-        centered "Version longue"
-
 
     centered "En l'an 1038, Harald Sigurdsson de Norvège, garde varègue au service de l'impératrice de Constantinople, s'empare des Clous de la Sainte Croix à Jérusalem."
 
