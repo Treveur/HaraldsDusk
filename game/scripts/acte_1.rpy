@@ -1632,7 +1632,7 @@ label massacre_foret_2 (message, massacre_village):
         scene bg forest_night
         show logan combat_determine_mid_flip at right
         show einar combat_determine_mid_flip at center
-         with dissolve
+        with dissolve
 
     "Une volée de flèches siffle en sortant des frondaisons et frappe la plupart des guerriers vikings."
 
