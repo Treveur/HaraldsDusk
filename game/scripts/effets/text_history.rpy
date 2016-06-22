@@ -14,12 +14,13 @@ init -3 python:
     style.readback_window.ymaximum = 1080
     # style.readback_window.xmaximum = 760
     # style.readback_window.ymaximum = 500
-    style.readback_window.align = (.5, .5)
+    style.readback_window.align = (.5, 0)
 
     style.readback_frame.background = None
     style.readback_frame.xpadding = 10
     style.readback_frame.xmargin = 5
     style.readback_frame.ymargin = 5
+    style.readback_window.bottom_padding = 100
 
     style.readback_text.color = "#fff"
 
@@ -316,4 +317,8 @@ screen text_history:
                         null height 10
 
             bar adjustment adj style 'vscrollbar'
-        textbutton _("Return") action Return() align (.97, 1.0)
+        button:
+            style "th_button"
+            align (.5, 1.1)
+            text "Return" style "mm_button_text"
+            action Return()

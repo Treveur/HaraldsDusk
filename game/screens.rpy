@@ -235,7 +235,7 @@ screen navigation:
 
     vbox:
         spacing 20
-        xalign 0.65
+        xalign 0.745
         yalign 0.5
 
         button:
