@@ -243,24 +243,23 @@ label good_ending_14(rejete):
     jump credits
 
 label good_ending_15(marier):
-    $ moira_marry = False:
-        
+
     if marier:
         "Moira s'approche lentement devant Einar, sans oser le regarder dans les yeux."
-        
+
         menu:
             "Ne t'inquiète pas":
                 e "Ne t'inquiète pas. Je ne te ferai aucun mal."
                 "La jeune femme sourit vaguement, regardant à peine Einar."
-                
+
             "(sourire)":
                 if moira_abuse == False:
                     "Einar adresse un sourire à Moira, qui semble un peu plus sereine."
-                    
+
                 else:
                     "Einar adresse un sourire lourd de sens à Moira."
                     "La jeune femme serre les poings et semble au bord des larmes."
-                
+
         "Le soir venu, le village fête les noces annoncées d'Einar et Moira."
         "Le monde se souviendra d'un Héros, Einar le Libérateur."
         "Mais à quel genre d'homme sera mariée Moira ?"
