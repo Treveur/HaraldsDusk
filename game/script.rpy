@@ -558,6 +558,11 @@ image re combat_furieux_mid_flip = im.Flip("rebelles_ecossais/combat/re_combat_f
 image re combat_normal_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_normaux_close.png", horizontal = True)
 image re combat_furieux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_furieux_close.png", horizontal = True)
 
+########################################## rebelle solo ########################################
+define rebelle = Character('{color=#f39c12}Rebelle écossais{/color}', color="#f39c12", image="rebelles_ecossais")
+
+image rs debout_normaux_mid = "rebelle_seul/debout/re_seul_normal_mid.png"
+image rs debout_normaux_mid_flip = im.Flip("rebelle_seul/debout/re_seul_normal_mid.png", horizontal = True)
 
 ############################################### Villageois / prisonniers ###############################################
 define ve = Character('{color=#3498db}Villageois{/color}', color="#3498db", image="villageois")
