@@ -256,10 +256,7 @@ init python:
     class NewAdj(renpy.display.behavior.Adjustment):
         def change(self,value):
 
-            if value > self._range and self._value == self._range:
-                return Return()
-            else:
-                return renpy.display.behavior.Adjustment.change(self, value)
+            return renpy.display.behavior.Adjustment.change(self, value)
 
     def store_yvalue(y):
         global yvalue
