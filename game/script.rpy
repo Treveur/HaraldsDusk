@@ -305,7 +305,7 @@ image side guerriers_vikings = "guerriers_vikings/gv_portrait.png"
 
 define jgv = Character("Jeune Guerrier Viking", image="jeune_viking")
 
-image side guerriers_vikings = "jeune_viking/jv_portrait.png"
+image side jeune_viking = "jeune_viking/jv_portrait.png"
 
 #Debout
 
