@@ -55,7 +55,7 @@ screen say:
         add SideImage() xalign 0.05 yalign 0.9615
 
     # Utilisation du menu rapide.
-    use quick_menu
+    # use quick_menu
 
     #Utilisation du menu ingame
     use ingame_menu
@@ -120,7 +120,7 @@ screen input:
         text prompt style "input_prompt"
         input id "input" style "input_text"
 
-    use quick_menu
+    # use quick_menu
 
 ##############################################################################
 # Nvl
@@ -171,7 +171,7 @@ screen nvl:
 
     add SideImage() xalign 0.0 yalign 1.0
 
-    use quick_menu
+    # use quick_menu
 
 ##############################################################################
 # Menu principal
@@ -668,7 +668,8 @@ init -2 python:
 # In-game UI
 screen ingame_menu:
 
-        hbox xalign 0.99 yalign 0.82:
+        hbox xalign 0.99 yalign 0.80:
+            spacing 20
             imagebutton auto "interface/buttons/log/log_%s.png" action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
             imagebutton auto "interface/buttons/pause/pause_%s.png" action ShowMenu("save")
         # vbox xalign 0.97 yalign 0.03:
