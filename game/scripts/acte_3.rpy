@@ -123,7 +123,6 @@ label cour_chateau_1:
             jump menu_assome_cour_chateau
 
         "Nous sommes tombés dans une embuscade":
-        #modifaction pour indiquer le lieu par la suite
             show einar debout_normal_mid at left
             e "Nous venions de traverser le village de Perth, que nous soupçonnions d'abriter les rebelles."
             e "Nous étions ensuite repartis. Les hommes discutaient entre eux, nous étions sûrs de nous. Puis la nuit est tombée."
@@ -424,11 +423,11 @@ label cour_chateau_2:
     #toujours ambiance chateau
     show bg cour_chateau_crepuscule with fade
     "Au crépuscule..."
-    show gv debout_normaux_mid at left with moveinleft
-    gv "Sire ! Sire !"
+    show garde_1 debout_normal_mid_flip at left with moveinleft
+    garde "Sire ! Sire !"
     show harald debout_normal_mid at right with moveinright
     h "Qu'y a-t-il ? Parle !"
-    gv "Hjalmar vient de repérer des centaines de torches sortir de la forêt ! Ils convergent tous vers le château !"
+    garde "Hjalmar vient de repérer des centaines de torches sortir de la forêt ! Ils convergent tous vers le château !"
     show harald debout_furieux_mid at right
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
     show harald combat_determine_mid at right
@@ -437,7 +436,7 @@ label cour_chateau_2:
     "Une fois ses ordres donnés, Harald disparaît dans le donjon."
 
     hide harald
-    hide gv
+    hide garde_1
     with dissolve
 
     jump interieur_grande_porte_chateau_1
@@ -450,8 +449,8 @@ label interieur_grande_porte_chateau_1:
 
     show bg cour_chateau_crepuscule with dissolve
 
-    show gv debout_enthousiaste_mid with dissolve
-    gv "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
+    show gv debout_enthousiaste_mid_flip at right with dissolve
+    soldat "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
     hide gv
     "La horde progresse en courant à travers la plaine."
     "A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis."
@@ -481,7 +480,7 @@ label interieur_grande_porte_chateau_1:
 label pont_levis_baisse:
     #Ambiance bruit cliqueti boucliers et épée
     scene bg cour_chateau_crepuscule
-    show gv combat_normal_mid at center with dissolve
+    show gv combat_normal_mid_flip at center with dissolve
 
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"

@@ -341,16 +341,16 @@ image gv combat_blesses_close = "guerriers_vikings/combat/gv_combat_blesses_clos
 
 #Solo
 define cavalier = Character('{color=#e67e22}Cavalier{/color}', color="#fff", image="guerriers_vikings")
-define Soldat = Character('{color=#e67e22}Soldat{/color}', color="#fff", image="guerriers_vikings")
+define soldat = Character('{color=#e67e22}Guerrier{/color}', color="#fff", image="guerriers_vikings")
 
 image solo_1 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_1/soldat_viking_1_debout_normal.png"
 image solo_1 debout_normal_close = "guerriers_vikings/solo/debout/soldat_1/soldat_viking_1_debout_normal.png"
 
-image solo_2 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
-image solo_2 debout_normal_close = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
+image solo_2 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_2_debout_normal.png"
+image solo_2 debout_normal_close = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_2_debout_normal.png"
 
-image solo_1 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
-image solo_1 debout_normal_close = "guerriers_vikings/solo/debout/soldat_2/soldat_viking_1_debout_normal.png"
+image solo_1 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_3/soldat_viking_3_debout_normal.png"
+image solo_1 debout_normal_close = "guerriers_vikings/solo/debout/soldat_3/soldat_viking_3_debout_normal.png"
 
 #Garde
 define garde = Character('{color=#e67e22}Garde{/color}', color="#fff", image="guerriers_vikings")
@@ -358,8 +358,14 @@ define garde = Character('{color=#e67e22}Garde{/color}', color="#fff", image="gu
 image garde_1 debout_normal_mid = "guerriers_vikings/garde_viking/debout/garde_1/garde_viking_1_debout_normal.png"
 image garde_1 debout_normal_close = "guerriers_vikings/garde_viking/debout/garde_1/garde_viking_1_debout_normal.png"
 
-image garde_2 debout_normal_mid = "guerriers_vikings/garde_viking/debout/garde_2/garde_viking_1_debout_normal.png"
-image garde_2 debout_normal_close = "guerriers_vikings/garde_viking/debout/garde_2/garde_viking_1_debout_normal.png"
+image garde_2 debout_normal_mid = "guerriers_vikings/garde_viking/debout/garde_2/garde_viking_2_debout_normal.png"
+image garde_2 debout_normal_close = "guerriers_vikings/garde_viking/debout/garde_2/garde_viking_2_debout_normal.png"
+
+image garde_1 debout_normal_mid_flip = im.Flip("guerriers_vikings/garde_viking/debout/garde_1/garde_viking_1_debout_normal.png", horizontal = True)
+image garde_1 debout_normal_close_flip = im.Flip("guerriers_vikings/garde_viking/debout/garde_1/garde_viking_1_debout_normal.png", horizontal = True)
+
+image garde_2 debout_normal_mid_flip = im.Flip("guerriers_vikings/garde_viking/debout/garde_2/garde_viking_2_debout_normal.png", horizontal = True)
+image garde_2 debout_normal_close_flip = im.Flip("guerriers_vikings/garde_viking/debout/garde_2/garde_viking_2_debout_normal.png", horizontal = True)
 
 #Jeune Guerrier Viking
 
