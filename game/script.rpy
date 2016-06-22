@@ -39,6 +39,7 @@ image einar debout_determine_close = "einar/debout/einar_debout_determine_close.
 
 #flip
 image einar debout_determine_mid_flip = im.Flip("einar/debout/einar_debout_determine_mid.png", horizontal = True)
+image einar debout_souriant_mid_flip = im.Flip("einar/debout/einar_debout_souriant_mid.png", horizontal= True)
 image einar debout_attriste_mid_flip = im.Flip("einar/debout/einar_debout_attriste_mid.png", horizontal = True)
 image einar debout_normal_mid_flip = im.Flip("einar/debout/einar_debout_normal_mid.png", horizontal = True)
 image einar debout_furieux_mid_flip = im.Flip("einar/debout/einar_debout_furieux_mid.png", horizontal = True)
