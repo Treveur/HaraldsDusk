@@ -104,16 +104,18 @@ init -1 python hide:
 
     style.window.left_margin = 6
     style.window.right_margin = 6
-    style.window.top_margin = 2
-    style.window.bottom_margin = 12
+    # style.window.top_margin = -20
+    style.window.bottom_margin = 6
 
     ## Le 'rembourrage' ('padding') est la marge à l'intérieur de la,
     ## fenêtre, où le fond apparaît.
 
-    style.window.left_padding = 250
-    style.window.right_padding = 130
+    style.window.left_padding = 240
+    style.window.right_padding = 240
     style.window.top_padding = 44
     style.window.bottom_padding = 50
+
+    style.window.yminimum = 192
 
 
     ## Hauteur minimum de la fenêtre, incluant les marges (margin et padding).
@@ -137,8 +139,9 @@ init -1 python hide:
     #style.mm_menu_frame.xanchor = 0.5
     # style.mm_menu_frame.ypos = 0.75
     #style.mm_menu_frame.yanchor = 0.5
+
     style.mm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
-    style.mm_button.hover_background = Frame(im.MatrixColor("interface/buttons/mainmenu/mmbutton.png", im.matrix.brightness(-0.1)),0,0)
+    style.mm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",0,0)
 
     style.mm_button.yminimum = 66
     style.mm_button.xminimum = 502
@@ -149,7 +152,7 @@ init -1 python hide:
     style.mm_button_text.ypos = 0.5
 
     style.gm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
-    style.gm_button.hover_background = Frame(im.MatrixColor("interface/buttons/mainmenu/mmbutton.png", im.matrix.brightness(-0.1)),0,0)
+    style.gm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",0,0)
 
     style.gm_button.yminimum = 49
     style.gm_button.xminimum = 376

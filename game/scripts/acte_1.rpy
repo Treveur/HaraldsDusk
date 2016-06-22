@@ -25,20 +25,20 @@ label intro:
 
     scene bg forest with dissolve
 
-    "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
+    n "Dans la forêt de Westruther, au coeur de l'Ecosse, une troupe de vikings se dirige vers le chateau de Dunbar pour s'y installer et préparer l'expédition punitive visant à mater les rebelles."
 
     scene bg forest_blur with dissolve
 
     show harald debout_normal_mid at center with moveinright
-    "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
-    "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
-    "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
+    n "A la tête de la cohorte, Harald, roi-empereur des vikings. Il a décidé de venir punir lui-même les insolents ayant osé défier son pouvoir."
+    n "Il ne semble pas préoccupé par la situation et rit à gorge déployée avec ses hommes."
+    n "A ses côtés marche une armée de cent vikings, guerriers et huscarls, impatients d'en découdre : cela fait déjà longtemps qu'ils ne se sont pas battus."
     show logan debout_contrarie_mid_flip at right with moveinright
-    "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
-    "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
+    n "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
+    n "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
     show einar debout_normal_mid at left with moveinleft
-    "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
-    "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
+    n "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
+    n "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
 
 
     menu:
