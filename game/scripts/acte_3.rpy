@@ -526,12 +526,12 @@ label pont_levis_baisse:
     with dissolve
 
     show bg plaine_plaine_crepuscule with dissolve
-    show re debout_furieux_mid at center with dissolve
+    show re debout_normaux_mid at center with dissolve
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     hide re
     show bg chateau_porte_interieur_crepuscule with dissolve
-    show re debout_furieux_mid at right with dissolve
-    show re debout_furieux_mid at center with moveinleft
+    show re debout_normaux_mid at right with dissolve
+    show re debout_normaux_mid at center with moveinleft
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
     hide re
     show bg cour_chateau_crepuscule with dissolve
@@ -540,7 +540,7 @@ label pont_levis_baisse:
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
     show gv debout_determines_mid at left with moveinleft
     show einar combat_determine_mid_flip at center with moveinleft
-    show re debout_furieux_mid at right with moveinright
+    show re debout_normaux_mid at right with moveinright
     with dissolve
     #Ajouter un shake camera
     ge "HAAAAA !"
@@ -660,7 +660,7 @@ label pont_levis_baisse:
         "Pris entre les deux forces, Einar est immobilisé."
         show gv debout_determines_mid at left
         show einar combat_determine_mid_flip at center
-        show re debout_furieux_mid at right
+        show re debout_normaux_mid at right
         "Au même moment, ses anciens confrères huscarls le chargent."
         hide gv
         hide re
@@ -670,12 +670,22 @@ label pont_levis_baisse:
             scene bg cour_chateau_crepuscule
 
         show einar combat_determine_mid_flip at center
-        show huscarls combat_normal_mid at left with moveinleft
+        show solo_2 debout_normal_mid at left with moveinleft:
+            xoffset 100
+        show garde_1 debout_normal_mid at left with moveinleft:
+            xoffset -50
+
         with dissolve
 
         hu "Tu as trahi les tiens pour ça ? Pour rejoindre des paysans ?"
         hu "Ha, il a dû tomber sur un beau garçon de ferme !"
         hu "Défend-toi, traître !"
+
+        show garde_1 debout_normal_mid at left with moveinleft:
+            xoffset 0
+        show solo_2 debout_normal_mid at right with moveinright
+        pause 0.5
+        show solo_2 debout_normal_mid_flip
 
         #"Affronter ses anciens confrères huscarls. WIP"
         #Phase combat
@@ -686,7 +696,10 @@ label pont_levis_baisse:
 
 
         "Les huscarls encerclent Einar pour ne lui laisser aucune chance. Une pluie de haches s'abat sur Einar !"
-        show huscarls combat_furieux_mid at left
+        show garde_1 debout_normal_mid with moveinright:
+            xoffset 100
+        show solo_2 debout_normal_mid_flip with moveinleft:
+            xoffset -100
 
         show screen countdown
         menu:
@@ -701,14 +714,27 @@ label pont_levis_baisse:
             "Attaquer":
                 hide screen countdown
                 "Einar contre-attaque furieusement, faisant reculer la masse des guerriers d'élite."
-                show huscarls combat_furieux_mid at left, shake
+                show garde_1 debout_normal_mid at shake with moveinleft:
+                    xoffset 0
+
+                show einar combat_furieux_mid at center
+
+                show solo_2 debout_normal_mid_flip at shake with moveinright:
+                    xoffset 0
+
+                show einar combat_determine_mid_flip
 
         $ time = 4
         $ timer_range = 4
         $ timer_jump = 'gameover'
 
         "Les huscarls tentent de consolider leur cercle et d'attaquer Einar sur ses arrières !"
-        show huscarls combat_furieux_mid at right with moveinright
+        show solo_3 debout_normal_mid_flip at right with moveinright:
+            xoffset 200
+        show garde_1 debout_normal_mid with moveinright:
+            xoffset 100
+        show solo_2 debout_normal_mid_flip with moveinleft:
+            xoffset -100
 
         show screen countdown
 
@@ -717,10 +743,23 @@ label pont_levis_baisse:
                 hide screen countdown
                 show einar combat_furieux_mid at center
                 "D'un coup ample et rapide, Einar parvient à désarmer et blesser plusieurs de ses opposants."
-                show huscarls combat_furieux_mid at right ,shake
+                show solo_3 debout_normal_mid_flip at shake with moveinright:
+                    xoffset 300
+                show einar combat_furieux_mid_flip
+                show garde_1 debout_normal_mid at shake with moveinleft:
+                    xoffset 0
+                show einar combat_furieux_mid
+                show solo_2 debout_normal_mid_flip at shake with moveinright:
+                    xoffset 0
+                # show huscarls combat_furieux_mid at right ,shake
                 "Le cercle d'assaillants se fragmente, et les rebelles profitent de cet instant pour attaquer les huscarls à leur tour."
-                hide huscarls with dissolve
-                show re debout_furieux_mid at right with moveinright
+
+                hide solo_3
+                hide garde_1
+                hide solo_2
+                with dissolve
+
+                show re debout_normaux_mid at right with moveinright
                 "Les huscarls sont vaincus en l'espace de quelques secondes, broyés par la masse des rebelles."
 
 
@@ -774,9 +813,9 @@ label e_bruler_donjon_desobeir_donjon:
     if short_version == False:
         "Le jeune soldat qui pleurait lors du jugement survient face à Einar."
         show jgv debout_normal_mid at center with dissolve
-        show re debout_furieux_mid at right with dissolve
+        show re debout_normaux_mid at right with dissolve
         "Il a l'air terrorisé mais résolu, et tue un rebelle."
-        show re debout_furieux_mid at right, shake
+        show re debout_normaux_mid at right, shake
         hide re with dissolve
 
         show einar combat_normal_mid at left with moveinleft
@@ -804,7 +843,7 @@ label e_bruler_donjon_desobeir_donjon:
 
     "Harald jaillit du donjon, protégé par son armure et portant la terrible Hache Sainte."
 
-    show re debout_furieux_mid at right with dissolve
+    show re debout_normaux_mid at right with dissolve
     show harald combat_hache_determine_mid_flip at center with moveinleft
     show huscarls combat_enthousiaste_mid at left with moveinleft
 
@@ -812,7 +851,7 @@ label e_bruler_donjon_desobeir_donjon:
     h "A moi, huscarls ! Suivez votre roi !"
     hu "HAAAAAA !"
     show harald combat_hache_determine_mid_flip at right with moveinright
-    show re debout_furieux_mid at right, shake
+    show re debout_normaux_mid at right, shake
     hide re with dissolve
     show huscarls combat_enthousiaste_mid at center with moveinright
 
