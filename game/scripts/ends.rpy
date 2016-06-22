@@ -82,7 +82,7 @@ label good_ending_7:
 label good_ending_8:
     "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
     "Les villageois lui font leurs adieux et petit à petit, la place se vide."
-    "Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner inexorablement."
+    "Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner."
     "Moira."
 
     menu :
@@ -166,22 +166,22 @@ label good_ending_11:
     show einar debout_normal_mid at left
     e "Je ne suis pas sûr..."
     show ogma debout_souriant_mid at center
-    o "A vrai dire, il y a quelqu'un en particulier qui tient énormément à ta présence."
+    o "A vrai dire, il y a une raison particulière à ta présence."
     show einar debout_souriant_mid at left
     e "Ah ?"
-    o "Je sais que Moira et toi êtes devenus très proches..."
-    o "Aussi, j'ai décidé de t'offrir la main de ma fille !"
-    o "N'est-ce pas la plus belle récompense ?"
+    o "Je serais heureux de compter le libérateur de mon peuple dans ma famille."
+    o "J'ai l'honneur de t'offrir la main de ma fille, si tu l'acceptes."
     menu :
         "Oui !":
             e "Et comment ! Je n'aurais pû espérer mieux !"
-            o "Merveilleux !"
+            o "C'est sans doute la plus belle conclusion à apporter à cette histoire ! La liberté retrouvée, une fête, un mariage."
             "..."
             hide einar
             hide ogma
             with dissolve
             scene bg village_crepuscule with dissolve
             "Le soir venu, lors du festin organisé en l'honneur d'Einar, Ogma annonce les noces sous une ovation tonitruante."
+            "Les deux fiancés font l'objet de toutes les bénédictions et des félicitations des villageois, alors que personne ne remarque les larmes discrètes de Moira."
             "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
             "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
             "Einar le Libérateur."
@@ -193,14 +193,25 @@ label good_ending_11:
             o "Pourquoi ?"
             e "Je ne souhaite pas me marier à Moira ; vous exposer mes raisons ne changerait rien à l'affaire."
             o "Je ne comprend pas ta réaction... Elle sera profondément blessée."
+            e "Rien n'est moins sûr."
             hide einar
             hide ogma
             with dissolve
             scene bg village_crepuscule with dissolve
-            "Le soir venu, lors du festin organisé en l'honneur d'Einar, on remarque le visage fermé et la froideur de Moira."
-            "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
-            "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
-            "Einar le Libérateur."
+            if moira_abuse ==False:
+                "Le soir venu, lors du festin organisé en l'honneur d'Einar, Moira vient chercher le guerrier viking."
+                m "Merci."
+                e "Pour ?"
+                m "Ne pas avoir accepté l'offre de mon père."
+                "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
+                "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
+                "Einar le Libérateur."
+                
+            else:
+                "Le soir venu, lors du festin organisé en l'honneur d'Einar, Moira reste ostensiblement à l'écart du viking."
+                "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
+                "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
+                "Einar le Libérateur."
 
     "Fin 11/22"
     jump credits
