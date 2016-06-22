@@ -1836,9 +1836,6 @@ label lieu_encore_inconnu_1(axe = True):
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
-        o "Oh, et bien sûr, l'antidote."
-        "Einar avale les quelques gouttes contenues dans la fiole."
-        o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
 
     else:
         show ogma debout_souriant_mid at right
@@ -1853,9 +1850,6 @@ label lieu_encore_inconnu_1(axe = True):
         e "Je dois admettre qu'avoir la Hache était assez... grisant."
         o "Tu as su rester humble et faire passer le reste du monde avant toi. Beaucoup d'autres auraient cédé à l'appel du pouvoir !"
         o "Nous t'avons préparé un cheval, et avons rempli ses fontes d'or, comme promis."
-        o "Oh, et bien sûr, l'antidote."
-        "Einar avale les quelques gouttes contenues dans la fiole."
-        o "D'après le vieux Murray, tout devrait rentrer dans l'ordre d'ici deux jours."
 
     show einar debout_normal_mid at left
 
@@ -1918,7 +1912,7 @@ label lieu_encore_inconnu_1(axe = True):
                 "Elle se rapproche des deux hommes, comprenant de quoi il est question."
                 show moira debout_attriste_mid at right
                 if moira_abuse == True:
-                    m "Jamais je ne partagerai la vie d'un porc immonde."
+                    m "Jamais je ne partagerai la vie d'un porc immonde !"
                     "Elle crache aux pieds d'Einar."
                     o "Moira !"
                     "Elle s'éloigne sans rien ajouter, les poings serrés."
@@ -1927,6 +1921,10 @@ label lieu_encore_inconnu_1(axe = True):
                     o "Si j'apprend que tu t'en es pris à ma fille..."
                     e "Rassurez-vous, tout va bien."
                     
+                else:
+                    m "Je... Non. Je ne le souhaite pas."
+                    o "Dans ce cas, la question est désormais close."
+                    
 
             "Ce n'est pas à vous de décider":
                 show einar debout_determine_mid at left
@@ -1934,8 +1932,7 @@ label lieu_encore_inconnu_1(axe = True):
                 show ogma debout_furieux_mid at right
                 o "J'aurais punis ton insolence si je ne comprenais pas ton désarroi."
                 show moira debout_attriste_mid at right
-                m "Calme-toi, Einar. Je n'ai pas d'autre choix que de me ranger à l'avis de mon père."
-                "Les larmes lui montent aux yeux."
+                m "Rassurez-vous, père : rien au monde ne pourrait me donner envie de me marier à cet homme là."
 
     show ogma debout_normal_mid at right
     hide moira with dissolve

@@ -82,14 +82,13 @@ label good_ending_7:
 label good_ending_8:
     "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
     "Les villageois lui font leurs adieux et petit à petit, la place se vide."
-    "Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner."
-    "Moira."
 
     menu :
         "(Quel soulagement d'avoir détruit la Hache)":
             e "(Me voilà débarrassé de tous mes engagements...)"
             e "(Maintenant que le monde est privé de la Hache, l'équilibre devrait revenir.)"
             e "(Enfin, j'espère...)"
+            "Le monde se souviendra d'Einar 
 
         "(Allons récupérer la Hache !)":
             e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
@@ -225,10 +224,9 @@ label bad_ending_12:
     jump credits
 
 label good_ending_13:
-    "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
     "Les villageois lui font leurs adieux et petit à petit, la place se vide."
-    "Mais alors qu'Einar est déjà loin, une seule personne reste à la sortie du village, regardant Einar s'éloigner inexorablement."
-    "Moira."
+    "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
+    "L'Histoire se souviendra d'Einar le Régicide, celui qui libéra le monde du joug du plus terrible tyran."
     "Fin 13/22"
     jump credits
 
