@@ -1662,7 +1662,7 @@ label massacre_foret_2 (message, massacre_village):
         "Attaquer":
             hide screen countdown
             "Ogma détourne le coup d'Einar et le frappe au flanc."
-            call game_over_combat('checkpoint_1') from _call_game_over_combat_5
+            call game_over_combat('checkpoint_5')
 
     show einar combat_determine_mid_flip at center
     e "Regroupez-vous ! Dos-à-dos ! Dressez les boucliers !"
