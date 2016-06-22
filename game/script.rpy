@@ -558,7 +558,7 @@ image re combat_normal_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_
 image re combat_furieux_close_flip = im.Flip("rebelles_ecossais/combat/re_combat_furieux_close.png", horizontal = True)
 
 
-##Villageois / prisonniers
+############################################### Villageois / prisonniers ###############################################
 define ve = Character('{color=#3498db}Villageois{/color}', color="#3498db", image="villageois")
 
 # image side villageois = "villageois/villageois_portrait.png"
@@ -585,8 +585,13 @@ image ve buchet_pleurent_mid = "villageois_ecossais/buchet/ve_buchet_pleurent_mi
 
 image ve buchet_normaux_close = "villageois_ecossais/buchet/ve_buchet_effrayes_close.png"
 image ve buchet_pleurent_close = "villageois_ecossais/buchet/ve_buchet_pleurent_close.png"
-
-##Patrick
+############################################### Vieux ###############################################
+image vieux debout_normaux_mid = "villageois_ecossais/debout/vieux/ve_vieux_normal_mid.png"
+image vieux debout_normaux_close = "villageois_ecossais/debout/vieux/ve_vieux_normal_close.png"
+############################################### Demoiselle ###############################################
+image femme debout_normaux_mid = "villageois_ecossais/debout/femme/ve_femme_normal_mid.png"
+image femme debout_normaux_close = "villageois_ecossais/debout/femme/ve_femme_normal_close.png"
+############################################### Patrick ###################################################
 define p = Character("Patrick", image="patrick")
 
 # image side patrick = "patrick/patrick_portrait.png"
