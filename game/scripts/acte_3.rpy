@@ -1804,6 +1804,7 @@ label e_garder_hache_pont_baisse_donjon:
             show ogma combat_furieux_mid at ogma_pos_right
             o "Tu es fou ! Nous ne te laisserons pas faire !"
             e "Idiots ! La Hache me rend immortel !"
+
             hide einar
             hide ogma
             with dissolve
