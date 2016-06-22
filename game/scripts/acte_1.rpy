@@ -1651,12 +1651,15 @@ label massacre_foret_2 (message, massacre_village):
         "Attaquez le chef !":
             hide screen countdown
             e "Tuez leur chef !"
-
+            "Les vikings s'élancent vers le meneur, mais ils se heurtent rapidement à la masse des assaillants."
+            "En infériorité numérique et ayant rompu la formation, les hommes d'Einar sont submergés."
+            "Le nombre d'hommes encore debout s'amenuise à chaque seconde."
 
         "Restez en formation !":
             hide screen countdown
             e "Ne vous dispersez pas ! Restez serrés !"
-            call game_over_combat('checkpoint_5') from _call_game_over_combat_9
+            "Les vikings resserrent leur rang. Les premiers assaillants sont aisément repoussés, mais une nouvelle salve de flèches réduit à néant les efforts défensifs du groupe."
+            "Le nombre d'hommes encore debout s'amenuise à chaque seconde."            
 
     #Phase combat impossible à gagner WIP
     $ time = 5
@@ -1666,19 +1669,22 @@ label massacre_foret_2 (message, massacre_village):
     show screen countdown
     menu :
 
-        "Je vais te tuer ordure!":
+        "Chargez !":
             hide screen countdown
-            e "Tuez leur chef !"
+            e "Tous avec moi !"
+            e "HAAAAA !"
+            "Einar trace un sillage sanglant à travers le flot de ses ennemis."
+            "Mais derrière lui, les assaillants se rassemblent et l'isolent du reste des vikings, qui se font massacrer."
 
-
-        "Regroupez-vous !":
+        "Retraite !":
             hide screen countdown
-            e "Ne vous dispersez pas ! Restez serrés !"
-            call game_over_combat('checkpoint_5') from _call_game_over_combat_10
+            e "Tout est perdu ! Retraite ! Retraite !"
+            "Les vikings ne se font pas prier et commencent à fuir dans le sous-bois."
+            "La plupart d'entre eux sont tués une fois à l'écart du lieu de l'embuscade ; un certain nombre d'assaillants étaient encore dissimulés dans l'obscurité."
 
-################################### WIP ###########################################
 
-    "Les vikings se font massacrer et ne répondent plus aux ordres d'Einar."
+    "Il ne reste plus personne pour répondre aux ordres d'Einar."
+    "Seul Logan poursuit vaillamment le combat, à quelques mètres de son ami huscarl."
     hide gv
 
     hide logan

@@ -1487,7 +1487,7 @@ label village_6:
             e "Ce que j'ai fait, je l'ai fait pour survivre, vous m'y obligiez. Je ne veux pas de cet or."
             show ogma debout_attriste_mid at right
             o "Ton humilité est toute à ton honneur."
-            o "Nous n'avons pas eu le choix. Nous avions besoin d'un instrument pour nous aider à faire basculer le roi."
+            o "Nous n'avons pas eu le choix. Nous avions besoin d'un instrument pour nous aider à renverser le roi."
             o "Malheureusement pour toi, tu as été notre élu."
             o "J'espère que tu nous pardonneras un jour..."
             show ogma debout_determine_mid at right
@@ -1550,7 +1550,6 @@ label village_6:
                 show einar debout_normal_mid at left
                 e "Rester ici, en Ecosse. Seul."
                 o "L'isolement... Peu d'hommes le supportent, mais je comprends ton choix."
-                o "Si la solitude ne te convient plus, sache que tu trouveras toujours des amis à Perth."
 
             "Je vais rentrer en Norvège":
                 show einar debout_determine_mid at left
@@ -1571,7 +1570,6 @@ label village_6:
                 show ogma debout_souriant_mid at right
                 o "C'est assez... Surprenant !"
                 o "Il ne me reste plus qu'à te souhaiter bon voyage."
-                o "Si le coeur t'en dit, n'hésite pas à revenir ici. Tu trouveras toujours des amis à Perth."
 
                 hide ogma
                 hide einar
