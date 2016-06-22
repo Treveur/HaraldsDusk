@@ -975,7 +975,8 @@ label e_choix_final_village_1:
 
     l "Et maintenant ?"
 
-    show gv combat_normal_mid at left zorder 0 with moveinleft
+    show gv combat_normal_mid at left zorder 0 with moveinleft:
+        xoffset -630
 
     gv "On devrait raser tout ça, pour l'exemple !"
 
@@ -1351,8 +1352,10 @@ label choix_retour_village_1(massacre = False):
         show einar debout_normal_mid at left
 
         e "J'espère pour toi que tu as raison, Logan."
+    show einar debout_normal_mid at left
+    show gv debout_normaux_mid_flip at right
+    with dissolve
 
-    show gv debout_normaux_mid at center with dissolve
     gv "Où allons-nous ?"
     hide gv with dissolve
     if massacre:
@@ -1385,6 +1388,7 @@ label foret_2_r(lieu, massacre_village):
         show gv debout_normaux_mid at center with dissolve
         gv "Pourquoi sommes-nous déjà sur le retour ?"
         show gv debout_normaux_mid at right with moveinright
+        show gv debout_normaux_mid_flip
         show einar debout_normal_mid at left
 
         if massacre_village:
@@ -1497,7 +1501,7 @@ label massacre_foret_2 (message, massacre_village):
     if message == "attentif":
         show einar debout_determine_mid at left
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-        show gv debout_enthousiaste_mid at right with moveinright
+        show gv debout_enthousiaste_mid_flip at right with moveinright
 
         if massacre_village:
 
@@ -1510,7 +1514,7 @@ label massacre_foret_2 (message, massacre_village):
         else:
 
             gv "S'il n'y a rien de pire que des paysans, je ne redoute pas d'être suivi !"
-
+            show einar debout_souriant_mid
             e "Tu fanfaronneras moins avec une fourche en travers du gosier, Alvin !"
 
     elif message == "deception":
@@ -1519,8 +1523,8 @@ label massacre_foret_2 (message, massacre_village):
         e "Je suis de plus en plus déçu par la mission que nous a confié Harald. Marcher, marcher, marcher... Et quand nous rencontrons enfin une opposition, ce ne sont que des paysans."
         show logan debout_normal_mid_flip at right with dissolve
         l "Les autres ne semblent pas apprécier le voyage non plus..."
-        show gv debout_contrarie_mid at center with dissolve
         hide logan with dissolve
+        show gv debout_contrarie_mid_flip at center with dissolve
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
         show einar debout_normal_mid at left
         if massacre_village:
