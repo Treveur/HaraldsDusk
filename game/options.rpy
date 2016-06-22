@@ -416,7 +416,8 @@ init python:
     build.documentation('*.txt')
 
 init 5 python:
-    style.vscrollbar.xmaximum = 40
-    style.vscrollbar.thumb = "interface/scrollbar/scroll.png"
-    style.vscrollbar.top_bar = Frame("interface/scrollbar/bar.png",5,5)
-    style.vscrollbar.bottom_bar = Frame("interface/scrollbar/bar.png",5,5)
+    style.vscrollbar.xmaximum = 30
+    style.vscrollbar.xminimum = 30
+    style.vscrollbar.thumb = im.MatrixColor("interface/scrollbar/scroll.png",im.matrix.brightness(0.5))
+    style.vscrollbar.top_bar = im.MatrixColor("interface/scrollbar/bar.png",im.matrix.opacity(0.5))
+    style.vscrollbar.bottom_bar = im.MatrixColor("interface/scrollbar/bar.png",im.matrix.opacity(0.5))
