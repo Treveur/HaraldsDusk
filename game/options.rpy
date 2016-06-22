@@ -102,16 +102,16 @@ init -1 python hide:
     ## La marge ('margin') est l'espace autour fenêtre, où
     ## le fond n'apparaît pas.
 
-    style.window.left_margin = 6
-    style.window.right_margin = 6
+    style.window.left_margin = 75
+    style.window.right_margin = 75
     # style.window.top_margin = -20
     style.window.bottom_margin = 6
 
     ## Le 'rembourrage' ('padding') est la marge à l'intérieur de la,
     ## fenêtre, où le fond apparaît.
 
-    style.window.left_padding = 240
-    style.window.right_padding = 240
+    style.window.left_padding = 200
+    style.window.right_padding = 200
     style.window.top_padding = 44
     style.window.bottom_padding = 50
 
@@ -143,8 +143,8 @@ init -1 python hide:
     style.mm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
     style.mm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",0,0)
 
-    style.mm_button.yminimum = 66
-    style.mm_button.xminimum = 502
+    style.mm_button.yminimum = 64
+    style.mm_button.xminimum = 565
 
     style.mm_button_text.xanchor = 0.5
     style.mm_button_text.yanchor = 0.5
@@ -154,8 +154,39 @@ init -1 python hide:
     style.gm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",0,0)
     style.gm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",0,0)
 
-    style.gm_button.yminimum = 49
-    style.gm_button.xminimum = 376
+    style.gm_button.yminimum = 43
+    style.gm_button.xminimum = 380
+
+    style.sm_button.background = Frame("interface/box/save_box.png", 50, 50)
+    style.sm_button.hover_background = Frame(im.MatrixColor("interface/box/save_box.png", im.matrix.brightness(-0.1)), 50, 50)
+
+    style.sm_button.yminimum = 150
+    style.sm_button.xminimum = 300
+
+    style.cm_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",50,32)
+    style.cm_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",95,32)
+
+    style.cm_button.yminimum = 64
+    style.cm_button.xminimum = 800
+    style.cm_button.xmaximum = 800
+
+    style.cm_button.left_padding = 95
+    style.cm_button.right_padding = 95
+
+    style.cm_button_text.xanchor = 0.5
+    style.cm_button_text.yanchor = 0.5
+    style.cm_button_text.xpos = 0.5
+    style.cm_button_text.ypos = 0.5
+
+    style.yn_button.background = Frame("interface/buttons/mainmenu/mmbutton.png",50,32)
+    style.yn_button.hover_background = Frame("interface/buttons/mainmenu/mmbutton_hover.png",95,32)
+
+    style.yn_button.yminimum = 64
+    style.yn_button.xminimum = 300
+
+    style.yn_button.left_padding = 95
+    style.yn_button.right_padding = 95
+
 
     #########################################
     ## Ici nous personnalisons la police utilisée par défaut pour le texte.
