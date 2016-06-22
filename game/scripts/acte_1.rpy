@@ -924,7 +924,7 @@ label e_fouiller_village_1(einarFouille = False):
 
             jump menu_maison_1
 
-        "Où sont les rebelles ?" if menu_choice_3:
+        "Que sais-tu des rebelles ?" if menu_choice_3:
 
             e "Que sais-tu des rebelles ?"
             if moira_name_know:
@@ -1702,7 +1702,7 @@ label massacre_foret_2 (message, massacre_village):
     show einar combat_determine_mid_flip at right, shake
 
 
-    "Une flèche frappe Einar de plein fouet à l'épaule, le désarmant."
+    "Une flèche frappe Einar de plein fouet au bras, le désarmant."
 
     show einar prisonnier_determine_mid at right
     l "Einar ! Derrière toi !"
@@ -1990,11 +1990,11 @@ label refuser_trahir_village_2:
 
     o "Mauvaise réponse."
 
-    "Ogma enfonce deux doigts dans la plaie de l'épaule d'Einar, pressant la pointe de flèche."
+    "Ogma enfonce deux doigts dans la plaie du bras d'Einar, pressant la pointe de flèche."
     show einar prisonnier_blesse_mid at left, shake
     e "AAAAARRRGH !"
     show ogma debout_souriant_mid at center
-    o "Tiens, on dirait que la pointe est coincée dans une articulation !"
+    o "Tiens, on dirait que la pointe est coincée dans un os !"
 
     e "AAAHH ! STOP !"
     show ogma debout_normal_mid at center
