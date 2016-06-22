@@ -139,7 +139,9 @@ label interieur_maison_village_1:
             e "Je n'ai pas besoin des soins d'une rebelle. J'ai supporté des blessures plus terribles sans être soigné !"
             show moira debout_determine_mid at right
             m "Vous êtes ridicule. Vous voulez que je vous laisse comme ça ? Dès ce soir vous serez tremblant de fièvre, et demain vous serez déjà mourant."
-            m "Mais allez- y ! Allez vous promener dehors ! Ah, j'oublais ! vous n'en avez pas le droit et vous êtes entravé."
+            show moira debout_furieux_mid
+            m "Mais allez-y ! Allez vous promener dehors ! Ah, j'oublais ! vous n'en avez pas le droit et vous êtes entravé."
+            show moira debout_normal_mid
             m "Laissez-moi faire ce qu'on m'a demandé. J'essaie de ne pas être désagréable, faites en autant."
 
     "..."
@@ -347,7 +349,7 @@ label interieur_maison_village_2:
             m "Je préfère te soigner plutôt que de m'occuper des bêtes, bien que ce ne soit pas si différent !"
             show moira debout_normal_close at right
             show einar prisonnier_normal_close at left
-            
+
         "Ne rien dire":
             e "..."
             show moira debout_normal_mid at right
@@ -358,7 +360,7 @@ label interieur_maison_village_2:
             m "Se parler comme deux étrangers est ridicule."
             show einar prisonnier_souriant_mid at left
             e "D'accord."
-            
+
 
     "Les bandages d'Einar sont remplacés."
     m "Je vais te laisser, c'est tout pour aujourd'hui."
@@ -666,6 +668,8 @@ label interieur_maison_village_4:
 
     "Moira entraîne Einar a l'extérieur."
 
+    play music "<from 5>sounds/musics/music_travelling_in_nature.mp3" fadein 0.5
+
     if short_version:
         jump village_3
     else:
@@ -754,6 +758,8 @@ label village_3:
 
     scene bg village_crepuscule with fade
     "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
+
+    stop music
 
     show einar prisonnier_normal_mid at left with dissolve
     show moira debout_normal_mid at right with dissolve
@@ -849,7 +855,7 @@ label foret_3:
             show einar prisonnier_determine_mid at left
             e "C'est amusant, ça me rappelle un mauvais épisode de ma vie. Des rebelles écossais attaquaient mes hommes par surprise dans une forêt et..."
 
-    show moira debout_souriant_mid at center
+    show moira debout_normal_mid at center
     m "Tais-toi et suis moi."
 
     show moira debout_normal_mid_flip at right with moveinright
@@ -931,7 +937,7 @@ label paradis_foret_1:
             m "Oui, très bien..."
             show einar prisonnier_normal_mid at left
             jump village_4
-            
+
         "Oui. (Profiter d'elle)":
             e "Tu as deviné juste."
             e "Offre-toi à moi et ton peuple sera libéré."
@@ -1000,7 +1006,7 @@ label village_4:
     o "Et n'oubliez pas : Harald doit être privé de sa Hache, sans quoi tout ceci n'aura servi à rien."
 
     menu:
-        
+
         "Je tiendrai ma promesse":
             show einar debout_normal_mid at left
             e "Je sais ce que j'ai à faire. Je ne pense qu'à ça depuis plus d'un mois."

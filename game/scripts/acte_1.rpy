@@ -1843,11 +1843,11 @@ label e_reveil_village_2:
 
     show einar prisonnier_blesse_mid at left with dissolve
     e "Huugh..."
-    show re debout_normaux_mid at right with dissolve
-    ge "Ogma ! Il se réveille !"
+    show rs debout_normaux_mid at right with dissolve
+    rebelle "Ogma ! Il se réveille !"
     show ogma debout_determine_mid at center with moveinright
     o "Ah ! La belle endormie. "
-    hide re with dissolve
+    hide rs with dissolve
     e "Arrgh... Mon épaule..."
 
     o "La tête de la flèche est toujours à sa place."
