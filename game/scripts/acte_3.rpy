@@ -1629,6 +1629,10 @@ label foret_4:
     if moira_abuse == True:
 
         label checkpoint_6:
+            scene bg sentier_jour
+            show moira debout_furieux_mid at right
+            show einar debout_normal_mid at left
+            with dissolve
 
         "La jeune femme s'approche, le regard fuyant."
         m "Je voudrais..."
