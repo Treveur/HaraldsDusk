@@ -605,11 +605,11 @@ screen yesno_prompt:
     #     ypadding .05
 
     label _(message):
-        yalign 0.5
+        yalign 0.45
         xalign 0.5
 
     hbox:
-        yalign 0.6
+        yalign 0.55
         xalign 0.5
         spacing 100
 
