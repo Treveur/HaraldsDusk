@@ -2,6 +2,10 @@
 label gameover:
     call game_over_combat(checkpoint) from _call_game_over_combat_8
 
+#Moira vengeance
+label moira_vengence:
+    "Ecrit ce que tu veux"
+    call game_over_combat(checkpoint)
 
 #Ending
 label bad_ending_1:
@@ -208,7 +212,7 @@ label good_ending_11:
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
                 "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
                 "Einar le Libérateur."
-                
+
             else:
                 "Le soir venu, lors du festin organisé en l'honneur d'Einar, Moira reste ostensiblement à l'écart du viking."
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."

@@ -1581,6 +1581,8 @@ label village_6:
 
 label foret_4:
 
+    $ checkpoint = "checkpoint_6"
+
     play ambiance village
 
     scene bg sentier_jour with dissolve
@@ -1618,23 +1620,26 @@ label foret_4:
                 e "Maintenant, si ça ne te dérange pas, j'aimerais partir."
                 e "Au revoir."
                 call good_ending_14 pass (rejete = True) from _call_good_ending_14
-    
-    
+
+
     m "Attend !"
     e "J'imagine que tu veux me parler l'offre que tu m'as faite dans la forêt..."
     m "Oui."
-    
+
     if moira_abuse == True:
+
+        label checkpoint_6:
+
         "La jeune femme s'approche, le regard fuyant."
         m "Je voudrais..."
         e "Oui ?"
         "La jeune femme se rapproche encore un peu plus, tremblante."
         e "Hé bien, parle !"
         m "TU VAS PAYER POUR CE QUE TU M'AS FAIT !"
-        
+
         $ time = 1
         $ timer_range = 1
-        $ timer_jump = "gameover"
+        $ timer_jump = "moira_vengence"
 
         show screen countdown
         menu :
@@ -1647,73 +1652,6 @@ label foret_4:
                 "Une auréole sanglante s'étend sur la robe de Moira."
                 "Un soupir s'échappe de ses lèvres puis elle s'effondre sur le sentier."
 
-    
-    
-    menu menu_reponse_moira_suivre_einar:
-
-        
-            
-            
-            menu :
-                "Tu t'es sacrifiée pour sauver les tiens":
-                    e "Ton geste a assuré la liberté de Perth et du reste de l'Ecosse."
-                    e "Ce 
-            
-            
-            
-            
-        "Tu n'as pas de raison de me suivre"
-            show einar debout_attriste_mid at left
-
-            e "Je ne sais pas où je vais. Tu n'as aucune raison de venir avec moi."
-            e "Reste ici, avec ton père et les autres."
-            show moira debout_attriste_mid at right
-            m "..."
-            m "Est-ce que tu reviendras ?"
-            e "Je ne sais pas. Rentre chez-toi, maintenant."
-            "..."
-
-        "Je ne veux pas contrarier Ogma":
-            show einar debout_attriste_mid at left
-
-            e "Je ne veux pas me mettre en porte-à-faux vis à vis de ton père."
-            show einar debout_contrarie_mid at left
-            e "Il m'a interdit de rester ici, et il ne me permettra certainement pas de partir avec sa fille."
-            e "Laisse moi partir."
-            show moira debout_contrarie_mid at right
-            m "Je me fiche de tout ça ! Je n'appartient pas à mon père ! Si j'en ai envie, rien ne m'empêche de te suivre !"
-            show einar debout_attriste_mid at left
-            e "Tu connais ton père. Il a déjà organisé l'assassinat d'un intendant pour venger sa femme, il n'hésitera pas à me traquer jusqu'au bout du monde pour te retrouver."
-            e "Je n'irai pas contre son avis. N'insiste pas."
-            e "Au revoir, Moira."
-
-        "Nous n'éprouvons pas les même sentiments":
-            show einar debout_normal_mid at left
-            e "Je ne t'aime pas, Moira."
-            show einar debout_souriant_mid at left
-            e "Je te suis reconnaissant pour tous tes soins, et j'ai apprécié le temps que nous avons passé ensemble."
-            show einar debout_attriste_mid at left
-            e "Mais je ne t'aime pas."
-            show moira debout_attriste_mid at right
-            m "Tu dis ça pour que je ne te suive pas !"
-            e "Non, je regrette. Laisse-moi partir maintenant, s'il-te-plaît."
-            $ rejeter_moira_foret_4 = True
-
-        "(Tendre les bras)":
-            show einar debout_souriant_mid at left
-            show moira debout_souriant_mid at right
-
-            "Sans dire un mot, Einar tend les bras vers Moira."
-            "La jeune femme se précipite vers le viking et l'étreint."
-            "Einar et Moira passent quelques minutes à profiter de l'instant."
-
-        "Viens avec moi":
-            show einar debout_souriant_mid at left
-
-            e "Viens avec moi, Moira."
-            show moira debout_attriste_mid at right
-            "La jeune femme se précipite vers le viking et l'étreint."
-            "Einar et Moira passent quelques minutes à profiter de l'instant."
 
     hide moira
     hide einar
@@ -1939,11 +1877,11 @@ label lieu_encore_inconnu_1(axe = True):
                     e "Visiblement l'affection n'est pas partagée."
                     o "Si j'apprend que tu t'en es pris à ma fille..."
                     e "Rassurez-vous, tout va bien."
-                    
+
                 else:
                     m "Je... Non. Je ne le souhaite pas."
                     o "Dans ce cas, la question est désormais close."
-                    
+
 
             "Ce n'est pas à vous de décider":
                 show einar debout_determine_mid at left
