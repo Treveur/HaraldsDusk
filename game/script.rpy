@@ -7,6 +7,8 @@ init :
 # ex: image eileen heureuse = "eileen_heureuse.png"
 #Image représentant les personnages
 
+##Narration
+
 ##Einar
 define e = Character('{color=#e74c3c}Einar{/color}', color="#e74c3c", image="einar")
 
