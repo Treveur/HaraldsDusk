@@ -908,7 +908,7 @@ label paradis_foret_1:
     "Elle se dénude lentement devant Einar, sans le regarder."
     show moira nue_normal_mid_flip at right with dissolve
     e "Que... Qu'est-ce que tu fais ? Qu'est-ce qui te prend ?"
-    m "C'est ce que tu veux, n'est-ce pas ?"
+    m "C'est ce que tu veux, n'est-ce pas ? C'est ce que les gens comme toi veulent."
     e "De quoi tu parles ?"
     m "Je... Je veux que tu tienne la promesse que tu as faite à mon père."
     m "Alors je te repose la question : est-ce que c'est ce que tu veux ?"
