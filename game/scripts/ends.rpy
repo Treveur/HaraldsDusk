@@ -4,7 +4,11 @@ label gameover:
 
 #Moira vengeance
 label moira_vengence:
-    "Ecrit ce que tu veux"
+    "En un éclair d'acier, elle poignarde Einar."
+    "Surpris, le viking n'a pas le temps de repousser l'attaque, et la lame s'enfonce profondément entre ses côtes."
+    "Sans laisser le temps à Einar de réagir, elle arrache la lame et le poignarde à nouveau, encore et encore."
+    "Après quelques minutes, Moira continue de poignarder le cadavre du viking."
+    "Ses larmes ont séché ; son regard est fixe et vide."
     call game_over_combat(checkpoint)
 
 #Ending
@@ -237,25 +241,21 @@ label good_ending_13:
     "Fin 13/22"
     jump credits
 
-label good_ending_14(rejete):
-    if rejete:
-        "Einar dépasse Moira qui reste immobile au milieu du sentier, les poings serrés, fixant le sol."
+label bad_ending_14(tuer):
+    if tuer:
+        "Einar s'éloigne en silence du corps de Moira."
+        "..."
+        "Tous se souviendront d'Einar comme du héros libérateur de l'Ecosse ; mais personne ne découvrira jamais qui a tué Moira."
+        
     else:
         show moira debout_souriant_close at right
         show einar debout_souriant_close at left
         with dissolve
 
-        m "Où allons-nous ?"
-        e "Loin d'ici !"
-        e "Quand ton père aura compris que tu t'es enfuie pour m'accompagner, il se lancera à notre recherche."
-        show einar debout_attriste_close at left
-        e "Et je n'ai aucune envie de me retrouver à nouveau enfermé dans une cahutte pendant un mois !"
-        m "Ha ha ha !"
-        show einar debout_souriant_close at left
-        e "Il y a un endroit en particulier que tu voudrais voir ?"
-        m "Je ne sais pas... J'hésite entre la Norvège et la Méditerrannée."
-        e "Alors nous irons voir la Méditerrannée ! Retourner en Norvège, ce serait du suicide..."
-        "Les deux voyageurs disparaissent dans les bois, prenant la direction du sud..."
+        "Einar poursuit son chemin, laissant la jeune femme derrière lui."
+        "..."
+        "Tous se souviendront d'Einar comme du héros libérateur de l'Ecosse ; une écossaise nommée Moira veillera à la transmission de son histoire."
+        
     "Fin 14/22"
     jump credits
 
