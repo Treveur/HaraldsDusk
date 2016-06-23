@@ -568,9 +568,11 @@ label pont_levis_baisse:
 
     show einar combat_determine_mid_flip at right
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    show gv debout_normal_mid at left with moveinleft
+    show gv debout_normal_mid at left with moveinleft:
+        xoffset -400
     show einar combat_determine_mid_flip at center with moveinleft
-    show re debout_normaux_mid at right with moveinright
+    show re debout_normaux_mid at right with moveinright:
+        xoffset 300
     with dissolve
     #Ajouter un shake camera
     ge "HAAAAA !"
@@ -688,7 +690,7 @@ label pont_levis_baisse:
         $ checkpoint = "checkpoint_2"
 
         "Pris entre les deux forces, Einar est immobilisé."
-        show gv debout_determines_mid at left
+        show gv debout_normal_mid at left
         show einar combat_determine_mid_flip at center
         show re debout_normaux_mid at right
         "Au même moment, ses anciens confrères huscarls le chargent."
@@ -789,7 +791,8 @@ label pont_levis_baisse:
                 hide solo_2
                 with dissolve
 
-                show re debout_normaux_mid at right with moveinright
+                show re debout_normaux_mid at right with moveinright:
+                    xoffset 300
                 "Les huscarls sont vaincus en l'espace de quelques secondes, broyés par la masse des rebelles."
 
 
@@ -935,22 +938,20 @@ label e_bruler_donjon_obeir_donjon:
     show einar debout_determine_mid_flip at left with moveinright
     "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
     "Le roi est entrain de s'équiper de son armure."
-    scene bg chateau_couloir_crepuscule with dissolve
-    show einar debout_determine_mid_flip at left with moveinright
-    show einar debout_determine_mid at left
+    scene bg chateau_chambre_nuit with dissolve
+    
+    show einar debout_determine_mid_flip at right with dissolve
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
 
     menu:
         "Prendre la Hache":
-
-            show einar combat_hache_normal_mid at left
+            show einar combat_hache_normal_mid at left with moveinright
             e "(C'est tout ? Je m'attendais à une grande lumière, quelque chose comme ça...)"
             $ prendre_hache = True
             jump e_confrontation_harald_pont_baisse_donjon
 
         "Se débarrasser de la Hache":
-            scene bg chateau_chambre_nuit with dissolve
-            show einar debout_determine_mid_flip at left
+            show einar debout_determine_mid_flip at left with moveinleft
             "Einar jette la Hache à la mer à travers une meurtrière."
             call e_confrontation_harald_pont_baisse_donjon pass (jetee = True) from _call_e_confrontation_harald_pont_baisse_donjon
 
@@ -978,7 +979,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Je l'ai jetée":
                 show einar combat_determine_mid at left
                 e "La Hache est perdue. Tout est terminé."
-                show harald combat_furieux_mid at right
+                show harald combat_furieux_mid at center with move
                 h "Tu es fou ? Tu mens !"
                 h "Où l'as-tu mise ? Tu veux la garder pour toi !"
                 e "Votre relique est dans la vase, sous l'eau."
@@ -986,13 +987,13 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Je ne sais pas":
                 show einar combat_normal_mid at left
                 e "Je ne sais pas."
-                show harald combat_furieux_mid at left
+                show harald combat_furieux_mid at center with move
                 h "Tu me mens ! Encore !"
 
             "Geir l'a volée (mentir)":
                 show einar combat_normal_mid at left
                 e "J'ai vu Geir la voler !"
-                show harald combat_furieux_mid at left
+                show harald combat_furieux_mid at center with move
                 h "Cesse de me mentir !"
 
     else:
@@ -1020,7 +1021,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show einar combat_hache_determine_mid at left
                 e "Je l'ai prise pour vous en priver. Il est temps de rétablir l'ordre naturel des choses."
 
-    show harald combat_normal_mid at right
+    show harald combat_normal_mid at rightv with moveinright
     h "Comment oses-tu ?!"
     show harald combat_furieux_mid at right
     h "CETTE HACHE EST A MOI !"
@@ -1086,8 +1087,6 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         $ checkpoint = "checkpoint_3"
 
         label checkpoint_3:
-            scene bg chateau_couloir_crepuscule with dissolve
-
 
         "Le combat s'engage entre le roi et son huscarl."
         # "Phase combat WIP"
@@ -1135,7 +1134,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 hide screen countdown
                 "Einar tente de renverser le roi, mais il est bien trop lourd, et ses appuis sont trop fermes."
                 show harald combat_furieux_mid_flip at center
-                "Harald saisit Einar et le projette à l'autre bout de la pièce."
+                "Harald saisit Einar et le projette dans le couloir."
                 jump bad_ending_12
 
     if epargner_harld_donjon:
@@ -1304,7 +1303,7 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
     show einar combat_furieux_mid at left
     show harald combat_furieux_mid at right
 
-    "Einar parvient à briser le bras du roi et à lui infliger un coup sérieux au visage."
+    "Einar parvient à profiter de la faiblesse du roi pour lui briser le bras et à lui infliger un coup sérieux au visage."
     show harald combat_blesse_mid_flip
     h "Hggghh..."
     h "Je suis vaincu. Tu as gagné."
