@@ -1726,8 +1726,11 @@ label massacre_foret_2 (message, massacre_village):
 
         "Chargez !":
             hide screen countdown
+            
             hide gv with dissolve
             e "Tous avec moi !"
+            hide ogma with dissolve
+            show re debout_normal_mid_flip at left with moveinleft
             show einar combat_furieux_mid_flip at center with moveinright
             e "HAAAAA !"
             show re debout_normal_mid_flip at left, shake
