@@ -868,7 +868,6 @@ label foret_3:
 #Sequence 8
 label paradis_foret_1:
 
-    play music romance
     play ambiance magnificente_wood
 
     scene bg little_heaven with dissolve
