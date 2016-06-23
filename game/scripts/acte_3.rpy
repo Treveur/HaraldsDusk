@@ -1629,7 +1629,7 @@ label foret_4:
                 e "Nous autres, vikings, ne sommes pas tous des violeurs. Nous avons d'autres passions que de brûler des villages et enlever toutes les femmes que nous trouvons."
                 e "Maintenant, si ça ne te dérange pas, j'aimerais partir."
                 e "Au revoir."
-                call good_ending_14 pass (rejete = True) from _call_good_ending_14
+                call bad_ending_14(False)
 
 
     m "Attend !"
