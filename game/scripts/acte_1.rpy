@@ -1673,6 +1673,8 @@ label massacre_foret_2 (message, massacre_village):
 
     show re debout_normal_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
+    
+    play ambiance fight
 
 ################################### WIP ###########################################
     $ time = 5
@@ -1733,6 +1735,7 @@ label massacre_foret_2 (message, massacre_village):
             show re debout_normal_mid_flip at left with moveinleft
             show einar combat_furieux_mid_flip at center with moveinright
             e "HAAAAA !"
+            play sound axe_1
             show re debout_normal_mid_flip at left, shake
             "Einar trace un sillage sanglant à travers le flot de ses ennemis."
             "Malgré sa charge furieuse, Einar se retrouve rapidement isolé de ses troupes."
@@ -1763,7 +1766,7 @@ label massacre_foret_2 (message, massacre_village):
     e "Approchez, charognes ! Je..."
     show einar combat_determine_mid_flip at right, shake
 
-
+    play sound arrow_1
     "Une flèche frappe Einar de plein fouet au bras, le désarmant."
 
     show einar prisonnier_determine_mid at right

@@ -744,6 +744,8 @@ define audio.slaughter = "sounds/musics/music_drama_slaughter.mp3"
 #define audio.drama_slaughter = "sounds/musics/music_drama_slaughter.wav"
 
 #SFX
+define audio.arrow_1 = "sounds/sfx/SFX_Arrow.wav"
+define audio.axe_1 = "sounds/sfx/SFX_Axe.mp3"
 define audio.blade_1 = "sounds/sfx/SFX_Blade1.mp3"
 define audio.blade_2 = "sounds/sfx/SFX_Blade2.mp3"
 define audio.war_horn = "sounds/sfx/SFX_WarHorn.mp3"
@@ -752,6 +754,10 @@ define audio.drawbrigde = "sounds/sfx/SFX_Drawbridge_Down.mp3"
 define audio.hurt_man_1 = "sounds/sfx/SFX_Hurt_Man.mp3"
 define audio.hurt_man_2 = "sounds/sfx/SFX_Hurt_Man2.mp3"
 define audio.hurt_man_3 = "sounds/sfx/SFX_Hurt_Man3.mp3"
+define audio.hurt_man_4 = "sounds/sfx/SFX_Hurt_Man4.wav"
+define audio.punch_2 = "sounds/sfx/SFX_Punch2.wav"
+define audio.claque_1 = "sounds/sfx/SFX_Claque1.wav"
+define audio.claque_2 = "sounds/sfx/SFX_Claque2.wav"
 
 #ambiance
 define audio.burning_dungeon = "sounds/ambiances/ambiance_burning_dungeonkeep.mp3"

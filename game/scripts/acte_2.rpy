@@ -192,6 +192,7 @@ label interieur_maison_village_1:
     if critique_ogma:
         show moira debout_furieux_mid at center with moveinright
         "Moira gifle Einar."
+        play sound claque_1
         show einar prisonnier_contrarie_mid at left, shake
         m "C'est la dernière fois que vous manquez de respect à mon père. Ou bien vous irez vous faire voir dans l'enclos des boucs."
         show einar prisonnier_normal_mid at left
@@ -224,6 +225,7 @@ label interieur_maison_village_1:
             "Vous n'avez pas d'ordres à me donner":
                 show einar prisonnier_determine_mid at left
                 e "Je n'ai pas d'ordres à recevoir d'une fifille à papa."
+                play sound claque_2
                 show einar prisonnier_determine_mid at left, shake
                 "Moira gifle Einar à nouveau, sur l'autre joue."
                 m "J'ai omis de préciser que vous me deviez aussi le respect."
