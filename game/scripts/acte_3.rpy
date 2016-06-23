@@ -1439,7 +1439,7 @@ label e_epargne_harald_no_axe_donjon:
 
     if harald_echape_no_axe:
         "Harald s'échappe sans demander son reste."
-        show harald combat_normal_mid_flipflip at right with moveinright
+        show harald combat_normal_mid_flip at right with moveinright
         hide harald with dissolve
         h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
         h "JE ME VENGERAI !"
