@@ -1114,6 +1114,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Harald est immense, puissant, et il possède l'expérience de centaines de batailles. Il broie son huscarl, lui faisant éclater des os à chaque coup."
                 show einar combat_furieux_mid at left, shake
                 "Finalement, Einar glisse au sol après que son crâne ait été défoncé sur un mur."
+                hide einar with dissolve
                 call game_over_combat('checkpoint_3') from _call_game_over_combat_7
 
         $ time = 3
@@ -1135,6 +1136,10 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Einar tente de renverser le roi, mais il est bien trop lourd, et ses appuis sont trop fermes."
                 show harald combat_furieux_mid_flip at center
                 "Harald saisit Einar et le projette dans le couloir."
+                show einar combat_furieux_mid_flip at right, shake
+                hide einar with dissolve
+                show harald combat_furieux_mid_flip at right with moveinright
+                hide harald with dissolve
                 jump bad_ending_12
 
     if epargner_harld_donjon:
