@@ -45,16 +45,18 @@ label bad_ending_3:
     call game_over_combat('interieur_grande_porte_chateau_1') from _call_game_over_combat_1
 
 label bad_ending_4:
-    show ogma combat_furieux_mid at center
+    show ogma combat_furieux_mid at left with moveinleft
+    show ogma combat_furieux_mid_flip
     "La furie sanguinaire du Hurleur est incontrôlable."
     hide einar with dissolve
     show re combat_normal_mid at right with moveinright
     "Les rebelles continuent d'affluer dans l'enceinte, et Ogma tombe à genoux devant le cadavre d'Einar."
-    show ogma debout_attriste_mid at center
+    show ogma debout_attriste_mid_flip:
+        xoffset 0
     o "Grrr..."
     "Il tire une dague et commence à poignarder et mutiler sans relâche les restes du viking..."
     "Fin 04/22"
-    jump credits
+    call game_over_combat('interieur_grande_porte_chateau_1')
 
 label bad_ending_5:
     "Fin 05/22"
@@ -307,7 +309,7 @@ label bad_ending_16:
     "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol."
     "Le roi quitte la pièce en sifflotant."
     "Fin 16/22"
-    jump credits
+    call game_over_combat('e_bruler_donjon_obeir_donjon')
 
 label bad_ending_17:
     "Il est de plus en plus difficile de résister à la force d'Ogma, et Einar perd peu à peu sa concentration alors qu'il est absorbé par l'effort."

@@ -618,7 +618,6 @@ label pont_levis_baisse:
         label checkpoint_1:
             scene bg cour_chateau_crepuscule_blur
             show einar combat_determine_mid at left
-            with dissolve
 
         show ogma combat_determine_mid at ogma_pos_right
         o "Tout s'achève, ici et maintenant !"
@@ -629,7 +628,9 @@ label pont_levis_baisse:
         $ timer_jump = "gameover"
 
         "Ogma se jette sur Einar, levant son épée pour préparer une attaque haute !"
-        show ogma combat_furieux_mid at center with moveinright
+        show ogma combat_furieux_mid at center with moveinleft:
+            xoffset 0
+
 
         show screen countdown
         menu :
@@ -637,29 +638,58 @@ label pont_levis_baisse:
             "Esquiver":
                 hide screen countdown
                 "Abattant son épée sur le sol, Ogma manque Einar de justesse."
+                show ogma combat_furieux_mid at left with moveinleft
+                show einar combat_normal_mid at right with moveinright
+                show einar combat_normal_mid_flip at right
+                show ogma combat_furieux_mid_flip:
+                    xoffset -300
 
             "Attaquer":
                 hide screen countdown
+                show einar combat_furieux_mid with moveinright:
+                    xoffset 100
                 "Ogma détourne le coup d'Einar et le frappe au flanc."
+                show einar combat_normal_mid at shake
+                pause 1
                 call game_over_combat('checkpoint_1') from _call_game_over_combat_5
 
         $ time = 2.5
         $ timer_range = 2.5
         $ timer_jump = 'gameover'
 
-        "Fou de rage, Ogma attaque une fois de plus vers la droite, d'un coup de taille."
+        "Fou de rage, Ogma attaque par la gauche, d'un coup de taille."
+
+        show ogma combat_furieux_mid_flip at center with moveinright:
+            xoffset 0
 
         show screen countdown
 
         menu :
             "Parer":
                 hide screen countdown
+                show ogma combat_furieux_mid_flip at center with moveinright:
+                    xoffset 100
+                show einar combat_furieux_mid_flip with moveinleft:
+                    xoffset -100
                 "Einar parvient à bloquer l'attaque, mais Ogma profite du contrecoup pour asséner au viking un violent coup de pied à l'estomac."
                 "L'écossais enchaîne immédiatement, d'un geste fulgurant !"
+                show ogma combat_furieux_mid_flip at center with moveinleft:
+                    xoffset 0
+                show ogma combat_furieux_mid_flip at center with moveinright:
+                    ease 1 xoffset 200
 
             "Esquiver":
                 hide screen countdown
+                show ogma combat_furieux_mid_flip at center with moveinright:
+                    xoffset 100
+
+                show einar combat_furieux_mid_flip with moveinright:
+                    xoffset 100
+
                 "Einar effectue une roulade pour esquiver l'attaque mais Ogma est bien trop rapide et furieux : il lance immédiatement une seconde attaque !"
+
+                show ogma combat_furieux_mid_flip at right with moveinright:
+                    xoffset 0
 
         $ time = 0.5
         $ timer_range = 0.5
@@ -673,11 +703,23 @@ label pont_levis_baisse:
         menu :
             "Attaquer":
                 hide screen countdown
+                show einar combat_furieux_mid_flip at left with moveinleft:
+                    xoffset 0
+                show einar combat_furieux_mid
+                show ogma combat_furieux_mid_flip at right with moveinright:
+                    xoffset 0
+                show ogma combat_furieux_mid:
+                    xoffset 300
+
                 "Einar plonge dans la garde ouverte d'Ogma. Mais c'était une ruse !"
+                show ogma combat_furieux_mid at center with moveinleft:
+                    xoffset 0
                 "Ogma tourne sur lui-même et empale le viking sur son épée."
+                show einar combat_normal_mid at shake
 
             "Esquiver":
                 hide screen countdown
+                show einar combat_normal_mid_flip at shake
                 "Le coup est bien trop rapide pour être esquivé, et les appuis d'Einar sont faibles : le ventre du viking s'ouvre, déversant un torrent de viscères sur le sol."
 
         "Alors qu'il se laisse tomber à terre, Einar réalise qu'il n'avait aucune chance face à la colère du père de Moira."
