@@ -468,7 +468,7 @@ label interieur_grande_porte_chateau_1:
     #play ambiance interieur_castle
 
 
-    show bg cour_chateau_crepuscule with dissolve
+    scene bg cour_chateau_crepuscule_blur with dissolve
 
     show garde_2 debout_normal_mid_flip at right
     show solo_2 debout_normal_mid at center
@@ -1087,9 +1087,8 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
         label checkpoint_3:
             scene bg chateau_couloir_crepuscule_blur
-            show harald combat_furieux_mid at right
+            show harald combat_furieux_mid at center
             show einar combat_normal_mid at left
-            with dissolve
 
         "Le combat s'engage entre le roi et son huscarl."
         # "Phase combat WIP"

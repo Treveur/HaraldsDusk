@@ -245,7 +245,7 @@ label bad_ending_12:
     "Einar meurt étranglé par son roi, les vertèbres craquant sous l'étreinte du monarque."
     hide einar with dissolve
     "Fin 12/22"
-    jump credits
+    call game_over_combat('checkpoint_3')
 
 label good_ending_13:
     "Les villageois lui font leurs adieux et petit à petit, la place se vide."
