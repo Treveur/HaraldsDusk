@@ -510,16 +510,15 @@ label interieur_maison_village_3:
 #Sequence 4
 label interieur_maison_village_4:
 
-    scene bg house2_jour with fade
-
-    if short_version:
-        "Au fil des semaines, Einar et Moira apprennent à se connaître, tandis qu'Ogma se montre plus chaleureux. Einar est presque remis de ses blessures."
-
     $ libre_ask = False
     $ trahir_talk = False
     $ decevoir_moira = ""
 
-    if short_version == False:
+    scene bg house2_jour with fade
+
+    if short_version:
+        "Au fil des semaines, Einar et Moira apprennent à se connaître, tandis qu'Ogma se montre plus chaleureux. Einar est presque remis de ses blessures."
+    else:
         "Deux semaines plus tard..."
 
     scene bg house2_jour_blur with dissolve
@@ -1076,6 +1075,7 @@ label sentier_foret_1:
 
     scene bg sentier_jour with dissolve
     "Chemin faisant, Einar tente de remettre en perspective les événements récents et leurs implications..."
+    scene bg sentier_jour_blur with dissolve
     show einar debout_normal_close at center with moveinleft
     e "(Tout ce temps passé à Perth avec ces gens, avec Moira... Ils ont été bons pour moi. Mais je ne peux pas oublier le massacre, l'embuscade, Logan. Quoi qu'il arrive, je devrai trahir l'une des paroles que j'ai donné.)"
 
@@ -1094,6 +1094,7 @@ label sentier_foret_1:
 label foret_5:
     scene bg forest_night with dissolve
     "Sans y prêter attention, Einar se rapproche peu à peu de Dunbar, toujours absorbé par ses pensées."
+    scene bg forest_night_blur with dissolve
     show einar debout_normal_close at center with moveinleft
     "(Moira a fait beaucoup pour moi, quoi qu'elle en dise. Je n'avais pas rencontré une aussi bonne personne depuis longtemps...)"
 
@@ -1115,6 +1116,7 @@ label cote_1:
 
     scene bg plaine_cotière_matin with dissolve
     "A quelques heures de marche de Dunbar..."
+    scene bg plaine_cotière_matin_blur with dissolve
     show einar debout_normal_close at center with moveinleft
     e "(Les événements à venir risquent de bouleverser l'équilibre du monde... Est-ce que la liberté d'un petit nombre de paysans peut prévaloir sur le futur de peuples entiers ?)"
 
