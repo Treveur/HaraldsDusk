@@ -9,6 +9,8 @@ label cote_2:
 
     "Et après trois jours de marche depuis Perth..."
 
+    scene bg plaine_chateau_matin_blur with dissolve
+
     show einar debout_normal_mid at left with moveinleft
 
     e "Dunbar. Déjà..."
@@ -23,14 +25,16 @@ label exterieur_chateau_1:
     #play ambiance castle
 
     scene bg chateau_porte with dissolve
+    pause 0.8
+    scene bg chateau_porte_blur with dissolve
 
     show garde_1 debout_normal_mid at center with dissolve
     show einar debout_normal_mid at left with moveinleft
-    
+
 
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
-    
+
     show garde_1 debout_normal_mid_flip at center with dissolve
     garde "Einar ! C'est bien toi ?"
     e "..."
@@ -84,6 +88,9 @@ label cour_chateau_1:
     scene bg cour_chateau with dissolve
 
     "Harald est en grande discussion avec un huscarl au milieu de la cour."
+
+    scene bg cour_chateau_blur with dissolve
+
     show harald debout_normal_mid_flip at right with dissolve
 
     show einar debout_normal_mid at left with moveinleft
@@ -426,8 +433,10 @@ label cour_chateau_1:
 label cour_chateau_2:
 
     #toujours ambiance chateau
-    show bg cour_chateau_crepuscule with fade
+    scene bg cour_chateau_crepuscule with fade
     "Au crépuscule..."
+    scene bg cour_chateau_crepuscule_blur with dissolve
+
     show garde_1 debout_normal_mid_flip at left with moveinleft
     garde "Sire ! Sire !"
     show harald debout_normal_mid at right with moveinright
@@ -451,8 +460,6 @@ label interieur_grande_porte_chateau_1:
 
     #interieur chateau
     #play ambiance interieur_castle
-
-    show bg cour_chateau_crepuscule with dissolve
 
     show gv debout_enthousiaste_mid_flip at right with dissolve
     soldat "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
@@ -484,7 +491,6 @@ label interieur_grande_porte_chateau_1:
 #Baisser pont-levis
 label pont_levis_baisse:
     #Ambiance bruit cliqueti boucliers et épée
-    scene bg cour_chateau_crepuscule
     show gv combat_normal_mid at center with dissolve
 
     gv "Attendez... Attendez..."
@@ -497,7 +503,7 @@ label pont_levis_baisse:
     show bg chateau_porte_interieur_crepuscule with vpunch
     "Le pont s'abaisse brutalement, laissant le champ libre."
 
-    scene bg cour_chateau_crepuscule
+    scene bg cour_chateau_crepuscule_blur
     show gv combat_normal_mid at center
     with dissolve
     soldat "Trahison ! Bloquez le passage, vite !"
@@ -539,7 +545,7 @@ label pont_levis_baisse:
     show re debout_normaux_mid at center with moveinleft
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
     hide re
-    show bg cour_chateau_crepuscule with dissolve
+    show bg cour_chateau_crepuscule_blur with dissolve
     show gv debout_determines_mid at center
     show einar combat_determine_mid_flip at right
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."

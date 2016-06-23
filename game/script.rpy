@@ -688,7 +688,7 @@ image bg house2_aube_blur = "scenes/blur/perth_int_jour_maison_blur.png"
 ##Plaine cotière
 image bg plaine_cotière_matin_blur = "scenes/blur/plaine_ext_matin_plaineCotiere_blur.png"
 image bg plaine_cotiere_crepuscule_blur = "scenes/blur/plaine_ext_crepuscule_plaineCotiere_blur.png."
-# image bg plaine_chateau_matin_blur = "scenes/blur/plaine_ext_matin_plaineChateau_blur.png"
+image bg plaine_chateau_matin_blur = "scenes/blur/plaine_ext_matin_plaineCotiereChateau_blur.png"
 image bg plaine_chateau_crepuscule_blur = "scenes/blur/plaine_ext_crepuscule_plaineCotiereChateau_blur.png"
 
 #plaine
