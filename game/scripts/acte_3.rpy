@@ -976,7 +976,7 @@ label e_bruler_donjon_obeir_donjon:
     scene bg chateau_couloir_crepuscule_blur with dissolve
     show einar debout_normal_mid_flip at right with moveinright
     "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
-    play ambiance burning_dungeon
+
     show einar debout_determine_mid_flip at center with moveinright
     "..."
     show einar debout_determine_mid_flip at left with moveinright
