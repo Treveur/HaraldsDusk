@@ -819,7 +819,7 @@ transform alpha_dissolve:
 
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
-    bar style_group 'hscrollbar' value time range timer_range xalign 0.5 yalign 0.9 xmaximum 400  at alpha_dissolve
+    bar style 'hscrollbar_bar' value time range timer_range xalign 0.5 yalign 0.9 xmaximum 400  at alpha_dissolve
 
 init -2 python:
     style.hscrollbar_bar.thumb = "interface/scrollbar/scrollh.png"
