@@ -26,10 +26,12 @@ label exterieur_chateau_1:
 
     show garde_1 debout_normal_mid at center with dissolve
     show einar debout_normal_mid at left with moveinleft
+    
 
 
     e "Je ne saurais pas dire si je suis content de revoir leurs trognes..."
-
+    
+    show garde_1 debout_normal_mid_flip at center with dissolve
     garde "Einar ! C'est bien toi ?"
     e "..."
     garde "Tout le monde te croyait mort !"
@@ -42,6 +44,7 @@ label exterieur_chateau_1:
             e "Écarte-toi, Geir! Je dois parler au roi sans tarder !"
             garde "Bien sûr, excuse-moi."
             show garde_1 debout_normal_mid at right with moveinright
+            show garde_1 debout_normal_mid_flip at right
             show einar debout_determine_mid at center with moveinright
 
         "Pas mal de choses...":
@@ -49,6 +52,7 @@ label exterieur_chateau_1:
             e "Maintenant, laisse-moi passer."
             garde "Bien sûr, excuse-moi."
             show garde_1 debout_normal_mid at right with moveinright
+            show garde_1 debout_normal_mid_flip at right
             show einar debout_determine_mid at center with moveinright
 
         "Ne me barre pas la route !":
@@ -56,6 +60,7 @@ label exterieur_chateau_1:
             e "Laisse-moi passer, andouille. On ne barre pas la route à un huscarl ! Je dois voir le roi au plus vite !"
             garde "Bien sûr, excuse-moi."
             show garde_1 debout_normal_mid at right with moveinright
+            show garde_1 debout_normal_mid_flip at right
             show einar debout_determine_mid at center with moveinright
 
 
