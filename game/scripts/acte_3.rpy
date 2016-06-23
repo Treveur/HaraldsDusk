@@ -1497,20 +1497,21 @@ label village_5:
 
     play ambiance village
 
-    scene bg village
+    scene bg village with dissolve
 
     "..."
-    scene bg village_blur
+    scene bg village_blur 
 
     show einar debout_normal_mid at left
     show ogma debout_normal_mid at right
+    with dissolve
 
     o "Voici ton or."
     o "Nous avons décidé de t'offrir un cheval. Il te mènera où bon te semble."
     show einar debout_contrarie_mid at left
     e "Et si je souhaite rester ici ?"
     o "Je ne peux pas te laisser cette liberté."
-    o "Malgré tout ce que tu as fait pour nous et l'affection que te porte Moira, je ne peux pas t'autoriser à rester parmi nous."
+    o "Malgré tout ce que tu as fait pour nous, je ne peux pas t'autoriser à rester."
     o "Tu nous a offert la victoire, et pour cela l'Ecosse te sera toujours redevable."
     show ogma debout_contrarie_mid at right
     o "Mais tu as laissé s'enfuir notre ennemi. Je veux que tu quittes l'Ecosse pour toujours."
@@ -1704,11 +1705,11 @@ label foret_4:
                 e "Je ne sais pas ce que tu as cru, mais tu te trompe lourdement en ce qui me concerne."
                 e "Nous autres, vikings, ne sommes pas tous des violeurs. Nous avons d'autres passions que de brûler des villages et enlever toutes les femmes que nous trouvons."
                 e "Maintenant, si ça ne te dérange pas, j'aimerais partir."
-                e "Au revoir."
+                m "Attend !"
                 call bad_ending_14(False)
 
 
-    m "Attend !"
+    
     e "J'imagine que tu veux me parler de l'offre que tu m'as faite..."
     m "Oui."
 
@@ -1721,12 +1722,18 @@ label foret_4:
             with dissolve
 
         "La jeune femme s'approche, le regard fuyant."
+        show moira debout_normal_mid at center with move
         m "Je voudrais..."
         e "Oui ?"
         "La jeune femme se rapproche encore un peu plus, tremblante."
+        show moira debout_normal_mid at left with move:
+            xoffset 300
         e "Hé bien, parle !"
-        show moira debout_furieux_mid at right
+        show moira debout_furieux_mid at left:
+            xoffset 300
         m "TU VAS PAYER POUR CE QUE TU M'AS FAIT !"
+        
+
 
         $ time = 1
         $ timer_range = 1
@@ -1739,10 +1746,13 @@ label foret_4:
                 hide screen countdown
                 "En un éclair d'acier, elle tente de poignarder Einar."
                 "Surpris, le viking n'a pas le temps de bloquer l'attaque, et ne peut que la détourner."
+                show moira debout_normal_mid at left, shake:
+                    xoffset 300
                 "..."
                 show moira debout_attriste_mid
                 "Une auréole sanglante s'étend sur la robe de Moira."
                 "Un soupir s'échappe de ses lèvres puis elle s'effondre sur le sentier."
+                hide moira with dissolve
                 "..."
                 $ tuer_moira_foret_4 = True
 
