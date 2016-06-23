@@ -343,8 +343,10 @@ image gv combat_normal_close = "guerriers_vikings/combat/gv_combat_normaux_close
 image gv combat_blesses_close = "guerriers_vikings/combat/gv_combat_blesses_close.png"
 
 #Solo
-define cavalier = Character('{color=#e67e22}Cavalier{/color}', color="#fff", image="guerriers_vikings")
+define cavalier = Character('{color=#e67e22}Cavalier{/color}', color="#fff", image="guerriers2_vikings")
 define soldat = Character('{color=#e67e22}Guerrier{/color}', color="#fff", image="guerriers_vikings")
+
+image side guerriers2_vikings = "guerriers_vikings/gv2_portrait.png"
 
 image solo_1 debout_normal_mid = "guerriers_vikings/solo/debout/soldat_1/soldat_viking_1_debout_normal_mid.png"
 image solo_1 debout_normal_close = "guerriers_vikings/solo/debout/soldat_1/soldat_viking_1_debout_normal_close.png"
