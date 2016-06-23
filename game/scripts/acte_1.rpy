@@ -1159,6 +1159,8 @@ label e_tuer_villageois_village_1:
 
             show logan debout_determine_mid_flip at center with moveinright
 
+            pause 0.9
+
             show einar debout_attriste_close
             show logan debout_determine_close_flip
             with dissolve
@@ -1283,7 +1285,7 @@ label e_tuer_moira_maison_1:
                 xoffset 200
             show logan debout_normal_mid zorder 1
 
-            show ve debout_effrayes_mid at right, ve_pos with moveinright
+            show ve debout_effrayes_mid at right with moveinright
 
             ve "Monstres ! Ils ont tué Moira !"
 
@@ -1297,22 +1299,27 @@ label e_tuer_moira_maison_1:
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
 
-            show gv debout_furieux_mid at center zorder 0 with moveinleft
+            show gv debout_furieux_mid at center with moveinleft:
+                xoffset -800
 
-            show ve debout_effrayes_mid at right:
-                linear 1 xoffset 1500
+            show ve debout_normaux_mid at right:
+                linear 0.8 xoffset 1500
+
+            show gv debout_furieux_mid with moveinright:
+                xoffset 0
 
             gv "Vengeance !"
 
-            show gv debout_furieux_mid:
-                ease 1.5 xoffset 2000
+            show gv debout_furieux_mid at right with moveinright:
+                ease 1 xoffset 1700
+
+            show logan debout_determine_mid_flip at center with moveinright
 
             pause 0.9
 
-            show logan debout_determine_mid_flip at center with moveinright
             show einar debout_attriste_close
             show logan debout_determine_close_flip
-
+            with dissolve
             e "Je..."
 
 
@@ -1347,7 +1354,7 @@ label choix_retour_village_1(massacre = False):
         "Après quelques minutes, l'affrontement touche à sa fin. Des dizaines de paysans gisent au sol. Pas un seul viking n'a été blessé."
         show einar debout_normal_mid at left with dissolve
         e "Empilez les cadavres avant le départ."
-        show logan debout_attriste_mid_flip at right with dissolve
+        show logan debout_attriste_mid_flip at right zorder 1 with dissolve
 
         l "Nous étions censés trouver le village rebelle, pas massacrer des paysans !"
 
