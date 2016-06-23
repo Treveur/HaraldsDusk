@@ -2435,7 +2435,8 @@ label harald_defendre_porte:
 
 label e_laisse_ogma_mort_defendre_porte:
 
-    show ogma combat_normal_mid at ogma_pos_right
+    show ogma combat_normal_mid at ogma_pos_right, shake
+    play sound blade_1
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
     hide ogma with dissolve
     show harald combat_normal_mid_flip at center
@@ -2531,7 +2532,7 @@ label e_sauve_ogma_defendre_porte:
     show einar combat_normal_mid at left
     show harald combat_furieux_mid_flip at center
     show ogma combat_furieux_mid
-
+    play sound blade_2
     "Einar dévie le coup de hache du roi et sauve Ogma."
     show ogma combat_surpris_mid
     show harald combat_furieux_mid_flip at center, shake

@@ -1798,6 +1798,7 @@ label massacre_foret_2 (message, massacre_village):
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
     hide ogma with dissolve
+    play sound blade_1
 
     e "Crevure... Tu..."
 
