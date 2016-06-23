@@ -1587,7 +1587,7 @@ label foret_4:
 
     scene bg sentier_jour with dissolve
 
-    $ rejeter_moira_foret_4 = False
+    $ tuer_moira_foret_4 = False
 
     "..."
     "Moira apparaît sur le sentier."
@@ -1623,14 +1623,14 @@ label foret_4:
 
 
     m "Attend !"
-    e "J'imagine que tu veux me parler l'offre que tu m'as faite dans la forêt..."
+    e "J'imagine que tu veux me parler de l'offre que tu m'as faite..."
     m "Oui."
 
     if moira_abuse == True:
 
         label checkpoint_6:
             scene bg sentier_jour
-            show moira debout_furieux_mid at right
+            show moira debout_normal_mid at right
             show einar debout_normal_mid at left
             with dissolve
 
@@ -1639,6 +1639,7 @@ label foret_4:
         e "Oui ?"
         "La jeune femme se rapproche encore un peu plus, tremblante."
         e "Hé bien, parle !"
+        show moira debout_furieux_mid at right
         m "TU VAS PAYER POUR CE QUE TU M'AS FAIT !"
 
         $ time = 1
@@ -1651,20 +1652,29 @@ label foret_4:
             "Non !":
                 hide screen countdown
                 "En un éclair d'acier, elle tente de poignarder Einar."
-                "Surpris, le viking n'a pas le temps de repousser l'attaque, et ne peut que la détourner."
+                "Surpris, le viking n'a pas le temps de bloquer l'attaque, et ne peut que la détourner."
                 "..."
+                show moira debout_attriste_mid
                 "Une auréole sanglante s'étend sur la robe de Moira."
                 "Un soupir s'échappe de ses lèvres puis elle s'effondre sur le sentier."
+                "..."
+                $ tuer_moira_foret_4 = True:
+                
+    else:
+        m "Merci de ne pas avoir accepté."
+        e "N'en parlons plus."
+        m "Je tiens vraiment à ce que tu comprennes que je te suis reconnaissante. Peu d'hommes auraient réagit comme toi."
+        e "N'en soit pas si sûre. Laisse moi partir maintenant."
 
 
     hide moira
     hide einar
     with dissolve
 
-    if rejeter_moira_foret_4:
-        call good_ending_14 pass (rejete = True) from _call_good_ending_14
+    if tuer_moira_foret_4:
+        call bad_ending_14 pass (tuer = True) from _call_bad_ending_14
     else:
-        call good_ending_14 pass (rejete = False) from _call_good_ending_14_1
+        call bad_ending_14 pass (tuer = False) from _call_bad_ending_14_1
 
 label fuite_harald_pont_baisse_donjon:
     show harald debout_furieux_mid at right with dissolve
