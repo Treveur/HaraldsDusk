@@ -819,10 +819,12 @@ transform alpha_dissolve:
 
 screen countdown:
     timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
-    bar style_group 'hscrollbar' value time range timer_range xalign 0.5 yalign 0.9 xmaximum 300  at alpha_dissolve
+    bar style_group 'hscrollbar' value time range timer_range xalign 0.5 yalign 0.9 xmaximum 400  at alpha_dissolve
 
 init -2 python:
     style.hscrollbar_bar.thumb = "interface/scrollbar/scrollh.png"
+    style.hscrollbar_bar.left_bar = "interface/scrollbar/barh.png"
+    style.hscrollbar_bar.right_bar = im.MatrixColor("interface/scrollbar/barh.png",im.matrix.brightness(-0.5))
 # Le jeu commence ici
 
 label start:
