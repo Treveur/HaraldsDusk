@@ -379,7 +379,7 @@ label cour_chateau_1:
         hide gv with dissolve
 
         show einar debout_normal_mid at left with dissolve
-        show jgv debout_normal_mid at right with dissolve
+        show jgv debout_normaux_mid at right with dissolve
 
         "Alors que l'assistance se réjouit devant ce triste spectacle, Einar remarque un jeune soldat en retrait."
         "Le soldat semble mal à l'aise et au bord des larmes. Einar se dirige vers lui."
@@ -564,11 +564,11 @@ label pont_levis_baisse:
 
     hide re with dissolve
     show bg cour_chateau_crepuscule_blur with dissolve
-    show gv debout_normal_mid at center
+    show gv debout_normaux_mid at center
 
     show einar combat_determine_mid_flip at right
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    show gv debout_normal_mid at left with moveinleft:
+    show gv debout_normaux_mid at left with moveinleft:
         xoffset -400
     show einar combat_determine_mid_flip at center with moveinleft
     show re debout_normaux_mid at right with moveinright:
@@ -733,7 +733,7 @@ label pont_levis_baisse:
         $ checkpoint = "checkpoint_2"
 
         "Pris entre les deux forces, Einar est immobilisé."
-        show gv debout_normal_mid at left
+        show gv debout_normaux_mid at left
         show einar combat_determine_mid_flip at center
         show re debout_normaux_mid at right
         "Au même moment, ses anciens confrères huscarls le chargent."
@@ -890,7 +890,7 @@ label e_bruler_donjon_desobeir_donjon:
 
     if short_version == False:
         "Le jeune soldat qui pleurait lors du jugement survient face à Einar."
-        show jgv debout_normal_mid at center with dissolve
+        show jgv debout_normaux_mid at center with dissolve
         show re debout_normaux_mid at right with dissolve
         "Il a l'air terrorisé mais résolu, et tue un rebelle."
         show re debout_normaux_mid at right, shake
@@ -976,6 +976,7 @@ label e_bruler_donjon_obeir_donjon:
     scene bg chateau_couloir_crepuscule_blur with dissolve
     show einar debout_normal_mid_flip at right with moveinright
     "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
+    play ambiance burning_dungeon
     show einar debout_determine_mid_flip at center with moveinright
     "..."
     show einar debout_determine_mid_flip at left with moveinright
@@ -1210,7 +1211,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 hide einar
                 hide harald
                 with dissolve
-
+                stop ambiance
                 scene bg chateau_rempart_crepuscule with dissolve
                 "Quelques minutes plus tard, alors que les combats sont terminés..."
                 scene bg chateau_rempart_crepuscule_blur with dissolve
@@ -1219,11 +1220,12 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
                 o "Voyez ! La liberté a vaincu le tyran !"
                 o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
-                show ogma combat_furieux_mid at ogma_pos_right
+                show ogma combat_furieux_mid:
+                    xoffset 300
                 o "Le règne du roi-empereur est terminé !"
                 "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
                 hide harald with dissolve
-                show ogma combat_determine_mid at ogma_pos_right
+                show ogma combat_determine_mid
                 o "VOUS ÊTES LIBRES !"
                 "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
                 "Dans la lumière du crépuscule, Dunbar continue de brûler."
@@ -1437,7 +1439,7 @@ label e_epargne_harald_no_axe_donjon:
 
     if harald_echape_no_axe:
         "Harald s'échappe sans demander son reste."
-        show harald combat_normal_mid_flip at right with moveinright
+        show harald combat_normal_mid_flipflip at right with moveinright
         hide harald with dissolve
         h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
         h "JE ME VENGERAI !"
@@ -1450,6 +1452,8 @@ label e_epargne_harald_no_axe_donjon:
         "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
         "Harald s'échappe par la mer, seul sur sa barque."
         #Retour à l'extérieur
+        stop ambiance
+
         scene bg chateau_rempart_crepuscule with dissolve
         "La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol."
         "Sur les remparts, la silouhette d'Ogma se découpe sur le ciel."
@@ -1502,7 +1506,7 @@ label village_5:
     scene bg village with dissolve
 
     "..."
-    scene bg village_blur 
+    scene bg village_blur
 
     show einar debout_normal_mid at left
     show ogma debout_normal_mid at right
@@ -1711,7 +1715,7 @@ label foret_4:
                 call bad_ending_14(False)
 
 
-    
+
     e "J'imagine que tu veux me parler de l'offre que tu m'as faite..."
     m "Oui."
 
@@ -1734,7 +1738,7 @@ label foret_4:
         show moira debout_furieux_mid at left:
             xoffset 300
         m "TU VAS PAYER POUR CE QUE TU M'AS FAIT !"
-        
+
 
 
         $ time = 1
@@ -1775,22 +1779,25 @@ label foret_4:
         call bad_ending_14(False)
 
 label fuite_harald_pont_baisse_donjon:
-    show harald debout_furieux_mid at right with dissolve
+    show harald combat_normal_mid at right with dissolve
 
     h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
     h "JE ME VENGERAI !"
     "..."
 
     scene bg plaine_chateau_crepuscule with dissolve
+    play ambiance coast
     pause 0.8
     scene bg plaine_chateau_crepuscule_blur with dissolve
-    show harald debout_furieux_mid at left with moveinright
+    show harald combat_normal_mid_flip at left with moveinright
     "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
     "Harald s'échappe par la mer, seul sur sa barque."
 
     #animation harald partir vers la droite
     hide harald
     with dissolve
+
+    stop ambiance
 
     #Retour à l'extérieur
     scene bg chateau_rempart_crepuscule with dissolve
@@ -2187,8 +2194,8 @@ label soupcon_harald_defendre_porte:
     label checkpoint_4:
         scene bg chateau_porte_crepuscule_blur
         show einar combat_furieux_mid at left
-        show ogma combat_furieux_mid at ogma_pos_righ
-        with dissolve
+        show ogma combat_furieux_mid:
+            xoffset 850
 
     "Un combat s'engage entre Ogma et Einar !"
 
@@ -2383,7 +2390,7 @@ label harald_defendre_porte:
 
     scene bg plaine_plaine_crepuscule with dissolve
     pause 0.8
-    scene bg plaine_plaine_crepuscule_blut with dissolve
+    scene bg plaine_plaine_crepuscule_blur with dissolve
     show re debout_normaux_mid at right
     show ogma combat_normal_mid at center
     with dissolve

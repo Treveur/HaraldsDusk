@@ -73,6 +73,9 @@ label bad_ending_6:
     jump credits
 
 label good_ending_7:
+
+    play music ending
+
     show einar combat_hache_normal_mid at left
     show ogma debout_determine_mid at center
     e "Voici la Hache."
@@ -90,6 +93,7 @@ label good_ending_7:
     jump credits
 
 label good_ending_8:
+
     "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
     "Les villageois lui font leurs adieux et petit à petit, la place se vide."
 
@@ -98,13 +102,19 @@ label good_ending_8:
             e "(Me voilà débarrassé de tous mes engagements...)"
             e "(Maintenant que le monde est privé de la Hache, l'équilibre devrait revenir.)"
             e "(Enfin, j'espère...)"
+
+            play music ending
+
             "Le monde se souviendra d'Einar, Libérateur de l'Ecosse ; mais une part d'ombre subsistera."
             "Einar était-il plus qu'un homme ? Comment a-t-il pu détruire la Hache Sainte et vaincre son porteur, élu de Dieu ?"
 
         "(Allons récupérer la Hache !)":
             e "(Les abrutis ! Ils ont réellement cru que j'allais détruire une merveille pareille ?)"
             e "(Il est temps de la récupérer ! Ce genre de choses ne devrait pas rester à traîner dans la nature...)"
+
             e "(Et ensuite, à moi le pouvoir !)"
+            play music ending
+
             "L'Histoire ne se souviendra pas d'Einar comme d'un homme, mais comme d'un Dieu retors et rusé, traversant les âges armé de la Hache Sainte."
             "Jusqu'où iront ses conquêtes ? A quel point s'étendront ses royaumes infinis ?"
 
@@ -139,6 +149,7 @@ label normal_ending_10:
     show re debout_normaux_mid at left
     ge "HOURRAAAA !"
     hide re
+    play music ending
     "Fin 10/22"
     jump credits
 
@@ -147,12 +158,13 @@ label good_ending_11:
     show ogma debout_souriant_mid at center zorder 0 with dissolve
     o "Aujourd'hui et au nom du peuple d'Ecosse, je te remercie, Einar !"
     o "Nous te sommes tous redevables !"
-    show re debout_normaux_mid at right zorder 1 with dissolve
+    show re debout_normaux_mid at right zorder 1 with dissolve:
+        xoffset 300
     ge "HOURRAAA !"
     hide re with dissolve
+    show einar debout_normal_mid at left with dissolve
     o "Tu as agit pour le bien du plus grand nombre, ne l'oublie jamais."
     o "Comme promis, tu es désormais libre d'aller où bon te semble. Un cheval harnaché avec des fontes remplies d'or t'attends."
-    show einar debout_normal_mid at left
     e "Merci."
     o "Tu as l'air contrarié... Savoure ta victoire !"
     menu:
@@ -215,11 +227,13 @@ label good_ending_11:
                 m "Merci."
                 e "Pour ?"
                 m "Ne pas avoir accepté l'offre de mon père."
+                play music ending
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
                 "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
                 "Einar le Libérateur."
 
             else:
+                play music ending
                 "Le soir venu, lors du festin organisé en l'honneur d'Einar, Moira reste ostensiblement à l'écart du viking."
                 "Perth fête sa liberté retrouvée ; l'Ecosse va reprendre son destin en main."
                 "Le nom d'Einar restera gravé dans les mémoires pour des centaines d'années."
@@ -250,6 +264,7 @@ label bad_ending_12:
     call game_over_combat('checkpoint_3')
 
 label good_ending_13:
+    play music ending
     "Les villageois lui font leurs adieux et petit à petit, la place se vide."
     "Sur le dos de son cheval chargé d'or, Einar s'éloigne peu à peu de Perth."
     "L'Histoire se souviendra d'Einar le Régicide, celui qui libéra le monde du joug du plus terrible tyran."
@@ -267,6 +282,8 @@ label bad_ending_14(tuer):
         show moira debout_souriant_close at right
         show einar debout_souriant_close at left
         with dissolve
+
+        play music ending
 
         "Einar poursuit son chemin, laissant la jeune femme derrière lui."
         "..."
@@ -292,7 +309,7 @@ label good_ending_15(marier):
                 else:
                     "Einar adresse un sourire lourd de sens à Moira."
                     "La jeune femme serre les poings et semble au bord des larmes."
-
+        play music ending
         "Le soir venu, le village fête les noces annoncées d'Einar et Moira."
         "Le monde se souviendra d'un Héros, Einar le Libérateur."
         "Mais à quel genre d'homme sera mariée Moira ?"
@@ -300,6 +317,7 @@ label good_ending_15(marier):
     else:
         o "Peu importe ce que tu feras de ta vie ; tu trouveras toujours des amis à Perth."
         e "Il est temps pour moi de partir."
+        play music ending
         "Einar enfourche son cheval et part, seul avec ses pensées."
         "Derrière lui, une jeune femme rousse le regarde s'éloigner."
     "Fin 15/22"
@@ -321,6 +339,8 @@ label bad_ending_17:
     jump credits
 
 label normal_ending_18:
+    stop ambiance fadeout 1
+    play music ending
     "Le repas se poursuit toute la nuit, célébrant les exploits d'Einar autant que l'éradication des rebelles..."
     "Si l'Histoire ne se souviendra pas du nom d'Einar, la victoire retentissante du roi-empereur Harald Sigurdsson contre les rebelles restera gravée dans les mémoires."
     "Car nul n'osera plus jamais s'élever contre le viking élu de Dieu."
@@ -405,5 +425,5 @@ label credits:
     centered "{font=fonts/Celtknot.ttf}{size=+20}Son :{/size}{/font} \n
     Julien Laguerre\n
     Nicolas Lorion"
-
+    stop music
     $ renpy.full_restart()

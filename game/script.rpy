@@ -309,7 +309,7 @@ image side jeune_viking = "jeune_viking/jv_portrait.png"
 
 #Debout
 
-image gv debout_normal_mid = "guerriers_vikings/debout/gv_debout_normaux_mid.png"
+image gv debout_normaux_mid = "guerriers_vikings/debout/gv_debout_normaux_mid.png"
 image gv debout_enthousiaste_mid = "guerriers_vikings/debout/gv_debout_enthousiastes_mid.png"
 image gv debout_furieux_mid = "guerriers_vikings/debout/gv_debout_furieux_mid.png"
 image gv debout_rire_mid = "guerriers_vikings/debout/gv_debout_rire_mid.png"
@@ -322,7 +322,7 @@ image gv debout_rire_close = "guerriers_vikings/debout/gv_debout_rire_close.png"
 image gv debout_contrarie_close = "guerriers_vikings/debout/gv_debout_contraries_close.png"
 image gv debout_determines_close = "guerriers_vikings/debout/gv_debout_determines_close.png"
 
-image gv debout_normal_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_normaux_mid.png", horizontal = True)
+image gv debout_normaux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_normaux_mid.png", horizontal = True)
 image gv debout_enthousiaste_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_enthousiastes_mid.png", horizontal = True)
 image gv debout_furieux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_furieux_mid.png", horizontal = True)
 image gv debout_rire_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_rire_mid.png", horizontal = True)
@@ -378,7 +378,7 @@ image garde_2 debout_normal_close_flip = im.Flip("guerriers_vikings/garde_viking
 
 #Jeune Guerrier Viking
 
-image jgv debout_normal_mid = "jeune_viking/debout/jgv_debout_normal_mid.png"
+image jgv debout_normaux_mid = "jeune_viking/debout/jgv_debout_normal_mid.png"
 image jgv debout_pleurant_mid = "jeune_viking/debout/jgv_debout_pleurant_mid.png"
 
 image jgv debout_normal_close = "jeune_viking/debout/jgv_debout_normal_close.png"
@@ -741,6 +741,7 @@ define audio.nature = "sounds/musics/music_travelling_in_nature.mp3"
 define audio.romance ="sounds/musics/music_romance.mp3"
 define audio.weird_village = "sounds/musics/music_village_weird.mp3"
 define audio.slaughter = "sounds/musics/music_drama_slaughter.mp3"
+define audio.ending = "sounds/musics/ending_theme.mp3"
 #define audio.drama_slaughter = "sounds/musics/music_drama_slaughter.wav"
 
 #SFX

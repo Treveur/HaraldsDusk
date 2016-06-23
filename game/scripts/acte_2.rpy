@@ -673,6 +673,8 @@ label interieur_maison_village_4:
 
     "Moira entraîne Einar a l'extérieur."
 
+    stop ambiance
+
     play music "<from 5>sounds/musics/music_travelling_in_nature.mp3" fadein 0.5
 
     if short_version:
@@ -765,8 +767,6 @@ label village_3:
     "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
     scene bg village_crepuscule_blur with dissolve
 
-    stop music
-
     show einar prisonnier_normal_mid at left with dissolve
     show moira debout_normal_mid at right with dissolve
 
@@ -836,6 +836,8 @@ label village_3:
     hide moira with dissolve
     show einar prisonnier_determine_mid at right with moveinright
     hide einar with dissolve
+
+    stop music
 
     jump foret_3
 
