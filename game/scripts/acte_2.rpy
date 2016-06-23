@@ -1018,7 +1018,7 @@ label village_4:
             show einar debout_determine_mid at left
             e "Très bien."
     hide ogma with dissolve
-    show moira debout_normal_mid at right with dissolve
+    show moira debout_normal_mid at right with moveinright
     m "Tu dois tenir ta parole, Einar."
     show moira debout_normal_mid at center with moveinleft
 
@@ -1029,27 +1029,25 @@ label village_4:
             e "Tu m'as fait promettre d'une manière assez convaincante."
             show einar prisonnier_normal_mid at left
             e "Considère Perth comme étant désormais un village libre."
-            hide einar
-            hide ogma
-            hide moira
-            with dissolve
+            show einar debout_determine_mid_flip at left
+            hide einar with dissolve
+            hide moira with dissolve
 
         "Ne t'inquiète pas":
             show einar prisonnier_souriant_mid at left
             e "Ne t'inquiète pas, j'y compte bien."
             show einar prisonnier_normal_mid at left
             e "Vous avez été bons avec moi, et je tiens toujours mes promesses."
-            hide einar
-            hide ogma
-            hide moira
-            e "Ne t'inquiète pas. Je reviendrai, et alors vous serez libres."
+            show einar debout_determine_mid_flip at left
+            hide einar with dissolve
+            hide moira with dissolve
 
         "(L'ignorer)":
             hide ogma with dissolve
-            hide moira with dissolve
             "Einar se retourne et, sans un regard pour la jeune femme, commence à s'éloigner."
-            show einar debout_determine_close_flip at left
+            show einar debout_determine_mid_flip at left
             hide einar with dissolve
+            hide moira with dissolve
 
 
     hide moira
