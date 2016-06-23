@@ -1154,8 +1154,10 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
             "Se jeter sur Harald":
                 hide screen countdown
                 "Einar se lance dans le corps-à-corps, faisant fi de la supériorité physique de son adversaire."
+                play sound punch_2
                 show einar combat_furieux_mid at left, shake
                 "Harald est immense, puissant, et il possède l'expérience de centaines de batailles. Il broie son huscarl, lui faisant éclater des os à chaque coup."
+                play sound punch_2
                 show einar combat_furieux_mid at left, shake
                 "Finalement, Einar glisse au sol après que son crâne ait été défoncé sur un mur."
                 hide einar with dissolve

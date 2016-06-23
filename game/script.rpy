@@ -755,6 +755,9 @@ define audio.hurt_man_1 = "sounds/sfx/SFX_Hurt_Man.mp3"
 define audio.hurt_man_2 = "sounds/sfx/SFX_Hurt_Man2.mp3"
 define audio.hurt_man_3 = "sounds/sfx/SFX_Hurt_Man3.mp3"
 define audio.hurt_man_4 = "sounds/sfx/SFX_Hurt_Man4.wav"
+define audio.punch_2 = "sounds/sfx/SFX_Punch2.wav"
+define audio.claque_1 = "sounds/sfx/SFX_Claque1.wav"
+define audio.claque_2 = "sounds/sfx/SFX_Claque2.wav"
 
 #ambiance
 define audio.burning_dungeon = "sounds/ambiances/ambiance_burning_dungeonkeep.mp3"
