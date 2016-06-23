@@ -2345,7 +2345,7 @@ label harald_defendre_porte:
     "Une volée de flèches abat une partie des rebelles qui foncent vers le pont relevé."
     "Harald jaillit du donjon, armé de pied en cap."
 
-    show harald combat_determine_mid_flip at right
+    show harald combat_hache_determine_mid_flip at right
     show einar combat_normal_mid at left
     with dissolve
 
@@ -2371,19 +2371,21 @@ label harald_defendre_porte:
     scene bg chateau_porte_crepuscule with dissolve
     pause 0.8
     scene bg chateau_porte_crepuscule_blur with dissolve
-    show harald combat_furieux_mid_flip at right
+    show harald combat_hache_furieux_mid_flip at right
     show einar combat_furieux_mid at center
-    show gv combat_normal_mid at left
+    show gv combat_normal_mid at left:
+        xoffset -800
     h "Nous les traquerons jusque dans leurs terriers ! Une semaine de solde pour celui qui me ramène le plus de têtes de ces damnés rebelles !"
     hide harald with dissolve
     show einar combat_furieux_mid at right with moveinright
     hide einar with dissolve
-    show gv combat_normal_mid at right with moveinright
+    show gv combat_normal_mid at right with moveinright:
+        xoffset 0
     hide gv with dissolve
 
     scene bg plaine_plaine_crepuscule with dissolve
     pause 0.8
-    scene bg plaine_plaine_crepuscule_blut with dissolve
+    scene bg plaine_plaine_crepuscule_blur with dissolve
     show re debout_normaux_mid at right
     show ogma combat_normal_mid at center
     with dissolve
@@ -2392,28 +2394,28 @@ label harald_defendre_porte:
     "Désorganisés, les rebelles sont séparés en deux groupes. Certains rompent les rangs."
     ge "Tout est perdu ! Fuyez !"
     hide re with dissolve
-    show ogma combat_furieux_mid at center
+    show ogma combat_furieux_mid at center zorder 2
     o "Restez en place ! J'étriperai moi-même ceux qui s'enfuient !"
-    show harald combat_normal_mid_flip at left with moveinleft
+    show harald combat_hache_normal_mid_flip at left zorder 1 with moveinleft
     show ogma combat_normal_mid at ogma_pos_right, ogma_pos_reset with moveinright
     h "Ha ! Tu es celui qui a assassiné mon intendant ?"
     show ogma combat_determine_mid
     o "Oui, et je suis prêt à réitérer l'exploit avec un roi !"
-    show harald combat_furieux_mid_flip at left
+    show harald combat_hache_furieux_mid_flip at left
     h "Pourriture ! Tu vas rendre gorge !"
-    show harald combat_furieux_mid_flip at center with moveinright
+    show harald combat_hache_furieux_mid_flip at center with moveinright
     show ogma combat_furieux_mid at ogma_pos_right, shake
-    show harald combat_furieux_mid_flip at center, shake
+    show harald combat_hache_furieux_mid_flip at center, shake
 
     "La force et la technique de Harald s'opposent à la vitesse et à la ruse d'Ogma."
     "D'une feinte, l'écossais parvient à atteindre le roi au ventre ; pas une goutte de sang ne coule."
     "Harald prend l'avantage petit à petit : la Hache le rend invincible."
     show ogma combat_furieux_mid at ogma_pos_right, shake
-    show harald combat_normal_mid_flip at center
+    show harald combat_hache_normal_mid_flip at center
     h "Tu ne peux rien contre moi ! Personne ne peut rien ! Rends-toi !"
     show ogma combat_normal_mid
     o "Jamais !"
-    show harald combat_furieux_mid_flip at center
+    show harald combat_hache_furieux_mid_flip at center
     h "Meurs, chien maigre !"
     show ogma combat_furieux_mid at ogma_pos_right, shake
     "Du plat de sa hache, Harald frappe Ogma au torse, lui brisant les côtes et le jetant à terre."
@@ -2439,7 +2441,7 @@ label e_laisse_ogma_mort_defendre_porte:
     play sound blade_1
     "La Hache Sainte s'abat. Ogma est tranché en deux, répandant ses entrailles sur le sol."
     hide ogma with dissolve
-    show harald combat_normal_mid_flip at center
+    show harald combat_hache_normal_mid_flip at center
     "Immédiatement, les derniers rebelles se dispersent, traumatisés de voir leur héros vaincu par le roi viking."
 
     menu :
@@ -2472,6 +2474,77 @@ label e_laisse_ogma_mort_defendre_porte:
     with dissolve
 
     if moira_dead:
+        "Un peu plus tard..."
+
+        scene bg chateau_banquet with dissolve
+        pause 0.8
+        scene bg chateau_banquet_blur with dissolve
+
+        show einar debout_normal_close at left
+        show harald debout_normal_close at right
+        with dissolve
+
+        h "... un honneur ! Comme nul autre avant lui, Einar a fait preuve de sa fidélité et de sa bravoure !"
+        show harald debout_normal_close at right
+        h "Il est le meilleur homme que j'ai eu sous mes ordres, et Dieu sait combien d'hommes valeureux j'ai eu à mon service !"
+        h "Tu es du bois dont on fait les héros, Einar !"
+        show harald debout_normal_close at right
+
+        menu:
+
+            "Merci":
+                show einar debout_souriant_close at left
+                e "Merci, mon roi."
+                h "Ne me remercie pas ! Tu nous a tous sauvés, c'est à nous de te remercier !"
+
+            "Je suis resté fidèle":
+                show einar debout_attriste_close at left
+                e "Je suis resté fidèle à mon allégeance. La victoire, nous la devons à tous ceux qui sont morts aujourd'hui."
+                show harald debout_normal_close at right
+                h "C'est vrai, mais ton mérite et ton honneur n'en sont pas amoindris ! Sans toi, nous étions perdus !"
+
+            "Que l'on se souvienne de moi !":
+                show einar debout_determine_close at left
+                e "J'ai mené l'assaut final et tué le chef rebelle, qu'on se souvienne longtemps de mes exploits !"
+                h "Personne ne peut t'enlever les exploits que tu as accompli. La gloire t'appartient aujourd'hui ! "
+
+        show harald debout_normal_close at right
+
+        h "J'ai décidé de récompenser ta valeur."
+        h "Je t'offre Stirling et les terres alentours ! Le village a brûlé il y a peu, mais les terres fourniront de bons revenus d'ici quelques années !"
+        h "En outre, je t'offre le titre d'Intendant d'Ecosse !"
+
+        menu :
+
+            "Merci !":
+                show einar debout_souriant_close at left
+                e "... Merci, je n'en attendais pas tant !"
+                h "Ton désinteressement s'ajoute à tes prouesses ! On ne pourrait rêver d'avoir un meilleur homme à son service !"
+
+            "Quel honneur !":
+                show einar debout_souriant_close at left
+                e "Quel honneur ! Merci, mon roi !"
+                show harald debout_normal_close at right
+                h "Depuis tout ce temps passé à mon service et toutes les promesses que je t'avais faites, te récompenser aujourd'hui me paraissait être une obligation !"
+
+            #A vérifier
+            "Des terres brûlées ?":
+                show einar debout_contrarie_close at left
+                e "Des terres brûlées et un village rasé qui ne fourniront rien avant plusieurs années, dans un territoire hostile et isolé ? "
+                show einar debout_attriste_close at left
+                e "Le titre d'intendant d'un peuple révolté et que j'ai trahi ?"
+                show einar debout_contrarie_close at left
+                e "Vous vous moquez de moi, sire !"
+                gv "Sire !"
+                show harald debout_contrarie_close at right
+                h "Laissez-le. Je pardonne son amertume, son insolence et son ingratitude."
+                hide gv with dissolve
+                show harald debout_normal_close at right
+                h "Tes exploits ne te dispensent pas de respecter ton roi et empereur, Einar."
+                h "Ne t'adresse plus jamais à moi de cette façon, ou la sanction sera exemplaire."
+                e "..."
+                show einar debout_attriste_close at left
+                e "Sire, pardonnez mon attitude..."
         jump normal_ending_18
     else:
         jump cour_chateau_ogma_mort_defendre_porte
@@ -2530,7 +2603,7 @@ label cour_chateau_ogma_mort_defendre_porte:
 label e_sauve_ogma_defendre_porte:
 
     show einar combat_normal_mid at left
-    show harald combat_furieux_mid_flip at center
+    show harald combat_hache_furieux_mid_flip at center
     show ogma combat_furieux_mid
     play sound blade_2
     "Einar dévie le coup de hache du roi et sauve Ogma."
