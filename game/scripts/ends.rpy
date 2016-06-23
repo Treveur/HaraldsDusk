@@ -227,10 +227,23 @@ label good_ending_11:
     jump credits
 
 label bad_ending_12:
+    scene bg chateau_couloir_crepuscule with dissolve
+    show einar combat_determine_mid_flip at right with moveinleft
+    show einar combat_determine_mid_flip at right, shake
+    show harald combat_furieux_mid_flip at left with moveinleft
+    h "Tu n'as aucune chance ! J'ai été choisi par Dieu !"
+    show harald combat_furieux_mid_flip at center with moveinleft:
+        xoffset 300
+    show einar combat_furieux_mid_flip at right, shake
+    show harald combat_furieux_mid_flip at center, shake:
+        xoffset 0
+    show einar combat_furieux_mid_flip at right, shake
     "Les deux vikings rendent coup pour coup."
     "Mais le roi projette Einar contre le mur avant de se ruer sur lui."
+    show harald combat_furieux_mid_flip at right with moveinleft
     h "MEURS !"
     "Einar meurt étranglé par son roi, les vertèbres craquant sous l'étreinte du monarque."
+    hide einar with dissolve
     "Fin 12/22"
     jump credits
 
