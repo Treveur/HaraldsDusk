@@ -428,14 +428,14 @@ label cour_chateau_2:
     #toujours ambiance chateau
     show bg cour_chateau_crepuscule with fade
     "Au crépuscule..."
-    show garde_1 debout_normal_mid_flip at left with moveinleft
+    show garde_1 debout_normal_mid at left with moveinleft
     garde "Sire ! Sire !"
     show harald debout_normal_mid at right with moveinright
     h "Qu'y a-t-il ? Parle !"
     garde "Hjalmar vient de repérer des centaines de torches sortir de la forêt ! Ils convergent tous vers le château !"
     show harald debout_furieux_mid at right
     h "Les chiens, ils ne manquent pas d'audace ! Ils lancent déjà leur attaque !"
-    show harald combat_determine_mid at right
+    show harald combat_hache_determine_mid at right
 
     h "Tous à vos postes de combat ! Huscarls, préparez-vous à défendre la porte ! Je veux vingt archers sur les remparts !"
     "Une fois ses ordres donnés, Harald disparaît dans le donjon."
@@ -454,13 +454,19 @@ label interieur_grande_porte_chateau_1:
 
     show bg cour_chateau_crepuscule with dissolve
 
-    show gv debout_enthousiaste_mid_flip at right with dissolve
+    show garde_2 debout_normal_mid_flip at right
+    show solo_2 debout_normal_mid at center
+    with dissolve
     soldat "Ha ha ! Depuis le temps que j'attendais ça ! On va casser du rebelle !"
-    hide gv
+    show garde_2 debout_normal_mid at right
+    hide garde_2 with dissolve
+    show solo_2 debout_normal_mid at right with moveinright
+    hide solo_2 with dissolve
+    
     "La horde progresse en courant à travers la plaine."
-    "A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis."
     play sound double_horn
-
+    "A une centaine de mètres du château, un double son de cor retentit : le signal convenu avec Ogma pour ouvrir le pont-levis."
+    
     "Einar est posté à proximité du système d'ouverture des portes."
 
 
