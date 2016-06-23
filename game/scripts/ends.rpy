@@ -24,7 +24,7 @@ label bad_ending_2:
     show ogma debout_contrarie_mid at center
     o "C'est décevant... Tu crois être unique ? Si ce n'est pas toi, un autre fera le travail à ta place."
     "Ogma égorge Einar alors qu'il est entravé."
-    show einar prisonnier_blesse_mid at left
+    show einar prisonnier_blesse_mid at left, shake
     e "Grrblbhh..."
     hide einar with dissolve
     "Après s'être étouffé avec son propre sang, Einar meurt. Son corps est alors ramené sur les lieux de l'embuscade et est laissé à pourrir aux côtés de ses compagnons."

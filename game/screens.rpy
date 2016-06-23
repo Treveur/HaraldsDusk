@@ -673,8 +673,8 @@ init -2 python:
 # In-game UI
 screen ingame_menu:
 
-        vbox xalign 0.994 yalign 0.99:
-            spacing 10
+        vbox xalign 0.994 yalign 0.965:
+            spacing 20
             imagebutton auto "interface/buttons/pause/pause_%s.png" action ShowMenu("save")
             imagebutton auto "interface/buttons/log/log_%s.png" action [SetVariable("yvalue", 1.0), ShowMenu('text_history')]
         # vbox xalign 0.97 yalign 0.03:

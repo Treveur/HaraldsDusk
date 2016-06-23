@@ -151,8 +151,8 @@ label interieur_maison_village_1:
     o "Alors ? Comment va le prisonnier ?"
     show moira debout_normal_mid at right
     m "Plutôt bien ! Il a une infection à la jambe mais le vieux Murray m'a donné des plantes pour le soigner. D'ici une semaine, l'infection sera passée."
-    o "Et l'épaule ?"
-    m "La cicatrisation commence à peine, la blessure était profonde. Le vieux Murray m'a aidé à extraire la tête de la flèche de son épaule, j'ai bien cru qu'il allait se vider de tout son sang !"
+    o "Et le bras ?"
+    m "La cicatrisation commence à peine, la blessure était profonde. Le vieux Murray m'a aidé à extraire la tête de la flèche, j'ai bien cru qu'il allait se vider de tout son sang !"
     show einar prisonnier_normal_mid at left with dissolve
     e "Je ..."
     show ogma debout_determine_mid at center

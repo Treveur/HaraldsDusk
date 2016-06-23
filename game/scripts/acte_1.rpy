@@ -2043,7 +2043,8 @@ label refuser_trahir_village_2:
     show ogma debout_determine_mid at right
     show einar prisonnier_determine_mid at left
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
-    show ogma debout_determine_mid at center with moveinright
+    show ogma debout_determine_mid at center with moveinright:
+        xoffset -300
 
     o "Mauvaise réponse."
 
@@ -2073,7 +2074,8 @@ label refuser_trahir_village_2:
     menu:
         "J'accepte":
             e "Très bien... Hhhggh... J'accepte..."
-            show ogma debout_souriant_mid at right with moveinright
+            show ogma debout_souriant_mid at right with moveinright:
+                xoffset 0
             o "Parfait !"
             jump accepter_trahir_village_2
         "Je ne trahirai personne !":
