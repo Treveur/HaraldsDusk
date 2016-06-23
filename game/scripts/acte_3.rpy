@@ -982,7 +982,7 @@ label e_bruler_donjon_obeir_donjon:
     show einar debout_determine_mid_flip at left with moveinright
     "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
     "Le roi est entrain de s'équiper de son armure."
-    scene bg chateau_couloir_crepuscule_blur with dissolve
+    scene bg chateau_chambre_nuit with dissolve
 
     show einar debout_determine_mid_flip at right with dissolve
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
@@ -1129,7 +1129,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         $ checkpoint = "checkpoint_3"
 
         label checkpoint_3:
-            scene bg chateau_couloir_crepuscule_blur
+            scene bg chateau_chambre_nuit
             show harald combat_furieux_mid at center
             show einar combat_normal_mid at left
 
