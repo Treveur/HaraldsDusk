@@ -316,13 +316,6 @@ image gv debout_rire_mid = "guerriers_vikings/debout/gv_debout_rire_mid.png"
 image gv debout_contrarie_mid = "guerriers_vikings/debout/gv_debout_contraries_mid.png"
 image gv debout_determines_mid = "guerriers_vikings/debout/gv_debout_determines_mid.png"
 
-image gv debout_normaux_close = "guerriers_vikings/debout/gv_debout_normaux_close.png"
-image gv debout_enthousiaste_close = "guerriers_vikings/debout/gv_debout_enthousiastes_close.png"
-image gv debout_furieux_close = "guerriers_vikings/debout/gv_debout_furieux_close.png"
-image gv debout_rire_close = "guerriers_vikings/debout/gv_debout_rire_close.png"
-image gv debout_contrarie_close = "guerriers_vikings/debout/gv_debout_contraries_close.png"
-image gv debout_determines_close = "guerriers_vikings/debout/gv_debout_determines_close.png"
-
 image gv debout_normaux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_normaux_mid.png", horizontal = True)
 image gv debout_enthousiaste_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_enthousiastes_mid.png", horizontal = True)
 image gv debout_furieux_mid_flip = im.Flip("guerriers_vikings/debout/gv_debout_furieux_mid.png", horizontal = True)
@@ -627,7 +620,6 @@ image patrick debout_normal_close_flip = im.Flip("patrick/debout/patrick_debout_
 #forest
 image bg forest = "scenes/foretWestruther_ext_jour_foret.png"
 image bg forest_night = "scenes/foretWestruther_ext_nuit_foret.png"
-image vfx forest_night_torch = "scenes/foretWestruther_ext_nuit_foret_torche.png"
 image bg forest_crepuscule = "scenes/foretWestruther_ext_aube_foret.png"
 image bg little_heaven = "scenes/foretWestruther_ext_matin_paradis.png"
 
@@ -662,8 +654,7 @@ image bg chateau_porte = "scenes/chateauDunbar_ext_jour_porte.png"
 image bg chateau_porte_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.png"
 image bg chateau_porte_interieur_crepuscule = "scenes/chateauDunbar_ext_crepuscule_porte.png"
 #remparts
-image bg chateau_rempart_crepuscule = "scenes/chateauDunbar_ext_crepuscule_remparts.jpg"
-image bg chateau_rempart_jour = "scenes/chateauDunbar_ext_jour_remparts.jpg"
+image bg chateau_rempart_crepuscule = "scenes/chateauDunbar_ext_crepuscule_remparts.png"
 #cour chateau
 image bg cour_chateau = "scenes/chateauDunbar_ext_jour_cour.png"
 image bg cour_chateau_crepuscule = "scenes/chateauDunbar_ext_crepuscule_cour.png"
@@ -686,13 +677,13 @@ image bg sentier_jour_blur = "scenes/blur/foretWestruther_ext_matin_sentier_blur
 
 #Village
 #exterior
-# image bg village_blur = "scenes/blur/perth_ext_jour_village_blur.png"
-# image bg village_crepuscule_blur = "scenes/blur/perth_ext_crepuscule_village_blur.png"
+image bg village_blur = "scenes/blur/perth_ext_jour_village_blur.png"
+image bg village_crepuscule_blur = "scenes/blur/perth_ext_crepuscule_village_blur.png"
 #ogma house
-# image bg house_blur = "scenes/blur/perth_int_jour_maison_blur.png"
-# image bg house2_jour_blur = "scenes/blur/perth_int_jour_maison_blur.png"
-# image bg house2_nigh_blurt = "scenes/blur/perth_int_nuit_maison_blur.png"
-# image bg house2_aube_blur = "scenes/blur/perth_int_jour_maison_blur.png"
+image bg house_blur = "scenes/blur/perth_int_jour_maison_blur.png"
+image bg house2_jour_blur = "scenes/blur/perth_int_jour_maison_blur.png"
+image bg house2_nigh_blurt = "scenes/blur/perth_int_nuit_maison_blur.png"
+image bg house2_aube_blur = "scenes/blur/perth_int_jour_maison_blur.png"
 
 ##Plaine cotière
 image bg plaine_cotière_matin_blur = "scenes/blur/plaine_ext_matin_plaineCotiere_blur.png"
@@ -708,21 +699,18 @@ image bg plaine_plaine_crepuscule_blur = "scenes/blur/plaine_ext_crepuscule_plai
 #pont-levis
 # image bg pont_levis_blur = "scenes/blur/pont_levis.jpg"
 #porte chateau
-# image bg chateau_porte_blur = "scenes/blur/chateauDunbar_ext_jour_porte_blur.png"
-# image bg chateau_porte_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_porte_blur.png"
-# image bg chateau_porte_interieur_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_porte_blur.png"
+image bg chateau_porte_blur = "scenes/blur/chateauDunbar_ext_jour_porte_blur.png"
+image bg chateau_porte_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_porte_blur.png"
+image bg chateau_porte_interieur_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_porte_blur.png"
 #remparts
-# image bg chateau_rempart_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_remparts_blur.jpg"
-# image bg chateau_rempart_jour_blur = "scenes/blur/chateauDunbar_ext_jour_remparts_blur.jpg"
+image bg chateau_rempart_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_remparts_blur.png"
 #cour chateau
-# image bg cour_chateau_blur = "scenes/blur/chateauDunbar_ext_jour_cour_blur.png"
-# image bg cour_chateau_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_cour_blur.png"
+image bg cour_chateau_blur = "scenes/blur/chateauDunbar_ext_jour_cour_blur.png"
+image bg cour_chateau_crepuscule_blur = "scenes/blur/chateauDunbar_ext_crepuscule_cour_blur.png"
 #couloirs
-# image bg chateau_couloir_crepuscule_blur = "scenes/blur/chateauDunbar_int_crepuscule_couloir_blur.png"
-#chambre Harald
-# image bg chateau_chambre_nuit_blur = "scenes/blur/chateauDunbar_int_nuit_chambreHarald_blur.png"
+image bg chateau_couloir_crepuscule_blur = "scenes/blur/chateauDunbar_int_crepuscule_couloir_blur.png"
 #Salle banquet
-# image bg chateau_banquet_blur = "scenes/blur/chateauDunbar_int_salleBanque_blur.png"
+image bg chateau_banquet_blur = "scenes/blur/chateauDunbar_int_salleBanque_blur.png"
 
 ################################# Special Screen ##################################################
 
@@ -733,10 +721,7 @@ image bg game_over = "interface/menu/bkg_go.jpg"
 image bg black = "#000"
 
 #VFX
-
-image vfx_flame_1 flame = "vfx/flame.png"
-image vfx_flame_2 flame = "vfx/flame.png"
-image vfx_flame_3 flame = "vfx/flame.png"
+image vfx forest_night_torch = "scenes/foretWestruther_ext_nuit_foret_torche.png"
 
 # sounds
 
