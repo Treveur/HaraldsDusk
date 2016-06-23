@@ -804,16 +804,16 @@ transform ve_pos:
     xoffset 590
 
 transform ogma_pos_left:
-    xoffset -300
+    xpos -300
 
 transform ogma_pos_right:
-    xoffset 850
+    xpos 850
 
 transform ogma_pos_right_forest:
-    xoffset 500
+    xpos 500
 
 transform ogma_pos_reset:
-    xoffset - 300
+    xpos - 300
 
 #Déclaration timer
 transform alpha_dissolve:

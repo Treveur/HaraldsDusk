@@ -9,7 +9,7 @@ label moira_vengence:
     "Sans laisser le temps à Einar de réagir, elle arrache la lame et le poignarde à nouveau, encore et encore."
     "Après quelques minutes, Moira continue de poignarder le cadavre du viking."
     "Ses larmes ont séché ; son regard est fixe et vide."
-    call game_over_combat(checkpoint)
+    call game_over_combat(checkpoint) from _call_game_over_combat_9
 
 #Ending
 label bad_ending_1:
@@ -56,11 +56,11 @@ label bad_ending_4:
     o "Grrr..."
     "Il tire une dague et commence à poignarder et mutiler sans relâche les restes du viking..."
     "Fin 04/22"
-    call game_over_combat('interieur_grande_porte_chateau_1')
+    call game_over_combat('interieur_grande_porte_chateau_1') from _call_game_over_combat_10
 
 label bad_ending_5:
     "Fin 05/22"
-    call game_over_combat("checkpoint_2")
+    call game_over_combat("checkpoint_2") from _call_game_over_combat_11
     jump credits
 
 label bad_ending_6:
@@ -261,7 +261,7 @@ label bad_ending_12:
     "Einar meurt étranglé par son roi, les vertèbres craquant sous l'étreinte du monarque."
     hide einar with dissolve
     "Fin 12/22"
-    call game_over_combat('checkpoint_3')
+    call game_over_combat('checkpoint_3') from _call_game_over_combat_12
 
 label good_ending_13:
     play music ending
@@ -327,7 +327,7 @@ label bad_ending_16:
     "Harald effectue un moulinet rapide qui désarme Einar. En se retournant, il le fend en deux d'un seul coup et laisse le cadavre tomber au sol."
     "Le roi quitte la pièce en sifflotant."
     "Fin 16/22"
-    call game_over_combat('e_bruler_donjon_obeir_donjon')
+    call game_over_combat('e_bruler_donjon_obeir_donjon') from _call_game_over_combat_13
 
 label bad_ending_17:
     "Il est de plus en plus difficile de résister à la force d'Ogma, et Einar perd peu à peu sa concentration alors qu'il est absorbé par l'effort."
