@@ -691,7 +691,7 @@ label village_1:
     $ suspecter_village = False
 
     stop ambiance
-    # play ambiance village
+    play ambiance village
     play music weird_village
 
 
@@ -746,8 +746,6 @@ label village_1:
     hide gv
     hide logan
     with dissolve
-
-    show ve debout_craintifs_mid at right, ve_pos with moveinright
 
     menu menu_fouille_village:
 
@@ -811,7 +809,7 @@ label village_1:
 
             show logan debout_souriant_mid at center with moveinleft
 
-            show ve debout_craintifs_mid at right with moveinright
+            show ve debout_normaux_sans_doyen_mid
 
             l "Parle, vieil homme. Je suis écossais. Nous ne vous voulons aucun mal."
 
@@ -1116,21 +1114,22 @@ label e_tuer_villageois_village_1:
 
             e "Oui ! Dépêche toi !"
 
-            show vieux debout_normal_mid at center with move:
+            show vieux debout_normal_mid at center, shake with move:
                 xoffset 0
 
             show einar combat_normal_mid
 
             vh "Monseigneur, je ..."
 
-            hide vieux
+            hide vieux with dissolve
 
             "Einar tranche la gorge du villageois d'un seul coup."
-            show ve debout_normaux_sans_doyen_mid
+            show ve debout_normaux_sans_doyen_mid with moveinleft:
+                xoffset 0
 
             ve "Pourritures ! Salauds !"
 
-            show einar debout_normal_mid at center
+            show einar debout_normal_mid
 
             e "Parfait. Maintenant, parlez."
 
@@ -1144,19 +1143,25 @@ label e_tuer_villageois_village_1:
 
             # hide ve with dissolve
 
-            show gv debout_furieux_mid at center with moveinleft
+            show gv debout_furieux_mid at center with moveinleft:
+                xoffset -700
 
-            show ve debout_effrayes_mid at right:
+            show ve debout_normaux_sans_doyen_mid at right:
                 linear 1 xoffset 1500
+
+            show gv debout_furieux_mid with moveinright:
+                xoffset 0
 
             gv "Vengeance !"
 
             show gv debout_furieux_mid at right with moveinright:
-                linear 2 xoffset 1500
+                ease 1 xoffset 1700
 
             show logan debout_determine_mid_flip at center with moveinright
+
             show einar debout_attriste_close
             show logan debout_determine_close_flip
+            with dissolve
 
             e "Je..."
 
@@ -1165,7 +1170,7 @@ label e_tuer_villageois_village_1:
             show einar combat_normal_close
 
             e "Battez-vous ! Tuez-les tous !"
-            play ambiance fight
+            play ambiance fight fadein 1
 
             show logan combat_normal_close:
                 ease 1 xoffset 1500
@@ -1217,7 +1222,10 @@ label e_tuer_moira_maison_1:
     show moira debout_furieux_mid at center
     with moveinright
 
-    ve "Lâchez-moi ! Salaud !"
+    if moira_name_know:
+        m "Lâchez-moi ! Salaud !"
+    else:
+        Villageoise "Lâchez-moi ! Salaud !"
 
     show logan debout_determine_mid_flip at right with moveinright
 
@@ -1225,10 +1233,43 @@ label e_tuer_moira_maison_1:
 
     menu :
 
+        "... Tu as raison.":
+            show einar debout_determine_mid at left
+
+            e "Tu as raison. Elle ne mérite pas que j'émousse ma hache sur elle."
+
+            hide moira with dissolve
+
+            e "J'ai déjà retenu ma main une fois. Parlez maintenant ! Je ne renoncerai pas deux fois de suite !"
+
+            show logan debout_determine_mid_flip at center with move
+
+            show ve debout_effrayes_mid at right with moveinright
+
+            ve "Nous ne savons rien ! Absolument rien !"
+
+            e "Et vos hommes, où sont-ils ?"
+
+            ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
+            show einar debout_furieux_mid at left
+
+            e "Foutus mensonges !"
+
+            hide ve with dissolve
+            show logan debout_determine_mid_flip at right with moveinright
+
+            l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
+            show einar debout_normal_mid at left
+
+            e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
+
+            jump choix_retour_village_1
+
         "Tais-toi ! (la tuer)":
 
             show einar combat_normal_mid
             "Le viking abat sa hache sur la nuque de la femme, qui tombe au sol, inerte."
+            show moira at shake
             hide moira with dissolve
             show logan debout_attriste_mid_flip at center with moveinleft
 
@@ -1292,37 +1333,6 @@ label e_tuer_moira_maison_1:
             call choix_retour_village_1 pass (massacre = True) from _call_choix_retour_village_1_1
 
 
-        "... Tu as raison.":
-            show einar debout_determine_mid at left
-
-            e "Tu as raison. Elle ne mérite pas que j'émousse ma hache sur elle."
-
-            hide moira with dissolve
-
-            e "J'ai déjà retenu ma main une fois. Parlez maintenant ! Je ne renoncerai pas deux fois de suite !"
-
-            show logan debout_determine_mid_flip at center with move
-
-            show ve debout_effrayes_mid at right with moveinright
-
-            ve "Nous ne savons rien ! Absolument rien !"
-
-            e "Et vos hommes, où sont-ils ?"
-
-            ve "La plupart d'entre eux ont descendu la rivière Tay jusqu'à Dundee pour y échanger du bétail. Rien de plus !"
-            show einar debout_furieux_mid at left
-
-            e "Foutus mensonges !"
-
-            hide ve with dissolve
-            show logan debout_determine_mid_flip at right with moveinright
-
-            l "Non Einar. C'est bien possible. Ces gens sont une petite cinquantaine tout au plus. L'absence des hommes se fait remarquer, c'est tout."
-            show einar debout_normal_mid at left
-
-            e "Très bien. Remerciez celui que vous appelez traître pour avoir défendu votre cause. Nous partons."
-
-            jump choix_retour_village_1
 
 
 #fin Scequence 6
@@ -1333,7 +1343,7 @@ label choix_retour_village_1(massacre = False):
 
     hide ve with dissolve
     if massacre:
-        stop ambiance
+        stop ambiance fadeout 1
         "Après quelques minutes, l'affrontement touche à sa fin. Des dizaines de paysans gisent au sol. Pas un seul viking n'a été blessé."
         show einar debout_normal_mid at left with dissolve
         e "Empilez les cadavres avant le départ."
