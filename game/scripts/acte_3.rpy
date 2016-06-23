@@ -2485,7 +2485,7 @@ label cour_chateau_ogma_mort_defendre_porte:
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
     scene bg cour_chateau_crepuscule_blur with dissolve
     show einar debout_normal_mid_flip at right
-    show gv debout_rire_mid_flip at left
+    show gv combat_normal_mid_flip at left
     with dissolve
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
     gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
