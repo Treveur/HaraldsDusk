@@ -702,6 +702,8 @@ label village_1:
 
     "Peu après midi, la dizaine de vikings parvient en vue d'un village..."
 
+    scene bg village_blur with dissolve
+
     show logan debout_normal_mid at center zorder 1 with moveinleft
     l "Nous y sommes. Perth."
 
@@ -887,12 +889,15 @@ label e_fouiller_village_1(einarFouille = False):
         e "Je suis à peine surpris... J'arrive !"
 
     stop ambiance
-    scene bg house
+    scene bg house with dissolve
 
     play ambiance home
 
     show moira debout_normal_mid at center with dissolve
     "..."
+
+    scene bg house_blur with dissolve
+
     show moira debout_determine_mid at right with moveinright
     show einar debout_normal_mid at left with dissolve
     menu menu_maison_1:
@@ -969,7 +974,7 @@ label e_fouiller_village_1(einarFouille = False):
 label e_choix_final_village_1:
 
     stop ambiance
-    scene bg village with dissolve
+    scene bg village_blur with dissolve
 
     show ve debout_normaux_mid at right, ve_pos with dissolve
     show logan debout_determine_mid_flip at center zorder 1 with moveinleft
@@ -1218,7 +1223,7 @@ label e_tuer_moira_maison_1:
     stop ambiance
     play ambiance village
 
-    scene bg village with dissolve
+    scene bg village_blur with dissolve
 
     show einar debout_normal_mid at left
     show moira debout_furieux_mid at center
@@ -1346,7 +1351,7 @@ label e_tuer_moira_maison_1:
 
 label choix_retour_village_1(massacre = False):
 
-    scene bg village with dissolve
+    scene bg village_blur with dissolve
 
     hide ve with dissolve
     if massacre:
@@ -1411,6 +1416,9 @@ label foret_2_r(lieu, massacre_village):
     if lieu == "chateau":
 
         "Sur le chemin du retour..."
+
+        scene bg forest_blur with dissolve
+
         show gv debout_normaux_mid at center with dissolve
         gv "Pourquoi sommes-nous déjà sur le retour ?"
         show gv debout_normaux_mid at right with moveinright
@@ -1733,7 +1741,7 @@ label massacre_foret_2 (message, massacre_village):
             "Les vikings ne se font pas prier et commencent à fuir dans le sous-bois."
             "La plupart d'entre eux sont tués une fois à l'écart du lieu de l'embuscade ; un certain nombre d'assaillants étaient encore dissimulés dans l'obscurité."
             show einar combat_furieux_mid_flip at right with moveinright
-            
+
 
 
     "Il ne reste plus personne pour répondre aux ordres d'Einar."
@@ -1881,13 +1889,17 @@ label e_reveil_village_2:
     play ambiance home
 
     #ajouter blur image
-    scene bg black
     scene bg house2_night with fade
+
+    pause 0.8
+
+    scene bg house2_nigh_blurt with dissolve
 
     $ already_talk = False
 
     show einar prisonnier_blesse_mid at left with dissolve
     e "Huugh..."
+    show einar prisonnier_blesse_mid at left
     show rs debout_normaux_mid at right with dissolve
     rebelle "Ogma ! Il se réveille !"
     show ogma debout_determine_mid at center with moveinright
