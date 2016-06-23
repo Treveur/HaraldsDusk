@@ -552,7 +552,9 @@ label pont_levis_baisse:
     hide einar
     with dissolve
 
-    show bg plaine_plaine_crepuscule with dissolve
+    scene bg plaine_plaine_crepuscule_blur with dissolve
+    pause 0.8
+    scene bg plaine_plaine_crepuscule_blur with dissolve
     show re debout_normaux_mid at right with moveinright
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     hide re with dissolve
@@ -1999,11 +2001,12 @@ label soupcon_harald_defendre_porte:
 
     $ checkpoint = "checkpoint_4"
 
-    scene bg chateau_porte_crepuscule with dissolve
+    scene bg plaine_plaine_crepuscule_blur with dissolve
+    pause 0.8
+    scene bg plaine_plaine_crepuscule_blur with dissolve
 
     show re combat_normal_mid at right with moveinright
     with dissolve
-
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     ge "L'échelle ! Apportez l'échelle !"
     gv "Les rebelles dressent une échelle par-dessus les douves !"
@@ -2016,13 +2019,13 @@ label soupcon_harald_defendre_porte:
     hide gv
     hide re
     with dissolve
-    scene bg cour_chateau_crepuscule with dissolve
+    scene bg cour_chateau_crepuscule_blur with dissolve
     show gv combat_normal_mid at right with dissolve
     show harald combat_determine_mid_flip at center with dissolve
     h "Consolidez les rangs !"
     hide harald with dissolve
 
-    scene bg chateau_porte_crepuscule with dissolve
+    scene bg chateau_porte_crepuscule_blur with dissolve
     show re combat_normal_mid at right with dissolve
     show gv combat_normal_mid at center with dissolve
     "Les rebelles sont contraints de reculer et restent à distance des remparts."
@@ -2030,7 +2033,7 @@ label soupcon_harald_defendre_porte:
     show gv combat_normal_mid at right with moveinright
 
 
-    scene bg cour_chateau_crepuscule with dissolve
+    scene bg cour_chateau_crepuscule_blur with dissolve
     show gv combat_normal_mid at right with dissolve
     show harald combat_determine_mid_flip at center with dissolve
     "Alors que les vikings se réjouissent de leur supériorité, un cri retentit sur leurs arrières."
@@ -2078,6 +2081,7 @@ label soupcon_harald_defendre_porte:
 
     scene bg chateau_porte_crepuscule with dissolve
     "Alors que la porte menace de céder, les vikings l'ouvrent et prennent de court les rebelles."
+    scene bg chateau_porte_crepuscule_blur with dissolve
     show re combat_normal_mid at right with moveinright
     show einar combat_furieux_mid at center with dissolve
     show huscarls combat_furieux_mid at left with dissolve
@@ -2109,7 +2113,7 @@ label soupcon_harald_defendre_porte:
             e "J'en termine avec toi, et ensuite je retourne m'occuper de ta fille !"
 
     label checkpoint_4:
-        scene bg chateau_porte_crepuscule
+        scene bg chateau_porte_crepuscule_blur
 
     "Un combat s'engage entre Ogma et Einar !"
 
@@ -2185,6 +2189,8 @@ label soupcon_harald_defendre_porte:
     "Un peu plus tard..."
 
     scene bg chateau_banquet with dissolve
+    pause 0.8
+    scene bg chateau_banquet_blur with dissolve
 
     show einar debout_normal_close at left
     show harald debout_normal_close at right
@@ -2288,6 +2294,8 @@ label harald_defendre_porte:
     hide einar with dissolve
 
     scene bg chateau_porte_crepuscule with dissolve
+    pause 0.8
+    scene bg chateau_porte_crepuscule_blur with dissolve
     show harald combat_furieux_mid_flip at right
     show einar combat_furieux_mid at center
     show gv combat_normal_mid at left
@@ -2299,6 +2307,8 @@ label harald_defendre_porte:
     hide gv with dissolve
 
     scene bg plaine_plaine_crepuscule with dissolve
+    pause 0.8
+    scene bg plaine_plaine_crepuscule_blut with dissolve
     show re debout_normaux_mid at right
     show ogma combat_normal_mid at center
     with dissolve
@@ -2392,11 +2402,12 @@ label e_laisse_ogma_mort_defendre_porte:
 
 label cour_chateau_ogma_mort_defendre_porte:
 
-    scene bg cour_chateau_crepuscule
+    scene bg cour_chateau_crepuscule with dissolve
 
     "..."
     "Dans la cour du château, les prisonniers rebelles sont tous attachés sur des bûchers."
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
+    scene bg cour_chateau_crepuscule_blur with dissolve
     show einar debout_normal_mid_flip at right
     show gv debout_rire_mid_flip at left
     with dissolve
@@ -2469,6 +2480,8 @@ label e_sauve_ogma_defendre_porte:
     "..."
 
     scene bg chateau_rempart_crepuscule with dissolve
+    pause 0.8
+    scene bg chateau_rempart_crepuscule_blur with dissolve
     show ogma combat_hache_brandir_mid_flip at center
     "Lorsqu'il reprend ses esprits, Einar voit Ogma sur les remparts, brandissant la Hache Sainte. Derrière lui, le château brûle."
     "Depuis les remparts, Ogma semble remarquer le mouvement d'Einar au milieu des cadavres."
@@ -2480,8 +2493,9 @@ label e_sauve_ogma_defendre_porte:
         show einar debout_blesse_mid at left with dissolve
         show ogma combat_hache_determine_mid at ogma_pos_left with moveinleft
 
-        scene bg chateau_rempart_crepuscule with dissolve
+        show bg chateau_rempart_crepuscule with dissolve
         "Ogma court vers Einar, la Hache levée."
+        show bg chateau_rempart_crepuscule_blur with dissolve
 
         menu :
             "En colère pour Moira ?":
@@ -2508,6 +2522,9 @@ label e_sauve_ogma_defendre_porte:
     else:
 
         scene bg cour_chateau_crepuscule with dissolve
+        pause 0.8
+        scene bg cour_chateau_crepuscule_blur with dissolve
+
         show ogma debout_normal_mid_flip at left with dissolve
         show einar debout_blesse_mid_flip at right with moveinright
         "..."
