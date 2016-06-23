@@ -438,9 +438,9 @@ label cour_chateau_2:
 
     scene bg cour_chateau_crepuscule_blur with dissolve
 
-    show garde_1 debout_normal_mid_flip at left with moveinleft
+    show garde_1 debout_normal_mid at left with moveinleft
 
-    scene bg cour_chateau_crepuscule_blur with dissolve
+    show bg cour_chateau_crepuscule_blur with dissolve
 
     show garde_1 debout_normal_mid at left with moveinleft
 
