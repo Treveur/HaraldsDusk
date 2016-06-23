@@ -670,7 +670,7 @@ image bg chateau_banquet = "scenes/chateauDunbar_int_salleBanque.png"
 image bg forest_blur = "scenes/blur/foretWestruther_ext_jour_foret_blur.png"
 image bg forest_night_blur = "scenes/blur/foretWestruther_ext_nuit_foret_blur.png"
 image bg forest_crepuscule_blur = "scenes/blur/foretWestruther_ext_aube_foret_blur.png"
-# image bg little_heaven_blur = "scenes/blur/foretWestruther_ext_matin_paradis_blur.png"
+image bg little_heaven_blur = "scenes/blur/foretWestruther_ext_matin_paradis_blur.png"
 
 #sentier
 image bg sentier_jour_blur = "scenes/blur/foretWestruther_ext_matin_sentier_blur.png"

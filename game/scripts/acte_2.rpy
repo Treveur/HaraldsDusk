@@ -18,6 +18,9 @@ label interieur_maison_village_1:
     $ critique_ogma = False
 
     "Einar émerge du sommeil..."
+
+    scene bg house2_jour_blur with dissolve
+
     show einar prisonnier_normal_mid at left with dissolve
     e "Je suis entravé ? Huuugh..."
     show moira debout_normal_mid at right with dissolve
@@ -507,7 +510,7 @@ label interieur_maison_village_3:
 #Sequence 4
 label interieur_maison_village_4:
 
-    scene bg house2_jour with dissolve
+    scene bg house2_jour with fade
 
     if short_version:
         "Au fil des semaines, Einar et Moira apprennent à se connaître, tandis qu'Ogma se montre plus chaleureux. Einar est presque remis de ses blessures."
@@ -516,8 +519,10 @@ label interieur_maison_village_4:
     $ trahir_talk = False
     $ decevoir_moira = ""
 
-    #if short_version = False:
-    "Deux semaines plus tard..."
+    if short_version == False:
+        "Deux semaines plus tard..."
+
+    scene bg house2_jour_blur with dissolve
 
     "Moira arrive dans la chambre, un couteau à la main."
     show moira debout_normal_close at right with moveinright
@@ -757,6 +762,7 @@ label village_3:
 
     scene bg village_crepuscule with fade
     "Le soir, Moira s'apprête à ramener Einar dans sa \"cellule\"."
+    scene bg village_crepuscule_blur with dissolve
 
     stop music
 
@@ -842,6 +848,7 @@ label foret_3:
     show moira debout_normal_mid_flip at center with moveinleft
     show einar prisonnier_normal_mid at left with moveinleft
 
+    show bg forest_crepuscule_blur with dissolve
 
     menu :
         "Où allons-nous ?":
@@ -867,12 +874,14 @@ label foret_3:
 #Sequence 8
 label paradis_foret_1:
 
-    play ambiance magnificente_wood
+    # play ambiance magnificente_wood
 
     scene bg little_heaven with dissolve
 
     show moira debout_normal_mid_flip at center with moveinleft
     show einar prisonnier_normal_mid at left with moveinleft
+
+    show bg little_heaven_blur with dissolve
 
     $ moira_dead = False
     $ premier_refus_moira_foret_4 = False
@@ -989,9 +998,11 @@ label village_4:
 
     play ambiance village
 
-    scene bg village with dissolve
+    scene bg village with fade
 
     "Le lendemain..."
+
+    scene bg village_blur with dissolve
 
     show ogma debout_normal_mid at right with dissolve
     o "Vous voilà prêt à partir, Einar."
