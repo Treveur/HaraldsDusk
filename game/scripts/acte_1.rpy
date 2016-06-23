@@ -411,7 +411,7 @@ label plaine_2:
     show gv debout_normaux_mid at center with dissolve
 
     gv "Cette mission n'a rien de terrible... Je m'attendais à rencontrer de l'opposition !"
-    show gv debout_rire_mid at center
+    show gv debout_normaux_mid at center
     gv "Nous aurions dû rester plus longtemps à Stirling ! Il y avait une bien belle tavernière qui semblait prête à me sauter sur les genoux !"
     show logan debout_normal_mid_flip at right with dissolve
     l "Ne vous sentez pas à l'abri. Nous ne sommes pas encore arrivés dans le territoire des rebelles, mais ça ne veut pas dire qu'ils ne peuvent pas nous tomber dessus."
@@ -428,7 +428,7 @@ label plaine_2:
             e "Ha ! Se défouler sur des villageois, ce sera notre récompense !"
 
             e "Plus vite le problème sera réglé, plus vite nous pourrons glisser nos pieds sous la table et nous remplir la panse !"
-            show gv debout_rire_mid at center
+            show gv debout_normaux_mid at center
 
             gv "Ha ha ! Bien parlé !"
 
@@ -518,7 +518,7 @@ label foret_1:
     show gv debout_normaux_mid at right with dissolve
     gv "J'ai l'impression d'avoir déjà vu cette forêt... Tout se ressemble ici !"
     l "Nous progressons, rassure-toi."
-    show gv debout_contrarie_mid at right
+    show gv debout_normaux_mid at right
     gv "Pays de merde ! Le Danemark, ça ressemble quand même à autre chose !"
 
     menu:
@@ -571,14 +571,14 @@ label foret_1:
             e "J'imagine la tête des sauvages qui vivent dans la région. Foutus écossais ! Il n'y a qu'à voir la trogne de Logan pour savoir que quelque chose ne tourne pas rond chez ces gens là !"
 
             e "Je suis persuadé qu'ils vivent dans des cabanes délabrées et qu'ils couchent avec leurs chèvres !"
-            show gv debout_rire_mid at center with dissolve
+            show gv debout_normaux_mid at center with dissolve
             gv "Ha ha !"
 
             show logan debout_souriant_mid_flip at right with dissolve
 
             l "Nous vivons dans des maisons de pierre, à la différence de vos cabanes en bois. Et pour le reste, tu constateras que nous avons bien plus de raisons de coucher avec nos femmes qu'avec nos chèvres."
 
-            hide gv debout_rire_mid with dissolve
+            hide gv debout_normaux_mid with dissolve
 
         "Je voudrais déjà être rentré" :
             show einar debout_normal_mid at left
@@ -605,7 +605,7 @@ label foret_1:
             with dissolve
 
             l "..."
-            show gv debout_rire_mid at center with dissolve
+            show gv debout_normaux_mid at center with dissolve
             gv "Ha ha !"
             hide gv with dissolve
 
@@ -982,7 +982,7 @@ label e_choix_final_village_1:
 
     l "Et maintenant ?"
 
-    show gv combat_normal_mid at left zorder 0 with moveinleft:
+    show gv debout_normaux_mid at left zorder 0 with moveinleft:
         xoffset -630
 
     gv "On devrait raser tout ça, pour l'exemple !"
@@ -1041,7 +1041,7 @@ label e_choix_final_village_1:
 
                     gv "HAAAAAAA !"
 
-                    show gv debout_furieux_mid:
+                    show gv debout_normaux_mid:
                         ease 1.5 xoffset 2000
 
                     show ve debout_effrayes_mid at right:
@@ -1148,13 +1148,13 @@ label e_tuer_villageois_village_1:
 
             # hide ve with dissolve
 
-            show gv debout_furieux_mid at center with moveinleft:
+            show gv debout_normaux_mid at center with moveinleft:
                 xoffset -700
 
             show ve debout_normaux_sans_doyen_mid at right:
                 linear 1 xoffset 1500
 
-            show gv debout_furieux_mid with moveinright:
+            show gv debout_normaux_mid with moveinright:
                 xoffset 0
 
             gv "Vengeance !"
@@ -1304,18 +1304,18 @@ label e_tuer_moira_maison_1:
 
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
 
-            show gv debout_furieux_mid at center with moveinleft:
+            show gv debout_normaux_mid at center with moveinleft:
                 xoffset -800
 
             show ve debout_normaux_mid at right:
                 linear 0.8 xoffset 1500
 
-            show gv debout_furieux_mid with moveinright:
+            show gv debout_normaux_mid with moveinright:
                 xoffset 0
 
             gv "Vengeance !"
 
-            show gv debout_furieux_mid at right with moveinright:
+            show gv debout_normaux_mid at right with moveinright:
                 ease 1 xoffset 1700
 
             show logan debout_determine_mid_flip at center with moveinright
@@ -1455,7 +1455,7 @@ label foret_2_r(lieu, massacre_village):
             e "Si, probablement. Mais j'ai tout de même un doute. Autant s'assurer d'avoir fait ce qu'il fallait !"
 
             e "Une visite des villages plus au nord s'impose. Et nous reproduirons les mêmes actions si nous rencontrons la moindre résistance !"
-            show gv debout_enthousiaste_mid at center
+            show gv debout_normaux_mid at center
             gv "Voilà qui fait plaisir à entendre !"
             hide gv with dissolve
 
@@ -1478,7 +1478,7 @@ label foret_2_r(lieu, massacre_village):
     gv "... et à ce moment là Logan sort de la taverne en feu, une fille sous un bras et la tête du père sous l'autre ! Ha ha !"
 
     gv "La fille était tellement choquée qu'elle n'a rien dit pendant deux jours ! Cinq de nos gars lui sont passés dessus, elle n'a même pas réagit !"
-    show gv debout_rire_mid at center
+    show gv debout_normaux_mid at center
     gv "Ha Ha Ha !"
 
     hide gv
@@ -1535,7 +1535,7 @@ label massacre_foret_2 (message, massacre_village):
     if message == "attentif":
         show einar debout_determine_mid at left
         e "Nous sommes en terre hostile. N'importe qui pourrait nous suivre sans que nous ne nous en rendions compte... Vous avez entendu, vous autres ? Faites moins de bruit !"
-        show gv debout_enthousiaste_mid_flip at right with moveinright
+        show gv debout_normaux_mid_flip at right with moveinright
 
         if massacre_village:
 
@@ -1558,7 +1558,7 @@ label massacre_foret_2 (message, massacre_village):
         show logan debout_normal_mid_flip at right with dissolve
         l "Les autres ne semblent pas apprécier le voyage non plus..."
         hide logan with dissolve
-        show gv debout_contrarie_mid_flip at right with dissolve
+        show gv debout_normaux_mid_flip at right with dissolve
         gv "Le pain de voyage va me rendre fou. Et je ne supporte plus de voir le cul du cheval de Garm devant moi !"
         show einar debout_normal_mid
         if massacre_village:
@@ -1606,15 +1606,15 @@ label massacre_foret_2 (message, massacre_village):
                         hide logan with dissolve
                         show einar debout_souriant_mid at left
                         e "J'ai bien l'impression que les villageois tramaient quelque chose contre nous. Qu'ils viennent ! Avec leurs fourches et leurs pelles ! Ils verront nos haches de près ! Ha ha !"
-                        show gv debout_rire_mid_flip at right with dissolve
+                        show gv debout_normaux_mid_flip at right with dissolve
                         gv "J'espère qu'ils nous attaqueront ! Un peu d'animation ne sera pas de trop !"
                         gv "Un vieux m'a regardé de travers, j'espère pouvoir lui arracher la tro..."
 
     elif message == "moquerie":
-
-        show gv debout_rire_mid at center with dissolve
+        show einar debout_normal_mid at left zorder 2 with dissolve
+        show gv debout_normaux_mid at center zorder 1 with dissolve
         gv "Hé, regardez ! J'ai une dent incrustée dans mon bouclier !"
-        show einar debout_souriant_mid at left with dissolve
+        show einar debout_souriant_mid at left
         e "Ne la retire pas, ça porte bonheur, ha ha !"
 
         gv "Ils étaient tellement faibles ! Je me souviendrai de Perth comme..."
@@ -1624,7 +1624,7 @@ label massacre_foret_2 (message, massacre_village):
     elif message == "chambre_logan":
         show einar debout_souriant_mid at left zorder 1 with dissolve
         e "D'ailleurs, en parlant de se ramollir... Tu aurais dû emmener une brebis du village, Logan ! J'en ai vu une qui te faisait de l'oeil !"
-        show gv debout_rire_mid at center zorder 0 with dissolve
+        show gv debout_normaux_mid at center zorder 0 with dissolve
         gv "Ha ha !"
         show logan debout_normal_mid_flip at right
         l "..."
@@ -1643,9 +1643,9 @@ label massacre_foret_2 (message, massacre_village):
 
     show einar combat_determine_mid at left zorder 1 with dissolve
     e "En position de combat, tous !"
-    show gv combat_normal_mid_flip at right with dissolve
+    show gv debout_normaux_mid_flip at right with dissolve
     gv "Ça venait d'où ?"
-    show gv debout_determines_mid_flip with moveinright:
+    show gv debout_normaux_mid_flip with moveinright:
         ease 2 xoffset 1500
     show logan combat_determine_mid_flip at center zorder 1 with dissolve
 
@@ -1698,24 +1698,24 @@ label massacre_foret_2 (message, massacre_village):
             hide screen countdown
             e "Tuez leur chef !"
             hide einar with dissolve
-            show gv debout_determines_mid_flip at right with moveinright:
+            show gv debout_normaux_mid_flip at right with moveinright:
                 xoffset 600
             hide ogma with dissolve
             show re debout_normal_mid_flip at left, shake with moveinleft
             "Les vikings s'élancent vers le meneur, mais ils se heurtent rapidement à la masse des assaillants."
-            show gv debout_determines_mid_flip at right, shake
+            show gv debout_normaux_mid_flip at right, shake
             "En infériorité numérique et ayant rompu la formation, les hommes d'Einar sont submergés."
-            show gv debout_determines_mid_flip at right, shake
+            show gv debout_normaux_mid_flip at right, shake
             "Le nombre d'hommes encore debout s'amenuise à chaque seconde."
 
         "Restez en formation !":
             hide screen countdown
             e "Ne vous dispersez pas ! Restez serrés !"
             hide einar with dissolve
-            show gv debout_determines_mid_flip at right with moveinright:
+            show gv debout_normaux_mid_flip at right with moveinright:
                 xoffset 600
             "Les vikings resserrent leur rang. Les premiers assaillants sont aisément repoussés, mais une nouvelle salve de flèches réduit à néant les efforts défensifs du groupe."
-            show gv debout_determines_mid_flip at right, shake
+            show gv debout_normaux_mid_flip at right, shake
             "Le nombre d'hommes encore debout s'amenuise à chaque seconde."
 
     #Phase combat impossible à gagner WIP

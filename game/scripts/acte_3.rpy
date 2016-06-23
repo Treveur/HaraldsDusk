@@ -373,7 +373,7 @@ label cour_chateau_1:
 
         "Un homme apporte une torche. Un par un, il allume les bûchers."
 
-        show gv debout_rire_mid with dissolve
+        show gv debout_normaux_mid with dissolve
 
         gv "Regardez-les s'agiter comme des vers, ha ha !"
         hide gv with dissolve
@@ -507,7 +507,7 @@ label interieur_grande_porte_chateau_1:
 #Baisser pont-levis
 label pont_levis_baisse:
     #Ambiance bruit cliqueti boucliers et épée
-    show gv combat_normal_mid at center with dissolve
+    show gv debout_normaux_mid at center with dissolve
 
     gv "Attendez... Attendez..."
     gv "Tirez ! Abattez-moi ces salopards !"
@@ -520,14 +520,14 @@ label pont_levis_baisse:
     "Le pont s'abaisse brutalement, laissant le champ libre."
 
     scene bg cour_chateau_crepuscule_blur
-    show gv combat_normal_mid at center
+    show gv debout_normaux_mid at center
     with dissolve
     soldat "Trahison ! Bloquez le passage, vite !"
     "..."
 
     "Les soldats proches se tournent vers Einar."
 
-    show gv combat_normal_mid at center
+    show gv debout_normaux_mid at center
     show einar combat_normal_mid_flip at right with dissolve
 
     menu:
@@ -2089,9 +2089,9 @@ label soupcon_harald_defendre_porte:
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
     ge "L'échelle ! Apportez l'échelle !"
     gv "Les rebelles dressent une échelle par-dessus les douves !"
-    show gv combat_normal_mid at left with moveinleft
+    show gv debout_normaux_mid at left with moveinleft
     "Au même moment une troupe de guerriers d'élite, dissimulée à l'extérieur du château, surgit sur les flancs et l'arrière des rebelles."
-    show gv combat_normal_mid at center with moveinright
+    show gv debout_normaux_mid at center with moveinright
     "Rapidement, les vikings repoussent les rebelles massés devant le pont-levis. En même temps, l'échelle est abattue et brisée."
     show gv combat_normal_mid at center
     gv "Crevez, salopards ! Ha ha !"
@@ -2099,7 +2099,7 @@ label soupcon_harald_defendre_porte:
     hide re
     with dissolve
     scene bg cour_chateau_crepuscule_blur with dissolve
-    show gv combat_normal_mid at right with dissolve
+    show gv debout_normaux_mid at right with dissolve
     show harald combat_determine_mid_flip at center with dissolve
     h "Consolidez les rangs !"
     hide harald with dissolve
@@ -2109,7 +2109,7 @@ label soupcon_harald_defendre_porte:
     show gv combat_normal_mid at center with dissolve
     "Les rebelles sont contraints de reculer et restent à distance des remparts."
     hide re with dissolve
-    show gv combat_normal_mid at right with moveinright
+    show gv debout_normaux_mid at right with moveinright
 
 
     scene bg cour_chateau_crepuscule_blur with dissolve
@@ -2380,13 +2380,13 @@ label harald_defendre_porte:
     scene bg chateau_porte_crepuscule_blur with dissolve
     show harald combat_hache_furieux_mid_flip at right
     show einar combat_furieux_mid at center
-    show gv combat_normal_mid at left:
+    show gv debout_normaux_mid at left:
         xoffset -800
     h "Nous les traquerons jusque dans leurs terriers ! Une semaine de solde pour celui qui me ramène le plus de têtes de ces damnés rebelles !"
     hide harald with dissolve
     show einar combat_furieux_mid at right with moveinright
     hide einar with dissolve
-    show gv combat_normal_mid at right with moveinright:
+    show gv debout_normaux_mid at right with moveinright:
         xoffset 0
     hide gv with dissolve
 
@@ -2565,7 +2565,7 @@ label cour_chateau_ogma_mort_defendre_porte:
     "Parmi les dizaines d'écossais, une jeune femme rousse se distingue par son visage impassible."
     scene bg cour_chateau_crepuscule_blur with dissolve
     show einar debout_normal_mid_flip at right
-    show gv combat_normal_mid_flip at left
+    show gv debout_normaux_mid_flip at left
     with dissolve
     gv "Regarde-moi celle là ! Si c'est pas dommage qu'elle soit condamnée ! Je lui aurai bien fait son affaire !"
     gv "Hé, la rouquine ! On se retrouve là-haut ? Ha ha ha !"
@@ -2629,7 +2629,7 @@ label e_sauve_ogma_defendre_porte:
     hide ogma with dissolve
     show re combat_furieux_mid at right with moveinright
     show einar combat_normal_mid at center with move
-    show gv combat_normal_mid at left with moveinleft
+    show gv debout_normaux_mid at left with moveinleft
     "Pris au coeur de la mêlée, Einar est piétiné et laissé pour mort."
     hide einar with dissolve
 
