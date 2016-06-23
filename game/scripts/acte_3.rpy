@@ -537,19 +537,18 @@ label pont_levis_baisse:
     with dissolve
 
     show bg plaine_plaine_crepuscule with dissolve
-    show re debout_normaux_mid at center with dissolve
+    show re debout_normaux_mid at right with moveinright
     "La horde avance en une masse compacte et nombre de rebelles succombent sous les flèches des vikings."
-    hide re
+    hide re with dissolve
     show bg chateau_porte_interieur_crepuscule with dissolve
-    show re debout_normaux_mid at right with dissolve
-    show re debout_normaux_mid at center with moveinleft
+    show re debout_normaux_mid at right with moveinright
     "Le gros des forces parvient à franchir le pont-levis et la masse rebelle déferle dans l'enceinte."
-    hide re
+    hide re with dissolve
     show bg cour_chateau_crepuscule with dissolve
-    show gv debout_determines_mid at center
+    show gv debout_normal_mid at center
     show einar combat_determine_mid_flip at right
     "Au même moment, la horde rebelle pénètre l'enceinte, ce qui détourne l'attention des soldats qui attaquaient Einar."
-    show gv debout_determines_mid at left with moveinleft
+    show gv debout_normal_mid at left with moveinleft
     show einar combat_determine_mid_flip at center with moveinleft
     show re debout_normaux_mid at right with moveinright
     with dissolve
