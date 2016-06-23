@@ -1352,12 +1352,13 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
 
     $ epargner_harld__no_axe_donjon = False
 
-    show einar combat_furieux_mid at left
-    show harald combat_furieux_mid at right
+    show einar combat_furieux_mid_flip at right
+    show harald combat_furieux_mid_flip at center, shake
 
     "Einar parvient à profiter de la faiblesse du roi pour lui briser le bras et à lui infliger un coup sérieux au visage."
-    show harald combat_blesse_mid_flip
+    show harald combat_blesse_mid at center, shake
     h "Hggghh..."
+    show harald combat_blesse_mid_flip at center
     h "Je suis vaincu. Tu as gagné."
     h "... Laisse-moi vivre, pitié."
 
@@ -1366,29 +1367,29 @@ label win_battle_harald_no_axe_pont_baisse_donjon:
         "Que dire à Harald ?"
 
         "Fin de votre règne (le tuer)":
-            show einar combat_determine_mid at left
+            show einar combat_determine_mid_flip at right
             e "Votre règne s'achève ici et maintenant. Vous allez mourir."
             h "Je m'avoue vaincu ! Ne me tue pas !"
             e "Pardon ?"
             h "J'ai fait de toi l'homme que tu es aujourd'hui ! Sois reconnaissant et épargne-moi. Pitié !"
 
         "Pas de répit pour vous (le tuer)":
-            show einar combat_determine_mid at left
+            show einar combat_determine_mid_flip at right
             e "Pas de paix. Pas de répit. Pas de rémission. Il n'y a que la guerre. Je recommande votre âme."
             show harald combat_furieux_mid at right
             h "Tu es fou !"
 
         "Vous avez déjà perdu (épargner)":
-            show einar combat_normal_mid at left
+            show einar combat_normal_mid_flip at right
             e "Vous avez déjà perdu. Je vais vous épargner."
-            show harald combat_normal_mid at right
-            h "Merci ! J'ai toujours su que tu étais un homme bon !"
-            show einar combat_determine_mid at left
+            show harald combat_normal_mid_flip at center
+            h "Merci !"
+            show einar combat_determine_mid_flip at right
             e "Ne vous réjouissez pas trop vite."
             $ epargner_harld__no_axe_donjon = True
 
         "Je vous suis supérieur (épargner)":
-            show einar combat_normal_mid at left
+            show einar combat_normal_mid_flip at right
             e "Je ne compte pas vous tuer : j'ai déjà prouvé ma superiorité sur vous."
             show harald combat_normal_mid at right
             h "Alors tu t'es donné tout ce mal uniquement pour m'humilier ?"
@@ -1406,21 +1407,21 @@ label e_epargne_harald_no_axe_donjon:
 
     $ harald_echape_no_axe = True
 
-    show einar combat_normal_mid at left
-    show harald combat_normal_mid at right
+    show einar combat_normal_mid_flip at right
+    show harald combat_normal_mid_flip at center
 
     h "Tu comptes me laisser en vie ? Que vas-tu faire de moi ?"
 
     menu:
 
         "Je ne veux pas tuer un roi (Laisser fuir)":
-            show einar combat_determine_mid at left
+            show einar debout_determine_mid_flip at right
             e "Vous êtes privé de la Hache et vous avez été vaincu. Votre Empire s'écroulera."
             e "Je n'ai pas besoin de me faire régicide pour savoir que j'ai gagné."
             e "Partez, maintenant."
 
         "Partez maintenant (Laisser fuir)":
-            show einar combat_furieux_mid at left
+            show einar debout_furieux_mid_flip at right
             e "Fuyez, avant que je ne change d'avis. Ne me demandez pas d'explications."
 
         "Je vais vous livrer à Ogma":
@@ -1428,12 +1429,14 @@ label e_epargne_harald_no_axe_donjon:
             $ harald_echape_no_axe = False
 
         "Des gens veulent vous rencontrer":
+            show einar debout_souriant_mid_flip at right
             e "Je connais quelques personnes qui voudraient vous rencontrer..."
             $ harald_echape_no_axe = False
 
     if harald_echape_no_axe:
         "Harald s'échappe sans demander son reste."
-        show harald combat_furieux_mid at right
+        show harald combat_normal_mid_flip at right with moveinright
+        hide harald with dissolve
         h "Je me vengerai ! Ta clémence a condamné cette île ! Tu m'entends ?"
         h "JE ME VENGERAI !"
         "..."
@@ -1445,8 +1448,10 @@ label e_epargne_harald_no_axe_donjon:
         "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
         "Harald s'échappe par la mer, seul sur sa barque."
         #Retour à l'extérieur
+        scene bg chateau_rempart_crepuscule with dissolve
         "La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol."
         "Sur les remparts, la silouhette d'Ogma se découpe sur le ciel."
+        show ogma debout_determine_close_flip at left with dissolve
         "Le Hurleur semble observer la mer."
 
         "Un peu plus tard..."

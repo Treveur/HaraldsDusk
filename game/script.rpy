@@ -416,6 +416,8 @@ image ogma debout_attriste_mid_flip = im.Flip("ogma/debout/ogma_debout_attriste_
 image ogma debout_contrarie_mid_flip = im.Flip("ogma/debout/ogma_debout_contrarie_mid.png", horizontal = True)
 image ogma debout_determine_mid_flip = im.Flip("ogma/debout/ogma_debout_determine_mid.png", horizontal = True)
 
+image ogma debout_determine_close_flip = im.Flip("ogma/debout/ogma_debout_determine_close.png", horizontal = True)
+
 
 #Combat
 
