@@ -641,7 +641,7 @@ label interieur_maison_village_4:
             m "Tu pourrais rester ici ? Je pense que les gens accepteraient ta présence si tu participais à la vie du village."
             show einar prisonnier_normal_close at left
             e "Je ne sais pas..."
-            show moira debout_attriste_close at right
+            show moira debout_souriant_close at right
             m "Suis-moi, je vais te montrer l'extérieur."
 
         elif decevoir_moira == "rien":
@@ -660,7 +660,6 @@ label interieur_maison_village_4:
         else:
             show moira debout_souriant_close at right
 
-    m "Suis-moi !"
     show moira debout_souriant_close at right with moveinright
     hide moira with dissolve
     show einar prisonnier_normal_close at right with moveinright
