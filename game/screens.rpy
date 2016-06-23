@@ -469,11 +469,17 @@ screen preferences:
 
             label _("Display") style_group "pref"
             hbox:
-                xpos 310
+                xpos 230
                 ypos -15
-                spacing 20
-                textbutton _("Window") action Preference("display", "window")
-                textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                spacing 10
+                button:
+                    style "pref_button"
+                    text "Window" style "pref_button_text"
+                    action Preference("display", "window")
+                button:
+                    style "pref_button"
+                    text "Fullscreen" style "pref_button_text"
+                    action Preference("display", "fullscreen")
 
         frame:
             style_group "pref"
@@ -481,9 +487,9 @@ screen preferences:
 
             label _("Transitions") style_group "pref"
             hbox:
-                xpos 310
+                xpos 230
                 ypos -15
-                spacing 20
+                spacing 10
                 textbutton _("All") action Preference("transitions", "all")
                 textbutton _("None") action Preference("transitions", "none")
 
@@ -532,18 +538,19 @@ init -2 python:
     style.prefs_vbox.ypos = 0.5
     style.prefs_vbox.yanchor = 0.5
 
-    style.pref_frame.left_margin = 110
+    style.pref_frame.left_margin = 150
     style.pref_frame.xpadding = 30
     style.pref_frame.bottom_margin = -10
 
     style.pref_label_text.ypos = 40
 
-    style.pref_button.size_group = "pref"
+    style.pref_button.background = Frame("interface/buttons/mainmenu/minibutton.png",25,16)
+    style.pref_button.hover_background = Frame(im.MatrixColor("interface/buttons/mainmenu/minibutton.png",im.matrix.brightness(-0.05)),25,16)
+    style.pref_button.xminimum = 190
+    style.pref_button.yminimum = 32
     style.pref_button.xalign = 1.0
 
-    style.pref_slider.xmaximum = 250
-    style.pref_slider.xalign = 0.85
-    style.pref_slider.yalign = 0.5
+    style.pref_button_text.xalign = 0.5
 
     style.pref_frame.background = Frame("interface/box/save_box.png", 50, 50)
     style.pref_vbox.yminimum = 110
@@ -552,13 +559,18 @@ init -2 python:
     style.special_hbox.yminimum = 110
     style.special_hbox.xminimum = 630
 
-    style.special_slider.xmaximum = 192
-    style.special_slider.xalign = 0.85
+    style.special_slider.xmaximum = 200
+    style.special_slider.xalign = 1.0
+    style.special_slider.xanchor = 1.1
     style.special_slider.yalign = 0.5
 
     style.special_button.size_group = "pref"
 
-    style.soundtest_button.xpos = 80
+    style.soundtest_button.xpos = 50
+    style.soundtest_button.background = Frame("interface/buttons/mainmenu/minibutton.png",25,16)
+    style.soundtest_button.hover_background = Frame(im.MatrixColor("interface/buttons/mainmenu/minibutton.png",im.matrix.brightness(-0.05)),25,16)
+    style.soundtest_button.xminimum = 110
+    style.soundtest_button.yminimum = 32
 
     style.soundtest_button.yalign = 0.5
 
