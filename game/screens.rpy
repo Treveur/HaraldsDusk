@@ -420,7 +420,7 @@ screen choose_lenght:
         style "mm_root"
 
     vbox:
-        spacing 40
+        spacing 30
         xalign 0.5
         yalign 0.7
 
