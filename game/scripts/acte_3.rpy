@@ -1658,8 +1658,8 @@ label foret_4:
                 "Une auréole sanglante s'étend sur la robe de Moira."
                 "Un soupir s'échappe de ses lèvres puis elle s'effondre sur le sentier."
                 "..."
-                $ tuer_moira_foret_4 = True:
-                
+                $ tuer_moira_foret_4 = True
+
     else:
         m "Merci de ne pas avoir accepté."
         e "N'en parlons plus."
@@ -1672,9 +1672,9 @@ label foret_4:
     with dissolve
 
     if tuer_moira_foret_4:
-        call bad_ending_14 pass (tuer = True) from _call_bad_ending_14
+        call bad_ending_14(True)
     else:
-        call bad_ending_14 pass (tuer = False) from _call_bad_ending_14_1
+        call bad_ending_14(False)
 
 label fuite_harald_pont_baisse_donjon:
     show harald debout_furieux_mid at right with dissolve

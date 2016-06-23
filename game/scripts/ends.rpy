@@ -242,11 +242,12 @@ label good_ending_13:
     jump credits
 
 label bad_ending_14(tuer):
+
     if tuer:
         "Einar s'éloigne en silence du corps de Moira."
         "..."
         "Tous se souviendront d'Einar comme du héros libérateur de l'Ecosse ; mais personne ne découvrira jamais qui a tué Moira."
-        
+
     else:
         show moira debout_souriant_close at right
         show einar debout_souriant_close at left
@@ -255,7 +256,7 @@ label bad_ending_14(tuer):
         "Einar poursuit son chemin, laissant la jeune femme derrière lui."
         "..."
         "Tous se souviendront d'Einar comme du héros libérateur de l'Ecosse ; une écossaise nommée Moira veillera à la transmission de son histoire."
-        
+
     "Fin 14/22"
     jump credits
 
