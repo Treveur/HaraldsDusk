@@ -616,8 +616,9 @@ label pont_levis_baisse:
 
 
         label checkpoint_1:
-            scene bg cour_chateau_crepuscule
-
+            scene bg cour_chateau_crepuscule_blur
+            show einar combat_determine_mid at left
+            with dissolve
 
         show ogma combat_determine_mid at ogma_pos_right
         o "Tout s'achève, ici et maintenant !"
@@ -699,7 +700,7 @@ label pont_levis_baisse:
         with dissolve
 
         label checkpoint_2:
-            scene bg cour_chateau_crepuscule
+            scene bg cour_chateau_crepuscule_blur
 
         show einar combat_determine_mid_flip at center
         show solo_2 debout_normal_mid at left with moveinleft:
@@ -929,8 +930,8 @@ label e_bruler_donjon_obeir_donjon:
 
     $ prendre_hache = False
     scene bg chateau_couloir_crepuscule with dissolve
-    #Animation
     "Einar s'élance en direction du donjon, passant à l'arrière des affrontements."
+    scene bg chateau_couloir_crepuscule_blur with dissolve
     show einar debout_normal_mid_flip at right with moveinright
     "Dans le donjon, Einar s'empare d'une torche et commence à mettre le feu aux tapisseries."
     show einar debout_determine_mid_flip at center with moveinright
@@ -938,8 +939,8 @@ label e_bruler_donjon_obeir_donjon:
     show einar debout_determine_mid_flip at left with moveinright
     "En se déplacant dans les couloirs, Einar voit Harald par l'embrasure d'une porte."
     "Le roi est entrain de s'équiper de son armure."
-    scene bg chateau_chambre_nuit with dissolve
-    
+    scene bg chateau_couloir_crepuscule_blur with dissolve
+
     show einar debout_determine_mid_flip at right with dissolve
     "Dans la pièce attenante, la Hache Sainte est accrochée à un râtelier qui lui est réservé."
 
@@ -1021,7 +1022,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show einar combat_hache_determine_mid at left
                 e "Je l'ai prise pour vous en priver. Il est temps de rétablir l'ordre naturel des choses."
 
-    show harald combat_normal_mid at rightv with moveinright
+    show harald combat_normal_mid at right with moveinright
     h "Comment oses-tu ?!"
     show harald combat_furieux_mid at right
     h "CETTE HACHE EST A MOI !"
@@ -1074,8 +1075,6 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
                 show harald combat_furieux_mid at right
                 h "Tu es fou !"
 
-
-
         if epargner_harld_donjon == False:
             show einar combat_hache_furieux_mid at center zorder 1 with move
             "Einar laisse le corps du roi sur le sol et quitte la pièce sans un regard en arrière."
@@ -1087,6 +1086,10 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
         $ checkpoint = "checkpoint_3"
 
         label checkpoint_3:
+            scene bg chateau_couloir_crepuscule_blur
+            show harald combat_furieux_mid at right
+            show einar combat_normal_mid at left
+            with dissolve
 
         "Le combat s'engage entre le roi et son huscarl."
         # "Phase combat WIP"
@@ -1162,6 +1165,7 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
                 scene bg chateau_rempart_crepuscule with dissolve
                 "Quelques minutes plus tard, alors que les combats sont terminés..."
+                scene bg chateau_rempart_crepuscule_blur with dissolve
                 show harald debout_normal_mid at center with dissolve
                 show ogma debout_furieux_mid at right with dissolve
                 "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
@@ -1180,6 +1184,8 @@ label e_confrontation_harald_pont_baisse_donjon(jetee = False):
 
     else:
         scene bg chateau_rempart_crepuscule with fade
+        pause 0.8
+        scene bg chateau_rempart_crepuscule with dissolve
         show einar combat_hache_normal_mid at left with moveinleft
         show ogma combat_determine_mid at ogma_pos_right with moveinright
 
@@ -1443,6 +1449,7 @@ label village_5:
     scene bg village
 
     "..."
+    scene bg village_blur
 
     show einar debout_normal_mid at left
     show ogma debout_normal_mid at right
@@ -1611,15 +1618,14 @@ label village_6:
 label foret_4:
 
     $ checkpoint = "checkpoint_6"
+    $ tuer_moira_foret_4 = False
 
     play ambiance village
 
     scene bg sentier_jour with dissolve
-
-    $ tuer_moira_foret_4 = False
-
     "..."
     "Moira apparaît sur le sentier."
+    scene bg sentier_jour_blur with dissolve
 
     show einar debout_normal_mid at left with dissolve
     show moira debout_normal_mid at right with moveinright
@@ -1658,7 +1664,7 @@ label foret_4:
     if moira_abuse == True:
 
         label checkpoint_6:
-            scene bg sentier_jour
+            scene bg sentier_jour_blur
             show moira debout_normal_mid at right
             show einar debout_normal_mid at left
             with dissolve
@@ -1712,7 +1718,9 @@ label fuite_harald_pont_baisse_donjon:
     h "JE ME VENGERAI !"
     "..."
 
-    scene bg plaine_chateau_crepuscule
+    scene bg plaine_chateau_crepuscule with dissolve
+    pause 0.8
+    scene bg plaine_chateau_crepuscule_blur with dissolve
     show harald debout_furieux_mid at left with moveinright
     "Par une meurtrière, Einar remarque une petite embarcation qui quitte le château."
     "Harald s'échappe par la mer, seul sur sa barque."
@@ -1722,7 +1730,9 @@ label fuite_harald_pont_baisse_donjon:
     with dissolve
 
     #Retour à l'extérieur
-    show bg chateau_rempart_crepuscule with dissolve
+    scene bg chateau_rempart_crepuscule with dissolve
+    pause 0.8
+    scene bg chateau_rempart_crepuscule_blur with dissolve
     show ogma debout_determine_mid at center with dissolve
     "La bataille arrive à sa fin. Les rebelles achèvent les quelques vikings qui rampent au sol."
     "Sur les remparts, la silouhette d'Ogma se découpe sur le ciel."
@@ -2113,6 +2123,9 @@ label soupcon_harald_defendre_porte:
 
     label checkpoint_4:
         scene bg chateau_porte_crepuscule_blur
+        show einar combat_furieux_mid at left
+        show ogma combat_furieux_mid at ogma_pos_righ
+        with dissolve
 
     "Un combat s'engage entre Ogma et Einar !"
 
