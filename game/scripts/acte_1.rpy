@@ -1678,6 +1678,7 @@ label massacre_foret_2 (message, massacre_village):
     show einar combat_determine_mid_flip at right with moveinright
     show ogma combat_determine_mid_flip at left with moveinleft:
         xoffset -100
+    hide re with dissolve
     "Un meneur semble émerger du groupe des assaillants."
 
     show screen countdown
@@ -1686,14 +1687,25 @@ label massacre_foret_2 (message, massacre_village):
         "Attaquez le chef !":
             hide screen countdown
             e "Tuez leur chef !"
+            hide einar with dissolve
+            show gv debout_determines_mid_flip at right with moveinright:
+                xoffset 600
+            hide ogma with dissolve
+            show re debout_normal_mid_flip at left, shake with moveinleft
             "Les vikings s'élancent vers le meneur, mais ils se heurtent rapidement à la masse des assaillants."
+            show gv debout_determines_mid_flip at right, shake
             "En infériorité numérique et ayant rompu la formation, les hommes d'Einar sont submergés."
+            show gv debout_determines_mid_flip at right, shake
             "Le nombre d'hommes encore debout s'amenuise à chaque seconde."
 
         "Restez en formation !":
             hide screen countdown
             e "Ne vous dispersez pas ! Restez serrés !"
+            hide einar with dissolve
+            show gv debout_determines_mid_flip at right with moveinright:
+                xoffset 600
             "Les vikings resserrent leur rang. Les premiers assaillants sont aisément repoussés, mais une nouvelle salve de flèches réduit à néant les efforts défensifs du groupe."
+            show gv debout_determines_mid_flip at right, shake
             "Le nombre d'hommes encore debout s'amenuise à chaque seconde."
 
     #Phase combat impossible à gagner WIP
@@ -1706,27 +1718,33 @@ label massacre_foret_2 (message, massacre_village):
 
         "Chargez !":
             hide screen countdown
+            hide gv with dissolve
             e "Tous avec moi !"
+            show einar combat_furieux_mid_flip at center with moveinright
             e "HAAAAA !"
+            show re debout_normal_mid_flip at left, shake
             "Einar trace un sillage sanglant à travers le flot de ses ennemis."
-            "Mais derrière lui, les assaillants se rassemblent et l'isolent du reste des vikings, qui se font massacrer."
+            "Malgré sa charge furieuse, Einar se retrouve rapidement isolé de ses troupes."
 
         "Retraite !":
             hide screen countdown
             e "Tout est perdu ! Retraite ! Retraite !"
+            hide gv with dissolve
             "Les vikings ne se font pas prier et commencent à fuir dans le sous-bois."
             "La plupart d'entre eux sont tués une fois à l'écart du lieu de l'embuscade ; un certain nombre d'assaillants étaient encore dissimulés dans l'obscurité."
+            show einar combat_furieux_mid_flip at right with moveinright
+            
 
 
     "Il ne reste plus personne pour répondre aux ordres d'Einar."
     "Seul Logan poursuit vaillamment le combat, à quelques mètres de son ami huscarl."
     hide gv
-
+    hide re
     hide logan
     with dissolve
 
     show einar combat_determine_mid_flip at right with moveinright
-    show ogma combat_furieux_mid_flip at center with moveinright
+    show ogma combat_furieux_mid_flip at center with moveinleft
 
     chef "Mourrez, chiens ! Mourrez comme votre lâche d'intendant !"
 
@@ -1745,12 +1763,13 @@ label massacre_foret_2 (message, massacre_village):
     e "Que..."
 
     "L'un des assaillants arrive derrière Einar et lui transperce la cuisse avec un épieu, l'obligeant à mettre le genou à terre."
-    show einar prisonnier_blesse_mid at right
+    show einar prisonnier_furieux_mid at right
     e "Aaarrggh ! Logan, aide-moi !"
 
     hide re with dissolve
-    show ogma combat_furieux_mid_flip at ogma_pos_left with moveinleft
-    show einar prisonnier_blesse_mid at center with moveinleft
+    show ogma combat_furieux_mid_flip at ogma_pos_left with moveinleft:
+        xoffset -150
+    show einar prisonnier_determine_mid at center with moveinleft
     show logan combat_determine_mid_flip at right with moveinright
 
 
@@ -1794,7 +1813,7 @@ label massacre_foret_2 (message, massacre_village):
 label e_demande_nom_foret_2(bad_ending):
     hide logan
     hide gv
-    show einar combat_blesse_mid at center
+    show einar prisonnier_determine_mid at center
     show ogma combat_determine_mid
     e "Qui es-tu, lâche ?"
 
@@ -1817,7 +1836,7 @@ label e_implore_pitie_foret_2(bad_ending):
     hide logan
     hide gv
 
-    show einar debout_blesse_mid at center
+    show einar prisonnier_effraye_mid at center
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
     show ogma debout_determine_mid:
         xoffset 0
@@ -1838,7 +1857,7 @@ label e_implore_pitie_foret_2(bad_ending):
 label e_menace_foret_2(bad_ending):
     hide logan
     hide gv
-    show einar prisonnier_blesse_mid at center
+    show einar prisonnier_furieux_mid at center
     show ogma debout_determine_mid:
         xoffset 0
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
