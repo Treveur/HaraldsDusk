@@ -711,7 +711,7 @@ label village_1:
     show einar debout_normal_mid at left zorder 1 with moveinleft
     e "Ça me semble bien calme."
     show gv debout_normaux_mid_flip at right with moveinright:
-        xpos 630
+        xoffset 630
     gv "On dirait qu'il n'y a pas grand monde..."
 
     e "Uniquement des vieillards, des femmes et des enfants."
@@ -725,7 +725,7 @@ label village_1:
     #show ve debout_normaux_sans_doyen_mid at right, ve_pos
 
     show vieux debout_normal_mid at right zorder 1 with moveinright:
-        xpos -263
+        xoffset -263
 
     vh "Bonjour, étrangers. Nous pouvons vous aider ?"
 
@@ -983,7 +983,7 @@ label e_choix_final_village_1:
     l "Et maintenant ?"
 
     show gv debout_normaux_mid at left zorder 0 with moveinleft:
-        xpos -630
+        xoffset -630
 
     gv "On devrait raser tout ça, pour l'exemple !"
 
@@ -1042,16 +1042,16 @@ label e_choix_final_village_1:
                     gv "HAAAAAAA !"
 
                     show gv debout_normaux_mid:
-                        ease 1.5 xpos 2000
+                        ease 1.5 xoffset 2000
 
                     show ve debout_effrayes_mid at right:
-                        linear 1 xpos 1500
+                        linear 1 xoffset 1500
                     e "Battez-vous ! Tuez-les tous !"
 
                     show logan combat_normal_mid:
-                        ease 1 xpos 1500
+                        ease 1 xoffset 1500
                     show einar combat_normal_mid:
-                        ease 1.5 xpos 2000
+                        ease 1.5 xoffset 2000
 
                     play ambiance fight
 
@@ -1120,7 +1120,7 @@ label e_tuer_villageois_village_1:
             e "Oui ! Dépêche toi !"
 
             show vieux debout_normal_mid at center, shake with move:
-                xpos 0
+                xoffset 0
 
             show einar combat_normal_mid
 
@@ -1130,7 +1130,7 @@ label e_tuer_villageois_village_1:
 
             "Einar tranche la gorge du villageois d'un seul coup."
             show ve debout_normaux_sans_doyen_mid with moveinleft:
-                xpos 0
+                xoffset 0
 
             ve "Pourritures ! Salauds !"
 
@@ -1149,18 +1149,18 @@ label e_tuer_villageois_village_1:
             # hide ve with dissolve
 
             show gv debout_normaux_mid at center with moveinleft:
-                xpos -700
+                xoffset -700
 
             show ve debout_normaux_sans_doyen_mid at right:
-                linear 1 xpos 1500
+                linear 1 xoffset 1500
 
             show gv debout_normaux_mid with moveinright:
-                xpos 0
+                xoffset 0
 
             gv "Vengeance !"
 
             show gv debout_furieux_mid at right with moveinright:
-                ease 1 xpos 1700
+                ease 1 xoffset 1700
 
             show logan debout_determine_mid_flip at center with moveinright
 
@@ -1180,9 +1180,9 @@ label e_tuer_villageois_village_1:
             play ambiance fight fadein 1
 
             show logan combat_normal_close:
-                ease 1 xpos 1500
+                ease 1 xoffset 1500
             show einar combat_normal_close:
-                ease 1.5 xpos 2000
+                ease 1.5 xoffset 2000
 
             "Le combat s'engage. Rapidement, les vikings reprennent l'ascendant et réduisent à néant toute résistance."
 
@@ -1287,7 +1287,7 @@ label e_tuer_moira_maison_1:
             e "Ferme-la. Et maintenant, voyons si les bouseux sont plus enclins à parler !"
 
             show logan debout_normal_mid_flip at left zorder 1 with moveinleft:
-                xpos 200
+                xoffset 200
             show logan debout_normal_mid zorder 1
 
             show ve debout_effrayes_mid at right with moveinright
@@ -1305,18 +1305,18 @@ label e_tuer_moira_maison_1:
             "Alors qu'il tente de maîtriser la foule, l'un des vikings se fait fracasser le crâne par une pierre. Des écossais se jettent sur lui et le massacrent."
 
             show gv debout_normaux_mid at center with moveinleft:
-                xpos -800
+                xoffset -800
 
             show ve debout_normaux_mid at right:
-                linear 0.8 xpos 1500
+                linear 0.8 xoffset 1500
 
             show gv debout_normaux_mid with moveinright:
-                xpos 0
+                xoffset 0
 
             gv "Vengeance !"
 
             show gv debout_normaux_mid at right with moveinright:
-                ease 1 xpos 1700
+                ease 1 xoffset 1700
 
             show logan debout_determine_mid_flip at center with moveinright
 
@@ -1336,9 +1336,9 @@ label e_tuer_moira_maison_1:
             play music slaughter
             play ambiance fight
             show logan combat_normal_close:
-                ease 1 xpos 1500
+                ease 1 xoffset 1500
             show einar combat_normal_close:
-                ease 1.5 xpos 2000
+                ease 1.5 xoffset 2000
 
             "Le combat s'engage. Rapidement, les vikings reprennent l'ascendant et réduisent à néant toute résistance."
 
@@ -1646,7 +1646,7 @@ label massacre_foret_2 (message, massacre_village):
     show gv debout_normaux_mid_flip at right with dissolve
     gv "Ça venait d'où ?"
     show gv debout_normaux_mid_flip with moveinright:
-        ease 2 xpos 1500
+        ease 2 xoffset 1500
     show logan combat_determine_mid_flip at center zorder 1 with dissolve
 
     hide gv
@@ -1673,7 +1673,7 @@ label massacre_foret_2 (message, massacre_village):
 
     show re debout_normal_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
-
+    
     play ambiance fight
 
 ################################### WIP ###########################################
@@ -1687,7 +1687,7 @@ label massacre_foret_2 (message, massacre_village):
     hide logan with dissolve
     show einar combat_determine_mid_flip at right with moveinright
     show ogma combat_determine_mid_flip at left with moveinleft:
-        xpos -200
+        xoffset -100
     hide re with dissolve
     "Un meneur semble émerger du groupe des assaillants."
 
@@ -1699,7 +1699,7 @@ label massacre_foret_2 (message, massacre_village):
             e "Tuez leur chef !"
             hide einar with dissolve
             show gv debout_normaux_mid_flip at right with moveinright:
-                xpos 600
+                xoffset 600
             hide ogma with dissolve
             show re debout_normal_mid_flip at left, shake with moveinleft
             "Les vikings s'élancent vers le meneur, mais ils se heurtent rapidement à la masse des assaillants."
@@ -1713,7 +1713,7 @@ label massacre_foret_2 (message, massacre_village):
             e "Ne vous dispersez pas ! Restez serrés !"
             hide einar with dissolve
             show gv debout_normaux_mid_flip at right with moveinright:
-                xpos 600
+                xoffset 600
             "Les vikings resserrent leur rang. Les premiers assaillants sont aisément repoussés, mais une nouvelle salve de flèches réduit à néant les efforts défensifs du groupe."
             show gv debout_normaux_mid_flip at right, shake
             "Le nombre d'hommes encore debout s'amenuise à chaque seconde."
@@ -1728,7 +1728,7 @@ label massacre_foret_2 (message, massacre_village):
 
         "Chargez !":
             hide screen countdown
-
+            
             hide gv with dissolve
             e "Tous avec moi !"
             hide ogma with dissolve
@@ -1781,7 +1781,8 @@ label massacre_foret_2 (message, massacre_village):
     e "Aaarrggh ! Logan, aide-moi !"
 
     hide re with dissolve
-    show ogma combat_furieux_mid_flip at ogma_pos_left with moveinleft
+    show ogma combat_furieux_mid_flip at ogma_pos_left with moveinleft:
+        xoffset -150
     show einar prisonnier_determine_mid at center with moveinleft
     show logan combat_determine_mid_flip at right with moveinright
 
@@ -1791,7 +1792,8 @@ label massacre_foret_2 (message, massacre_village):
 
     "Logan est frappé derrière la tête et tombe au sol, face à Einar."
     hide logan with dissolve
-    show ogma combat_determine_mid at ogma_pos_right with moveinright
+    show ogma combat_determine_mid at right with moveinright:
+        xoffset 300
 
     "Le meneur des assaillants se baisse et égorge Logan devant Einar, qui est au bord de l'évanouissement."
 
@@ -1800,7 +1802,8 @@ label massacre_foret_2 (message, massacre_village):
 
     e "Crevure... Tu..."
 
-    show ogma combat_determine_mid at ogma_pos_right with dissolve
+    show ogma combat_determine_mid at right with dissolve:
+        xoffset 300
 
     "Le meneur fixe Einar."
     chef "Les chiens du roi-empereur ont échoué."
@@ -1851,7 +1854,7 @@ label e_implore_pitie_foret_2(bad_ending):
     show einar prisonnier_effraye_mid at center
     e "Par pitié, ne me tue pas ! Dites-moi quoi faire, et je le ferai !"
     show ogma debout_determine_mid:
-        xpos 0
+        xoffset 0
 
     if bad_ending:
         show ogma debout_determine_mid
@@ -1871,7 +1874,7 @@ label e_menace_foret_2(bad_ending):
     hide gv
     show einar prisonnier_furieux_mid at center
     show ogma debout_determine_mid:
-        xpos 0
+        xoffset 0
     e "Tuez-moi ! Le roi brûlera toute la Grande-Bretagne pour votre insolence !"
 
     if bad_ending:
@@ -2060,7 +2063,7 @@ label refuser_trahir_village_2:
     show einar prisonnier_determine_mid at left
     e "Allez vous faire foutre. Je ne trahirai pas la parole que j'ai donné à mon roi."
     show ogma debout_determine_mid at center with moveinright:
-        xpos -300
+        xoffset -300
 
     o "Mauvaise réponse."
 
@@ -2091,7 +2094,7 @@ label refuser_trahir_village_2:
         "J'accepte":
             e "Très bien... Hhhggh... J'accepte..."
             show ogma debout_souriant_mid at right with moveinright:
-                xpos 0
+                xoffset 0
             o "Parfait !"
             jump accepter_trahir_village_2
         "Je ne trahirai personne !":
