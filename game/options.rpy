@@ -12,7 +12,7 @@ init -1 python hide:
     ## du jeu, ainsi le joueur ne peut pas tricher en utilisant les
     ## outils pour développeur.
 
-    config.developer = False
+    config.developer = True
 
     ## Contrôle la largeur et la hauteur de la fenêtre.
 
@@ -352,7 +352,7 @@ init -1 python hide:
     ## Vous pouvez ajouter ici d'autres options.
 
     #enlève le rollback
-    config.rollback_enabled = False
+    config.rollback_enabled = True
     # config.keymap['dismiss'].remove('K_LCTRL')
     # config.keymap['dismiss'].remove('K_RCTRL')
 

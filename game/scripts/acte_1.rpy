@@ -896,7 +896,7 @@ label e_fouiller_village_1(einarFouille = False):
     show moira debout_normal_mid at center with dissolve
     "..."
 
-    scene bg house_blur with dissolve
+    show bg house_blur with dissolve
 
     show moira debout_determine_mid at right with moveinright
     show einar debout_normal_mid at left with dissolve
@@ -1673,7 +1673,7 @@ label massacre_foret_2 (message, massacre_village):
 
     show re debout_normal_mid_flip at left with moveinleft
     "Des dizaines de silhouettes jaillissent de l'obscurité et se jettent sur les guerriers encore debout."
-    
+
     play ambiance fight
 
 ################################### WIP ###########################################
@@ -1728,7 +1728,7 @@ label massacre_foret_2 (message, massacre_village):
 
         "Chargez !":
             hide screen countdown
-            
+
             hide gv with dissolve
             e "Tous avec moi !"
             hide ogma with dissolve
