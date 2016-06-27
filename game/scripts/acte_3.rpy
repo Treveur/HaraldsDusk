@@ -1481,21 +1481,28 @@ label e_epargne_harald_no_axe_donjon:
         jump village_5
 
     else:
+        stop ambiance
+        scene bg chateau_rempart_crepuscule
         "Un peu plus tard, alors que les combats ont cessé..."
         "..."
-        show ogma combat_normal_mid at ogma_pos_left
-        show einar debout_blesse_mid at right
+        scene bg chateau_rempart_crepuscule_blur
+        show ogma combat_normal_mid_flip zorder 1 at ogma_pos_left
+        show harald combat_normal_mid at center zorder 0
+        # show einar debout_blesse_mid at right
+        show einar debout_blesse_mid_flip at right
         "Sur les remparts, Ogma se tient au-dessus des rebelles et des survivants vikings. Harald est à genoux devant lui."
-        show ogma combat_determine_mid at ogma_pos_left
+        show ogma combat_determine_mid_flip at ogma_pos_left
         o "Voyez ! La liberté a vaincu le tyran !"
         o "Demain, le monde se libèrera des chaînes que lui a imposé un seul homme !"
         o "Le règne du roi-empereur est terminé !"
         "Ogma tranche la gorge du roi, qui laisse s'échapper un torrent de sang."
+        hide harald with dissolve
         o "VOUS ÊTES LIBRES !"
         "Ogma repousse du pied le corps du roi, qui bascule par-dessus les remparts et tombe à la mer."
         "Dans la lumière du crépuscule, Dunbar continue de brûler."
         hide ogma
-        hide harald
+        hide einar
+        # hide harald
         with dissolve
         jump village_6
 
@@ -1549,6 +1556,7 @@ label village_5:
 label village_6:
 
     play ambiance village
+    scene bg village with dissolve
 
     $ refuer_ogma_main_moira = False
 
