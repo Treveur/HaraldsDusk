@@ -37,7 +37,7 @@ label intro:
     n "A l'avant du contingent un guerrier écossais éclaire la voie ; Logan a juré fidélité à Harald depuis plus de dix ans et le mène à travers son Ecosse natale jusqu'au château de Dunbar."
     n "Logan semble tendu, lui qui est d'ordinaire enjoué et sympathique."
     show einar debout_normal_mid at left with moveinleft
-    n "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnel du roi."
+    n "Vous êtes Einar, l'un des huscarls : un guerrier d'élite, chef militaire et garde personnelle du roi."
     n "Après vingt ans de loyaux services, Einar est devenu relativement proche du roi et est respecté de tous."
 
 
